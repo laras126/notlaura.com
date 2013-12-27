@@ -1,0 +1,189 @@
+// Root styles
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $default; 
+    font-family: 'Open Sans', serif;
+    font-weight: 500;
+    color: $black;
+
+    line-height: 1.611;
+
+    background-color: $white;
+
+    // background-image: url("../img/pixels-corner.png"),
+    //                   url("../img/pixels-corner-bottom.png");
+    //                   //url("../img/textures/px_greg/px_greg.png");
+    // background-color: $black;
+    // background-position: left top, right bottom, center;
+    // background-attachment: fixed;
+    // background-repeat: no-repeat, no-repeat, repeat;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'adelle-1', serif;
+    font-weight: 600;
+    margin-bottom: $sml;
+}
+
+h1 { 
+    font-size: $h1;
+    margin-top: $h1;
+}
+
+h2 {
+    font-size: $h2;
+    margin-top: $h2;
+}
+
+h3 {
+    font-size: $h3;
+    margin-top: $h3;
+}
+
+a {
+    &:link, &:visited {
+        color: $link-color;
+    }
+    
+    &:hover {
+        color: $link-hover;
+    }
+
+}
+
+small {
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: $default;
+}
+
+blockquote {
+    font-size: $h3;
+    font-family: 'adelle-1', serif;
+    margin: 0;
+    padding-left: 2rem;
+    border-left: 1px solid $dark-blue;
+    margin-bottom: $h3;
+    @extend .italic;
+}
+
+
+
+// Header
+
+.site-header {
+    background-color: $black;
+}
+
+.bq-source {
+    font-size: $sml;
+    font-style: italic;
+}
+
+.site-header {
+    @extend .light-txt;
+}
+
+.site-title {
+    margin: 0;
+    font-size: $h2;
+    font-weight: 500;
+}
+
+.site-desc {
+    //font-family: 'effra-1', sans-serif;  
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 300;
+    font-size: $sml;
+}
+
+
+// Navigation
+
+.site-nav {
+    li {
+        display: inline-block;
+
+    }
+}
+
+a.menu-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 1em;
+}
+
+nav[role=navigation] {
+    clear: both;
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.js nav[role=navigation] {
+    overflow: hidden;
+    max-height: 0;
+}
+
+nav[role=navigation].active {
+    max-height: 15em;
+}
+
+nav[role=navigation] ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #808080;
+}
+
+nav[role=navigation] li a {
+    display: block;
+    padding: 0.8em;
+    border-bottom: 1px solid #808080;
+}
+
+
+
+// Sections
+
+.tagline {
+    font-size: $h2*1.2;
+    margin: 0;
+    font-weight: 100;
+}
+
+
+
+.content {
+    
+}
+
+.subsection {
+    border-top: 2px dotted $white;
+    margin-top: $h1;
+    padding-top: $h1;
+}
+
+
+/* Section color themes */

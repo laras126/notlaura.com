@@ -1,0 +1,23 @@
+// Units
+$h1: 4.7rem;
+$h2: 2.9rem;
+$h3: 2.3rem;
+$sml: 1.4rem;
+$default: 1.8rem;
+
+//  Colors
+
+$orange: 		#a94d25;
+
+$dark-blue: 	#5386b0;
+$light-blue: 	lighten($dark-blue, 25%);
+
+$white:  		#f4f7f9;
+$black: 		#231f20;
+
+$link-light: 	$light-blue;
+
+$link-color: 	$dark-blue;
+$link-hover: 	$orange;
+
+$primary:  		$dark-blue;

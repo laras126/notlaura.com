@@ -1,0 +1,50 @@
+// Here are some various, helpful shortcuts!
+
+.callout {
+	@extend .text-center;
+}
+
+.italic {
+	font-style: italic;
+    font-weight: 100;
+}
+
+.light-txt {
+	color: $white;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.hlite-db {
+	color: $dark-blue;
+}
+
+.hlite-lb {
+	color: $light-blue;	
+	//border-bottom: 3px solid $white;
+}
+
+.hlite-ul {
+	//border-bottom: 3px solid $light-blue;
+}
+
+.pic-o-me {
+	border-top: 0.5rem $dark-blue solid;
+	border-bottom: 0.5rem $light-blue solid;
+}
+
+.primary {
+    background: $white;
+    //@include border-radius(0.5rem);
+}
+
+.secondary {
+    background: $light-blue;
+    @extend .light-txt;
+}
+
+.tertiary {
+    background: $white;
+}

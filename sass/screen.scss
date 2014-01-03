@@ -18,6 +18,7 @@
 
 @import "base";
 
-@media only screen and (min-width: 45.25em) {
+// NOTE: This MQ is kinda arbitrary. Based on site-nav size and the grid breakpoint
+@media only screen and (min-width: $break) {
 	@import "middle";	
 }

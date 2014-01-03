@@ -22,13 +22,32 @@ $white:  		#f4f7f9;
 $black: 		#231f20;
 $grey: 			lighten($black, 10%);
 
-$primary:  		$dark-blue;
-$secondary: 	$light-blue;
+$link-color: 		$alert-yellow;
+$link-hover: 		$orange;
 
 $light-txt: 	$white;
-
 
 $link-light: 	$light-blue;
 
 $link-color: 	$link-light;
 $link-hover: 	$orange;
+
+$light-accent: 	$light-blue;
+// $medium-accent: 	$green;
+$dark-accent: 	$dark-blue;
+
+// $btn-color: 		$dark-green;
+
+
+
+// Susy settings
+// TODO: incorporate modular scale here
+
+$total-columns  : 6;             // a 12-column grid
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 2em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$container-style: fluid;
+
+$break 			: 38em;
+

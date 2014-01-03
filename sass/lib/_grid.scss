@@ -12,7 +12,18 @@ $container-style: fluid;
 .inner-wrap {
 	@include container;
 	padding: $h3;
-    max-width: 60rem;
+    max-width: 40em;
     margin: 0 auto;
 }
+
+@include at-breakpoint(45em 6) {
+  	.site-info, .illus-img { 
+		@include span-columns(3); 
+	}
+
+	.site-nav, .illus-desc { 
+		@include span-columns(3 omega); 
+	}
+}
+
 

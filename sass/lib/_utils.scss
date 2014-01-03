@@ -9,8 +9,10 @@
     font-weight: 100;
 }
 
-.light-txt {
-	color: $white;
+.obscure-a {
+    a {
+        @include unstyled-link;
+    }
 }
 
 .text-center {
@@ -30,11 +32,6 @@
 	//border-bottom: 3px solid $light-blue;
 }
 
-.pic-o-me {
-	border-top: 0.5rem $dark-blue solid;
-	border-bottom: 0.5rem $light-blue solid;
-}
-
 .primary {
     background: $white;
     //@include border-radius(0.5rem);
@@ -42,7 +39,7 @@
 
 .secondary {
     background: $light-blue;
-    @extend .light-txt;
+    color: $white;
 }
 
 .tertiary {

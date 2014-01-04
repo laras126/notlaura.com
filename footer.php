@@ -8,10 +8,11 @@
 						<li><a href="http://feeds.feedburner.com/notlaura" target="blank"><i class="fa fa-rss"></i></a></li>
 					</ul>
 					<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					
+					<p class="colophon">This site was created with <a href="http://wordpress.org" target="blank">WordPress</a> using the starter theme <a href="http://themble.com/bones" target="blank">Bones</a> (it is wonderful!). </p>
 				</div>
 
 			</footer>
-
 		</div>
 
 		<?php // all js scripts are loaded in library/bones.php ?>

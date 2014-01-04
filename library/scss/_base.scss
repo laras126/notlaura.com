@@ -929,7 +929,7 @@ FOOTER STYLES
     border-top: 1px dotted $medium-accent;
     margin-top: $h2;
     padding-top: $h2;
-    padding-bottom: $h1;
+    //padding-bottom: $h1;
    text-align: center;
 }
 
@@ -946,6 +946,11 @@ FOOTER STYLES
                 font-size: $h2;
             }
         }
+    }
+
+    .colophon {
+        font-size: $sml;
+        padding-top: $sml;
     }
 
 

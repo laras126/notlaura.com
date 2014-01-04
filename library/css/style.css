@@ -3157,7 +3157,6 @@ FOOTER STYLES
   border-top: 1px dotted #86b2c6;
   margin-top: 2.9rem;
   padding-top: 2.9rem;
-  padding-bottom: 4.7rem;
   text-align: center;
 }
 
@@ -3177,6 +3176,12 @@ FOOTER STYLES
 /* line 945, ../scss/_base.scss */
 .social li i {
   font-size: 2.9rem;
+}
+
+/* line 951, ../scss/_base.scss */
+.colophon {
+  font-size: 1.4rem;
+  padding-top: 1.4rem;
 }
 
 /*

@@ -49,14 +49,13 @@
 			<header class="header" role="banner">
 
 				<div id="inner-header" class="wrap clearfix">
+					<hgroup class="site-info">
+                    	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+                    	<h3 class="site-desc"><?php bloginfo('description'); ?></h3>
+                	    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+                    </hgroup>	
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
+					<nav role="navigation" id="menu" class="site-nav">
 						<?php bones_main_nav(); ?>
 					</nav>
 

@@ -1,47 +1,79 @@
-// Units
-$h1: 4.7rem;
-$h2: 2.9rem;
-$h3: 2.3rem;
-$sml: 1.4rem;
-$default: 2rem;
+/******************************************************************
 
-//  Colors
+Stylesheet: Settings Stylesheet
 
+Like, for colors n'at.
+
+******************************************************************/
+
+
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
 
 $alert-yellow:      #ebe16f;
 $alert-red:         #fbe3e4;
 $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
+$white:  		#f4f7f9;
+$black: 		#231f20;
+$grey: 			lighten($black, 10%);
+
 $orange: 		#a94d25;
 
 $dark-blue: 	#237fa9;
 $light-blue: 	lighten(desaturate($dark-blue, 30%), 25%);
 
-$white:  		#f4f7f9;
-$black: 		#231f20;
-$grey: 			lighten($black, 10%);
+$link-color:        $dark-blue;
+$link-hover:        darken($link-color, 9%);
 
-$link-color: 		$alert-yellow;
-$link-hover: 		$orange;
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
 
-$light-txt: 	$white;
+$main-font-clr: 	$black;
 
-$link-light: 	$light-blue;
+$light-accent: 		$light-blue;
+$medium-accent: 	$dark-blue;
+$dark-accent: 		$dark-blue;
 
-$link-color: 	$link-light;
-$link-hover: 	$orange;
-
-$light-accent: 	$light-blue;
-// $medium-accent: 	$green;
-$dark-accent: 	$dark-blue;
-
-// $btn-color: 		$dark-green;
+$btn-color: 		$light-blue;
 
 
+/*********************
+TYPOGRAPHY
+*********************/
+
+// Rem Units
+// http://gregrickaby.com/using-the-golden-ratio-and-rems/
+
+$sml:  				1.4rem;
+$default:  			1.8rem;
+$line-height-base: 	1.625;
+
+$h1:  				4.7rem;
+$h2:  				2.9rem;
+$h3:  				2.3rem;
+$h4:  				$default;
+$h5:  				$sml;
+
+
+
+$sans-serif:        "museo-sans-1";
+$serif:             "adelle-1";
+
+
+/*********************
+GRID
+*********************/
 
 // Susy settings
-// TODO: incorporate modular scale here
 
 $total-columns  : 6;             // a 12-column grid
 $column-width   : 4em;            // each column is 4em wide
@@ -50,4 +82,5 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 $container-style: fluid;
 
 $break 			: 38em;
+
 

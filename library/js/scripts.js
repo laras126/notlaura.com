@@ -69,6 +69,20 @@ jQuery(document).ready(function($) {
 	// add all your scripts here
 	
  
+	// Brad Frost toggle menu
+	// 
+	$('body').addClass('js');
+	var $menu = $('#menu'),
+	$menulink = $('.menu-link');
+  
+	$menulink.click(function() {
+  		$menulink.toggleClass('active');
+  		$menu.toggleClass('active');
+  		return false;
+	});
+
+
+
 }); /* end of as page load scripts */
 
 

@@ -2,19 +2,19 @@
 
 // Container
 
-.inner-wrap {
+.wrap {
 	//@include susy-grid-background; 
 	@include container($total-columns, $break);
 	padding: $h3;
-    max-width: 35em;
+    max-width: $break;
     margin: 0 auto;
 }
 
 @include at-breakpoint($break 12) {
 
- //  	.site-info { @include span-columns(4); }
+  	.site-info { @include span-columns(4); }
 
-	// .site-nav { @include span-columns(8 omega); }
+	.site-nav { @include span-columns(8 omega); }
 	
 	// .subsection-img { @include span-columns(8); }
 

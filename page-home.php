@@ -3,7 +3,7 @@
             <div id="content">
 
                 <section class="zinger">
-                    <div class="inner-wrap">
+                    <div class="wrap">
                         <h2>I teach <span class="hlite-db">fishing</span>.</h2>
                         <p>Uhh...what?</p>
                     </div>
@@ -11,13 +11,13 @@
 
                 <!-- 
                 <div class="illustration">
-                    <div class="inner-wrap">
+                    <div class="wrap">
                         <img src="img/me-fish.png">
                     </div>
                 </div> -->
                 
                 <section class="content-section">
-                    <div class="inner-wrap">
+                    <div class="wrap">
                         <p>You know that expression:</p>
                         <blockquote class="home-quote">Give a man a fish and feed him for a day, teach a man to fish and feed him for a lifetime.<br />
                         <!-- <span class="bq-source">Chinese Proverb (<a href="http://www.quotationspage.com/quote/2279.html">apparently</a>)</span> -->
@@ -30,7 +30,7 @@
                 <section class="content-section">
                     
                     <div class="subsection">
-                        <div class="inner-wrap clearfix">
+                        <div class="wrap clearfix">
                             <p class="h5">Option 1</p>
                             <h2 class="subsection-title">I teach you to fish</h2>
                             <div class="subsection-txt">
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="subsection">
-                        <div class="inner-wrap clearfix">
+                        <div class="wrap clearfix">
                             <p class="h5">Option 2</p>
                             <h2 class="subsection-title">I fish for you</h2>
                             <div class="subsection-txt last">    
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="subsection">
-                        <div class="inner-wrap clearfix">
+                        <div class="wrap clearfix">
                             <p class="h5">Option 3</p>
                             <h2 class="subsection-title">We fish together</h2>
                             <div class="subsection-txt">
@@ -72,7 +72,7 @@
                 </section> <!-- content-section -->
                
                 <section class="content-section">
-                    <div class="inner-wrap">
+                    <div class="wrap">
                         <p>Seriously though, it's up to you. We move at your pace and cover what you want to know. Think of it as a course customized specifically for you.</p>
                         <p>That being said, 
                         <ul>

@@ -11,7 +11,7 @@ The following is largely inspired by [Destroy Today on Github](https://github.co
 * Use jQuery plugins over WP when possible
 * Mobile first
 * Learn Grunt.js?
-* WordPress (Or [Jekyll](http://jekyllrb.com/)? No, I want to keep my content.)
+* WordPress (From the [Bones starter theme](https://github.com/destroytoday/destroytoday.com)by Eddies Machado, [my fork](https://github.com/laras126/bones))
 
 ###Design/UX
 * Large and readable typography

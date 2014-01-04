@@ -71,8 +71,8 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-    width: 96%;
-    margin: 0 auto;
+    // width: 96%;
+    // margin: 0 auto;
 }
 
 /*********************
@@ -197,6 +197,7 @@ HEADER STYLES
 
 
 .site-info {
+    position: relative;
     a {
         text-decoration: none;
     }
@@ -367,6 +368,39 @@ POSTS & CONTENT STYLES
 .thumb img {
     width: 100%;
     max-width: 100%;
+}
+
+
+// Home
+// TODO: reevaluate semantics with home fishing vs subsection
+.subsection-img {
+    
+    img {
+        border: 10px solid $dark-accent;
+        box-sizing: border-box;
+    }
+    
+
+}
+
+
+// About page
+
+.fig-large {
+    width: 120%;
+    margin-left: -10%;
+    background-color: $light-accent;
+    img {
+        //border: 2px solid $light-accent;        
+    }
+
+    figcaption {
+        text-align: center;
+        //line-height: $h4;
+        font-size: $sml;
+        padding-bottom: $sml/2;
+        // background-color: $light-accent;
+    }
 }
 
 #content {
@@ -891,6 +925,30 @@ FOOTER STYLES
     clear: both;
 }
 
+.site-footer {
+    border-top: 1px dotted $medium-accent;
+    margin-top: $h2;
+    padding-top: $h2;
+    padding-bottom: $h1;
+   text-align: center;
+}
+
+    .social {
+        display: inline-block;
+
+        li {
+            display: inline-block;
+            padding-right: $default;
+            a {
+                border: none;
+            }
+            i {
+                font-size: $h2;
+            }
+        }
+    }
+
+
     /*
     if you checked out the link above:
     http://www.alistapart.com/articles/organizing-mobile/
@@ -910,6 +968,4 @@ FOOTER STYLES
 
     } /* end .footer-links */
 
-
-    .copyright {}
 

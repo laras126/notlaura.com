@@ -1,6 +1,9 @@
 <?php get_header(); ?>
+<div id="content">
 
-            <div id="content">
+    <div id="inner-content" class="clearfix">
+
+            <div id="main" class="clearfix" role="main">
 
                 <section class="zinger">
                     <div class="wrap">
@@ -34,7 +37,7 @@
                             <p class="h5">Option 1</p>
                             <h2 class="subsection-title">I teach you to fish</h2>
                             <div class="subsection-txt">
-                                <p>What do you want to learn? Let's sit down 1-on-1 and I'll teach it to you. We move at your pace and cover what you want to know.</p>
+                                <p>What about websites do you want to learn? Let's sit down 1-on-1 and I'll teach it to you. We move at your pace and cover what you want to know.</p>
                             </div>
                             <div class="subsection-img last">
                                 <img src="<?php echo $img_path; ?>site/you-fish.png">
@@ -47,7 +50,7 @@
                             <p class="h5">Option 2</p>
                             <h2 class="subsection-title">I fish for you</h2>
                             <div class="subsection-txt last">    
-                                <p>Oh yeah, I make websites! Custom WordPress themes are my specialty, but <a href="services.php">I wear many hats</a>.</p>
+                                <p>Oh yeah, I make websites! Custom WordPress themes are my specialty, but I wear many hats. Take a look at my portfolio for some examples.</p>
                             </div>
 
                             <div class="subsection-img">
@@ -72,58 +75,59 @@
                 </section> <!-- content-section -->
                
                 <section class="content-section">
-                    <div class="wrap">
-                        <p>Seriously though, it's up to you. We move at your pace and cover what you want to know. Think of it as a course customized specifically for you.</p>
-                        <p>That being said, 
-                        <ul>
-                            <li>
-                                <h5>Front-end development</h5>
+                    <div class="wrap clearfix">
+                        <h2>What can I teach?</h2>
+                        <!-- TODO: list isn't a great name here -->
+                        <div class="clearfix list-section">
+                            <div class="list">
+                                <h5>Front-end</h5>
                                 <ul>
                                     <li>HTML5</li>
                                     <li>CSS3</li>
                                     <li>jQuery</li>
                                     <li>Responsive Design</li>
-                                    <li>Sass</li>
                                 </ul>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="list">
                                 <h5>WordPress</h5>
                                 <ul>
                                     <li>Ins and Outs of Admin</li>
                                     <li>Theme development</li>
                                 </ul>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="list">
                                 <h5>Software</h5>
                                 <ul>
                                      <li>Illustrator</li>
                                      <li>Photoshop</li>
                                      <li>InDesign</li>
                                  </ul>
-                            </li>
-                            <li>
-                                <h5>Miscellaneous</h5>
-                                <p>I'll be harping about these in addition to whatever you want to cover:</p>
+                            </div>
+                            <div class="list">
+                                <h5>Design</h5>
                                 <ul>
+                                    <li>How the Internet works</li>
                                     <li>UI, UX, and Visual design prinicples</li>
                                     <li>Best Practices</li>
                                     <li>General savvyness</li>
                                 </ul>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
 
-                        <p>Just to get it out there, here's what I <em>don't</em> teach:</p>
+                        <p>That being said, there are a few things I <em>don't</em> teach:</p>
                         <ul>
                             <li>Heavy Duty JavaScript</li>
                             <li>Backend languages (except a little PHP)</li>
                             <li>Server administration</li>
                         </ul>
                     </div>
+
                 </section> <!-- content-section -->
                 
             </div>
 
+        </div>
+
+    </div>
+
 <?php get_footer(); ?>
-
-
-

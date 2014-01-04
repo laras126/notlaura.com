@@ -5,9 +5,18 @@
 .wrap {
 	//@include susy-grid-background; 
 	@include container($total-columns, $break);
-	padding: $h3;
-    max-width: $break;
+	//padding: $h3;
+    max-width: 45em;
     margin: 0 auto;
+}
+
+
+@include at-breakpoint($break1 6) {
+	.thumb { @include isolate-grid(3); }
+
+	.list {
+		@include isolate-grid(3);
+	}
 }
 
 @include at-breakpoint($break 12) {
@@ -18,19 +27,15 @@
 
 	.thumb { @include isolate-grid(4); }
 	
-	// .subsection-img { @include span-columns(8); }
+	.subsection-img { @include span-columns(8); }
 
-	// .subsection-txt { @include span-columns(4); }
+	.subsection-txt { @include span-columns(4); }
 
-	// .last {	@include omega; }
+	.last {	@include omega; }
 
-	// .third {
-	// 	@include span-columns(2, 6); 	
-
-	// 	&:last-child {
-	// 		@include omega;
-	// 	}
-	// }
+	.list {
+		@include isolate-grid(3);
+	}
 }
 
 

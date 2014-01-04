@@ -33,10 +33,11 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
+		
 		<?php // CHEATER!!! This should be in wp_head 
-			  // TODO: put it there
-		?>
+			  // TODO: put it there ?>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
@@ -52,13 +53,12 @@
 					<hgroup class="site-info">
                     	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
                     	<h3 class="site-desc"><?php bloginfo('description'); ?></h3>
-                	    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-                    </hgroup>	
-
+                    	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+                    </hgroup>
+					
 					<nav role="navigation" id="menu" class="site-nav">
 						<?php bones_main_nav(); ?>
 					</nav>
-
 				</div>
 
 			</header>

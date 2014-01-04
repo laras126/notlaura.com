@@ -25,7 +25,7 @@ The following is largely inspired by [Destroy Today on Github](https://github.co
 
 ###Process
 * First static HTML mockups, maybe move to PHP includes
-* Transform into WP theme based on [Bones](http://themble.com/bones)
+* Transform into WP theme based on [Bones](http://themble.com/bone)
 
 ---
 

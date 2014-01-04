@@ -144,16 +144,16 @@ h2, .h2 {
 h3, .h3 {
     //font-size: 1.125em;
     font-size: $h3;
-    margin-top: $h3;
-    margin-bottom: $h4;
+    margin-top: $h2;
+    margin-bottom: $sml;
 }
 
 h4, .h4 {
     // font-size: 1.1em;
     // font-weight: 700;
     font-size: $h4;
-    margin-top: $h4;
-    margin-bottom: $default;
+    margin-top: $h2;
+    margin-bottom: $sml;
 }
 
 h5, .h5 {
@@ -203,6 +203,7 @@ HEADER STYLES
 }
 
 .site-title {
+    text-transform: lowercase;
     margin: 0;
     font-size: $h3;
     font-weight: 500;
@@ -360,6 +361,13 @@ nav[role=navigation] li {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+// Custom type
+
+.thumb img {
+    width: 100%;
+    max-width: 100%;
+}
 
 #content {
     margin-top: 2.2em;

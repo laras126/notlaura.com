@@ -42,10 +42,7 @@ single-bookmarks.php
 
 								<footer class="article-footer">
 									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
-
 								</footer>
-
-								<?php comments_template(); ?>
 
 							</article>
 
@@ -53,23 +50,11 @@ single-bookmarks.php
 
 							<?php else : ?>
 
-									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the single-custom_type.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
+									<?php get_template_part('incl/post', 'notfound'); ?>
 
 							<?php endif; ?>
 
 						</div>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

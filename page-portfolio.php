@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Custom Page Example
+Template Name: Portfolio
 */
 ?>
 
@@ -10,32 +10,25 @@ Template Name: Custom Page Example
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="clearfix" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
-
 									<h1 class="page-title"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link() );
-									?></p>
-
-
 								</header>
 
 								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
+
+									<?php get_template_part('incl/portfolio', 'section'); ?>
+
 								</section>
 
 								<footer class="article-footer">
-									<p class="clearfix"><?php the_tags( '<span class="tags">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
 
 								</footer>
-
-								<?php comments_template(); ?>
 
 							</article>
 
@@ -56,8 +49,6 @@ Template Name: Custom Page Example
 							<?php endif; ?>
 
 						</div>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

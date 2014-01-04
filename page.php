@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="clearfix" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -22,14 +22,11 @@
 
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
-							</section>
+								</section>
 
 								<footer class="article-footer">
 									<?php the_tags( '<span class="tags">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?>
-
 								</footer>
-
-								<?php comments_template(); ?>
 
 							</article>
 
@@ -50,8 +47,6 @@
 							<?php endif; ?>
 
 						</div>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

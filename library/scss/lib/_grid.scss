@@ -12,9 +12,11 @@
 
 @include at-breakpoint($break 12) {
 
-  	.site-info { @include span-columns(4); }
+  	.site-info, .sidebar { @include span-columns(4); }
 
-	.site-nav { @include span-columns(8 omega); }
+	.site-nav, .with-sidebar { @include span-columns(8 omega); }
+
+	.thumb { @include isolate-grid(4); }
 	
 	// .subsection-img { @include span-columns(8); }
 

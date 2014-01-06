@@ -34,33 +34,33 @@ HEADER
 NAVIGATION STYLES
 *********************/
 
-
-
-
-// TODO: clean this up!
-
 a.menu-link {
    display: none;
 }
 
-.js nav[role=navigation] {
-    max-height: none;
-}
+.site-nav {
+    // padding: 0 $sml/2;
+    text-align: right; 
 
-nav[role=navigation] ul {
-    margin: 0 0 0 -0.25em;
-    border: 0;
-}
+    .js & {
+        max-height: none;
+    }
 
-nav[role=navigation]  li {
-    display: inline-block;
-    margin: 0 0.25em;
-}
+    ul {
+        margin: 0 0 0 -0.25em;
+        border: 0;
+    }
 
-nav[role=navigation] li a {
-    border: 0;
-}
+    li {
+        display: inline-block;
+        // margin: 0 0.25em;
+        line-height: 0;
 
+        &:first-child, a {
+            border: 0;
+        }
+    }
+}
 
 
 .nav {}
@@ -162,22 +162,7 @@ POSTS & CONTENT STYLES
 
 }
 
-.fig-large {
-    width: 120%;
-    margin-left: -8%;
-    
-    img {
-        //border: 2px solid $light-accent;        
-        width: 100%;
-    }
 
-    figcaption {
-        text-align: center;
-        font-size: $sml;
-        padding-bottom: $sml/2;
-        background-color: $light-accent;
-    }
-}
 
 /*********************
 FOOTER STYLES

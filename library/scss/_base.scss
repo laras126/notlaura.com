@@ -128,8 +128,8 @@ h1, .h1 {
     // font-size: 2.5em;
     // line-height: 1.333em;
     font-size: $h1;
-    margin-top: $h1;
-    margin-bottom: $h3;
+    margin-top: $h3;
+    margin-bottom: 0;
 }
 
 h2, .h2 {
@@ -173,13 +173,13 @@ TYPOGRAPHY
 *********************/
 
 blockquote {
-    font-size: $h3;
-    font-family: 'adelle-1', serif;
+    font-size: $h4;
     margin: 0;
+    //font-family: $serif;
     padding-left: 2rem;
     border-left: 1px solid $light-blue;
     margin-bottom: $h3;
-    @extend .italic;
+    font-style: italic;
 }
 
 p {
@@ -195,24 +195,40 @@ HEADER STYLES
     #logo {}
 
 
+.rotation {
+   @extend .dark-bkgd;
+   a:visited {
+    color: $white;
+   }
+}
+
+.site-header, .site-footer {
+    border-top: 5px solid $medium-accent;
+    border-bottom: 5px solid $light-accent;
+    padding: $sml 0;
+}
 
 .site-info {
     position: relative;
+    
     a {
-        text-decoration: none;
+        border-bottom: none;
     }
 }
 
 .site-title {
     text-transform: lowercase;
-    margin: 0;
+    // font-family: $sans-serif;
     font-size: $h3;
     font-weight: 500;
+    margin: 0;
 }
 
 .site-desc { 
     font-family: $sans-serif; 
     font-size: $sml;
+    text-transform: lowercase;
+    color: $light-accent;
     padding: 0;
     margin: 0;
 }
@@ -238,13 +254,13 @@ and more scalable.
 
     i {
         font-size: $h3;
-        line-height: $h1;    
+        line-height: $h2;    
         color: $light-blue;
     }
 
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 40%;
 }
 
 nav[role=navigation] {
@@ -280,25 +296,27 @@ nav[role=navigation] li {
         display: block;
         padding: 0.8rem;
         font-size: $sml;
-        border-bottom: 1px solid $grey;
+        border-bottom: $accent-border;
     }
 }
 
 ////////
 
 .site-nav {
-    padding-top: $sml;
+    //padding-top: $sml;
+    text-align: center;
+    // border-top: $accent-border;
     
     li {
 
         a {
-            
-            line-height: $h2;
-            vertical-align: bottom;
-            padding: $sml;    
+            //color: $white;
+            line-height: $h1;
+            //vertical-align: bottom;
+            padding: $sml;
+            text-align: center;    
             text-transform: uppercase;
             display: block;
-            text-decoration: none;
             
             /*
             remember this is for mobile ONLY, so there's no need
@@ -363,46 +381,6 @@ nav[role=navigation] li {
 POSTS & CONTENT STYLES
 *********************/
 
-// Custom type
-
-.thumb img {
-    width: 100%;
-    max-width: 100%;
-}
-
-
-// Home
-// TODO: reevaluate semantics with home fishing vs subsection
-.subsection-img {
-    
-    img {
-        border: 10px solid $dark-accent;
-        box-sizing: border-box;
-    }
-    
-
-}
-
-
-// About page
-
-.fig-large {
-    width: 120%;
-    margin-left: -10%;
-    background-color: $light-accent;
-    img {
-        //border: 2px solid $light-accent;        
-    }
-
-    figcaption {
-        text-align: center;
-        //line-height: $h4;
-        font-size: $sml;
-        padding-bottom: $sml/2;
-        // background-color: $light-accent;
-    }
-}
-
 #content {
     margin-top: 2.2em;
 }
@@ -416,7 +394,10 @@ POSTS & CONTENT STYLES
         } /* end .hentry */
 
         .single-title,
-        .page-title {}
+        .page-title {
+            font-size: $h2;
+            text-align: center;
+        }
 
         .single-title {}
 
@@ -437,13 +418,14 @@ POSTS & CONTENT STYLES
         /* post meta */
         .byline {
             color: #999;
-
+            font-size: $sml;
+            margin-bottom: $h2;
             time {}
         }
 
         /* entry content */
         .entry-content {
-
+            
             p {}
 
 
@@ -561,6 +543,89 @@ POSTS & CONTENT STYLES
         .size-medium {}
         .size-thumbnail {}
 
+
+
+
+// Misc
+
+.rotation {
+    // border-top: 5px solid $light-accent;
+    // border-bottom: 5px solid $light-accent;
+}
+
+// Custom type
+
+.thumb img {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+// Home
+
+.home {
+    .article-header {
+        text-align: center;
+    }
+    .entry-content {
+        text-align: center;
+    }
+}
+
+.subsection-img {
+    background-color: #fff;
+}
+
+.subsection-title {
+    font-size: $h3;
+}
+
+.subsection-desc {
+    font-size: $h4;
+}
+
+.option {
+    margin-top: $h1;
+    padding-top: $sml;
+    border-top: 1px dotted $white;            
+}
+
+
+
+// Fluid videos
+// http://www.bymichaellancaster.com/blog/fluid-iframe-and-images-without-javascript-plugins/
+.media-wrap {
+    position: relative;
+    padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto 2.2em;
+}
+
+.media-wrap {
+    iframe, object, embed {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// General
+
+.tags {
+    padding: $h3 0;
+    border-top: $accent-border;
+    border-bottom: $accent-border;
+    margin-top: $h1;
+    font-size: $sml;
+}
+
+.article-footer {
+    padding-bottom: $h3;
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -716,7 +781,7 @@ COMMENT STYLES
     /* vcard */
     .vcard {
         margin-left: 50px;
-
+        
         cite.fn {
             font-weight: 700;
             font-style: normal;
@@ -926,9 +991,14 @@ FOOTER STYLES
 }
 
 .site-footer {
-    border-top: 1px dotted $medium-accent;
-    margin-top: $h2;
-    padding-top: $h2;
+    
+    .wrap {
+     //   border-top: $accent-border;
+        padding-top: $h2;
+    }
+
+    //margin-top: $h2;
+    
     //padding-bottom: $h1;
    text-align: center;
 }

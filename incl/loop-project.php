@@ -4,7 +4,7 @@
 	$desc = get_post_meta( $post->ID, $prefix.'project_desc', true );
 	$client = get_post_meta( $post->ID, $prefix.'client_name', true );
 	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
-	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills used:</span> ', ', ' );
+	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills:</span> ', ', ' );
 	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '<span class="tags-title">Filed under:</span> ', ', ' );
 
 
@@ -19,7 +19,6 @@
 			<?php the_title('<h5 class="h5 thumb-title">', '</h5>'); ?>
 		</div>
 	</a>
-	<h4>A project</h4>
 	<figcaption class="thumb-meta">
 		<p class="thumb-meta-tags"><?php echo $categories ?></p>
 		<p class="thumb-meta-tags"><?php echo $skills ?></p>

@@ -25,8 +25,11 @@ HEADER
     margin: 0;
     font-size: $h2;
 }
-    
-    
+
+.site-info {
+    //text-align: center;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -110,6 +113,21 @@ nav[role=navigation] li a {
 POSTS & CONTENT STYLES
 *********************/
 
+// Home
+
+.subsection-title {
+    font-size: $h2;
+}
+
+.subsection-desc {
+    font-size: $h3;
+}
+
+
+.single-title, .page-title {
+    font-size: $h1;
+}
+
 /* entry content */
 .entry-content {
             
@@ -134,12 +152,43 @@ POSTS & CONTENT STYLES
             
 } /* end .entry-content */
 
+.subsection-img {
+    
+    img {
+    //    border: 10px solid $dark-accent;
+        box-sizing: border-box;
+    }
+    
+
+}
+
+.fig-large {
+    width: 120%;
+    margin-left: -8%;
+    
+    img {
+        //border: 2px solid $light-accent;        
+        width: 100%;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: $sml;
+        padding-bottom: $sml/2;
+        background-color: $light-accent;
+    }
+}
+
 /*********************
 FOOTER STYLES
 *********************/
     
 .site-footer {
     text-align: left;
+}
+
+.social {
+    float: left;
 }
 
 .copyright {

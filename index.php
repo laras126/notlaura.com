@@ -5,6 +5,11 @@
 				<div id="inner-content" class="wrap clearfix">
 
 						<div id="main" class="clearfix" role="main">
+														
+							<header class="article-header">
+								<h1 class="page-title">Blog</h1>
+							</header>
+
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -14,7 +19,7 @@
 
 									<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', '));
+										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', '));
 									?></p>
 
 								</header>
@@ -25,7 +30,7 @@
 
 								<footer class="article-footer">
 									<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
-
+									<?php edit_post_link(); ?>
 								</footer>
 
 								<?php // comments_template(); // uncomment if you want to use them ?>

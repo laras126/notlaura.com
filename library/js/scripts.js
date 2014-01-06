@@ -82,6 +82,11 @@ jQuery(document).ready(function($) {
 	});
 
 
+	// Wrap all media in a figure element 
+    // that is styled to make them fluid
+    var $media = $('iframe, object, embed');
+    $media.wrap( '<figure class="media-wrap"></figure>' );
+
 
 }); /* end of as page load scripts */
 

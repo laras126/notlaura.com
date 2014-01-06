@@ -18,7 +18,14 @@
 
 @import "base";
 
+
+// Break 1 happens in the grid styles only
+
 // NOTE: This MQ is kinda arbitrary. Based on site-nav size and the grid breakpoint
-@media only screen and (min-width: $break) {
+@media only screen and (min-width: $break2) {
 	@import "middle";	
+}
+
+@media only screen and (min-width: $break3) {
+	@import "large";	
 }

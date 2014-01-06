@@ -3,10 +3,9 @@
 // Container
 
 .wrap {
-	//@include susy-grid-background; 
-	@include container($total-columns, $break);
-	//padding: $h3;
-    max-width: 45em;
+	// @include susy-grid-background; 
+	@include container($total-columns, $break2);
+    max-width: 38em;
     margin: 0 auto;
 }
 
@@ -19,7 +18,7 @@
 	}
 }
 
-@include at-breakpoint($break 12) {
+@include at-breakpoint($break2 12) {
 
   	.site-info, .sidebar { @include span-columns(4); }
 
@@ -27,9 +26,9 @@
 
 	.thumb { @include isolate-grid(4); }
 	
-	.subsection-img { @include span-columns(8); }
+	//.subsection-img { @include span-columns(8); }
 
-	.subsection-txt { @include span-columns(4); }
+	//.subsection-txt { @include span-columns(4); }
 
 	.last {	@include omega; }
 
@@ -37,5 +36,6 @@
 		@include isolate-grid(3);
 	}
 }
+
 
 

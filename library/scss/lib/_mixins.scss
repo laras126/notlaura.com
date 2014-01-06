@@ -19,3 +19,11 @@ CLEARFIXIN'
 		background-color: darken($color, 40%);
 	}
 }
+
+.dark-bkgd {
+	background: $dark-accent;
+    color: $white;
+    a {
+        color: $light-accent;
+    }
+}

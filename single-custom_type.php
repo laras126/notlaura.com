@@ -1,16 +1,11 @@
 <?php
-/*
-This is the custom post type post template.
-If you edit the post type name, you've got
-to change the name of this template to
-reflect that name change.
-
-i.e. if your custom post type is called
-register_post_type( 'bookmarks',
-then your single template should be
-single-bookmarks.php
-
-*/
+	global $post;
+    $prefix = '_cmb_';
+	$desc = get_post_meta( $post->ID, $prefix.'project_desc', true );
+	$client = get_post_meta( $post->ID, $prefix.'client_name', true );
+	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
+	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills:</span> ', ', ' );
+	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '<span class="tags-title">Filed under:</span> ', ', ' );
 ?>
 
 <?php get_header(); ?>
@@ -19,29 +14,46 @@ single-bookmarks.php
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="eightcol first clearfix" role="main">
+						<div id="main" class="clearfix" role="main">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix single'); ?> role="article">
 
 								<header class="article-header">
 
 									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link(), get_the_term_list( $post->ID, 'custom_cat', ' ', ', ', '' ) );
-									?></p>
+									<p class="byline vcard"><?php echo $categories; ?></p>
 
 								</header>
 
 								<section class="entry-content clearfix">
 
-									<?php the_content(); ?>
+									<div class="clearfix project-content">									
+										<?php the_content(); ?>
+									</div>	
+									<p><?php echo $desc; ?></p>
+
+							
+									<?php if($link != '') { ?>
+										<p><a href="<?php echo $link; ?>" title="<?php the_title(); ?>" target="blank" class="dark-button">Project Link</a></p>
+									<?php } ?>		
+
 
 								</section>
 
 								<footer class="article-footer">
-									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Custom Tags:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+									<?php edit_post_link(); ?>
+									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Skills:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+
+									<nav class="prev-next clearfix">
+										<div class="prev">
+											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
+										</div>
+										<div class="next last">
+											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
+										</div>
+									</nav>
 								</footer>
 
 							</article>

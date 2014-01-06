@@ -130,7 +130,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-            
+    position: relative;  
     
     /* at this larger size, we can start to align images */
     .alignleft, img.alignleft { 
@@ -149,18 +149,14 @@ POSTS & CONTENT STYLES
         display: block; 
         clear: both; 
     }
+
+    .single-custom_type & {
+        img {
+            width: 100%;
+        }
+    }
             
 } /* end .entry-content */
-
-.subsection-img {
-    
-    img {
-    //    border: 10px solid $dark-accent;
-        box-sizing: border-box;
-    }
-    
-
-}
 
 
 

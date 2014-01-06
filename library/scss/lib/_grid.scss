@@ -5,7 +5,7 @@
 .wrap {
 	// @include susy-grid-background; 
 	@include container($total-columns, $break2);
-    max-width: 38em;
+    max-width: 43em;
     margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@
 
 	.site-nav, .with-sidebar { @include span-columns(8 omega); }
 
-	.thumb { @include isolate-grid(4); }
+	// .thumb { @include isolate-grid(4); }
 	
 	//.subsection-img { @include span-columns(8); }
 

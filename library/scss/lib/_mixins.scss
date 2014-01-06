@@ -13,17 +13,49 @@ CLEARFIXIN'
 
 // Mixins
 
-@mixin bubble($color) {
-	background-color: $color;
-	&.active {
-		background-color: darken($color, 40%);
-	}
-}
-
 .dark-bkgd {
 	background: $dark-accent;
     color: $white;
     a {
         color: $light-accent;
     }
+}
+
+
+@mixin button( $button-color, $text-color: $white ) {
+	background: $button-color;
+	border: none;
+	text-shadow: 0.08em 0.08em 0.91em #666;
+	border-width: 0.2em;
+	color: $text-color;
+	padding: 0.3em 0.5em;
+	margin-bottom: $h2;
+
+	&:hover,
+	&:focus {
+		background: darken( $button-color, 20% );
+		color: $text-color;
+	}
+
+	&:active {
+		background: darken( $button-color, 12% );
+		border-color: darken( $button-color, 15% );
+		color: $text-color;
+		-webkit-box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
+	 	box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
+	}
+
+	&[disabled],
+	&:disabled,
+	&.button-primary-disabled {
+		color: hsl( hue( $button-color ), 10%, 80% ) !important;
+		background: darken( $button-color, 8% ) !important;
+		border-color: darken( $button-color, 15% ) !important;
+		text-shadow: none !important;
+	}
+}
+
+
+.dark-button {
+	@include button($dark-blue);	
 }

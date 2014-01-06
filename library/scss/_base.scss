@@ -8,6 +8,10 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
 html {
     font-size: 62.5%;
 }
@@ -214,6 +218,7 @@ HEADER STYLES
     
     a {
         border-bottom: none;
+        color: $white;
     }
 }
 
@@ -422,10 +427,15 @@ POSTS & CONTENT STYLES
         .tag-slug {}        /* style by tag (i.e. tag-news) */
 
         /* post meta */
-        .byline {
+        .byline, .tags {
             color: #999;
             font-size: $sml;
             margin-bottom: $h2;
+            
+            .single & {
+                text-align: center;
+            }
+
             time {}
         }
 
@@ -525,6 +535,9 @@ POSTS & CONTENT STYLES
         } /* end .wp-caption */
 
         /* image gallery styles */
+        .gallery-icon img {
+            margin-bottom: 0;
+        }
         .gallery {
             
             a {
@@ -565,11 +578,35 @@ POSTS & CONTENT STYLES
 
 // Custom type
 
+.thumb-image {
+    position: relative;
+    margin-bottom: $sml;
+}
+
 .thumb img {
     width: 100%;
     max-width: 100%;
 }
 
+.thumb-title {
+    // @extend .line-clamp;
+    position: absolute;
+    border-top: $accent-border;
+    padding: $sml;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0;
+    background-color: $dark-accent;
+    color: $white;
+}
+
+.project-content {
+    margin-bottom: $h3;
+}
+
+.project-content img {
+    margin-bottom: 0;
+}
 
 // Home
 
@@ -646,8 +683,7 @@ POSTS & CONTENT STYLES
     padding: $h3 0;
     border-top: $accent-border;
     border-bottom: $accent-border;
-    margin-top: $h1;
-    font-size: $sml;
+    margin-top: $h2;
 }
 
 .article-footer {
@@ -656,6 +692,24 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
+
+.prev-next {
+    a {
+        border: 0;
+    }
+
+    i {
+        font-size: $h1
+    }
+}
+
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
 
 .pagination,
 .wp-prev-next {

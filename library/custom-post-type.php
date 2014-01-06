@@ -52,11 +52,6 @@ function custom_post_example() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	/* this adds your post categories to your custom post type */
-	register_taxonomy_for_object_type('category', 'custom_type');
-	/* this adds your post tags to your custom post type */
-	register_taxonomy_for_object_type('post_tag', 'custom_type');
-	
 } 
 
 	// adding the function to the Wordpress init
@@ -82,7 +77,6 @@ function custom_post_example() {
     			'update_item' => __( 'Update Project Type', 'bonestheme' ), /* update title for taxonomy */
     			'add_new_item' => __( 'Add New Project Type', 'bonestheme' ), /* add new title for taxonomy */
     			'new_item_name' => __( 'New Project Type', 'bonestheme' ) /* name title for taxonomy */
-    			
     		),
     		'show_ui' => true,
     		'query_var' => true,

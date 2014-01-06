@@ -6,8 +6,6 @@
 	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
 	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills:</span> ', ', ' );
 	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '<span class="tags-title">Filed under:</span> ', ', ' );
-
-
 ?>
 
 <figure <?php post_class('thumb'); ?> role="article">
@@ -16,12 +14,12 @@
 			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 				the_post_thumbnail('bones-thumb-600');
 			} ?> 
-			<?php the_title('<h5 class="h5 thumb-title">', '</h5>'); ?>
+			<?php the_title('<h5 class="line-clamp h5 thumb-title">', '</h5>'); ?>
 		</div>
 	</a>
 	<figcaption class="thumb-meta">
-		<p class="thumb-meta-tags"><?php echo $categories ?></p>
+		<!-- <p class="thumb-meta-tags"><?php echo $categories ?></p>
 		<p class="thumb-meta-tags"><?php echo $skills ?></p>
-		<?php edit_post_link('edit', '<p>', '</p>'); ?>
+		<?php edit_post_link('edit', '<p>', '</p>'); ?> -->
 	</figcaption>
 </figure>

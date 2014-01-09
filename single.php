@@ -24,7 +24,14 @@
 
 								<footer class="article-footer">
 									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-									<?php previous_post_link(); ?><?php next_post_link(); ?>
+									<nav class="prev-next clearfix">
+										<div class="prev">
+											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
+										</div>
+										<div class="next last">
+											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
+										</div>
+									</nav>
 								</footer>
 
 								<?php // comments_template(); ?>

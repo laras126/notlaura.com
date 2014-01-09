@@ -14,7 +14,7 @@ foreach($terms as $term) {
 	); ?>
 
 	<div class="subsection">
-		<h1><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></h1>
+		<h1 class="subsection-title"><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></h1>
 		<p><?php echo $term->description; ?></p>
 		
 		<div class="subsection-thumbs clearfix">

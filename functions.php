@@ -11,7 +11,11 @@ sidebars, comments, ect.
 /************* INCLUDE NEEDED FILES ***************/
 
 
-// Stuff specific not notlaura
+// Metabox library
+// https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+require_once( 'library/metabox/init.php' );
+
+// Stuff specific to notlaura
 require_once( 'library/notlaura.php' );
 
 /*

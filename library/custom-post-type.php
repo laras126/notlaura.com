@@ -105,11 +105,56 @@ function custom_post_example() {
     	)
     ); 
 
-	// Custom paging: Will need to figure this out once more projects are added
-	// function portfolio_posts_per_page( $query ) {  
- //        if ( $query->query_vars['post_type'] == 'custom_type' ) $query->query_vars['posts_per_page'] = 1;  
- //        return $query;  
- //    }  
- //    if ( !is_admin() ) add_filter( 'pre_get_posts', 'portfolio_posts_per_page' );  
+/************* METABOXES *****************/
 
+add_filter( 'cmb_meta_boxes', 'cmb_project_metaboxes' );
+
+function cmb_project_metaboxes( $meta_boxes ) {
+    $prefix = '_cmb_'; // Prefix for all fields
+    $meta_boxes[] = array(
+        'id' => 'project_metabox',
+        'title' => 'Project Details',
+        'pages' => array('custom_type'), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name'    => 'Project Description',
+                'desc'    => '',
+                'id'      => $prefix . 'project_desc',
+                'type'    => 'wysiwyg',
+                'options' => array( 'textarea_rows' => 5, ),
+            ),
+            array(
+                'name' => 'Link',
+                'desc' => '',
+                'id'   => $prefix . 'project_link',
+                'type' => 'text',
+            ),
+            array(
+                'name' => 'Client Name',
+                'desc' => '',
+                'id'   => $prefix . 'client_name',
+                'type' => 'text_medium',
+            ),
+            array(
+                'name'      => 'Skills Used:',
+                'id'        => $prefix . 'skills_used',
+                'type'      => 'taxonomy_multicheck',
+                'taxonomy'  => 'custom_tag',
+            ),
+        ),
+    );
+
+    return $meta_boxes;
+}
+
+add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+
+function be_initialize_cmb_meta_boxes() {
+    if ( !class_exists( 'cmb_Meta_Box' ) ) {
+        require_once( 'metabox/init.php' );
+    }
+}
 ?>

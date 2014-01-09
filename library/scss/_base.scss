@@ -8,9 +8,9 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+// *, *:before, *:after {
+//   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+//  }
 
 html {
     font-size: 62.5%;
@@ -272,7 +272,8 @@ and more scalable.
 
 .site-nav {
     text-align: center;
-    
+    margin-top: $sml;
+
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
@@ -298,7 +299,6 @@ and more scalable.
 
         &:first-child {
             border-top: $accent-border;        
-            margin-top: $sml;
         }
 
         a {
@@ -310,82 +310,15 @@ and more scalable.
             text-align: center;    
             text-transform: uppercase;
             display: block;
+
+            &:hover {
+                color: $white;
+            }
         }
     }
 
 }
 
-
-.site-nav {
-    //padding-top: $sml;
-
-    // border-top: $accent-border;
-    
-    li {
-
-        a {
-            //color: $white;
-            // line-height: $h1;
-            //vertical-align: bottom;
-            
-            
-            /*
-            remember this is for mobile ONLY, so there's no need
-            to even declare hover styles here, you can do it in
-            the style.scss file where it's relevant. We want to
-            keep this file as small as possible!
-            */
-            &:hover, &:focus {
-
-            }
-        }
-
-        &:first-child {}
-
-        &:last-child {}
-
-        /*
-        so you really have to rethink your dropdowns for mobile.
-        you don't want to have it expand too much because the
-        screen is so small. How you manage your menu should
-        depend on the project. Here's some great info on it:
-        http://www.alistapart.com/articles/organizing-mobile/
-        */
-        ul.sub-menu,
-        ul.children {
-
-            li {
-
-                a {
-                    padding-left: 30px;
-
-                    &:hover,
-                    &:focus {}
-
-                    &:link {}
-
-                }
-
-                &:first-child {}
-
-                &:last-child {}
-
-            }
-
-        }
-
-    } /* end .menu li */
-
-    /* highlight current page */
-    li.current-menu-item,
-    li.current_page_item,
-    li.current-page-ancestor {
-
-        a {}
-
-    }  /* end current highlighters */
-
-} /* end .nav */
 
 
 /*********************
@@ -393,7 +326,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-    margin-top: 2.2em;
+    margin-top: $sml;
 }
 
         .hentry {
@@ -441,7 +374,7 @@ POSTS & CONTENT STYLES
 
         /* entry content */
         .entry-content {
-            
+            margin-bottom: $h2;
             p {}
 
 
@@ -485,8 +418,14 @@ POSTS & CONTENT STYLES
                 margin-bottom: 1.5em;
             }
 
+
+            .blog & {
+                img {
+                    margin-bottom: $h2;
+                }
+            }
+
             img {
-                margin: 0 0 1.5em 0;
                 max-width: 100%;
                 height: auto;
             }
@@ -566,9 +505,6 @@ POSTS & CONTENT STYLES
         .size-medium {}
         .size-thumbnail {}
 
-
-
-
 // Misc
 
 .rotation {
@@ -580,7 +516,8 @@ POSTS & CONTENT STYLES
 
 .thumb-image {
     position: relative;
-    margin-bottom: $sml;
+    margin-bottom: $default;
+    border: 4px solid $light-accent;
 }
 
 .thumb img {
@@ -593,7 +530,7 @@ POSTS & CONTENT STYLES
     position: absolute;
     border-top: $accent-border;
     padding: $sml;
-    bottom: 0;
+    bottom: -$sml;
     width: 100%;
     margin-top: 0;
     background-color: $dark-accent;
@@ -604,9 +541,12 @@ POSTS & CONTENT STYLES
     margin-bottom: $h3;
 }
 
-.project-content img {
-    margin-bottom: 0;
+.project-content {
+    img, .media-wrap {
+        margin-bottom: 0;
+    }
 }
+
 
 // Home
 
@@ -619,23 +559,32 @@ POSTS & CONTENT STYLES
     }
 }
 
-.subsection-img {
-    background-color: #fff;
-}
+
+// Subsection styles reused in portfolio too
 
 .subsection-title {
+    margin: $h1 0 $h2;
+    padding-top: $sml;
+    border-top: 1px dotted $dark-accent;    
+    @extend .h5;
+    text-align: center;        
+}
+
+.subsection {
+    // background-color: #fff;
+    // border-top: 10px solid $light-accent;
+    // border-bottom: 10px solid $light-accent;
+    margin-bottom: $h2;
+}
+
+.subsection-tagline {
     font-size: $h3;
 }
 
-.subsection-desc {
+.summary {
     font-size: $h4;
 }
 
-.option {
-    margin-top: $h1;
-    padding-top: $sml;
-    border-top: 1px dotted $white;            
-}
 
 
 
@@ -663,16 +612,19 @@ POSTS & CONTENT STYLES
 .fig-large {
     width: 116%;
     margin-left: -8%;
+    margin-top: $h3;
+    margin-bottom: $h3;
     
     img {
         //border: 2px solid $light-accent;        
         width: 100%;
+        display: block;
     }
 
     figcaption {
         text-align: center;
         font-size: $sml;
-        padding-bottom: $sml/2;
+        padding: $sml/2;
         background-color: $light-accent;
     }
 }
@@ -689,6 +641,7 @@ POSTS & CONTENT STYLES
 .article-footer {
     padding-bottom: $h3;
 }
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/

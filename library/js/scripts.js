@@ -88,6 +88,11 @@ jQuery(document).ready(function($) {
     $media.wrap( '<figure class="media-wrap"></figure>' );
 
 
+
+    // Coupla plugins
+    $('.gallery-icon a').vanillabox();
+
+
 }); /* end of as page load scripts */
 
 

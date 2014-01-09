@@ -58,4 +58,12 @@ CLEARFIXIN'
 
 .dark-button {
 	@include button($dark-blue);	
+	// TODO: is this necessary? Sheesh.
+	&:hover, 
+	&:focus,
+	&:visited, 
+	&:visited:hover, 
+	&:visited:focus {
+		color: $white;
+	}
 }

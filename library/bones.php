@@ -142,8 +142,18 @@ function bones_scripts_and_styles() {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		// Get jQuery with Google
+		if( !is_admin()){
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"), false, '1.10.1', true);
+			wp_enqueue_script('jquery');
+		}
+
+
 		//adding scripts file in the footer
+		wp_register_script( 'notlaura-plugins', get_stylesheet_directory_uri() . '/library/js/plugins.js', array( 'jquery' ), '', true );
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+		
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'notlaura-typekit' );
@@ -158,7 +168,7 @@ function bones_scripts_and_styles() {
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
-		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'notlaura-plugins' );
 		wp_enqueue_script( 'bones-js' );
 
 	}

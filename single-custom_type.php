@@ -5,7 +5,7 @@
 	$client = get_post_meta( $post->ID, $prefix.'client_name', true );
 	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
 	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills:</span> ', ', ' );
-	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '<span class="tags-title">Filed under:</span> ', ', ' );
+	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '', ', ' );
 ?>
 
 <?php get_header(); ?>
@@ -20,18 +20,20 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix single'); ?> role="article">
 
-								<header class="article-header">
-
-									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php echo $categories; ?></p>
-
-								</header>
-
 								<section class="entry-content clearfix">
 
-									<div class="clearfix project-content">									
+									<h1 class="single-title"><?php the_title(); ?></h1>
+
+									<p class="h5 text-center"><?php echo $categories; ?></p>
+																		
+									<div class="clearfix">									
 										<?php the_content(); ?>
-									</div>	
+									</div>
+
+									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+
+									
+
 									<p><?php echo $desc; ?></p>
 
 							
@@ -44,8 +46,6 @@
 
 								<footer class="article-footer">
 									<?php edit_post_link(); ?>
-									<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Skills:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
-
 									<nav class="prev-next clearfix">
 										<div class="prev">
 											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 

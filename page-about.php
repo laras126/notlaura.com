@@ -21,17 +21,19 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                                 <header class="article-header zinger">
                                     <h1 class="page-title">My name is <span class="special">Lara</span>.</h1>
-                                    <p>...not <em>Laura</em>, though that's a nice name too.</p>
-                                    <p>I am a freelance web designer and educator based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd love more to make it <em>with</em> you.</p>
                                 </header>
 
-                                
                                 <figure class="fig-large">
                                     <img src="<?php echo $img_path; ?>site/letters.jpg" alt="Wonderful photo of me" />
                                     <figcaption>See that? No "U".</figcaption>
                                 </figure>
                                 
                                 <section class="entry-content">
+                                    <div class="summary">
+                                        <p>...not <em>Laura</em>, though that's a nice name too.</p>
+                                        <p>I am a freelance web designer and educator based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd love more to make it <em>with</em> you.</p>
+                                    </div>
+                                    
                                     <h3>What can I do?</h3>
 
                                     <p>I wear many hats. I have worked extensively in custom WordPress development and HTML/CSS/jQuery development for web applications. I value semantic code and do my best to utlilize upcoming web technologies while continuing to support web standards.</p>

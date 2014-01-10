@@ -24,7 +24,11 @@
 
 .special {
 	color: $dark-accent;	
-	//border-bottom: 3px solid $white;
+	
+    .callout-quote & {
+        font-family: $sans-serif;
+        color: $medium-accent;
+    }
 }
 
 .hlite-ul {

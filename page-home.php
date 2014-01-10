@@ -9,15 +9,16 @@
                 
                     <header class="article-header">
                         <div class="wrap">
-                            <h1 class="page-title">I teach <strike class="special">fishing</strike>.</h2>
-                            <p>Oh, I mean web design and front-end dev.</p>
-                            <img class="subsection-img" src="<?php echo $img_path ?>/site/svg/me-fish.svg">
-                            <p>You know that expression:</p>
-                            <blockquote class="callout-quote">Give a man a fish and feed him for a day, teach a man to fish and feed him for a lifetime.<br />
+                            <h1 class="page-title">I teach <span class="special">fishing</span>.</h2>
+                            <p>Uhh..what?</p>
+                            <img id="meFish" class="header-img" src="<?php echo $img_path ?>/site/svg/me-fish.svg">
+                            <p class="subsection-tagline">You know that expression:</p>
+                            <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             <!-- <span class="bq-source">Chinese Proverb (<a href="http://www.quotationspage.com/quote/2279.html">apparently</a>)</span> -->
                             </blockquote>
-                            <p class="callout">Like that, except WordPress, HTML, CSS, and whatnot.</p>
-                            <p>Let's break it down:</p>
+
+                            <p class="subsection-tagline">Like that, except <strong>front-end dev</strong>, <strong>WordPress</strong>, and whatnot. Let me break it down:</p>
+                            <!-- <p class="h2 subsection-tagline">:</p> -->
                         </div>
                     </header>
                     
@@ -26,23 +27,23 @@
                             <div class="wrap clearfix">
                                 <div class="subsection wrap">
                                     <div class="subsection-title"><span>Option 1</span></div>
-                                    <img src="<?php echo $img_path; ?>site/svg/you-fish.svg">
+                                    <img id="youFish" src="<?php echo $img_path; ?>site/svg/you-fish.svg">
                                     <h2 class="subsection-tagline">I teach you to fish</h2>
-                                    <p class="summary">What about the web do you want to learn? Let's sit down 1-on-1 and I'll teach it to you. We move at your pace and cover what you want to know.</p>
+                                    <p class="summary">Want to learn the ins and outs of WordPress? Looking to sharpen your CSS chops? Let's sit down 1-on-1 and I'll teach you. We move at your pace and cover what you want to know.</p>
                                 </div>
 
                                 <div class="subsection">
                                     <div class="subsection-title"><span>Option 2</span></div>
-                                    <img src="<?php echo $img_path; ?>site/svg/deliver-fish.svg">
+                                    <img id="deliverFish" src="<?php echo $img_path; ?>site/svg/deliver-fish.svg">
                                     <h2 class="subsection-tagline">I fish for you</h2>
-                                    <p class="summary">Oh yeah, I make websites! Custom WordPress themes are my specialty, but I wear many hats. Take a look at my portfolio for some examples.</p>
+                                    <p class="summary">Oh yeah, I make websites! Home-baked WordPress themes and front-end are my speciality, but I wear many hats. See my portfolio for more.</p>
                                 </div>
 
                                 <div class="subsection">
                                     <p class="subsection-title"><span>Option 3</span></p>
-                                    <img class="subsection-img" src="<?php echo $img_path; ?>site/svg/we-fish.svg">
+                                    <img id="weFish" src="<?php echo $img_path; ?>site/svg/we-fish.svg">
                                     <h2 class="subsection-tagline">We fish together</h2>
-                                    <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together.</p> 
+                                    <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together in whatever way works best for you, whether it be private lessons or a more hands-off, directional role.</p> 
                                 </div>
                             </div>
                         <!-- </div> -->

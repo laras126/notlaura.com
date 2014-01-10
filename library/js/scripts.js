@@ -65,9 +65,6 @@ jQuery(document).ready(function($) {
 	
 	}
 	
-	
-	// add all your scripts here
-	
  
 	// Brad Frost toggle menu
 	// 
@@ -92,6 +89,16 @@ jQuery(document).ready(function($) {
     // Coupla plugins
     $('.gallery-icon a').vanillabox();
 
+
+    // SVG fallback
+    // http://css-tricks.com/using-svg/
+
+    if (!Modernizr.svg) {
+    	$("#weFish").attr("src", "site/me-fish.png");
+		$("#youFish").attr("src", "site/you-fish.png");
+		$("#deliverFish").attr("src", "site/deliver-fish.png");
+		$("#weFish").attr("src", "site/we-fish.png");
+	}
 
 }); /* end of as page load scripts */
 

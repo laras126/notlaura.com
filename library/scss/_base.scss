@@ -180,7 +180,7 @@ TYPOGRAPHY
 blockquote {
     font-size: $h4;
     margin: 0;
-    //font-family: $serif;
+    font-family: $serif;
     padding-left: 2rem;
     border-left: 1px solid $light-blue;
     margin-bottom: $h3;
@@ -559,6 +559,23 @@ POSTS & CONTENT STYLES
     }
 }
 
+.header-img {
+    margin-bottom: $h1;
+}
+
+.callout-quote {
+    font-size: $h2;
+    text-align: left;
+    // color: $dark-accent;
+    margin: $h1 0; 
+}
+
+.frame {
+    border: 10px solid $dark-accent;
+    background-color: $medium-accent;
+    color: $white;
+}
+
 
 // Subsection styles reused in portfolio too
 
@@ -571,9 +588,6 @@ POSTS & CONTENT STYLES
 }
 
 .subsection {
-    // background-color: #fff;
-    // border-top: 10px solid $light-accent;
-    // border-bottom: 10px solid $light-accent;
     margin-bottom: $h2;
 }
 

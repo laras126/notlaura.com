@@ -22,30 +22,12 @@
 
 								<section class="entry-content clearfix">
 
-									<h1 class="single-title"><?php the_title(); ?></h1>
-
-									<p class="h5 text-center"><?php echo $categories; ?></p>
-																		
-									<div class="clearfix">									
-										<?php the_content(); ?>
-									</div>
-
-									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
-
+									
 									
 
-									<p><?php echo $desc; ?></p>
-
-							
-									<?php if($link != '') { ?>
-										<p><a href="<?php echo $link; ?>" title="<?php the_title(); ?>" target="blank" class="dark-button">Project Link</a></p>
-									<?php } ?>		
-
-
-								</section>
-
-								<footer class="article-footer">
-									<?php edit_post_link(); ?>
+									<p class="h5 text-center"><?php echo $categories; ?></p>
+									<h1 class="single-title"><?php the_title(); ?></h1>
+									
 									<nav class="prev-next clearfix">
 										<div class="prev">
 											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
@@ -53,7 +35,26 @@
 										<div class="next last">
 											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
 										</div>
-									</nav>
+									</nav>				
+									
+									<div class="clearfix">									
+										<?php the_content(); ?>
+									</div>
+
+									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+
+									<p><?php echo $desc; ?></p>
+
+							
+									<?php if($link != '') { ?>
+										<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" target="blank" class="dark-button">Project Link</a></p>
+									<?php } ?>		
+
+
+								</section>
+
+								<footer class="article-footer">
+									<?php edit_post_link(); ?>
 								</footer>
 
 							</article>

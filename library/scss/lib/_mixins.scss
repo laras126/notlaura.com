@@ -18,6 +18,9 @@ CLEARFIXIN'
     color: $white;
     a {
         color: $light-accent;
+        &:hover {
+        	color: $white;
+        }
     }
 }
 
@@ -29,7 +32,8 @@ CLEARFIXIN'
 	border-width: 0.2em;
 	color: $text-color;
 	padding: 0.3em 0.5em;
-	margin-bottom: $h2;
+	margin: $h3 0;
+	display: inline-block;
 
 	&:hover,
 	&:focus {

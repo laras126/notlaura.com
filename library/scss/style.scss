@@ -23,6 +23,13 @@
 // Break 1 happens in the grid styles only
 
 // NOTE: This MQ is kinda arbitrary. Based on site-nav size and the grid breakpoint
+
+@media only screen and (min-width: $break) {	
+	.single-title, .page-title, .single .article-header .h2, .single .article-header .summary {
+	    font-size: $h1;
+	}
+}
+
 @media only screen and (min-width: $break2) {
 	@import "middle";	
 }

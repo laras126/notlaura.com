@@ -13,47 +13,34 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+							        
+							        <?php if(!get_post_format()) {
+							            get_template_part('incl/format', 'standard'); 
+							        } else {
+							            get_template_part('incl/format', get_post_format());
+							        } ?>
+							        
+							        <footer class="article-footer">
+										<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?></p>
+										<?php edit_post_link(); ?>
+									</footer>
 								
-								<header class="article-header">
-									
-									<?php 
-									if( has_post_format( 'link' ) ) {
-										get_template_part('incl/format', 'link');
-									} elseif( has_post_format( 'image' ) ) {
-										get_template_part('incl/format', 'image');
-									} elseif( has_post_format( 'video' ) ) {
-										get_template_part('incl/format', 'video');
-									} else {
-										get_template_part('incl/format', 'standard');
-									} ?>
+								</article>
 
-									<p class="byline vcard"><?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', '));
-									?></p>
-								</header>
-
-								<section class="entry-content clearfix">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer">
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?></p>
-									<?php edit_post_link(); ?>
-								</footer>
-							</article>
-
+								
 							<?php endwhile; ?>
 
-									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-											<?php bones_page_navi(); ?>
-									<?php } else { ?>
-											<nav class="wp-prev-next">
-													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-													</ul>
-											</nav>
-									<?php } ?>
+								<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
+										<?php bones_page_navi(); ?>
+								<?php } else { ?>
+										<nav class="wp-prev-next">
+												<ul class="clearfix">
+													<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
+													<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+												</ul>
+										</nav>
+								<?php } ?>
 
 							<?php else : ?>
 

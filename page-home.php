@@ -16,8 +16,8 @@
                             <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             </blockquote>
 
-                            <p class="subsection-tagline">Like that, except <strong>front-end dev</strong>, <strong>WordPress</strong>, and whatnot. Let me break it down:</p>
-                            <!-- <p class="h2 subsection-tagline">:</p> -->
+                            <p class="subsection-tagline">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, and whatnot.</p>
+                            <p class="subsection-tagline"> Let me break it down:</p>
                         </div>
                     </header>
                     

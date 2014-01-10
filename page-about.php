@@ -37,7 +37,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                                 <p>Lots!</p>
 
-                                <p>I work extensively in custom WordPress development and HTML5/CSS3/jQuery development for web applications. I believe in the importance of content, semantic code, and the mobile web, and do my best to utlilize upcoming web technologies. I try hard to stay up-to-date with <a href="http://notlaura.com/2013-web-design-shout-outs/" target="blank">the latest and greatest</a>.</p>
+                                <p>I work extensively in custom WordPress development and HTML5/CSS3/jQuery development for web applications. I believe in the importance of content, semantic code, the mobile web, and do my best to utlilize upcoming web technologies. I try hard to stay up-to-date with <a href="http://notlaura.com/2013-web-design-shout-outs/" target="blank">the latest and greatest</a>.</p>
 
                                 <p>In addition to all things web, I work in illustration, graphic design and branding, and iOS UI/UX design. Take a look at my portfolio to see more.</p>
 

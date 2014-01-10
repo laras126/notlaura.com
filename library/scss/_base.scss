@@ -197,6 +197,7 @@ p {
 HEADER STYLES
 *********************/
 
+
 .header {}
 
     #logo {}
@@ -207,6 +208,10 @@ HEADER STYLES
    a:visited {
     color: $white;
    }
+}
+
+.site-header {
+    padding-bottom: 0;
 }
 
 .site-header, .site-footer {
@@ -339,8 +344,10 @@ POSTS & CONTENT STYLES
 
         } /* end .hentry */
 
+
+        // TODO: add a class/conditional instead of specifying
         .single-title,
-        .page-title {
+        .page-title, .single .article-header .h2 {
             font-size: $h2;
             text-align: center;
         }
@@ -433,10 +440,6 @@ POSTS & CONTENT STYLES
             
             .fig-large img {
                 margin-bottom: 0;
-            }
-
-            .article-header .fig-large {
-                margin-top: $h2;
             }
 
             video, object {
@@ -542,8 +545,14 @@ POSTS & CONTENT STYLES
     color: $white;
 }
 
+// ABout
 
-// Subsection styles reused in portfolio too
+.page-about .fig-large {
+    margin-top: $h2;
+}
+
+
+// Subsection styles reused thorughout
 
 .subsection-title {
     margin: $h1 0 $h2;

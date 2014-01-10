@@ -1,4 +1,10 @@
-<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-	<span class="format-type"><i class="fa fa-camera"></i>Image: </span> 
-	<?php the_title(); ?>
-</a></h1>
+<?php 
+	$format = "Image"; 
+	$icon = 'fa-camera';
+	
+	include('formats-header.php');
+?>
+
+<section class="entry-content clearfix">
+    	<?php the_content(); ?>
+</section> <!-- end article section -->

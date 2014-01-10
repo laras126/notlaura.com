@@ -1,4 +1,13 @@
-<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-	<span class="format-type"><i class="fa fa-play-button-alt"></i>Video: </span> 
-	<?php the_title(); ?>
-</a></h1>
+
+<?php 
+$format = "Video"; 
+$icon = "fa-youtube-play";
+
+include('formats-header.php'); ?>
+
+<section class="entry-content clearfix">
+	<figure class="media-wrap">
+		<?php echo get_post_meta($post->ID, '_format_video_embed',true) ?>
+	</figure>
+    <?php the_content(); ?>
+</section> <!-- end article section -->

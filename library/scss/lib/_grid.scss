@@ -36,6 +36,20 @@
 	.list {
 		@include isolate-grid(3);
 	}
+
+	.nav-title-container {
+		.prev {
+			@include span-columns(1);
+		}
+		
+		.title-container {
+			@include span-columns(10);	
+		}
+
+		.next {
+			@include span-columns(1 omega);
+		}
+	}
 }
 
 

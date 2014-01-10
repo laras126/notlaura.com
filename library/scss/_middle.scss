@@ -80,42 +80,6 @@ a.menu-link {
 }
 
 
-.nav {}
-
-    /* .menu is clearfixed inside mixins.scss */
-    .menu {
-        ul {
-            li {
-                a {
-                    
-                    &:hover, &:focus {
-                     
-                    }
-                }
-                
-                &:first-child {}
-                &:last-child {}
-                
-                /*
-                plan your menus and drop-downs wisely.
-                */
-                ul.sub-menu,
-                ul.children {
-                    li {
-                        a {
-                            &:hover,
-                            &:focus {}
-                            &:link {}
-                        }
-                        &:first-child {}
-                        &:last-child {}
-                    }
-                }
-            } /* end .menu ul li */
-            
-            
-        } /* end .menu ul */
-    } /* end .menu */
 
 /*********************
 POSTS & CONTENT STYLES
@@ -136,12 +100,23 @@ POSTS & CONTENT STYLES
     font-size: $h1;
 }
 
+// Page nav
+.prev-next {
+    i {
+        font-size: $h1;
+    }
+}
+
 
 
 /* entry content */
 .entry-content {
     position: relative;  
     
+    ul, ol {
+        list-style-position: outside;
+    }
+
     /* at this larger size, we can start to align images */
     .alignleft, img.alignleft { 
         margin-right: 1.5em; 
@@ -168,7 +143,14 @@ POSTS & CONTENT STYLES
             
 } /* end .entry-content */
 
-
+.thumb-image {
+    &:hover {
+        border-color: $medium-accent;
+    }
+    &:active {
+        border-color: $dark-accent;
+    }
+}
 
 /*********************
 FOOTER STYLES

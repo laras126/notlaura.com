@@ -20,27 +20,27 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix single'); ?> role="article">
 
-								<section class="entry-content clearfix">
-
-									
-									
-
+								<header class="article-header">	
 									<p class="h5 text-center"><?php echo $categories; ?></p>
-									<h1 class="single-title"><?php the_title(); ?></h1>
 									
-									<nav class="prev-next clearfix">
-										<div class="prev">
+									<div class="clearfix nav-title-container">
+										<div class="prev h1">
 											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
 										</div>
-										<div class="next last">
+										<div class="title-container">
+											<h1 class="single-title"><?php the_title(); ?></h1>
+										</div>
+										<div class="h1 next">
 											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
 										</div>
-									</nav>				
-									
-									<div class="clearfix">									
-										<?php the_content(); ?>
 									</div>
 
+								</header>
+
+								<section class="entry-content clearfix">	
+															
+									<?php the_content(); ?>
+									
 									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
 
 									<p><?php echo $desc; ?></p>

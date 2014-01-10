@@ -31,21 +31,26 @@
     }
 }
 
-.hlite-ul {
-	//border-bottom: 3px solid $light-blue;
+.special-dark {
+    color: $black;  
 }
 
-.primary {
-    background: $white;
-    //@include border-radius(0.5rem);
-}
+.fig-large {
+    width: 116%;
+    margin-left: -8%;
+    // margin-top: $h3;
+    // margin-bottom: $h3;
+    
+    img {
+        //border: 2px solid $light-accent;        
+        width: 100%;
+        display: block;
+    }
 
-.secondary {
-    background: $light-blue;
-    color: $white;
+    figcaption {
+        text-align: center;
+        font-size: $sml;
+        padding: $sml/2;
+        background-color: $light-accent;
+    }
 }
-
-.tertiary {
-    background: $white;
-}
-

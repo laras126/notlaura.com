@@ -39,6 +39,7 @@ http://sachagreif.com/sass-color-variables/
 
 $main-font-clr: 	$black;
 
+$vlight-accent: 	#f4f7f9;
 $light-accent: 		darken($white, 10%);
 $medium-accent: 	$light-blue;
 $dark-accent: 		$dark-blue;
@@ -64,7 +65,7 @@ $h4:  				$default;
 $h5:  				$sml;
 
 $sans-serif:        "museo-sans-1";
-$serif:             "adelle-1";
+$serif:             "museo-slab-1";
 
 em {
 	font-style: italic;

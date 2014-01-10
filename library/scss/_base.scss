@@ -23,11 +23,13 @@ body {
     font-weight: 100;
     line-height: $line-height-base;
     color: $main-font-clr;
-    overflow-x: hidden;
+    // TODO: get rid of that important
+    overflow-x: hidden !important;
 }
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 /********************
@@ -382,8 +384,15 @@ POSTS & CONTENT STYLES
 
             ul, ol {
                 list-style-position: inside;
-                margin-top: $default;
-                li {}
+                margin-top: $sml;
+                margin-bottom: $sml;
+
+                li {
+                    margin-bottom: $sml;                    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
 
             }
 
@@ -418,27 +427,17 @@ POSTS & CONTENT STYLES
                 margin-bottom: 1.5em;
             }
 
-
-            .blog & {
-                img {
-                    margin-bottom: $h2;
-                }
+            img, .fig-large {
+                margin-bottom: $h2;
+            }
+            
+            .fig-large img {
+                margin-bottom: 0;
             }
 
-            img {
-                max-width: 100%;
-                height: auto;
+            .article-header .fig-large {
+                margin-top: $h2;
             }
-
-            /*
-            image alignment on a screen this size may be
-            a bit difficult. It's set to start aligning
-            and floating images at the next breakpoint,
-            but it's up to you. Feel free to change it up.
-            */
-            .alignleft, img.alignleft {}
-            .alignright, img.alignright {}
-            .aligncenter, img.aligncenter {}
 
             video, object {
                 max-width: 100%;
@@ -473,43 +472,10 @@ POSTS & CONTENT STYLES
 
         } /* end .wp-caption */
 
-        /* image gallery styles */
-        .gallery-icon img {
-            margin-bottom: 0;
-        }
-        .gallery {
-            
-            a {
-                border: none;
-            }
+// Gallery styles
 
-            dl {
-
-                a {}
-
-                img {}
-
-            }
-
-            dt {}
-
-            dd {}
-
-        } /* end .gallery */
-
-        /* gallery caption styles */
-        .gallery-caption {}
-
-        .size-full {}
-        .size-large {}
-        .size-medium {}
-        .size-thumbnail {}
-
-// Misc
-
-.rotation {
-    // border-top: 5px solid $light-accent;
-    // border-bottom: 5px solid $light-accent;
+.gallery-icon img {
+    margin-bottom: 0;
 }
 
 // Custom type
@@ -597,6 +563,7 @@ POSTS & CONTENT STYLES
 
 .summary {
     font-size: $h4;
+    font-family: $sans-serif;
 }
 
 
@@ -623,25 +590,6 @@ POSTS & CONTENT STYLES
     }
 }
 
-.fig-large {
-    width: 116%;
-    margin-left: -8%;
-    margin-top: $h3;
-    margin-bottom: $h3;
-    
-    img {
-        //border: 2px solid $light-accent;        
-        width: 100%;
-        display: block;
-    }
-
-    figcaption {
-        text-align: center;
-        font-size: $sml;
-        padding: $sml/2;
-        background-color: $light-accent;
-    }
-}
 
 // General
 
@@ -656,6 +604,20 @@ POSTS & CONTENT STYLES
     padding-bottom: $h3;
 }
 
+// Post formats
+
+.format-type {
+    @extend .special-dark;
+    text-transform: uppercase;
+
+    .fa {
+        margin-right: $sml;
+    }
+}
+
+
+
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -666,7 +628,7 @@ PAGE NAVI STYLES
     }
 
     i {
-        font-size: $h1
+        font-size: $h2
     }
 }
 

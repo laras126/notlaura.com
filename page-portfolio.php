@@ -18,6 +18,7 @@ Template Name: Portfolio
 
 								<header class="article-header">
 									<h1 class="page-title"><?php the_title(); ?></h1>
+									<p class="text-center">Oh, wow! Look at all these nice things I've made.</p>
 								</header>
 
 								<section class="entry-content clearfix" itemprop="articleBody">

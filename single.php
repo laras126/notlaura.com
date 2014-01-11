@@ -17,18 +17,21 @@
 						          } ?>
 						
 								<footer class="article-footer">
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+									
 									<nav class="prev-next clearfix">
 										<div class="prev">
 											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
 										</div>
-										<div class="next last">
+										<div class="pv-middle">
+											<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+										</div>
+										<div class="next">
 											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
 										</div>
 									</nav>
-								</footer>
 
-								<?php // comments_template(); ?>
+								</footer>
+								<?php edit_post_link(); ?>
 
 							</article>
 
@@ -37,15 +40,15 @@
 						<?php else : ?>
 
 							<article id="post-not-found" class="hentry clearfix">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-									</footer>
+								<header class="article-header">
+									<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+								</header>
+								<section class="entry-content">
+									<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+								</section>
+								<footer class="article-footer">
+										<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
+								</footer>
 							</article>
 
 						<?php endif; ?>

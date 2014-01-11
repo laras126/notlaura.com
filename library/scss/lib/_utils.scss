@@ -38,11 +38,8 @@
 .fig-large {
     width: 116%;
     margin-left: -8%;
-    // margin-top: $h3;
-    // margin-bottom: $h3;
     
     img {
-        //border: 2px solid $light-accent;        
         width: 100%;
         display: block;
     }
@@ -51,6 +48,6 @@
         text-align: center;
         font-size: $sml;
         padding: $sml/2;
-        background-color: $light-accent;
+        background-color: $vlight-accent;
     }
 }

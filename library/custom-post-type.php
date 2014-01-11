@@ -16,7 +16,7 @@ URL: http://themble.com/bones/
 
 
 // let's create the function for the custom type
-function custom_post_example() { 
+function project_post_type() { 
 	// creating (registering) the custom type 
 	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
@@ -55,7 +55,7 @@ function custom_post_example() {
 } 
 
 	// adding the function to the Wordpress init
-	add_action( 'init', 'custom_post_example');
+	add_action( 'init', 'project_post_type');
 	
 	/*
 	for more information on taxonomies, go here:
@@ -104,6 +104,7 @@ function custom_post_example() {
     		'query_var' => true,
     	)
     ); 
+
 
 /************* METABOXES *****************/
 

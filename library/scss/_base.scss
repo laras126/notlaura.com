@@ -8,9 +8,6 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 
-// *, *:before, *:after {
-//   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-//  }
 
 html {
     font-size: 62.5%;
@@ -23,8 +20,6 @@ body {
     font-weight: 100;
     line-height: $line-height-base;
     color: $main-font-clr;
-    // TODO: get rid of that important
-    overflow-x: hidden !important;
 }
 
 img {
@@ -32,54 +27,17 @@ img {
     height: auto;
 }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-    .date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-    .search-results {}              /* search result page */
-    .search-no-results {}           /* no results search page */
-    .search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-    .postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-    .single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-    .attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-    .attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-    .author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-    .author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-    .category-1 {}                  /* individual category page (i.e. body.category-6) */
-    .category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-    .tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-    .tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-    .page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-    .page-paged-1 {}                /* replace the number to the corresponding page number */
-    .page-parent {}                 /* parent page template */
-    .page-child {}                  /* child page template */
-    .parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-    .paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+hr {
+    border: 0;
+    border-top: 1px dotted $dark-accent;
+}
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-    // width: 96%;
-    // margin: 0 auto;
+#container {
+    overflow-x: hidden;
 }
 
 /*********************
@@ -119,7 +77,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-family: $serif;
     text-rendering: optimizelegibility;
-    font-weight: 400;
+    font-weight: 300;
     /*
     if you're going to use webfonts, be sure to check your weights
     http://css-tricks.com/watch-your-font-weight/
@@ -132,47 +90,37 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-    // font-size: 2.5em;
-    // line-height: 1.333em;
     font-size: $h1;
     margin-top: $h3;
     margin-bottom: 0;
 }
 
 h2, .h2 {
-    // font-size: 1.75em;
-    // line-height: 1.4em;
-    // margin-bottom: 0.375em;
     font-size: $h2;
     margin-top: $h2;
     margin-bottom: $sml;
 }
 
 h3, .h3 {
-    //font-size: 1.125em;
     font-size: $h3;
     margin-top: $h2;
     margin-bottom: $sml;
 }
 
 h4, .h4 {
-    // font-size: 1.1em;
-    // font-weight: 700;
     font-size: $h4;
     margin-top: $h2;
     margin-bottom: $sml;
 }
 
 h5, .h5 {
-    // font-size: 0.846em;
-    // line-height: 2.09em;
     margin: $h3 0 $sml;
     text-transform: uppercase;
     font-family: $sans-serif;
     letter-spacing: 2px;
     font-size: $sml;
-    //margin-top: $h2;
 }
+
 
 
 /*********************
@@ -192,6 +140,8 @@ blockquote {
 p {
     margin-bottom: $sml;
 }
+
+
 
 /*********************
 HEADER STYLES
@@ -231,7 +181,6 @@ HEADER STYLES
 
 .site-title {
     text-transform: lowercase;
-    // font-family: $sans-serif;
     font-size: $h3;
     font-weight: 500;
     margin: 0;
@@ -260,33 +209,28 @@ and more scalable.
 
 
 
-///// Toggle menu, 
-// TODO: go through this
+// Ze Toggle menu
 
 .menu-link {
 
     i {
-        font-size: $h3;
+        font-size: $h2;
         line-height: $h2;    
         color: $light-blue;
     }
 
     position: absolute;
     right: 0;
-    bottom: 40%;
+    bottom: 5%;
 }
 
 
 .site-nav {
     text-align: center;
-    margin-top: $sml;
+    margin-top: $sml/2;
 
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-
+    @include transition(0.3s ease-out);
+    
     .js & {
         overflow: hidden;
         max-height: 0;
@@ -295,7 +239,6 @@ and more scalable.
     ul {
         margin: 0;
         padding: 0;
-        
     }
 
     &.active {
@@ -310,7 +253,6 @@ and more scalable.
 
         a {
             display: block;
-            // padding: 0.8rem;
             font-size: $sml;
             border-bottom: $accent-border;
             padding: $sml;
@@ -336,18 +278,9 @@ POSTS & CONTENT STYLES
     margin-top: $sml;
 }
 
-        .hentry {
-
-            header {}
-
-            footer {}
-
-        } /* end .hentry */
-
-
         // TODO: add a class/conditional instead of specifying
         .single-title,
-        .page-title, .single .article-header .h2 {
+        .page-title {
             font-size: $h2;
             text-align: center;
         }
@@ -358,19 +291,10 @@ POSTS & CONTENT STYLES
 
         .archive-title { }
 
-        /* want to style individual post classes? Booya! */
-        .post-id {}         /* post by id (i.e. post-3) */
-        .post {}            /* general post style */
-        .page {}            /* general article on a page style */
-        .attachment {}      /* general style on an attatchment */
-        .sticky {}          /* sticky post style */
-        .hentry {}          /* hentry class */
-        .category-slug {}   /* style by category (i.e. category-videos) */
-        .tag-slug {}        /* style by tag (i.e. tag-news) */
 
         /* post meta */
         .byline, .tags {
-            color: #999;
+            color: $txt-light;
             font-size: $sml;
             margin-bottom: $h2;
             
@@ -384,10 +308,6 @@ POSTS & CONTENT STYLES
         /* entry content */
         .entry-content {
             margin-bottom: $h2;
-            p {}
-
-
-            ul, ol, table, dl {}
 
             ul, ol {
                 list-style-position: inside;
@@ -395,43 +315,30 @@ POSTS & CONTENT STYLES
                 margin-bottom: $sml;
 
                 li {
-                    margin-bottom: $sml;                    
-                    &:last-child {
-                        margin-bottom: 0;
+                    &.large-items {
+                        margin-bottom: $sml;                    
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
                     }
                 }
-
             }
 
             ul {
                 list-style-type: disc;
-
-                li {}
-
             }
 
             ol {
                 list-style-type: decimal;
 
-                li {}
-
             }
 
-            blockquote {
-
-                &:before {}
-
-            }
-
-            dl {}
-
-            dt {}
 
             dd {
-                margin-left: 0;
-                font-size: 0.9em;
-                color: #787878;
-                margin-bottom: 1.5em;
+                margin-left: $sml;
+                font-size: $sml;
+                color: $txt-light;
+                margin-bottom: $h3;
             }
 
             img, .fig-large {
@@ -448,17 +355,17 @@ POSTS & CONTENT STYLES
             }
 
             pre {
-                background: #eee;
-                border: 1px solid #cecece;
-                padding: 10px;
+                background: $vlight-accent;
+                border: $accent-border;
+                padding: $sml;
             }
 
         } /* end .entry-content */
 
         .wp-caption {
             max-width: 100%;
-            background: #eee;
-            padding: 5px;
+            background: $vlight-accent;
+            padding: $sml/3;
 
             /* images inside wp-caption */
             img {
@@ -468,18 +375,20 @@ POSTS & CONTENT STYLES
             }
 
             p.wp-caption-text {
-                font-size: 0.85em;
-                margin: 4px 0 7px;
+                font-size: $sml;
+                margin: $sml/4 0 $sml/3;
                 text-align: center;
             }
 
         } /* end .wp-caption */
+
 
 // Gallery styles
 
 .gallery-icon img {
     margin-bottom: 0;
 }
+
 
 // Custom type
 
@@ -495,7 +404,6 @@ POSTS & CONTENT STYLES
 }
 
 .thumb-title {
-    // @extend .line-clamp;
     position: absolute;
     border-top: $accent-border;
     padding: $sml;
@@ -506,26 +414,20 @@ POSTS & CONTENT STYLES
     color: $white;
 }
 
+
+
 .project-content {
     margin-bottom: $h3;
 }
 
-.project-content {
-    img, .media-wrap {
-        margin-bottom: 0;
-    }
+.project-content img {
+    width: 100%;
 }
-
 
 // Home
 
 .home {
-    .article-header {
-        text-align: center;
-    }
-    .entry-content {
-        text-align: center;
-    }
+    
 }
 
 .header-img {
@@ -533,10 +435,9 @@ POSTS & CONTENT STYLES
 }
 
 .callout-quote {
-    font-size: $h2;
+    font-size: $h3;
     text-align: left;
-    // color: $dark-accent;
-    margin: $h1 0; 
+    margin: $h1 $h2; 
 }
 
 .frame {
@@ -545,20 +446,31 @@ POSTS & CONTENT STYLES
     color: $white;
 }
 
-// ABout
 
-.page-about .fig-large {
+// About
+
+.page-about .farge {
     margin-top: $h2;
 }
 
+// Contact
 
-// Subsection styles reused thorughout
+.page-contact {
+    .social li i {
+        font-size: $h1;
+    }
+}
+
+// Subsection styles reused thoroughout
+// TODO: maybe rename? Subsection sounds kind of dumb
+// And these could be in more places
 
 .subsection-title {
     margin: $h1 0 $h2;
     padding-top: $sml;
     border-top: 1px dotted $dark-accent;    
     @extend .h5;
+    @extend .special;
     text-align: center;        
 }
 
@@ -583,10 +495,10 @@ POSTS & CONTENT STYLES
 .media-wrap {
     position: relative;
     padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
-    padding-top: 30px;
+    padding-top: $h3;
     height: 0;
     overflow: hidden;
-    margin: 0 auto 2.2em;
+    margin: 0 auto $h3;
 }
 
 .media-wrap {
@@ -604,24 +516,28 @@ POSTS & CONTENT STYLES
 
 .tags {
     padding: $h3 0;
-    border-top: $accent-border;
-    border-bottom: $accent-border;
-    margin-top: $h2;
+
+    .blog & {
+        border-top: $accent-border;
+        border-bottom: $accent-border;    
+    }
+    
+    .pv-middle & {
+        margin-bottom: 0;
+    }
+
 }
 
 .article-footer {
     padding-bottom: $h3;
 }
 
+
 // Post formats
 
 .format-type {
-    @extend .special-dark;
-    text-transform: uppercase;
-
-    .fa {
-        margin-right: $sml;
-    }
+    color: $medium-accent;
+    margin-right: $sml;
 }
 
 
@@ -632,26 +548,36 @@ PAGE NAVI STYLES
 ******************************************************************/
 
 .prev-next {
+    border-top: $accent-border;
+    border-bottom: $accent-border;
+
     a {
         border: 0;
     }
 
     i {
-        font-size: $h2
+        font-size: $h2;
+        padding-top: $h3;
     }
 }
 
 .prev {
-    float: left;
+    text-align: left;
 }
 
 .next {
-    float: right;
+    text-align: right;
+}
+
+.nav-title-container {
+    i {
+        font-size: $h2;
+    }
 }
 
 .pagination,
 .wp-prev-next {
-    margin: 1.1em 0 2.2em;
+    margin: $h3 0 $h1;
 }
     .pagination{
         text-align: center;
@@ -671,11 +597,11 @@ PAGE NAVI STYLES
                     margin: 0;
                     text-decoration: none;
                     padding: 0;
-                    line-height: 1em;
-                    font-size: 1em;
+                    line-height: $default;
+                    font-size: $default;
                     font-weight: normal;
-                    padding: .5em;
-                    min-width: 1em;
+                    padding: $default/2;
+                    min-width: $default;
                     display: block;
                 }
                 span.current{
@@ -703,303 +629,7 @@ PAGE NAVI STYLES
 
     } /* end .wp-prev-next */
 
-/******************************************************************
-COMMENT STYLES
-******************************************************************/
 
-/* h3 comment title */
-#comments {
-
-    /* number of comments span */
-    span {}
-
-}
-
-.comment-nav {
-
-    ul {
-
-        li {}
-
-    }
-}
-
-
-.commentlist {
-
-    li {
-        position: relative;
-        clear: both;
-        overflow: hidden;
-        list-style-type: none;
-        margin-bottom: 1.5em;
-        padding: 0.7335em 10px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        ul.children {
-            margin: 0;
-
-            li {}
-
-            /* variations */
-            .comment {}
-            .alt {}
-            .odd {}
-            .even {}
-            .depth-1 {}           /* change number for different depth */
-            .byuser {}
-            .bypostauthor {}
-            .comment-author-admin {}
-
-        } /* end .commentlist li ul.children */
-    }
-
-    li[class*=depth-] {
-        margin-top: 1.1em;
-    }
-
-    li.depth-1 {
-        margin-left: 0;
-        margin-top: 0;
-    }
-
-    li:not(.depth-1) {
-        margin-right: -10px;
-        margin-left: -10px;
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-
-    li.depth-2 {}
-    li.depth-3 {}
-    li.depth-4 {}
-    li.depth-5 {}
-
-    /* general comment classes */
-    .alt {}
-    .odd {
-        background: #eee;
-    }
-    .even {
-        background: #fefefe;
-    }
-    .parent {}
-    .comment {}
-    .children {}
-    .pingback {}
-    .bypostauthor {}
-    .comment-author {}
-    .comment-author-admin {}
-    .thread-alt {}
-    .thread-odd {}
-    .thread-even {}
-
-    /* vcard */
-    .vcard {
-        margin-left: 50px;
-        
-        cite.fn {
-            font-weight: 700;
-            font-style: normal;
-
-            a.url {}
-
-        }
-
-        time {
-            float: right;
-
-            a {
-                color: #999;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-            }
-
-        }
-
-        img.photo {}
-
-        img.avatar {
-            position: absolute;
-            left: 10px;
-            padding: 2px;
-            border: 1px solid #cecece;
-            background: #fff;
-        }
-
-    } /* end .commentlist .vcard */
-
-
-    /* comment meta */
-    .comment-meta {
-
-        a {}
-
-    }
-
-    .commentmetadata {
-
-        a {}
-
-    }
-
-    /* comment content */
-    .comment_content {
-        margin-left: 50px;
-
-        p {
-            margin: 0.7335em 0 1.5em;
-            font-size: 1em;
-            line-height: 1.5em;
-        }
-
-    } /* end .commentlist .comment_content */
-
-    /* comment reply link */
-    .comment-reply-link {
-        text-decoration: none;
-        float: right;
-        background: #4598bb;
-        padding: 3px 5px;
-        color: #fff;
-        opacity: 0.65;
-        margin-bottom: 10px;
-        font-weight: 700;
-        font-size: 0.9em;
-
-        &:hover,
-        &:focus {
-            opacity: 1;
-        }
-
-    } /* end .commentlist .comment-reply-link */
-
-} /* end .commentlist */
-
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
-
-.respond-form {
-    margin: 1.5em 10px;
-    padding-bottom: 2.2em;
-
-    form {
-        margin: 0.75em 0;
-
-        li {
-            list-style-type: none;
-            clear: both;
-            margin-bottom: 0.7335em;
-
-            label,
-            small {
-                display: none;
-            }
-        }
-
-        input[type=text],
-        input[type=email],
-        input[type=url],
-        textarea {
-            padding: 3px 6px;
-            background: #efefef;
-            border: 2px solid #cecece;
-            line-height: 1.5em;
-
-            &:focus {
-                background: #fff;
-            }
-
-            /* form validation */
-            &:invalid {
-                outline: none;
-                border-color: #fbc2c4;
-                background-color: #f6e7eb;
-                -webkit-box-shadow: none;
-                   -moz-box-shadow: none;
-                    -ms-box-shadow: none;
-                        box-shadow: none;
-            }
-        }
-
-        input[type=text],
-        input[type=email],
-        input[type=url] {
-            max-width: 400px;
-            min-width: 250px;
-        }
-
-        textarea {
-            resize: none;
-            width: 97.3%;
-            height: 150px;
-        }
-
-    }
-}
-
-    /* comment submit button */
-    #submit {}
-
-    /* comment form title */
-    #comment-form-title {
-        margin: 0 0 1.1em;
-    }
-
-    /* cancel comment reply link */
-    #cancel-comment-reply {
-        a {}
-    }
-
-    /* logged in comments */
-    .comments-logged-in-as {}
-
-    /* allowed tags */
-    #allowed_tags {
-        margin: 1.5em 10px 0.7335em 0;
-    }
-
-    /* no comments */
-    .nocomments {
-        margin: 0 20px 1.1em;
-    }
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-
-.sidebar {}
-
-    .widgettitle {}
-
-    .widget {
-
-        ul {
-
-            li {
-
-                &:first-child {}
-
-                &:last-child {}
-
-                a {}
-
-                /* deep nesting */
-                ul {}
-
-            }
-
-        }
-
-    }
 
 /*********************
 FOOTER STYLES
@@ -1010,15 +640,11 @@ FOOTER STYLES
 }
 
 .site-footer {
-    
+    margin-top: $h1;
     .wrap {
-     //   border-top: $accent-border;
         padding-top: $h2;
     }
 
-    //margin-top: $h2;
-    
-    //padding-bottom: $h1;
    text-align: center;
 }
 

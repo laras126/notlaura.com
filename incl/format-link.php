@@ -1,6 +1,6 @@
 <header class="article-header">
-	<h1 class="h2"><a href="<?php echo get_post_meta($post->ID,'_format_link_url',true); ?>" target="blank" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		<span class="format-type"><i class="fa fa-chain"></i><span class="summary">Link: </span></span> 
+	<h1 class="<?php if (is_single() ) { echo 'single-title'; } else { echo 'h2'; } ?>"><a href="<?php echo get_post_meta($post->ID,'_format_link_url',true); ?>" target="blank" rel="bookmark" title="<?php the_title_attribute(); ?>">
+	<i class="format-type fa fa-chain"></i> 
 		<?php the_title(); ?>
 	</a></h1>
 	

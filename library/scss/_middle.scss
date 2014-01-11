@@ -15,12 +15,17 @@ HEADER
     font-size: $h2;
 }
 
+.callout-quote {
+    font-size: $h2;
+}
+
+
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
-a.menu-link {
+.menu-link {
    display: none;
 }
 
@@ -86,7 +91,7 @@ POSTS & CONTENT STYLES
 // Page nav
 .prev-next {
     i {
-        font-size: $h1;
+        // font-size: $h1;
     }
 }
 

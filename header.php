@@ -52,7 +52,7 @@
 				<div id="inner-header" class="wrap clearfix">
 					<hgroup class="site-info">
                     	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
-                    	<h3 class="site-desc h5"><?php bloginfo('description'); ?></h3>
+                    	<!-- <h3 class="site-desc h5"><?php bloginfo('description'); ?></h3> -->
                     	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
                     </hgroup>
 					

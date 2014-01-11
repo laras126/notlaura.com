@@ -40,16 +40,20 @@ jQuery(document).ready(function($) {
 	/* getting viewport width */
 	var responsive_viewport = $(window).width();
 	
+
 	/* if is below 481px */
 	if (responsive_viewport < 481) {
 	
 	} /* end smallest screen */
 	
+
 	/* if is larger than 481px */
 	if (responsive_viewport > 481) {
+
 	
 	} /* end larger than 481px */
 	
+
 	/* if is above or equal to 768px */
 	if (responsive_viewport >= 768) {
 	
@@ -66,6 +70,13 @@ jQuery(document).ready(function($) {
 	}
 	
  
+
+    // Coupla plugins
+    if ( $('.gallery').length > 0 ) {
+    	$('.gallery a').vanillabox();	
+    }
+    
+
 	// Brad Frost toggle menu
 	// 
 	$('body').addClass('js');
@@ -79,11 +90,19 @@ jQuery(document).ready(function($) {
 	});
 
 
-    // Coupla plugins
-    $('.gallery-icon a').vanillabox();
+    // Check if media is already wrapped in a fig,
+    // if not, wrap to make it fluid.
+
+    var $wrap = $('.media-wrap');
+    var $media = $('iframe, object, embed');
+    
+    if ( ! $media.parent().is($wrap) ) {
+    	$media.wrap( '<figure class="media-wrap"></figure>' );
+    	$media.css('border', '10px solid yellow');
+    }
 
 
-    // SVG fallback
+	// SVG fallback
     // http://css-tricks.com/using-svg/
 
     if (!Modernizr.svg) {

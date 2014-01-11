@@ -25,7 +25,7 @@
 // NOTE: This MQ is kinda arbitrary. Based on site-nav size and the grid breakpoint
 
 @media only screen and (min-width: $break) {	
-	.single-title, .page-title, .single .article-header .h2, .single .article-header .summary {
+	.single-title, .page-title {
 	    font-size: $h1;
 	}
 }

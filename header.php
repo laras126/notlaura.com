@@ -43,7 +43,7 @@
 
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> id="top">
 
 		<div id="container">
 

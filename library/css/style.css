@@ -2844,12 +2844,18 @@ LAYOUT & GRID STYLES
 /* line 39, ../scss/_base.scss */
 #container {
   overflow-x: hidden;
+  position: relative;
+}
+
+/* line 44, ../scss/_base.scss */
+#back-top {
+  display: none;
 }
 
 /*********************
 LINK STYLES
 *********************/
-/* line 47, ../scss/_base.scss */
+/* line 53, ../scss/_base.scss */
 a, a:visited {
   color: #237fa9;
   text-decoration: none;
@@ -2858,11 +2864,11 @@ a, a:visited {
   /* on click */
   /* mobile tap color */
 }
-/* line 53, ../scss/_base.scss */
+/* line 59, ../scss/_base.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #1b6283;
 }
-/* line 63, ../scss/_base.scss */
+/* line 69, ../scss/_base.scss */
 a:link, a:visited:link {
   /*
   this highlights links on iPhones/iPads.
@@ -2875,7 +2881,7 @@ a:link, a:visited:link {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 77, ../scss/_base.scss */
+/* line 83, ../scss/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .subsection-title {
   font-family: "museo-slab-1";
   text-rendering: optimizelegibility;
@@ -2886,40 +2892,40 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .subsection-title {
   */
   /* removing text decoration from all headline links */
 }
-/* line 87, ../scss/_base.scss */
+/* line 93, ../scss/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, .subsection-title a {
   text-decoration: none;
 }
 
-/* line 92, ../scss/_base.scss */
+/* line 98, ../scss/_base.scss */
 h1, .h1 {
   font-size: 4.7rem;
   margin-top: 2.3rem;
   margin-bottom: 0;
 }
 
-/* line 98, ../scss/_base.scss */
+/* line 104, ../scss/_base.scss */
 h2, .h2 {
   font-size: 2.9rem;
   margin-top: 2.9rem;
   margin-bottom: 1.4rem;
 }
 
-/* line 104, ../scss/_base.scss */
+/* line 110, ../scss/_base.scss */
 h3, .h3 {
   font-size: 2.3rem;
   margin-top: 2.9rem;
   margin-bottom: 1.4rem;
 }
 
-/* line 110, ../scss/_base.scss */
+/* line 116, ../scss/_base.scss */
 h4, .h4 {
   font-size: 1.8rem;
   margin-top: 2.9rem;
   margin-bottom: 1.4rem;
 }
 
-/* line 116, ../scss/_base.scss */
+/* line 122, ../scss/_base.scss */
 h5, .h5, .subsection-title {
   margin: 2.3rem 0 1.4rem;
   text-transform: uppercase;
@@ -2931,7 +2937,7 @@ h5, .h5, .subsection-title {
 /*********************
 TYPOGRAPHY
 *********************/
-/* line 130, ../scss/_base.scss */
+/* line 136, ../scss/_base.scss */
 blockquote {
   font-size: 1.8rem;
   margin: 0;
@@ -2942,7 +2948,7 @@ blockquote {
   font-style: italic;
 }
 
-/* line 140, ../scss/_base.scss */
+/* line 146, ../scss/_base.scss */
 p {
   margin-bottom: 1.4rem;
 }
@@ -2950,34 +2956,34 @@ p {
 /*********************
 HEADER STYLES
 *********************/
-/* line 158, ../scss/_base.scss */
+/* line 164, ../scss/_base.scss */
 .rotation a:visited {
   color: white;
 }
 
-/* line 163, ../scss/_base.scss */
+/* line 169, ../scss/_base.scss */
 .site-header {
   padding-bottom: 0;
 }
 
-/* line 167, ../scss/_base.scss */
+/* line 173, ../scss/_base.scss */
 .site-header, .site-footer {
   border-top: 5px solid #86b2c6;
   border-bottom: 5px solid #e6e6e6;
   padding: 1.4rem 0;
 }
 
-/* line 173, ../scss/_base.scss */
+/* line 179, ../scss/_base.scss */
 .site-info {
   position: relative;
 }
-/* line 176, ../scss/_base.scss */
+/* line 182, ../scss/_base.scss */
 .site-info a {
   border-bottom: none;
   color: white;
 }
 
-/* line 182, ../scss/_base.scss */
+/* line 188, ../scss/_base.scss */
 .site-title {
   text-transform: lowercase;
   font-size: 2.3rem;
@@ -2985,7 +2991,7 @@ HEADER STYLES
   margin: 0;
 }
 
-/* line 189, ../scss/_base.scss */
+/* line 195, ../scss/_base.scss */
 .site-desc {
   font-family: "museo-sans-1";
   font-size: 1.4rem;
@@ -3005,20 +3011,20 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-/* line 214, ../scss/_base.scss */
+/* line 220, ../scss/_base.scss */
 .menu-link {
   position: absolute;
   right: 0;
   bottom: 5%;
 }
-/* line 216, ../scss/_base.scss */
+/* line 222, ../scss/_base.scss */
 .menu-link i {
   font-size: 2.9rem;
   line-height: 2.9rem;
   color: #86b2c6;
 }
 
-/* line 228, ../scss/_base.scss */
+/* line 234, ../scss/_base.scss */
 .site-nav {
   text-align: center;
   margin-top: 0.7rem;
@@ -3027,25 +3033,25 @@ and more scalable.
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
-/* line 234, ../scss/_base.scss */
+/* line 240, ../scss/_base.scss */
 .js .site-nav {
   overflow: hidden;
   max-height: 0;
 }
-/* line 239, ../scss/_base.scss */
+/* line 245, ../scss/_base.scss */
 .site-nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 244, ../scss/_base.scss */
+/* line 250, ../scss/_base.scss */
 .site-nav.active {
   max-height: 15em;
 }
-/* line 250, ../scss/_base.scss */
+/* line 256, ../scss/_base.scss */
 .site-nav li:first-child {
   border-top: 1px dotted #86b2c6;
 }
-/* line 254, ../scss/_base.scss */
+/* line 260, ../scss/_base.scss */
 .site-nav li a {
   display: block;
   font-size: 1.4rem;
@@ -3055,7 +3061,7 @@ and more scalable.
   text-transform: uppercase;
   display: block;
 }
-/* line 263, ../scss/_base.scss */
+/* line 269, ../scss/_base.scss */
 .site-nav li a:hover {
   color: white;
 }
@@ -3063,12 +3069,12 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 277, ../scss/_base.scss */
+/* line 283, ../scss/_base.scss */
 #content {
   margin-top: 1.4rem;
 }
 
-/* line 283, ../scss/_base.scss */
+/* line 289, ../scss/_base.scss */
 .single-title,
 .page-title {
   font-size: 2.9rem;
@@ -3076,65 +3082,65 @@ POSTS & CONTENT STYLES
 }
 
 /* post meta */
-/* line 296, ../scss/_base.scss */
+/* line 302, ../scss/_base.scss */
 .byline, .tags {
   color: #b3b3b3;
   font-size: 1.4rem;
   margin-bottom: 2.9rem;
 }
-/* line 301, ../scss/_base.scss */
+/* line 307, ../scss/_base.scss */
 .single .byline, .single .tags {
   text-align: center;
 }
 
 /* entry content */
-/* line 309, ../scss/_base.scss */
+/* line 315, ../scss/_base.scss */
 .entry-content {
   margin-bottom: 2.9rem;
 }
-/* line 312, ../scss/_base.scss */
+/* line 318, ../scss/_base.scss */
 .entry-content ul, .entry-content ol {
   list-style-position: inside;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
 }
-/* line 318, ../scss/_base.scss */
+/* line 324, ../scss/_base.scss */
 .entry-content ul li.large-items, .entry-content ol li.large-items {
   margin-bottom: 1.4rem;
 }
-/* line 320, ../scss/_base.scss */
+/* line 326, ../scss/_base.scss */
 .entry-content ul li.large-items:last-child, .entry-content ol li.large-items:last-child {
   margin-bottom: 0;
 }
-/* line 327, ../scss/_base.scss */
+/* line 333, ../scss/_base.scss */
 .entry-content ul {
   list-style-type: disc;
 }
-/* line 331, ../scss/_base.scss */
+/* line 337, ../scss/_base.scss */
 .entry-content ol {
   list-style-type: decimal;
 }
-/* line 337, ../scss/_base.scss */
+/* line 343, ../scss/_base.scss */
 .entry-content dd {
   margin-left: 1.4rem;
   font-size: 1.4rem;
   color: #b3b3b3;
   margin-bottom: 2.3rem;
 }
-/* line 344, ../scss/_base.scss */
+/* line 350, ../scss/_base.scss */
 .entry-content img, .entry-content .fig-large {
   margin-bottom: 2.9rem;
 }
-/* line 348, ../scss/_base.scss */
+/* line 354, ../scss/_base.scss */
 .entry-content .fig-large img {
   margin-bottom: 0;
 }
-/* line 352, ../scss/_base.scss */
+/* line 358, ../scss/_base.scss */
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto;
 }
-/* line 357, ../scss/_base.scss */
+/* line 363, ../scss/_base.scss */
 .entry-content pre {
   background: #f4f7f9;
   border: 1px dotted #86b2c6;
@@ -3142,20 +3148,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 365, ../scss/_base.scss */
+/* line 371, ../scss/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #f4f7f9;
   padding: 0.46667rem;
   /* images inside wp-caption */
 }
-/* line 371, ../scss/_base.scss */
+/* line 377, ../scss/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 377, ../scss/_base.scss */
+/* line 383, ../scss/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 1.4rem;
   margin: 0.35rem 0 0.46667rem;
@@ -3163,25 +3169,25 @@ POSTS & CONTENT STYLES
 }
 
 /* end .wp-caption */
-/* line 388, ../scss/_base.scss */
+/* line 394, ../scss/_base.scss */
 .gallery-icon img {
   margin-bottom: 0;
 }
 
-/* line 395, ../scss/_base.scss */
+/* line 401, ../scss/_base.scss */
 .thumb-image {
   position: relative;
   margin-bottom: 1.8rem;
   border: 4px solid #e6e6e6;
 }
 
-/* line 401, ../scss/_base.scss */
+/* line 407, ../scss/_base.scss */
 .thumb img {
   width: 100%;
   max-width: 100%;
 }
 
-/* line 406, ../scss/_base.scss */
+/* line 412, ../scss/_base.scss */
 .thumb-title {
   position: absolute;
   border-top: 1px dotted #86b2c6;
@@ -3193,46 +3199,46 @@ POSTS & CONTENT STYLES
   color: white;
 }
 
-/* line 419, ../scss/_base.scss */
+/* line 425, ../scss/_base.scss */
 .project-content {
   margin-bottom: 2.3rem;
 }
 
-/* line 423, ../scss/_base.scss */
+/* line 429, ../scss/_base.scss */
 .project-content img {
   width: 100%;
 }
 
-/* line 433, ../scss/_base.scss */
+/* line 435, ../scss/_base.scss */
 .header-img {
   margin-bottom: 4.7rem;
 }
 
-/* line 437, ../scss/_base.scss */
+/* line 439, ../scss/_base.scss */
 .callout-quote {
   font-size: 2.3rem;
   text-align: left;
   margin: 4.7rem 2.9rem;
 }
 
-/* line 443, ../scss/_base.scss */
+/* line 445, ../scss/_base.scss */
 .frame {
   border: 10px solid #237fa9;
   background-color: #86b2c6;
   color: white;
 }
 
-/* line 452, ../scss/_base.scss */
-.page-about .farge {
-  margin-top: 2.9rem;
+/* line 454, ../scss/_base.scss */
+.page-about .fig-large {
+  margin-top: 4.7rem;
 }
 
-/* line 459, ../scss/_base.scss */
+/* line 461, ../scss/_base.scss */
 .page-contact .social li i {
   font-size: 4.7rem;
 }
 
-/* line 468, ../scss/_base.scss */
+/* line 470, ../scss/_base.scss */
 .subsection-title {
   margin: 4.7rem 0 2.9rem;
   padding-top: 1.4rem;
@@ -3240,23 +3246,23 @@ POSTS & CONTENT STYLES
   text-align: center;
 }
 
-/* line 477, ../scss/_base.scss */
+/* line 479, ../scss/_base.scss */
 .subsection {
   margin-bottom: 2.9rem;
 }
 
-/* line 481, ../scss/_base.scss */
+/* line 483, ../scss/_base.scss */
 .subsection-tagline {
   font-size: 2.3rem;
 }
 
-/* line 485, ../scss/_base.scss */
+/* line 487, ../scss/_base.scss */
 .summary {
   font-size: 1.8rem;
   font-family: "museo-sans-1";
 }
 
-/* line 495, ../scss/_base.scss */
+/* line 497, ../scss/_base.scss */
 .media-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -3267,7 +3273,7 @@ POSTS & CONTENT STYLES
   margin: 0 auto 2.3rem;
 }
 
-/* line 505, ../scss/_base.scss */
+/* line 507, ../scss/_base.scss */
 .media-wrap iframe, .media-wrap object, .media-wrap embed {
   position: absolute;
   top: 0;
@@ -3276,26 +3282,26 @@ POSTS & CONTENT STYLES
   height: 100%;
 }
 
-/* line 517, ../scss/_base.scss */
+/* line 521, ../scss/_base.scss */
 .tags {
   padding: 2.3rem 0;
 }
-/* line 520, ../scss/_base.scss */
+/* line 524, ../scss/_base.scss */
 .blog .tags {
   border-top: 1px dotted #86b2c6;
   border-bottom: 1px dotted #86b2c6;
 }
-/* line 525, ../scss/_base.scss */
+/* line 529, ../scss/_base.scss */
 .pv-middle .tags {
   margin-bottom: 0;
 }
 
-/* line 531, ../scss/_base.scss */
+/* line 535, ../scss/_base.scss */
 .article-footer {
   padding-bottom: 2.3rem;
 }
 
-/* line 538, ../scss/_base.scss */
+/* line 542, ../scss/_base.scss */
 .format-type {
   color: #86b2c6;
   margin-right: 1.4rem;
@@ -3304,47 +3310,47 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 550, ../scss/_base.scss */
+/* line 554, ../scss/_base.scss */
 .prev-next {
   border-top: 1px dotted #86b2c6;
   border-bottom: 1px dotted #86b2c6;
 }
-/* line 554, ../scss/_base.scss */
+/* line 558, ../scss/_base.scss */
 .prev-next a {
   border: 0;
 }
-/* line 558, ../scss/_base.scss */
+/* line 562, ../scss/_base.scss */
 .prev-next i {
   font-size: 2.9rem;
   padding-top: 2.3rem;
 }
 
-/* line 564, ../scss/_base.scss */
+/* line 568, ../scss/_base.scss */
 .prev {
   text-align: left;
 }
 
-/* line 568, ../scss/_base.scss */
+/* line 572, ../scss/_base.scss */
 .next {
   text-align: right;
 }
 
-/* line 573, ../scss/_base.scss */
+/* line 577, ../scss/_base.scss */
 .nav-title-container i {
   font-size: 2.9rem;
 }
 
-/* line 579, ../scss/_base.scss */
+/* line 583, ../scss/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 2.3rem 0 4.7rem;
 }
 
-/* line 582, ../scss/_base.scss */
+/* line 586, ../scss/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 584, ../scss/_base.scss */
+/* line 588, ../scss/_base.scss */
 .pagination ul {
   display: inline-block;
   white-space: nowrap;
@@ -3352,7 +3358,7 @@ PAGE NAVI STYLES
   clear: both;
   margin: 1px;
 }
-/* line 590, ../scss/_base.scss */
+/* line 594, ../scss/_base.scss */
 .pagination ul li {
   padding: 0;
   margin: 0;
@@ -3360,7 +3366,7 @@ PAGE NAVI STYLES
   display: inline;
   overflow: hidden;
 }
-/* line 596, ../scss/_base.scss */
+/* line 600, ../scss/_base.scss */
 .pagination ul li a, .pagination ul li span {
   margin: 0;
   text-decoration: none;
@@ -3372,18 +3378,18 @@ PAGE NAVI STYLES
   min-width: 1.8rem;
   display: block;
 }
-/* line 607, ../scss/_base.scss */
+/* line 611, ../scss/_base.scss */
 .pagination ul li span.current {
   font-weight: bold;
 }
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 622, ../scss/_base.scss */
+/* line 626, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 626, ../scss/_base.scss */
+/* line 630, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -3392,40 +3398,40 @@ PAGE NAVI STYLES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 638, ../scss/_base.scss */
+/* line 642, ../scss/_base.scss */
 .footer {
   clear: both;
 }
 
-/* line 642, ../scss/_base.scss */
+/* line 646, ../scss/_base.scss */
 .site-footer {
   margin-top: 4.7rem;
   text-align: center;
 }
-/* line 644, ../scss/_base.scss */
+/* line 648, ../scss/_base.scss */
 .site-footer .wrap {
   padding-top: 2.9rem;
 }
 
-/* line 651, ../scss/_base.scss */
+/* line 655, ../scss/_base.scss */
 .social {
   display: inline-block;
 }
-/* line 654, ../scss/_base.scss */
+/* line 658, ../scss/_base.scss */
 .social li {
   display: inline-block;
   padding-right: 1.8rem;
 }
-/* line 657, ../scss/_base.scss */
+/* line 661, ../scss/_base.scss */
 .social li a {
   border: none;
 }
-/* line 660, ../scss/_base.scss */
+/* line 664, ../scss/_base.scss */
 .social li i {
   font-size: 2.9rem;
 }
 
-/* line 666, ../scss/_base.scss */
+/* line 670, ../scss/_base.scss */
 .colophon {
   font-size: 1.4rem;
   padding-top: 1.4rem;
@@ -3531,45 +3537,45 @@ view.
   }
 
   /* entry content */
-  /* line 101, ../scss/_middle.scss */
+  /* line 93, ../scss/_middle.scss */
   .entry-content {
     position: relative;
     /* at this larger size, we can start to align images */
   }
-  /* line 104, ../scss/_middle.scss */
+  /* line 96, ../scss/_middle.scss */
   .entry-content ul, .entry-content ol {
     list-style-position: outside;
   }
-  /* line 109, ../scss/_middle.scss */
+  /* line 101, ../scss/_middle.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 114, ../scss/_middle.scss */
+  /* line 106, ../scss/_middle.scss */
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 119, ../scss/_middle.scss */
+  /* line 111, ../scss/_middle.scss */
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
     clear: both;
   }
-  /* line 127, ../scss/_middle.scss */
+  /* line 119, ../scss/_middle.scss */
   .single-custom_type .entry-content img {
     width: 100%;
   }
 
   /* end .entry-content */
-  /* line 135, ../scss/_middle.scss */
+  /* line 127, ../scss/_middle.scss */
   .thumb-image:hover {
     border-color: #86b2c6;
   }
-  /* line 138, ../scss/_middle.scss */
+  /* line 130, ../scss/_middle.scss */
   .thumb-image:active {
     border-color: #237fa9;
   }
@@ -3577,17 +3583,38 @@ view.
   /*********************
   FOOTER STYLES
   *********************/
-  /* line 147, ../scss/_middle.scss */
+  /* line 140, ../scss/_middle.scss */
+  #back-top {
+    display: none;
+    position: fixed;
+    bottom: 5.8rem;
+    text-align: center;
+    margin-left: -14.1rem;
+    font-size: 2.9rem;
+  }
+  /* line 148, ../scss/_middle.scss */
+  #back-top a {
+    padding: 1.8rem;
+    color: #86b2c6;
+    border: 0;
+  }
+
+  /* line 156, ../scss/_middle.scss */
+  .back-top-container {
+    position: relative;
+  }
+
+  /* line 160, ../scss/_middle.scss */
   .site-footer {
     text-align: left;
   }
 
-  /* line 151, ../scss/_middle.scss */
+  /* line 164, ../scss/_middle.scss */
   .social {
     float: left;
   }
 
-  /* line 155, ../scss/_middle.scss */
+  /* line 168, ../scss/_middle.scss */
   .copyright {
     float: right;
   }

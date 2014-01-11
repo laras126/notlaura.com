@@ -38,7 +38,13 @@ LAYOUT & GRID STYLES
 
 #container {
     overflow-x: hidden;
+    position: relative;
 }
+
+#back-top {
+    display: none;
+}
+
 
 /*********************
 LINK STYLES
@@ -424,11 +430,7 @@ POSTS & CONTENT STYLES
     width: 100%;
 }
 
-// Home
 
-.home {
-    
-}
 
 .header-img {
     margin-bottom: $h1;
@@ -449,8 +451,8 @@ POSTS & CONTENT STYLES
 
 // About
 
-.page-about .farge {
-    margin-top: $h2;
+.page-about .fig-large {
+    margin-top: $h1;
 }
 
 // Contact
@@ -513,6 +515,8 @@ POSTS & CONTENT STYLES
 
 
 // General
+
+
 
 .tags {
     padding: $h3 0;

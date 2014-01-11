@@ -88,14 +88,6 @@ POSTS & CONTENT STYLES
 }
 
 
-// Page nav
-.prev-next {
-    i {
-        // font-size: $h1;
-    }
-}
-
-
 
 /* entry content */
 .entry-content {
@@ -144,6 +136,27 @@ POSTS & CONTENT STYLES
 FOOTER STYLES
 *********************/
     
+
+#back-top {
+    display: none;
+    position: fixed;
+    bottom: $h2*2;
+    text-align: center;
+    margin-left: -$h1*3;
+    font-size: $h2;
+
+    a {
+        padding: $h4;
+        color: $medium-accent;
+        // background-color: $vlight-accent;
+        border: 0;
+    }
+}
+
+.back-top-container {
+    position: relative;
+}
+
 .site-footer {
     text-align: left;
 }

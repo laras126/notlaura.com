@@ -1,3 +1,4 @@
+			
 			<footer class="site-footer rotation" role="contentinfo">
 
 				<div id="inner-footer" class="wrap">
@@ -15,6 +16,11 @@
 				</div>
 
 			</footer>
+			
+			<div class="wrap back-top-container">
+				<div id="back-top"><a href="#top"><i class="fa fa-arrow-up"></i></a></div>
+			</div>
+
 		</div>
 
 		<?php // all js scripts are loaded in library/bones.php ?>

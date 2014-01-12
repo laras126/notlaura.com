@@ -34,7 +34,7 @@
                                 <div class="subsection-title">Option 2</div>
                                 <img id="deliverFish" src="<?php echo $img_path; ?>site/svg/deliver-fish.svg" alt="Me fishing for you." />
                                 <h2 class="subsection-tagline">I fish for you</h2>
-                                <p class="summary">Oh yeah, I make websites! Home-baked WordPress themes and front-end are my speciality, but I wear many hats. See <a href="<?php echo site_url("/portfolio/", "http"); ?>">my portfolio</a> for more.</p>
+                                <p class="summary">Oh yeah, I make websites! Home-baked front-end and WordPress themes are my speciality, but I wear many hats. See <a href="<?php echo site_url("/portfolio/", "http"); ?>">my portfolio</a> for more.</p>
                             </div>
 
                             <div class="subsection">

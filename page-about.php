@@ -72,7 +72,11 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <h3>Let's talk</h3>
                                 <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
                             </section>
-                            
+                            <footer class="article-footer text-center">
+                                <hr />
+                                <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Let's go fishing.</a></p>
+                                <p>(i.e. go to my contact page)</p>
+                            </footer>
                         </article>
 
                     </div>

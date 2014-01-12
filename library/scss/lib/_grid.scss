@@ -27,9 +27,11 @@
 
 .last { @include omega; }
 
-@include at-breakpoint($medium 12) {
-
+@include at-breakpoint($small 6) {
 	.thumb { @include isolate-grid(3); }
+}
+
+@include at-breakpoint($medium 12) {
   	
   	.site-info { @include span-columns(4); }
 

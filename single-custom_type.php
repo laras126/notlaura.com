@@ -1,11 +1,29 @@
 <?php
 	global $post;
     $prefix = '_cmb_';
-	$desc = get_post_meta( $post->ID, $prefix.'project_desc', true );
-	$client = get_post_meta( $post->ID, $prefix.'client_name', true );
-	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
-	$skills = get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">Skills:</span> ', ', ' );
 	$categories = get_the_term_list( get_the_ID(), 'custom_cat', '', ', ' );
+	$desc = get_post_meta( $post->ID, $prefix.'project_desc', true );
+	$link = get_post_meta( $post->ID, $prefix.'project_link', true );
+
+	// Print keywords not linked
+	$keywords = wp_get_object_terms( $post->ID, 'custom_tag' );
+	$categories = wp_get_object_terms( $post->ID, 'custom_cat' );
+
+	foreach( $keywords as $k ) {
+		$k_names[] = $k->name;
+	}
+
+	if( !empty($k_names) ) {
+		$k_list = implode( ', ', $k_names );
+	}	
+
+	foreach( $categories as $c ) {
+		$c_names[] = $c->name;
+	}
+
+	if( !empty($c_names) ) {
+		$c_list = implode( ', ', $c_names );
+	}	
 ?>
 
 <?php get_header(); ?>
@@ -21,8 +39,11 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix single'); ?> role="article">
 
 								<header class="article-header">	
-									<h3 class="h5 text-center"><?php echo $categories; ?></h3>
-									<div class="clearfix prev-next project-nav">
+									<?php if (!empty($c_list)) { ?>
+										<h3 class="h5 text-center special"><?php echo $c_list; ?></h3>
+									<?php } ?>
+
+									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
 											<?php previous_post_link('%link','<i class="fa fa-angle-left"></i>'); ?> 
 										</div>
@@ -32,16 +53,21 @@
 										<div class="next">
 											<?php next_post_link('%link','<i class="fa fa-angle-right"></i>'); ?>
 										</div>
-									</div>
+									</nav>
 
 								</header>
 
 								<section class="entry-content project-content clearfix">
 															
 									<?php the_content(); ?>
-
-									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
-
+										
+									<?php if (!empty($k_list)) { ?>
+										<p class="h5"><strong>Keywords:</strong> <?php echo $k_list; ?></p>
+									<?php } ?>
+									
+									
+									<hr />
+									
 									<p><?php echo $desc; ?></p>
 
 							

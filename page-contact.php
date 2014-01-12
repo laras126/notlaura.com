@@ -20,18 +20,23 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                         <article id="post-<?php the_ID(); ?>" <?php post_class('page-contact'); ?> role="article">
 
                             <header class="article-header">
-                                <h1 class="page-title">Connect</h1>
+                                <h1 class="page-title"><?php the_title(); ?></h1>
                                 <p class="text-center">I'd love to hear from you.</p>
                             </header>
 
                             <section class="entry-content">
+
+                                <h3>I love people and I love coffee</h3>
+                                <p>...so whether or not you have a project in mind, feel free to reach out. I'm always looking to connect with people in the web world.</p>
+
+                                <h3>Do you like forms?</h3>
+                                <p>Here ya go. This goes straight to my inbox, so I'll get back to you ASAP.</p>
+                                <?php 
+                                // global $ninja_forms_processing;
+                                //if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 3 ); } ?>
                                 
-                                <h3>Seriously, I really like meeting people!</h3>
-                                <p>And I love coffee, so whether or not you have a project in mind, feel free to reach out. I'm still new to NYC and always looking to connect with people in the web world.</p>
-
-                                <h3>Wait, where's your fancy form?</h3>
-                                <p>Eh, I kinda hate those. You are contacting a real person, and it should feel like it! I'll get back to you ASAP and we'll chat.</p>
-
+                                <h3>Do you hate forms?</h3>
+                                <p>I kind of do. So, fellow old fashioned folk, send you message here:</p>
                                 <p class="h1"><a href="mailto:lara@notlaura.com">lara<span class="special-dark">@</span>notlaura.com</a></p>
 
                             </section>

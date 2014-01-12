@@ -15,7 +15,6 @@
                             <p class="subsection-tagline">You know that expression:</p>
                             <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             </blockquote>
-
                             <p class="subsection-tagline">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, and whatnot.</p>
                             <p class="subsection-tagline"> Let's break it down:</p>
                         </div>
@@ -52,7 +51,7 @@
                         <hr />
                         <h3 class="h1 text-center">Ok, sold?</h1>
                         <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Let's go fishing.</a></p>
-                        <p>(i.e. email me!)</p>
+                        <p>(i.e. go to my contact page)</p>
                     </footer>
 
             </article>

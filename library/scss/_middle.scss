@@ -21,56 +21,6 @@ HEADER
 
 
 
-/*********************
-NAVIGATION STYLES
-*********************/
-
-.menu-link {
-   display: none;
-}
-
-.site-nav {
-    text-align: right; 
-    
-    .js & {
-        max-height: none;
-    }
-
-    ul {
-        margin: 0 0 0 -0.25em;
-        border: 0;
-    }
-
-    li {
-        display: inline-block;
-        line-height: 0;
-        border: none;
-
-        a {
-            border: none;
-            &:hover, &:focus {
-                border-bottom: $accent-border;
-                border-top: $accent-border;
-            }
-        }
-
-        &:first-child {
-            border-top: 0;
-        }
-    }
-
-    /* highlight current page */
-    li.current-menu-item, 
-    li.current_page_item,
-    li.current-page-ancestor {
-        a {
-            border-bottom: $accent-border;
-            border-top: $accent-border;
-        }
-    }  /* end current highlighters */
-}
-
-
 
 /*********************
 POSTS & CONTENT STYLES
@@ -87,6 +37,12 @@ POSTS & CONTENT STYLES
     font-size: $h3;
 }
 
+// Make some text bigger
+// TODO: might be better to have a .flex-text class 
+// or something - will need to reevaluate
+.single-title, .page-title, .project-nav i {
+    font-size: $h1;
+}
 
 
 /* entry content */
@@ -137,25 +93,6 @@ FOOTER STYLES
 *********************/
     
 
-#back-top {
-    display: none;
-    position: fixed;
-    bottom: $h2*2;
-    text-align: center;
-    margin-left: -$h1*3;
-    font-size: $h2;
-
-    a {
-        padding: $h4;
-        color: $medium-accent;
-        // background-color: $vlight-accent;
-        border: 0;
-    }
-}
-
-.back-top-container {
-    position: relative;
-}
 
 .site-footer {
     text-align: left;

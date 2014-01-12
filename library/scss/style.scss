@@ -3,6 +3,13 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+// Break 1 happens in the grid styles only
+
+$small 			: 30em;
+$medium 		: 48em;
+$large 	 		: 80rem;
+
+
 @import "susy";
 
 @import "../fonts/font-awesome-4.0.3/scss/font-awesome";
@@ -15,25 +22,25 @@
 @import "lib/mixins";
 @import "lib/utils";
 @import "lib/grid";
-@import "lib/vanillabox";
+@import "lib/plugins";
 
 @import "base";
 
 
-// Break 1 happens in the grid styles only
+//  Only using one for now
 
-// NOTE: This MQ is kinda arbitrary. Based on site-nav size and the grid breakpoint
+// @media only screen and (min-width: $small) {	
+	
+// 	// body{
+// 	// 	background-color: green
+// 	// 	}
+// }
 
-@media only screen and (min-width: $break) {	
-	.single-title, .page-title {
-	    font-size: $h1;
-	}
+@media only screen and (min-width: $medium) {
+	@import "lib/nav";
+	@import "middle";
 }
 
-@media only screen and (min-width: $break2) {
-	@import "middle";	
-}
-
-@media only screen and (min-width: $break3) {
-	@import "large";	
-}
+// @media only screen and (min-width: $large) {
+// 	@import "large";	
+// }

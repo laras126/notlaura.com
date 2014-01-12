@@ -21,17 +21,16 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix single'); ?> role="article">
 
 								<header class="article-header">	
-									
-									<div class="clearfix prev-next">
-										
+									<h3 class="h5 text-center"><?php echo $categories; ?></h3>
+									<div class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
+											<?php previous_post_link('%link','<i class="fa fa-angle-left"></i>'); ?> 
 										</div>
 										<div class="pv-middle">
-											<h3 class="h5 text-center"><?php echo $categories; ?></h3>
+											<h1 class="project-title"><?php the_title(); ?></h1>
 										</div>
 										<div class="next">
-											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
+											<?php next_post_link('%link','<i class="fa fa-angle-right"></i>'); ?>
 										</div>
 									</div>
 
@@ -40,7 +39,6 @@
 								<section class="entry-content project-content clearfix">
 															
 									<?php the_content(); ?>
-									<h1 class="h3"><?php the_title(); ?></h1>
 
 									<p class="h5"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Keywords:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
 

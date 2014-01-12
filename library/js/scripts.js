@@ -98,7 +98,6 @@ jQuery(document).ready(function($) {
     
     if ( ! $media.parent().is($wrap) ) {
     	$media.wrap( '<figure class="media-wrap"></figure>' );
-    	$media.css('border', '10px solid yellow');
     }
 
 
@@ -128,7 +127,7 @@ jQuery(document).ready(function($) {
 		$('#back-top a').click(function () {
 			$('body,html').animate({
 				scrollTop: 0
-			}, 800);
+			}, 500);
 			return false;
 		});
 	});

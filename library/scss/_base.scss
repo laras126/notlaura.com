@@ -286,7 +286,7 @@ POSTS & CONTENT STYLES
 
         // TODO: add a class/conditional instead of specifying
         .single-title,
-        .page-title {
+        .page-title, .project-title {
             font-size: $h2;
             text-align: center;
         }
@@ -421,6 +421,7 @@ POSTS & CONTENT STYLES
 }
 
 
+// Project page
 
 .project-content {
     margin-bottom: $h3;
@@ -430,8 +431,13 @@ POSTS & CONTENT STYLES
     width: 100%;
 }
 
+.custom_type .prev-next {
+    margin-bottom: $h3;
+}
 
 
+// This is a very bad name
+// it means the mefish image on the home page
 .header-img {
     margin-bottom: $h1;
 }
@@ -442,11 +448,6 @@ POSTS & CONTENT STYLES
     margin: $h1 $h2; 
 }
 
-.frame {
-    border: 10px solid $dark-accent;
-    background-color: $medium-accent;
-    color: $white;
-}
 
 
 // About
@@ -516,8 +517,6 @@ POSTS & CONTENT STYLES
 
 // General
 
-
-
 .tags {
     padding: $h3 0;
 
@@ -537,6 +536,7 @@ POSTS & CONTENT STYLES
 }
 
 
+
 // Post formats
 
 .format-type {
@@ -553,7 +553,6 @@ PAGE NAVI STYLES
 
 .prev-next {
     border-top: $accent-border;
-    border-bottom: $accent-border;
 
     a {
         border: 0;
@@ -561,7 +560,7 @@ PAGE NAVI STYLES
 
     i {
         font-size: $h2;
-        padding-top: $h3;
+        padding-top: $h4;
     }
 }
 
@@ -573,11 +572,20 @@ PAGE NAVI STYLES
     text-align: right;
 }
 
-.nav-title-container {
-    i {
+.back-top-container {
+    text-align: center;
+    a {
+        padding: $h4;
+        color: $medium-accent;
+        border: 0;
         font-size: $h2;
+
+        &:hover {
+            color: $link-hover;
+        }
     }
 }
+
 
 .pagination,
 .wp-prev-next {

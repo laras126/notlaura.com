@@ -1,3 +1,6 @@
+			<div class="wrap back-top-container">
+				<div id="back-top"><a href="#top"><i class="fa fa-arrow-up"></i></a></div>
+			</div>
 			
 			<footer class="site-footer rotation" role="contentinfo">
 
@@ -16,10 +19,6 @@
 				</div>
 
 			</footer>
-			
-			<div class="wrap back-top-container">
-				<div id="back-top"><a href="#top"><i class="fa fa-arrow-up"></i></a></div>
-			</div>
 
 		</div>
 

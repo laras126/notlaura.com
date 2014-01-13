@@ -21,9 +21,9 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                             <header class="article-header">
                                 <h1 class="page-title">My name is <span class="special">Lara</span>.</h1>
-                                <p class="text-center">...not <em>Laura</em>, though that's a nice name too.</p>
+                                <p class="page-desc">...not <em>Laura</em>, though that's a nice name too.</p>
                             </header>
-
+                                
                             <section class="entry-content">
 
                                 <figure class="fig-large">

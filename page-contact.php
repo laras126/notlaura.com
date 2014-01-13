@@ -21,8 +21,10 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                             <header class="article-header">
                                 <h1 class="page-title"><?php the_title(); ?></h1>
-                                <p class="text-center">I'd love to hear from you.</p>
+                                <p class="page-desc">I'd love to hear from you.</p>
                             </header>
+                            
+                            <hr class="page-divider" />
 
                             <section class="entry-content">
 
@@ -36,8 +38,8 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 //if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 3 ); } ?>
                                 
                                 <h3>Do you hate forms?</h3>
-                                <p>I get that. So, fellow old fashioned folk, send you message here:</p>
-                                <p class="h1"><a href="mailto:lara@notlaura.com">lara<span class="special-dark">@</span>notlaura.com</a></p>
+                                <p>I get that. So, fellow old fashioned folk, send your message this way:</p>
+                                <p class="subsection-tagline"><a href="mailto:lara@notlaura.com">lara<span class="special-dark"> at </span>notlaura.com</a></p>
 
                             </section>
                             

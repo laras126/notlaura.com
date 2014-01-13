@@ -45,13 +45,13 @@
 
 									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php previous_post_link('%link','<i class="fa fa-angle-left"></i>'); ?> 
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i>'); ?>
 										</div>
 										<div class="pv-middle">
 											<h1 class="project-title"><?php the_title(); ?></h1>
 										</div>
 										<div class="next">
-											<?php next_post_link('%link','<i class="fa fa-angle-right"></i>'); ?>
+											<?php previous_post_link('%link','<i class="fa fa-angle-right"></i>'); ?> 
 										</div>
 									</nav>
 

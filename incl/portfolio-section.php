@@ -1,22 +1,15 @@
 <?php
-$terms = get_terms('custom_cat');
+// $terms = get_terms('custom_cat');
 
-foreach($terms as $term) {
+// foreach($terms as $term) {
     wp_reset_query();
-    $args = array('post_type' => 'custom_type',
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'custom_cat',
-				'field' => 'slug',
-				'terms' => $term->slug,
-			),
-		),
+    $args = array('post_type' => 'custom_type'
 	); ?>
 
 	<div class="subsection">
-		<h1 class="subsection-title special"><?php echo $term->name; ?></h1>
+		<!-- <h1 class="subsection-title special"><?php echo $term->name; ?></h1>
 		<p><?php echo $term->description; ?></p>
-		
+		 -->
 		<div class="subsection-thumbs clearfix">
 			<?php
 			
@@ -34,4 +27,4 @@ foreach($terms as $term) {
 		</div>
 	</div> 
 
-<?php } ?>
+<?php //} ?>

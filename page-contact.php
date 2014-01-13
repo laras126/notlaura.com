@@ -27,7 +27,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                             <section class="entry-content">
 
                                 <h3>I love people and I love coffee</h3>
-                                <p>...so whether or not you have a project in mind, feel free to reach out. I'm always looking to connect with people in the web world.</p>
+                                <p>...so whether or not you have a project in mind, feel free to get in touch. I'm always looking to connect with people in the web world.</p>
 
                                 <h3>Do you like forms?</h3>
                                 <p>Here ya go. This goes straight to my inbox, so I'll get back to you ASAP.</p>
@@ -36,7 +36,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 //if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 3 ); } ?>
                                 
                                 <h3>Do you hate forms?</h3>
-                                <p>I kind of do. So, fellow old fashioned folk, send you message here:</p>
+                                <p>I get that. So, fellow old fashioned folk, send you message here:</p>
                                 <p class="h1"><a href="mailto:lara@notlaura.com">lara<span class="special-dark">@</span>notlaura.com</a></p>
 
                             </section>

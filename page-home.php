@@ -15,7 +15,7 @@
                             <p class="subsection-tagline">You know that expression:</p>
                             <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             </blockquote>
-                            <p class="subsection-tagline">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, and whatnot.</p>
+                            <p class="subsection-tagline">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, etc.</p>
                             <p class="subsection-tagline"> Let's break it down:</p>
                         </div>
                     </header>
@@ -41,7 +41,7 @@
                                 <p class="subsection-title">Option 3</p>
                                 <img src="<?php echo $img_path; ?>site/svg/we-fish.svg" alt="Fishing together!" />
                                 <h2 class="subsection-tagline">We fish together</h2>
-                                <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together in whatever way works best for you, whether it be private lessons or a more hands-off, directional role.</p> 
+                                <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together however works best for you, whether it be private lessons or a more hands-off, directional role.</p> 
                             </div>
 
                         </div>

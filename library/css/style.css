@@ -3015,7 +3015,7 @@ and more scalable.
 .menu-link {
   position: absolute;
   right: 0;
-  bottom: 5%;
+  bottom: 25%;
 }
 /* line 222, ../scss/_base.scss */
 .menu-link i {

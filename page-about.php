@@ -31,7 +31,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                     <figcaption>See that? No "U".</figcaption>
                                 </figure>
 
-                                <p class="summary">I am a freelance web designer and educator based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd love more to make it <em>with</em> you.</p>
+                                <p class="summary">I am a freelance web designer, developer, and instructor based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
                                 
                                 <h3>What can I do?</h3>
 
@@ -51,10 +51,10 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                     <p>It's impossible to learn <em>every</em> nuance of a technology. I believe it is most effective to learn new skills as you need them, not because you think you should know them.</p>
 
                                     <h5>Learn to <strong>teach yourself</strong></h5>
-                                    <p>Sure, one usually takes a class to learn from someone else. But like I said, it's impossible to know everything. I certainly don't! My ultimate goal in teaching is for you to leave with the mindset of "I don't know how to do this, but I can figure it out."</p>
+                                    <p>Sure, one usually takes a class to learn from someone else. But like I said, it's impossible to know everything. I certainly don't! My ultimate goal in teaching is for you to leave with the mindset of "..if I don't know how to do this, I can figure it out."</p>
 
                                     <h5><strong>Confusion</strong> is the goal</h5>
-                                    <p>Sounds horrible, right? No way! To truly internalize a concept, you need experience and break through those frustrating moments of confusion on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
+                                    <p>Sounds horrible, right? No way! To truly internalize a concept, you need experience and break through those frustrating moments of confusion on your own. My goal to set up those moments for you, and provide guidance along the way and you'll be good to go.</p>
                                 
                                 </div>
 
@@ -72,11 +72,13 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <h3>Let's talk</h3>
                                 <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
                             </section>
+
                             <footer class="article-footer text-center">
                                 <hr />
                                 <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Let's go fishing.</a></p>
                                 <p>(i.e. go to my contact page)</p>
                             </footer>
+                        
                         </article>
 
                     </div>

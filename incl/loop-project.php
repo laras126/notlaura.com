@@ -12,7 +12,7 @@
     <a href="<?php the_permalink(); ?>" class="thumb-link">
 		<div class="thumb-image">
 			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail('bones-thumb-600');
+				the_post_thumbnail('bones-thumb-300');
 			} ?> 
 			<?php the_title('<h5 class="line-clamp h5 thumb-title">', '</h5>'); ?>
 		</div>

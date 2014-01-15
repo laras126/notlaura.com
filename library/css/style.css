@@ -2911,7 +2911,7 @@ input[type="tel"] {
   padding: 0.7rem 0.85rem;
   background: #f4f7f9;
   color: #231f20;
-  border: 2px solid #86b2c6;
+  border: 2px solid #e6e6e6;
   line-height: 1.5em;
   font-size: 1.7rem;
   font-family: "museo-sans-1";
@@ -2932,7 +2932,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus {
-  border: 0.28rem solid #237fa9;
+  border-color: #86b2c6;
   background-color: white;
 }
 

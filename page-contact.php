@@ -27,7 +27,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                             <hr class="page-divider" />
 
                             <section class="entry-content fadein">
-                                <h5>Shoot an email to:</h5>
+                                <p>Shoot an email to:</p>
                                 <p class="subsection-tagline"><a href="mailto:lara@notlaura.com">lara<span class="special-dark"> at </span>notlaura.com</a></p>
                                 <p>...or fill out my form and I'll get back to you ASAP.</p>
                                 <div class="clearfix">

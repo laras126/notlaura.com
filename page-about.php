@@ -57,31 +57,24 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <h5>Education</h5>
                                 <p>My background is in Fine Arts. I spent my first two years of college studying Printmaking at the University of Colorado at Boulder and finished up at <strong>Tufts University</strong>’s School of the Museum of Fine Arts Boston (SMFA) and received my <strong>B.F.A.</strong> in 2011.</p>
 
-                                <h3>Values</h3>
+                               <!--  <h3>Teaching Values</h3>
+                                <p>The most important takeaway from a development course is this mentality:</p>
                                 
-                                <p>As much as I love building websites, I equally love sharing what I know. I've got a few strong-held values in my teaching:</p>
-                                
-                                <div>
+                                <blockquote>"..if I don't know how to do it, I can figure it out."</blockquote>
 
-                                    <h5>Learn what you <strong>need to know</strong></h5>
-                                    <p>It's impossible to learn <em>every</em> nuance of a technology. I believe it is most effective to learn new skills as you need them, not because you think you should know them.</p>
+                                <p><strong>Learning on a need-to-know basis.</strong> We will approach learning new concepts with a goal - you need to make x, what do you need to know to get there?</p>
 
-                                    <h5>Learn to <strong>teach yourself</strong></h5>
-                                    <p>My ultimate goal in teaching is for you to leave with the ability to continue learning, and to approach challenges with the mindset <em>"..if I don't know how to do this, I can figure it out."</em></p>
-
-                                    <h5><strong>Confusion</strong> is the goal</h5>
-                                    <p>To truly internalize a concept, you need experience and break through the many frustrating moments of confusion on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
-                                
-                                </div>
-
+                                <p><strong>Confusion is the goal.</strong> To truly internalize a concept, you need experience and break through frustrating moments on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
+ -->
+                                <!-- <h5><strong>Confusion</strong> is the goal</h5>
+                                <p>To truly internalize a concept, you need experience and break through the many frustrating moments of confusion on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
+ -->
                                 <h3>More About Me</h3>
 
                                 <p>In addition to all things web, I am passionate about games and learning. I work part-time as a Design Assistant for the <a href="http://instituteofplay.org" target="blank"><strong>Institute of Play</strong></a> at Quest to Learn, a public middle/high school that is reinventing education through game-like learning. At some point I plan to go back to school for instructional design or a similar field - still figuring that one out.</p>
 
                                 
-                                
-
-                                <h3>Let's talk</h3>
+                                <h5>Let's talk</h5>
                                 <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
                             </section>
 

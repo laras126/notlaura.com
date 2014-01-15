@@ -7,7 +7,7 @@
 				
 			</div>
 			
-			<footer class="site-footer rotation" role="contentinfo">
+			<footer class="site-footer rotation fadein" role="contentinfo">
 
 				<div id="inner-footer" class="wrap">
 					<div class="clearfix">

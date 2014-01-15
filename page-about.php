@@ -24,7 +24,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <p class="page-desc">...not <em>Laura</em>, though that's a nice name too.</p>
                             </header>
                                 
-                            <section class="entry-content">
+                            <section class="entry-content fadein">
 
                                 <figure class="fig-large">
                                     <img src="<?php echo $img_path; ?>site/letters.jpg" alt="Wonderful photo of me" />
@@ -78,7 +78,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
                             </section>
 
-                            <footer class="article-footer text-center">
+                            <footer class="article-footer text-center fadein">
                                 <hr />
                                 <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Go fish.</a></p>
                                 <p>(i.e. go to my contact page)</p>

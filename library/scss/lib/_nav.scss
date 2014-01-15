@@ -24,7 +24,8 @@ NAVIGATION STYLES
         border: none;
 
         a {
-            border: none;
+            border-bottom: 1px solid $dark-accent;
+            border-top: 1px solid $dark-accent;
             &:hover, &:focus {
                 border-bottom: $accent-border;
                 border-top: $accent-border;

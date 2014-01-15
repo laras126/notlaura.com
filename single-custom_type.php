@@ -57,7 +57,7 @@
 
 								</header>
 
-								<section class="entry-content project-content clearfix">
+								<section class="entry-content project-content clearfix fadein">
 															
 									<?php the_content(); ?>
 										

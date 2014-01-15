@@ -75,7 +75,12 @@ jQuery(document).ready(function($) {
     if ( $('.gallery').length > 0 ) {
     	$('.gallery a').vanillabox();	
     }
+
+    // Total hack to fade in images so they aren't jumpy on page load
+    $('.fadein').delay(100).fadeIn('fast');
     
+
+    // $(".fadein").bind("load", function () { $(this).fadeIn(300); });
 
 	// Brad Frost toggle menu
 	// 

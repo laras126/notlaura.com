@@ -3,7 +3,7 @@
 
     <div id="inner-content" class="clearfix">
 
-            <div id="main" class="clearfix text-center" role="main">
+            <div id="main" class="clearfix text-center fadein" role="main">
                 
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                 

@@ -18,12 +18,12 @@ Template Name: Portfolio
 
 								<header class="article-header">
 									<h1 class="page-title"><?php the_title(); ?></h1>
-									<p class="page-desc">Oh, wow! Look at all these nice things I've made.</p>
+									<p class="page-desc">What I've made.</p>
 								</header>
 							
 								<hr class="page-divider" />
 								
-								<section class="entry-content clearfix" itemprop="articleBody">
+								<section class="entry-content clearfix fadein" itemprop="articleBody">
 
 									<?php get_template_part('incl/portfolio', 'section'); ?>
 

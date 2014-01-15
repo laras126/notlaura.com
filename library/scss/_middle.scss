@@ -86,7 +86,7 @@ POSTS & CONTENT STYLES
             
 } /* end .entry-content */
 
-.thumb-image {
+.thumb-image img {
     @include transition(0.2s border-color);
     &:hover {
         border-color: $medium-accent;

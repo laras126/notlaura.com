@@ -37,8 +37,11 @@
 	}
 
 	.ninja-forms-field { 
-		@include span-columns(3); 
-		@include suffix(3); 
+		@include span-columns(2); 
+		@include suffix(4);
+		&:focus {
+			@include transition(0.2s all);        
+		} 
 	}
 	textarea.ninja-forms-field { 
 		@include span-columns(5); 

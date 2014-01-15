@@ -2362,8 +2362,8 @@ button:focus {
 /* line 44, ../scss/lib/_mixins.scss */
 .dark-button:active, input[type="submit"]:active,
 button:active {
-  background: #195976;
-  border-color: #164f6a;
+  background: #1a5f7f;
+  border-color: #185672;
   color: white;
   -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
@@ -2499,13 +2499,20 @@ button:visited:focus {
 
   /* line 39, ../scss/lib/_grid.scss */
   .ninja-forms-field {
-    width: 48.27586%;
+    width: 31.03448%;
     float: left;
     margin-right: 3.44828%;
-    padding-right: 51.72414%;
+    padding-right: 68.96552%;
+  }
+  /* line 42, ../scss/lib/_grid.scss */
+  .ninja-forms-field:focus {
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
   }
 
-  /* line 43, ../scss/lib/_grid.scss */
+  /* line 46, ../scss/lib/_grid.scss */
   textarea.ninja-forms-field {
     width: 82.75862%;
     float: left;
@@ -2514,33 +2521,33 @@ button:visited:focus {
   }
 }
 @media (min-width: 48em) {
-  /* line 51, ../scss/lib/_grid.scss */
+  /* line 54, ../scss/lib/_grid.scss */
   .site-info {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
 
-  /* line 53, ../scss/lib/_grid.scss */
+  /* line 56, ../scss/lib/_grid.scss */
   .site-nav {
     width: 66.10169%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 57, ../scss/lib/_grid.scss */
+  /* line 60, ../scss/lib/_grid.scss */
   .prev-next .prev {
     width: 6.77966%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 61, ../scss/lib/_grid.scss */
+  /* line 64, ../scss/lib/_grid.scss */
   .prev-next .pv-middle {
     width: 83.05085%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 65, ../scss/lib/_grid.scss */
+  /* line 68, ../scss/lib/_grid.scss */
   .prev-next .next {
     width: 6.77966%;
     float: right;
@@ -2980,17 +2987,17 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
-/* line 112, ../scss/lib/_forms.scss */
+/* line 110, ../scss/lib/_forms.scss */
 .ninja-forms-req-symbol {
   color: #f5b6b9;
 }
 
-/* line 116, ../scss/lib/_forms.scss */
+/* line 114, ../scss/lib/_forms.scss */
 .ninja-forms-required-items {
   display: none;
 }
 
-/* line 120, ../scss/lib/_forms.scss */
+/* line 118, ../scss/lib/_forms.scss */
 textarea.ninja-forms-field {
   height: 15em;
 }
@@ -3727,16 +3734,33 @@ view.
   Tablets and whatnot
   
   ******************************************************************/
+  /* line 9, ../scss/_middle.scss */
+  input[type="submit"], button, .dark-button, input[type="submit"],
+  button {
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  /* line 11, ../scss/_middle.scss */
+  input[type="submit"]:hover, button:hover, .dark-button:hover, input[type="submit"]:hover,
+  button:hover {
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+
   /*********************
   HEADER
   *********************/
-  /* line 13, ../scss/_middle.scss */
+  /* line 21, ../scss/_middle.scss */
   .site-title {
     margin: 0;
     font-size: 2.9rem;
   }
 
-  /* line 18, ../scss/_middle.scss */
+  /* line 26, ../scss/_middle.scss */
   .callout-quote {
     font-size: 2.9rem;
   }
@@ -3744,66 +3768,77 @@ view.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 32, ../scss/_middle.scss */
+  /* line 39, ../scss/_middle.scss */
   .subsection-tagline {
     font-size: 2.9rem;
   }
 
-  /* line 36, ../scss/_middle.scss */
+  /* line 43, ../scss/_middle.scss */
   .summary {
     font-size: 2.3rem;
   }
 
-  /* line 43, ../scss/_middle.scss */
+  /* line 50, ../scss/_middle.scss */
   .single-title, .page-title, .project-nav i {
     font-size: 4.7rem;
   }
 
   /* entry content */
-  /* line 49, ../scss/_middle.scss */
+  /* line 56, ../scss/_middle.scss */
   .entry-content {
     position: relative;
     /* at this larger size, we can start to align images */
   }
-  /* line 52, ../scss/_middle.scss */
+  /* line 59, ../scss/_middle.scss */
   .entry-content ul, .entry-content ol {
     list-style-position: outside;
   }
-  /* line 57, ../scss/_middle.scss */
+  /* line 64, ../scss/_middle.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left;
   }
-  /* line 62, ../scss/_middle.scss */
+  /* line 69, ../scss/_middle.scss */
   .entry-content .alignright, .entry-content img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right;
   }
-  /* line 67, ../scss/_middle.scss */
+  /* line 74, ../scss/_middle.scss */
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
     clear: both;
   }
-  /* line 75, ../scss/_middle.scss */
+  /* line 82, ../scss/_middle.scss */
   .single-custom_type .entry-content img {
     width: 100%;
   }
 
   /* end .entry-content */
-  /* line 83, ../scss/_middle.scss */
+  /* line 89, ../scss/_middle.scss */
+  .thumb-image {
+    -webkit-transition: 0.2s border-color;
+    -moz-transition: 0.2s border-color;
+    -o-transition: 0.2s border-color;
+    transition: 0.2s border-color;
+  }
+  /* line 91, ../scss/_middle.scss */
   .thumb-image:hover {
     border-color: #86b2c6;
+    -webkit-transition: 0.2s border-color;
+    -moz-transition: 0.2s border-color;
+    -o-transition: 0.2s border-color;
+    transition: 0.2s border-color;
   }
-  /* line 86, ../scss/_middle.scss */
+  /* line 95, ../scss/_middle.scss */
   .thumb-image:active {
     border-color: #237fa9;
   }
 
-  /* line 94, ../scss/_middle.scss */
+  /* line 103, ../scss/_middle.scss */
   .project-title {
     margin-top: 1.7rem;
   }
@@ -3811,17 +3846,17 @@ view.
   /*********************
   FOOTER STYLES
   *********************/
-  /* line 104, ../scss/_middle.scss */
+  /* line 113, ../scss/_middle.scss */
   .site-footer {
     text-align: left;
   }
 
-  /* line 108, ../scss/_middle.scss */
+  /* line 117, ../scss/_middle.scss */
   .social {
     float: left;
   }
 
-  /* line 112, ../scss/_middle.scss */
+  /* line 121, ../scss/_middle.scss */
   .copyright {
     float: right;
   }

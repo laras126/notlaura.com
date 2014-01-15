@@ -4,6 +4,14 @@ Tablets and whatnot
 
 ******************************************************************/
 
+// Form enhancements
+
+input[type="submit"], button, .dark-button {
+    @include transition(0.2s all);
+    &:hover {
+        @include transition(0.2s all);        
+    }
+}
 
 /*********************
 HEADER
@@ -18,7 +26,6 @@ HEADER
 .callout-quote {
     font-size: $h2;
 }
-
 
 
 
@@ -80,8 +87,10 @@ POSTS & CONTENT STYLES
 } /* end .entry-content */
 
 .thumb-image {
+    @include transition(0.2s border-color);
     &:hover {
         border-color: $medium-accent;
+        @include transition(0.2s border-color);
     }
     &:active {
         border-color: $dark-accent;

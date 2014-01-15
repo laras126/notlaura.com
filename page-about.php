@@ -31,7 +31,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                     <figcaption>See that? No "U".</figcaption>
                                 </figure>
 
-                                <p class="summary">I am a freelance web designer, developer, and instructor based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
+                                <p class="summary">I am a freelance web designer/developer, instructor, and consultant based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
                                 
                                 <h3>What can I do?</h3>
 
@@ -39,18 +39,25 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                                 <p>I believe in the importance of <strong>the mobile web</strong>, clean and <strong>semantic code</strong>, and do my best to utlilize upcoming web technologies while continuing to support web standards.</p>
 
+                                <h5>Services</h5>
+                                <p></p>
+                                <ul>
+                                    <li>Private instruction</li>
+                                    <li>Custom WordPress themes</li>
+                                    <li>HTML/CSS/jQuery development</li>
+                                    <li>Front-end Consulting</li>
+                                    <li>Illustration and graphic design</li>
+                                </ul>
+
                                 <h3>Experience</h3>
                                                                 
-                                <p>In addition to my work with individual clients, I currently teach <a href="https://generalassemb.ly/education/front-end-web-development/new-york-city" target="blank"><strong>Front-end Web Development</strong></a> at <strong>General Assembly</strong> in NYC. Past teaching endeavors include:</p>
-                                <ul>
-                                     <li>Intro to Web Development, <a href="http://saxifrageschool.org" target="blank">Saxifrage School</a> in Pittsburgh</li>
-                                     <li>Website Bootcamp for Creative Professionals, <a href="http://simplelabs.co" target="blank">Simple Labs</a></li>
-                                     <li>WordPress for Fine Artists, <a href="http://gpac.org" target="blank">Greater Pittsburgh Arts Council</a> </li>
-                                     <li>Career mentorship for teens, <a href="http://www.carnegiesciencecenter.org/" target="blank">Carnegie Science Center</a> and the <a href="">International High School at Lafeyette</a> in Brooklyn</li>
-                                 </ul>
-                            
+                                <h5>Teaching</h5>
+                                <p>In addition to my work with individual clients, I currently teach <a href="https://generalassemb.ly/education/front-end-web-development/new-york-city" target="blank"><strong>Front-end Web Development</strong></a> at <strong>General Assembly</strong> in NYC, and last summer co-instructed the 12 week Intro to Web Development course through the <a href="http://saxifrageschool.org" target="blank">Saxifrage School</a> in Pittsburgh. I have taught workshops for creatives through <a href="http://simplelabs.co" target="blank">Simple Labs</a> and the <a href="http://gpac.org" target="blank">Greater Pittsburgh Arts Council</a> and have mentored teens through the <a href="http://www.carnegiesciencecenter.org/" target="blank">Carnegie Science Center</a> and the <a href="">International High School at Lafeyette</a> in Brooklyn.</p>
 
-                                <h3>Teaching philosophy</h3>
+                                <h5>Education</h5>
+                                <p>My background is in Fine Arts. I spent my first two years of college studying Printmaking at the University of Colorado at Boulder and finished up at <strong>Tufts University</strong>’s School of the Museum of Fine Arts Boston (SMFA) and received my <strong>B.F.A.</strong> in 2011.</p>
+
+                                <h3>Values</h3>
                                 
                                 <p>As much as I love building websites, I equally love sharing what I know. I've got a few strong-held values in my teaching:</p>
                                 
@@ -71,7 +78,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
 
                                 <p>In addition to all things web, I am passionate about games and learning. I work part-time as a Design Assistant for the <a href="http://instituteofplay.org" target="blank"><strong>Institute of Play</strong></a> at Quest to Learn, a public middle/high school that is reinventing education through game-like learning. At some point I plan to go back to school for instructional design or a similar field - still figuring that one out.</p>
 
-                                <p>Finally, my background is in Fine Arts. I spent my first two years of college studying Printmaking at the University of Colorado at Boulder and finished up at Tufts University’s School of the Museum of Fine Arts Boston (SMFA) and received my <strong>B.F.A.</strong> in 2011.</p>
+                                
                                 
 
                                 <h3>Let's talk</h3>

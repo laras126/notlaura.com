@@ -2461,19 +2461,24 @@ button:visited:focus {
 @media (min-width: 30em) {
   /* line 31, ../scss/lib/_grid.scss */
   .thumb {
-    width: 48.27586%;
+    width: 31.03448%;
     float: left;
     margin-right: 3.44828%;
     margin-right: -100%;
   }
   /* line 42, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.9/sass/susy/_isolation.scss */
-  .thumb:nth-child(2n + 1) {
+  .thumb:nth-child(3n + 1) {
     margin-left: 0%;
     clear: left;
   }
   /* line 42, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.9/sass/susy/_isolation.scss */
-  .thumb:nth-child(2n + 2) {
-    margin-left: 51.72414%;
+  .thumb:nth-child(3n + 2) {
+    margin-left: 34.48276%;
+    clear: none;
+  }
+  /* line 42, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.9/sass/susy/_isolation.scss */
+  .thumb:nth-child(3n + 3) {
+    margin-left: 68.96552%;
     clear: none;
   }
 }
@@ -2872,12 +2877,12 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-  padding: 0.7rem 0.9rem;
+  padding: 0.7rem 0.85rem;
   background: #f4f7f9;
   color: #231f20;
   border: 2px solid #86b2c6;
   line-height: 1.5em;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-family: "museo-sans-1";
   font-weight: 100;
 }
@@ -2966,9 +2971,9 @@ html {
 body {
   background-color: white;
   font-family: "museo-sans-1";
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 100;
-  line-height: 1.625;
+  line-height: 1.5;
   color: #231f20;
 }
 
@@ -3066,7 +3071,7 @@ h3, .h3 {
 
 /* line 116, ../scss/_base.scss */
 h4, .h4 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-top: 2.9rem;
   margin-bottom: 1.4rem;
 }
@@ -3085,7 +3090,7 @@ TYPOGRAPHY
 *********************/
 /* line 136, ../scss/_base.scss */
 blockquote {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin: 0;
   font-family: "museo-slab-1";
   padding-left: 2rem;
@@ -3323,7 +3328,7 @@ POSTS & CONTENT STYLES
 /* line 401, ../scss/_base.scss */
 .thumb-image {
   position: relative;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.7rem;
   border: 4px solid #e6e6e6;
 }
 
@@ -3418,7 +3423,7 @@ POSTS & CONTENT STYLES
 /* line 500, ../scss/_base.scss */
 .summary, input[type="submit"],
 button {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-family: "museo-sans-1";
 }
 
@@ -3481,7 +3486,7 @@ PAGE NAVI STYLES
 /* line 573, ../scss/_base.scss */
 .prev-next i {
   font-size: 2.9rem;
-  padding-top: 1.8rem;
+  padding-top: 1.7rem;
 }
 
 /* line 579, ../scss/_base.scss */
@@ -3500,7 +3505,7 @@ PAGE NAVI STYLES
 }
 /* line 589, ../scss/_base.scss */
 .back-top-container a {
-  padding: 1.8rem;
+  padding: 1.7rem;
   color: #86b2c6;
   border: 0;
   font-size: 2.9rem;
@@ -3541,11 +3546,11 @@ PAGE NAVI STYLES
   margin: 0;
   text-decoration: none;
   padding: 0;
-  line-height: 1.8rem;
-  font-size: 1.8rem;
+  line-height: 1.7rem;
+  font-size: 1.7rem;
   font-weight: normal;
-  padding: 0.9rem;
-  min-width: 1.8rem;
+  padding: 0.85rem;
+  min-width: 1.7rem;
   display: block;
 }
 /* line 631, ../scss/_base.scss */
@@ -3590,7 +3595,7 @@ FOOTER STYLES
 /* line 678, ../scss/_base.scss */
 .social li {
   display: inline-block;
-  padding-right: 1.8rem;
+  padding-right: 1.7rem;
 }
 /* line 681, ../scss/_base.scss */
 .social li a {
@@ -3752,7 +3757,7 @@ view.
 
   /* line 94, ../scss/_middle.scss */
   .project-title {
-    margin-top: 1.8rem;
+    margin-top: 1.7rem;
   }
 
   /*********************

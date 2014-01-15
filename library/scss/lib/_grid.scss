@@ -28,7 +28,7 @@
 .last { @include omega; }
 
 @include at-breakpoint($small 6) {
-	.thumb { @include isolate-grid(3); }
+	.thumb { @include isolate-grid(2); }
 }
 
 @include at-breakpoint($medium 12) {

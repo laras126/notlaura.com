@@ -87,7 +87,7 @@ input[type="checkbox"] {
 input[type="submit"],
 button {
 	@extend .dark-button;
-	@extend .summary;
+	@extend .h3;
 	cursor: pointer;
 }
 
@@ -113,3 +113,10 @@ input[type="checkbox"]:focus {
 	color: darken($alert-red, 10%);
 }
 
+.ninja-forms-required-items {
+	display: none;
+}
+
+textarea.ninja-forms-field {
+	height: 15em;
+}

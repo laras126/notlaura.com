@@ -27,8 +27,23 @@
 
 .last { @include omega; }
 
+.ninja-forms-field { @include span-columns($total-columns); }
+
 @include at-breakpoint($small 6) {
 	.thumb { @include isolate-grid(2); }
+	
+	.field-wrap label, .submit-wrap { 
+		@include span-columns(6);  
+	}
+
+	.ninja-forms-field { 
+		@include span-columns(3); 
+		@include suffix(3); 
+	}
+	textarea.ninja-forms-field { 
+		@include span-columns(5); 
+		@include suffix(1);
+	}
 }
 
 @include at-breakpoint($medium 12) {
@@ -36,8 +51,6 @@
   	.site-info { @include span-columns(4); }
 
 	.site-nav { @include span-columns(8 omega); }
-
-	//.list { @include isolate-grid(3); }
 
 	.prev-next {
 

@@ -2458,8 +2458,16 @@ button:visited:focus {
   display: inline;
 }
 
+/* line 30, ../scss/lib/_grid.scss */
+.ninja-forms-field {
+  width: 100%;
+  float: left;
+  margin-right: 3.44828%;
+  display: inline;
+}
+
 @media (min-width: 30em) {
-  /* line 31, ../scss/lib/_grid.scss */
+  /* line 33, ../scss/lib/_grid.scss */
   .thumb {
     width: 31.03448%;
     float: left;
@@ -2481,35 +2489,58 @@ button:visited:focus {
     margin-left: 68.96552%;
     clear: none;
   }
+
+  /* line 35, ../scss/lib/_grid.scss */
+  .field-wrap label, .submit-wrap {
+    width: 100%;
+    float: left;
+    margin-right: 3.44828%;
+  }
+
+  /* line 39, ../scss/lib/_grid.scss */
+  .ninja-forms-field {
+    width: 48.27586%;
+    float: left;
+    margin-right: 3.44828%;
+    padding-right: 51.72414%;
+  }
+
+  /* line 43, ../scss/lib/_grid.scss */
+  textarea.ninja-forms-field {
+    width: 82.75862%;
+    float: left;
+    margin-right: 3.44828%;
+    padding-right: 17.24138%;
+  }
 }
 @media (min-width: 48em) {
-  /* line 36, ../scss/lib/_grid.scss */
+  /* line 51, ../scss/lib/_grid.scss */
   .site-info {
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;
   }
 
-  /* line 38, ../scss/lib/_grid.scss */
+  /* line 53, ../scss/lib/_grid.scss */
   .site-nav {
     width: 66.10169%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 44, ../scss/lib/_grid.scss */
+  /* line 57, ../scss/lib/_grid.scss */
   .prev-next .prev {
     width: 6.77966%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 48, ../scss/lib/_grid.scss */
+  /* line 61, ../scss/lib/_grid.scss */
   .prev-next .pv-middle {
     width: 83.05085%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 52, ../scss/lib/_grid.scss */
+  /* line 65, ../scss/lib/_grid.scss */
   .prev-next .next {
     width: 6.77966%;
     float: right;
@@ -2954,6 +2985,16 @@ input[type="checkbox"]:focus {
   color: #f5b6b9;
 }
 
+/* line 116, ../scss/lib/_forms.scss */
+.ninja-forms-required-items {
+  display: none;
+}
+
+/* line 120, ../scss/lib/_forms.scss */
+textarea.ninja-forms-field {
+  height: 15em;
+}
+
 /******************************************************************
 
 Stylesheet: Base Mobile Stylesheet
@@ -3033,7 +3074,8 @@ a:link, a:visited:link {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 /* line 83, ../scss/_base.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .subsection-title {
+h1, .h1, h2, .h2, h3, .h3, input[type="submit"],
+button, h4, .h4, h5, .h5, .subsection-title {
   font-family: "museo-slab-1";
   text-rendering: optimizelegibility;
   font-weight: 300;
@@ -3044,7 +3086,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .subsection-title {
   /* removing text decoration from all headline links */
 }
 /* line 93, ../scss/_base.scss */
-h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, .subsection-title a {
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, input[type="submit"] a,
+button a, h4 a, .h4 a, h5 a, .h5 a, .subsection-title a {
   text-decoration: none;
 }
 
@@ -3063,7 +3106,8 @@ h2, .h2 {
 }
 
 /* line 110, ../scss/_base.scss */
-h3, .h3 {
+h3, .h3, input[type="submit"],
+button {
   font-size: 2.3rem;
   margin-top: 2.9rem;
   margin-bottom: 1.4rem;
@@ -3421,8 +3465,7 @@ POSTS & CONTENT STYLES
 }
 
 /* line 500, ../scss/_base.scss */
-.summary, input[type="submit"],
-button {
+.summary {
   font-size: 1.7rem;
   font-family: "museo-sans-1";
 }
@@ -3701,8 +3744,7 @@ view.
   }
 
   /* line 36, ../scss/_middle.scss */
-  .summary, input[type="submit"],
-  button {
+  .summary {
     font-size: 2.3rem;
   }
 

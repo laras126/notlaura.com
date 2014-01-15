@@ -412,16 +412,18 @@ POSTS & CONTENT STYLES
 .thumb img {
     width: 100%;
     max-width: 100%;
+    margin-bottom: 0;
 }
 
 .thumb-title {
     position: absolute;
     border-top: $accent-border;
-    padding: $sml;
-    bottom: -$sml;
+    margin-bottom: 0;
+    padding: $sml/2;
+    bottom: 0;
     width: 100%;
     margin-top: 0;
-    background-color: $dark-accent;
+    background-color: rgba($dark-accent, 0.8);
     color: $white;
 }
 

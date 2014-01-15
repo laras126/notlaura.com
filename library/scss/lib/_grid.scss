@@ -30,7 +30,7 @@
 .ninja-forms-field { @include span-columns($total-columns); }
 
 @include at-breakpoint($small 6) {
-	.thumb { @include isolate-grid(2); }
+	.thumb { @include isolate-grid(3); }
 	
 	.field-wrap label, .submit-wrap { 
 		@include span-columns(6);  
@@ -51,6 +51,8 @@
 
 @include at-breakpoint($medium 12) {
   	
+  	.thumb { @include isolate-grid(4); }
+
   	.site-info { @include span-columns(4); }
 
 	.site-nav { @include span-columns(8 omega); }

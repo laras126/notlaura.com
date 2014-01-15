@@ -2281,42 +2281,6 @@ CLEARFIXIN'
   color: white;
 }
 
-/* line 62, ../scss/lib/_mixins.scss */
-.dark-button {
-  background: #237fa9;
-  border: none;
-  text-shadow: 0.08em 0.08em 0.91em #666;
-  border-width: 0.2em;
-  color: white;
-  padding: 0.3em 0.5em;
-  margin: 2.3rem 0;
-  display: inline-block;
-}
-/* line 39, ../scss/lib/_mixins.scss */
-.dark-button:hover, .dark-button:focus {
-  background: #124055;
-  color: white;
-}
-/* line 44, ../scss/lib/_mixins.scss */
-.dark-button:active {
-  background: #195976;
-  border-color: #164f6a;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-}
-/* line 54, ../scss/lib/_mixins.scss */
-.dark-button[disabled], .dark-button:disabled, .dark-button.button-primary-disabled {
-  color: #c7ced1 !important;
-  background: #1c6687 !important;
-  border-color: #164f6a !important;
-  text-shadow: none !important;
-}
-/* line 69, ../scss/lib/_mixins.scss */
-.dark-button:hover, .dark-button:focus, .dark-button:visited, .dark-button:visited:hover, .dark-button:visited:focus {
-  color: white;
-}
-
 /* line 7, ../scss/lib/_utils.scss */
 .greeting {
   font-style: italic;
@@ -2374,6 +2338,54 @@ CLEARFIXIN'
   font-size: 1.4rem;
   padding: 0.7rem;
   background-color: #f4f7f9;
+}
+
+/* line 56, ../scss/lib/_utils.scss */
+.dark-button, input[type="submit"],
+button {
+  background: #237fa9;
+  border: none;
+  text-shadow: 0.08em 0.08em 0.91em #666;
+  border-width: 0.2em;
+  color: white;
+  padding: 0.3em 0.5em;
+  margin: 2.3rem 0;
+  display: inline-block;
+}
+/* line 39, ../scss/lib/_mixins.scss */
+.dark-button:hover, input[type="submit"]:hover,
+button:hover, .dark-button:focus, input[type="submit"]:focus,
+button:focus {
+  background: #124055;
+  color: white;
+}
+/* line 44, ../scss/lib/_mixins.scss */
+.dark-button:active, input[type="submit"]:active,
+button:active {
+  background: #195976;
+  border-color: #164f6a;
+  color: white;
+  -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+}
+/* line 54, ../scss/lib/_mixins.scss */
+.dark-button[disabled], input[disabled][type="submit"],
+button[disabled], .dark-button:disabled, input[type="submit"]:disabled,
+button:disabled, .dark-button.button-primary-disabled, input.button-primary-disabled[type="submit"],
+button.button-primary-disabled {
+  color: #c7ced1 !important;
+  background: #1c6687 !important;
+  border-color: #164f6a !important;
+  text-shadow: none !important;
+}
+/* line 63, ../scss/lib/_utils.scss */
+.dark-button:hover, input[type="submit"]:hover,
+button:hover, .dark-button:focus, input[type="submit"]:focus,
+button:focus, .dark-button:visited, input[type="submit"]:visited,
+button:visited, .dark-button:visited:hover, input[type="submit"]:visited:hover,
+button:visited:hover, .dark-button:visited:focus, input[type="submit"]:visited:focus,
+button:visited:focus {
+  color: white;
 }
 
 /* line 14, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/susy-1.0.9/sass/susy/_grid.scss */
@@ -2803,6 +2815,140 @@ CLEARFIXIN'
     background-image: url("../images/vanillabox/error@2x.png");
   }
 }
+/*********************
+INPUT & FORM STYLES
+*********************/
+/* line 6, ../scss/lib/_forms.scss */
+*:focus {
+  outline: 0;
+}
+
+/* line 10, ../scss/lib/_forms.scss */
+label, select {
+  display: block;
+}
+
+/* line 14, ../scss/lib/_forms.scss */
+label {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-top: 2.3rem;
+}
+
+/* line 22, ../scss/lib/_forms.scss */
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+/* line 30, ../scss/lib/_forms.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 34, ../scss/lib/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 52, ../scss/lib/_forms.scss */
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  padding: 0.7rem 0.9rem;
+  background: #f4f7f9;
+  color: #231f20;
+  border: 2px solid #86b2c6;
+  line-height: 1.5em;
+  font-size: 1.8rem;
+  font-family: "museo-sans-1";
+  font-weight: 100;
+}
+/* line 62, ../scss/lib/_forms.scss */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus {
+  border: 0.28rem solid #237fa9;
+  background-color: white;
+}
+
+/* line 69, ../scss/lib/_forms.scss */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* line 83, ../scss/lib/_forms.scss */
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+/* line 88, ../scss/lib/_forms.scss */
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+/* line 95, ../scss/lib/_forms.scss */
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+}
+
+/* line 102, ../scss/lib/_forms.scss */
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 1px dotted #86b2c6;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 112, ../scss/lib/_forms.scss */
+.ninja-forms-req-symbol {
+  color: #f5b6b9;
+}
+
 /******************************************************************
 
 Stylesheet: Base Mobile Stylesheet
@@ -3270,7 +3416,8 @@ POSTS & CONTENT STYLES
 }
 
 /* line 500, ../scss/_base.scss */
-.summary {
+.summary, input[type="submit"],
+button {
   font-size: 1.8rem;
   font-family: "museo-sans-1";
 }
@@ -3549,7 +3696,8 @@ view.
   }
 
   /* line 36, ../scss/_middle.scss */
-  .summary {
+  .summary, input[type="submit"],
+  button {
     font-size: 2.3rem;
   }
 

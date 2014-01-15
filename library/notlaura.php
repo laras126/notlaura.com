@@ -36,4 +36,16 @@ function simplify_post_class($classes) {
 
 add_filter('post_class', 'simplify_post_class');
 
+
+
+//  Get rid of Ninja forms stylesheets
+
+add_action( 'ninja_forms_display_css', 'deregister_ninja_styles', 100 );
+
+function deregister_ninja_styles() {
+	wp_deregister_style( 'ninja-forms-display' );
+	wp_deregister_style( 'jquery-rating');
+	wp_deregister_style( 'jquery-qtip');
+}
+
 ?>

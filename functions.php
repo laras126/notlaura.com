@@ -57,7 +57,7 @@ require_once( 'library/custom-post-type.php' ); // you can disable this if you l
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 600, true );
-add_image_size( 'bones-thumb-300', 300, 300, true );
+add_image_size( 'bones-thumb-450', 450, 450, true );
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
@@ -155,6 +155,63 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+
+
+
+/************* METABOXES *****************/
+
+add_filter( 'cmb_meta_boxes', 'cmb_project_metaboxes' );
+
+function cmb_project_metaboxes( $meta_boxes ) {
+    $prefix = '_cmb_'; // Prefix for all fields
+    $meta_boxes[] = array(
+        'id' => 'project_metabox',
+        'title' => 'Project Details',
+        'pages' => array('custom_type'), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name'    => 'Project Description',
+                'desc'    => '',
+                'id'      => $prefix . 'project_desc',
+                'type'    => 'wysiwyg',
+                'options' => array( 'textarea_rows' => 5, ),
+            ),
+            array(
+                'name' => 'Link',
+                'desc' => '',
+                'id'   => $prefix . 'project_link',
+                'type' => 'text',
+            ),
+            array(
+                'name' => 'Client Name',
+                'desc' => '',
+                'id'   => $prefix . 'client_name',
+                'type' => 'text_medium',
+            ),
+            array(
+                'name'      => 'Keywords:',
+                'id'        => $prefix . 'skills_used',
+                'type'      => 'taxonomy_multicheck',
+                'taxonomy'  => 'custom_tag',
+            ),
+        ),
+    );
+
+    return $meta_boxes;
+}
+
+add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+
+function be_initialize_cmb_meta_boxes() {
+    if ( !class_exists( 'cmb_Meta_Box' ) ) {
+        require_once( 'metabox/init.php' );
+    }
+}
+
+
 
 
 ?>

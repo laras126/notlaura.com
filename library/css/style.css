@@ -3346,9 +3346,10 @@ blockquote {
   border-left: 1px solid #86b2c6;
   margin-bottom: 2.3rem;
   font-style: italic;
+  color: #594f51;
 }
 
-/* line 141, ../scss/_base.scss */
+/* line 142, ../scss/_base.scss */
 p {
   margin-bottom: 1.4rem;
 }
@@ -3356,34 +3357,34 @@ p {
 /*********************
 HEADER STYLES
 *********************/
-/* line 159, ../scss/_base.scss */
+/* line 160, ../scss/_base.scss */
 .rotation a, .rotation a:visited {
   color: #f4f7f9;
 }
 
-/* line 164, ../scss/_base.scss */
+/* line 165, ../scss/_base.scss */
 .site-header {
   padding-bottom: 0;
 }
 
-/* line 168, ../scss/_base.scss */
+/* line 169, ../scss/_base.scss */
 .site-header, .site-footer {
   border-top: 5px solid #86b2c6;
   border-bottom: 5px solid #e6e6e6;
   padding: 1.4rem 0;
 }
 
-/* line 174, ../scss/_base.scss */
+/* line 175, ../scss/_base.scss */
 .site-info {
   position: relative;
 }
-/* line 177, ../scss/_base.scss */
+/* line 178, ../scss/_base.scss */
 .site-info a {
   border-bottom: none;
   color: white;
 }
 
-/* line 183, ../scss/_base.scss */
+/* line 184, ../scss/_base.scss */
 .site-title {
   text-transform: lowercase;
   font-size: 2.3rem;
@@ -3391,7 +3392,7 @@ HEADER STYLES
   margin: 0;
 }
 
-/* line 190, ../scss/_base.scss */
+/* line 191, ../scss/_base.scss */
 .site-desc {
   font-family: "museo-sans-1";
   font-size: 1.4rem;
@@ -3411,20 +3412,20 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-/* line 215, ../scss/_base.scss */
+/* line 216, ../scss/_base.scss */
 .menu-link {
   position: absolute;
   right: 0;
   bottom: 25%;
 }
-/* line 217, ../scss/_base.scss */
+/* line 218, ../scss/_base.scss */
 .menu-link i {
   font-size: 2.9rem;
   line-height: 2.9rem;
   color: #86b2c6;
 }
 
-/* line 229, ../scss/_base.scss */
+/* line 230, ../scss/_base.scss */
 .site-nav {
   text-align: center;
   margin-top: 0.7rem;
@@ -3433,25 +3434,25 @@ and more scalable.
   -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
-/* line 235, ../scss/_base.scss */
+/* line 236, ../scss/_base.scss */
 .js .site-nav {
   overflow: hidden;
   max-height: 0;
 }
-/* line 240, ../scss/_base.scss */
+/* line 241, ../scss/_base.scss */
 .site-nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 245, ../scss/_base.scss */
+/* line 246, ../scss/_base.scss */
 .site-nav.active {
   max-height: 15em;
 }
-/* line 251, ../scss/_base.scss */
+/* line 252, ../scss/_base.scss */
 .site-nav li:first-child {
   border-top: 1px dotted #86b2c6;
 }
-/* line 255, ../scss/_base.scss */
+/* line 256, ../scss/_base.scss */
 .site-nav li a {
   display: block;
   font-size: 1.4rem;
@@ -3461,7 +3462,7 @@ and more scalable.
   text-transform: uppercase;
   display: block;
 }
-/* line 264, ../scss/_base.scss */
+/* line 265, ../scss/_base.scss */
 .site-nav li a:hover {
   color: white;
 }
@@ -3469,12 +3470,12 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 278, ../scss/_base.scss */
+/* line 279, ../scss/_base.scss */
 #content {
   margin-top: 1.4rem;
 }
 
-/* line 285, ../scss/_base.scss */
+/* line 286, ../scss/_base.scss */
 .single-title,
 .page-title, .project-title, .post-title {
   font-size: 2.9rem;
@@ -3482,71 +3483,76 @@ POSTS & CONTENT STYLES
 }
 
 /* line 291, ../scss/_base.scss */
+.post-title {
+  font-weight: 500;
+}
+
+/* line 296, ../scss/_base.scss */
 .single-title,
 .page-title, .project-title {
   text-align: center;
 }
 
 /* post meta */
-/* line 303, ../scss/_base.scss */
+/* line 308, ../scss/_base.scss */
 .byline, .tags {
   color: #b3b3b3;
   font-size: 1.4rem;
   margin-bottom: 2.9rem;
 }
-/* line 308, ../scss/_base.scss */
+/* line 313, ../scss/_base.scss */
 .single .byline, .single .tags {
   text-align: center;
 }
 
 /* entry content */
-/* line 316, ../scss/_base.scss */
+/* line 321, ../scss/_base.scss */
 .entry-content {
   margin-bottom: 2.9rem;
 }
-/* line 319, ../scss/_base.scss */
+/* line 324, ../scss/_base.scss */
 .entry-content ul, .entry-content ol {
   list-style-position: inside;
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
 }
-/* line 325, ../scss/_base.scss */
+/* line 330, ../scss/_base.scss */
 .entry-content ul li.descriptive, .entry-content ol li.descriptive {
   margin-bottom: 1.4rem;
 }
-/* line 327, ../scss/_base.scss */
+/* line 332, ../scss/_base.scss */
 .entry-content ul li.descriptive:last-child, .entry-content ol li.descriptive:last-child {
   margin-bottom: 0;
 }
-/* line 334, ../scss/_base.scss */
+/* line 339, ../scss/_base.scss */
 .entry-content ul {
   list-style-type: disc;
 }
-/* line 338, ../scss/_base.scss */
+/* line 343, ../scss/_base.scss */
 .entry-content ol {
   list-style-type: decimal;
 }
-/* line 344, ../scss/_base.scss */
+/* line 349, ../scss/_base.scss */
 .entry-content dd {
   margin-left: 1.4rem;
   font-size: 1.4rem;
   color: #b3b3b3;
   margin-bottom: 2.3rem;
 }
-/* line 351, ../scss/_base.scss */
+/* line 356, ../scss/_base.scss */
 .entry-content img, .entry-content .fig-large {
   margin-bottom: 1.8rem;
 }
-/* line 355, ../scss/_base.scss */
+/* line 360, ../scss/_base.scss */
 .entry-content .fig-large img {
   margin-bottom: 0;
 }
-/* line 359, ../scss/_base.scss */
+/* line 364, ../scss/_base.scss */
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto;
 }
-/* line 364, ../scss/_base.scss */
+/* line 369, ../scss/_base.scss */
 .entry-content pre {
   background: #f4f7f9;
   border: 1px dotted #86b2c6;
@@ -3555,20 +3561,20 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 373, ../scss/_base.scss */
+/* line 378, ../scss/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #f4f7f9;
   padding: 0.46667rem;
   /* images inside wp-caption */
 }
-/* line 379, ../scss/_base.scss */
+/* line 384, ../scss/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 385, ../scss/_base.scss */
+/* line 390, ../scss/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 1.4rem;
   margin: 0.35rem 0 1.8rem;
@@ -3576,18 +3582,18 @@ POSTS & CONTENT STYLES
 }
 
 /* end .wp-caption */
-/* line 396, ../scss/_base.scss */
+/* line 401, ../scss/_base.scss */
 .gallery-icon img {
   margin-bottom: 0;
 }
 
-/* line 403, ../scss/_base.scss */
+/* line 408, ../scss/_base.scss */
 .thumb-image {
   position: relative;
   margin-bottom: 1.8rem;
 }
 
-/* line 409, ../scss/_base.scss */
+/* line 414, ../scss/_base.scss */
 .thumb img {
   width: 100%;
   max-width: 100%;
@@ -3595,7 +3601,7 @@ POSTS & CONTENT STYLES
   border: 4px solid #e6e6e6;
 }
 
-/* line 416, ../scss/_base.scss */
+/* line 421, ../scss/_base.scss */
 .thumb-title {
   position: absolute;
   border-top: 1px dotted #86b2c6;
@@ -3609,63 +3615,63 @@ POSTS & CONTENT STYLES
   display: none;
 }
 
-/* line 432, ../scss/_base.scss */
+/* line 437, ../scss/_base.scss */
 .project-title {
   margin-top: 1.4rem;
 }
 
-/* line 436, ../scss/_base.scss */
+/* line 441, ../scss/_base.scss */
 .project-content {
   margin-bottom: 2.3rem;
 }
 
-/* line 440, ../scss/_base.scss */
+/* line 445, ../scss/_base.scss */
 .project-content img {
   width: 100%;
 }
 
-/* line 444, ../scss/_base.scss */
+/* line 449, ../scss/_base.scss */
 .project-nav {
   margin-bottom: 2.3rem;
 }
-/* line 446, ../scss/_base.scss */
+/* line 451, ../scss/_base.scss */
 .project-nav .fa {
   font-size: 4.7rem;
 }
 
-/* line 451, ../scss/_base.scss */
+/* line 456, ../scss/_base.scss */
 .page-divider {
   margin-bottom: 2.3rem;
 }
 
-/* line 455, ../scss/_base.scss */
+/* line 460, ../scss/_base.scss */
 .page-desc {
   text-align: center;
 }
 
-/* line 463, ../scss/_base.scss */
+/* line 468, ../scss/_base.scss */
 .header-img {
   margin-bottom: 4.7rem;
 }
 
-/* line 467, ../scss/_base.scss */
+/* line 472, ../scss/_base.scss */
 .callout-quote {
   font-size: 2.3rem;
   text-align: left;
   margin: 4.7rem 2.9rem;
 }
 
-/* line 477, ../scss/_base.scss */
+/* line 482, ../scss/_base.scss */
 .page-about .fig-large {
   margin-top: 2.3rem;
 }
 
-/* line 484, ../scss/_base.scss */
+/* line 489, ../scss/_base.scss */
 .page-contact .social li i {
   font-size: 4.7rem;
 }
 
-/* line 493, ../scss/_base.scss */
+/* line 498, ../scss/_base.scss */
 .subsection-title {
   margin: 4.7rem 0 2.9rem;
   padding-top: 1.4rem;
@@ -3673,23 +3679,23 @@ POSTS & CONTENT STYLES
   text-align: center;
 }
 
-/* line 502, ../scss/_base.scss */
+/* line 507, ../scss/_base.scss */
 .subsection {
   margin-bottom: 2.9rem;
 }
 
-/* line 506, ../scss/_base.scss */
+/* line 511, ../scss/_base.scss */
 .subsection-tagline {
   font-size: 2.3rem;
 }
 
-/* line 510, ../scss/_base.scss */
+/* line 515, ../scss/_base.scss */
 .summary {
   font-size: 1.8rem;
   font-family: "museo-sans-1";
 }
 
-/* line 520, ../scss/_base.scss */
+/* line 525, ../scss/_base.scss */
 .media-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -3700,7 +3706,7 @@ POSTS & CONTENT STYLES
   margin: 0 auto 2.3rem;
 }
 
-/* line 530, ../scss/_base.scss */
+/* line 535, ../scss/_base.scss */
 .media-wrap iframe, .media-wrap object, .media-wrap embed {
   position: absolute;
   top: 0;
@@ -3709,18 +3715,18 @@ POSTS & CONTENT STYLES
   height: 100%;
 }
 
-/* line 550, ../scss/_base.scss */
+/* line 549, ../scss/_base.scss */
 .pv-middle .tags {
   margin-bottom: 0;
   margin-top: 1.4rem;
 }
 
-/* line 557, ../scss/_base.scss */
+/* line 556, ../scss/_base.scss */
 .article-footer {
   padding-bottom: 2.3rem;
 }
 
-/* line 565, ../scss/_base.scss */
+/* line 564, ../scss/_base.scss */
 .format-type {
   color: #86b2c6;
   margin-right: 1.4rem;
@@ -3729,57 +3735,57 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 577, ../scss/_base.scss */
+/* line 576, ../scss/_base.scss */
 .prev-next {
   border-top: 1px dotted #86b2c6;
 }
-/* line 580, ../scss/_base.scss */
+/* line 579, ../scss/_base.scss */
 .prev-next a {
   border: 0;
 }
-/* line 584, ../scss/_base.scss */
+/* line 583, ../scss/_base.scss */
 .prev-next i {
   font-size: 2.9rem;
   padding-top: 1.8rem;
 }
 
-/* line 590, ../scss/_base.scss */
+/* line 589, ../scss/_base.scss */
 .prev {
   text-align: left;
 }
 
-/* line 594, ../scss/_base.scss */
+/* line 593, ../scss/_base.scss */
 .next {
   text-align: right;
 }
 
-/* line 598, ../scss/_base.scss */
+/* line 597, ../scss/_base.scss */
 .back-top-container {
   text-align: center;
 }
-/* line 600, ../scss/_base.scss */
+/* line 599, ../scss/_base.scss */
 .back-top-container a {
   padding: 1.8rem;
   color: #86b2c6;
   border: 0;
   font-size: 2.9rem;
 }
-/* line 606, ../scss/_base.scss */
+/* line 605, ../scss/_base.scss */
 .back-top-container a:hover {
   color: #1b6283;
 }
 
-/* line 614, ../scss/_base.scss */
+/* line 613, ../scss/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 2.3rem 0 4.7rem;
 }
 
-/* line 617, ../scss/_base.scss */
+/* line 616, ../scss/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 619, ../scss/_base.scss */
+/* line 618, ../scss/_base.scss */
 .pagination ul {
   display: inline-block;
   white-space: nowrap;
@@ -3787,7 +3793,7 @@ PAGE NAVI STYLES
   clear: both;
   margin: 1px;
 }
-/* line 625, ../scss/_base.scss */
+/* line 624, ../scss/_base.scss */
 .pagination ul li {
   padding: 0;
   margin: 0;
@@ -3795,7 +3801,7 @@ PAGE NAVI STYLES
   display: inline;
   overflow: hidden;
 }
-/* line 631, ../scss/_base.scss */
+/* line 630, ../scss/_base.scss */
 .pagination ul li a, .pagination ul li span {
   margin: 0;
   border: none;
@@ -3806,7 +3812,7 @@ PAGE NAVI STYLES
   min-width: 1.8rem;
   display: block;
 }
-/* line 641, ../scss/_base.scss */
+/* line 640, ../scss/_base.scss */
 .pagination ul li span.current, .pagination ul li a:hover, .pagination ul li a:focus {
   background-color: #f4f7f9;
   background-color: #f4f7f9;
@@ -3814,17 +3820,17 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 654, ../scss/_base.scss */
+/* line 653, ../scss/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 658, ../scss/_base.scss */
+/* line 657, ../scss/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
 
 /* end .wp-prev-next */
-/* line 664, ../scss/_base.scss */
+/* line 663, ../scss/_base.scss */
 .tablet-nav {
   display: none;
 }
@@ -3832,40 +3838,40 @@ PAGE NAVI STYLES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 673, ../scss/_base.scss */
+/* line 672, ../scss/_base.scss */
 .footer {
   clear: both;
 }
 
-/* line 677, ../scss/_base.scss */
+/* line 676, ../scss/_base.scss */
 .site-footer {
   margin-top: 4.7rem;
   text-align: center;
 }
-/* line 679, ../scss/_base.scss */
+/* line 678, ../scss/_base.scss */
 .site-footer .wrap {
   padding-top: 2.9rem;
 }
 
-/* line 686, ../scss/_base.scss */
+/* line 685, ../scss/_base.scss */
 .social {
   display: inline-block;
 }
-/* line 689, ../scss/_base.scss */
+/* line 688, ../scss/_base.scss */
 .social li {
   display: inline-block;
   padding-right: 1.8rem;
 }
-/* line 692, ../scss/_base.scss */
+/* line 691, ../scss/_base.scss */
 .social li a {
   border: none;
 }
-/* line 695, ../scss/_base.scss */
+/* line 694, ../scss/_base.scss */
 .social li i {
   font-size: 2.9rem;
 }
 
-/* line 701, ../scss/_base.scss */
+/* line 700, ../scss/_base.scss */
 .colophon {
   font-size: 1.4rem;
   padding-top: 1.4rem;

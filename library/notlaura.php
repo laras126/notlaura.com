@@ -13,7 +13,7 @@ function nl_more_link( $more_link, $more_link_text ) {
 	global $post;
 	return str_replace( $more_link_text, '<div class="clearfix"><a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'" class="dark-button last">Read on <i class="fa fa-long-arrow-right"></a></a></div>', $more_link );
 }
-add_filter( 'the_content_more_link', 'nl_more_link', 10, 2 );
+// add_filter( 'the_content_more_link', 'nl_more_link', 10, 2 );
 
 function simplify_post_class($classes) {
     global $post;

@@ -136,6 +136,7 @@ blockquote {
     border-left: 1px solid $light-blue;
     margin-bottom: $h3;
     font-style: italic;
+    color: lighten($main-font-clr, 20%);
 }
 
 p {
@@ -285,6 +286,10 @@ POSTS & CONTENT STYLES
     .page-title, .project-title, .post-title {
         font-size: $h2;
         font-weight: 300;
+    }
+
+    .post-title {
+        font-weight: 500;
     }
 
     .single-title,
@@ -540,13 +545,7 @@ POSTS & CONTENT STYLES
 // General
 
 .tags {
-    // padding: $default 0 0;
 
-    .blog & {
-        // border-top: $accent-border;
-        // border-bottom: $accent-border;    
-    }
-    
     .pv-middle & {
         margin-bottom: 0;
         margin-top: $sml;

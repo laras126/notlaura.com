@@ -29,15 +29,6 @@ $large 	 		: 80rem;
 @import "base";
 
 
-//  Only using one for now
-
-// @media only screen and (min-width: $small) {	
-	
-// 	// body{
-// 	// 	background-color: green
-// 	// 	}
-// }
-
 @media only screen and (min-width: $medium) {
 	@import "lib/nav";
 	@import "middle";

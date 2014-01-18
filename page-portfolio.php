@@ -18,7 +18,7 @@ Template Name: Portfolio
 
 								<header class="article-header">
 									<h1 class="page-title"><?php the_title(); ?></h1>
-									<p class="page-desc">What I've made.</p>
+									<p class="page-desc">What I do.</p>
 								</header>
 							
 								<hr class="page-divider" />

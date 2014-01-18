@@ -45,16 +45,22 @@
 
 									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php next_post_link('%link','<i class="fa fa-angle-left"></i>'); ?>
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text h4">Previous</span>'); ?>
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
 										</div>
+
 										<div class="pv-middle">
-											<h1 class="project-title"><?php the_title(); ?></h1>
+											<h1 class="project-title"><?php the_title(); ?></h1>		
 										</div>
+
 										<div class="next">
-											<?php previous_post_link('%link','<i class="fa fa-angle-right"></i>'); ?> 
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
+											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
 										</div>
 									</nav>
-
+									
 								</header>
 
 								<section class="entry-content project-content clearfix fadein">
@@ -64,10 +70,7 @@
 									<?php if (!empty($k_list)) { ?>
 										<p class="h5"><strong>Keywords:</strong> <?php echo $k_list; ?></p>
 									<?php } ?>
-									
-									
-									<hr />
-									
+
 									<p><?php echo $desc; ?></p>
 
 							
@@ -78,9 +81,7 @@
 
 								</section>
 
-								<footer class="article-footer">
-									<?php edit_post_link(); ?>
-								</footer>
+								<?php edit_post_link(); ?>
 
 							</article>
 

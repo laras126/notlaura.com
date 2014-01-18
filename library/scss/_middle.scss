@@ -47,7 +47,7 @@ POSTS & CONTENT STYLES
 // Make some text bigger
 // TODO: might be better to have a .flex-text class 
 // or something - will need to reevaluate
-.single-title, .page-title, .project-nav i {
+.single-title, .page-title {
     font-size: $h1;
 }
 
@@ -103,6 +103,12 @@ POSTS & CONTENT STYLES
 .project-title {
     margin-top: $h4;
 }
+
+.nav-text {
+    line-height: 0.5;
+    vertical-align: text-bottom;
+}
+
 
 /*********************
 FOOTER STYLES

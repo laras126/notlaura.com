@@ -166,8 +166,8 @@ HEADER STYLES
 
 .rotation {
    @extend .dark-bkgd;
-   a:visited {
-    color: $white;
+   a, a:visited {
+    color: $vlight-accent;
    }
 }
 
@@ -289,11 +289,17 @@ POSTS & CONTENT STYLES
     margin-top: $sml;
 }
 
+.post-title {
+    @extend .h2;
+    font-weight: 500;
+}
+
         // TODO: add a class/conditional instead of specifying
         .single-title,
         .page-title, .project-title {
             font-size: $h2;
             text-align: center;
+            font-weight: 300;
         }
 
         .single-title {}
@@ -444,8 +450,11 @@ POSTS & CONTENT STYLES
     width: 100%;
 }
 
-.custom_type .prev-next {
+.project-nav {
     margin-bottom: $h3;
+    .fa {
+        font-size: $h1;
+    }
 }
 
 .page-divider {
@@ -455,6 +464,7 @@ POSTS & CONTENT STYLES
 .page-desc {
     text-align: center;
 }
+
 
 
 // This is a very bad name
@@ -628,20 +638,17 @@ PAGE NAVI STYLES
                 overflow: hidden;
                 a, span {
                     margin: 0;
-                    text-decoration: none;
+                    border: none;
                     padding: 0;
                     line-height: $default;
                     font-size: $default;
-                    font-weight: normal;
                     padding: $default/2;
                     min-width: $default;
                     display: block;
                 }
-                span.current{
-                    font-weight: bold;
-                }
-                a:hover, a:focus {
-                    
+                span.current, a:hover, a:focus {
+                    background-color: $vlight-accent;
+                    background-color: $vlight-accent;
                 }
             }
         }
@@ -662,6 +669,9 @@ PAGE NAVI STYLES
 
     } /* end .wp-prev-next */
 
+.tablet-nav {
+    display: none;
+}
 
 
 /*********************

@@ -31,14 +31,14 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                     <figcaption>See that? No "U".</figcaption>
                                 </figure>
 
-                                <p class="summary">I am a freelance web designer/developer, instructor, and consultant based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
+                                <p class="summary">I am a freelance web designer, developer, and instructor based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
                                 
                                 <h3>What can I do?</h3>
 
-                                <p>I work extensively in <strong>custom WordPress development</strong> and <strong>front-end design</strong> for web applications. I provide private and small group instruction and consultation, as well as graphic design and branding services.</p>
-
+                                <p>I work extensively in <strong>custom WordPress development</strong> and <strong>front-end</strong> design and development for web applications. I provide <strong>private instruction</strong> and consultation for individuals and small groups, as well as illustration, graphic design and branding services.</p>
                                 <p>I believe in the importance of <strong>the mobile web</strong>, clean and <strong>semantic code</strong>, and do my best to utlilize upcoming web technologies while continuing to support web standards.</p>
 
+<!--
                                 <h5>Services</h5>
                                 <p></p>
                                 <ul>
@@ -49,6 +49,7 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                     <li>Illustration and graphic design</li>
                                 </ul>
 
+-->
                                 <h3>Experience</h3>
                                                                 
                                 <h5>Teaching</h5>
@@ -57,24 +58,11 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
                                 <h5>Education</h5>
                                 <p>My background is in Fine Arts. I spent my first two years of college studying Printmaking at the University of Colorado at Boulder and finished up at <strong>Tufts University</strong>’s School of the Museum of Fine Arts Boston (SMFA) and received my <strong>B.F.A.</strong> in 2011.</p>
 
-                               <!--  <h3>Teaching Values</h3>
-                                <p>The most important takeaway from a development course is this mentality:</p>
-                                
-                                <blockquote>"..if I don't know how to do it, I can figure it out."</blockquote>
-
-                                <p><strong>Learning on a need-to-know basis.</strong> We will approach learning new concepts with a goal - you need to make x, what do you need to know to get there?</p>
-
-                                <p><strong>Confusion is the goal.</strong> To truly internalize a concept, you need experience and break through frustrating moments on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
- -->
-                                <!-- <h5><strong>Confusion</strong> is the goal</h5>
-                                <p>To truly internalize a concept, you need experience and break through the many frustrating moments of confusion on your own. My goal to set up those moments for you, and provide guidance along the way.</p>
- -->
                                 <h3>More About Me</h3>
-
-                                <p>In addition to all things web, I am passionate about games and learning. I work part-time as a Design Assistant for the <a href="http://instituteofplay.org" target="blank"><strong>Institute of Play</strong></a> at Quest to Learn, a public middle/high school that is reinventing education through game-like learning. At some point I plan to go back to school for instructional design or a similar field - still figuring that one out.</p>
+                                <p>In addition to all things web, I am passionate about <strong>games and learning</strong>. I work part-time as a Design Assistant for the <a href="http://instituteofplay.org" target="blank"><strong>Institute of Play</strong></a> at Quest to Learn, a public middle/high school that is reinventing education through game-like learning. At some point I plan to go back to school for instructional design or a similar field - still figuring that one out.</p>
 
                                 
-                                <h5>Let's talk</h5>
+                                <h3>Let's talk</h3>
                                 <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
                             </section>
 

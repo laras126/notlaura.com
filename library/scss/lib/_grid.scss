@@ -13,7 +13,7 @@
 	@include container(8);
 
 	.prev {
-		@include span-columns(1);
+		@include span-columns(1);	
 	}
 	
 	.pv-middle {
@@ -22,6 +22,10 @@
 
 	.next {
 		@include span-columns(1 omega);
+	}
+
+	.nav-text {
+		display: none;
 	}
 }
 
@@ -43,6 +47,7 @@
 			@include transition(0.2s all);        
 		} 
 	}
+
 	textarea.ninja-forms-field { 
 		@include span-columns(5); 
 		@include suffix(1);
@@ -58,17 +63,31 @@
 	.site-nav { @include span-columns(8 omega); }
 
 	.prev-next {
+		@include container(12);
+ 		@include bleed(1);
+
+ 		.nav-text {
+ 			display: inline-block;
+ 		}
 
 		.prev {
-			@include span-columns(1);
+			@include span-columns(2);
+		
+			.nav-text {
+				padding-left: $sml;
+			}
 		}
 		
 		.pv-middle {
-			@include span-columns(10);	
+			@include span-columns(8);	
 		}
 
 		.next {
-			@include span-columns(1 omega);
+			@include span-columns(2 omega);
+
+			.nav-text {
+				padding-right: $sml;
+			}
 		}
 	}
 }

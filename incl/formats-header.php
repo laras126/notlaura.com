@@ -1,5 +1,5 @@
 <header class="article-header">
-	<h1 class="<?php if (is_single() ) { echo 'single-title'; } else { echo 'h2'; } ?>">
+	<h1 class="<?php if (is_single() ) { echo 'single-title'; } else { echo 'post-title'; } ?>">
 		<?php if (!is_single() ) { ?>
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 		<?php } ?>

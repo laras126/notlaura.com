@@ -49,7 +49,7 @@
 
                     <footer class="article-footer wrap text-center">
                         <hr />
-                        <h3 class="h1 text-center">Ok, sold?</h1>
+                        <h3 class="h1 text-center page-title">Ok, sold?</h1>
                         <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Go fish.</a></p>
                         <p>(i.e. go to my contact page)</p>
                     </footer>

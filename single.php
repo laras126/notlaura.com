@@ -18,15 +18,21 @@
 						
 								<footer class="article-footer">
 									
-									<nav class="prev-next clearfix">
+									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php previous_post_link('%link','<i class="fa fa-arrow-left"></i>'); ?> 
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text h4">Previous</span>'); ?>
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
 										</div>
+
 										<div class="pv-middle">
-											<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+											<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>	
 										</div>
+
 										<div class="next">
-											<?php next_post_link('%link','<i class="fa fa-arrow-right"></i>'); ?>
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
+											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
 										</div>
 									</nav>
 

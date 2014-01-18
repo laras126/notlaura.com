@@ -3206,11 +3206,6 @@ Stylesheet: Base Mobile Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
-/* line 12, ../scss/_base.scss */
-.js .fadein {
-  display: none;
-}
-
 /* line 17, ../scss/_base.scss */
 html {
   font-size: 62.5%;

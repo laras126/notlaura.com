@@ -17,7 +17,6 @@ input[type="submit"], button, .dark-button {
 HEADER
 *********************/
 
-
 .site-title {
     margin: 0;
     font-size: $h2;
@@ -114,8 +113,6 @@ POSTS & CONTENT STYLES
 FOOTER STYLES
 *********************/
     
-
-
 .site-footer {
     text-align: left;
 }
@@ -127,15 +124,3 @@ FOOTER STYLES
 .copyright {
     float: right;
 }
-
-
-/*
-check your menus here. do they look good?
-do they need tweaking?
-*/
-.footer-links {
-    ul {
-        li {}
-    }
-} /* end .footer-links */
-            

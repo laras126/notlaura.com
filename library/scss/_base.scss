@@ -374,7 +374,8 @@ POSTS & CONTENT STYLES
             pre {
                 background: $vlight-accent;
                 border: $accent-border;
-                padding: $sml;
+                // padding: 0 $sml;
+                padding-top: 0;
             }
 
         } /* end .entry-content */

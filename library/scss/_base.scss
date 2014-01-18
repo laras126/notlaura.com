@@ -8,6 +8,12 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 
+.js {
+    .fadein {
+        display: none;
+    }
+}
+
 html {
     font-size: 62.5%;
 }

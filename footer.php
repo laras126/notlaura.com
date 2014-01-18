@@ -1,4 +1,4 @@
-			<div class="wrap back-top-container">
+			<div class="wrap back-top-container fadein">
 				<div id="back-top">
 					<a href="#top">
 						<i class="fa fa-arrow-up"></i>

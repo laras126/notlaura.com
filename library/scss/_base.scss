@@ -279,116 +279,116 @@ POSTS & CONTENT STYLES
     margin-top: $sml;
 }
 
-.post-title {
-    @extend .h2;
-    font-weight: 500;
-}
 
-        // TODO: add a class/conditional instead of specifying
-        .single-title,
-        .page-title, .project-title {
-            font-size: $h2;
+    // TODO: add a class/conditional instead of specifying
+    .single-title,
+    .page-title, .project-title, .post-title {
+        font-size: $h2;
+        font-weight: 300;
+    }
+
+    .single-title,
+    .page-title, .project-title {
+        text-align: center;
+    }
+
+    .single-title {}
+
+    .page-title {}
+
+    .archive-title { }
+
+
+    /* post meta */
+    .byline, .tags {
+        color: $txt-light;
+        font-size: $sml;
+        margin-bottom: $h2;
+        
+        .single & {
             text-align: center;
-            font-weight: 300;
         }
 
-        .single-title {}
+        time {}
+    }
 
-        .page-title {}
+    /* entry content */
+    .entry-content {
+        margin-bottom: $h2;
 
-        .archive-title { }
+        ul, ol {
+            list-style-position: inside;
+            margin-top: $sml;
+            margin-bottom: $sml;
 
-
-        /* post meta */
-        .byline, .tags {
-            color: $txt-light;
-            font-size: $sml;
-            margin-bottom: $h2;
-            
-            .single & {
-                text-align: center;
-            }
-
-            time {}
-        }
-
-        /* entry content */
-        .entry-content {
-            margin-bottom: $h2;
-
-            ul, ol {
-                list-style-position: inside;
-                margin-top: $sml;
-                margin-bottom: $sml;
-
-                li {
-                    &.large-items {
-                        margin-bottom: $sml;                    
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
+            li {
+                &.large-items {
+                    margin-bottom: $sml;                    
+                    &:last-child {
+                        margin-bottom: 0;
                     }
                 }
             }
+        }
 
-            ul {
-                list-style-type: disc;
-            }
+        ul {
+            list-style-type: disc;
+        }
 
-            ol {
-                list-style-type: decimal;
+        ol {
+            list-style-type: decimal;
 
-            }
+        }
 
 
-            dd {
-                margin-left: $sml;
-                font-size: $sml;
-                color: $txt-light;
-                margin-bottom: $h3;
-            }
+        dd {
+            margin-left: $sml;
+            font-size: $sml;
+            color: $txt-light;
+            margin-bottom: $h3;
+        }
 
-            img, .fig-large {
-                margin-bottom: $h2;
-            }
-            
-            .fig-large img {
-                margin-bottom: 0;
-            }
+        img, .fig-large {
+            margin-bottom: $default;
+        }
+        
+        .fig-large img {
+            margin-bottom: 0;
+        }
 
-            video, object {
-                max-width: 100%;
-                height: auto;
-            }
-
-            pre {
-                background: $vlight-accent;
-                border: $accent-border;
-                // padding: 0 $sml;
-                padding-top: 0;
-            }
-
-        } /* end .entry-content */
-
-        .wp-caption {
+        video, object {
             max-width: 100%;
+            height: auto;
+        }
+
+        pre {
             background: $vlight-accent;
-            padding: $sml/3;
+            border: $accent-border;
+            margin-top: $default;
+            padding-top: 0;
+        }
 
-            /* images inside wp-caption */
-            img {
-                max-width: 100%;
-                margin-bottom: 0;
-                width: 100%;
-            }
+    } /* end .entry-content */
 
-            p.wp-caption-text {
-                font-size: $sml;
-                margin: $sml/4 0 $sml/3;
-                text-align: center;
-            }
+    .wp-caption {
+        max-width: 100%;
+        background: $vlight-accent;
+        padding: $sml/3;
 
-        } /* end .wp-caption */
+        /* images inside wp-caption */
+        img {
+            max-width: 100%;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        p.wp-caption-text {
+            font-size: $sml;
+            margin: $sml/4 0 $sml/3;
+            text-align: center;
+        }
+
+    } /* end .wp-caption */
 
 
 // Gallery styles

@@ -52,6 +52,11 @@
 		@include span-columns(5); 
 		@include suffix(1);
 	}
+
+	// Utility for layout in post editor
+	.sixcol {
+		@include span-columns(3);	
+	}
 }
 
 @include at-breakpoint($medium 12) {

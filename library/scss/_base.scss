@@ -129,8 +129,8 @@ TYPOGRAPHY
 *********************/
 
 blockquote {
-    font-size: $h4;
-    margin: 0;
+    font-size: $h3;
+    margin: $h4 0;
     font-family: $serif;
     padding-left: 2rem;
     border-left: 1px solid $light-blue;
@@ -374,7 +374,7 @@ POSTS & CONTENT STYLES
         max-width: 100%;
         background: $vlight-accent;
         padding: $sml/3;
-
+        
         /* images inside wp-caption */
         img {
             max-width: 100%;
@@ -384,7 +384,7 @@ POSTS & CONTENT STYLES
 
         p.wp-caption-text {
             font-size: $sml;
-            margin: $sml/4 0 $sml/3;
+            margin: $sml/4 0 $default;
             text-align: center;
         }
 
@@ -549,6 +549,7 @@ POSTS & CONTENT STYLES
     
     .pv-middle & {
         margin-bottom: 0;
+        margin-top: $sml;
     }
 
 }

@@ -77,7 +77,7 @@ jQuery(document).ready(function($) {
     }
 
     // Fade in a couple of images
-    $('.fadein').delay(100).fadeIn('fast');
+    // $('.fadein').delay(100).fadeIn('fast');
     
 
     // $(".fadein").bind("load", function () { $(this).fadeIn(300); });

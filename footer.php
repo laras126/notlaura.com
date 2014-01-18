@@ -13,7 +13,7 @@
 					<div class="clearfix">
 						<ul class="social">
 							<li><a href="http://twitter.com/laras126" target="blank"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="http://linkedin.com/notlaura" target="blank"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="http://www.linkedin.com/in/notlaura/" target="blank"><i class="fa fa-linkedin"></i></a></li>
 							<li><a href="http://github.com/laras126" target="blank"><i class="fa fa-github"></i></a></li>
 							<li><a href="http://dribbble.com/notlaura" target="blank"><i class="fa fa-dribbble"></i></a></li>
 							<li><a href="http://feeds.feedburner.com/notlaura" target="blank"><i class="fa fa-rss"></i></a></li>

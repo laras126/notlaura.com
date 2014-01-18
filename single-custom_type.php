@@ -80,8 +80,27 @@
 
 
 								</section>
+								
+								<footer class="article-footer">
+									<nav class="clearfix prev-next project-nav">
+										<div class="prev">
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text h4">Previous</span>'); ?>
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
+										</div>
 
-								<?php edit_post_link(); ?>
+										<div class="pv-middle">
+											&nbsp;
+										</div>
+
+										<div class="next">
+											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
+											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
+										</div>
+									</nav>
+									<?php edit_post_link(); ?>
+								</footer>
 
 							</article>
 

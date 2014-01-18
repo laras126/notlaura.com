@@ -322,7 +322,7 @@ POSTS & CONTENT STYLES
             margin-bottom: $sml;
 
             li {
-                &.large-items {
+                &.descriptive {
                     margin-bottom: $sml;                    
                     &:last-child {
                         margin-bottom: 0;
@@ -540,11 +540,11 @@ POSTS & CONTENT STYLES
 // General
 
 .tags {
-    padding: $h3 0;
+    // padding: $default 0 0;
 
     .blog & {
-        border-top: $accent-border;
-        border-bottom: $accent-border;    
+        // border-top: $accent-border;
+        // border-bottom: $accent-border;    
     }
     
     .pv-middle & {

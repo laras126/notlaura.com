@@ -51,7 +51,7 @@ function deregister_ninja_styles() {
 // Stop adding <p>s goddammit
 // http://urbangiraffe.com/plugins/disable-wpautop/
 
-remove_filter ('the_content',  'wpautop');
+// remove_filter ('the_content',  'wpautop');
 remove_filter ('comment_text', 'wpautop');
 
 

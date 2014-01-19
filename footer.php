@@ -1,5 +1,5 @@
 			<div class="back-top-container">
-				<div id="back-top wrap">
+				<div id="back-top">
 					<a href="#top">
 						<i class="fa fa-arrow-up"></i>
 					</a>

@@ -137,16 +137,19 @@ function bones_scripts_and_styles() {
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
-		// comment reply script for threaded comments
-		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-			wp_enqueue_script( 'comment-reply' );
-		}
+		// BONES: comment reply script for threaded comments
+		// Lara says remove this
+		// if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+		// 	wp_enqueue_script( 'comment-reply' );
+		// }
 
 		// Get jQuery with Google
 		if( !is_admin()){
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"), false, '1.10.1', true);
 			wp_enqueue_script('jquery');
+			wp_deregister_script('dashicons');
+			wp_deregister_script('comment-reply');
 		}
 
 

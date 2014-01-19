@@ -1,13 +1,12 @@
-			<div class="wrap back-top-container fadein">
-				<div id="back-top">
+			<div class="back-top-container">
+				<div id="back-top wrap">
 					<a href="#top">
 						<i class="fa fa-arrow-up"></i>
 					</a>
 				</div>
-				
 			</div>
 			
-			<footer class="site-footer rotation fadein" role="contentinfo">
+			<footer class="site-footer rotation" role="contentinfo">
 
 				<div id="inner-footer" class="wrap">
 					<div class="clearfix">

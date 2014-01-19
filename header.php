@@ -33,11 +33,10 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
-		
-		<?php // CHEATER!!! This should be in wp_head 
-			  // TODO: put it there ?>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		
+	
+
+		<script>try{Typekit.load();}catch(e){}</script>
+
 		<script type="text/javascript">
 
 		  var _gaq = _gaq || [];
@@ -51,6 +50,8 @@
 		  })();
 
 		</script>
+
+
 
 	</head>
 

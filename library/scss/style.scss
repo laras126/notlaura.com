@@ -29,6 +29,15 @@ $large 	 		: 80rem;
 @import "base";
 
 
+@media only screen and (min-width: $small) {
+	// Make some text bigger
+	// TODO: might be better to have a .flex-text class 
+	// or something - will need to reevaluate
+	.single-title, .page-title {
+	    font-size: $h1;
+	}
+}
+
 @media only screen and (min-width: $medium) {
 	@import "lib/nav";
 	@import "middle";

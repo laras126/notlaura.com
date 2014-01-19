@@ -142,7 +142,6 @@ blockquote {
     border-left: 1px solid $light-blue;
     margin-bottom: $h3;
     font-style: italic;
-    color: lighten($main-font-clr, 20%);
 }
 
 p {
@@ -326,6 +325,10 @@ POSTS & CONTENT STYLES
     /* entry content */
     .entry-content {
         margin-bottom: $h2;
+
+        blockquote {
+            color: #999;
+        }
 
         ul, ol {
             list-style-position: inside;

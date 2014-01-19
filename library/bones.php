@@ -143,13 +143,15 @@ function bones_scripts_and_styles() {
 		// 	wp_enqueue_script( 'comment-reply' );
 		// }
 
-		// Get jQuery with Google
+		// Get jQuery with Google and remove some crap
 		if( !is_admin()){
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"), false, '1.10.1', true);
 			wp_enqueue_script('jquery');
 			wp_deregister_script('dashicons');
 			wp_deregister_script('comment-reply');
+			wp_deregister_script('thickbox');
+			wp_deregister_style('thickbox');
 		}
 
 

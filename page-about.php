@@ -4,9 +4,6 @@
 About page, hi!
 */
 
-$icon_path = get_stylesheet_directory_uri().'/library/images/icons/';
-$img_path = get_stylesheet_directory_uri().'/library/images/';
-
 ?>
 
 <?php get_header(); ?>

@@ -109,7 +109,7 @@
 }
 
 .vnbx-close {
-  background-image: url("../images/vanillabox/close0.png");
+  background-image: url("../images/build/build/vanillabox/close0.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 32px;
@@ -120,16 +120,16 @@
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-close {
-    background-image: url("../images/vanillabox/close0@2x.png");
+    background-image: url("../images/build/vanillabox/close0@2x.png");
   }
 }
 
 .vnbx-close:hover {
-  background-image: url("../images/vanillabox/close1.png");
+  background-image: url("../images/build/vanillabox/close1.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-close:hover {
-    background-image: url("../images/vanillabox/close1@2x.png");
+    background-image: url("../images/build/vanillabox/close1@2x.png");
   }
 }
 
@@ -142,7 +142,7 @@
 }
 
 .vnbx-prev {
-  background-image: url("../images/vanillabox/prev0.png");
+  background-image: url("../images/build/vanillabox/prev0.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 32px;
@@ -150,23 +150,23 @@
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-prev {
-    background-image: url("../images/vanillabox/prev0@2x.png");
+    background-image: url("../images/build/vanillabox/prev0@2x.png");
   }
 }
 
 .vnbx-prev:active,
 .vnbx-prev:hover {
-  background-image: url("../images/vanillabox/prev1.png");
+  background-image: url("../images/build/vanillabox/prev1.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-prev:active,
   .vnbx-prev:hover {
-    background-image: url("../images/vanillabox/prev1@2x.png");
+    background-image: url("../images/build/vanillabox/prev1@2x.png");
   }
 }
 
 .vnbx-next {
-  background-image: url("../images/vanillabox/next0.png");
+  background-image: url("../images/build/vanillabox/next0.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 32px;
@@ -174,18 +174,18 @@
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-next {
-    background-image: url("../images/vanillabox/next0@2x.png");
+    background-image: url("../images/build/vanillabox/next0@2x.png");
   }
 }
 
 .vnbx-next:active,
 .vnbx-next:hover {
-  background-image: url("../images/vanillabox/next1.png");
+  background-image: url("../images/build/vanillabox/next1.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-next:active,
   .vnbx-next:hover {
-    background-image: url("../images/vanillabox/next1@2x.png");
+    background-image: url("../images/build/vanillabox/next1@2x.png");
   }
 }
 
@@ -230,26 +230,26 @@
 }
 
 .vnbx-loading {
-  background-image: url("../images/vanillabox/loading.gif");
+  background-image: url("../images/build/vanillabox/loading.gif");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 32px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-loading {
-    background-image: url("../images/vanillabox/loading@2x.gif");
+    background-image: url("../images/build/vanillabox/loading@2x.gif");
   }
 }
 
 .vnbx-error {
-  background-image: url("../images/vanillabox/error.png");
+  background-image: url("../images/build/vanillabox/error.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 32px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   .vnbx-error {
-    background-image: url("../images/vanillabox/error@2x.png");
+    background-image: url("../images/build/vanillabox/error@2x.png");
   }
 }
 

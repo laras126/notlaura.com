@@ -1,6 +1,6 @@
 <?php
 
-$img_path = get_template_directory_uri() . '/library/images/';
+$img_path = get_template_directory_uri() . '/library/images/build/';
 
 // function jrh_post_names($classes) {
 // 	$classes = array_diff($classes, array("tag-link", "tag-links"));

@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                     spawn: false,
                 }
             }
-        },
+        }
 
     
 

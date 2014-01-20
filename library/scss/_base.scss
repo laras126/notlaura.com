@@ -8,8 +8,6 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 
-
-
 html {
     font-size: 66%;    
 }
@@ -251,7 +249,7 @@ and more scalable.
     li {
 
         &:first-child {
-            border-top: $accent-border;        
+            border-top: $accent-border;
         }
 
         a {
@@ -289,9 +287,9 @@ POSTS & CONTENT STYLES
         font-weight: 300;
     }
 
-    .post-title {
-        font-weight: 500;
-    }
+    // .post-title {
+    //     font-weight: 500;
+    // }
 
     .single-title,
     .page-title, .project-title {

@@ -155,8 +155,7 @@ function bones_scripts_and_styles() {
 		}
 
 
-		//adding scripts file in the footer
-		// wp_register_script( 'notlaura-plugins', get_stylesheet_directory_uri() . '/library/js/plugins.js', array( 'jquery' ), '', true );
+		// adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array( 'jquery' ), '', true );
 		
 

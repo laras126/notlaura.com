@@ -35,18 +35,6 @@ About page, hi!
                                 <p>I work extensively in <strong>custom WordPress development</strong> and <strong>front-end</strong> design and development for web applications. I provide <strong>private instruction</strong> and consultation for individuals and small groups, as well as illustration, graphic design and branding services.</p>
                                 <p>I believe in the importance of <strong>the mobile web</strong>, clean and <strong>semantic code</strong>, and do my best to utlilize upcoming web technologies while continuing to support web standards.</p>
 
-<!--
-                                <h5>Services</h5>
-                                <p></p>
-                                <ul>
-                                    <li>Private instruction</li>
-                                    <li>Custom WordPress themes</li>
-                                    <li>HTML/CSS/jQuery development</li>
-                                    <li>Front-end Consulting</li>
-                                    <li>Illustration and graphic design</li>
-                                </ul>
-
--->
                                 <h3>Experience</h3>
                                                                 
                                 <h5>Teaching</h5>

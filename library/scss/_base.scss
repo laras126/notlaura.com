@@ -183,7 +183,7 @@ HEADER STYLES
 .site-title {
     text-transform: lowercase;
     font-size: $h3;
-    font-weight: 500;
+    font-weight: 300;
     margin: 0;
 }
 
@@ -191,6 +191,7 @@ HEADER STYLES
     font-family: $sans-serif; 
     font-size: $sml;
     text-transform: lowercase;
+    font-weight: 100;
     color: $light-accent;
     padding: 0;
     margin: 0;
@@ -199,16 +200,6 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-
-
 
 // Ze Toggle menu
 
@@ -280,16 +271,12 @@ POSTS & CONTENT STYLES
 }
 
 
-    // TODO: add a class/conditional instead of specifying
+    // TODO: add a .fit-text class or something instead of specifying
     .single-title,
     .page-title, .project-title, .post-title {
         font-size: $h2;
         font-weight: 300;
     }
-
-    // .post-title {
-    //     font-weight: 500;
-    // }
 
     .single-title,
     .page-title, .project-title {

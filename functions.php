@@ -11,10 +11,6 @@ sidebars, comments, ect.
 /************* INCLUDE NEEDED FILES ***************/
 
 
-// Metabox library
-// https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
-require_once( 'library/metabox/init.php' );
-
 // Stuff specific to notlaura
 require_once( 'library/notlaura.php' );
 
@@ -158,7 +154,16 @@ function bones_wpsearch($form) {
 
 
 
+
 /************* METABOXES *****************/
+
+
+// https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+
+add_action('init', 'include_cmb_init');
+function include_cmb_init() {
+    require_once get_stylesheet_directory() . '/library/metabox/init.php';
+}
 
 add_filter( 'cmb_meta_boxes', 'cmb_project_metaboxes' );
 
@@ -191,12 +196,6 @@ function cmb_project_metaboxes( $meta_boxes ) {
                 'id'   => $prefix . 'client_name',
                 'type' => 'text_medium',
             ),
-            array(
-                'name'      => 'Keywords:',
-                'id'        => $prefix . 'skills_used',
-                'type'      => 'taxonomy_multicheck',
-                'taxonomy'  => 'custom_tag',
-            ),
         ),
     );
 
@@ -207,7 +206,7 @@ add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
 
 function be_initialize_cmb_meta_boxes() {
     if ( !class_exists( 'cmb_Meta_Box' ) ) {
-        require_once( 'metabox/init.php' );
+        require_once( 'library/metabox/init.php' );
     }
 }
 

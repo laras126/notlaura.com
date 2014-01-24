@@ -421,7 +421,8 @@ POSTS & CONTENT STYLES
 // Project page
 
 .project-title {
-    margin-top: $sml;
+    margin: $sml 0;
+    font-size: $h3;
 }
 
 .project-content {
@@ -435,7 +436,7 @@ POSTS & CONTENT STYLES
 .project-nav {
     // margin-bottom: $h4;
     .fa {
-        font-size: $h1;
+        font-size: $h2;
     }
 }
 

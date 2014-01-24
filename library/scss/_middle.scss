@@ -102,11 +102,20 @@ POSTS & CONTENT STYLES
 
 .project-title {
     margin-top: $h4;
+    font-size: $h2;
 }
+
+.project-nav {
+    .fa {
+        font-size: $h1;        
+    }
+}
+
 
 .nav-text {
     line-height: 0.5;
     vertical-align: text-bottom;
+    font-family: $sans-serif;
 }
 
 

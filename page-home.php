@@ -3,12 +3,12 @@
 
     <div id="inner-content" class="clearfix">
 
-            <div id="main" class="clearfix text-center fadein" role="main">
+            <div id="main" class="clearfix text-center animated fadeInDown" role="main">
                 
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                 
                     <header class="article-header">
-                        <div class="wrap">
+                        <div class="wrap animated fadeIn">
                             <h1 class="page-title">I teach <span class="special">fishing</span>.</h1>
                             <p>Uhh..what?</p>
                             <img id="meFish" class="header-img" src="<?php echo $img_path ?>/site/svg/me-fish.svg">

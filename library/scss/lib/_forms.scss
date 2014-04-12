@@ -50,12 +50,12 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-	padding: $sml/2 $default/2;
+	padding: $sml/2 $base/2;
 	background: $vlight-accent;
 	color: $main-font-clr;
 	border: 2px solid $light-accent;
 	line-height: 1.5em;
-	font-size: $default;
+	font-size: $base;
 	font-family: $sans-serif;
 	font-weight: 100;
 

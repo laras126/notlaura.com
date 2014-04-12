@@ -15,8 +15,8 @@ html {
 body {
     background-color: $white;
     font-family: $sans-serif;
-    font-size: $default;
-    font-weight: 100;
+    font-size: $base;
+    font-weight: 300;
     line-height: $line-height-base;
     color: $main-font-clr;
 }
@@ -340,7 +340,7 @@ POSTS & CONTENT STYLES
         }
 
         img, .fig-large {
-            margin-bottom: $default;
+            margin-bottom: $base;
         }
         
         .fig-large img {
@@ -355,7 +355,7 @@ POSTS & CONTENT STYLES
         pre {
             background: $vlight-accent;
             border: $accent-border;
-            margin-top: $default;
+            margin-top: $base;
             padding-top: 0;
             font-size: $sml;
         }
@@ -376,7 +376,7 @@ POSTS & CONTENT STYLES
 
         p.wp-caption-text {
             font-size: $sml;
-            margin: $sml/4 0 $default;
+            margin: $sml/4 0 $base;
             text-align: center;
         }
 
@@ -394,7 +394,7 @@ POSTS & CONTENT STYLES
 
 .thumb-image {
     position: relative;
-    margin-bottom: $default;
+    margin-bottom: $base;
     
 }
 
@@ -619,10 +619,10 @@ PAGE NAVI STYLES
                     margin: 0;
                     border: none;
                     padding: 0;
-                    line-height: $default;
-                    font-size: $default;
-                    padding: $default/2;
-                    min-width: $default;
+                    line-height: $base;
+                    font-size: $base;
+                    padding: $base/2;
+                    min-width: $base;
                     display: block;
                 }
                 span.current, a:hover, a:focus {
@@ -675,7 +675,7 @@ FOOTER STYLES
 
         li {
             display: inline-block;
-            padding-right: $default;
+            padding-right: $base;
             a {
                 border: none;
             }

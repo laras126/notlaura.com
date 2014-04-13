@@ -36,7 +36,7 @@ use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
 
-$main-font-clr: 	$black;
+$main-font-clr: 	lighten($black, 10%);
 
 $vlight-accent: 	#f4f7f9;
 $light-accent: 		darken($white, 10%);

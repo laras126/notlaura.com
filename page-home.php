@@ -34,14 +34,14 @@
                                 <div class="subsection-title">Option 2</div>
                                 <img id="deliverFish" src="<?php echo $img_path; ?>site/svg/deliver-fish.svg" alt="Me fishing for you." />
                                 <h2 class="subsection-tagline">I fish for you</h2>
-                                <p class="summary">Oh yeah, I make websites! Home-baked front-end and WordPress themes are my speciality, but I wear many hats. See <a href="<?php echo site_url("/portfolio/", "http"); ?>">my portfolio</a> for more.</p>
+                                <p class="summary">Oh yeah, I make things! Front-end design and custom WordPress themes are my speciality, but I love working on logos, branding, and illustration too. See <a href="<?php echo site_url("/portfolio/", "http"); ?>">my portfolio</a> for more.</p>
                             </div>
 
                             <div class="subsection">
                                 <p class="subsection-title">Option 3</p>
                                 <img src="<?php echo $img_path; ?>site/svg/we-fish.svg" alt="Fishing together!" />
                                 <h2 class="subsection-tagline">We fish together</h2>
-                                <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together however works best for you, whether it be private lessons or a more hands-off, directional role.</p> 
+                                <p class="summary">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together however is best for you, whether it be private lessons or a more hands-off, directional role.</p> 
                             </div>
 
                         </div>

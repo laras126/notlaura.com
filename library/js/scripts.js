@@ -69,6 +69,8 @@ jQuery(document).ready(function($) {
 		
 	}
 	
+    // Basic FitVids
+    $("#container").fitVids();
 
 	// Brad Frost toggle menu
 	// 
@@ -86,12 +88,12 @@ jQuery(document).ready(function($) {
     // Check if media is already wrapped in a fig,
     // if not, wrap to make it fluid.
 
-    var $wrap = $('.media-wrap');
-    var $media = $('iframe, object, embed');
+    // var $wrap = $('.media-wrap');
+    // var $media = $('iframe, object, embed');
     
-    if ( ! $media.parent().is($wrap) ) {
-    	$media.wrap( '<figure class="media-wrap"></figure>' );
-    }
+    // if ( ! $media.parent().is($wrap) ) {
+    // 	$media.wrap( '<figure class="media-wrap"></figure>' );
+    // }
 
 
 	// SVG fallback

@@ -1,7 +1,7 @@
-    <?php
+<?php
 
 /*
-Contact page, hi!
+Template Name: Contact page
 */
 
 $icon_path = get_stylesheet_directory_uri().'/library/images/icons/';
@@ -17,29 +17,26 @@ $img_path = get_stylesheet_directory_uri().'/library/images/';
             
                     <div id="main" class="clearfix wrap" role="main">
                         
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('page-contact'); ?> role="article">
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class('page-contact'); ?> role="article">
 
-                            <header class="article-header">
-                                <h1 class="page-title"><?php the_title(); ?></h1>
-                                <p class="page-desc">Let's chat!</p>
-                            </header>
-                            
-                            <hr class="page-divider" />
-
-                            <section class="entry-content fadein">
-                                <p>Shoot an email to:</p>
-                                <p class="subsection-tagline"><a href="mailto:lara@notlaura.com">lara<span class="special-dark"> at </span>notlaura.com</a></p>
-                                <p>...or fill out my form and I'll get back to you ASAP.</p>
-                                <div class="clearfix">
-                                    <?php 
-                                        if( function_exists( 'ninja_forms_display_form' ) ){
-                                             ninja_forms_display_form( 1 ); 
-                                    } ?>
-                                </div>
+                                <header class="article-header">
+                                    <h1 class="page-title"><?php the_title(); ?></h1>
+                                    <p class="page-desc">Let's chat!</p>
+                                </header>
                                 
-                            </section>
-                            
-                        </article>
+                                <hr class="page-divider" />
+
+                                <section class="entry-content fadein">
+                                    <?php the_content(); ?>
+                                </section>
+                                
+                            </article>
+                        <?php endwhile; else : ?>
+
+                                <?php get_template_part('incl/post', 'notfound'); ?>
+
+                        <?php endif; ?>
 
                     </div>
 

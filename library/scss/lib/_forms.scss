@@ -12,7 +12,7 @@ label, select {
 }
 
 label {
-	font-weight: 300;
+	// font-weight: 300;
 	margin-top: $h3;
 }
 
@@ -53,7 +53,7 @@ input[type="tel"] {
 	border: 2px solid $light-accent;
 	line-height: 1.5em;
 	font-family: $sans-serif;
-	font-weight: 100;
+	font-weight: 300;
 	@include transition(0.3s ease-out);
 
 	&:focus {
@@ -86,6 +86,7 @@ button {
 	@extend .dark-button;
 	@extend .h3;
 	cursor: pointer;
+	-webkit-appearance: none;
 }
 
 select,
@@ -118,9 +119,10 @@ textarea.ninja-forms-field {
 
 
 
-// Gravity form styles
+// Gravity form overrides
 
 .gform_wrapper {
+
 	textarea,
 	input[type=text],
 	input[type=url], 
@@ -130,17 +132,52 @@ textarea.ninja-forms-field {
 	input[type=password] {
 		font-size: $base;
 		padding: $sml/2 $base/2;
+		@include border-radius(2px);
+		-webkit-appearance: none;
 	}
+
+	.top_label .gfield_label {
+		@extend .h3;
+	}
+
+	.gfield_checkbox li input[type=checkbox],
+	.gfield_radio li input[type=radio],
+	.gfield_checkbox li input {
+		// Sorry, god.
+		margin-top: 8px !important;
+	}
+	
+	ul.gfield_radio li input[type="radio"]:checked+label,
+	ul.gfield_checkbox li input[type="checkbox"]:checked+label {
+		font-weight: 500;
+	}
+
+	.gform_footer input.button,
+	.gform_footer input[type=submit] {
+		font-size: $h3;
+	}
+
+	.ginput_complex label, 
+	.gfield_time_hour label,
+	.gfield_time_minute label,
+	.gfield_date_month label,
+	.gfield_date_day label,
+	.gfield_date_year label, 
+	.instruction {
+		font-size: $sml;
+	}
+
+
+	.gform_footer{
+		input[type=submit], input.button {
+			display: block;
+			margin: 0 auto;
+		}
+	} 
+
+	.gfield_description {
+		font-family: $sans-serif;
+	}
+
 }
 
-.gform_wrapper .top_label .gfield_label {
-	@extend .h3;
-}
-
-.gform_wrapper .gfield_checkbox li label, .gform_wrapper .gfield_radio li label {
-	line-height: 1;
-}
-
-.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
-	font-size: $h3;
-}

@@ -69,18 +69,6 @@ jQuery(document).ready(function($) {
 		
 	}
 	
- 
-
-    // Coupla plugins
-    if ( $('.gallery').length > 0 ) {
-    	$('.gallery a').vanillabox();	
-    }
-
-    // Fade in a couple of images
-    // $('.fadein').delay(100).fadeIn('fast');
-    
-
-    // $(".fadein").bind("load", function () { $(this).fadeIn(300); });
 
 	// Brad Frost toggle menu
 	// 

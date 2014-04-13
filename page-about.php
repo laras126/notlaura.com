@@ -53,7 +53,7 @@ About page, hi!
 
                             <footer class="article-footer text-center fadein">
                                 <hr />
-                                <p class="h3"><a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Go fish.</a></p>
+                                <a class="dark-button" href="<?php echo site_url('/contact', 'http'); ?>">Go fish.</a>
                                 <p>(i.e. go to my contact page)</p>
                             </footer>
                         

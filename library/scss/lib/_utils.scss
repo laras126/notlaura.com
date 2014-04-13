@@ -54,7 +54,7 @@
 
 
 .dark-button {
-    @include button($dark-blue);    
+    @include button($dark-blue);
     // TODO: is this necessary? Sheesh.
     &:hover, 
     &:focus,

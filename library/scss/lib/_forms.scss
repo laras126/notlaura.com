@@ -12,9 +12,6 @@ label, select {
 }
 
 label {
-	text-transform: uppercase;
-	font-size: $sml;
-	letter-spacing: 2px;
 	font-weight: 300;
 	margin-top: $h3;
 }
@@ -55,9 +52,9 @@ input[type="tel"] {
 	color: $main-font-clr;
 	border: 2px solid $light-accent;
 	line-height: 1.5em;
-	font-size: $base;
 	font-family: $sans-serif;
 	font-weight: 100;
+	@include transition(0.3s ease-out);
 
 	&:focus {
 		border-color: $medium-accent;
@@ -117,4 +114,33 @@ input[type="checkbox"]:focus {
 
 textarea.ninja-forms-field {
 	height: 15em;
+}
+
+
+
+// Gravity form styles
+
+.gform_wrapper {
+	textarea,
+	input[type=text],
+	input[type=url], 
+	input[type=email],
+	input[type=tel],
+	input[type=number],
+	input[type=password] {
+		font-size: $base;
+		padding: $sml/2 $base/2;
+	}
+}
+
+.gform_wrapper .top_label .gfield_label {
+	@extend .h3;
+}
+
+.gform_wrapper .gfield_checkbox li label, .gform_wrapper .gfield_radio li label {
+	line-height: 1;
+}
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+	font-size: $h3;
 }

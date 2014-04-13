@@ -27,13 +27,16 @@ CLEARFIXIN'
 
 @mixin button( $button-color, $text-color: $white ) {
 	background: $button-color;
+	@extend .h3;
 	border: none;
+	border-radius: 2px;
 	text-shadow: 0.08em 0.08em 0.91em #666;
 	border-width: 0.2em;
 	color: $text-color;
-	padding: 0.3em 0.5em;
-	margin: $h3 0;
+	padding: 0.5em 0.7em;
 	display: inline-block;
+	// GARRRHHH this shouldn't be here, oh well?
+	font-family: $sans-serif !important;
 
 	&:hover,
 	&:focus {

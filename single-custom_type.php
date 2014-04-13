@@ -75,7 +75,7 @@
 
 							
 									<?php if($link != '') { ?>
-										<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" target="blank" class="dark-button">Project Link</a></p>
+										<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" target="blank" class="dark-button h4">Project Link</a>
 									<?php } ?>		
 
 

@@ -144,7 +144,8 @@ textarea.ninja-forms-field {
 	.gfield_radio li input[type=radio],
 	.gfield_checkbox li input {
 		// Sorry, god.
-		margin-top: 8px !important;
+		margin-top: 6px !important;
+		margin-left: 2px;
 	}
 	
 	ul.gfield_radio li input[type="radio"]:checked+label,

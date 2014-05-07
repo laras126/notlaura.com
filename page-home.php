@@ -15,7 +15,7 @@
                             <p class="summary">You know that expression:</p>
                             <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             </blockquote>
-                            <p class="summary">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, etc. Let's break it down:</p>
+                            <p class="summary">Like that, except <strong>HTML</strong>, <strong>CSS</strong>, <strong>WordPress</strong>, etc. <br>Let's break it down:</p>
                         </div>
                     </header>
                     

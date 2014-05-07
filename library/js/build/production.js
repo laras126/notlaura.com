@@ -253,6 +253,7 @@ jQuery(document).ready(function($) {
 
 	// Fittext.js
 	$(".page-title").fitText( 1.2, {maxFontSize: '60px', minFontSize: '32px'} );
+	$(".single-title, .post-title").fitText( 1.2, {maxFontSize: '50px', minFontSize: '32px'} );
 	$(".callout-quote").fitText( 1.2, {maxFontSize: '32px', minFontSize: '16px'} );
 
 

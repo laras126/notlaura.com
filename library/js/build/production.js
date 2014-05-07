@@ -87,6 +87,51 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
 
+
+/*global jQuery */
+/*!
+* FitText.js 1.2
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Date: Thu May 05 14:23:00 2011 -0600
+*/
+
+(function( $ ){
+
+  $.fn.fitText = function( kompressor, options ) {
+
+    // Setup options
+    var compressor = kompressor || 1,
+        settings = $.extend({
+          'minFontSize' : Number.NEGATIVE_INFINITY,
+          'maxFontSize' : Number.POSITIVE_INFINITY
+        }, options);
+
+    return this.each(function(){
+
+      // Store the object
+      var $this = $(this);
+
+      // Resizer() resizes items based on the object width divided by the compressor * 10
+      var resizer = function () {
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Call on resize. Opera debounces their resize by default.
+      $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+    });
+
+  };
+
+})( jQuery );
+
 /*
 Bones Scripts File
 Author: Eddie Machado
@@ -174,17 +219,6 @@ jQuery(document).ready(function($) {
 	});
 
 
-    // Check if media is already wrapped in a fig,
-    // if not, wrap to make it fluid.
-
-    // var $wrap = $('.media-wrap');
-    // var $media = $('iframe, object, embed');
-    
-    // if ( ! $media.parent().is($wrap) ) {
-    // 	$media.wrap( '<figure class="media-wrap"></figure>' );
-    // }
-
-
 	// SVG fallback
     // http://css-tricks.com/using-svg/
 
@@ -217,6 +251,9 @@ jQuery(document).ready(function($) {
 	});
 
 
+	// Fittext.js
+	$(".page-title").fitText( 1.2, {maxFontSize: '60px', minFontSize: '32px'} );
+	$(".callout-quote").fitText( 1.2, {maxFontSize: '32px', minFontSize: '16px'} );
 
 
 }); /* end of as page load scripts */

@@ -45,7 +45,7 @@
 
 									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text h4">Previous</span>'); ?>
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
 											<?php // silly hack for if there are no previous posts ?>
 											&nbsp;
 										</div>
@@ -84,7 +84,7 @@
 								<footer class="article-footer">
 									<nav class="clearfix prev-next project-nav">
 										<div class="prev">
-											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text h4">Previous</span>'); ?>
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
 											<?php // silly hack for if there are no previous posts ?>
 											&nbsp;
 										</div>

@@ -85,17 +85,6 @@ jQuery(document).ready(function($) {
 	});
 
 
-    // Check if media is already wrapped in a fig,
-    // if not, wrap to make it fluid.
-
-    // var $wrap = $('.media-wrap');
-    // var $media = $('iframe, object, embed');
-    
-    // if ( ! $media.parent().is($wrap) ) {
-    // 	$media.wrap( '<figure class="media-wrap"></figure>' );
-    // }
-
-
 	// SVG fallback
     // http://css-tricks.com/using-svg/
 
@@ -128,6 +117,9 @@ jQuery(document).ready(function($) {
 	});
 
 
+	// Fittext.js
+	$(".page-title").fitText( 1.2, {maxFontSize: '60px', minFontSize: '32px'} );
+	$(".callout-quote").fitText( 1.2, {maxFontSize: '32px', minFontSize: '16px'} );
 
 
 }); /* end of as page load scripts */

@@ -79,7 +79,21 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 }
-            }
+            },
+
+            livereload: {
+                // Browser live reloading
+                // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
+                options: {
+                  livereload: true
+                },
+                files: [
+                  'css/*.css',
+                  'js/*.js',
+                  '../*.php'
+                ]
+            },
+
         }
 
     

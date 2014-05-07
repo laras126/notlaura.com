@@ -29,9 +29,7 @@
 	}
 }
 
-.last { @include omega; }
-
-.ninja-forms-field { @include span-columns($total-columns); }
+.mobile-hide { display: none; }
 
 @include at-breakpoint($small 6) {
 	.thumb { @include isolate-grid(3); }
@@ -40,27 +38,16 @@
 		@include span-columns(6);  
 	}
 
-	.ninja-forms-field { 
-		@include span-columns(2); 
-		@include suffix(4);
-		&:focus {
-			@include transition(0.2s all);        
-		} 
-	}
+	.mobile-hide { display: block; }
 
-	textarea.ninja-forms-field { 
-		@include span-columns(5); 
-		@include suffix(1);
-	}
-
-	// Utility for layout in post editor
-	.sixcol {
-		@include span-columns(3);	
-	}
 }
 
 @include at-breakpoint($medium 12) {
   	
+	.entry-content {
+		@include squish(1,1);
+	}
+
   	.thumb { @include isolate-grid(4); }
 
   	.site-info { @include span-columns(4); }
@@ -69,26 +56,26 @@
 
 	.prev-next {
 		@include container(12);
- 		@include bleed(1);
-
+		
  		.nav-text {
  			display: inline-block;
  		}
 
 		.prev {
-			@include span-columns(2);
-		
+			@include span-columns(3);
+			
 			.nav-text {
 				padding-left: $sml;
+				line-height: 2;
 			}
 		}
 		
 		.pv-middle {
-			@include span-columns(8);	
+			@include span-columns(6);	
 		}
 
 		.next {
-			@include span-columns(2 omega);
+			@include span-columns(3 omega);
 
 			.nav-text {
 				padding-right: $sml;
@@ -96,3 +83,4 @@
 		}
 	}
 }
+

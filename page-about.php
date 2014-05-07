@@ -25,10 +25,10 @@ About page, hi!
 
                                 <figure class="fig-large">
                                     <img src="<?php echo $img_path; ?>site/letters.jpg" alt="Wonderful photo of me" />
-                                    <figcaption>See that? No "U".</figcaption>
+                                    <p></p><figcaption>See that? No "U".</figcaption>
                                 </figure>
 
-                                <p class="summary">I am a freelance web designer, developer, and instructor based in <strong>Brooklyn, NY</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
+                                <p class="lead">I am a freelance web designer, developer, and instructor based in <strong>New York City</strong>. I'd love to make a website for you, but I'd also love to make it <em>with</em> you.</p>
                                 
                                 <h3>What can I do?</h3>
 
@@ -38,7 +38,17 @@ About page, hi!
                                 <h3>Experience</h3>
                                                                 
                                 <h5>Teaching</h5>
-                                <p>In addition to my work with individual clients, I currently teach <a href="https://generalassemb.ly/education/front-end-web-development/new-york-city" target="blank"><strong>Front-end Web Development</strong></a> at <strong>General Assembly</strong> in NYC, and last summer co-instructed the 12 week Intro to Web Development course through the <a href="http://saxifrageschool.org" target="blank">Saxifrage School</a> in Pittsburgh. I have taught workshops for creatives through <a href="http://simplelabs.co" target="blank">Simple Labs</a> and the <a href="http://gpac.org" target="blank">Greater Pittsburgh Arts Council</a> and have mentored teens through the <a href="http://www.carnegiesciencecenter.org/" target="blank">Carnegie Science Center</a> and the <a href="">International High School at Lafeyette</a> in Brooklyn.</p>
+                                <p>In addition to 1-on-1 work with clients, I have taught longer term courses through various organizations including:</p>
+
+                                <ul>
+                                     <li>Frontend Web Development at <a href="http://generalassemb.ly" target="blank">General Assembly</a> (NYC)</li>
+                                     <li>Intro to Web Development at the <a href="http://saxifrageschool.org" target="blank">Saxifrage School</a> (Pittsburgh)</li>
+                                     <li>WordPress.org at <a href="http://nobledesktop.com" target="blank">Noble Desktop</a> (NYC)</li>
+                                 </ul> 
+
+                                <p>This summer and fall I will be teaching and developing curricula for <strong>Pratt Institute of Design</strong>, as well as facilitating "Code in a Day" workshops for non-technical professionals through the London-based company <a href="http://decoded.co" target="blank">Decoded</a>.</p>
+
+                                <p>Additionally, I have taught workshops for creatives through <a href="http://simplelabs.co" target="blank">Simple Labs</a> and the <a href="http://gpac.org" target="blank">Greater Pittsburgh Arts Council</a> and have mentored teens through the <a href="http://www.carnegiesciencecenter.org/" target="blank">Carnegie Science Center</a> and the <a href="inths.org">International High School at Lafeyette</a> in Brooklyn.</p>
 
                                 <h5>Education</h5>
                                 <p>My background is in Fine Arts. I spent my first two years of college studying Printmaking at the University of Colorado at Boulder and finished up at <strong>Tufts University</strong>’s School of the Museum of Fine Arts Boston (SMFA) and received my <strong>B.F.A.</strong> in 2011.</p>
@@ -48,7 +58,7 @@ About page, hi!
 
                                 
                                 <h3>Let's talk</h3>
-                                <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to get in touch - I'd love to hear from you.</p>
+                                <p>Finally, I love coffee and I love meeting people. Whether or not you have a project in mind, feel free to <a href="<?php echo site_url('/contact', 'http'); ?>">get in touch</a> - I'd love to hear from you.</p>
                             </section>
 
                             <footer class="article-footer text-center fadein">

@@ -129,7 +129,7 @@ TYPOGRAPHY
 *********************/
 
 blockquote {
-    font-size: $h3;
+    font-size: $h4;
     margin: $h4 0;
     font-family: $serif;
     padding-left: 2rem;
@@ -142,6 +142,9 @@ p {
     margin-bottom: $sml;
 }
 
+.lead {
+    font-size: $base;
+}
 
 
 /*********************
@@ -274,13 +277,14 @@ POSTS & CONTENT STYLES
     // TODO: add a .fit-text class or something instead of specifying
     .single-title,
     .page-title, .project-title, .post-title {
-        font-size: $h2;
+        // font-size: $h2;
         font-weight: 300;
+        text-align: center;
     }
 
     .single-title,
     .page-title, .project-title {
-        text-align: center;
+        
     }
 
     .single-title {}
@@ -296,7 +300,7 @@ POSTS & CONTENT STYLES
         font-size: $sml;
         margin-bottom: $h2;
         
-        .single & {
+        .article-header &, .article-footer & {
             text-align: center;
         }
 
@@ -363,6 +367,10 @@ POSTS & CONTENT STYLES
             margin-top: $base;
             padding-top: 0;
             font-size: $sml;
+        }
+
+        .row {
+            margin-top: $h2;
         }
 
     } /* end .entry-content */
@@ -440,7 +448,6 @@ POSTS & CONTENT STYLES
 }
 
 .project-nav {
-    // margin-bottom: $h4;
     .fa {
         font-size: $h2;
     }
@@ -463,9 +470,9 @@ POSTS & CONTENT STYLES
 }
 
 .callout-quote {
-    font-size: $h3;
+    // font-size: $h4;
     text-align: left;
-    margin: $h1 $h2; 
+    // margin: $h1 $h2; 
 }
 
 
@@ -546,8 +553,13 @@ POSTS & CONTENT STYLES
 
 }
 
+.article-header {
+    // text-align: center;
+}
+
 .article-footer {
     padding-bottom: $h3;
+    // text-align: center;
 }
 
 

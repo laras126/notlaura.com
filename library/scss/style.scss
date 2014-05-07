@@ -3,13 +3,6 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-// Break 1 happens in the grid styles only
-
-$small 			: 30em;
-$medium 		: 48em;
-$large 	 		: 80rem;
-
-
 @import "susyone";
 
 @import "../fonts/font-awesome-4.0.3/scss/font-awesome";
@@ -33,9 +26,9 @@ $large 	 		: 80rem;
 	// Make some text bigger
 	// TODO: might be better to have a .flex-text class 
 	// or something - will need to reevaluate
-	.single-title, .page-title {
-	    font-size: $h1;
-	}
+
+	@import "lib/1140grid";
+	
 }
 
 @media only screen and (min-width: $medium) {

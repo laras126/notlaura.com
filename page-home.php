@@ -11,7 +11,7 @@
                         <div class="wrap animated fadeIn">
                             <h1 class="page-title">I teach <span class="special">fishing</span>.</h1>
                             <p>Uhh..what?</p>
-                            <img id="meFish" class="header-img" src="<?php echo $img_path ?>/site/svg/me-fish.svg">
+                            <img id="meFish" class="header-img" src="<?php echo $img_path ?>site/svg/me-fish.svg">
                             <p class="summary">You know that expression:</p>
                             <blockquote class="callout-quote">Give a man <span class="special">(or woman)</span> a fish and feed him <span class="special">(or her)</span> for a day, teach a man <span class="special">(or woman)</span> to fish and feed him <span class="special">(or her)</span> for a lifetime.<br />
                             </blockquote>

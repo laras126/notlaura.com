@@ -1,23 +1,21 @@
-/******************************************************************
+// -----
+// Settings
+// Variables for fonts, colors, and what not
+// ----- 
 
-Stylesheet: Settings Stylesheet
 
-Like, for colors n'at.
-
-******************************************************************/
-
-// Break 1 happens in the grid styles only
+// -----
+// Breakpoints
+// -----
 
 $small 			: 30em;
 $medium 		: 48em;
 $large 	 		: 80rem;
 
 
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
+// -----
+// Colors
+// -----
 
 $alert-yellow:      #ebe16f;
 $alert-red:         #fbe3e4;
@@ -36,12 +34,6 @@ $light-blue: 	lighten(desaturate($dark-blue, 30%), 25%);
 $link-color: 	$dark-blue;
 $link-hover: 	darken($link-color, 9%);
 
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-
 $main-font-clr: 	lighten($black, 10%);
 
 $vlight-accent: 	#f4f7f9;
@@ -53,9 +45,11 @@ $btn-color: 		$light-blue;
 
 $txt-light: 		darken($light-accent, 20%);
 
-/*********************
-TYPOGRAPHY
-*********************/
+
+
+// -----
+// Typography
+// -----
 
 // Rem Units
 // http://gregrickaby.com/using-the-golden-ratio-and-rems/
@@ -82,16 +76,16 @@ strong {
 }
 
 
-/*********************
-UTILITIES
-*********************/
+// -----
+// Utilities
+// -----
 
 $accent-border: 	1px dotted $medium-accent;
 
 
-/*********************
-GRID
-*********************/
+// -----
+// Grid
+// -----
 
 // Susy settings
 

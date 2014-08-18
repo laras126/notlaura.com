@@ -1,7 +1,7 @@
 
-/*********************
-CLEARFIXIN'
-*********************/
+// -----
+// Clearfix
+// -----
 
 // Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
@@ -12,7 +12,6 @@ CLEARFIXIN'
 
 
 // Mixins
-
 .dark-bkgd {
 	background: $dark-accent;
     color: $white;
@@ -26,17 +25,10 @@ CLEARFIXIN'
 
 
 @mixin button( $button-color, $text-color: $white ) {
+	@extend %base-btn;
+
 	background: $button-color;
-	@extend .h3;
-	border: none;
-	border-radius: 2px;
-	text-shadow: 0.08em 0.08em 0.91em #666;
-	border-width: 0.2em;
 	color: $text-color;
-	padding: 0.5em 0.7em;
-	display: inline-block;
-	// GARRRHHH this shouldn't be here, oh well?
-	font-family: $sans-serif !important;
 
 	&:hover,
 	&:focus {
@@ -60,5 +52,17 @@ CLEARFIXIN'
 		border-color: darken( $button-color, 15% ) !important;
 		text-shadow: none !important;
 	}
+}
+
+%base-btn {
+	// GARRRHHH this shouldn't be here, oh well?
+	font-family: $sans-serif !important;
+	@extend .h3;
+	padding: 0.5em 0.7em;
+	display: inline-block;
+	border: none;
+	border-radius: 2px;
+	text-shadow: 0.08em 0.08em 0.91em #666;
+	border-width: 0.2em;
 }
 

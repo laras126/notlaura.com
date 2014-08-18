@@ -1,8 +1,6 @@
-/******************************************************************
-
-Tablets and whatnot
-
-******************************************************************/
+// ----
+// Styles for tablets-ish
+// ----
 
 // Form enhancements
 
@@ -20,9 +18,10 @@ h2, .h2 {
     font-size: $h2;
 }
 
-/*********************
-HEADER
-*********************/
+
+// ----
+// Header
+// ----
 
 .site-title {
     margin: 0;
@@ -35,9 +34,9 @@ HEADER
 
 
 
-/*********************
-POSTS & CONTENT STYLES
-*********************/
+// ----
+// Posts and Content styles
+// ----
 
 
 .post-title {
@@ -70,14 +69,14 @@ POSTS & CONTENT STYLES
         list-style-position: outside;
     }
 
-    /* at this larger size, we can start to align images */
+    // WP image alignment classes
     .alignleft, img.alignleft { 
-        margin-right: 1.5em; 
+        margin-right: $h3; 
         display: inline; 
         float: left; 
     }
     .alignright, img.alignright { 
-        margin-left: 1.5em; 
+        margin-left: $h3; 
         display: inline; 
         float: right; 
     }
@@ -121,7 +120,6 @@ POSTS & CONTENT STYLES
     }
 }
 
-
 .nav-text {
     line-height: 0.5;
     vertical-align: text-bottom;
@@ -129,9 +127,9 @@ POSTS & CONTENT STYLES
 }
 
 
-/*********************
-FOOTER STYLES
-*********************/
+// -----
+// Footer
+// -----
     
 .site-footer {
     text-align: left;

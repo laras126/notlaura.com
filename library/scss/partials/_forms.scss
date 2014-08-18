@@ -1,6 +1,6 @@
-/*********************
-INPUT & FORM STYLES
-*********************/
+// -----
+// Form styles
+// -----
 
 // Remove the blue outline from Chrome
 *:focus {
@@ -12,7 +12,6 @@ label, select {
 }
 
 label {
-	// font-weight: 300;
 	margin-top: $h3;
 }
 
@@ -91,7 +90,7 @@ button {
 
 select,
 input[type="file"] {
-	*margin-top: 4px; 				/* In IE7, the height of the select element cannot be changed by height, only font-size */
+	*margin-top: 4px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
 }
 
 select:focus,
@@ -104,19 +103,15 @@ input[type="checkbox"]:focus {
 }
 
 
-//  Ninja form overrides
-.ninja-forms-req-symbol {
-	color: darken($alert-red, 10%);
+//  Mailchimp form
+.mc-signup {
+	// background-color: $vlight-accent;
+	font-size: $base;
 }
 
-.ninja-forms-required-items {
-	display: none;
+.mc-prompt {
+	font-size: $sml;
 }
-
-textarea.ninja-forms-field {
-	height: 15em;
-}
-
 
 
 // Gravity form overrides
@@ -182,3 +177,17 @@ textarea.ninja-forms-field {
 
 }
 
+
+.mc-signup {
+	.email {
+		font-size: $base;
+		padding: $sml/2 $base/2;
+		@include border-radius(2px);
+		-webkit-appearance: none;
+	}
+
+	input[type="submit"] {
+		@include button($medium-accent);
+		margin-top: 0;
+	}
+}

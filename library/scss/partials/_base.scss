@@ -124,9 +124,9 @@ h5, .h5 {
 
 
 
-/*********************
-TYPOGRAPHY
-*********************/
+// ----
+// Typography
+// ----
 
 blockquote {
     font-size: $h4;
@@ -147,22 +147,69 @@ p {
 }
 
 
-/*********************
-HEADER STYLES
-*********************/
+// Tables
+// Yes, I may use tables sometime!
+
+table {
+    width: 100%;
+    border: 1px solid $light-accent;
+    margin-bottom: 1.5em;
+
+    caption {
+        margin: 0 0 7px;
+        font-size: 0.75em;
+        color: $txt-light;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+tr {
+    border-bottom: 1px solid $light-accent;
+
+    &:nth-child(even) {
+        background-color: $vlight-accent;
+    }
+}
+
+td {
+    padding: 7px;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+th {
+    background-color: $vlight-accent;
+    border-bottom: 1px solid $light-accent;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+
+dl {}
+
+dt {}
+
+dd {
+    margin-left: 0;
+    font-size: $sml;
+    color: $light-accent;
+    margin-bottom: $base;
+}
+
+
+// ----
+// Header
+// ----
 
 
 .header {}
-
-    #logo {}
-
-
-.rotation {
-   @extend .dark-bkgd;
-   a, a:visited {
-    color: $vlight-accent;
-   }
-}
 
 .site-header {
     padding-bottom: 0;
@@ -200,9 +247,11 @@ HEADER STYLES
     margin: 0;
 }
 
-/*********************
-NAVIGATION STYLES
-*********************/
+
+
+// ----
+// Navigation
+// ----
 
 // Ze Toggle menu
 
@@ -265,9 +314,9 @@ NAVIGATION STYLES
 
 
 
-/*********************
-POSTS & CONTENT STYLES
-*********************/
+// ----
+// Posts and Content
+// ----
 
 #content {
     margin-top: $sml;
@@ -277,7 +326,6 @@ POSTS & CONTENT STYLES
     // TODO: add a .fit-text class or something instead of specifying
     .single-title,
     .page-title, .project-title, .post-title {
-        // font-size: $h2;
         font-weight: 300;
         text-align: center;
     }
@@ -334,7 +382,6 @@ POSTS & CONTENT STYLES
             list-style-type: decimal;
 
         }
-
 
         dd {
             margin-left: $sml;
@@ -470,11 +517,8 @@ POSTS & CONTENT STYLES
 }
 
 .callout-quote {
-    // font-size: $h4;
     text-align: left;
-    // margin: $h1 $h2; 
 }
-
 
 
 // About
@@ -482,6 +526,7 @@ POSTS & CONTENT STYLES
 .page-about .fig-large {
     margin-top: $h3;
 }
+
 
 // Contact
 
@@ -522,6 +567,7 @@ POSTS & CONTENT STYLES
 
 // Fluid videos
 // http://www.bymichaellancaster.com/blog/fluid-iframe-and-images-without-javascript-plugins/
+// Another option would be to use Fitvids, maybe an update
 .media-wrap {
     position: relative;
     padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
@@ -553,13 +599,8 @@ POSTS & CONTENT STYLES
 
 }
 
-.article-header {
-    // text-align: center;
-}
-
 .article-footer {
     padding-bottom: $h3;
-    // text-align: center;
 }
 
 
@@ -574,9 +615,9 @@ POSTS & CONTENT STYLES
 
 
 
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
+// ----
+// Page nav styles
+// ----
 
 .prev-next {
 
@@ -671,9 +712,9 @@ PAGE NAVI STYLES
 }
 
 
-/*********************
-FOOTER STYLES
-*********************/
+// ----
+// Footer
+// ----
 
 .footer {
     clear: both;
@@ -708,16 +749,6 @@ FOOTER STYLES
         padding-top: $sml;
     }
 
-
-    /*
-    if you checked out the link above:
-    http://www.alistapart.com/articles/organizing-mobile/
-    you'll want to style the footer nav
-    a bit more in-depth. Remember to keep
-    it simple because you'll have to
-    override these styles for the desktop
-    view.
-    */
     .footer-links {
 
         ul {
@@ -727,5 +758,4 @@ FOOTER STYLES
         }
 
     } /* end .footer-links */
-
 

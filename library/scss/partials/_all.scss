@@ -1,0 +1,25 @@
+// ----
+// Import Partials
+// Grabbing styles for the site
+// ----
+
+@import "grid";
+@import "forms";
+
+@import "base";
+
+@media only screen and (min-width: $small) {
+	// Utliity grid for blog
+	@import "1140grid";	
+}
+
+@media only screen and (min-width: $medium) {
+	// Navigation styles and more fluff for larger devices
+	@import "nav";
+	@import "middle";
+}
+
+// This is actually empty
+// @media only screen and (min-width: $large) {
+// 	@import "large";	
+// }

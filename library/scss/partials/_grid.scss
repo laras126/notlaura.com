@@ -2,18 +2,19 @@
 @include border-box-sizing;
 
 // Container
-
 .wrap {
 	@include container($total-columns, $medium);
     max-width: 43em;
     margin: 0 auto;
 }
 
+
+// Posts nav
 .prev-next {
 	@include container(8);
 
 	.prev {
-		@include span-columns(1);	
+		@include span-columns(1);
 	}
 	
 	.pv-middle {
@@ -28,8 +29,6 @@
 		display: none;
 	}
 }
-
-.mobile-hide { display: none; }
 
 @include at-breakpoint($small 6) {
 	.thumb { @include isolate-grid(3); }
@@ -80,6 +79,21 @@
 			.nav-text {
 				padding-right: $sml;
 			}
+		}
+	}
+
+	.mc-signup {
+		form {
+			width: 100%;
+		}
+		
+		.email {
+			@include span-columns(8);
+			
+		}
+
+		.button {
+			@include span-columns(4 omega);	
 		}
 	}
 }

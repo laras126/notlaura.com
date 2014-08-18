@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     sassDir: 'scss',
                     cssDir: 'css',
                     require: 'susy',
-                    outputStyle: 'expanded'
+                    outputStyle: 'compressed'
                 }
             }
         },

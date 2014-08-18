@@ -1,12 +1,11 @@
-/******************************************************************
+// ----
+// Base styles for mobile
+// Includes base selector and content styles
+// ----
 
-Stylesheet: Base Mobile Stylesheet
-
-******************************************************************/
-
-/*********************
-GENERAL STYLES
-*********************/
+// ----
+// General/root
+// ----
 
 html {
     font-size: 66%;    
@@ -31,19 +30,15 @@ hr {
     border-top: 1px dotted $dark-accent;
 }
 
-/*********************
-LAYOUT & GRID STYLES
-*********************/
-
 #container {
     overflow-x: hidden;
     position: relative;
 }
 
 
-/*********************
-LINK STYLES
-*********************/
+// ----
+// Links
+// ----
 
 a, a:visited {
     color: $link-color;
@@ -71,20 +66,17 @@ a, a:visited {
     }
 }
 
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
+// ----
+// Typography
+// ----
+
+// Bones includes there .h1-.h6 utility styles - not entirely sure how I feel about them anymore, but I'm probably using them in the blog somewhere
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-family: $serif;
     text-rendering: optimizelegibility;
     font-weight: 300;
-    /*
-    if you're going to use webfonts, be sure to check your weights
-    http://css-tricks.com/watch-your-font-weight/
-    */
 
-    /* removing text decoration from all headline links */
     a {
         text-decoration: none;
     }
@@ -342,7 +334,7 @@ dd {
     .archive-title { }
 
 
-    /* post meta */
+    // Post meta
     .byline, .tags {
         color: $txt-light;
         font-size: $sml;
@@ -355,7 +347,7 @@ dd {
         time {}
     }
 
-    /* entry content */
+    // Entry content
     .entry-content {
         margin-bottom: $h2;
 
@@ -420,14 +412,14 @@ dd {
             margin-top: $h2;
         }
 
-    } /* end .entry-content */
+    } // /entry-content
 
     .wp-caption {
         max-width: 100%;
         background: $vlight-accent;
         padding: $sml/3;
         
-        /* images inside wp-caption */
+        // Images inside wp-caption
         img {
             max-width: 100%;
             margin-bottom: 0;
@@ -440,10 +432,11 @@ dd {
             text-align: center;
         }
 
-    } /* end .wp-caption */
+    } // /wp-caption
 
 
 // Gallery styles
+// (except using cleaner gallery plugin)
 
 .gallery-icon img {
     margin-bottom: 0;
@@ -568,6 +561,7 @@ dd {
 // Fluid videos
 // http://www.bymichaellancaster.com/blog/fluid-iframe-and-images-without-javascript-plugins/
 // Another option would be to use Fitvids, maybe an update
+
 .media-wrap {
     position: relative;
     padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
@@ -588,7 +582,7 @@ dd {
 }
 
 
-// General
+// Post footer stuff
 
 .tags {
 
@@ -655,7 +649,6 @@ dd {
     }
 }
 
-
 .pagination,
 .wp-prev-next {
     margin: $h3 0 $h1;
@@ -690,9 +683,10 @@ dd {
                 }
             }
         }
-    } /* end .bones_page_navi */
+    } // end page nav
 
-    /* fallback previous & next links */
+    // Fallback prev-next links 
+    // TODO: Are these being used?
     .wp-prev-next {
 
         ul {}
@@ -705,7 +699,7 @@ dd {
             float: right;
         }
 
-    } /* end .wp-prev-next */
+    } // end prev next 
 
 .tablet-nav {
     display: none;
@@ -748,14 +742,3 @@ dd {
         font-size: $sml;
         padding-top: $sml;
     }
-
-    .footer-links {
-
-        ul {
-
-            li {}
-
-        }
-
-    } /* end .footer-links */
-

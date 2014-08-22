@@ -24,6 +24,7 @@ if (!window.getComputedStyle) {
 			return el.currentStyle[prop] ? el.currentStyle[prop] : null;
 		}
 		return this;
+		console.log('poop');
 	}
 }
 

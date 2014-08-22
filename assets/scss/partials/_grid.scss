@@ -1,0 +1,101 @@
+@include border-box-sizing;
+
+// Container
+.wrap {
+	@include container($total-columns);
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+
+
+
+// Posts nav
+.prev-next {
+	@include container(8);
+
+	.prev {
+		@include span(2 of 8);
+	}
+	
+	.pv-middle {
+		@include span(4 of 8);	
+	}
+
+	.next {
+		@include span(2 of 8);
+	}
+
+	.nav-text {
+		display: none;
+	}
+}
+
+@include susy-breakpoint($small, 6) {
+	.thumb { @include gallery(3); }
+	
+	.field-wrap label, .submit-wrap { 
+		@include span(6);  
+	}
+
+	.mobile-hide { display: block; }
+
+}
+
+@include susy-breakpoint($medium, 12) {
+  	
+	.entry-content {
+		@include squish(2,2);
+	}
+
+  	.thumb { @include gallery(4); }
+
+  	.site-info { @include span(4 of 12); }
+
+	.site-nav { @include span(8 of 12); }
+
+	.prev-next {
+		@include container(12);
+		
+ 		.nav-text {
+ 			display: inline-block;
+ 		}
+
+		.prev {
+			@include span(3);
+			
+			.nav-text {
+				padding-left: $sml;
+				line-height: 2;
+			}
+		}
+		
+		.pv-middle {
+			@include span(6);	
+		}
+
+		.next {
+			@include span(3 omega);
+
+			.nav-text {
+				padding-right: $sml;
+			}
+		}
+	}
+
+	.mc-signup {
+		form {
+			width: 100%;
+		}
+		
+		.email {
+			@include span(8);
+			
+		}
+
+		.button {
+			@include span(4 omega);	
+		}
+	}
+}
+

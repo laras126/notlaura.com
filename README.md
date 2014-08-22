@@ -1,5 +1,25 @@
 #notlaura.com redo
 
+##TODOS:
+So, I had started completely rewriting all of this and decided that's ridiculous. It's not so bad it needs a rewrite! However, I know more now, so here are some updates that would be great:
+
+###Misc code stuff:
+* Remove Font Awesome and use SVG sprites instead
+* Remove Animate CSS and use Velocity JS
+* Remove IDs and reevaluate class name semantics
+* Gallery styles, remove dependency on plugin
+* Move Gruntfile to theme root instead of in library/
+* 
+
+###Structural:
+* Add some helpers for formatting blog posts more interestingly
+* Make the homepage more awesome with animations
+* Get static content out of page-about.php
+* Make portfolio into a more case-study format and possibly one page instead of an archive into single pages
+
+
+##Old notes:
+
 Welcome to the redesign of my personal site, [notlaura.com](http://notlaura.com) (even though I still like how it looks). Might as well hop on this [designing in the open](http://bradfrostweb.com/blog/post/designing-in-the-open/) bandwagon!
 
 The following is largely inspired by [Destroy Today on Github](https://github.com/destroytoday/destroytoday.com#rules). That guy, [Jonnie Hallman](http://destroytoday.com), put his personal site up here and kept a nice list of rules for whenever it is updated. So here are rules/todos/guidelines:

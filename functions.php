@@ -12,10 +12,10 @@ sidebars, comments, ect.
 
 
 // Stuff specific to notlaura
-require_once( 'library/notlaura.php' );
+require_once( 'lib/notlaura.php' );
 
 /*
-1. library/bones.php
+1. lib/bones.php
 	- head cleanup (remove rsd, uri links, junk css, ect)
 	- enqueueing scripts & styles
 	- theme support functions
@@ -27,27 +27,23 @@ require_once( 'library/notlaura.php' );
 	- custom google+ integration
 	- adding custom fields to user profiles
 */
-require_once( 'library/bones.php' ); // if you remove this, bones will break
+require_once( 'lib/bones.php' ); // if you remove this, bones will break
 /*
-2. library/custom-post-type.php
+2. lib/custom-post-type.php
 	- an example custom post type
 	- example custom taxonomy (like categories)
 	- example custom taxonomy (like tags)
 */
-require_once( 'library/custom-post-type.php' ); // you can disable this if you like
+require_once( 'lib/custom-post-type.php' ); // you can disable this if you like
 /*
-3. library/admin.php
+3. lib/admin.php
 	- removing some default WordPress dashboard widgets
 	- an example custom dashboard widget
 	- adding custom login css
 	- changing text in footer of admin
 */
-// require_once( 'library/admin.php' ); // this comes turned off by default
+// require_once( 'lib/admin.php' ); // this comes turned off by default
 /*
-4. library/translation/translation.php
-	- adding support for other languages
-*/
-// require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
@@ -120,7 +116,7 @@ function bones_comments( $comment, $args, $depth ) {
 					// create variable
 					$bgauthemail = get_comment_author_email();
 				?>
-				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/lib/images/nothing.gif" />
 				<?php // end custom gravatar call ?>
 				<?php printf(__( '<cite class="fn">%s</cite>', 'bonestheme' ), get_comment_author_link()) ?>
 				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>
@@ -162,7 +158,7 @@ function bones_wpsearch($form) {
 
 add_action('init', 'include_cmb_init');
 function include_cmb_init() {
-    require_once get_stylesheet_directory() . '/library/metabox/init.php';
+    require_once get_stylesheet_directory() . '/lib/metabox/init.php';
 }
 
 add_filter( 'cmb_meta_boxes', 'cmb_project_metaboxes' );
@@ -206,7 +202,7 @@ add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
 
 function be_initialize_cmb_meta_boxes() {
     if ( !class_exists( 'cmb_Meta_Box' ) ) {
-        require_once( 'library/metabox/init.php' );
+        require_once( get_stylesheet_directory() . '/lib/metabox/init.php' );
     }
 }
 

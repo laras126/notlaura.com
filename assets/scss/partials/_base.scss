@@ -1,0 +1,749 @@
+// ----
+// Base styles for mobile
+// Includes base selector and content styles
+// ----
+
+// ----
+// General/root
+// ----
+
+html {
+    font-size: 66%;    
+}
+
+body {
+    background-color: $white;
+    font-family: $sans-serif;
+    font-size: $base;
+    font-weight: 300;
+    line-height: $line-height-base;
+    color: $main-font-clr;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dotted $dark-accent;
+}
+
+#container {
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+// ----
+// Links
+// ----
+
+a, a:visited {
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 1px dotted $light-accent;
+
+    /* on hover */
+    &:hover, &:focus {
+        color: $link-hover;
+    }
+
+    /* on click */
+    &:active {
+
+    }
+
+    /* mobile tap color */
+    &:link {
+        /*
+        this highlights links on iPhones/iPads.
+        so it basically works like the :hover selector
+        for mobile devices.
+        */
+        -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+    }
+}
+
+// ----
+// Typography
+// ----
+
+// Bones includes there .h1-.h6 utility styles - not entirely sure how I feel about them anymore, but I'm probably using them in the blog somewhere
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family: $serif;
+    text-rendering: optimizelegibility;
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1, .h1 {
+    font-size: $h1;
+    margin-top: $h3;
+    margin-bottom: 0;
+}
+
+h2, .h2 {
+    font-size: $h3;
+    margin-top: $h2;
+    margin-bottom: $sml;
+}
+
+h3, .h3 {
+    font-size: $h3;
+    margin-top: $h2;
+    margin-bottom: $sml;
+}
+
+h4, .h4 {
+    font-size: $h4;
+    margin-top: $h2;
+    margin-bottom: $sml;
+}
+
+h5, .h5 {
+    margin: $h3 0 $sml;
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    letter-spacing: 2px;
+    font-size: $sml;
+}
+
+
+
+// ----
+// Typography
+// ----
+
+blockquote {
+    font-size: $h4;
+    margin: $h4 0;
+    font-family: $serif;
+    padding-left: 2rem;
+    border-left: 1px solid $light-blue;
+    margin-bottom: $h3;
+    font-style: italic;
+}
+
+p {
+    margin-bottom: $sml;
+}
+
+.lead {
+    font-size: $base;
+}
+
+
+// Tables
+// Yes, I may use tables sometime!
+
+table {
+    width: 100%;
+    border: 1px solid $light-accent;
+    margin-bottom: 1.5em;
+
+    caption {
+        margin: 0 0 7px;
+        font-size: 0.75em;
+        color: $txt-light;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+tr {
+    border-bottom: 1px solid $light-accent;
+
+    &:nth-child(even) {
+        background-color: $vlight-accent;
+    }
+}
+
+td {
+    padding: 7px;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+th {
+    background-color: $vlight-accent;
+    border-bottom: 1px solid $light-accent;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+
+dl {}
+
+dt {}
+
+dd {
+    margin-left: 0;
+    font-size: $sml;
+    color: $light-accent;
+    margin-bottom: $base;
+}
+
+
+// ----
+// Header
+// ----
+
+
+.header {}
+
+.site-header {
+    padding-bottom: 0;
+}
+
+.site-header, .site-footer {
+    border-top: $sml/2 solid $dark-accent;
+    // border-bottom: 5px solid $light-accent;
+    padding: $sml 0;
+}
+
+.site-info {
+    position: relative;
+    
+    a {
+        border-bottom: none;
+        // color: $white;
+    }
+}
+
+.site-title {
+    text-transform: lowercase;
+    font-size: $h3;
+    font-weight: 300;
+    margin: 0;
+
+    a {
+        color: $main-font-clr;    
+    }
+    
+}
+
+.site-desc { 
+    font-family: $sans-serif; 
+    font-size: $sml;
+    text-transform: lowercase;
+    font-weight: 100;
+    color: $medium-accent;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+// ----
+// Navigation
+// ----
+
+// Ze Toggle menu
+
+.menu-link {
+
+    i {
+        font-size: $h2;
+        line-height: $h2;    
+        color: $light-blue;
+    }
+
+    position: absolute;
+    right: 0;
+    bottom: 25%;
+}
+
+
+.site-nav {
+    text-align: center;
+    margin-top: $sml/2;
+
+    @include transition(0.3s ease-out);
+    
+    .js & {
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    &.active {
+        max-height: 15em;
+    }
+
+    li {
+
+        &:first-child {
+            border-top: $accent-border;
+        }
+
+        a {
+            display: block;
+            // font-size: $sml;
+            border-bottom: $accent-border;
+            padding: 0 $sml;
+            text-align: center;    
+            // text-transform: uppercase;
+            display: block;
+
+            &:hover {
+                // color: $white;
+            }
+        }
+    }
+
+}
+
+
+
+// ----
+// Posts and Content
+// ----
+
+#content {
+    margin-top: $sml;
+}
+
+
+    // TODO: add a .fit-text class or something instead of specifying
+    .single-title,
+    .page-title, .project-title, .post-title {
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .single-title,
+    .page-title, .project-title {
+        
+    }
+
+    .single-title {}
+
+    .page-title {}
+
+    .archive-title { }
+
+
+    // Post meta
+    .byline, .tags {
+        color: $txt-light;
+        font-size: $sml;
+        margin-bottom: $h2;
+        
+        .article-header &, .article-footer & {
+            text-align: center;
+        }
+
+        time {}
+    }
+
+    // Entry content
+    .entry-content {
+        margin-bottom: $h2;
+
+        ul, ol {
+            list-style-position: inside;
+            margin-top: $sml;
+            margin-bottom: $sml;
+
+            li {
+                &.descriptive {
+                    margin-bottom: $sml;                    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+
+        }
+
+        dd {
+            margin-left: $sml;
+            font-size: $sml;
+            color: $txt-light;
+            margin-bottom: $h3;
+        }
+
+        img, .fig-large {
+            margin-bottom: $base;
+        }
+        
+        .fig-large img {
+            margin-bottom: 0;
+        }
+
+        // hack to get around WP adding a <p>, thus a margin above
+        .fig-large figcaption {
+            margin-top: -$sml;
+        }
+
+        video, object {
+            max-width: 100%;
+            height: auto;
+        }
+
+        pre {
+            background: $vlight-accent;
+            border: $accent-border;
+            margin-top: $base;
+            padding-top: 0;
+            font-size: $sml;
+        }
+
+        .row {
+            margin-top: $h2;
+        }
+
+    } // /entry-content
+
+    .wp-caption {
+        max-width: 100%;
+        background: $vlight-accent;
+        padding: $sml/3;
+        
+        // Images inside wp-caption
+        img {
+            max-width: 100%;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        p.wp-caption-text {
+            font-size: $sml;
+            margin: $sml/4 0 $base;
+            text-align: center;
+        }
+
+    } // /wp-caption
+
+
+// Gallery styles
+// (except using cleaner gallery plugin)
+
+.gallery-icon img {
+    margin-bottom: 0;
+}
+
+
+// Custom type
+
+.thumb-image {
+    position: relative;
+    margin-bottom: $base;
+    
+}
+
+.thumb img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    border: 4px solid $light-accent;
+}
+
+.thumb-title {
+    position: absolute;
+    border-top: $accent-border;
+    margin-bottom: 0;
+    padding: $sml/2;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0;
+    background-color: rgba($dark-accent, 0.8);
+    color: $white;
+    display: none;
+}
+
+
+// Project page
+
+.project-title {
+    margin: $sml 0;
+    font-size: $h3;
+}
+
+.project-content {
+    margin-bottom: $h3;
+}
+
+.project-content img {
+    width: 100%;
+}
+
+.project-nav {
+    .fa {
+        font-size: $h2;
+    }
+}
+
+.page-divider {
+    margin-bottom: $h3;
+}
+
+.page-desc {
+    text-align: center;
+}
+
+
+
+// This is a very bad name
+// it means the mefish image on the home page
+.header-img {
+    margin-bottom: $h1;
+}
+
+.callout-quote {
+    text-align: left;
+}
+
+
+// About
+
+.page-about .fig-large {
+    margin-top: $h3;
+}
+
+
+// Contact
+
+.page-contact {
+    .social li i {
+        font-size: $h1;
+    }
+}
+
+// Subsection styles reused thoroughout
+// TODO: maybe rename? Subsection sounds kind of dumb
+// And these could be in more places
+
+.subsection-title {
+    margin: $h1 0 $h2;
+    padding-top: $sml;
+    border-top: 1px dotted $dark-accent;    
+    @extend .h5;
+    @extend .special;
+    text-align: center;        
+}
+
+.subsection {
+    margin-bottom: $h2;
+}
+
+.subsection-tagline {
+    font-size: $h3;
+}
+
+.summary {
+    font-size: $h4;
+    font-family: $sans-serif;
+}
+
+
+
+
+// Fluid videos
+// http://www.bymichaellancaster.com/blog/fluid-iframe-and-images-without-javascript-plugins/
+// Another option would be to use Fitvids, maybe an update
+
+.media-wrap {
+    position: relative;
+    padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    padding-top: $h3;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto $h3;
+}
+
+.media-wrap {
+    iframe, object, embed {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+// Post footer stuff
+
+.tags {
+
+    .pv-middle & {
+        margin-bottom: 0;
+        margin-top: $sml;
+    }
+
+}
+
+.article-footer {
+    padding-bottom: $h3;
+}
+
+
+
+// Post formats
+
+.format-type {
+    color: $medium-accent;
+    margin-right: $sml;
+}
+
+
+
+
+// ----
+// Page nav styles
+// ----
+
+.prev-next {
+
+    border-top: $accent-border;
+
+    a {
+        border: 0;
+    }
+
+    i {
+        font-size: $h2;
+        padding-top: $h4;
+    }
+}
+
+.prev {
+    text-align: left;
+}
+
+.next {
+    text-align: right;
+}
+
+.back-top-container {
+    text-align: center;
+    a {
+        padding: $h4;
+        color: $medium-accent;
+        border: 0;
+        font-size: $h2;
+
+        &:hover {
+            color: $link-hover;
+        }
+    }
+}
+
+.pagination,
+.wp-prev-next {
+    margin: $h3 0 $h1;
+}
+    .pagination{
+        text-align: center;
+        ul {
+            display: inline-block;
+            white-space: nowrap;
+            padding:0;
+            clear: both;
+            margin: 1px;
+            li {
+                padding: 0;
+                margin: 0;
+                float: left;
+                display: inline;
+                overflow: hidden;
+                a, span {
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                    line-height: $base;
+                    font-size: $base;
+                    padding: $base/2;
+                    min-width: $base;
+                    display: block;
+                }
+                span.current, a:hover, a:focus {
+                    background-color: $vlight-accent;
+                    background-color: $vlight-accent;
+                }
+            }
+        }
+    } // end page nav
+
+    // Fallback prev-next links 
+    // TODO: Are these being used?
+    .wp-prev-next {
+
+        ul {}
+
+        .prev-link {
+            float: left;
+        }
+
+        .next-link {
+            float: right;
+        }
+
+    } // end prev next 
+
+.tablet-nav {
+    display: none;
+}
+
+
+// ----
+// Footer
+// ----
+
+.footer {
+    clear: both;
+}
+
+.site-footer {
+    margin-top: $h1;
+    .wrap {
+        padding-top: $h2;
+    }
+
+   text-align: center;
+}
+
+    .social {
+        display: inline-block;
+
+        li {
+            display: inline-block;
+            padding-right: $base;
+            a {
+                border: none;
+            }
+            i {
+                font-size: $h2;
+            }
+        }
+    }
+
+    .colophon {
+        font-size: $sml;
+        padding-top: $sml;
+    }

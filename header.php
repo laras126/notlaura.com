@@ -35,7 +35,7 @@
 		<?php // end of wordpress head ?>
 	
 
-		<script>//try{Typekit.load();}catch(e){}</script>
+		<script>try{Typekit.load();}catch(e){}</script>
 
 		<script type="text/javascript">
 
@@ -59,11 +59,11 @@
 
 		<div id="container">
 
-			<header class="site-header rotation" role="banner">
+			<header class="site-header" role="banner">
 
 				<div id="inner-header" class="wrap clearfix">
 					<div class="site-info">
-                    	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
+                    	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow">lara <span class="special">schenck</span></a></h1>
                     	<h5 class="site-desc"><?php bloginfo('description'); ?></h5>
                     	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
                     </div>

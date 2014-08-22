@@ -39,7 +39,7 @@
 						<p class="copyright">&copy; <?php bloginfo( 'name' ); ?>, LLC.</p>
 					</div>
 					
-					<p class="colophon">This site was created with <a href="http://wordpress.org" target="blank">WordPress</a> using the starter theme <a href="http://themble.com/bones" target="blank">Bones</a> (it is wonderful!). </p>
+					<!-- <p class="colophon">This site was created with <a href="http://wordpress.org" target="blank">WordPress</a> using the starter theme <a href="http://themble.com/bones" target="blank">Bones</a> (it is wonderful!). </p> -->
 				</div>
 
 			</footer>

@@ -3724,3 +3724,7 @@ dd {
     float: right;
   }
 }
+/* line 30, ../scss/main.scss */
+body {
+  background-color: green;
+}

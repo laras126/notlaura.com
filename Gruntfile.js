@@ -14,13 +14,13 @@ module.exports = function(grunt) {
             }
         },
 
-        // uglify: {
-        //     build: {
-        //         files: {
-        //             'assets/js/build/scripts.min.js': ['assets/js/build/scripts.js']
-        //         }
-        //     }
-        // },
+        uglify: {
+            build: {
+                files: {
+                    'assets/js/build/scripts.min.js': ['assets/js/build/scripts.js']
+                }
+            }
+        },
 
         compass: {
             dist: {
@@ -37,15 +37,15 @@ module.exports = function(grunt) {
         // stylesheet for development. Wasn't aware of a way to output
         // minified and non-minified fils via compass.
         // Maybe it's not necessary, but I want to!
-        // cssmin: {
-        //     minify: {
-        //         expand: true,
-        //         cwd: 'assets/css/',
-        //         src: ['main.css', '!main.min.css'],
-        //         dest: 'assets/css/',
-        //         ext: '.min.css'
-        //     }
-        // },
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'assets/css/',
+                src: ['main.css', '!main.min.css'],
+                dest: 'assets/css/',
+                ext: '.min.css'
+            }
+        },
 
         imagemin: {
             dynamic: {
@@ -58,24 +58,24 @@ module.exports = function(grunt) {
             }
         },
 
-        svgmin: {        
-            options: {                                
-                plugins: [
-                    { removeViewBox: false },
-                    { removeUselessStrokeAndFill: false }
-                ]
-            },
-            dist: {                                         
-                files: {                                    
-                    // I am a tard and can't figure out file paths so am 
-                    // just listing the files since there aren't many of them
-                   'assets/images/build/site/svg/we-fish.svg': 'images/site/svg/we-fish.svg',
-                   'assets/images/build/site/svg/you-fish.svg': 'images/site/svg/you-fish.svg',
-                   'assets/images/build/site/svg/me-fish.svg': 'images/site/svg/me-fish.svg',
-                   'assets/images/build/site/svg/deliver-fish.svg': 'images/site/svg/deliver-fish.svg',
-                }
-            }
-        },
+        // svgmin: {        
+        //     options: {                                
+        //         plugins: [
+        //             { removeViewBox: false },
+        //             { removeUselessStrokeAndFill: false }
+        //         ]
+        //     },
+        //     dist: {                                         
+        //         files: {                                    
+        //             // I am a tard and can't figure out file paths so am 
+        //             // just listing the files since there aren't many of them
+        //            'assets/images/build/site/svg/we-fish.svg': 'images/site/svg/we-fish.svg',
+        //            'assets/images/build/site/svg/you-fish.svg': 'images/site/svg/you-fish.svg',
+        //            'assets/images/build/site/svg/me-fish.svg': 'images/site/svg/me-fish.svg',
+        //            'assets/images/build/site/svg/deliver-fish.svg': 'images/site/svg/deliver-fish.svg',
+        //         }
+        //     }
+        // },
 
         // So, I was wondering about style.{hash}.min.css vs style.css?v={hash}
         // And looks like the former is preferred"
@@ -84,19 +84,22 @@ module.exports = function(grunt) {
         version: {
             assets: {
                 options: {
-                    // algorithm: 'sha1',
-                    length: 6,
+                    algorithm: 'sha1',
+                    length: 4,
+                    format: false,
+                    rename: false,
+                    manifest: 'assets/manifest.json',
                 },
                 files: {
-                    'lib/bones.php': ['assets/css/main.css', 'assets/js/build/scripts.js']
+                    'lib/bones.php': ['assets/css/main.min.css', 'assets/js/build/scripts.min.js']
                 },
             }
         },
 
         watch: {
             scripts: {
-                files: ['assets/js/*.js', 'assets/**/*.scss'],
-                tasks: ['concat', 'compass', 'version'],
+                files: ['assets/js/*.js', 'assets/**/*.scss', 'Gruntfile.js'],
+                tasks: ['concat', 'compass', 'version', 'cssmin', 'uglify'],
                 options: {
                     spawn: false,
                 },
@@ -119,7 +122,7 @@ module.exports = function(grunt) {
                 files: [
                   'assets/css/*.css',
                   'assets/js/*.js',
-                  'a*.php'
+                  '*.php',
                 ]
             },
 
@@ -128,13 +131,15 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-wp-assets');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-svgmin');
+    // grunt.loadNpmTasks('grunt-svgmin');
     
-    grunt.registerTask('default', ['svgmin']);
+    grunt.registerTask('default', ['svgmin', 'imagemin']);
 
     
 

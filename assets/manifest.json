@@ -1,16 +1,8 @@
 {
   "dest": "assets/manifest.json",
-  "assets/css/main.css": {
-    "path": "assets/css/main.60e2.min.css",
-    "hash": "60e2"
-  },
-  "assets/js/build/scripts.js": {
-    "path": "assets/js/build/scripts.bc34.min.js",
-    "hash": "bc34"
-  },
   "assets/css/main.min.css": {
-    "path": "assets/css/main.1380.min.css",
-    "hash": "1380"
+    "path": "assets/css/main.19e9.min.css",
+    "hash": "19e9"
   },
   "assets/js/build/scripts.min.js": {
     "path": "assets/js/build/scripts.d185.min.js",

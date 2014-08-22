@@ -133,19 +133,22 @@ function bones_scripts_and_styles() {
 
 		// Register main stylesheet
 		// Uncomment this and comment the other to look at a non-minified version
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.3dde3f.min.css', array(), '', 'all' );
+		// wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.3dde3f.min.css', array(), '', 'all' );
 		
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.1380.min.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '', 'all' );
 
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/assets/css/ie.css', array(), '' );
 
-		// BONES: comment reply script for threaded comments
-		// Lara says remove this
-		// if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		// 	wp_enqueue_script( 'comment-reply' );
-		// }
 
+		// adding scripts file in the footer
+		// Same as with the stylesheets, toggle these two to use an unminified JS file
+		// for development
+		// wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.b14595.min.js', array( 'jquery' ), '', true );
+
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', array( 'jquery' ), '', true );
+		
+		
 		// Get jQuery with Google and remove some crap
 		if( !is_admin()){
 			wp_deregister_script('jquery');
@@ -156,15 +159,6 @@ function bones_scripts_and_styles() {
 			wp_deregister_script('thickbox');
 			wp_deregister_style('thickbox');
 		}
-
-
-		// adding scripts file in the footer
-		// wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.97bce87b.min.js', array( 'jquery' ), '', true );
-		
-		// Same as with the stylesheets, toggle these two to use an unminified JS file
-		// for development
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.b14595.min.js', array( 'jquery' ), '', true );
-		
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'notlaura-typekit' );

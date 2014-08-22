@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                     algorithm: 'sha1',
                     length: 4,
                     format: false,
-                    rename: false,
+                    rename: true,
                     manifest: 'assets/manifest.json',
                 },
                 files: {

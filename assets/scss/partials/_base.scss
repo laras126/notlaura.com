@@ -269,6 +269,7 @@ dd {
 .site-nav {
     text-align: center;
     margin-top: $sml/2;
+    padding: $sml 0;
 
     @include transition(0.3s ease-out);
     
@@ -296,7 +297,12 @@ dd {
             display: block;
             // font-size: $sml;
             border-bottom: $accent-border;
-            padding: 0 $sml;
+            padding: $sml;
+
+            @include bp(mama-bear) {
+                padding: 0;        
+            }
+
             text-align: center;    
             // text-transform: uppercase;
             display: block;

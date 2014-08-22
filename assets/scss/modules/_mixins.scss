@@ -54,6 +54,30 @@
 	}
 }
 
+
+
+// http://css-tricks.com/conditional-media-query-mixins/
+$MQs: true;
+
+@mixin bp($point) {
+	@if ($MQs) {
+		$bp-babybear: "(min-width: #{$small})";
+		$bp-mamabear: "(min-width: #{$medium})";
+		$bp-papabear: "(min-width: #{$large})";
+
+		@if $point == papa-bear {
+			@media #{$bp-papabear} { @content; }
+		}
+		@else if $point == mama-bear {
+			@media #{$bp-mamabear} { @content; }
+		}
+		@else if $point == baby-bear {
+			@media #{$bp-babybear}  { @content; }
+		}
+	}
+}
+
+
 %base-btn {
 	// GARRRHHH this shouldn't be here, oh well?
 	font-family: $sans-serif !important;

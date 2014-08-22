@@ -10,14 +10,15 @@ module.exports = function(grunt) {
                     'assets/js/libs/*.js',
                     'assets/js/*.js'
                 ],
-                dest: 'assets/js/build/production.js',
+                dest: 'assets/js/build/scripts.js',
             }
         },
 
         uglify: {
             build: {
-                src: 'assets/js/build/production.js',
-                dest: 'assets/js/build/production.min.js'
+                files: {
+                    'assets/js/build/scripts.min.js': ['assets/js/build/scripts.js']
+                }
             }
         },
 
@@ -27,8 +28,22 @@ module.exports = function(grunt) {
                     sassDir: 'assets/scss',
                     cssDir: 'assets/css',
                     require: ['susy', 'breakpoint'],
-                    outputStyle: 'compressed'
+                    outputStyle: 'expanded'
                 }
+            }
+        },
+
+        // Using CSS min as well as Compass so there is a non-minified
+        // stylesheet for development. Wasn't aware of a way to output
+        // minified and non-minified fils via compass.
+        // Maybe it's not necessary, but I want to!
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'assets/css/',
+                src: ['main.css', '!main.min.css'],
+                dest: 'assets/css/',
+                ext: '.min.css'
             }
         },
 
@@ -67,7 +82,7 @@ module.exports = function(grunt) {
         version: {
             assets: {
                 files: {
-                    'path/to/target.php': ['path/to/style.css', 'path/to/scripts.js']
+                    'path/to/target.php': ['assets/css/main.min.css', 'assets/js/build/scripts.min.js']
                 }
             }
         },
@@ -106,6 +121,8 @@ module.exports = function(grunt) {
 
     });
 
+
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-wp-assets');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify' );

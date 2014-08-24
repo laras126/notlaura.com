@@ -105,7 +105,6 @@ input[type="checkbox"]:focus {
 
 //  Mailchimp form
 .mc-signup {
-	// background-color: $vlight-accent;
 	font-size: $base;
 }
 
@@ -181,13 +180,15 @@ input[type="checkbox"]:focus {
 .mc-signup {
 	.email {
 		font-size: $base;
-		padding: $sml/2 $base/2;
-		@include border-radius(2px);
+		padding: $sml $base;
 		-webkit-appearance: none;
+		margin-top: 0;
+		line-height: $line-height-base;
 	}
 
 	input[type="submit"] {
-		@include button($medium-accent);
+		@include button($button-color: $medium-accent, $size: baby);
 		margin-top: 0;
+		line-height: $line-height-base;
 	}
 }

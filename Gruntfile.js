@@ -86,7 +86,6 @@ module.exports = function(grunt) {
                 options: {
                     algorithm: 'sha1',
                     length: 4,
-                    format: false,
                     rename: true,
                     manifest: 'assets/manifest.json',
                 },
@@ -96,10 +95,25 @@ module.exports = function(grunt) {
             }
         },
 
+        clean: {
+            roots: [
+                '!assets/{css,js}/{main,scripts}.min.{css,js}',
+                'assets/{css,js}/{main,scripts}.*.min.{css,js}'
+            ]
+        },
+
+        autoprefixer: {
+            dist: {
+                files: {
+                    'assets/css/main.css': 'assets/css/main.min.css'
+                }
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['assets/js/*.js', 'assets/**/*.scss', 'Gruntfile.js'],
-                tasks: ['concat', 'compass', 'version', 'cssmin', 'uglify'],
+                tasks: ['concat', 'compass', 'version', 'uglify', 'autoprefixer'],
                 options: {
                     spawn: false,
                 },
@@ -131,6 +145,8 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-wp-assets');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');

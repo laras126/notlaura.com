@@ -3,13 +3,17 @@
 ##TODOS:
 So, I had started completely rewriting all of this and decided that's ridiculous. It's not so bad it needs a rewrite! However, I know more now, so here are some updates that would be great:
 
+###Build things:
+* Make a build task that versions and minifies
+* And probably other things that don't need to happen all the time
+* Autoprefixer
+
 ###Misc code stuff:
 * Remove Font Awesome and use SVG sprites instead
 * Remove Animate CSS and use Velocity JS
 * Remove IDs and reevaluate class name semantics
 * Gallery styles, remove dependency on plugin
 * Move Gruntfile to theme root instead of in library/
-* 
 
 ###Structural:
 * Add some helpers for formatting blog posts more interestingly

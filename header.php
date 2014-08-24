@@ -57,11 +57,11 @@
 
 	<body <?php body_class(); ?> id="top">
 
-		<div id="container">
+		<!-- <div id="container"> -->
 
 			<header class="site-header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div class="contain">
 					<div class="site-info">
                     	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow">lara <span class="special">schenck</span></a></h1>
                     	<h5 class="site-desc"><?php bloginfo('description'); ?></h5>

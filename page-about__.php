@@ -24,7 +24,7 @@ Template Name: About
                             <section class="entry-content fadein">
 
                                 <figure class="fig-large">
-                                    <img src="http://nl.local/wp-content/themes/notlaura/library/images/build/site/letters.jpg" alt="Wonderful photo of me" />
+                                    <img src="http://nl.local/wp-content/themes/notlaura/assets/images/build/site/letters.jpg" alt="Wonderful photo of me" />
                                     <p></p><figcaption>See that? No "U".</figcaption>
                                 </figure>
 

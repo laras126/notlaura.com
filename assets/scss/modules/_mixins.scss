@@ -24,11 +24,20 @@
 }
 
 
-@mixin button( $button-color, $text-color: $white ) {
+@mixin button( $button-color: $dark-accent, $text-color: $white, $size: mama) {
+	
+	@if $size == baby { 
+		font-size: $base; }
+	@if $size == mama {	
+		font-size: $h3; }
+	@if $size == papa {
+		font-size: $h2; }
+	
 	@extend %base-btn;
-
+	
 	background: $button-color;
 	color: $text-color;
+	border-color: $button-color;
 
 	&:hover,
 	&:focus {
@@ -50,12 +59,21 @@
 		color: hsl( hue( $button-color ), 10%, 80% ) !important;
 		background: darken( $button-color, 8% ) !important;
 		border-color: darken( $button-color, 15% ) !important;
-		text-shadow: none !important;
 	}
 }
 
+	%base-btn {
+		// GARRRHHH this shouldn't be here, oh well?
+		font-family: $sans-serif !important;
+		padding: $sml $base;
+		display: inline-block;
+		border: 2px solid;
+		border-radius: 2px;
+	}
 
 
+
+// Awwwww
 // http://css-tricks.com/conditional-media-query-mixins/
 $MQs: true;
 
@@ -75,18 +93,5 @@ $MQs: true;
 			@media #{$bp-babybear}  { @content; }
 		}
 	}
-}
-
-
-%base-btn {
-	// GARRRHHH this shouldn't be here, oh well?
-	font-family: $sans-serif !important;
-	@extend .h3;
-	padding: 0.5em 0.7em;
-	display: inline-block;
-	border: none;
-	border-radius: 2px;
-	text-shadow: 0.08em 0.08em 0.91em #666;
-	border-width: 0.2em;
 }
 

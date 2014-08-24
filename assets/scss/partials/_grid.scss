@@ -1,13 +1,54 @@
+
+
+// -----
+// Grid
+// -----
+
+// advanced
+$container-width: false;
+$container-style: magic;
+$from-direction: left;
+$omega-float: right;
+
+// media-query fallbacks
+$breakpoint-media-output: true;
+$breakpoint-ie-output: true;
+$breakpoint-raw-output: false;
+
+
+$total-columns  : 8;             // a 12-column grid
+$column-width   : 5em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$container-style: fluid;
+$container-width: $large;
+
+$susy: (
+  columns: $total-columns,
+  gutters: $gutter-width / $column-width,
+  column-width: $column-width,
+ 
+  container: $container-width,
+  math: if($container-style == magic, fluid, $container-style),
+  flow: if($from-direction == right, rtl, ltr),
+  last-flow: if($omega-float == $from-direction, from, to),
+
+	debug: (
+		image: show,
+		color: rgba(122,122,122,0.3),
+		output: overlay,
+		toggle: top right,
+	),
+); 
+
 @include border-box-sizing;
 
 // Container
-.wrap {
+.wrap, .contain {
 	@include container($total-columns);
-    max-width: 60em;
-    margin: 0 auto;
+    padding-left: $sml;
+    padding-right: $sml; 
 }
-
-
 
 
 // Posts nav
@@ -42,17 +83,17 @@
 
 }
 
-@include susy-breakpoint($medium, 12) {
+@include susy-breakpoint($medium, 8) {
   	
 	.entry-content {
-		@include squish(2,2);
+		@include squish(1,1);
 	}
 
   	.thumb { @include gallery(4); }
 
-  	.site-info { @include span(4 of 12); }
+  	.site-info { @include span(4 of 8); }
 
-	.site-nav { @include span(8 of 12); }
+	.site-nav { @include span(4 of 8 omega); }
 
 	.prev-next {
 		@include container(12);
@@ -83,19 +124,26 @@
 		}
 	}
 
+
+	.social {
+		@include span(3 of 6);
+	}
+
 	.mc-signup {
-		form {
-			width: 100%;
-		}
+
+		// form {
+			@include span(3 of 6 omega);
+		// }
 		
 		.email {
-			@include span(8);
+			@include span(4 of 6 no-gutters);
 			
 		}
-
 		.button {
-			@include span(4 omega);	
+			@include span(2 of 6 no-gutters);
 		}
 	}
+
 }
+
 

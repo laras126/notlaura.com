@@ -1,50 +1,109 @@
-// -----
-// Navigation Styles
-// -----
+// ----
+// Navigation
+// ----
+
+// Ze Toggle menu
 
 .menu-link {
-   display: none;
+
+    i {
+        font-size: $h2;
+        line-height: $h2;    
+        color: $light-blue;
+    }
+
+    position: absolute;
+    right: 0;
+    bottom: 25%;
+
+    // Hide the menu button on mobile
+    @include bp(mama-bear) {
+        display: none;
+    }
 }
 
+
 .site-nav {
-    text-align: right; 
+    text-align: center;
+    margin-top: $sml/2;
+    padding: $sml 0;
+
+    @include transition(0.3s ease-out);
     
     .js & {
-        max-height: none;
+        overflow: hidden;
+        max-height: 0;
     }
 
     ul {
-        margin: $sml/2 0 0 -0.25em;
-        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &.active {
+        max-height: 25em;
     }
 
     li {
-        display: inline-block;
-        // line-height: 0;
-        border: none;
+
+        &:first-child {
+            border-top: $accent-border;
+        }
 
         a {
-            border-bottom: 1px solid transparent;
-            border-top: 1px solid transparent;
+            border-bottom: $accent-border;
+            display: block;
+            padding: $sml;
+            text-align: center;   
+        }
+    }
+
+    // ----
+    // Styles for desktop menu
+    // ----
+
+    @include bp(mama-bear) {
+        text-align: right; 
+        padding-top: 0;
+
+        .js & {
+            max-height: none;
+        }
+
+        ul {
+            // border: 0;
+        }
+
+        li {
+            display: inline-block;
             
-            &:hover, &:focus {
+            a {
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                padding-top: $sml/2;
+                padding-bottom: $sml/2;
+                
+                &:hover, &:focus {
+                    border-bottom: $accent-border;
+                    border-top: $accent-border;
+                }
+            }
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+
+        // Current page highlighter
+        li.current-menu-item, 
+        li.current_page_item,
+        li.current-page-ancestor {
+            a {
                 border-bottom: $accent-border;
                 border-top: $accent-border;
             }
         }
-
-        &:first-child {
-            border-top: 0;
-        }
     }
 
-    /* highlight current page */
-    li.current-menu-item, 
-    li.current_page_item,
-    li.current-page-ancestor {
-        a {
-            border-bottom: $accent-border;
-            border-top: $accent-border;
-        }
-    }  /* end current highlighters */
 }
+

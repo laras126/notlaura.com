@@ -1,72 +1,69 @@
 <?php get_header(); ?>
 
-			<div id="content">
+	<div class="content">
+		<main class="main" role="main">
 
-				<div id="inner-content" class="wrap clearfix">
+			<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
-					<div id="main" class="clearfix" role="main">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<header class="article-header">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
+						<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+						<p class="byline vcard"><?php
+							printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link());
+						?></p>
 
-								<header class="article-header">
+					</header>
 
-									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link());
-									?></p>
+					<section class="entry-content clearfix">
 
-								</header>
+						<?php the_excerpt(); ?>
 
-								<section class="entry-content clearfix">
+					</section>
 
-									<?php the_excerpt(); ?>
+					<footer class="article-footer">
 
-								</section>
+					</footer>
 
-								<footer class="article-footer">
+				</article>
 
-								</footer>
+				<?php endwhile; ?>
 
-							</article>
+						<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
+								<?php bones_page_navi(); ?>
+						<?php } else { ?>
+								<nav class="wp-prev-next">
+										<ul class="clearfix">
+											<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
+											<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+										</ul>
+								</nav>
+						<?php } ?>
 
-							<?php endwhile; ?>
+				<?php else : ?>
 
-									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-											<?php bones_page_navi(); ?>
-									<?php } else { ?>
-											<nav class="wp-prev-next">
-													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
-													</ul>
-											</nav>
-									<?php } ?>
+						<article id="post-not-found" class="hentry clearfix">
+							<header class="article-header">
+								<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+							</header>
+							<section class="entry-content">
+								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+							</section>
+							<footer class="article-footer">
+									<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
+							</footer>
+						</article>
 
-							<?php else : ?>
+				<?php endif; ?>
 
-									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div>
+			</main>
 
 
-					</div>
+		</div>
 
-			</div>
+	</div>
 
 <?php get_footer(); ?>

@@ -23,7 +23,7 @@ Template Name: Portfolio
 							
 								<hr class="page-divider" />
 								
-								<section class="entry-content clearfix fadein" itemprop="articleBody">
+								<section class="contain" itemprop="articleBody">
 
 									<?php get_template_part('incl/portfolio', 'section'); ?>
 

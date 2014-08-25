@@ -18,7 +18,7 @@
 
 					</header>
 
-					<section class="entry-content clearfix">
+					<section class="contain">
 
 						<?php the_excerpt(); ?>
 

@@ -19,6 +19,8 @@
 							<li><a href="http://github.com/laras126" target="blank"><i class="fa fa-github"></i></a></li>
 							<li><a href="http://feeds.feedburner.com/notlaura" target="blank"><i class="fa fa-rss"></i></a></li>
 						</ul>
+						<br>
+						<p class="mc-prompt">&copy; Lara Schenck, LLC.</p>
 					</nav>
 
 					<div class="mc-signup">
@@ -35,8 +37,9 @@
 								</div>
 							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_e2b9ece9d65b984fa3652e930_453ea4a7b0" tabindex="-1" value=""></div>
 							</form>
+							
+							<p class="mc-prompt">I send out helpful links and updates now and again - sign up!</p>
 
-							<p class="mc-prompt">Intersted in updates and helpful links now and again? Of course you are!</p>
 						</div>
 					</div> <!-- /mc-signup -->
 

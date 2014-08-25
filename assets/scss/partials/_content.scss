@@ -126,10 +126,6 @@
         margin-bottom: 0;
     }
 
-    // hack to get around WP adding a <p>, thus a margin above
-    .fig-large figcaption {
-        margin-top: -$sml;
-    }
 
     video, object {
         max-width: 100%;
@@ -224,6 +220,7 @@
 }
 
 .project-nav {
+    margin-bottom: $base;
     .fa {
         font-size: $h2;
     }
@@ -252,9 +249,9 @@
 
 // About
 
-.page-about .fig-large {
-    margin-top: $h3;
-}
+// .page-about .fig-large {
+//     margin-top: $h3;
+// }
 
 
 // Contact
@@ -332,6 +329,15 @@
     padding-bottom: $h3;
 }
 
+    .cta-footer {
+        text-align: center;
+
+        .dark-button {
+            margin-top: $h3;
+            margin-bottom: $h3;
+        }
+    }
+
 
 
 // Post formats
@@ -350,7 +356,9 @@
 
 .prev-next {
 
-    border-top: $accent-border;
+    @include bp(mama-bear) {
+        border-top: $accent-border;
+    }
 
     a {
         border: 0;

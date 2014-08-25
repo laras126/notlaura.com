@@ -43,11 +43,10 @@
 										<h3 class="h5 text-center special"><?php echo $c_list; ?></h3>
 									<?php } ?>
 
-									<nav class="clearfix prev-next project-nav">
+									<nav class="contain prev-next project-nav">
 										<div class="prev">
 											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
 											<?php // silly hack for if there are no previous posts ?>
-											&nbsp;
 										</div>
 
 										<div class="pv-middle">
@@ -56,7 +55,6 @@
 
 										<div class="next">
 											<?php // silly hack for if there are no previous posts ?>
-											&nbsp;
 											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
 										</div>
 									</nav>
@@ -86,10 +84,6 @@
 										<div class="prev">
 											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
 											<?php // silly hack for if there are no previous posts ?>
-											&nbsp;
-										</div>
-
-										<div class="pv-middle">
 											&nbsp;
 										</div>
 

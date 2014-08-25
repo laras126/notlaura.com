@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <main class="site-content" role="main">
         
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-content' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
         
             <header class="article-header">
                 <div class="contain animated fadeIn">

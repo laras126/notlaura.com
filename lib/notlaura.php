@@ -26,5 +26,15 @@ function simplify_post_class($classes) {
 
 add_filter('post_class', 'simplify_post_class');
 
+function cta_shortcode( $content = null ) {
+	return '
+		<div class="cta-footer">
+	        <hr class="fig-large">
+	        <h3 class="h1 page-title">Cool, right?</h3>
+	        <a class="dark-button" href="<?php echo site_url(\'/contact\', \'http\'); ?>">Go fish.</a>
+	        <p>(i.e. go to my contact page)</p>
+	    </div>';
+}
+add_shortcode( 'cta', 'cta_shortcode' );
 
 ?>

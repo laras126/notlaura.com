@@ -53,18 +53,17 @@ $susy: (
 
 // Posts nav
 .prev-next {
-	@include container(8);
 
 	.prev {
-		@include span(2 of 8);
+		@include span(1 of 6);
 	}
 	
 	.pv-middle {
-		@include span(4 of 8);	
+		@include span(4 of 6);	
 	}
 
 	.next {
-		@include span(2 of 8);
+		@include span(1 of 6 omega);
 	}
 
 	.nav-text {
@@ -83,27 +82,33 @@ $susy: (
 
 }
 
-@include susy-breakpoint($medium, 8) {
+@include susy-breakpoint($medium, 6) {
   	
 	.entry-content {
 		@include squish(1,1);
 	}
 
-  	.thumb { @include gallery(4); }
+	.fig-large {
+		@include bleed(1 of 6);
+		padding: 0;
+		margin-top: 0;
+	}
 
-  	.site-info { @include span(4 of 8); }
+  	.thumb { @include gallery(2); }
 
-	.site-nav { @include span(4 of 8 omega); }
+  	.site-info { @include span(3); }
+
+	.site-nav { @include span(3 omega); }
 
 	.prev-next {
-		@include container(12);
+		// @include container(12);
 		
  		.nav-text {
  			display: inline-block;
  		}
 
 		.prev {
-			@include span(3);
+			// @include span(2);
 			
 			.nav-text {
 				padding-left: $sml;
@@ -112,11 +117,11 @@ $susy: (
 		}
 		
 		.pv-middle {
-			@include span(6);	
+			// @include span(4);	
 		}
 
 		.next {
-			@include span(3 omega);
+			// @include span(2 omega);
 
 			.nav-text {
 				padding-right: $sml;
@@ -130,11 +135,14 @@ $susy: (
 	}
 
 	.mc-signup {
+		@include span(3 of 6 omega);
 
-		// form {
-			@include span(3 of 6 omega);
-		// }
 		
+		form {
+			@include clearfix;
+		}
+
+
 		.email {
 			@include span(4 of 6 no-gutters);
 			
@@ -145,5 +153,3 @@ $susy: (
 	}
 
 }
-
-

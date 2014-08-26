@@ -4,7 +4,7 @@
         <!-- <article id="post-<?php the_ID(); ?>" <?php post_class('entry-'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting"> -->
 
             <header class="article-header">
-                <div class="contain animated fadeInDown">
+                <div class="contain animated fadeIn">
                     <h1 class="page-title">I teach <span class="special">fishing</span>.</h1>
                     <p>Uhh...what?</p>
                     <img id="meFish" class="splash-img" src="<?php echo $img_path ?>site/svg/me-fish.min.svg">

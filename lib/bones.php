@@ -144,7 +144,7 @@ function bones_scripts_and_styles() {
 		// adding scripts file in the footer
 		// Same as with the stylesheets, toggle these two to use an unminified JS file
 		// for development
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.98b6.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/scripts.98b6.min.js', array( 'jquery' ), '', true );
 
 		// wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', array( 'jquery' ), '', true );
 		

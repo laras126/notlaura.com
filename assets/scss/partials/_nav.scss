@@ -14,7 +14,11 @@
 
     position: absolute;
     right: 0;
-    bottom: 25%;
+    bottom: 10%;
+
+    @include bp(baby-bear) {
+        bottom: 25%;
+    }
 
     // Hide the menu button on mobile
     @include bp(mama-bear) {
@@ -25,8 +29,9 @@
 
 .site-nav {
     text-align: center;
-    margin-top: $sml/2;
+    margin-top: $sml;
     padding: $sml 0;
+    text-transform: lowercase;
 
     @include transition(0.3s ease-out);
     
@@ -106,4 +111,3 @@
     }
 
 }
-

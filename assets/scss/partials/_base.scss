@@ -75,7 +75,7 @@ a, a:visited {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-family: $serif;
     text-rendering: optimizelegibility;
-    font-weight: 300;
+    font-weight: 500;
 
     a {
         text-decoration: none;
@@ -92,6 +92,7 @@ h2, .h2 {
     font-size: $h3;
     margin-top: $h2;
     margin-bottom: $sml;
+    
 }
 
 h3, .h3 {
@@ -112,6 +113,7 @@ h5, .h5 {
     font-family: $sans-serif;
     letter-spacing: 2px;
     font-size: $sml;
+    font-weight: 300;
 }
 
 blockquote {

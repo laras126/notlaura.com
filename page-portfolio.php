@@ -1,60 +1,39 @@
-<?php
-/*
-Template Name: Portfolio
-*/
-?>
-
 <?php get_header(); ?>
 
-			<div id="content">
+		<div id="content">
 
-				<div id="inner-content" class="wrap clearfix">
+			<div id="inner-content" class="wrap clearfix">
 
-						<div id="main" class="clearfix" role="main">
+					<div id="main" class="clearfix" role="main">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php get_template_part( 'incl/page', 'header' ); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-								<header class="article-header">
-									<h1 class="page-title"><?php the_title(); ?></h1>
-									<p class="page-desc">What I do.</p>
+							<section class="contain" itemprop="articleBody">
+								<?php get_template_part('incl/portfolio', 'section'); ?>
+							</section>
+
+						<?php endwhile; else : ?>
+
+							<article id="post-not-found" class="hentry clearfix">
+									<header class="article-header">
+										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 								</header>
-							
-								<hr class="page-divider" />
-								
-								<section class="contain" itemprop="articleBody">
-
-									<?php get_template_part('incl/portfolio', 'section'); ?>
-
+									<section class="entry-content">
+										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 								</section>
-
 								<footer class="article-footer">
-
+										<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
 								</footer>
-
 							</article>
 
-							<?php endwhile; else : ?>
+						<?php endif; ?>
 
-								<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
-									</footer>
-								</article>
-
-							<?php endif; ?>
-
-						</div>
-
-				</div>
+					</div>
 
 			</div>
+
+		</div>
 
 <?php get_footer(); ?>

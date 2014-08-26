@@ -1,5 +1,16 @@
 // Here are some various, helpful shortcuts!
 
+.dark-bkgd {
+    background: $dark-accent;
+    color: $white;
+    a {
+        color: $light-accent;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
 .callout {
 	@extend .text-center;
 }
@@ -60,7 +71,7 @@
 }
 
 .dark-button {
-    @include button($dark-accent);
+    @include button($button-color: $dark-accent, $size: mama );
     // TODO: is this necessary? Sheesh.
     &:hover, 
     &:focus,

@@ -113,7 +113,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['assets/js/*.js', 'assets/**/*.scss', 'Gruntfile.js'],
-                tasks: ['concat', 'compass', 'version', 'uglify', 'autoprefixer'],
+                tasks: ['compass', 'concat', 'version', 'uglify'],
                 options: {
                     spawn: false,
                 },

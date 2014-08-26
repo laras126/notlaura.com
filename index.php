@@ -6,12 +6,10 @@
 
 						<div id="main" class="clearfix" role="main">
 														
-							<header class="article-header">
+							<header class="page-header">
 								<h1 class="page-title">Blog</h1>
 								<p class="text-center">Thoughts, research, snippets, etc.</p>
 							</header>
-
-							<hr class="page-divider" />
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

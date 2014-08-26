@@ -18,6 +18,7 @@
 }
     .site-header { 
         border-top: $sml/2 solid $dark-accent;
+        padding-bottom: $h2;
     }
 
 .site-info {
@@ -41,6 +42,12 @@
 }
 
 .site-desc { 
+
+    display: none;
+
+    @include bp(baby-bear) {
+        display: block;
+    }
     font-family: $sans-serif; 
     font-size: $sml;
     text-transform: lowercase;
@@ -64,11 +71,17 @@
     text-align: center;
 }
 
-.single-title {}
+.page-title {
+    margin-top: 0;
+}
 
-.page-title {}
-
-.archive-title { }
+.page-header {
+    @include bp(mama-bear) {
+        border-bottom: $accent-border;        
+        @include squish(1,1);
+        margin-bottom: $h2;
+    }
+}
 
 // Post meta
 .byline, .tags {
@@ -226,32 +239,43 @@
     }
 }
 
-.page-divider {
-    margin-bottom: $h3;
-}
+    .nav-text {
+        @extend .h5;
+        display: none;
+    }
 
+    @include bp(brother-bear) {
+        .project-nav {
+            .fa {
+                font-size: $h1;        
+            }
+        }
+
+        .nav-text {
+            // HACK!
+            // TODO: make better way to align this middle
+            position: relative;
+            bottom: $sml*0.75;
+        }
+    }
+ 
 .page-desc {
     text-align: center;
 }
 
 
-
 // This is a very bad name
 // it means the mefish image on the home page
-.header-img {
+.splash-img {
     margin-bottom: $h1;
 }
 
 .callout-quote {
     text-align: left;
+    margin-top: $h1;
+    margin-bottom: $h1;
 }
 
-
-// About
-
-// .page-about .fig-large {
-//     margin-top: $h3;
-// }
 
 
 // Contact
@@ -272,6 +296,7 @@
     border-top: 1px dotted $dark-accent;    
     @extend .h5;
     @extend .special;
+    @include squish(1,1);
     text-align: center;        
 }
 
@@ -331,6 +356,9 @@
 
     .cta-footer {
         text-align: center;
+        margin-top: $h1;
+        padding-top: $h1;
+        border-top: $accent-border;
 
         .dark-button {
             margin-top: $h3;
@@ -358,6 +386,24 @@
 
     @include bp(mama-bear) {
         border-top: $accent-border;
+
+        .nav-text {
+            display: inline-block;
+        }
+
+        .prev {
+        
+            .nav-text {
+                padding-left: $sml;
+            }
+        }
+
+        .next {
+
+            .nav-text {
+                padding-right: $sml;
+            }
+        }
     }
 
     a {
@@ -462,8 +508,12 @@
 }
 
 .site-footer {
+    text-align: center;
     
-    .contain {
+    @include bp(mama-bear) {
+        text-align: left;
+    }
+    .contain:first-child {
         padding-top: $h2;
     }
 
@@ -474,12 +524,12 @@
 }
 
     .social {
-        display: inline-block;
-
+        padding-bottom: $h3;
+        
         li {
             display: inline-block;
             margin-right: $h2;
-            
+
             &:last-child {
                 margin-right: 0;
             }
@@ -493,12 +543,23 @@
             }
 
             i {
-                font-size: $h1;
+                font-size: $h2;
+                @include bp(brother-bear) {
+                    font-size: $h1;
+                }
             }
         }
     }
 
     .colophon {
         font-size: $sml;
-        padding-top: $sml;
+        // padding-top: $sml;
+    }
+
+    .mc-prompt {
+        display: none;
+
+        @include bp(mama-bear) {
+            display: block;
+        }
     }

@@ -45,17 +45,16 @@
 
 									<nav class="contain prev-next project-nav">
 										<div class="prev">
-											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
+											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text">Previous</span>'); ?>
 											<?php // silly hack for if there are no previous posts ?>
+											&nbsp;
 										</div>
-
 										<div class="pv-middle">
 											<h1 class="project-title"><?php the_title(); ?></h1>		
 										</div>
-
 										<div class="next">
-											<?php // silly hack for if there are no previous posts ?>
-											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
+											<?php previous_post_link('%link','<span class="nav-text">Next</span><i class="fa fa-angle-right"></i>'); ?> 
+											&nbsp;<?php // silly hack for if there are no previous posts ?>
 										</div>
 									</nav>
 									
@@ -80,19 +79,7 @@
 								</section>
 								
 								<footer class="article-footer">
-									<nav class="clearfix prev-next project-nav">
-										<div class="prev">
-											<?php next_post_link('%link','<i class="fa fa-angle-left"></i><span class="nav-text lead">Previous</span>'); ?>
-											<?php // silly hack for if there are no previous posts ?>
-											&nbsp;
-										</div>
-
-										<div class="next">
-											<?php // silly hack for if there are no previous posts ?>
-											&nbsp;
-											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
-										</div>
-									</nav>
+									<?php get_template_part('incl/project', 'nav'); ?>
 									<?php edit_post_link(); ?>
 								</footer>
 

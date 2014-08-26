@@ -33,12 +33,12 @@ $susy: (
   flow: if($from-direction == right, rtl, ltr),
   last-flow: if($omega-float == $from-direction, from, to),
 
-	debug: (
-		image: show,
-		color: rgba(122,122,122,0.3),
-		output: overlay,
-		toggle: top right,
-	),
+	// debug: (
+	// 	image: show,
+	// 	color: rgba(122,122,122,0.3),
+	// 	output: overlay,
+	// 	toggle: top right,
+	// ),
 ); 
 
 @include border-box-sizing;
@@ -51,105 +51,55 @@ $susy: (
 }
 
 
-// Posts nav
-.prev-next {
+// Posts/projects nav
+.prev { @include span(2 of 8); }
+.pv-middle { @include span(4 of 8);	}
+.next { @include span(2 of 8 omega); }
 
-	.prev {
-		@include span(1 of 6);
-	}
-	
-	.pv-middle {
-		@include span(4 of 6);	
-	}
-
-	.next {
-		@include span(1 of 6 omega);
-	}
-
-	.nav-text {
-		display: none;
-	}
-}
 
 @include susy-breakpoint($small, 6) {
 	.thumb { @include gallery(3); }
 	
-	.field-wrap label, .submit-wrap { 
-		@include span(6);  
-	}
+	.field-wrap label, 
+	.submit-wrap { 	@include span(6); }
 
 	.mobile-hide { display: block; }
 
 }
 
 @include susy-breakpoint($medium, 6) {
-  	
-	.entry-content {
-		@include squish(1,1);
-	}
+  	.site-info { @include span(2); }
+	.site-nav { @include span(4 omega); }
+	
+	.entry-content { @include squish(1,1); }
+  	.thumb { @include gallery(2); }
 
 	.fig-large {
 		@include bleed(1 of 6);
 		padding: 0;
 		margin-top: 0;
+	}  	
+}
+
+.footer-block {
+	@include bp(mama-bear) {
+		@include span(3 of 6);	
 	}
-
-  	.thumb { @include gallery(2); }
-
-  	.site-info { @include span(3); }
-
-	.site-nav { @include span(3 omega); }
-
-	.prev-next {
-		// @include container(12);
-		
- 		.nav-text {
- 			display: inline-block;
- 		}
-
-		.prev {
-			// @include span(2);
-			
-			.nav-text {
-				padding-left: $sml;
-				line-height: 2;
-			}
-		}
-		
-		.pv-middle {
-			// @include span(4);	
-		}
-
-		.next {
-			// @include span(2 omega);
-
-			.nav-text {
-				padding-right: $sml;
-			}
-		}
-	}
-
-
-	.social {
-		@include span(3 of 6);
-	}
+}
 
 	.mc-signup {
-		@include span(3 of 6 omega);
+		.email, 
+		.button { width: 100%; }
 
-		
-		form {
-			@include clearfix;
-		}
-
-
-		.email {
-			@include span(4 of 6 no-gutters);
-			
-		}
-		.button {
-			@include span(2 of 6 no-gutters);
+		@include bp(baby-bear) {
+			form { @include clearfix; }
+			.email { @include span(4 of 6 no-gutters); }
+			.button { @include span(2 of 6 no-gutters); }
 		}
 	}
 
-}
+	.mc-signup, .mc-prompt {
+		@include bp(mama-bear) {
+			@include last;
+		}
+	}

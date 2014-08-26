@@ -9,7 +9,8 @@
 // -----
 
 $small 			: 30em;
-$medium 		: 60em;
+$msm 			: 40em;
+$medium 		: 58em;
 $large 	 		: 100rem;
 
 
@@ -55,7 +56,7 @@ $txt-light: 		darken($light-accent, 20%);
 // Rem Units
 // http://gregrickaby.com/using-the-golden-ratio-and-rems/
 
-$base:  			1.8rem;
+$base:  			2rem;
 $line-height-base: 	1.5;
 $sml:  				$base*0.8;
 

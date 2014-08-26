@@ -11,25 +11,13 @@
 }
 
 
-// Mixins
-.dark-bkgd {
-	background: $dark-accent;
-    color: $white;
-    a {
-        color: $light-accent;
-        &:hover {
-        	color: $white;
-        }
-    }
-}
-
-
 @mixin button( $button-color: $dark-accent, $text-color: $white, $size: mama) {
 	
 	@if $size == baby { 
 		font-size: $base; }
 	@if $size == mama {	
-		font-size: $h3; }
+		font-size: $h3;
+		margin: $h3 0;  }
 	@if $size == papa {
 		font-size: $h2; }
 	
@@ -80,11 +68,15 @@ $MQs: true;
 @mixin bp($point) {
 	@if ($MQs) {
 		$bp-babybear: "(min-width: #{$small})";
+		$bp-brotherbear: "(min-width: #{$msm})";
 		$bp-mamabear: "(min-width: #{$medium})";
 		$bp-papabear: "(min-width: #{$large})";
 
 		@if $point == papa-bear {
 			@media #{$bp-papabear} { @content; }
+		}
+		@else if $point == brother-bear {
+			@media #{$bp-brotherbear} { @content; }
 		}
 		@else if $point == mama-bear {
 			@media #{$bp-mamabear} { @content; }

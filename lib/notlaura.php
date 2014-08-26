@@ -3,6 +3,7 @@
 
 // Helpful var
 $img_path = get_template_directory_uri() . '/assets/images/build/';
+$img_path_dev = get_template_directory_uri() . '/assets/images/';
 
 // Clean up WP post classes because they drive me crazy
 function simplify_post_class($classes) {

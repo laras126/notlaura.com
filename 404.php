@@ -4,33 +4,23 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" role="main">
 
-						<article id="post-not-found" class="hentry clearfix">
+						<article id="post-not-found" class="hentry">
 
-							<header class="article-header">
-
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
-
+							<header class="page-header">
+								<h1 class="page-title"><?php _e( 'Epic 404.', 'bonestheme' ); ?></h1>
+								<p class="page-desc">Something's missing!</p>
 							</header>
 
 							<section class="entry-content">
-
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
+								<p><?php _e( 'What you are looking for was not found, but maybe try looking again! <br>In the mean time, feast your eyes on my family\'s cute dog, Feebs:', 'bonestheme' ); ?></p>
+								<figure class="fig-large">
+									<img src="<?php echo $img_path_dev; ?>site/feebs6.png" alt="Cute dog!">	
+									<figcaption>Feebs is part Sherpei...can you tell?</figcaption>
+								</figure>
+								
 							</section>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section>
-
-							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
 
 						</article>
 

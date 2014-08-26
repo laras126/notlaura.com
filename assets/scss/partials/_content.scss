@@ -4,6 +4,7 @@
 
 .home .site-content {
     text-align: center;
+    padding-top: $h2;
 }
 
 
@@ -19,6 +20,11 @@
     .site-header { 
         border-top: $sml/2 solid $dark-accent;
         padding-bottom: $h2;
+        // background-color: $vlight-accent;
+
+
+        .contain {
+        }
     }
 
 .site-info {

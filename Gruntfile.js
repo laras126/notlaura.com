@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 src: [
                     'assets/js/libs/*.js',
                     'assets/js/*.js',
-                    'bower_components/velocity/jquery.velocity.js'
+                    // 'bower_components/velocity/jquery.velocity.js'
                 ],
                 dest: 'assets/js/scripts.js',
             }

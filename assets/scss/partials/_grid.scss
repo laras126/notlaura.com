@@ -56,6 +56,13 @@ $susy: (
 .pv-middle { @include span(4 of 8);	}
 .next { @include span(2 of 8 omega); }
 
+@media (max-width: $small) {
+	.gfield_left_half, 
+	.gfield_right_half {
+		width: 100%;
+	}	
+}
+
 
 @include susy-breakpoint($small, 6) {
 	.thumb { @include gallery(3); }

@@ -74,6 +74,157 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/*! Animate.css - http://daneden.me/animate */
+/* line 4, ../scss/vendor/_animate.scss */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 11, ../scss/vendor/_animate.scss */
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 497, ../scss/vendor/_animate.scss */
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 934, ../scss/vendor/_animate.scss */
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 969, ../scss/vendor/_animate.scss */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2228,7 +2379,7 @@ strong {
 .dark-button, input[type="submit"],
 button, .mc-signup input[type="submit"] {
   font-family: "museo-sans-1" !important;
-  padding: 1.6rem 2rem;
+  padding: 1.44rem 1.8rem;
   display: inline-block;
   border: 2px solid;
   border-radius: 2px;
@@ -2302,16 +2453,16 @@ button, .mc-signup input[type="submit"] {
 /* line 65, ../scss/modules/_utils.scss */
 .fig-large figcaption {
   text-align: center;
-  font-size: 1.6rem;
-  padding: 0.8rem;
+  font-size: 1.44rem;
+  padding: 0.72rem;
   background-color: #f4f7f9;
 }
 
 /* line 73, ../scss/modules/_utils.scss */
 .dark-button, input[type="submit"],
 button {
-  font-size: 3.2rem;
-  margin: 3.2rem 0;
+  font-size: 2.88rem;
+  margin: 2.88rem 0;
   background: #237fa9;
   color: #ffffff;
   border-color: #237fa9;
@@ -2368,8 +2519,8 @@ button:visited:focus {
   max-width: 100rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding-left: 1.44rem;
+  padding-right: 1.44rem;
 }
 /* line 12, ../../../../../../../.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .wrap:after, .contain:after {
@@ -2549,7 +2700,7 @@ label, select {
 
 /* line 14, ../scss/partials/_forms.scss */
 label {
-  margin-top: 3.2rem;
+  margin-top: 2.88rem;
 }
 
 /* line 18, ../scss/partials/_forms.scss */
@@ -2587,7 +2738,7 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-  padding: 0.8rem 1rem;
+  padding: 0.72rem 0.9rem;
   background: #f4f7f9;
   color: #3e3739;
   border: 2px solid #e6e6e6;
@@ -2665,12 +2816,12 @@ input[type="checkbox"]:focus {
 
 /* line 107, ../scss/partials/_forms.scss */
 .mc-signup {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* line 111, ../scss/partials/_forms.scss */
 .mc-prompt {
-  font-size: 1.6rem;
+  font-size: 1.44rem;
 }
 
 /* line 120, ../scss/partials/_forms.scss */
@@ -2681,8 +2832,8 @@ input[type="checkbox"]:focus {
 .gform_wrapper input[type=tel],
 .gform_wrapper input[type=number],
 .gform_wrapper input[type=password] {
-  font-size: 2rem;
-  padding: 0.8rem 1rem;
+  font-size: 1.8rem;
+  padding: 0.72rem 0.9rem;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -2703,7 +2854,7 @@ input[type="checkbox"]:focus {
 /* line 150, ../scss/partials/_forms.scss */
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
-  font-size: 3.2rem;
+  font-size: 2.88rem;
 }
 /* line 155, ../scss/partials/_forms.scss */
 .gform_wrapper .ginput_complex label,
@@ -2713,7 +2864,7 @@ input[type="checkbox"]:focus {
 .gform_wrapper .gfield_date_day label,
 .gform_wrapper .gfield_date_year label,
 .gform_wrapper .instruction {
-  font-size: 1.6rem;
+  font-size: 1.44rem;
 }
 /* line 167, ../scss/partials/_forms.scss */
 .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer input.button {
@@ -2727,15 +2878,15 @@ input[type="checkbox"]:focus {
 
 /* line 182, ../scss/partials/_forms.scss */
 .mc-signup .email {
-  font-size: 2rem;
-  padding: 1.6rem 2rem;
+  font-size: 1.8rem;
+  padding: 1.44rem 1.8rem;
   -webkit-appearance: none;
   margin-top: 0;
   line-height: 1.5;
 }
 /* line 190, ../scss/partials/_forms.scss */
 .mc-signup input[type="submit"] {
-  font-size: 2rem;
+  font-size: 1.8rem;
   background: #86b2c6;
   color: #ffffff;
   border-color: #86b2c6;
@@ -2771,7 +2922,7 @@ html {
 body {
   background-color: #ffffff;
   font-family: "museo-sans-1";
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.5;
   color: #3e3739;
@@ -2833,62 +2984,62 @@ button a, .subsection-tagline a, h4 a, .h4 a, .gform_wrapper .top_label .gfield_
 
 /* line 85, ../scss/partials/_base.scss */
 h1, .h1 {
-  font-size: 5.6rem;
-  margin-top: 3.2rem;
+  font-size: 5.04rem;
+  margin-top: 2.88rem;
   margin-bottom: 0;
 }
 
 /* line 91, ../scss/partials/_base.scss */
 h2, .h2 {
-  font-size: 3.2rem;
-  margin-top: 3.6rem;
-  margin-bottom: 1.6rem;
+  font-size: 2.88rem;
+  margin-top: 3.24rem;
+  margin-bottom: 1.44rem;
 }
 
 /* line 98, ../scss/partials/_base.scss */
 h3, .h3, input[type="submit"],
 button, .subsection-tagline {
-  font-size: 3.2rem;
-  margin-top: 3.6rem;
-  margin-bottom: 1.6rem;
+  font-size: 2.88rem;
+  margin-top: 3.24rem;
+  margin-bottom: 1.44rem;
 }
 
 /* line 104, ../scss/partials/_base.scss */
 h4, .h4, .gform_wrapper .top_label .gfield_label {
-  font-size: 2.4rem;
-  margin-top: 3.6rem;
-  margin-bottom: 1.6rem;
+  font-size: 2.16rem;
+  margin-top: 3.24rem;
+  margin-bottom: 1.44rem;
 }
 
 /* line 110, ../scss/partials/_base.scss */
 h5, .h5, .nav-text, .subsection-title {
-  margin: 3.2rem 0 1.6rem;
+  margin: 2.88rem 0 1.44rem;
   text-transform: uppercase;
   font-family: "museo-sans-1";
   letter-spacing: 2px;
-  font-size: 1.6rem;
+  font-size: 1.44rem;
   font-weight: 300;
 }
 
 /* line 119, ../scss/partials/_base.scss */
 blockquote {
-  font-size: 2.4rem;
-  margin: 2.4rem 0;
+  font-size: 2.16rem;
+  margin: 2.16rem 0;
   font-family: "museo-slab-1";
   padding-left: 2rem;
   border-left: 1px solid #86b2c6;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.88rem;
   font-style: italic;
 }
 
 /* line 129, ../scss/partials/_base.scss */
 p {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.44rem;
 }
 
 /* line 133, ../scss/partials/_base.scss */
 .lead {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* line 141, ../scss/partials/_base.scss */
@@ -2939,9 +3090,9 @@ th:last-child {
 /* line 187, ../scss/partials/_base.scss */
 dd {
   margin-left: 0;
-  font-size: 1.6rem;
+  font-size: 1.44rem;
   color: #e6e6e6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 /* line 7, ../scss/partials/_nav.scss */
@@ -2952,8 +3103,8 @@ dd {
 }
 /* line 9, ../scss/partials/_nav.scss */
 .menu-link i {
-  font-size: 3.6rem;
-  line-height: 3.6rem;
+  font-size: 3.24rem;
+  line-height: 3.24rem;
   color: #86b2c6;
 }
 @media (min-width: 30em) {
@@ -2972,8 +3123,8 @@ dd {
 /* line 30, ../scss/partials/_nav.scss */
 .site-nav {
   text-align: center;
-  margin-top: 1.6rem;
-  padding: 1.6rem 0;
+  margin-top: 1.44rem;
+  padding: 1.44rem 0;
   text-transform: lowercase;
   -moz-transition: ease-out 0.3s;
   -o-transition: ease-out 0.3s;
@@ -3002,7 +3153,7 @@ dd {
 .site-nav li a {
   border-bottom: 1px dotted #86b2c6;
   display: block;
-  padding: 1.6rem;
+  padding: 1.44rem;
   text-align: center;
 }
 @media (min-width: 58em) {
@@ -3023,8 +3174,8 @@ dd {
   .site-nav li a {
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    padding-top: 0.72rem;
+    padding-bottom: 0.72rem;
   }
   /* line 91, ../scss/partials/_nav.scss */
   .site-nav li a:hover, .site-nav li a:focus {
@@ -3047,25 +3198,25 @@ dd {
 /* line 5, ../scss/partials/_content.scss */
 .home .site-content {
   text-align: center;
-  padding-top: 3.6rem;
+  padding-top: 3.24rem;
 }
 
 /* line 16, ../scss/partials/_content.scss */
 .site-header,
 .site-footer {
-  padding-top: 1.6rem;
+  padding-top: 1.44rem;
 }
 
 /* line 20, ../scss/partials/_content.scss */
 .site-header {
-  border-top: 0.8rem solid #237fa9;
-  padding-bottom: 3.6rem;
+  border-top: 0.72rem solid #237fa9;
+  padding-bottom: 3.24rem;
 }
 
 /* line 30, ../scss/partials/_content.scss */
 .site-info {
   position: relative;
-  top: 0.8rem;
+  top: 0.72rem;
 }
 /* line 33, ../scss/partials/_content.scss */
 .site-info a {
@@ -3075,7 +3226,7 @@ dd {
 /* line 38, ../scss/partials/_content.scss */
 .site-title {
   text-transform: lowercase;
-  font-size: 3.2rem;
+  font-size: 2.88rem;
   font-weight: 300;
   margin: 0;
 }
@@ -3088,7 +3239,7 @@ dd {
 .site-desc {
   display: none;
   font-family: "museo-sans-1";
-  font-size: 1.6rem;
+  font-size: 1.44rem;
   text-transform: lowercase;
   font-weight: 100;
   color: #86b2c6;
@@ -3120,15 +3271,15 @@ dd {
     border-bottom: 1px dotted #86b2c6;
     margin-left: 12.76596%;
     margin-right: 12.76596%;
-    margin-bottom: 3.6rem;
+    margin-bottom: 3.24rem;
   }
 }
 
 /* line 93, ../scss/partials/_content.scss */
 .byline, .tags {
   color: #b3b3b3;
-  font-size: 1.6rem;
-  margin-bottom: 3.6rem;
+  font-size: 1.44rem;
+  margin-bottom: 3.24rem;
 }
 /* line 98, ../scss/partials/_content.scss */
 .article-header .byline, .article-footer .byline, .article-header .tags, .article-footer .tags {
@@ -3137,17 +3288,17 @@ dd {
 
 /* line 106, ../scss/partials/_content.scss */
 .entry-content {
-  margin-bottom: 3.6rem;
+  margin-bottom: 3.24rem;
 }
 /* line 109, ../scss/partials/_content.scss */
 .entry-content ul, .entry-content ol {
   list-style-position: inside;
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
+  margin-top: 1.44rem;
+  margin-bottom: 1.44rem;
 }
 /* line 115, ../scss/partials/_content.scss */
 .entry-content ul li.descriptive, .entry-content ol li.descriptive {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.44rem;
 }
 /* line 117, ../scss/partials/_content.scss */
 .entry-content ul li.descriptive:last-child, .entry-content ol li.descriptive:last-child {
@@ -3163,14 +3314,14 @@ dd {
 }
 /* line 133, ../scss/partials/_content.scss */
 .entry-content dd {
-  margin-left: 1.6rem;
-  font-size: 1.6rem;
+  margin-left: 1.44rem;
+  font-size: 1.44rem;
   color: #b3b3b3;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.88rem;
 }
 /* line 140, ../scss/partials/_content.scss */
 .entry-content img, .entry-content .fig-large {
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 /* line 144, ../scss/partials/_content.scss */
 .entry-content .fig-large img {
@@ -3185,20 +3336,20 @@ dd {
 .entry-content pre {
   background: #f4f7f9;
   border: 1px dotted #86b2c6;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   padding-top: 0;
-  font-size: 1.6rem;
+  font-size: 1.44rem;
 }
 /* line 162, ../scss/partials/_content.scss */
 .entry-content .row {
-  margin-top: 3.6rem;
+  margin-top: 3.24rem;
 }
 
 /* line 168, ../scss/partials/_content.scss */
 .wp-caption {
   max-width: 100%;
   background: #f4f7f9;
-  padding: 0.53333rem;
+  padding: 0.48rem;
 }
 /* line 174, ../scss/partials/_content.scss */
 .wp-caption img {
@@ -3208,8 +3359,8 @@ dd {
 }
 /* line 180, ../scss/partials/_content.scss */
 .wp-caption p.wp-caption-text {
-  font-size: 1.6rem;
-  margin: 0.4rem 0 2rem;
+  font-size: 1.44rem;
+  margin: 0.36rem 0 1.8rem;
   text-align: center;
 }
 
@@ -3221,7 +3372,7 @@ dd {
 /* line 199, ../scss/partials/_content.scss */
 .thumb-image {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 /* line 205, ../scss/partials/_content.scss */
@@ -3237,7 +3388,7 @@ dd {
   position: absolute;
   border-top: 1px dotted #86b2c6;
   margin-bottom: 0;
-  padding: 0.8rem;
+  padding: 0.72rem;
   bottom: 0;
   width: 100%;
   margin-top: 0;
@@ -3248,13 +3399,13 @@ dd {
 
 /* line 228, ../scss/partials/_content.scss */
 .project-title {
-  margin: 1.6rem 0;
-  font-size: 3.2rem;
+  margin: 1.44rem 0;
+  font-size: 2.88rem;
 }
 
 /* line 233, ../scss/partials/_content.scss */
 .project-content {
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.88rem;
 }
 
 /* line 237, ../scss/partials/_content.scss */
@@ -3264,11 +3415,11 @@ dd {
 
 /* line 241, ../scss/partials/_content.scss */
 .project-nav {
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 /* line 243, ../scss/partials/_content.scss */
 .project-nav .fa {
-  font-size: 3.6rem;
+  font-size: 3.24rem;
 }
 
 /* line 248, ../scss/partials/_content.scss */
@@ -3279,13 +3430,13 @@ dd {
 @media (min-width: 40em) {
   /* line 255, ../scss/partials/_content.scss */
   .project-nav .fa {
-    font-size: 5.6rem;
+    font-size: 5.04rem;
   }
 
   /* line 260, ../scss/partials/_content.scss */
   .nav-text {
     position: relative;
-    bottom: 1.2rem;
+    bottom: 1.08rem;
   }
 }
 /* line 268, ../scss/partials/_content.scss */
@@ -3295,25 +3446,25 @@ dd {
 
 /* line 275, ../scss/partials/_content.scss */
 .splash-img {
-  margin-bottom: 5.6rem;
+  margin-bottom: 5.04rem;
 }
 
 /* line 279, ../scss/partials/_content.scss */
 .callout-quote {
   text-align: left;
-  margin-top: 5.6rem;
-  margin-bottom: 5.6rem;
+  margin-top: 5.04rem;
+  margin-bottom: 5.04rem;
 }
 
 /* line 290, ../scss/partials/_content.scss */
 .page-contact .social li i {
-  font-size: 5.6rem;
+  font-size: 5.04rem;
 }
 
 /* line 299, ../scss/partials/_content.scss */
 .subsection-title {
-  margin: 5.6rem 0 3.6rem;
-  padding-top: 1.6rem;
+  margin: 5.04rem 0 3.24rem;
+  padding-top: 1.44rem;
   border-top: 1px dotted #237fa9;
   margin-left: 12.76596%;
   margin-right: 12.76596%;
@@ -3322,12 +3473,12 @@ dd {
 
 /* line 309, ../scss/partials/_content.scss */
 .subsection {
-  margin-bottom: 3.6rem;
+  margin-bottom: 3.24rem;
 }
 
 /* line 317, ../scss/partials/_content.scss */
 .summary {
-  font-size: 2.4rem;
+  font-size: 2.16rem;
   font-family: "museo-sans-1";
 }
 
@@ -3336,10 +3487,10 @@ dd {
   position: relative;
   padding-bottom: 56.25%;
   /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
-  padding-top: 3.2rem;
+  padding-top: 2.88rem;
   height: 0;
   overflow: hidden;
-  margin: 0 auto 3.2rem;
+  margin: 0 auto 2.88rem;
 }
 
 /* line 338, ../scss/partials/_content.scss */
@@ -3354,32 +3505,32 @@ dd {
 /* line 352, ../scss/partials/_content.scss */
 .pv-middle .tags {
   margin-bottom: 0;
-  margin-top: 1.6rem;
+  margin-top: 1.44rem;
 }
 
 /* line 359, ../scss/partials/_content.scss */
 .article-footer {
-  padding-bottom: 3.2rem;
+  padding-bottom: 2.88rem;
 }
 
 /* line 363, ../scss/partials/_content.scss */
 .cta-footer {
   text-align: center;
-  margin-top: 5.6rem;
-  padding-top: 5.6rem;
+  margin-top: 5.04rem;
+  padding-top: 5.04rem;
   border-top: 1px dotted #86b2c6;
 }
 /* line 369, ../scss/partials/_content.scss */
 .cta-footer .dark-button, .cta-footer input[type="submit"],
 .cta-footer button {
-  margin-top: 3.2rem;
-  margin-bottom: 3.2rem;
+  margin-top: 2.88rem;
+  margin-bottom: 2.88rem;
 }
 
 /* line 379, ../scss/partials/_content.scss */
 .format-type {
   color: #86b2c6;
-  margin-right: 1.6rem;
+  margin-right: 1.44rem;
 }
 
 @media (min-width: 58em) {
@@ -3393,11 +3544,11 @@ dd {
   }
   /* line 402, ../scss/partials/_content.scss */
   .prev-next .prev .nav-text {
-    padding-left: 1.6rem;
+    padding-left: 1.44rem;
   }
   /* line 409, ../scss/partials/_content.scss */
   .prev-next .next .nav-text {
-    padding-right: 1.6rem;
+    padding-right: 1.44rem;
   }
 }
 /* line 415, ../scss/partials/_content.scss */
@@ -3406,8 +3557,8 @@ dd {
 }
 /* line 419, ../scss/partials/_content.scss */
 .prev-next i {
-  font-size: 3.6rem;
-  padding-top: 2.4rem;
+  font-size: 3.24rem;
+  padding-top: 2.16rem;
 }
 
 /* line 425, ../scss/partials/_content.scss */
@@ -3423,14 +3574,14 @@ dd {
 /* line 433, ../scss/partials/_content.scss */
 .back-top-container {
   text-align: center;
-  margin-bottom: 5.6rem;
+  margin-bottom: 5.04rem;
 }
 /* line 436, ../scss/partials/_content.scss */
 .back-top-container a {
-  padding: 2.4rem;
+  padding: 2.16rem;
   color: #86b2c6;
   border: 0;
-  font-size: 3.6rem;
+  font-size: 3.24rem;
 }
 /* line 442, ../scss/partials/_content.scss */
 .back-top-container a:hover {
@@ -3440,7 +3591,7 @@ dd {
 /* line 448, ../scss/partials/_content.scss */
 .pagination,
 .wp-prev-next {
-  margin: 3.2rem 0 5.6rem;
+  margin: 2.88rem 0 5.04rem;
 }
 
 /* line 452, ../scss/partials/_content.scss */
@@ -3468,10 +3619,10 @@ dd {
   margin: 0;
   border: none;
   padding: 0;
-  line-height: 2rem;
-  font-size: 2rem;
-  padding: 1rem;
-  min-width: 2rem;
+  line-height: 1.8rem;
+  font-size: 1.8rem;
+  padding: 0.9rem;
+  min-width: 1.8rem;
   display: block;
 }
 /* line 479, ../scss/partials/_content.scss */
@@ -3511,22 +3662,22 @@ dd {
 }
 /* line 522, ../scss/partials/_content.scss */
 .site-footer .contain:first-child {
-  padding-top: 3.6rem;
+  padding-top: 3.24rem;
 }
 /* line 526, ../scss/partials/_content.scss */
 .site-footer .rotation {
-  border-top: 0.8rem solid #f4f7f9;
-  border-bottom: 0.8rem solid #86b2c6;
+  border-top: 0.72rem solid #f4f7f9;
+  border-bottom: 0.72rem solid #86b2c6;
 }
 
 /* line 532, ../scss/partials/_content.scss */
 .social {
-  padding-bottom: 3.2rem;
+  padding-bottom: 2.88rem;
 }
 /* line 535, ../scss/partials/_content.scss */
 .social li {
   display: inline-block;
-  margin-right: 3.6rem;
+  margin-right: 3.24rem;
 }
 /* line 539, ../scss/partials/_content.scss */
 .social li:last-child {
@@ -3542,18 +3693,18 @@ dd {
 }
 /* line 551, ../scss/partials/_content.scss */
 .social li i {
-  font-size: 3.6rem;
+  font-size: 3.24rem;
 }
 @media (min-width: 40em) {
   /* line 551, ../scss/partials/_content.scss */
   .social li i {
-    font-size: 5.6rem;
+    font-size: 5.04rem;
   }
 }
 
 /* line 560, ../scss/partials/_content.scss */
 .colophon {
-  font-size: 1.6rem;
+  font-size: 1.44rem;
 }
 
 /* line 565, ../scss/partials/_content.scss */
@@ -3677,43 +3828,43 @@ dd {
 
   /* line 20, ../scss/partials/_middle.scss */
   h2, .h2 {
-    font-size: 3.6rem;
+    font-size: 3.24rem;
   }
 
   /* line 29, ../scss/partials/_middle.scss */
   .site-title {
     margin: 0;
-    font-size: 3.6rem;
+    font-size: 3.24rem;
   }
 
   /* line 34, ../scss/partials/_middle.scss */
   .callout-quote {
-    font-size: 3.6rem;
+    font-size: 3.24rem;
   }
 
   /* line 45, ../scss/partials/_middle.scss */
   .post-title {
-    font-size: 4.8rem;
+    font-size: 4.32rem;
   }
 
   /* line 49, ../scss/partials/_middle.scss */
   .post {
-    padding-bottom: 5.6rem;
+    padding-bottom: 5.04rem;
   }
 
   /* line 55, ../scss/partials/_middle.scss */
   .subsection-tagline {
-    font-size: 3.6rem;
+    font-size: 3.24rem;
   }
 
   /* line 59, ../scss/partials/_middle.scss */
   .summary {
-    font-size: 3.2rem;
+    font-size: 2.88rem;
   }
 
   /* line 63, ../scss/partials/_middle.scss */
   .lead {
-    font-size: 2.4rem;
+    font-size: 2.16rem;
   }
 
   /* entry content */
@@ -3727,13 +3878,13 @@ dd {
   }
   /* line 76, ../scss/partials/_middle.scss */
   .entry-content .alignleft, .entry-content img.alignleft {
-    margin-right: 3.2rem;
+    margin-right: 2.88rem;
     display: inline;
     float: left;
   }
   /* line 81, ../scss/partials/_middle.scss */
   .entry-content .alignright, .entry-content img.alignright {
-    margin-left: 3.2rem;
+    margin-left: 2.88rem;
     display: inline;
     float: right;
   }
@@ -3772,8 +3923,8 @@ dd {
 
   /* line 115, ../scss/partials/_middle.scss */
   .project-title {
-    margin-top: 2.4rem;
-    font-size: 3.6rem;
+    margin-top: 2.16rem;
+    font-size: 3.24rem;
   }
 
   /* line 126, ../scss/partials/_middle.scss */

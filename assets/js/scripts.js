@@ -1,12 +1,6 @@
 /*
 Bones Scripts File
-Author: Eddie Machado
-
-This file should contain any js scripts you want to add to the site.
-Instead of calling it in the header or throwing it inside wp_head()
-this file will be called automatically in the footer so as not to
-slow the page load.
-
+Author: Eddie Machado (and Lara duh)
 */
 
 // IE8 ployfill for GetComputed Style (for Responsive Script below)
@@ -47,11 +41,11 @@ jQuery(document).ready(function($) {
 	
 	} /* end smallest screen */
 	
-
+	$('.splash-img').velocity("bounceLeftIn");
+	
 	/* if is larger than 481px */
 	if (responsive_viewport > 481) {
 
-	
 	} /* end larger than 481px */
 	
 

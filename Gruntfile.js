@@ -8,16 +8,17 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'assets/js/libs/*.js',
-                    'assets/js/*.js'
+                    'assets/js/*.js',
+                    'bower_components/velocity/jquery.velocity.js'
                 ],
-                dest: 'assets/js/build/scripts.js',
+                dest: 'assets/js/scripts.js',
             }
         },
 
         uglify: {
             build: {
                 files: {
-                    'assets/js/build/scripts.min.js': ['assets/js/build/scripts.js']
+                    'assets/js/scripts.min.js': ['assets/js/scripts.js']
                 }
             }
         },
@@ -85,11 +86,10 @@ module.exports = function(grunt) {
                 options: {
                     algorithm: 'sha1',
                     length: 4,
-                    rename: true,
                     manifest: 'assets/manifest.json',
                 },
                 files: {
-                    'lib/bones.php': ['assets/css/main.min.css', 'assets/js/build/scripts.min.js']
+                    'lib/bones.php': ['assets/css/main.min.css', 'assets/js/scripts.min.js']
                 },
             }
         },
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['assets/js/*.js', 'assets/**/*.scss', 'Gruntfile.js'],
-                tasks: ['compass', 'concat', 'version', 'uglify'],
+                tasks: ['compass', 'concat', 'uglify', 'version', 'cssmin'],
                 options: {
                     spawn: false,
                 },
@@ -155,6 +155,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgmin');
     
     grunt.registerTask('default', ['svgmin', 'imagemin']);
+    grunt.registerTask('build', ['uglify', 'imagemin', 'svgmin', 'version', 'clean', 'cssmin']);
 
     
 

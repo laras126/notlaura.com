@@ -42,7 +42,7 @@ function project_post_type() {
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/assets/images/custom-post-icon.png', /* the icon for the custom post type menu */
+			'menu_icon' => 'dashicons-smiley', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'custom_type', /* you can rename the slug here */
 			'capability_type' => 'post',

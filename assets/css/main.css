@@ -2813,14 +2813,14 @@ a:link, a:visited:link {
 
 /* line 75, ../scss/partials/_base.scss */
 h1, .h1, h2, .h2, h3, .h3, input[type="submit"],
-button, .gform_wrapper .top_label .gfield_label, .subsection-tagline, h4, .h4, h5, .h5, .nav-text, .subsection-title {
+button, .subsection-tagline, h4, .h4, .gform_wrapper .top_label .gfield_label, h5, .h5, .nav-text, .subsection-title {
   font-family: "museo-slab-1";
   text-rendering: optimizelegibility;
   font-weight: 500;
 }
 /* line 80, ../scss/partials/_base.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, input[type="submit"] a,
-button a, .gform_wrapper .top_label .gfield_label a, .subsection-tagline a, h4 a, .h4 a, h5 a, .h5 a, .nav-text a, .subsection-title a {
+button a, .subsection-tagline a, h4 a, .h4 a, .gform_wrapper .top_label .gfield_label a, h5 a, .h5 a, .nav-text a, .subsection-title a {
   text-decoration: none;
 }
 
@@ -2840,14 +2840,14 @@ h2, .h2 {
 
 /* line 98, ../scss/partials/_base.scss */
 h3, .h3, input[type="submit"],
-button, .gform_wrapper .top_label .gfield_label, .subsection-tagline {
+button, .subsection-tagline {
   font-size: 3.2rem;
   margin-top: 3.6rem;
   margin-bottom: 1.6rem;
 }
 
 /* line 104, ../scss/partials/_base.scss */
-h4, .h4 {
+h4, .h4, .gform_wrapper .top_label .gfield_label {
   font-size: 2.4rem;
   margin-top: 3.6rem;
   margin-bottom: 1.6rem;

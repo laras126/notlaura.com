@@ -23,17 +23,11 @@
 
 					<div class="mc-signup footer-block">
 						<div id="mc_embed_signup">
-							<form action="http://notlaura.us2.list-manage.com/subscribe/post?u=e2b9ece9d65b984fa3652e930&amp;id=453ea4a7b0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								
-								<input type="email" value="" placeholder="you@email.com" name="EMAIL" class="required email" id="mce-EMAIL">
-							    
-							    <input type="submit" value="Sign up!" name="subscribe" id="mc-embedded-subscribe" class="button">
-							    
-							    <div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response" style="display:none"></div>
-									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>
+							<form action="//notlaura.us2.list-manage.com/subscribe/post?u=e2b9ece9d65b984fa3652e930&amp;id=453ea4a7b0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="you@email.com" required>
+							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_e2b9ece9d65b984fa3652e930_453ea4a7b0" tabindex="-1" value=""></div>
+							    <div class="clear"><input type="submit" value="Sign up!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 							</form>
 						</div>
 					</div> <!-- /mc-signup -->
@@ -45,7 +39,7 @@
 						<p>&copy; Lara Schenck, LLC.</p>					
 					</div>
 					<div class="footer-block mc-prompt">
-						<p>I send out helpful links and updates now and again - sign up!</p>
+						<p>I send out helpful links and updates now and again - it's great!</p>
 					</div>
 				</div>
 

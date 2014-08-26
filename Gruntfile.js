@@ -11,14 +11,14 @@ module.exports = function(grunt) {
                     'assets/js/*.js',
                     // 'bower_components/velocity/jquery.velocity.js'
                 ],
-                dest: 'assets/js/scripts.js',
+                dest: 'assets/js/build/scripts.js',
             }
         },
 
         uglify: {
             build: {
                 files: {
-                    'assets/js/scripts.min.js': ['assets/js/scripts.js']
+                    'assets/js/build/scripts.min.js': ['assets/js/build/scripts.js']
                 }
             }
         },
@@ -68,12 +68,12 @@ module.exports = function(grunt) {
             },
             dist: {                                         
                 files: [{                       
-                            expand: true,
-                            cwd: 'assets/images/site/svg/', 
-                            dest: 'assets/images/build/site/svg/',
-                            src: ['**/**/**/**/*.svg'],
-                            ext: '.min.svg'
-                        }]
+                        expand: true,
+                        cwd: 'assets/images/site/svg/', 
+                        dest: 'assets/images/build/site/svg/',
+                        src: ['**/**/**/**/*.svg'],
+                        ext: '.min.svg'
+                    }]
             }
         },
 
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
                     manifest: 'assets/manifest.json',
                 },
                 files: {
-                    'lib/bones.php': ['assets/css/main.min.css', 'assets/js/scripts.min.js']
+                    'lib/bones.php': ['assets/css/main.min.css', 'assets/js/build/scripts.min.js']
                 },
             }
         },
@@ -97,7 +97,8 @@ module.exports = function(grunt) {
         clean: {
             roots: [
                 '!assets/{css,js}/{main,scripts}.min.{css,js}',
-                'assets/{css,js}/{main,scripts}.*.min.{css,js}'
+                'assets/{css,js}/{main,scripts}.*.min.{css,js}',
+                'assets/js/build/scripts.*.min.js'
             ]
         },
 
@@ -154,8 +155,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-svgmin');
     
-    grunt.registerTask('default', ['svgmin', 'imagemin']);
-    grunt.registerTask('build', ['uglify', 'imagemin', 'svgmin', 'version', 'clean', 'cssmin']);
+    grunt.registerTask('default', ['compass', 'concat', 'uglify', 'cssmin', 'imagemin', 'svgmin', 'clean','version', 'cssmin']);
 
     
 

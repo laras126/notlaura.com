@@ -2445,12 +2445,12 @@ button, .mc-signup input[type="submit"] {
   color: #f4f7f9;
 }
 
-/* line 60, ../scss/modules/_utils.scss */
+/* line 58, ../scss/modules/_utils.scss */
 .fig-large img {
   width: 100%;
   display: block;
 }
-/* line 65, ../scss/modules/_utils.scss */
+/* line 63, ../scss/modules/_utils.scss */
 .fig-large figcaption {
   text-align: center;
   font-size: 1.44rem;
@@ -2458,7 +2458,7 @@ button, .mc-signup input[type="submit"] {
   background-color: #f4f7f9;
 }
 
-/* line 73, ../scss/modules/_utils.scss */
+/* line 71, ../scss/modules/_utils.scss */
 .dark-button, input[type="submit"],
 button {
   font-size: 2.88rem;
@@ -2492,7 +2492,7 @@ button.button-primary-disabled {
   background: #1c6687 !important;
   border-color: #164f6a !important;
 }
-/* line 76, ../scss/modules/_utils.scss */
+/* line 74, ../scss/modules/_utils.scss */
 .dark-button:hover, input[type="submit"]:hover,
 button:hover, .dark-button:focus, input[type="submit"]:focus,
 button:focus, .dark-button:visited, input[type="submit"]:visited,
@@ -2502,7 +2502,7 @@ button:visited:focus {
   color: #ffffff;
 }
 
-/* line 85, ../scss/modules/_utils.scss */
+/* line 83, ../scss/modules/_utils.scss */
 .mobile-hide {
   display: none;
 }
@@ -2591,28 +2591,41 @@ button:visited:focus {
     display: block;
   }
 }
-@media (min-width: 58em) {
+@media (min-width: 40em) {
   /* line 78, ../scss/partials/_grid.scss */
+  .entry-content,
+  #disqus_thread {
+    margin-left: 17.14286%;
+    margin-right: 17.14286%;
+  }
+
+  /* line 81, ../scss/partials/_grid.scss */
+  .fig-large {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: -17.14286%;
+    padding: 17.14286%;
+    padding: 0;
+    margin-top: 0;
+  }
+}
+@media (min-width: 58em) {
+  /* line 89, ../scss/partials/_grid.scss */
   .site-info {
     width: 31.42857%;
     float: left;
     margin-right: 2.85714%;
   }
 
-  /* line 79, ../scss/partials/_grid.scss */
+  /* line 90, ../scss/partials/_grid.scss */
   .site-nav {
     width: 65.71429%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 81, ../scss/partials/_grid.scss */
-  .entry-content {
-    margin-left: 17.14286%;
-    margin-right: 17.14286%;
-  }
-
-  /* line 82, ../scss/partials/_grid.scss */
+  /* line 92, ../scss/partials/_grid.scss */
   .thumb {
     width: 31.42857%;
     float: left;
@@ -2636,20 +2649,9 @@ button:visited:focus {
     margin-right: -100%;
     clear: none;
   }
-
-  /* line 84, ../scss/partials/_grid.scss */
-  .fig-large {
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    margin: -17.14286%;
-    padding: 17.14286%;
-    padding: 0;
-    margin-top: 0;
-  }
 }
 @media (min-width: 58em) {
-  /* line 91, ../scss/partials/_grid.scss */
+  /* line 95, ../scss/partials/_grid.scss */
   .footer-block {
     width: 48.57143%;
     float: left;
@@ -2657,23 +2659,23 @@ button:visited:focus {
   }
 }
 
-/* line 98, ../scss/partials/_grid.scss */
+/* line 102, ../scss/partials/_grid.scss */
 .mc-signup .email,
 .mc-signup .button {
   width: 100%;
 }
 @media (min-width: 30em) {
-  /* line 102, ../scss/partials/_grid.scss */
+  /* line 106, ../scss/partials/_grid.scss */
   .mc-signup form {
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 103, ../scss/partials/_grid.scss */
+  /* line 107, ../scss/partials/_grid.scss */
   .mc-signup .email {
     width: 65.71429%;
     float: left;
   }
-  /* line 104, ../scss/partials/_grid.scss */
+  /* line 108, ../scss/partials/_grid.scss */
   .mc-signup .button {
     width: 31.42857%;
     float: left;
@@ -2681,7 +2683,7 @@ button:visited:focus {
 }
 
 @media (min-width: 58em) {
-  /* line 108, ../scss/partials/_grid.scss */
+  /* line 112, ../scss/partials/_grid.scss */
   .mc-signup, .mc-prompt {
     float: right;
     margin-right: 0;

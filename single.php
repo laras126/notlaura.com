@@ -38,9 +38,8 @@
 											<?php previous_post_link('%link','<span class="nav-text h4">Next</span><i class="fa fa-angle-right"></i>'); ?> 
 										</div>
 									</nav>
-									<br><br>
-									<?php comments_template(); ?>
 									
+									<?php comments_template(); ?>
 									
 								</footer>
 								

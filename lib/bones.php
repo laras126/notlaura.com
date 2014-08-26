@@ -129,24 +129,24 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'notlaura-typekit', '//use.typekit.net/xqo8pio.js', array(), '', false );
     
 		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/assets/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		// wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/assets/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// Register main stylesheet
 		// Uncomment this and comment the other to look at a non-minified version
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.52f8.min.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.f3d2.min.css', array(), '', 'all' );
 		
 		// wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '', 'all' );
 
 		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/assets/css/ie.css', array(), '' );
+		// wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/assets/css/ie.css', array(), '' );
 
 
 		// adding scripts file in the footer
 		// Same as with the stylesheets, toggle these two to use an unminified JS file
 		// for development
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/scripts.5b44.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.d9fc.min.js', array( 'jquery' ), '', true );
 
-		// wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/build/scripts.js', array( 'jquery' ), '', true );
+		// wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
 		
 		
 		// Get jQuery with Google and remove some crap

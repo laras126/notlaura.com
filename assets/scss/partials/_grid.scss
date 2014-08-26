@@ -74,18 +74,22 @@ $susy: (
 
 }
 
-@include susy-breakpoint($medium, 6) {
-  	.site-info { @include span(2); }
-	.site-nav { @include span(4 omega); }
-	
-	.entry-content { @include squish(1,1); }
-  	.thumb { @include gallery(2); }
+@include susy-breakpoint($msm, 6) {
+	.entry-content, 
+	#disqus_thread { @include squish(1,1); }
 
 	.fig-large {
 		@include bleed(1 of 6);
 		padding: 0;
 		margin-top: 0;
 	}  	
+}
+
+@include susy-breakpoint($medium, 6) {
+  	.site-info { @include span(2); }
+	.site-nav { @include span(4 omega); }
+	
+  	.thumb { @include gallery(2); }
 }
 
 .footer-block {

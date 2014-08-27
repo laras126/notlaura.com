@@ -33,7 +33,7 @@ function cta_shortcode( $atts, $content = null ) {
    ), $atts));
 	// TODO: remove entry-content from that - it's a quick fix for some formatting weirdness.
 	return '
-		<div class="cta-footer entry-content">
+		<div class="cta-footer">
 	        <h3 class="h1 page-title">'. esc_attr($text) .'</h3>
 	        <a class="dark-button" href="<?php echo site_url(\'/contact\', \'http\'); ?>">Go fish.</a>
 	        <p>(i.e. go to my contact page)</p>

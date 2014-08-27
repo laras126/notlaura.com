@@ -225,6 +225,151 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: translateY(0);
   }
 }
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+css-extras+clike+javascript+php+scss+bash */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+/* line 8, ../scss/vendor/_prism.scss */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* line 30, ../scss/vendor/_prism.scss */
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+/* line 36, ../scss/vendor/_prism.scss */
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  /* line 43, ../scss/vendor/_prism.scss */
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+/* line 50, ../scss/vendor/_prism.scss */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+/* line 56, ../scss/vendor/_prism.scss */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+/* Inline code */
+/* line 62, ../scss/vendor/_prism.scss */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+/* line 67, ../scss/vendor/_prism.scss */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+/* line 74, ../scss/vendor/_prism.scss */
+.token.punctuation {
+  color: #999;
+}
+
+/* line 78, ../scss/vendor/_prism.scss */
+.namespace {
+  opacity: .7;
+}
+
+/* line 82, ../scss/vendor/_prism.scss */
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #905;
+}
+
+/* line 91, ../scss/vendor/_prism.scss */
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #690;
+}
+
+/* line 99, ../scss/vendor/_prism.scss */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 109, ../scss/vendor/_prism.scss */
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+/* line 115, ../scss/vendor/_prism.scss */
+.token.function {
+  color: #DD4A68;
+}
+
+/* line 119, ../scss/vendor/_prism.scss */
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+/* line 124, ../scss/vendor/_prism.scss */
+.token.important {
+  font-weight: bold;
+}
+
+/* line 128, ../scss/vendor/_prism.scss */
+.token.entity {
+  cursor: help;
+}
+
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3338,7 +3483,7 @@ dd {
 .entry-content pre {
   background: #f4f7f9;
   border: 1px dotted #86b2c6;
-  margin-top: 1.8rem;
+  margin: 1.8rem 0;
   padding-top: 0;
   font-size: 1.44rem;
 }

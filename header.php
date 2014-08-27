@@ -30,7 +30,8 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<script>try{Typekit.load();}catch(e){}</script>
+		<script type="text/javascript" src="//use.typekit.net/xqo8pio.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 		<?php wp_head(); ?>
 

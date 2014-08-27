@@ -3281,7 +3281,7 @@ dd {
 /* line 38, ../scss/partials/_nav.scss */
 .js .site-nav {
   overflow: hidden;
-  height: 0;
+  max-height: 0;
 }
 /* line 43, ../scss/partials/_nav.scss */
 .site-nav ul {

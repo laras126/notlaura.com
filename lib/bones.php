@@ -133,7 +133,7 @@ function bones_scripts_and_styles() {
 
 		// Register main stylesheet
 		// Uncomment this and comment the other to look at a non-minified version
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.afac.min.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.2160.min.css', array(), '', 'all' );
 		
 		// wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '', 'all' );
 

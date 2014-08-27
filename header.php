@@ -34,43 +34,24 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 	
-
 		<script>try{Typekit.load();}catch(e){}</script>
-
-		<script type="text/javascript">
-
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-12198561-4']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-
-		</script>
-
-
 
 	</head>
 
 	<body <?php body_class(); ?> id="top">
 
-		<!-- <div id="container"> -->
+		<header class="site-header" role="banner">
 
-			<header class="site-header" role="banner">
+			<div class="contain">
+				<div class="site-info">
+                	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow">lara <span class="special">schenck</span></a></h1>
+                	<h5 class="site-desc"><?php bloginfo('description'); ?></h5>
+                	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+                </div>
+				
+				<nav role="navigation" id="menu" class="site-nav">
+					<?php bones_main_nav(); ?>
+				</nav>
+			</div>
 
-				<div class="contain">
-					<div class="site-info">
-                    	<h1 class="site-title"><a href="<?php echo home_url(); ?>" rel="nofollow">lara <span class="special">schenck</span></a></h1>
-                    	<h5 class="site-desc"><?php bloginfo('description'); ?></h5>
-                    	<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-                    </div>
-					
-					<nav role="navigation" id="menu" class="site-nav">
-						<?php bones_main_nav(); ?>
-					</nav>
-				</div>
-
-			</header>
+		</header>

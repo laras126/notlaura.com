@@ -61,9 +61,9 @@ need.
 
 function bones_head_cleanup() {
 	// category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links', 2 );
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
@@ -133,7 +133,7 @@ function bones_scripts_and_styles() {
 
 		// Register main stylesheet
 		// Uncomment this and comment the other to look at a non-minified version
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.8faa.min.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.2160.min.css', array(), '', 'all' );
 		
 		// wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '', 'all' );
 

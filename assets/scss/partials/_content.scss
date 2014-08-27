@@ -449,7 +449,7 @@
 .wp-prev-next {
     margin: $h3 0 $h1;
 }
-    .pagination{
+    .pagination {
         text-align: center;
         ul {
             display: inline-block;
@@ -474,6 +474,13 @@
                     padding: $base/2;
                     min-width: $base;
                     display: block;
+
+                    &.page-numbers {
+                        .next, .prev {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
                 }
 
                 span.current, a:hover, a:focus {
@@ -524,7 +531,7 @@
     }
 
     .rotation {
-        border-top: $sml/2 solid $vlight-accent;
+        border-top: $sml/2 solid $light-accent;
         border-bottom: $sml/2 solid $medium-accent;
     }
 }

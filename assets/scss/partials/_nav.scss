@@ -35,10 +35,10 @@
 
     @include transition(0.3s ease-out);
     
-    .js & {
+    // .js & {
         overflow: hidden;
         max-height: 0;
-    }
+    // }
 
     ul {
         margin: 0;

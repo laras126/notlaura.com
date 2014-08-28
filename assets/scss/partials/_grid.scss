@@ -75,7 +75,8 @@ $susy: (
 }
 
 @include susy-breakpoint($msm, 6) {
-	.entry-content, 
+	.entry-content,
+	.squish, 
 	#disqus_thread { @include squish(1,1); }
 
 	.fig-large {

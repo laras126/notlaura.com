@@ -28,6 +28,10 @@ function simplify_post_class($classes) {
 add_filter('post_class', 'simplify_post_class');
 
 function cta_shortcode( $atts, $content = null ) {
+
+	$page = get_page_by_title('Contact');
+	$page_link = get_page_link($page->ID);
+
 	extract(shortcode_atts(array(
 		'text' => 'Cool, right?',
    ), $atts));
@@ -35,7 +39,7 @@ function cta_shortcode( $atts, $content = null ) {
 	return '
 		<div class="cta-footer">
 	        <h3 class="h1 page-title">'. esc_attr($text) .'</h3>
-	        <a class="dark-button" href="<?php echo site_url(\'/contact\', \'http\'); ?>">Go fish.</a>
+	        <a class="dark-button" href="' . $page_link . '">Go fish.</a>
 	        <p>(i.e. go to my contact page)</p>
 	    </div>';
 }

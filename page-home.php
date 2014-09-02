@@ -45,10 +45,12 @@
                         <p class="lead">Have a project you've been meaning to start or finish, but got stuck along the way? Let's work on it together however is best for you, whether it be private lessons or a more hands-off, directional role.</p>     
                     </div>
                 </div> <!-- /subsection -->
-
+            
+                <?php echo do_shortcode( '[cta text="Ok, sold?"]' ); ?>
+            
             </section>
 
-            <?php echo do_shortcode( '[cta text="Ok, sold?"]' ); ?>
+            
         <!-- </article> -->
     </main>
 

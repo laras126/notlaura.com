@@ -4,7 +4,8 @@
 So, I had started completely rewriting all of this and decided that's ridiculous. It's not so bad it needs a rewrite! However, I know more now, so here are some updates that would be great:
 
 ###Build things:
-* Make a build task that versions and minifies
+* ~~Make a build task that versions and minifies~~ (used [wp-assets](https://github.com/roots/grunt-wp-assets
+) with [grunt clean](https://github.com/gruntjs/grunt-contrib-clean))
 * And probably other things that don't need to happen all the time
 * Autoprefixer
 
@@ -13,12 +14,12 @@ So, I had started completely rewriting all of this and decided that's ridiculous
 * Remove Animate CSS and use Velocity JS
 * Remove IDs and reevaluate class name semantics
 * Gallery styles, remove dependency on plugin
-* Move Gruntfile to theme root instead of in library/
+* ~~Move Gruntfile to theme root instead of in library/~~
 
 ###Structural:
 * Add some helpers for formatting blog posts more interestingly
 * Make the homepage more awesome with animations
-* Get static content out of page-about.php
+* ~~Get static content out of page-about.php~~
 * Make portfolio into a more case-study format and possibly one page instead of an archive into single pages
 
 

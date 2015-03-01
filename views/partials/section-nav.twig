@@ -1,0 +1,13 @@
+<nav class="content-nav">
+	<div class="contain">
+
+		<ul>
+			{% for item in post.get_field('sections') %}
+				<li class="content-nav-item">
+					<a href="#{{item.menu_item_title|replace({ (' '): '_' })}}">{{item.menu_item_title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+	</div>
+</nav> <!-- /.content-nav -->

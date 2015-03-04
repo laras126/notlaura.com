@@ -12,7 +12,7 @@
 	// TODO: BAD BAD
 	// Remove important
 	// Or is this better than a new style to override the <a> color?
-	color: $text-color;
+	color: $text-color !important;
 
     border: none;
     padding: $sml $base;

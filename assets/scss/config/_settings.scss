@@ -28,7 +28,7 @@ $white-alt:  		#f4f7f9;
 
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $green: 			#1BBF54;
-$l-green: 			#D9F2A2;
+$l-yellow: 			lighten(#FCF7D8, 5%);
 
 $pink: 				#CC6698;
 
@@ -42,13 +42,13 @@ $accent-dark:		$dark-blue;
 
 $accent-alt: 		$pink;
 
-$alert-danger: 		lighten($l-green, 40%);
-$alert-warning: 	$accent-light;
+$alert-danger: 		lighten($pink, 40%);
+$alert-warning: 	$l-yellow;
 $alert-info: 		$dark-blue;
 $alert-success: 	$green;
 
 $text-dark: 		$dark-grey;
-$text-med: 			darken($grey, 20%);
+$text-med: 			darken($grey, 30%);
 $text-medlight: 	lighten($text-med, 20%);
 $text-light: 		$white;
 
@@ -95,7 +95,7 @@ $h1:  				$base*3;
 $h2:  				$base*2.4;
 $h3:  				$base*2;
 $h4:  				$base*1.3;
-$h5:  				$base*1.1;
+$h5:  				$sml;
 $h6:  				$sml;
 
 

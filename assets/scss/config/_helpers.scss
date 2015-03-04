@@ -36,12 +36,16 @@ exclusively.
     @include clearfix;
 }
 
-.bleed {
+@mixin bleed {
     @include bp(med) {
         width: 110%;
         margin-right: -5%;
         margin-left: -5%;    
     }
+}
+
+.bleed {
+    @include bleed;
 }
 
 

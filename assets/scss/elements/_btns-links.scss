@@ -1,4 +1,6 @@
 
+// Buttons
+
 %btn,
 .btn {
     @include button($accent-dark, $text-light);
@@ -23,8 +25,21 @@
 }
 
 
+// Alerts
 
+%alert,
+.alert {
+    text-align: center;
+    padding: $base;
+    @include bleed;
+}
 
+.alert-warning {
+    @extend .alert;
+    background-color: $alert-warning;
+}
+
+// Specific buttons
 .link-more {
 	@include button($alert-info);
 }

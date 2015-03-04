@@ -1,7 +1,7 @@
 <header class="page-header">
 	<div class="contain-md">
 
-		<h1>{{post.title}}</h1>
+		<h1 class="page-title">{{post.title}}</h1>
 		
 		{% if post.tagline %} 
 			<p class="page-tagline">{{post.tagline}}</p>
@@ -10,7 +10,7 @@
 		{% if post.image %}
 			<figure class="bleed">
 				
-				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src}}" alt="{{post.title}}">
+				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src}}" alt="{{post.title|striptags}}">
 				
 				{% if post.image_caption %}
 					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
@@ -28,9 +28,15 @@
 			</figure>
 		{% endif %}
 
-		{% if post.intro %}
-			<p class="lead">{{post.intro}}</p>
-		{% endif %}
+		<div class="contain-sm">
+			{% if post.intro %}
+				<p class="lead">{{post.intro}}</p>
+			{% endif %}
+
+			{% if post.para_intro %}
+				{{post.para_intro}}
+			{% endif %}
+		</div>
 
 	</div>
 </header>

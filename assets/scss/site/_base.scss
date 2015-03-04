@@ -24,11 +24,12 @@ img {
 }
 
 hr {
+	border: 0;
 	border-top: $accent-border;
 }
 
 ul, ol {
-	margin: 0;
+	margin: $base 0 0 0;
 	padding: 0;
 }
 

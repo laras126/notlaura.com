@@ -1,5 +1,3 @@
-
-
 // -----
 // Form styles
 // -----
@@ -10,13 +8,11 @@
 }
 
 label, select {
-	// display: block;
+	display: block;
 }
 
 label {
-	margin-top: $h4;
-	margin-bottom: $sml/2;
-	font-family: $form-font;
+	// margin-top: $h3;
 }
 
 input[type="search"] {
@@ -34,6 +30,8 @@ input[type="search"]::-webkit-search-cancel-button {
 textarea {
 	overflow: auto;
 	vertical-align: top;
+	width: 100%;
+	height: 200px;
 }
 
 textarea,
@@ -50,13 +48,15 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"] {
-	
-	width: 100%;
-	@extend %form-base;
-	border: $accent-border;
+	padding: $sml/2 $base/2;
+	background: $accent-vlight;
+	color: $body-text-clr;
+	border: 2px solid $accent-light;
+	font-family: $body-text-clr;
+	font-weight: 300;
 
 	&:focus {
-		border-color: $alert-info;
+		border-color: $accent-med;
 		background-color: $white;
 	}
 }
@@ -64,7 +64,6 @@ input[type="tel"] {
 input[type="radio"],
 input[type="checkbox"] {
 	margin: 4px 0 0;
-	margin-right: $sml/2;
 	margin-top: 1px \9;
 	*margin-top: 0;
 	line-height: normal;
@@ -78,13 +77,15 @@ input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
+	width: auto;
 }
 
 input[type="submit"],
 button {
-	@extend %btn;
+	@include button($accent-dark);
+	cursor: pointer;
+	-webkit-appearance: none;
 }
-
 
 select,
 input[type="file"] {
@@ -100,7 +101,115 @@ input[type="checkbox"]:focus {
 	outline-offset: -2px;
 }
 
-fieldset {
-	border: 0;
+
+
+// Gravity form overrides
+
+.gform_fields {
+	@include unstyle-list;
 }
 
+.gform_wrapper {
+
+	textarea,
+	input[type=text],
+	input[type=url], 
+	input[type=email],
+	input[type=tel],
+	input[type=number],
+	input[type=password] {
+		font-size: $base;
+		padding: $xsml $sml;
+		border-radius: 2px;
+		-webkit-appearance: none;
+	}
+
+	.top_label .gfield_label {
+		font-size: $base;
+		font-weight: 500;
+		margin-top: $h3;
+		margin-bottom: $sml;
+	}
+
+	.gfield_checkbox li input[type=checkbox],
+	.gfield_radio li input[type=radio],
+	.gfield_checkbox li input {
+		// Sorry, god.
+		margin-top: 6px !important;
+		margin-left: 2px;
+	}
+	
+	ul.gfield_radio li input[type="radio"]:checked+label,
+	ul.gfield_checkbox li input[type="checkbox"]:checked+label {
+		font-weight: 500;
+	}
+
+	.gform_footer input.button,
+	.gform_footer input[type=submit] {
+		margin-top: $h3;
+		display: inline-block;
+	}
+
+	.ginput_complex label, 
+	.gfield_time_hour label,
+	.gfield_time_minute label,
+	.gfield_date_month label,
+	.gfield_date_day label,
+	.gfield_date_year label, 
+	.instruction {
+		@include meta;
+		margin-bottom: $h3;
+		margin-top: $sml;
+	}
+
+
+	.gform_footer{
+		input[type=submit], input.button {
+			display: block;
+		}
+	} 
+
+	.gfield_description {
+		font-family: $body-font;
+		@include meta();
+		margin-bottom: $xsml;
+	}
+
+}
+
+.gf_left_half,
+.gf_right_half {
+	
+	.gfield_label {
+		// Ew.
+		margin-top: 0 !important;
+	}
+	
+	@include make-xs-column($c, false);
+	@include make-md-column($c/2, false);
+
+	input {
+		width: 100%;
+	}
+}
+
+	.gf_left_half {
+		@include bp(med) {
+			input {
+				width: 90%;
+			}	
+		}
+		
+		float:left;
+		clear:left !important;
+
+		@include bp(med) {
+			margin-bottom: $h3;
+		}
+	}
+
+	.gf_right_half {
+		float:right;
+		clear:right !important;
+		margin-bottom: $h3;
+	}

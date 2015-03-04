@@ -10,6 +10,8 @@
 
 body {
 	background-color: $body-bkgd;
+	border-top: $sml/2 solid $accent-dark;
+	
 	word-wrap: break-word;
 	
 	@include bp(small) {
@@ -19,6 +21,10 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+hr {
+	border-top: $accent-border;
 }
 
 ul, ol {
@@ -34,7 +40,7 @@ ul, ol {
 // ---
 
 .lead {
-	@include font-size(h4);
+	font-size: $h4;
 }
 
 

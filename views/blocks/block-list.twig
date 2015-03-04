@@ -2,7 +2,8 @@
 
 {# List Block #}
 
-{% block content %}
+{% block content %}	
+<div class="contain-md">
 
 	{% set type = blck.list_type %}
 	{% set display = blck.list_display %}
@@ -17,7 +18,7 @@
 		<h4 class="list-title">{{blck.list_title}}</h4>
 	{% endif %}
 
-	<ul class="list list-{{display}} list-{{list|length}}">
+	<ul class="list list-{{display}} list-{{list|length}} {{ blck.css_class ? blck.css_class}}">
 
 		{% for item in list %}
 			<li>
@@ -26,6 +27,11 @@
 						<img class="lazy" src="{{TimberImage(item.image).src('medium')}}" src="{{site.theme.link}}/assets/img/util/loader.gif" width="300" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
 						<noscript><img src="{{TimberImage(item.image).src('medium')}}" alt="{{item.post_title}}" height="200" width="200"></noscript>
 					{% endif %}
+
+					{% if item.svg %}
+						{{item.svg}}
+					{% endif %}
+					
 				</div>
 				<div class="item-main">
 					{% if type == 'artifacts' %}
@@ -44,5 +50,6 @@
 		{% endfor %}
 			
 	</ul> <!-- /.list-{{display}} -->
-
+	
+</div>
 {% endblock %}

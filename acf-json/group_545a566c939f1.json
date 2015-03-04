@@ -1,7 +1,24 @@
 {
     "key": "group_545a566c939f1",
-    "title": "Complex Content",
+    "title": "Section blocks",
     "fields": [
+        {
+            "key": "field_54f6394ac4acb",
+            "label": "Show Section navigation?",
+            "name": "subnav",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yup",
+            "default_value": 0
+        },
         {
             "key": "field_54f23c6a23b4a",
             "label": "Sections",
@@ -18,9 +35,26 @@
             },
             "min": "",
             "max": "",
-            "layout": "row",
+            "layout": "block",
             "button_label": "Add Section",
             "sub_fields": [
+                {
+                    "key": "field_54f6614c3fb0d",
+                    "label": "Full section?",
+                    "name": "full_section",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "Uncheck this to keep the content inline and not in a new section.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1
+                },
                 {
                     "key": "field_54f23d3f23b74",
                     "label": "Menu Item Title",
@@ -29,7 +63,15 @@
                     "type": "text",
                     "instructions": "The text to appear in the submenu linking to this section. Should be 1-2 words.",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -39,7 +81,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": 20,
+                    "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
                 },
@@ -51,7 +93,15 @@
                     "type": "text",
                     "instructions": "The title for the section. Does not have to be the same as the \"Menu Item Title\", but should be limited to 4 or so words.",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -73,7 +123,15 @@
                     "type": "textarea",
                     "instructions": "A phrase introducing the section. Short and sweet.",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -179,7 +237,29 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": 70,
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
+                                    "key": "field_54f367fe458e9",
+                                    "label": "CSS Class",
+                                    "name": "css_class",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "Custom CSS class for this list.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": 30,
                                         "class": "",
                                         "id": ""
                                     },
@@ -238,7 +318,7 @@
                                     },
                                     "min": "",
                                     "max": "",
-                                    "layout": "row",
+                                    "layout": "block",
                                     "button_label": "Add Row",
                                     "sub_fields": [
                                         {
@@ -258,6 +338,28 @@
                                             "preview_size": "thumbnail",
                                             "return_format": "array",
                                             "library": "all"
+                                        },
+                                        {
+                                            "key": "field_54f65f26edfb5",
+                                            "label": "SVG",
+                                            "name": "svg",
+                                            "prefix": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "readonly": 0,
+                                            "disabled": 0
                                         },
                                         {
                                             "key": "field_54f23d1923b69",
@@ -300,6 +402,28 @@
                                             "maxlength": "",
                                             "rows": "",
                                             "new_lines": "br",
+                                            "readonly": 0,
+                                            "disabled": 0
+                                        },
+                                        {
+                                            "key": "field_54f36a3f1a26a",
+                                            "label": "CSS Class",
+                                            "name": "css_class",
+                                            "prefix": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": -16,
                                             "readonly": 0,
                                             "disabled": 0
                                         }
@@ -649,6 +773,57 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        {
+                            "key": "54f50db5084a3",
+                            "name": "block_blank",
+                            "label": "Blank",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_54f50dc0084a4",
+                                    "label": "Blank",
+                                    "name": "blank",
+                                    "prefix": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "text",
+                                    "toolbar": "basic",
+                                    "media_upload": 0
+                                },
+                                {
+                                    "key": "field_54f50df5084a5",
+                                    "label": "Class",
+                                    "name": "class",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     ]
                 }
@@ -658,9 +833,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "template-long_form.php"
+                "value": "page"
             }
         ]
     ],
@@ -682,5 +857,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425163706
+    "modified": 1425433093
 }

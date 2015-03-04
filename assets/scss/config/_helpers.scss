@@ -28,11 +28,21 @@ exclusively.
     display: block;
 }
 
+.img-flex {
+    width: 100%;
+}
+
 .clearfix {
     @include clearfix;
 }
 
-
+.bleed {
+    @include bp(med) {
+        width: 110%;
+        margin-right: -5%;
+        margin-left: -5%;    
+    }
+}
 
 
 
@@ -104,14 +114,19 @@ exclusively.
 // Small, sans-serif text.
 // Used primarily for forms and complimentary information.
 
-@mixin meta {
+@mixin meta($color: $body-text-clr) {
     font-size: $sml;
     font-family: $form-font;
     margin: 0;
+
+    @if $color {
+        color: $color;
+    }
 }
 
-
-
+.meta-cite {
+    text-align: right;
+}
 
 // ----
 // Visual Design
@@ -154,34 +169,6 @@ exclusively.
 
 
 
-
-// ----
-// Lists
-// ----
-
-@mixin unstyle-list() {
-    list-style: none;
-    padding-left: 0;
-}
-
-%unstyle-list {
-    list-style: none;
-}
-
-@mixin horizontal-list() {
-    ul {
-        list-style-type: none;
-
-      &>li {
-            display: inline-block;    
-        }
-    }
-}
-
-%horizontal-list-center {
-    text-align: center;
-    @include horizontal-list;
-}
 
 
 
@@ -241,6 +228,11 @@ exclusively.
     %meta-dark {
         @include meta;
         color: $text-med;
+    }
+
+    .meta-colon {
+        @include upperspace;
+        @include meta($text-med);
     }
 
 

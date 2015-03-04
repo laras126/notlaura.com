@@ -11,10 +11,10 @@
 	}
 
 	.page-tagline {
-		font-family: $lead-font;
-		font-size: $h4;
+		border-bottom: $accent-border;
+		padding-bottom: $base;
+		margin-bottom: $base;
 	}
-
 
 .page-body {
 	position: relative;

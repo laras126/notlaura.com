@@ -19,16 +19,16 @@ $(document).ready(function() {
 
 	$menulink.click( function(e) {
 		e.preventDefault();
-		$menulink.toggleClass('open');
-		$menu.toggleClass('open');
+		$menulink.toggleClass('active');
+		$menu.toggleClass('active');
 		return false;
 	});
 
-	$menuTrigger.click(function(e) {
-		e.preventDefault();
-		var $this = $(this);
-		$this.toggleClass('open').next('ul').toggleClass('open');
-	});
+	// $menuTrigger.click(function(e) {
+	// 	e.preventDefault();
+	// 	var $this = $(this);
+	// 	$this.toggleClass('active').next('ul').toggleClass('active');
+	// });
 		
 
 

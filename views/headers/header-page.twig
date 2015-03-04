@@ -1,0 +1,36 @@
+<header class="page-header">
+	<div class="contain-md">
+
+		<h1>{{post.title}}</h1>
+		
+		{% if post.tagline %} 
+			<p class="page-tagline">{{post.tagline}}</p>
+		{% endif %}
+		
+		{% if post.image %}
+			<figure class="bleed">
+				
+				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src}}" alt="{{post.title}}">
+				
+				{% if post.image_caption %}
+					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
+				{% endif %}
+
+			</figure>
+		{% endif %}
+
+		{% if post.svg %}
+			<figure class="bleed">
+				{{post.svg}}
+				{% if post.image_caption %}
+					<figcaption class="caption-clear">{{post.image_caption}}</figcaption>
+				{% endif %}
+			</figure>
+		{% endif %}
+
+		{% if post.intro %}
+			<p class="lead">{{post.intro}}</p>
+		{% endif %}
+
+	</div>
+</header>

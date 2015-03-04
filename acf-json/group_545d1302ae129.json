@@ -3,12 +3,12 @@
     "title": "Page Header",
     "fields": [
         {
-            "key": "field_545a83096d4b5",
-            "label": "Header Display",
-            "name": "header_display",
+            "key": "field_545a8366b7ae4",
+            "label": "Tagline",
+            "name": "tagline",
             "prefix": "",
-            "type": "radio",
-            "instructions": "Select the type of page intro you would like.",
+            "type": "text",
+            "instructions": "A few words describing the content.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,33 +16,23 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "text": "Text Only",
-                "image": "Header Image",
-                "video": "Video"
-            },
-            "other_choice": 0,
-            "save_other_choice": 0,
             "default_value": "",
-            "layout": "horizontal"
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_545a8498b0f4c",
-            "label": "Image (1200x800)",
-            "name": "fixed_image",
+            "label": "Image",
+            "name": "image",
             "prefix": "",
             "type": "image",
-            "instructions": "The header image for large devices.",
+            "instructions": "1200x600ish.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_545a83096d4b5",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -53,87 +43,12 @@
             "library": "all"
         },
         {
-            "key": "field_54627e785c4cc",
-            "label": "Video",
-            "name": "video",
+            "key": "field_54f65fad8d30e",
+            "label": "SVG",
+            "name": "svg",
             "prefix": "",
-            "type": "url",
-            "instructions": "The link to the video.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_545a83096d4b5",
-                        "operator": "==",
-                        "value": "video"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_54627e9debd7e",
-            "label": "Video Placeholder",
-            "name": "video_placeholder",
-            "prefix": "",
-            "type": "image",
-            "instructions": "A placeholder image for the video, this will display on phones. Dimensions should be 1200x800.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_545a83096d4b5",
-                        "operator": "==",
-                        "value": "video"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all"
-        },
-        {
-            "key": "field_545a85c3b0f50",
-            "label": "Text Only Header",
-            "name": "",
-            "prefix": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_545a83096d4b5",
-                        "operator": "==",
-                        "value": "text"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "The \"Text Only\" header will display the page title, tagline, and summary."
-        },
-        {
-            "key": "field_545a8366b7ae4",
-            "label": "Summary",
-            "name": "summary",
-            "prefix": "",
-            "type": "textarea",
-            "instructions": "1-2 sentences summarizing the page content. This will display below the page title.",
+            "type": "text",
+            "instructions": "If using an SVG for the header.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -143,8 +58,52 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": 350,
-            "rows": 3,
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54f35a434d063",
+            "label": "Image Caption",
+            "name": "image_caption",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54f35b50407a7",
+            "label": "Intro",
+            "name": "intro",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Introduce the page content in 1-2 sentences.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
             "new_lines": "wpautop",
             "readonly": 0,
             "disabled": 0
@@ -155,7 +114,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "dfi_service"
+                "value": "post"
             }
         ],
         [
@@ -163,13 +122,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "dfi_case_study"
             }
         ]
     ],
@@ -187,11 +139,9 @@
         "revisions",
         "author",
         "format",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
-    "local": "json",
-    "modified": 1424650460
+    "modified": 1425432806
 }

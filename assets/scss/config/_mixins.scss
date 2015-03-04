@@ -1,20 +1,23 @@
 
 // ----
-// Visual Design
+// Buttons/Links
 // ----
 
 // Button
 @mixin button( $button-color, $text-color: $white ) {
 	background: $button-color;
-	font-weight: 700;
+	font-weight: 500;
 	border-radius: 2px;
 	
 	// TODO: BAD BAD
 	// Remove important
 	// Or is this better than a new style to override the <a> color?
-	color: $text-color !important;
-	
-	@extend %btn;
+	color: $text-color;
+
+    border: none;
+    padding: $sml $base;
+    display: inline-block;
+    font-family: $form-font;
 
 	&:hover,
 	&:focus {
@@ -26,6 +29,38 @@
 		background: darken( $button-color, 40% );
 	}
 }
+
+// Remove link style
+@mixin unstyle-link() {
+    color: $body-text-clr;
+    border-bottom: none;
+}
+
+
+
+
+
+// ----
+// Lists
+// ----
+
+@mixin unstyle-list() {
+    list-style: none;
+    padding-left: 0;
+}
+
+@mixin horizontal-list($center: false) {
+    @include unstyle-list;
+
+    @if $center == center {
+        text-align: center;
+    }
+
+    > li {
+        display: inline-block;    
+    }
+}
+
 
 
 

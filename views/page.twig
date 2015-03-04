@@ -1,7 +1,30 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	
-	{% include 'partials/flexcontent-logic.twig' %}
 
+	{% include 'headers/header-page.twig' %}
+	{% include 'partials/section-nav.twig'%}
+	
+	{% for section in post.get_field('sections') %}
+
+		{% set menu_link_id = section.menu_item_title|replace({ (' '): '_' }) %}
+		{% set full = section.full_section %}
+
+		{% if full %}
+			<section class="page-section" id="{{menu_link_id}}">
+		{% endif %}
+
+			{% if full %}
+				{% include 'headers/header-section.twig' %}
+			{% endif %}
+
+			{% include 'partials/flexcontent-logic.twig' %}
+		
+		
+		{% if full %}
+			</section> <!-- /#{{menu_link_id}} -->
+		{% endif %}
+	
+	{% endfor %}
+	
 {% endblock %}

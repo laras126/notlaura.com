@@ -1,11 +1,7 @@
 
 %btn,
 .btn {
-    border: none;
-    padding: $sml/2 $sml;
-    display: inline-block;
-    font-family: $form-font;
-    @include button($accent-med, $text-light);
+    @include button($accent-dark, $text-light);
 }
 
 %btn-block,
@@ -16,9 +12,10 @@
     text-align: center;
 }
 
-
 .btn-cta {
 	@include button($alert-info);
+    margin-top: $h4;
+    font-size: $h4;
 }
 
 .btn-success {
@@ -34,11 +31,8 @@
 
 .link-edit,
 .link-more {
-    // display: inline-block;
-    // margin: 0 auto;
 	@include meta;
     text-align: center;
     margin-top: $sml;
 	font-weight: 700;
-	// color: $alert-danger;
 }

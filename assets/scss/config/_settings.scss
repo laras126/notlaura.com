@@ -4,10 +4,10 @@
 // ---- Screen sizes
 // ----
 
-$screen-sm:     34em;
-$screen-md:     56em;
-$screen-lg:   	64em;
-$screen-xl:     74em;
+$screen-sm:     36em;
+$screen-md:     42em;
+$screen-lg:   	54em;
+$screen-xl:     60em;
 
 
 
@@ -16,33 +16,43 @@ $screen-xl:     74em;
 // ---- Colors
 // ----
 
-$white: 			#F2F2F2;
-$blue: 				#1C7FA6;
+
+$dark-blue: 		#237fa9;
+$light-blue: 		#86b2c6;
+
+$grey: 				#e6e6e6;
+$dark-grey: 		#3e3739;
+
+$white: 			#ffffff;
+$white-alt:  		#f4f7f9;
+
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $green: 			#1BBF54;
 $l-green: 			#D9F2A2;
 
-$grey: 				#9E9E9E;
+$pink: 				#CC6698;
 
 
 // Semantic variable names
 
-$accent-vlight:		$l-green;
-$accent-light:		$l-teal;
-$accent-med:		$blue;
-$accent-dark:		darken($blue, 20%);
+$accent-vlight:		$white-alt;
+$accent-light:		$grey;
+$accent-med:		$light-blue;
+$accent-dark:		$dark-blue;
+
+$accent-alt: 		$pink;
 
 $alert-danger: 		lighten($l-green, 40%);
 $alert-warning: 	$accent-light;
-$alert-info: 		$blue;
+$alert-info: 		$dark-blue;
 $alert-success: 	$green;
 
-$text-dark: 		#333;
-$text-med: 			$grey;
+$text-dark: 		$dark-grey;
+$text-med: 			darken($grey, 20%);
 $text-medlight: 	lighten($text-med, 20%);
 $text-light: 		$white;
 
-$link-color:		$blue;
+$link-color:		$dark-blue;
 $link-hover: 		darken($link-color, 20%);
 
 $twitter: 			#4099FF;
@@ -52,7 +62,7 @@ $facebook: 			#3B5998;
 // Components
 
 $body-bkgd: 		$white;
-$body-text: 		$text-dark;
+$body-text-clr: 	$text-dark;
 
 $rotate-bkgd: 		$accent-dark;
 $rotate-text: 		$text-light;
@@ -74,12 +84,12 @@ $contain-md: 		102%;
 $contain-sm: 		98%;
 $contain: 			90%;
 
-$base:  			1.2rem;
+$base:  			1.1rem;
 $line-height-base: 	1.5;
 $line-height-sm: 	1.3;
 
 $xsml: 				$base*0.6;
-$sml:  				$base*0.75;
+$sml:  				$base*0.8;
 
 $h1:  				$base*3;
 $h2:  				$base*2.4;
@@ -92,16 +102,18 @@ $h6:  				$sml;
 
 // Fonts
 
-$serif:             'Georgia', serif;
-$sans-serif:        'Helvetica', serif;
+$serif:             'museo-slab-1', 'Georgia', serif;
+$sans-serif:        'museo-sans-1', 'Helvetica', serif;
 
 $heading-font: 		$serif;
 $body-font: 		$sans-serif;
+$quote-font: 		$serif;
 $nav-font: 			$sans-serif;
 $form-font: 		$sans-serif;
 $lead-font: 		$sans-serif;
 
-$heading-font-weight: 700;
+$heading-font-weight: 500;
+
 
 
 
@@ -109,7 +121,7 @@ $heading-font-weight: 700;
 // ---- Utilities 
 // ----
 
-$accent-border: 	1px solid $accent-med;
+$accent-border: 	1px dotted $accent-med;
 
 // Z-Index Scale
 $zbase: 			1;

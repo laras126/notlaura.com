@@ -1,13 +1,19 @@
+{% if post.subnav %}
+
 <nav class="content-nav">
-	<div class="contain">
+	<div class="contain-md">
 
 		<ul>
 			{% for item in post.get_field('sections') %}
-				<li class="content-nav-item">
-					<a href="#{{item.menu_item_title|replace({ (' '): '_' })}}">{{item.menu_item_title}}</a>
-				</li>
+				{% if item.menu_item_title %}
+					<li class="content-nav-item">
+						<a href="#{{item.menu_item_title|replace({ (' '): '_' })}}">{{item.menu_item_title}}</a>
+					</li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 
 	</div>
 </nav> <!-- /.content-nav -->
+
+{% endif %}

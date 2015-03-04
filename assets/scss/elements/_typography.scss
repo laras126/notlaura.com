@@ -1,6 +1,7 @@
 html {
 	font-size: $contain;
 	line-height: $line-height-base;
+	font-weight: 300;
 
 	@include bp(small) {
 		font-size: $contain-sm;
@@ -24,7 +25,8 @@ body {
 a {
 	color: $link-color;
 	text-decoration: none;
-
+    border-bottom: 1px dotted $accent-light;
+	
 	&:hover, &:focus {
 		color: $link-hover;
 	}
@@ -39,87 +41,99 @@ a {
 	}
 }
 
+
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
-	font-weight: $heading-font-weight;
 	margin-bottom: 0;
 	line-height: $line-height-sm;
 }
 
+	h2, h3, h4, h5, h6 {
+		font-weight: $heading-font-weight;
+	}
+
 h1 {
-	@include font-size(h1);
+
+	font-size: $h2;
+	font-weight: 300;
+
+	@include bp(small) {
+		font-size: $h1;	
+	}
+	
 	margin-top: $h3;
+
 }
 
 h2 {
-	@include font-size(h2);
+	font-size: $h2;
 	margin-top: $h3;
 }
 
 h3 {
-	@include font-size(h3);
+	font-size: $h3;
 	margin-top: $h3;
 }
 
 h4 { 
-	@include font-size(h4);
+	font-size: $h4;
 	margin-top: $h4;
 }
 
 h5 {
-	@include font-size(h5);
+	font-size: $h5;
 	margin-top: $base;
 }
 
 h6 {	
-	@include font-size(h6);
+	font-size: $h6;
 	margin-top: $base;
 }
 
 p {
-	@include font-size(base);
+	font-size: $base;
 	margin-top: $base;
 	margin-bottom: 0;
 }
 
 small {
-	@include font-size(sml);
+	font-size: $sml;
 }
 
 strong {
 	font-weight: normal;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 blockquote {
-	@include font-size(h4);
-	font-style: italic;
+	font-size: $h4;
+    margin: $h4 0;
+    font-family: $quote-font;
+
+    padding-left: $h3;
+    
+    border-left: $accent-border;
+    margin-bottom: $h3;
+    font-style: italic;
 	
 	overflow: visible;
+	
+	// &:before {
+	// 	background-image: url(../img/svgs/quotes-left.svg);
+	// 	background-repeat: no-repeat;
 
-	margin-left: 0;
-	margin: 0;
-	padding: 0 0 0 $h4;
-
-	@include bp(med) {
-		padding-left: 0;
-	}
-
-	&:before {
-		background-image: url(../img/svgs/quotes-left.svg);
-		background-repeat: no-repeat;
-
-		content: " ";
+	// 	content: " ";
 		
-		width: $h3;
-		height: $h3;
+	// 	width: $h3;
+	// 	height: $h3;
 		
-		position: absolute;
-		left: -$h4;
+	// 	position: absolute;
+	// 	left: -$h4;
 
-		@include bp(med) {
-			left: -$h3;
-		}
-	}
+	// 	@include bp(med) {
+	// 		left: -$h3;
+	// 	}
+	// }
 }
 

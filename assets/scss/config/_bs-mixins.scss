@@ -23,24 +23,11 @@
 // Grid Settings
 // ----
 
-$grid-columns:              4 !default;
+$grid-columns:              8 !default;
+$c:                         $grid-columns;
+
 //** Padding between columns. Gets divided in half for the left and right.
 $gutter:                    $h3 !default;
-
-
-// Add static grid styles into an extend
-@mixin bs-base() {
-    float: left;
-    position: relative;
-}
-
-%bs-pad {
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-}
-
-
-
 
 
 
@@ -52,34 +39,30 @@ $gutter:                    $h3 !default;
 // The negative margin accounts for the extra padding from nested columns
 
 
-%container {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: $screen-lg;
+@mixin container($size) {
+    margin: 0 auto;
+    width: 90%;
+    max-width: $size;
+    
     @include clearfix;
 }
 
 // To contain a primary section of content. 
 // Max width of the widest inner wrap (below).
 
-.contain {
-    @extend %container;
-    width: 90%;
+.contain-sm {
+    @include container($screen-sm);
 }
 
-    .contain-squish {
-        @extend %container;
-        @include bp(med) {
-            max-width: $screen-sm;
-        }
-    }
+.contain-md {
+    @include container($screen-md);
+}
 
-    .contain-stretch {
-        @extend %container;
-        @include bp(med) {
-            width: 100%;
-        }
-    }
+.contain-lg {
+    @include container($screen-lg);
+}
+
+
 
 // ----
 // Rows
@@ -101,8 +84,6 @@ $gutter:                    $h3 !default;
 
 
 
-
-
 // ----
 // Grid Mixins
 // ---
@@ -112,6 +93,8 @@ $gutter:                    $h3 !default;
 
 @mixin bs-gutter($gutter) {
     @if $gutter != false {
+        float: left;
+        position: relative;
         padding-left:  ($gutter / 2);
         padding-right: ($gutter / 2);
     }
@@ -122,7 +105,7 @@ $gutter:                    $h3 !default;
 // Extra Small
 
 @mixin make-xs-column($columns, $gutter: $gutter) {
-  @include bs-base;
+  // @include bs-base;
   @include bs-gutter($gutter);
   
   width: percentage(($columns / $grid-columns));
@@ -142,7 +125,7 @@ $gutter:                    $h3 !default;
 // Small
 
 @mixin make-sm-column($columns, $gutter: $gutter) {
-  @include bs-base;
+  // @include bs-base;
 
   @media (min-width: $screen-sm) {
     @include bs-gutter($gutter);
@@ -169,7 +152,7 @@ $gutter:                    $h3 !default;
 // Medium
 
 @mixin make-md-column($columns, $gutter: $gutter) {
-  @include bs-base;
+  // @include bs-base;
 
   @media (min-width: $screen-md) {
     @include bs-gutter($gutter);
@@ -196,7 +179,7 @@ $gutter:                    $h3 !default;
 // Large
 
 @mixin make-lg-column($columns, $gutter: $gutter) {
-  @include bs-base;
+  // @include bs-base;
 
   @media (min-width: $screen-lg) {
     @include bs-gutter($gutter);
@@ -218,26 +201,4 @@ $gutter:                    $h3 !default;
     right: percentage(($columns / $grid-columns));
   }
 }
-
-
-// Utility/Wrappers
-
-// .inner {
-//     @include make-md-column(7, false);
-//     @include make-lg-column(5, false);
-//     @include make-lg-column-offset(1);
-//     max-width: $screen-md;
-// }
-
-// .inner-full {
-//     @extend %bs-pad;
-// }
-
-// .inner-squish {
-//     @include make-md-column(6, false);
-//     @include make-md-column-offset(0.5);
-
-//     @include make-lg-column(4, false);
-//     @include make-lg-column-offset(1.5);
-// }
 

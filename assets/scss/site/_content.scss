@@ -1,0 +1,13 @@
+figcaption {
+	padding: $sml/3;
+}
+
+.caption-opaque {
+	background: $accent-vlight;
+	margin-top: -8px;
+	z-index: $ztop;	
+}
+
+.caption-clear {
+	@include meta($text-med);
+}

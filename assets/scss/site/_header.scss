@@ -1,4 +1,57 @@
 
+.site-header { 
+    @include container($screen-lg);
+
+    @include bp(med) {
+        display: table;
+    }
+}
+
+    .site-header .contain-lg {
+        @include bp(med) {
+            display: table-row;
+        }
+    }
+
+.site-info,
+.site-nav {
+    @include bp(med) {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    @include make-xs-column($c, false);
+}
+
+    .site-info {
+        @include make-md-column($c * 1/3, false);
+    }
+
+    .site-nav {
+        margin-top: 0;
+        @include make-md-column($c * 2/3, false);
+    }
+
+.site-title {
+    text-transform: lowercase;
+    font-size: $h3;
+    margin-top: $base;
+
+    a {
+        @include unstyle-link;
+    }
+    
+}
+
+.site-desc { 
+	@include meta;
+
+    @include bp(small) {
+        display: block;
+    }
+
+    text-transform: lowercase;
+}
 
 .site-header {}	
 
@@ -15,3 +68,5 @@
 .header-nav-link {}
 
 .header-nav {}
+
+

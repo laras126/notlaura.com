@@ -11,45 +11,72 @@
 // ----
 
 .list {
-	@include clearfix;
-	margin-bottom: $h3;
+	@include unstyle-list();
 	
 	& > li {
-		list-style: none;
-		width: 100%;
-		margin-top: $h3;
+		margin-top: $xsml;
 	}
 }
 
 	.list-title {}
 
+	
+	// Minor lists are 1 across, image on the left
+	
+	.list-major li {
+		@include clearfix();
 
-	// Minor lists are 2 across
+		img {
+			width: 100%;
+		}
+
+		@include bp(med) {
+			@include make-row();
+		}
+		
+		.item-main {
+			@include make-md-column($c/2);
+		}
+
+		.item-support {
+			@include make-md-column($c/2);
+		}
+
+	}
+
+	.list-features li {
+		border-bottom: $accent-border;
+		padding-bottom: $h3;
+		padding-top: $h3;
+	}
+
+	// Minor lists are more across
 
 	.list-minor {
 
-		& > li {
+		&.list-3 > li {
+			@include make-xs-column($c);
+			@include make-md-column($c/3, false);
+
+			@include bp(med) {
+				&:nth-child(3n+1){
+					clear: left;
+				}  
+		    }  
+		}
+
+		&.list-2 > li,
+		&.list-4 > li {
+			@include make-xs-column($c);
+			@include make-md-column($c/2, false);
 
 			@include bp(med) {
 		        &:nth-child(2n+1){
 		            clear: left;
-		            padding-right: $gutter/2;
 		        }  
 		    }
 		}
 	}
-
-	// Major lists are 3 across
-	
-	.list-3 > li {
-
-		@include bp(med) {
-			&:nth-child(3n+1){
-				clear: left;
-			}  
-	    }  
-	}
-
 
 
 
@@ -75,24 +102,13 @@
 	
 	padding-right: $gutter/2;	
 	
-	.list-major & {}
-
-	
 }
 
 .item-main {
-	// @include make-xs-column(7, false);
-	// @include make-sm-column(5.5, false);
-	@include change-text-align(center, small, left);
 	
-	.list-major & {
-
-		// @include make-md-column(7);
-
-		@include bp(med) {
-			text-align: center;
-		}
-	}
+	// .list-major & {
+	// 	@include make-md-column(2);
+	// }
 
 	.list-minor & {
 		h5 {
@@ -106,10 +122,10 @@
 	}
 	
 	p, li {
-		font-family: $sans-serif;			
+		// font-family: $sans-serif;			
 		@include bp(small) {
 			// @include font-size(med);	
-			font-size: $sml;
+			// font-size: $sml;
 		}
 	}
 }

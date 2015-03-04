@@ -1,12 +1,19 @@
-<h1 class="hdr-logo" role="banner">
-    <a class="hdr-logo-link" href="/" title="Timber" rel="home">{{site.name}}</a>
-</h1>
-<nav id="access" class="main-navigation" role="navigation">
-    <ul>
-    {% for item in menu.items %}
-        <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-            <a href="{{item.link}}">{{item.title}}</a>
-        </li>
-    {% endfor %}
-    </ul>
-</nav><!-- #access -->
+{# <div class="contain-lg"> #}
+
+	<div class="site-info">
+		<h1 class="site-title"><a href="{{site.link}}" rel="nofollow">lara <span class="special">schenck</span></a></h1>
+		<h5 class="site-desc">{{site.description}}</h5>
+		<a href="#menu" class="menu-link">Menu</a>
+	</div>
+
+	<nav id="menu" class="site-nav" role="navigation">
+	    <ul class="menu-list">
+	    {% for item in menu.items %}
+	        <li id="menu-item-{{item.ID}}" class="menu-item">
+	            <a href="{{item.link}}">{{item.title}}</a>
+	        </li>
+	    {% endfor %}
+	    </ul>
+	</nav><!-- /#menu -->
+
+{# </div> #}

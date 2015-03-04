@@ -28,8 +28,32 @@
 
 .special,
 a.special {
-	color: $accent-light;
+	color: $accent-dark;
+}
+
+.special-alt,
+a.special-alt {
+	color: $accent-alt;
 }
 
 
+.space-hack-table {
+	margin-left: $h3;
+}
+
+.spacer-top {
+	margin-top: $h3;
+}
+
+.spacer-left {
+	margin-left: $h3;
+}
+
+.spacer-right {
+	margin-right: $h3;
+}
+
+.spacer-bot {
+	margin-bottom: $h3;
+}
 

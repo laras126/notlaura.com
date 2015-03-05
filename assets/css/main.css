@@ -426,9 +426,9 @@ exclusively.
 
 @media (min-width: 42em) {
   .bleed {
-    width: 110%;
-    margin-right: -5%;
-    margin-left: -5%;
+    width: 116%;
+    margin-right: -8%;
+    margin-left: -8%;
   }
 }
 
@@ -437,10 +437,16 @@ exclusively.
 }
 
 .alert,
-.alert-warning {
+.alert-warning,
+.alert-info,
+.alert-danger {
   background-color: #f4f7f9;
   color: #3e3739;
   padding: 1.1rem;
+}
+
+.invisible {
+  display: none;
 }
 
 @media (min-width: 54em) {
@@ -491,7 +497,7 @@ exclusively.
 
 .contain-sm {
   margin: 0 auto;
-  width: 90%;
+  width: 84%;
   max-width: 36em;
 }
 .contain-sm:before, .contain-sm:after {
@@ -504,7 +510,7 @@ exclusively.
 
 .contain-md {
   margin: 0 auto;
-  width: 90%;
+  width: 84%;
   max-width: 42em;
 }
 .contain-md:before, .contain-md:after {
@@ -517,7 +523,7 @@ exclusively.
 
 .contain-lg {
   margin: 0 auto;
-  width: 90%;
+  width: 84%;
   max-width: 54em;
 }
 .contain-lg:before, .contain-lg:after {
@@ -1493,7 +1499,7 @@ a:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, .list-minor li h4, h6 {
   font-family: "museo-slab-1", "Georgia", serif;
   margin-bottom: 0;
   line-height: 1.3;
@@ -1529,7 +1535,7 @@ h4 {
   margin-top: 1.43rem;
 }
 
-h5 {
+h5, .list-minor li h4 {
   font-size: 0.88rem;
   margin-top: 1.1rem;
   text-transform: uppercase;
@@ -1560,7 +1566,7 @@ strong {
 }
 
 blockquote {
-  font-size: 1.43rem;
+  font-size: 2.2rem;
   margin: 1.43rem 0;
   font-family: "museo-slab-1", "Georgia", serif;
   padding-left: 2.2rem;
@@ -1568,6 +1574,9 @@ blockquote {
   margin-bottom: 2.2rem;
   font-style: italic;
   overflow: visible;
+}
+blockquote .special {
+  color: #86b2c6;
 }
 
 *:focus {
@@ -1863,21 +1872,36 @@ input[type="checkbox"]:focus {
 }
 
 .alert,
-.alert-warning {
+.alert-warning,
+.alert-info,
+.alert-danger {
   text-align: center;
   padding: 1.1rem;
 }
 @media (min-width: 42em) {
   .alert,
-  .alert-warning {
-    width: 110%;
-    margin-right: -5%;
-    margin-left: -5%;
+  .alert-warning,
+  .alert-info,
+  .alert-danger {
+    width: 116%;
+    margin-right: -8%;
+    margin-left: -8%;
   }
 }
 
 .alert-warning {
   background-color: #fefcf0;
+  border: 1px solid #f7e891;
+}
+
+.alert-info {
+  background-color: #237fa9;
+  border: 1px solid #124055;
+}
+
+.alert-danger {
+  background-color: white;
+  border: 1px solid #e6b3cb;
 }
 
 .link-more {
@@ -2109,11 +2133,6 @@ hr {
   border-top: 1px dotted #86b2c6;
 }
 
-ul, ol {
-  margin: 1.1rem 0 0 0;
-  padding: 0;
-}
-
 .lead {
   font-size: 1.43rem;
 }
@@ -2209,7 +2228,7 @@ ul, ol {
 
 .site-header {
   margin: 0 auto;
-  width: 90%;
+  width: 84%;
   max-width: 54em;
 }
 .site-header:before, .site-header:after {
@@ -2301,6 +2320,10 @@ ul, ol {
   z-index: 3;
 }
 
+.home .page-header {
+  border-bottom: none;
+}
+
 .section-header {
   margin-top: 2.2rem;
 }
@@ -2358,8 +2381,20 @@ figcaption {
   list-style: none;
   padding-left: 0;
 }
-.list > li {
-  margin-top: 0.66rem;
+
+.list-minor,
+.list-major {
+  margin-top: 0;
+}
+.list-minor:before, .list-minor:after,
+.list-major:before,
+.list-major:after {
+  content: " ";
+  display: table;
+}
+.list-minor:after,
+.list-major:after {
+  clear: both;
 }
 
 .list-major li {
@@ -2389,21 +2424,21 @@ figcaption {
   }
 }
 @media (min-width: 42em) {
-  .list-major li .item-main {
-    float: left;
-    position: relative;
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
-    width: 50%;
-  }
-}
-@media (min-width: 42em) {
   .list-major li .item-support {
     float: left;
     position: relative;
     padding-left: 1.1rem;
     padding-right: 1.1rem;
-    width: 50%;
+    width: 33.33333%;
+  }
+}
+@media (min-width: 42em) {
+  .list-major li .item-main {
+    float: left;
+    position: relative;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    width: 66.66667%;
   }
 }
 .list-major li:last-child {
@@ -2411,7 +2446,8 @@ figcaption {
   border-bottom: none;
 }
 
-.list-minor.list-3 > li {
+.list-minor li {
+  margin-top: 2.2rem;
   float: left;
   position: relative;
   padding-left: 1.1rem;
@@ -2419,31 +2455,31 @@ figcaption {
   width: 100%;
 }
 @media (min-width: 42em) {
-  .list-minor.list-3 > li {
-    width: 33.33333%;
-  }
-}
-@media (min-width: 42em) {
-  .list-minor.list-3 > li:nth-child(3n+1) {
-    clear: left;
-  }
-}
-.list-minor.list-2 > li, .list-minor.list-4 > li {
-  float: left;
-  position: relative;
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
-  width: 100%;
-}
-@media (min-width: 42em) {
-  .list-minor.list-2 > li, .list-minor.list-4 > li {
+  .list-minor li {
     width: 50%;
   }
 }
 @media (min-width: 42em) {
-  .list-minor.list-2 > li:nth-child(2n+1), .list-minor.list-4 > li:nth-child(2n+1) {
+  .list-minor li:nth-child(2n+1) {
     clear: left;
   }
+}
+.list-minor li .item-support {
+  float: left;
+  position: relative;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  width: 20%;
+}
+.list-minor li .item-main {
+  float: left;
+  position: relative;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  width: 80%;
+}
+.list-minor li p {
+  font-size: 0.88rem;
 }
 
 .item-support {
@@ -2462,7 +2498,7 @@ figcaption {
   }
 }
 
-.list-minor .item-main h5 {
+.list-minor .item-main h5, .list-minor .item-main li h4, .list-minor li .item-main h4 {
   margin-top: 0;
 }
 .list-minor .item-main p {

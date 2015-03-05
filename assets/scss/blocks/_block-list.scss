@@ -14,20 +14,22 @@
 	@include unstyle-list();
 	
 	& > li {
-		margin-top: $xsml;
+		// margin-top: $xsml;
 	}
 }
 
-	.list-title {}
+	.list-minor,
+	.list-major {
+		@include clearfix;
+		margin-top: 0;
+	}
 
 	
-	// Minor lists are 1 across, image on the left
+	// Major lists are 1 across, image on the left
 	
 	.list-major li {
 		@include clearfix();
 		
-		//  
-
 		img {
 			width: 100%;
 		}
@@ -36,13 +38,12 @@
 			@include make-row();
 		}
 		
-		.item-main {
-			@include make-md-column($c/2);
-
+		.item-support {
+			@include make-md-column($c/3);
 		}
 
-		.item-support {
-			@include make-md-column($c/2);
+		.item-main {
+			@include make-md-column($c/3*2);
 		}
 
 		padding-top: $h3;
@@ -56,31 +57,35 @@
 	}
 
 
-	// Minor lists are more across
+	// Minor lists are two across with an icon
 
-	.list-minor {
+	.list-minor li {
 
-		&.list-3 > li {
-			@include make-xs-column($c);
-			@include make-md-column($c/3, false);
+		margin-top: $h3;
 
-			@include bp(med) {
-				&:nth-child(3n+1){
-					clear: left;
-				}  
-		    }  
+		@include make-xs-column($c);
+		@include make-md-column($c/2, false);
+
+		@include bp(med) {
+	        &:nth-child(2n+1){
+	            clear: left;
+	        }  
+	    }
+
+		.item-support {
+			@include make-xs-column($c/5);
 		}
 
-		&.list-2 > li,
-		&.list-4 > li {
-			@include make-xs-column($c);
-			@include make-md-column($c/2, false);
+		.item-main {
+			@include make-xs-column($c/5*4);
+		}
+	
+		h4 {
+			@extend h5;
+		}
 
-			@include bp(med) {
-		        &:nth-child(2n+1){
-		            clear: left;
-		        }  
-		    }
+		p {
+			font-size: $sml;
 		}
 	}
 

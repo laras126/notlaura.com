@@ -111,7 +111,7 @@ strong {
 }
 
 blockquote {
-	font-size: $h4;
+	font-size: $h3;
     margin: $h4 0;
     font-family: $quote-font;
 
@@ -122,22 +122,9 @@ blockquote {
     font-style: italic;
 	
 	overflow: visible;
-	
-	// &:before {
-	// 	background-image: url(../img/svgs/quotes-left.svg);
-	// 	background-repeat: no-repeat;
 
-	// 	content: " ";
-		
-	// 	width: $h3;
-	// 	height: $h3;
-		
-	// 	position: absolute;
-	// 	left: -$h4;
-
-	// 	@include bp(med) {
-	// 		left: -$h3;
-	// 	}
-	// }
+	.special {
+		color: $accent-med;
+	}
 }
 

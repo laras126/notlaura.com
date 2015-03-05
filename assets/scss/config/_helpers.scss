@@ -38,9 +38,9 @@ exclusively.
 
 @mixin bleed {
     @include bp(med) {
-        width: 110%;
-        margin-right: -5%;
-        margin-left: -5%;    
+        width: 116%;
+        margin-right: -8%;
+        margin-left: -8%;    
     }
 }
 
@@ -172,9 +172,13 @@ exclusively.
 
 
 
+// ----
+// Utlities
+// ----
 
-
-
+.invisible {
+    display: none;
+}
 
 
 
@@ -276,3 +280,5 @@ exclusively.
             z-index: $ztop;
         }
     }
+
+

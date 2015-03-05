@@ -24,3 +24,11 @@
 	z-index: $zmid;
 }
 
+
+// Homepage specific styles
+
+.home {
+	.page-header {
+		border-bottom: none;
+	}
+}

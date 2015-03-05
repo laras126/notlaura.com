@@ -41,7 +41,7 @@ $gutter:                    $h3 !default;
 
 @mixin container($size) {
     margin: 0 auto;
-    width: 90%;
+    width: 84%;
     max-width: $size;
     
     @include clearfix;

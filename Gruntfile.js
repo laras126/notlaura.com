@@ -5,13 +5,13 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         jshint: {
-          options: {
-            jshintrc: '.jshintrc'
-          },
-          all: [
-            'Gruntfile.js',
-            'assets/js/*.js'
-          ]
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            all: [
+                'Gruntfile.js',
+                'assets/js/*.js'
+            ]
         },
 
         concat: {   
@@ -36,7 +36,20 @@ module.exports = function(grunt) {
           }
         },
 
- 
+        svgstore: {
+            options: {
+                prefix : 'icon-',
+                svg: { 
+                    viewBox : '0 0 100 100',
+                    xmlns: 'http://www.w3.org/2000/svg'
+                }
+            },
+            default : {
+                files: {
+                    'views/partials/svg-defs.svg': ['assets/img/svgs/*.svg'],
+                }
+            }
+        },
 
         watch: {
             scripts: {

@@ -23,22 +23,28 @@
 		{% for item in list %}
 			<li>
 				<div class="item-support">
-					{% if item.image %}
-						<img class="lazy" src="{{TimberImage(item.image).src('medium')}}" src="{{site.theme.link}}/assets/img/util/loader.gif" width="300" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
-						<noscript><img src="{{TimberImage(item.image).src('medium')}}" alt="{{item.post_title}}" height="200" width="200"></noscript>
+
+					{% if item.image and item.svg is empty %}
+						<img src="{{TimberImage(item.image).src('medium')}}" alt="{{item.post_title}}"/>
 					{% endif %}
 
 					{% if item.svg %}
-						{{item.svg}}
+						<svg viewBox="0 0 100 100" class="icon icon-{{item.svg}}">
+							<use xlink:href="#icon-{{item.svg}}"></use>
+						</svg>
+					{% endif %}
+
+					{% if item.svg is empty and item.image is empty %}
+						<img src="{{site.theme.link}}/assets/img/util/placeholder.png" alt="{{item.post_title}}" />
 					{% endif %}
 					
 				</div>
 				<div class="item-main">
-					{% if type == 'artifacts' %}
-						<h5 class="item-title">{{item.post_title}}</h5>
+					{% if type == 'connected' %}
+						<h4 class="item-title">{{item.post_title}}</h4>
 						<p>{{item.short_description}}</p>
 					{% elseif type == 'free_form' %}
-						<h5 class="item-title">{{item.item_title}}</h5>
+						<h4 class="item-title">{{item.item_title}}</h4>
 						<p>{{item.description}}</p>
 						{% for related in item.related_content %}
 							{{related.link}}

@@ -27,6 +27,11 @@
 
 // Alerts
 
+@mixin alert-color($color: $alert-warning) {  
+    background-color: $color;
+    border: 1px solid darken($color, 20%);
+}
+
 %alert,
 .alert {
     text-align: center;
@@ -36,7 +41,17 @@
 
 .alert-warning {
     @extend .alert;
-    background-color: $alert-warning;
+    @include alert-color($alert-warning);
+}
+
+.alert-info {
+    @extend .alert;
+    @include alert-color($alert-info);
+}
+
+.alert-danger {
+    @extend .alert;
+    @include alert-color($alert-danger);
 }
 
 // Specific buttons

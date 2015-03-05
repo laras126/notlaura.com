@@ -7,7 +7,7 @@
 	
 	{% for section in post.get_field('sections') %}
 
-		{% set menu_link_id = section.menu_item_title|replace({ (' '): '_' }) %}
+		{% set menu_link_id = section.menu_item_title|sanitize %}
 		{% set full = section.full_section %}
 
 		{% if full %}

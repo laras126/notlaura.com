@@ -12,7 +12,7 @@
 
 .list {
 	@include unstyle-list();
-	
+
 	& > li {
 		// margin-top: $xsml;
 	}
@@ -63,8 +63,9 @@
 
 		margin-top: $h3;
 
-		@include make-xs-column($c);
+		@include make-xs-column($c, false);
 		@include make-md-column($c/2, false);
+		float: left;
 
 		@include bp(med) {
 	        &:nth-child(2n+1){
@@ -72,8 +73,14 @@
 	        }  
 	    }
 
+		// Grid is getting hacky here.
 		.item-support {
-			@include make-xs-column($c/5);
+			@include make-xs-column($c/5, false);
+			float: left;
+			@include bp(med) {
+				// padding-left: $gutter / 2;
+				// padding-right: $gutter / 2;
+			}
 		}
 
 		.item-main {
@@ -88,6 +95,21 @@
 			font-size: $sml;
 		}
 	}
+
+
+
+// FAQ format
+
+.list-text {
+	@include inverse-bleed;
+
+	h5 {
+		text-transform: none;
+		letter-spacing: 0;
+		color: $body-text-clr;
+		@extend h4;
+	}
+}
 
 
 

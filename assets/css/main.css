@@ -426,9 +426,16 @@ exclusively.
 
 @media (min-width: 42em) {
   .bleed {
-    width: 116%;
-    margin-right: -8%;
-    margin-left: -8%;
+    width: 114%;
+    margin-right: -7%;
+    margin-left: -7%;
+  }
+}
+
+@media (min-width: 42em) {
+  .inverse-bleed {
+    margin-left: 7%;
+    margin-right: 7%;
   }
 }
 
@@ -497,8 +504,13 @@ exclusively.
 
 .contain-sm {
   margin: 0 auto;
-  width: 84%;
-  max-width: 36em;
+  width: 90%;
+}
+@media (min-width: 42em) {
+  .contain-sm {
+    width: 82%;
+    max-width: 36em;
+  }
 }
 .contain-sm:before, .contain-sm:after {
   content: " ";
@@ -510,8 +522,13 @@ exclusively.
 
 .contain-md {
   margin: 0 auto;
-  width: 84%;
-  max-width: 42em;
+  width: 90%;
+}
+@media (min-width: 42em) {
+  .contain-md {
+    width: 82%;
+    max-width: 42em;
+  }
 }
 .contain-md:before, .contain-md:after {
   content: " ";
@@ -523,8 +540,13 @@ exclusively.
 
 .contain-lg {
   margin: 0 auto;
-  width: 84%;
-  max-width: 54em;
+  width: 90%;
+}
+@media (min-width: 42em) {
+  .contain-lg {
+    width: 82%;
+    max-width: 54em;
+  }
 }
 .contain-lg:before, .contain-lg:after {
   content: " ";
@@ -1499,13 +1521,13 @@ a:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3, h4, h5, .list-minor li h4, h6 {
+h1, h2, h3, h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, h5, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5, h6 {
   font-family: "museo-slab-1", "Georgia", serif;
   margin-bottom: 0;
   line-height: 1.3;
 }
 
-h2, h3, h4, h6 {
+h2, h3, h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, h6 {
   font-weight: 500;
 }
 
@@ -1530,12 +1552,12 @@ h3 {
   margin-top: 2.2rem;
 }
 
-h4 {
+h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4 {
   font-size: 1.43rem;
   margin-top: 1.43rem;
 }
 
-h5, .list-minor li h4 {
+h5, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
   font-size: 0.88rem;
   margin-top: 1.1rem;
   text-transform: uppercase;
@@ -1546,8 +1568,9 @@ h5, .list-minor li h4 {
 }
 
 h6 {
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   margin-top: 1.1rem;
+  font-family: "museo-sans-1", "Helvetica", serif;
 }
 
 p {
@@ -1706,6 +1729,7 @@ input[type="checkbox"]:focus {
 .gform_fields {
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
 }
 
 .gform_wrapper textarea,
@@ -1883,9 +1907,9 @@ input[type="checkbox"]:focus {
   .alert-warning,
   .alert-info,
   .alert-danger {
-    width: 116%;
-    margin-right: -8%;
-    margin-left: -8%;
+    width: 114%;
+    margin-right: -7%;
+    margin-left: -7%;
   }
 }
 
@@ -2133,6 +2157,10 @@ hr {
   border-top: 1px dotted #86b2c6;
 }
 
+ul, ol {
+  margin-top: 1.1rem;
+}
+
 .lead {
   font-size: 1.43rem;
 }
@@ -2216,6 +2244,7 @@ hr {
 .content-nav ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
   text-align: center;
   margin-top: 1.43rem;
 }
@@ -2228,8 +2257,13 @@ hr {
 
 .site-header {
   margin: 0 auto;
-  width: 84%;
-  max-width: 54em;
+  width: 90%;
+}
+@media (min-width: 42em) {
+  .site-header {
+    width: 82%;
+    max-width: 54em;
+  }
 }
 .site-header:before, .site-header:after {
   content: " ";
@@ -2354,6 +2388,7 @@ figcaption {
 .site-footer ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
 }
 
 .colophon a:hover {
@@ -2380,6 +2415,7 @@ figcaption {
 .list {
   list-style: none;
   padding-left: 0;
+  margin-top: 0;
 }
 
 .list-minor,
@@ -2448,11 +2484,8 @@ figcaption {
 
 .list-minor li {
   margin-top: 2.2rem;
-  float: left;
-  position: relative;
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
   width: 100%;
+  float: left;
 }
 @media (min-width: 42em) {
   .list-minor li {
@@ -2465,11 +2498,8 @@ figcaption {
   }
 }
 .list-minor li .item-support {
-  float: left;
-  position: relative;
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
   width: 20%;
+  float: left;
 }
 .list-minor li .item-main {
   float: left;
@@ -2480,6 +2510,18 @@ figcaption {
 }
 .list-minor li p {
   font-size: 0.88rem;
+}
+
+@media (min-width: 42em) {
+  .list-text {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
+.list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
+  text-transform: none;
+  letter-spacing: 0;
+  color: #3e3739;
 }
 
 .item-support {

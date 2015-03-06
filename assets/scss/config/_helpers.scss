@@ -38,14 +38,25 @@ exclusively.
 
 @mixin bleed {
     @include bp(med) {
-        width: 116%;
-        margin-right: -8%;
-        margin-left: -8%;    
+        width: 114%;
+        margin-right: -7%;
+        margin-left: -7%;    
     }
 }
 
 .bleed {
     @include bleed;
+}
+
+@mixin inverse-bleed {
+    @include bp(med) {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+.inverse-bleed {
+    @include inverse-bleed;
 }
 
 

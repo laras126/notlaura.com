@@ -12,16 +12,20 @@
 		{% set list = blck.connected_content %}
 	{% elseif type == 'free_form' %}
 		{% set list = blck.freeform_items %}
+	{% elseif type == 'faq' %}
+		{% set list = blck.q_and_a %}
 	{% endif %}
 
 	{% if blck.list_title %}
 		<h4 class="list-title">{{blck.list_title}}</h4>
 	{% endif %}
 
-	<ul class="list list-{{display}} list-{{list|length}} {{ blck.css_class ? blck.css_class}}">
+	<ul class="list {% if display %}list-{{display}} {% endif %}{{ blck.css_class ? blck.css_class}}">
 
 		{% for item in list %}
 			<li>
+
+				{% if type != 'faq'  %}
 				<div class="item-support">
 
 					{% if item.image and item.svg is empty %}
@@ -52,6 +56,10 @@
 						{% endfor %}
 					{% endif %}
 				</div>
+				{% elseif type == 'faq'  %}
+					<h5>{{item.question}}</h5>
+					<p>{{item.answer}}</p>
+				{% endif %}
 			</li>
 		{% endfor %}
 			

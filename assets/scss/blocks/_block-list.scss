@@ -77,9 +77,14 @@
 		.item-support {
 			@include make-xs-column($c/5, false);
 			float: left;
+			padding-right: 0;
 			@include bp(med) {
 				// padding-left: $gutter / 2;
 				// padding-right: $gutter / 2;
+			}
+
+			.icon {
+				margin: 0 auto;
 			}
 		}
 

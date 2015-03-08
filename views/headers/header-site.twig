@@ -1,19 +1,23 @@
-{# <div class="contain-lg"> #}
 
-	<div class="site-info">
-		<h1 class="site-title"><a href="{{site.link}}" rel="nofollow">lara <span class="special">schenck</span></a></h1>
-		<h5 class="site-desc">{{site.description}}</h5>
-		<a href="#menu" class="menu-link">Menu</a>
-	</div>
+<div class="site-info">
+	<h1 class="site-title"><a href="{{site.link}}" rel="nofollow">lara <span class="special">schenck</span></a></h1>
+	<p class="site-desc">{{site.description}}</p>
+	<a href="#menu" class="menu-link">Menu</a>
+</div>
 
-	<nav id="menu" class="site-nav" role="navigation">
-	    <ul class="menu-list">
-	    {% for item in main_nav.items %}
-	        <li id="menu-item-{{item.ID}}" class="menu-item">
-	            <a href="{{item.link}}">{{item.title}}</a>
-	        </li>
-	    {% endfor %}
-	    </ul>
-	</nav><!-- /#menu -->
-
-{# </div> #}
+<nav id="menu" class="site-nav" role="navigation">
+    <ul class="menu-list">
+    {% for item in main_nav.items %}
+        <li id="menu-item-{{item.ID}}" class="menu-item {{ item.get_children ? 'menu-has-children' }}">
+            <a href="{{item.link}}">{{item.title}}</a>
+            {% if item.get_children %}
+                <ul class="menu-children">
+                  {% for child in item.get_children %}
+                    <li class="menu-child-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                  {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</nav><!-- /#menu -->

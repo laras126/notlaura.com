@@ -34,9 +34,19 @@
         </main>
 
         {% block footer %}
+            
+            <nav class="link-back-top">
+                {# <div id="back-top"> #}
+                    <a href="#top">
+                        <svg viewBox="0 0 100 100" class="icon icon-arrow-up">
+                            <use xlink:href="#icon-arrow-up"></use>
+                        </svg>
+                    </a>
+                {# </div> #}
+            </nav>
 
             <footer class="site-footer" role="contentinfo">
-                <div class="contain-md">
+                <div class="contain-lg">
                     {% include 'footer.twig' %}    
                 </div>
             </footer>

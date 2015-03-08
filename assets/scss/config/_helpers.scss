@@ -38,9 +38,9 @@ exclusively.
 
 @mixin bleed {
     @include bp(med) {
-        width: 114%;
-        margin-right: -7%;
-        margin-left: -7%;    
+        width: 110%;
+        margin-right: -5%;
+        margin-left: -5%;    
     }
 }
 
@@ -143,6 +143,9 @@ exclusively.
     text-align: right;
 }
 
+
+
+
 // ----
 // Visual Design
 // ----
@@ -150,12 +153,38 @@ exclusively.
 
 // Change background and text color.
 
-@mixin rotate($text: $text-light, $bkgd: $text-dark) {
+@mixin rotate($text: $text-light, $bkgd: $accent-dark) {
     background-color: $bkgd;
     color: $text;
 }
 
+.rotate {
+    @include rotate;
 
+    &-dark {
+        @include rotate($text-light, $text-dark);
+    }
+
+    &-med {
+        @include rotate($text-light, $accent-med);
+    }
+
+    &-light {
+        @include rotate($text-light, $accent-light);    
+    }
+
+    &-vlight {
+        @include rotate($text-light, $accent-vlight);   
+    }
+
+    &-info {
+        @include rotate($text-light, $alert-info);
+    }
+}
+
+.rotate {
+    @include rotate($text-light, $text-dark);
+}
 
 
 

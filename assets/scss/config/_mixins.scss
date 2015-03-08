@@ -14,8 +14,8 @@
 	// Or is this better than a new style to override the <a> color?
 	color: $text-color !important;
 
-    border: none;
-    padding: $sml $base;
+    border: 2px solid lighten($button-color, 10%);
+    padding: $sml $h4;
     display: inline-block;
     font-family: $form-font;
 
@@ -23,10 +23,12 @@
 	&:focus {
 		background: darken( $button-color, 10% );
 		color: $text-color;
+        border-color: $button-color;
 	}
 
 	&:active {
-		background: darken( $button-color, 40% );
+		background: darken( $button-color, 30% );
+        border-color: darken( $button-color, 10%);
 	}
 }
 
@@ -44,14 +46,17 @@
 // Lists
 // ----
 
-@mixin unstyle-list() {
+@mixin unstyle-list($remove-pm: true) {
     list-style: none;
-    padding-left: 0;
-    margin-top: 0;
+    
+    @if $remove-pm == true {
+        padding-left: 0;
+        margin-top: 0;
+    }
+
 }
 
-@mixin horizontal-list($center: false) {
-    @include unstyle-list;
+@mixin horizontal-list($center: false, $margin: $base) {
 
     @if $center == center {
         text-align: center;
@@ -59,6 +64,11 @@
 
     > li {
         display: inline-block;    
+        margin-right: $margin;
+        
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 
@@ -101,6 +111,7 @@ $MQs: true;
         $bp-md: "(min-width: #{$screen-md})";
         $bp-lg: "(min-width: #{$screen-lg})";
         $bp-xl: "(min-width: #{$screen-xl})";
+        $bp-menu: "(min-width: #{$screen-lg})";
 
         @if $point == small {
             @media #{$bp-sm} { @content; }
@@ -113,6 +124,9 @@ $MQs: true;
         }
         @else if $point == xl {
             @media #{$bp-xl} { @content; }
+        }
+        @else if $point == menu {
+            @media #{$bp-menu} { @content; }
         }
     }
 }

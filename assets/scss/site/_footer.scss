@@ -1,10 +1,21 @@
 
 .site-footer {
-	
-	ul {
-		@include unstyle-list;
+	border-top: $sml/2 solid $accent-med;
+	@include rotate;	
+	font-size: $sml;
+
+	a {
+		@include unstyle-link;
 	}
+
 }
+
+	.list-social {
+		@include unstyle-list(false);
+		@include horizontal-list();
+		margin-top: $h4;
+		padding-left: 0;
+	}
 
 	.colophon {
 		
@@ -20,10 +31,14 @@
 
 	.creds {}
 	
-	.copyright {}
+	.copyright {
+		font-size: $sml;
+	}
 
 
-.widget {}
+.widget {
+	@include make-md-column($c/2);
+}
 
 	.widget-title {}
 

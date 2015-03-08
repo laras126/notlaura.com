@@ -18,6 +18,8 @@
 			add_action('init', array($this, 'register_post_types'));
 			add_action('init', array($this, 'register_taxonomies'));
 			add_action('init', array($this, 'register_menus'));
+			add_action('init', array($this, 'register_widgets'));
+
 			parent::__construct();
 		}
 
@@ -33,6 +35,10 @@
 			require('lib/taxonomies.php');
 		}
 
+		function register_widgets() {
+			require('lib/widgets.php');
+		}
+
 		function register_menus() {
 			// require('lib/menus.php');
 			$locations = array(
@@ -46,6 +52,15 @@
 			
 			$context['main_nav'] = new TimberMenu('main_nav');
 			$context['footer_nav'] = new TimberMenu('footer_nav');
+			$context['footer_widgets'] = Timber::get_sidebar('sidebar.php');
+
+			$social = array(
+				'twitter' => 'http://twitter.com/laras126',
+				'linkedin' => 'http://www.linkedin.com/in/notlaura/',
+				'github' => 'http://github.com/laras126'
+			);
+
+			$context['social'] = $social;
 
 			$context['site'] = $this;
 			return $context;
@@ -95,10 +110,24 @@
 	add_action( 'wp_enqueue_scripts', 'nl_scripts' );
 
 	
-	// TO FIX
-	// This is not an ideal solution at all. Should be able to remove autop from specific fields, e.g. the Blank block that is used for HTML and shortcodes.
 	
-	
+	// Load Gravity Forms JS in the footer...really? Sheesh.
+	// https://bjornjohansen.no/load-gravity-forms-js-in-footer
+
+	function nl_wrap_gform_cdata_open( $content = '' ) {
+		$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+		return $content;
+	}
+	add_filter( 'gform_cdata_open', 'nl_wrap_gform_cdata_open' );
+
+	function nl_wrap_gform_cdata_close( $content = '' ) {
+		$content = ' }, false );';
+		return $content;
+	}
+	add_filter( 'gform_cdata_close', 'nl_wrap_gform_cdata_close' );
+
+
+
 
 	/* 
 	 * 

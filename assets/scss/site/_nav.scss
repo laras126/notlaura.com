@@ -2,26 +2,7 @@
 // Navigation
 // ----
 
-// Ze Toggle menu
-
-// .site-header {
-// //     display: flex;
-// //     flex-direction: row;
-// //     flex-wrap: nowrap;
-// //     // max-width: $screen-lg;
-// //     align-items: center;
-// //     justify-content: center;
-// // }
-
-// //     .site-info {
-        
-// //     }
-
-// //     .site-nav {
-// //         align-items: flex-end;
-// //     }
-
-
+// Toggle menu
 
 .menu-link {
 
@@ -41,7 +22,7 @@
     }
 
     // Hide the menu button on mobile
-    @include bp(med) {
+    @include bp(menu) {
         display: none;
     }
 }
@@ -52,18 +33,14 @@
     margin-top: $sml;
     padding: $sml 0;
     text-transform: lowercase;
-
-    // @include transition(0.3s ease-out);
     position: relative;
-    z-index: 1000; 
-    // .js & {
-        overflow: hidden;
-        max-height: 0;
-    // }
+    z-index: $ztop; 
+
+    overflow: hidden;
+    max-height: 0;
 
     ul {
-        margin: 0;
-        padding: 0;
+        @include unstyle-list;
     }
 
     &.active {
@@ -71,36 +48,29 @@
         overflow: visible;
     }
 
-    li {
-
-        &:first-child {
-            border-top: $accent-border;
-        }
-
-        a {
-            border-bottom: $accent-border;
-            display: block;
-            padding: $sml;
-            text-align: center;   
-        }
+    li a {
+        border-bottom: $accent-border;
+        display: block;
+        padding: $sml;
+        text-align: center;
     }
 
+    > ul {
+        border-top: $accent-border;
+        @include bp(menu) {
+            border-top: 0;
+        }
+    }    
+    
 
     // ----
     // Styles for desktop menu
     // ----
 
-    @include bp(med) {
+    @include bp(menu) {
         text-align: right; 
-        padding-top: 0;
-
-        .js & {
-            max-height: none;
-        }
-
-        ul {
-            // border: 0;
-        }
+        max-height: none;
+        overflow: visible;
 
         li {
             display: inline-block;
@@ -133,8 +103,28 @@
         }
     }
 
+} // END .site-nav
+
+
+// Subnav
+
+.menu-has-children {
+ 
 }
 
+    .menu-children {
+        background-color: $accent-vlight;
+        @include bp(menu) {
+            background: none;
+            position: absolute;    
+            text-align: right;
+            border-top: $accent-border;
+        }
+    }
+    
+    .menu-children {
+        border-top: 0;    
+    }
 
 .content-nav ul {
     @include horizontal-list;

@@ -1,31 +1,4 @@
 
-.rotate {
-
-	&-dark {
-		@include rotate($text-light, $text-dark);
-	}
-
-	&-med {
-		@include rotate($text-light, $accent-med);
-	}
-
-	&-light {
-		@include rotate($text-light, $accent-light);	
-	}
-
-	&-vlight {
-		@include rotate($text-light, $accent-vlight);	
-	}
-
-	&-info {
-		@include rotate($text-light, $alert-info);
-	}
-}
-
-.rotate {
-	@include rotate($text-light, $text-dark);
-}
-
 .special,
 a.special {
 	color: $accent-dark;
@@ -56,4 +29,3 @@ a.special-alt {
 .spacer-bot {
 	margin-bottom: $h3;
 }
-

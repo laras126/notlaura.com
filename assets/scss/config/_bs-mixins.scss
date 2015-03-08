@@ -44,7 +44,7 @@ $gutter:                    $h3 !default;
     width: 90%;
     
     @include bp(med) {
-      width: 82%;  
+      // width: 82%;  
       max-width: $size;
     }
     
@@ -95,10 +95,12 @@ $gutter:                    $h3 !default;
 
 // Conditionally print the gutter
 
-@mixin bs-gutter($gutter) {
-    @if $gutter != false {
+@mixin bs-gutter($gutter, $pos: true) {
+    @if $pos == true {
         float: left;
         position: relative;
+    }
+    @if $gutter != false {
         padding-left:  ($gutter / 2);
         padding-right: ($gutter / 2);
     }
@@ -108,9 +110,9 @@ $gutter:                    $h3 !default;
 
 // Extra Small
 
-@mixin make-xs-column($columns, $gutter: $gutter) {
+@mixin make-xs-column($columns, $gutter: $gutter, $pos: true) {
   // @include bs-base;
-  @include bs-gutter($gutter);
+  @include bs-gutter($gutter, $pos);
   
   width: percentage(($columns / $grid-columns));
 }
@@ -128,11 +130,11 @@ $gutter:                    $h3 !default;
 
 // Small
 
-@mixin make-sm-column($columns, $gutter: $gutter) {
+@mixin make-sm-column($columns, $gutter: $gutter, $pos: true) {
   // @include bs-base;
 
   @media (min-width: $screen-sm) {
-    @include bs-gutter($gutter);
+    @include bs-gutter($gutter, $pos);
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -155,11 +157,11 @@ $gutter:                    $h3 !default;
 
 // Medium
 
-@mixin make-md-column($columns, $gutter: $gutter) {
+@mixin make-md-column($columns, $gutter: $gutter, $pos: true) {
   // @include bs-base;
 
   @media (min-width: $screen-md) {
-    @include bs-gutter($gutter);
+    @include bs-gutter($gutter, $pos);
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -182,11 +184,11 @@ $gutter:                    $h3 !default;
 
 // Large
 
-@mixin make-lg-column($columns, $gutter: $gutter) {
+@mixin make-lg-column($columns, $gutter: $gutter, $pos: true) {
   // @include bs-base;
 
   @media (min-width: $screen-lg) {
-    @include bs-gutter($gutter);
+    @include bs-gutter($gutter, $pos);
     width: percentage(($columns / $grid-columns));
   }
 }

@@ -1575,13 +1575,13 @@ a:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
-h1, h2, h3, h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, h5, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5, h6 {
+h1, h2, h3, h4, .list-text h5, .list-text .home .section-title, .home .list-text .section-title, .list-text .list-minor li h4, .list-minor li .list-text h4, h5, .home .section-title, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5, h6 {
   font-family: "museo-slab-1", "Georgia", serif;
   margin-bottom: 0;
   line-height: 1.3;
 }
 
-h2, h3, h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, h6 {
+h2, h3, h4, .list-text h5, .list-text .home .section-title, .home .list-text .section-title, .list-text .list-minor li h4, .list-minor li .list-text h4, h6 {
   font-weight: 500;
 }
 
@@ -1606,12 +1606,12 @@ h3 {
   margin-top: 2.2rem;
 }
 
-h4, .list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4 {
+h4, .list-text h5, .list-text .home .section-title, .home .list-text .section-title, .list-text .list-minor li h4, .list-minor li .list-text h4 {
   font-size: 1.43rem;
   margin-top: 1.43rem;
 }
 
-h5, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
+h5, .home .section-title, .list-minor li h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
   font-size: 0.88rem;
   margin-top: 1.1rem;
   text-transform: uppercase;
@@ -2490,8 +2490,15 @@ ul, ol {
   z-index: 3;
 }
 
-.home .page-header {
+.home .page-tagline {
   border-bottom: none;
+}
+.home .page-body {
+  text-align: center;
+}
+
+.callout-quote p {
+  font-size: 1.43rem;
 }
 
 .section-header {
@@ -2696,7 +2703,7 @@ figcaption {
     margin-right: 7%;
   }
 }
-.list-text h5, .list-text .list-minor li h4, .list-minor li .list-text h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
+.list-text h5, .list-text .home .section-title, .home .list-text .section-title, .list-text .list-minor li h4, .list-minor li .list-text h4, .list-minor li .list-text h5, .list-text .list-minor li h5 {
   text-transform: none;
   letter-spacing: 0;
   color: #3e3739;
@@ -2718,7 +2725,7 @@ figcaption {
   }
 }
 
-.list-minor .item-main h5, .list-minor .item-main li h4, .list-minor li .item-main h4 {
+.list-minor .item-main h5, .list-minor .item-main .home .section-title, .home .list-minor .item-main .section-title, .list-minor .item-main li h4, .list-minor li .item-main h4 {
   margin-top: 0;
 }
 .list-minor .item-main p {
@@ -2776,6 +2783,19 @@ a.special {
 .special-alt,
 a.special-alt {
   color: #CC6698;
+}
+
+.strike {
+  position: relative;
+}
+
+.strike:after {
+  border-bottom: 2px solid #86b2c6;
+  position: absolute;
+  content: '';
+  right: 0;
+  left: 0;
+  top: 55%;
 }
 
 .space-hack-table {

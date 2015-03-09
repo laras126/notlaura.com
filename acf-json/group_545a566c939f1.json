@@ -717,6 +717,28 @@
                                     "max_height": 0,
                                     "max_size": 0,
                                     "mime_types": ""
+                                },
+                                {
+                                    "key": "field_54fde89635f11",
+                                    "label": "SVG",
+                                    "name": "svg",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
                                 }
                             ],
                             "min": "",
@@ -1058,5 +1080,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425918208
+    "modified": 1425926305
 }

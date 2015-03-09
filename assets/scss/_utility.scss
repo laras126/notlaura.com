@@ -9,6 +9,18 @@ a.special-alt {
 	color: $accent-alt;
 }
 
+.strike {
+	position: relative;
+}
+
+	.strike:after {
+		border-bottom: 2px solid $accent-med;
+		position: absolute;
+		content: '';
+		right: 0;
+		left: 0;
+		top: 55%;
+	}
 
 .space-hack-table {
 	margin-left: $h3;

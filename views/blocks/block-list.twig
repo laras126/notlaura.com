@@ -34,7 +34,7 @@
 						{% endif %}
 
 						{% if item.svg %}
-							{% include 'partials/svg.twig' with {'icon': item.svg, 'prefix': 'icon' } %}
+							{% include 'partials/svg.twig' with {'file': item.svg, 'prefix': 'icon' } %}
 						{% endif %}
 
 						{% if item.svg is empty and item.image is empty %}

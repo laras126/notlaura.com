@@ -28,7 +28,19 @@
 // Homepage specific styles
 
 .home {
-	.page-header {
+	.page-tagline {
 		border-bottom: none;
 	}
+
+	.page-body {
+		text-align: center;
+	}
+
+	.section-title {
+		@extend h5;
+	}
+}
+
+.callout-quote p {
+	font-size: $h4;
 }

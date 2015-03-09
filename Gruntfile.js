@@ -36,6 +36,26 @@ module.exports = function(grunt) {
           }
         },
 
+        svgmin: {
+            options: {
+                plugins: [
+                    {
+                        removeViewBox: false
+                    }, {
+                        removeUselessStrokeAndFill: false
+                    }
+                ]
+            },
+            
+            dist: {
+                expand: true,
+                cwd: 'assets/img/svg-raw',
+                src: ['*.svg'],
+                dest: 'assets/img/svg-min',
+                ext: '.min.svg'
+            }
+        },
+
         svgstore: {
             options: {
                 prefix : 'svg-',
@@ -47,7 +67,7 @@ module.exports = function(grunt) {
             },
             default : {
                 files: {
-                    'views/partials/svg-defs.svg': ['assets/img/svgs/*.svg'],
+                    'views/partials/svg-defs.svg': ['assets/img/svg-min/*.svg'],
                 }
             }
         },
@@ -81,7 +101,7 @@ module.exports = function(grunt) {
                     '*.twig'
 		        ]
 		    }
-      }
+        }
         
     });
 
@@ -90,13 +110,19 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-svgstore');
+    grunt.loadNpmTasks('grunt-svgmin');
     
     // Register tasks
     grunt.registerTask('default', [
         'sass',
         'concat',
         'jshint',
-        'svgstore'
+        'svgstore',
+        'svgmin'
       ]);
 
+    grunt.registerTask('svgs', [
+        'svgmin',
+        'svgstore'
+    ]);
 };

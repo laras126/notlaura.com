@@ -37,7 +37,7 @@ $(document).ready(function() {
         $('.accordion .acc-content').slideUp(300).removeClass('open');
     }
  
-    $('.acc-link').click(function(e) {
+    $('.acc-link').on('click', function(e) {
         // Grab current anchor value
         var currentAttrValue = $(this).attr('href');
  

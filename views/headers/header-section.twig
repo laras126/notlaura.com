@@ -1,9 +1,16 @@
 <header class="section-header">
 	<div class="contain-sm">
+
 		<hr class="bleed">
 		<h3 class="section-title">{{section.section_title}}</h3>
+		
 		{% if section.lead %}
 			<p class="lead">{{section.lead}}</p>
 		{% endif %}
+		
+		{% if acc %}
+			<a href="#{{menu_link_id}}" class="acc-link">Details &darr;</a>
+		{% endif %}
+	
 	</div>
 </header>

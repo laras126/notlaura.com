@@ -5,26 +5,38 @@
 	{% include 'headers/header-page.twig' %}
 	{% include 'partials/section-nav.twig'%}
 	
+	<div class="accordion">
 	{% for section in post.get_field('sections') %}
 
 		{% set menu_link_id = section.menu_item_title|sanitize %}
+
+		{# Used to allow for isolated block content that doesn't look like a full section #}
 		{% set full = section.full_section %}
+		
+		{# 
+			Determine if the section is part of an accordian. The acc var then conditionall prints the necessary classes.
+
+			Is this overkill? 
+		#}
+		{% set acc = section.accordian %}
+
 
 		{% if full %}
-			<section class="page-section" id="{{menu_link_id}}">
+			<section class="page-section {{ acc ? 'acc-section' }}">
 		{% endif %}
 
 			{% if full %}
-				{% include 'headers/header-section.twig' %}
+				{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id, acc: acc } %}
 			{% endif %}
 
-			{% include 'partials/flexcontent-logic.twig' %}
-		
+			<div class="section-content {{ acc ? 'acc-content' }}" id="{{menu_link_id}}">
+				{% include 'partials/flexcontent-logic.twig' %}
+			</div>
 		
 		{% if full %}
 			</section> <!-- /#{{menu_link_id}} -->
 		{% endif %}
 	
 	{% endfor %}
-	
+	</div>	
 {% endblock %}

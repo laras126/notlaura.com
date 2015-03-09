@@ -2798,4 +2798,41 @@ a.special-alt {
   margin-bottom: 2.2rem;
 }
 
+.acc {
+  overflow: hidden;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  background: #f7f7f7;
+}
+
+/*----- Section Titles -----*/
+.acc-link {
+  width: 100%;
+  padding: 15px;
+  display: inline-block;
+  border-bottom: 1px solid #1a1a1a;
+  background: #333;
+  transition: all linear 0.15s;
+  /* Type */
+  font-size: 1.200em;
+  text-shadow: 0px 1px 0px #1a1a1a;
+  color: #fff;
+}
+
+.acc-link.active, .acc-link:hover {
+  background: #4c4c4c;
+  /* Type */
+  text-decoration: none;
+}
+
+.acc-section:last-child .acc-link {
+  border-bottom: none;
+}
+
+/*----- Section Content -----*/
+.acc-content {
+  padding: 15px;
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */

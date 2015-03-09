@@ -86,6 +86,31 @@
                     "default_value": 1
                 },
                 {
+                    "key": "field_54fdc8d8a156f",
+                    "label": "Inlcude in accordian?",
+                    "name": "accordian",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                },
+                {
                     "key": "field_54f23d3f23b74",
                     "label": "Menu Item Title",
                     "name": "menu_item_title",
@@ -1033,5 +1058,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425844020
+    "modified": 1425918208
 }

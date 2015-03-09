@@ -1,21 +1,32 @@
 
-@mixin icon($fill, $hover: $accent-med) {
+
+%icon-base {
 	width: $h1;
 	height: $h1;
+	display: block;
+	margin: 0 auto;
+}
+
+@mixin icon($fill, $hover: $accent-med) {
+	@extend %icon-base;
 	fill: $fill;
 	a &:hover {
 		fill: $hover;
 	}
 }
 
-	.icon {
-		@include icon($accent-dark);
-		display: block;
-		margin: 0 auto;
-	}
+.shape {
+	width: 100%;
+	height: auto;
+	fill: $accent-dark;
+}
 
-	.icon-rotate {
-		@include icon($accent-vlight);
-	}
+.icon {
+	@include icon($accent-dark);
+}
+
+.icon-rotate {
+	@include icon($accent-vlight);
+}
 
 

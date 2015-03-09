@@ -15,6 +15,10 @@
 		@include horizontal-list();
 		margin-top: $h4;
 		padding-left: 0;
+
+		.icon {
+			@extend .icon-rotate;
+		}
 	}
 
 	.colophon {

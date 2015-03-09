@@ -1509,23 +1509,30 @@ exclusively.
   animation-name: fadeInDown;
 }
 
-.icon {
+.icon, .icon-rotate, .list-social .icon {
   width: 3.3rem;
   height: 3.3rem;
-  fill: #237fa9;
   display: block;
   margin: 0 auto;
+}
+
+.shape {
+  width: 100%;
+  height: auto;
+  fill: #237fa9;
+}
+
+.icon {
+  fill: #237fa9;
 }
 a .icon:hover {
   fill: #86b2c6;
 }
 
-.icon-rotate {
-  width: 3.3rem;
-  height: 3.3rem;
+.icon-rotate, .list-social .icon {
   fill: #f4f7f9;
 }
-a .icon-rotate:hover {
+a .icon-rotate:hover, a .list-social .icon:hover, .list-social a .icon:hover {
   fill: #86b2c6;
 }
 

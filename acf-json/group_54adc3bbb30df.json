@@ -49,7 +49,6 @@
     "hide_on_screen": [
         "permalink",
         "the_content",
-        "excerpt",
         "custom_fields",
         "discussion",
         "comments",
@@ -57,11 +56,9 @@
         "slug",
         "author",
         "format",
-        "page_attributes",
-        "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1424650745
+    "modified": 1425843338
 }

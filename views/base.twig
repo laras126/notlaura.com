@@ -38,9 +38,7 @@
             <nav class="link-back-top">
                 {# <div id="back-top"> #}
                     <a href="#top">
-                        <svg viewBox="0 0 100 100" class="icon icon-arrow-up">
-                            <use xlink:href="#icon-arrow-up"></use>
-                        </svg>
+                        {% include 'partials/svg.twig' with {'icon': 'arrow-up', 'prefix': 'icon' } %}
                     </a>
                 {# </div> #}
             </nav>

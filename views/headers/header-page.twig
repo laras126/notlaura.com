@@ -7,7 +7,7 @@
 			<p class="page-tagline">{{post.tagline}}</p>
 		{% endif %}
 		
-		{% if post.image %}
+		{% if post.image and post.svg is empty%}
 			<figure class="bleed">
 				
 				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src}}" alt="{{post.title|striptags}}">
@@ -21,7 +21,7 @@
 
 		{% if post.svg %}
 			<figure class="bleed">
-				{{post.svg}}
+				{% include 'partials/svg.twig' with { 'file': post.svg, 'prefix': 'shape' } %}
 				{% if post.image_caption %}
 					<figcaption class="caption-clear">{{post.image_caption}}</figcaption>
 				{% endif %}

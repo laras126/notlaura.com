@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 
         svgstore: {
             options: {
-                prefix : 'icon-',
+                prefix : 'svg-',
                 cleanup: ['fill', 'style'],
                 svg: { 
                     viewBox : '0 0 100 100',

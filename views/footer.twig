@@ -6,9 +6,7 @@
 		{% for type, url in social %}
 			<li>
 				<a href="{{url}}" target="blank">
-					<svg viewBox="0 0 100 100" class="icon icon-{{type}} icon-rotate">
-						<use xlink:href="#icon-{{type}}"></use>
-					</svg>
+                    {% include 'partials/svg.twig' with {'file': type, 'prefix': 'icon' } %}
 				</a>
 			</li>
 		{% endfor %}

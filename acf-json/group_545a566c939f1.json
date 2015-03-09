@@ -35,9 +35,39 @@
             },
             "min": "",
             "max": "",
-            "layout": "block",
+            "layout": "row",
             "button_label": "Add Section",
             "sub_fields": [
+                {
+                    "key": "field_54f23d7123b75",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "The title for the section. Does not have to be the same as the \"Menu Item Title\", but should be limited to 4 or so words.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 116,
+                    "readonly": 0,
+                    "disabled": 0
+                },
                 {
                     "key": "field_54f6614c3fb0d",
                     "label": "Full section?",
@@ -82,36 +112,6 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_54f23d7123b75",
-                    "label": "Section Title",
-                    "name": "section_title",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "The title for the section. Does not have to be the same as the \"Menu Item Title\", but should be limited to 4 or so words.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": 116,
                     "readonly": 0,
                     "disabled": 0
                 },
@@ -1024,7 +1024,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "the_content",
-        "excerpt",
         "custom_fields",
         "discussion",
         "comments",
@@ -1034,5 +1033,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425842644
+    "modified": 1425844020
 }

@@ -161,7 +161,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "the_content",
-        "excerpt",
         "custom_fields",
         "discussion",
         "comments",
@@ -172,5 +171,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425842655
+    "modified": 1425843280
 }

@@ -153,14 +153,6 @@
 	} 
 	// add_filter( 'enter_title_here', 'nl_title_placeholder_text' );
 
-	// Remove autop from Blank block field
-	function nl_blank_block() {
-		$block = get_sub_field('blank');
-		echo $block;
-		echo '<span style="text-align:center">doh!</span>';
-	}
-
-
 	// Customize the editor style
 	// NOTE: You need to make this file yourself (not included in Simple Sassy Starter). I usually snipe the one from Roots, which is just the Bootstrap Typography, but does a nice job:
 	// https://github.com/roots/roots-sass/blob/master/assets/css/editor-style.css
@@ -168,8 +160,12 @@
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
 	add_action( 'after_setup_theme', 'nl_editor_styles' );
+	
 
-
-
+	// Add excerpts to pages
+	function nl_add_excerpts_to_pages() {
+		add_post_type_support( 'page', 'excerpt' );
+	}
+	add_action( 'init', 'nl_add_excerpts_to_pages' );
 		
 

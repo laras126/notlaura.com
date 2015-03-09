@@ -24,6 +24,7 @@ $(document).ready(function() {
 		return false;
 	});
 
+	// For subnav
 	// $menuTrigger.click(function(e) {
 	// 	e.preventDefault();
 	// 	var $this = $(this);
@@ -31,6 +32,12 @@ $(document).ready(function() {
 	// });
 		
 
+
+	// ----
+ 	// Accordian
+ 	// ----
+
+ 	// Needs to be cleaned up still
 
   function close_accordion_section() {
         $('.accordion .acc-link').removeClass('active');
@@ -59,123 +66,34 @@ $(document).ready(function() {
 
 
 	// ----
-	// Submenu
+	// Delicious Feed
 	// ----
 
-	// This jumps...will need to fix
-	//  var scroll_class = 'stuck',
-	// 	$nav = $('.content-nav'),
-	// 	nav_ht = $nav.outerHeight(),
-	// 	header_ht = $('.page-header').outerHeight() + $('.site-header').outerHeight(),
-	// 	total_ht = header_ht;
-  	
-
-	// // 1. Highlight current item
-	// // 2. Slide to current section on click
-	// $('.content-nav a').not('.directional-icon').click( function() {
-
-	// 	var hash = $(this).attr('href');
-	// 	var $target = $(hash + ' .section-title');
-
-	// 	// Slide to section corresponding to clicked hash
-	// 	$('html,body').animate({
-	// 		scrollTop: $target.offset().top - nav_ht*1.5
- //        }, 700);
-
-	// 	return false;
-	// }); // END click
-
-	// $('.top-link a').on( 'click', function() {
-	// 	var hash = $('#pageTop');
-	// 	var $target = $(hash);
-
-	// 	// Slide to section corresponding to clicked hash
-	// 	$('html,body').animate({
-	// 		scrollTop: $target.offset().top
- //        }, 700);
-
- //        return false;
-
-	// });
-
-
-
-
-	// // Highlight the current item according to position on the screen
-	// // http://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll
-	// // (continued below)
+	// Included in the footer of each page.
 	
-	// // Cache selectors
-	// var topMenu = $(".content-nav"),
- //    topMenuHeight = topMenu.outerHeight()+40,
-    
- //    // All list items
- //    menuItems = topMenu.find("a"),
-    
- //    // Anchors corresponding to menu items
- //    scrollItems = menuItems.map(function(){
-	// 	var item = $($(this).attr("href"));
- //      	if (item.length) { return item; }
- //    });
+	// $.ajax({
+	// 	url: 'http://feeds.delicious.com/v2/json/notlaura',
+	// 	jsonp: 'callback',
+	// 	dataType: 'jsonp',
 
+	// 	success: function( data ) {
+	// 		var items = [Math.floor(Math.random()*items.length)];
+	// 		$.each( data, function(key,val) {
+	// 			var title = val.d,
+	// 				date = val.dt,
+	// 				url = val.u,
+	// 				desc = val.t;
 
+	// 			var html = '<li>';
+	// 				html += '<h4><a href="' + url + '" target=\"blank\">' + title + '</a></h4>';
+	// 				html += '<p class="meta">' + date + '</p>';
+	// 				html += '<p>' + desc + '</p>';
 
-	// $(window).scroll( function() {
-
-	// 	// Add the class to make the nav stick
-	// 	if( $(this).scrollTop() > total_ht ) {
-
-	// 		$nav.addClass(scroll_class);
-	// 		$('.section-header').addClass('nav-stuck');
-	// 		$('.top-link-bottom').fadeIn(300);
-	// 		$('.content-nav-arrow').fadeOut(300);
-
-	// 		$('.top-link-top').css({
-	// 			'width': '50px',
-	// 			'opacity': '1'
-	// 		});
-			
-	// 	} else if( $(this).scrollTop() < total_ht ) {
-
-	// 		$nav.removeClass(scroll_class);
-	// 		$('.section-header').removeClass('nav-stuck');
-	// 		$('.top-link-bottom').fadeOut(300);
-	// 		$('.content-nav-arrow').fadeIn(300);
-			
-	// 		$('.top-link-top').css({
-	// 			'width': '0',
-	// 			'opacity': '0'
-	// 		});
+	// 				html += '</li>';
+	// 			$('.items').append(html);
+	// 		} );
 	// 	}
-
-
-	// 	// Highlight the current item according to position on the screen
-	// 	// http://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll
-	
-	// 	// Get container scroll position
-   		
- //   		var fromTop = $(this).scrollTop()+topMenuHeight;
-
- //   		// Get id of current scroll item
- //   		var cur = scrollItems.map(function(){
- //     		if ($(this).offset().top < fromTop)
- //       			return this;
- //   		});
-   
- //   		// Get the id of the current element
- //   		cur = cur[cur.length-1];
- //   		var id = cur && cur.length ? cur[0].id : "";
-   		
- //   		// Set/remove active class
- //   		menuItems
- //     		.parent().removeClass("content-nav-active")
- //     		.end().filter("[href=#"+id+"]").parent().addClass("content-nav-active");
-	
-	// }); // END scroll
-
-
-
-
+	// });
 
 
 	// ----

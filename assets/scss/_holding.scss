@@ -38,3 +38,14 @@
     padding:15px;
     display:none;
 }
+
+
+
+.widgets {
+    padding-bottom: $sml;
+    padding-top: $sml;
+}
+
+.half {
+    @include make-xs-column($c * 1/2);
+}

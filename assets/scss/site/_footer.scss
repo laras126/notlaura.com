@@ -1,6 +1,6 @@
 
 .site-footer {
-	border-top: $sml/2 solid $accent-med;
+	border-top: $sml/2 solid $accent-light;
 	@include rotate;	
 	font-size: $sml;
 
@@ -16,27 +16,45 @@
 		margin-top: $h4;
 		padding-left: 0;
 
+		text-align: center;
+
+		@include bp(med) {
+			text-align: left;
+		}	
+
 		.icon {
 			@extend .icon-rotate;
+			margin-right: $sml;
 		}
 	}
 
 	.colophon {
-		
-		p {}
+		padding-bottom: $base;
+		margin-top: $base;
+		@include clearfix;
+
+		p {
+			font-size: $sml;
+		}
 
 		a {
-
+			color: $accent-light;
 			&:hover {
-				color: $accent-med;
+				color: $accent-dark;
 			}
 		}
-	}
 
-	.creds {}
-	
-	.copyright {
-		font-size: $sml;
+		// .credit {
+		// 	@include make-sm-column($c * 1/2, false);
+		// }
+		
+		// .tech {
+		// 	@include bp(small) {
+		// 		text-align: right;	
+		// 	}
+				
+		// }
+
 	}
 
 

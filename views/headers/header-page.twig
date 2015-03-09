@@ -1,4 +1,5 @@
 <header class="page-header">
+
 	<div class="contain-md">
 
 		<h1 class="page-title">{{post.title}}</h1>
@@ -27,16 +28,16 @@
 				{% endif %}
 			</figure>
 		{% endif %}
-
-		<div class="contain-sm">
-			{% if post.intro %}
-				<p class="lead">{{post.intro}}</p>
-			{% endif %}
-
-			{% if post.para_intro %}
-				<p>{{post.para_intro}}</p>
-			{% endif %}
-		</div>
-
 	</div>
-</header>
+
+	<div class="contain-sm">
+		{% if post.intro %}
+			<p class="lead page-intro">{{post.intro}}</p>
+		{% endif %}
+
+		{% if post.para_intro %}
+			<p>{{post.para_intro}}</p>
+		{% endif %}
+	</div>
+
+</header> <!-- /.page-header -->

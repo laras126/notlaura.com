@@ -171,6 +171,33 @@
                     "disabled": 0
                 },
                 {
+                    "key": "field_54fe14550cd52",
+                    "label": "Paragraph Intro",
+                    "name": "para_intro",
+                    "prefix": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_54f6614c3fb0d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0
+                },
+                {
                     "key": "field_54f23d1923b62",
                     "label": "Blocks",
                     "name": "blocks",
@@ -1080,5 +1107,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425926305
+    "modified": 1425937552
 }

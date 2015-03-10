@@ -471,7 +471,8 @@ exclusively.
 .alert,
 .alert-warning,
 .alert-info,
-.alert-danger {
+.alert-danger,
+.alert-details {
   background-color: #f4f7f9;
   color: #3e3739;
   padding: 1.1rem;
@@ -2030,39 +2031,6 @@ input[type="checkbox"]:focus {
   border-color: #159240;
 }
 
-.alert,
-.alert-warning,
-.alert-info,
-.alert-danger {
-  text-align: center;
-  padding: 1.1rem;
-}
-@media (min-width: 42em) {
-  .alert,
-  .alert-warning,
-  .alert-info,
-  .alert-danger {
-    width: 110%;
-    margin-right: -5%;
-    margin-left: -5%;
-  }
-}
-
-.alert-warning {
-  background-color: #fefcf0;
-  border: 1px solid #f7e891;
-}
-
-.alert-info {
-  background-color: #237fa9;
-  border: 1px solid #124055;
-}
-
-.alert-danger {
-  background-color: white;
-  border: 1px solid #e6b3cb;
-}
-
 .link-more {
   background: #237fa9;
   font-weight: 500;
@@ -2275,6 +2243,42 @@ th:last-child {
     -webkit-transform: scale(1);
   }
 }
+.alert,
+.alert-warning,
+.alert-info,
+.alert-danger,
+.alert-details {
+  padding: 1.1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+@media (min-width: 42em) {
+  .alert,
+  .alert-warning,
+  .alert-info,
+  .alert-danger,
+  .alert-details {
+    width: 110%;
+    margin-right: -5%;
+    margin-left: -5%;
+  }
+}
+
+.alert-warning {
+  background-color: #fefcf0;
+  border: 1px solid #f7e891;
+}
+
+.alert-info {
+  background-color: #237fa9;
+  border: 1px solid #124055;
+}
+
+.alert-danger {
+  background-color: white;
+  border: 1px solid #e6b3cb;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -2649,6 +2653,14 @@ figcaption {
   clear: both;
 }
 
+@media (min-width: 42em) {
+  .list-minor {
+    width: 110%;
+    margin-right: -5%;
+    margin-left: -5%;
+  }
+}
+
 .list-major li {
   padding-top: 2.2rem;
 }
@@ -2859,6 +2871,18 @@ a.special-alt {
   margin-bottom: 2.2rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .acc {
   overflow: hidden;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
@@ -2868,22 +2892,9 @@ a.special-alt {
 
 /*----- Section Titles -----*/
 .acc-link {
-  width: 100%;
-  padding: 15px;
+  text-align: center;
   display: inline-block;
-  border-bottom: 1px solid #1a1a1a;
-  background: #333;
-  transition: all linear 0.15s;
-  /* Type */
-  font-size: 1.200em;
-  text-shadow: 0px 1px 0px #1a1a1a;
-  color: #fff;
-}
-
-.acc-link.active, .acc-link:hover {
-  background: #4c4c4c;
-  /* Type */
-  text-decoration: none;
+  font-size: 1.43rem;
 }
 
 .acc-section:last-child .acc-link {
@@ -2907,6 +2918,13 @@ a.special-alt {
   padding-left: 1.1rem;
   padding-right: 1.1rem;
   width: 50%;
+}
+
+.alert-details h5, .alert-details .home .section-title, .home .alert-details .section-title, .alert-details .list-minor li h4, .list-minor li .alert-details h4, .alert-details .list-minor li .list-text h5, .list-minor li .list-text .alert-details h5, .alert-details .list-text .list-minor li h5, .list-text .list-minor li .alert-details h5 {
+  margin-top: 0;
+}
+.alert-details p {
+  font-size: 0.88rem;
 }
 
 /*# sourceMappingURL=main.css.map */

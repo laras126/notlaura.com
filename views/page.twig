@@ -3,7 +3,7 @@
 {% block content %}
 
 	{% include 'headers/header-page.twig' %}
-	{# {% include 'partials/section-nav.twig'%} #}
+	{% include 'partials/section-nav.twig'%}
 	
 	<div class="accordion">
 	{% for section in post.get_field('sections') %}
@@ -23,16 +23,31 @@
 
 		{% if full %}
 			<section class="page-section {{ acc ? 'acc-section' }}">
+			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id, acc: acc } %}
 		{% endif %}
 
-			{% if full %}
-				{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id, acc: acc } %}
-			{% endif %}
+		<div class="section-content {{ acc ? 'acc-content' }}" id="{{menu_link_id}}-content">
 
-			<div class="section-content {{ acc ? 'acc-content' }}" id="{{menu_link_id}}">
-				{% include 'partials/flexcontent-logic.twig' %}
-			</div>
-		
+			{% if section.service_tf %}
+				<aside class="contain-sm">
+					<div class="alert-details clearfix">
+						<div class="half">
+							<h5>For</h5>
+							<p>{{section.target_market}}</p>
+						</div>
+						<div class="half">
+							<h5>Cost</h5>
+							{# TODO: get the <br> out of there. #}
+							<p>{{section.budget}}<br>
+							{{section.timeline ? section.timeline}}</p>
+						</div>
+					</div>
+				</aside>
+			{% endif %}
+			
+			{% include 'partials/flexcontent-logic.twig' %}
+		</div>
+	
 		{% if full %}
 			</section> <!-- /#{{menu_link_id}} -->
 		{% endif %}

@@ -23,6 +23,10 @@
 		@include clearfix;
 		margin-top: 0;
 	}
+	
+	.list-minor {
+		@include bleed;
+	}
 
 	
 	// Major lists are 1 across, image on the left

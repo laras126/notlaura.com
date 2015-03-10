@@ -25,35 +25,6 @@
 }
 
 
-// Alerts
-
-@mixin alert-color($color: $alert-warning) {  
-    background-color: $color;
-    border: 1px solid darken($color, 20%);
-}
-
-%alert,
-.alert {
-    text-align: center;
-    padding: $base;
-    @include bleed;
-}
-
-.alert-warning {
-    @extend .alert;
-    @include alert-color($alert-warning);
-}
-
-.alert-info {
-    @extend .alert;
-    @include alert-color($alert-info);
-}
-
-.alert-danger {
-    @extend .alert;
-    @include alert-color($alert-danger);
-}
-
 // Specific buttons
 .link-more {
 	@include button($alert-info);

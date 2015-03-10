@@ -1,4 +1,4 @@
-<header class="section-header">
+<header class="section-header" id="{{menu_link_id}}">
 	<div class="contain-sm">
 
 		<hr class="bleed">
@@ -8,30 +8,15 @@
 			<p class="lead">{{section.lead}}</p>
 		{% endif %}
 		
-		
-		<div class="row">
-		<div class="half">
-		<h5>Who</h5>
-		Small businesses and individuals looking to build or redesign a WordPress website.	
-		</div>
-		<div class="half">
-		<h5>How Much</h5>
-		$1,500-$5,000.
-		<h5>How Long</h5>
-		1-3 months
-	
-		</div>
-
-		</div>
-		<br>
-		{# {% if section.para_intro %}
-			{{section.para_intro}}
+		{% if section.para_intro %}
+			<p>{{section.para_intro}}</p>
 		{% endif %}
-		 #}
-		
 
 		{% if acc %}
-			<a href="#{{menu_link_id}}" class="acc-link">Details &darr;</a>
+			<a href="#{{menu_link_id}}-content" class="acc-link">
+				<strong>More</strong>
+				{% include 'partials/svg.twig' with {'prefix': 'icon', 'file': 'arrow-right'} %}
+			</a>
 		{% endif %}
 	
 	</div>

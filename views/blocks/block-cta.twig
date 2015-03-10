@@ -4,7 +4,7 @@
 	
 	<div class="contain-lg">
 		<p class="lead lead-cta">{{blck.cta_text}}</p>	
-		<a href="{{blck.button_link}}" class="btn-cta">{{blck.button_text}}</a>
+		<a href="{{blck.page_link ? blck.page_link : blck.text_link}}" class="btn-cta">{{blck.button_text}}</a>
 	</div>
 
 {% endblock %}

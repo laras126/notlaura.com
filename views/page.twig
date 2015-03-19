@@ -1,11 +1,15 @@
 {% extends "base.twig" %}
 
-{% block content %}
-
+{% block content_head %}
 	{% include 'headers/header-page.twig' %}
+{% endblock %}
+
+{% block content %}
 	{% include 'partials/section-nav.twig'%}
-	
+		
+	{# TODO: make this a conditional #}
 	<div class="accordion">
+
 	{% for section in post.get_field('sections') %}
 
 		{% set menu_link_id = section.menu_item_title|sanitize %}
@@ -28,30 +32,32 @@
 
 		<div class="section-content {{ acc ? 'acc-content' }}" id="{{menu_link_id}}-content">
 
-			{% if section.service_tf %}
-				<aside class="contain-sm">
-					<div class="alert-details clearfix">
-						<div class="half">
-							<h5>For</h5>
-							<p>{{section.target_market}}</p>
-						</div>
-						<div class="half">
-							<h5>Cost</h5>
-							{# TODO: get the <br> out of there. #}
-							<p>{{section.budget}}<br>
-							{{section.timeline ? section.timeline}}</p>
-						</div>
-					</div>
-				</aside>
-			{% endif %}
-			
-			{% include 'partials/flexcontent-logic.twig' %}
-		</div>
+			{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
+
+		</div> <!-- /.accordian -->
 	
 		{% if full %}
 			</section> <!-- /#{{menu_link_id}} -->
 		{% endif %}
 	
 	{% endfor %}
+
+	{# {% if prev and next %}
+		<nav class="contain-lg page-nav">
+			<div class="half">
+				<a href="{{prev.permalink}}" title="{{prev.post_title}}">
+					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-left' } %}
+					<p class="page-nav-text">{{prev.post_title}}</p>
+				</a>
+			</div>
+			<div class="half text-right">
+				<a href="{{next.permalink}}" title="{{next.post_title}}">
+					<p class="page-nav-text">{{next.post_title}}</p>
+					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-right' } %}
+				</a>
+			</div>
+		</nav>
+	{% endif %} #}
+	
 	</div>	
 {% endblock %}

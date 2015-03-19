@@ -12,6 +12,21 @@
 			<p>{{section.para_intro}}</p>
 		{% endif %}
 
+		{% if section.service_tf %}
+			{# <aside class="contain-sm"> #}
+				{# <div class="clearfix"> #}
+					<h5>For</h5>
+					<p>{{section.target_market}}</p>
+					
+					{# <div class="half">
+						<h5>Cost</h5>
+						<p>{{section.budget}}<br>
+						{{section.timeline ? section.timeline}}</p>
+					</div> #}
+				{# </div> #}
+			{# </aside> #}
+		{% endif %}
+
 		{% if acc %}
 			<a href="#{{menu_link_id}}-content" class="acc-link">
 				<strong>More</strong>

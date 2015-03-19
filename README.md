@@ -23,6 +23,16 @@ Mimics the templates in views/ for the most part. The main components are:
 * Page - styles relating to page layout, obvy.
 * Blocks - styles for individual chunks of content used to build a page (these would be "molecules" in Atomic Design terms)
 
+## Todos
+
+* Related projects within service pages
+* Migrate blog
+* Create some more graphics
+* Sibling prev/next on service pages
+* CTA block styles
+* Figure out conditionally showing individual fields so you wouldn't have to duplicate the entire ACF object.
+
+
 ## References + Links
 
 ... coming soon

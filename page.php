@@ -37,7 +37,7 @@ $post = new TimberPost();
 
 $context['post'] = $post;
 
-$context['prev_id'] = $pages[$current-1];
-$context['next_id'] = $pages[$current+1];
+$context['prev'] = new TimberPost($pages[$current-1]);
+$context['next'] = new TimberPost($pages[$current+1]);
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

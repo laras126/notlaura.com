@@ -28,6 +28,15 @@
 	z-index: $zmid;
 }
 
+.page-nav {
+	.icon {
+		display: inline-block;
+	}
+}
+
+	.page-nav-text {
+		display: inline-block;
+	}
 
 // Homepage specific styles
 
@@ -47,4 +56,11 @@
 
 .callout-quote p {
 	font-size: $h4;
+}
+
+// Project page specific
+
+.single-project .page-header figure {
+	padding: $h4;
+	background: #E8E8E8;
 }

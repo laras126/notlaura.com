@@ -143,6 +143,9 @@ exclusively.
     text-align: right;
 }
 
+.meta-greyed {
+    @include meta($text-med);
+}
 
 
 

@@ -19,7 +19,9 @@
 		<div class="textimage-image">
 			<img src="{{TimberImage(blck.image).src|resize(600)}}" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
 		</div>
-		{{blck.text}}
+		<div class="contain-sm">
+			{{blck.text}}
+		</div>
 	{% endif %}
 	</div>
 {% endblock %}

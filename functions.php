@@ -91,11 +91,11 @@
 	function nl_scripts() {
 
 		// Use jQuery from CDN, enqueue in footer
-		if (!is_admin()) {
-			wp_deregister_script('jquery');
-			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-			wp_enqueue_script('jquery');
-		}
+		// if (!is_admin()) {
+		// 	wp_deregister_script('jquery');
+		// 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+		// 	wp_enqueue_script('jquery');
+		// }
 
 		// Enqueue stylesheet
 		if( WP_ENV == 'production' ) {
@@ -153,6 +153,8 @@
 	} 
 	// add_filter( 'enter_title_here', 'nl_title_placeholder_text' );
 
+
+
 	// Customize the editor style
 	// NOTE: You need to make this file yourself (not included in Simple Sassy Starter). I usually snipe the one from Roots, which is just the Bootstrap Typography, but does a nice job:
 	// https://github.com/roots/roots-sass/blob/master/assets/css/editor-style.css
@@ -162,12 +164,33 @@
 	add_action( 'after_setup_theme', 'nl_editor_styles' );
 	
 
+
+
 	// Add excerpts to pages
 	function nl_add_excerpts_to_pages() {
 		add_post_type_support( 'page', 'excerpt' );
 	}
 	add_action( 'init', 'nl_add_excerpts_to_pages' );
-		
+	
+
+
+
+	// Add a 'Very Simple' toolbar style for the WYSIWYG editor in ACF
+	// http://www.advancedcustomfields.com/resources/customize-the-wysiwyg-toolbars/
+	function nl_acf_wysiwyg_toolbar( $toolbars ) {
+
+		$toolbars['Text Based'] = array();
+
+		// Only one row of buttons
+		$toolbars['Text Based'][1] = array('formatselect' , 'bold' , 'link' , 'italic' , 'unlink' );
+
+		return $toolbars;
+	}
+	add_filter( 'acf/fields/wysiwyg/toolbars' , 'nl_acf_wysiwyg_toolbar'  );
+
+
+
+
 
 	// Make custom fields work with Yoast SEO (only impacts the light, but helpful!)
 	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
@@ -194,4 +217,7 @@
 			remove_filter('wpseo_pre_analysis_post_content', 'dfi_add_custom_to_yoast'); // don't let WP execute this twice
 		}
 	}
+
+	// Remove inline gallery styles
+	add_filter( 'use_default_gallery_style', '__return_false' );
 

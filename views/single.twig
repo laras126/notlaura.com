@@ -1,5 +1,20 @@
 {% extends "page.twig" %}
 
 {% block content %}
-	{{post.test_link}}
+
+	{% for content in post.get_field('flex_test') %}
+    	{% if content.acf_fc_layout == 'blocks' %}
+            
+            {% for blck in content.block_singles %} 
+
+                {% if blck.acf_fc_layout == 'block_wysiwg' %}
+	        		{{blck.wysiwyg}}
+	        	{% endif %}
+			
+			{% endfor %}
+	
+		{% endif %}
+	{% endfor %}
+
+
 {% endblock %}

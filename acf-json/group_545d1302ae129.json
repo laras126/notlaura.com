@@ -143,14 +143,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "page"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
+                "value": "project"
             }
         ]
     ],
@@ -171,5 +171,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1426008051
+    "modified": 1426612484
 }

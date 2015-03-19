@@ -13,3 +13,55 @@ figcaption {
 .caption-clear {
 	@include meta($text-med);
 }
+
+// Tags and category list-style-type: square;
+
+.list-tags {
+	@include unstyle-list();
+	@include horizontal-list(true);
+	margin-top: $base;
+
+	li {
+		font-size: $sml;
+	}
+}
+
+
+// Reveal on project hover
+
+.reveal-on-hover {
+	position: relative;
+
+	img {
+		width: 100%;
+		border: 5px solid $accent-light;
+	}
+	
+	
+}
+
+	.reveal-on-hover:hover {
+		.to-reveal {
+			opacity: 1;
+		}
+		
+		img {
+			opacity: 0.5;
+			border-color: $accent-med;
+		}	
+	} 
+	
+	.to-reveal {
+		position: absolute;
+		bottom: $base;
+		width: 80%;
+		left: 10%;
+		transition: all 0.5s ease;
+		opacity: 0;
+	
+		a {
+			margin-bottom: $base;
+			@include center-block;
+			@include make-sm-column($c/2);
+		}
+	}

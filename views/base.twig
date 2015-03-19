@@ -17,9 +17,12 @@
             {% endblock %}
         </header>
         
-        <main id="content" class="site-main" role="main">
+        <main class="site-main" role="main">
             
             <div class="page-body">
+                {% block content_head %}
+                    Sorry, no head.
+                {% endblock %}
                 {% block content %}
                     Sorry, no content
                 {% endblock %}

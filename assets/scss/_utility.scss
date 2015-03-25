@@ -53,3 +53,21 @@ a.special-alt {
 .text-center {
 	text-align: center;
 }
+
+.outline {
+	border: 5px solid $accent-light;
+}
+
+// WordPress utility classes
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	@include center-block;
+}

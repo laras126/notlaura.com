@@ -1,9 +1,31 @@
 <header class="page-header">
 
 	<div class="contain-md">
+		
+		{% if post.post_type == 'project' %}
+			<nav class="clearfix pagenav bleed">
+				<div class="pagenav-link link-prev">
+					<a href="{{post.prev.link}}" title="Previous Project">
+						{% include 'partials/svg.twig' with { 'file': 'arrow-left', 'prefix': 'icon' } %}
+					</a>
+				</div>
+				<div class="pagenav-middle">	
+			
+		{% endif %}
 
 		<h1 class="page-title">{{post.title}}</h1>
 		
+		{% if post.post_type == 'project' %}
+				</div>	
+
+				<div class="pagenav-link link-next">
+					<a href="{{post.next.link}}" title="Next Project">
+						{% include 'partials/svg.twig' with { 'file': 'arrow-right', 'prefix': 'icon' } %}
+					</a>
+				</div>
+
+			</nav> <!-- /.pagenav -->
+		{% endif %}
 		{% if post.tagline %} 
 			<p class="page-tagline">{{post.tagline}}</p>
 		{% endif %}

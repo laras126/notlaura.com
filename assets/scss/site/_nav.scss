@@ -136,3 +136,18 @@
     }
     
 }
+
+
+
+// Prev-next Navigation
+
+.pagenav-link {
+    @include make-xs-column($c * 1/8, false);
+    margin-top: $h1;    
+}
+
+    .pagenav-middle {
+        @include make-xs-column($c * 6/8);
+    }
+
+    

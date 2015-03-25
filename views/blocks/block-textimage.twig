@@ -3,7 +3,7 @@
 {% block content %}
 	<div class="contain-md">
 	{% if blck.text_format == 'caption'%}
-		<figure class="bleed">
+		<figure class="bleed opaque">
 			{% if blck.image and blck.svg is empty %}
 				<img src="{{TimberImage(blck.image).src('medium')}}" alt="{{blck.post_title}}"/>
 			{% endif %}

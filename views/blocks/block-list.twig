@@ -2,19 +2,21 @@
 
 {# List Block #}
 
+{# Set some variables for brevity #}
+{% set type = blck.list_type %}
+{% set display = blck.list_display %}
+
+{% if type == 'connected' %}
+	{% set list = blck.connected_content %}
+{% elseif type == 'free_form' %}
+	{% set list = blck.freeform_items %}
+{% elseif type == 'faq' %}
+	{% set list = blck.q_and_a %}
+{% endif %}
+
+
 {% block content %}	
 <div class="contain-md">
-
-	{% set type = blck.list_type %}
-	{% set display = blck.list_display %}
-
-	{% if type == 'connected' %}
-		{% set list = blck.connected_content %}
-	{% elseif type == 'free_form' %}
-		{% set list = blck.freeform_items %}
-	{% elseif type == 'faq' %}
-		{% set list = blck.q_and_a %}
-	{% endif %}
 
 	{% if blck.list_title %}
 		<h4 class="list-title">{{blck.list_title}}</h4>
@@ -40,6 +42,7 @@
 						{% if item.svg is empty and item.image is empty %}
 							<img src="{{site.theme.link}}/assets/img/util/placeholder.png" alt="{{item.post_title}}" />
 						{% endif %}
+
 					{% elseif type == 'connected' %}
 						{# TODO: make this featured image instead #}
 						<img src="{{TimberImage(item.image).src}}" alt="{{item.post_title}}"/>
@@ -49,8 +52,13 @@
 				<div class="item-main">
 
 					{% if type == 'connected' %}
-						<a href="{{item.guid}}"><h4 class="item-title">{{item.post_title}} &rarr;</h4></a>
-						<p>{{item.post_excerpt}}</p>
+						<div class="main-content">
+							<a href="{{item.post_link}}"><h4 class="item-title">{{item.post_title}} &rarr;</h4></a>
+							<p>{{item.post_excerpt}}</p>
+						</div>
+						<div class="main-more">
+							<a href="{{item.post_link}}">{% include 'partials/svg.twig' with {'file': 'arrow-right', 'prefix': 'icon' } %}</a>
+						</div>
 					{% elseif type == 'free_form' %}
 						<h4 class="item-title">{{item.item_title}}</h4>
 						<p>{{item.description}}</p>

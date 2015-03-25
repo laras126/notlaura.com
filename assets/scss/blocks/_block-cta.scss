@@ -1,5 +1,15 @@
 .block_cta {
 	text-align: center;
+	
+	.contain-md {
+		@include alert-color($color: $accent-vlight);	
+		padding: $h3;
+		// padding-top: $h3;
+	}
 }
 
-.lead-cta {}
+
+
+.lead-cta {
+
+}

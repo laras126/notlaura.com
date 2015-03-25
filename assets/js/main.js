@@ -113,5 +113,9 @@ $(document).ready(function() {
 	});
 
 
+	// Fit Vids
+	 $(".page-body").fitVids();
+
+
 });
 

@@ -3,6 +3,16 @@
 	margin-top: $h3;
 }
 
+	.section-intent {}
+	.intent-type {
+		@include make-sm-column($c * 1/7);
+	}
+
+	.intent-content {
+		@include make-sm-column($c * 6/7);
+	}
+
+
 .section-title {
 	// padding-top: $h2;
 }

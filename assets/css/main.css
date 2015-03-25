@@ -394,147 +394,6 @@ th {
   padding: 0;
 }
 
-/*  
-
-Harry Roberts says:
-
-"Only use @extend when the rulesets that you are trying 
-to DRY out are inherently and thematically related."
-
-- http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
-- http://www.sitepoint.com/avoid-sass-extend/
-
-These are mixins because they are "helpers" and not used
-in a thematically related fashion.
-
-There are a few classes printed here as well as mixins.
-Those are primarily for prototyping purposes, but not
-exclusively.
-
-*/
-.img-flex {
-  width: 100%;
-}
-
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
-@media (min-width: 42em) {
-  .bleed {
-    width: 110%;
-    margin-right: -5%;
-    margin-left: -5%;
-  }
-}
-
-@media (min-width: 42em) {
-  .inverse-bleed {
-    margin-left: 7%;
-    margin-right: 7%;
-  }
-}
-
-.meta-cite {
-  text-align: right;
-}
-
-.meta-greyed {
-  font-size: 0.88rem;
-  font-family: "museo-sans-1", "Helvetica", serif;
-  margin: 0;
-  color: #9a9a9a;
-}
-
-.rotate {
-  background-color: #237fa9;
-  color: #ffffff;
-}
-.rotate-dark {
-  background-color: #3e3739;
-  color: #ffffff;
-}
-.rotate-med {
-  background-color: #86b2c6;
-  color: #ffffff;
-}
-.rotate-light {
-  background-color: #e6e6e6;
-  color: #ffffff;
-}
-.rotate-vlight {
-  background-color: #f4f7f9;
-  color: #ffffff;
-}
-.rotate-info {
-  background-color: #237fa9;
-  color: #ffffff;
-}
-
-.alert,
-.alert-warning,
-.alert-info,
-.alert-danger,
-.alert-details {
-  background-color: #f4f7f9;
-  color: #3e3739;
-  padding: 1.1rem;
-}
-
-.invisible {
-  display: none;
-}
-
-@media (min-width: 54em) {
-  .hide-after-lg {
-    display: none;
-  }
-}
-
-.hide-until-md {
-  display: none !important;
-}
-@media (min-width: 42em) {
-  .hide-until-md {
-    display: inline-block !important;
-  }
-}
-
-@media (min-width: 42em) {
-  .hide-after-md {
-    display: none !important;
-  }
-}
-
-.meta {
-  font-size: 0.88rem;
-  font-family: "museo-sans-1", "Helvetica", serif;
-  margin: 0;
-  color: #3e3739;
-}
-
-.meta-colon {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.88rem;
-  font-family: "museo-sans-1", "Helvetica", serif;
-  margin: 0;
-  color: #9a9a9a;
-}
-
-@media (min-width: 42em) {
-  .stuck {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 4;
-  }
-}
-
 .contain-sm {
   margin: 0 auto;
   width: 90%;
@@ -1480,6 +1339,171 @@ exclusively.
   }
 }
 
+/*  
+
+Harry Roberts says:
+
+"Only use @extend when the rulesets that you are trying 
+to DRY out are inherently and thematically related."
+
+- http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
+- http://www.sitepoint.com/avoid-sass-extend/
+
+These are mixins because they are "helpers" and not used
+in a thematically related fashion.
+
+There are a few classes printed here as well as mixins.
+Those are primarily for prototyping purposes, but not
+exclusively.
+
+*/
+.img-flex {
+  width: 100%;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+@media (min-width: 42em) {
+  .bleed {
+    width: 110%;
+    margin-right: -5%;
+    margin-left: -5%;
+  }
+}
+
+@media (min-width: 42em) {
+  .inverse-bleed {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
+
+.meta-cite {
+  text-align: right;
+}
+
+.meta-greyed {
+  font-size: 0.88rem;
+  font-family: "museo-sans-1", "Helvetica", serif;
+  margin: 0;
+  color: #9a9a9a;
+}
+
+.rotate {
+  background-color: #237fa9;
+  color: #ffffff;
+}
+.rotate-dark {
+  background-color: #3e3739;
+  color: #ffffff;
+}
+.rotate-med {
+  background-color: #86b2c6;
+  color: #ffffff;
+}
+.rotate-light {
+  background-color: #e6e6e6;
+  color: #ffffff;
+}
+.rotate-vlight {
+  background-color: #f4f7f9;
+  color: #ffffff;
+}
+.rotate-info {
+  background-color: #237fa9;
+  color: #ffffff;
+}
+
+.alert,
+.alert-warning,
+.alert-info,
+.alert-danger,
+.alert-details {
+  background-color: #f4f7f9;
+  color: #3e3739;
+  padding: 1.1rem;
+}
+
+.invisible {
+  display: none;
+}
+
+@media (min-width: 36em) {
+  .col-16 {
+    float: left;
+    position: relative;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    width: 16.66667%;
+  }
+}
+
+@media (min-width: 36em) {
+  .col-56 {
+    float: left;
+    position: relative;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    width: 83.33333%;
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+@media (min-width: 54em) {
+  .hide-after-lg {
+    display: none;
+  }
+}
+
+.hide-until-md {
+  display: none !important;
+}
+@media (min-width: 42em) {
+  .hide-until-md {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 42em) {
+  .hide-after-md {
+    display: none !important;
+  }
+}
+
+.meta {
+  font-size: 0.88rem;
+  font-family: "museo-sans-1", "Helvetica", serif;
+  margin: 0;
+  color: #3e3739;
+}
+
+.meta-colon {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.88rem;
+  font-family: "museo-sans-1", "Helvetica", serif;
+  margin: 0;
+  color: #9a9a9a;
+}
+
+@media (min-width: 42em) {
+  .stuck {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+  }
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -2286,6 +2310,39 @@ th:last-child {
   border: 1px solid #e6b3cb;
 }
 
+.gallery-item {
+  float: left;
+  position: relative;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  width: 50%;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 42em) {
+  .gallery-columns-3 .gallery-item {
+    float: left;
+    position: relative;
+    width: 33.33333%;
+  }
+}
+@media (min-width: 36em) {
+  .gallery-columns-4 .gallery-item {
+    float: left;
+    position: relative;
+    width: 50%;
+  }
+}
+@media (min-width: 42em) {
+  .gallery-columns-4 .gallery-item {
+    float: left;
+    position: relative;
+    width: 25%;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -2429,6 +2486,21 @@ ul, ol {
   padding: 0.88rem;
 }
 
+.pagenav-link {
+  float: left;
+  position: relative;
+  width: 12.5%;
+  margin-top: 3.3rem;
+}
+
+.pagenav-middle {
+  float: left;
+  position: relative;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  width: 75%;
+}
+
 .site-header {
   margin: 0 auto;
   width: 90%;
@@ -2539,13 +2611,28 @@ ul, ol {
   font-size: 1.43rem;
 }
 
-.single-project .page-header figure {
-  padding: 1.43rem;
-  background: #E8E8E8;
-}
-
 .section-header {
   margin-top: 2.2rem;
+}
+
+@media (min-width: 36em) {
+  .intent-type {
+    float: left;
+    position: relative;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    width: 14.28571%;
+  }
+}
+
+@media (min-width: 36em) {
+  .intent-content {
+    float: left;
+    position: relative;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    width: 85.71429%;
+  }
 }
 
 .section-content {
@@ -2560,7 +2647,6 @@ figcaption {
 
 .caption-opaque {
   background: #f4f7f9;
-  margin-top: -8px;
   z-index: 4;
 }
 
@@ -2593,15 +2679,14 @@ figcaption {
 }
 .reveal-on-hover img {
   width: 100%;
-  border: 5px solid #e6e6e6;
 }
 
 .reveal-on-hover:hover .to-reveal {
   opacity: 1;
+  transition: all 0.5s ease;
 }
 .reveal-on-hover:hover img {
   opacity: 0.5;
-  border-color: #86b2c6;
 }
 
 .to-reveal {
@@ -2609,7 +2694,6 @@ figcaption {
   bottom: 1.1rem;
   width: 80%;
   left: 10%;
-  transition: all 0.5s ease;
   opacity: 0;
 }
 .to-reveal a {
@@ -2627,6 +2711,10 @@ figcaption {
   }
 }
 
+.tease-thumb {
+  margin-bottom: 1.43rem;
+  height: 21.45rem;
+}
 @media (min-width: 42em) {
   .tease-thumb {
     float: left;
@@ -2836,6 +2924,38 @@ figcaption {
   font-size: 0.88rem;
 }
 
+.item {
+  display: table;
+}
+
+.item-main {
+  position: relative;
+}
+
+@media (min-width: 36em) {
+  .main-content {
+    float: left;
+    position: relative;
+    width: 87.5%;
+  }
+}
+
+@media (min-width: 36em) {
+  .main-more {
+    float: left;
+    position: relative;
+    width: 12.5%;
+  }
+}
+
+@media (min-width: 36em) {
+  .header-main {
+    float: left;
+    position: relative;
+    width: 75%;
+  }
+}
+
 @media (min-width: 42em) {
   .list-text {
     margin-left: 7%;
@@ -2902,6 +3022,11 @@ img.caption-image {
 .block_cta {
   text-align: center;
 }
+.block_cta .contain-md {
+  background-color: #f4f7f9;
+  border: 1px solid #b2c7d5;
+  padding: 2.2rem;
+}
 
 .block_related_page {
   background-color: #f4f7f9;
@@ -2967,6 +3092,31 @@ a.special-alt {
 
 .text-center {
   text-align: center;
+}
+
+.outline {
+  border: 5px solid #e6e6e6;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter, figure img {
+  margin: 0 auto;
+  display: block;
+}
+
+.main-more {
+  position: absolute !important;
+}
+
+.prevnext-header {
+  position: relative;
 }
 
 .acc {

@@ -193,7 +193,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 33,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -218,72 +218,12 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": 33,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "message": "",
                     "default_value": 0
-                },
-                {
-                    "key": "field_54ff25c4c649b",
-                    "label": "Budget",
-                    "name": "budget",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54fe14550cd52",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 33,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_54ff25d9c649c",
-                    "label": "Timeline",
-                    "name": "timeline",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54fe14550cd52",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 33,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
                 },
                 {
                     "key": "field_54ff25f6c649d",
@@ -303,7 +243,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": 33,
+                        "width": 100,
                         "class": "",
                         "id": ""
                     },
@@ -476,7 +416,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": 70,
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -891,7 +831,7 @@
                         },
                         {
                             "key": "5462511b84c38",
-                            "name": "block_related_page",
+                            "name": "block_related_content",
                             "label": "Related Page",
                             "display": "row",
                             "sub_fields": [
@@ -919,11 +859,11 @@
                                 },
                                 {
                                     "key": "field_54f23d1923b71",
-                                    "label": "Connect a Page",
+                                    "label": "Connect Content",
                                     "name": "page",
                                     "prefix": "",
                                     "type": "relationship",
-                                    "instructions": "Select a page to link to.",
+                                    "instructions": "Select a content to link to.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -931,12 +871,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": [
-                                        "page"
-                                    ],
+                                    "post_type": "",
                                     "taxonomy": "",
                                     "filters": [
-                                        "search"
+                                        "search",
+                                        "post_type"
                                     ],
                                     "elements": "",
                                     "max": "",
@@ -1107,6 +1046,28 @@
                                     "maxlength": "",
                                     "readonly": 0,
                                     "disabled": 0
+                                },
+                                {
+                                    "key": "field_5512d54c08143",
+                                    "label": "CSS Class",
+                                    "name": "css_class",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
                                 }
                             ],
                             "min": "",
@@ -1247,5 +1208,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1426725097
+    "modified": 1427301008
 }

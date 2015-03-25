@@ -104,7 +104,26 @@
 			font-size: $sml;
 		}
 	}
+	
+	.item {
+		display: table;
+	}
 
+	.item-main {
+		position: relative;
+	}
+
+		.main-content {
+			@include make-sm-column($c * 7/8, false);
+		}
+
+		.main-more {
+		    @include make-sm-column($c * 1/8, false);
+		}
+
+		.header-main {
+		    @include make-sm-column($c * 6/8, false);
+		}
 
 
 // FAQ format

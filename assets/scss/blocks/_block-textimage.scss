@@ -1,6 +1,10 @@
 
 figure {
 	margin: 0;
+
+	img {
+		@extend .aligncenter;
+	}
 }
 
 .caption {}

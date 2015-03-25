@@ -6,8 +6,9 @@
 	{% for related in blck.page %}
 	
 		<h5 class="related-title">{{related.post_title}}</h5>
-
-		<p class="lead-cta">{{blck.description}} <a class="link-more" style="float:right;" href="{{related.guid}}"><strong>Read more <span class="icon in-btn icon-fast-forward"></span></strong></a></p>
+		<p class="lead-cta">{{blck.description}}</p>
+		<a class="link-more" href="{{related.guid}}">Read more</a>
+		
 	{% endfor %}
 	
 	</div>

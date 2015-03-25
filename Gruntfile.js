@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         concat: {   
             dist: {
                 src: [
+                    'bower_components/FitVids/jquery.fitvids.js',
                     'assets/js/libs/*.js',
                     'assets/js/*.js',
                     'assets/js/_*.js'

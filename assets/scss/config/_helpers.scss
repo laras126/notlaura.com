@@ -221,6 +221,25 @@ exclusively.
 
 
 
+// ----
+// Layout
+// ----
+
+.col-16 {
+    @include make-sm-column($c * 1/6);
+}
+
+.col-56 {
+    @include make-sm-column($c * 5/6);
+}
+
+
+.invisible {
+    display: none;
+}
+
+
+
 // Hold
 
 @mixin form-base($pad-tb, $pad-rl, $font) {

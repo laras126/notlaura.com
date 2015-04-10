@@ -18,6 +18,7 @@
 {% block content %}	
 <div class="contain-md">
 
+
 	{% if blck.list_title %}
 		<h4 class="list-title">{{blck.list_title}}</h4>
 	{% endif %}
@@ -45,19 +46,21 @@
 
 					{% elseif type == 'connected' %}
 						{# TODO: make this featured image instead #}
-						<img src="{{TimberImage(item.image).src}}" alt="{{item.post_title}}"/>
+						<img src="{{item.thumbnail.src}}" alt="{{item.post_title}}"/>
 					{% endif %}
 					
 				</div> <!-- /.item-support -->
+
 				<div class="item-main">
 
 					{% if type == 'connected' %}
 						<div class="main-content">
-							<a href="{{item.post_link}}"><h4 class="item-title">{{item.post_title}} &rarr;</h4></a>
+							<h4 class="item-title"><a href="{{item.guid}}">{{item.post_title}}</a></h4>
 							<p>{{item.post_excerpt}}</p>
+							<pre>{{item|print_r}}</pre>
 						</div>
 						<div class="main-more">
-							<a href="{{item.post_link}}">{% include 'partials/svg.twig' with {'file': 'arrow-right', 'prefix': 'icon' } %}</a>
+							<a href="{{item.guid}}">{% include 'partials/svg.twig' with {'file': 'arrow-right', 'prefix': 'icon' } %}</a>
 						</div>
 					{% elseif type == 'free_form' %}
 						<h4 class="item-title">{{item.item_title}}</h4>
@@ -67,7 +70,7 @@
 				</div> <!-- /.item-main -->
 
 				{% elseif type == 'faq'  %}
-					<h5>{{item.question}}</h5>
+					<h4>{{item.question}}</h4>
 					<p>{{item.answer}}</p>
 				{% endif %}
 

@@ -2,19 +2,22 @@
 
 {% block content %}
 
-	{% for content in post.get_field('flex_test') %}
-    	{% if content.acf_fc_layout == 'blocks' %}
-            
-            {% for blck in content.block_singles %} 
+	<div class="contain-sm">
+	{% if content.acf_fc_layout == 'blocks' %}
+        
+        {% for blck in content.block_singles %} 
 
-                {% if blck.acf_fc_layout == 'block_wysiwg' %}
-	        		{{blck.wysiwyg}}
-	        	{% endif %}
-			
-			{% endfor %}
-	
-		{% endif %}
-	{% endfor %}
+            {% if blck.acf_fc_layout == 'block_wysiwg' %}
+        		{{blck.wysiwyg}}
+        	{% endif %}
+		
+		{% endfor %}
 
+	{% endif %}
+
+	{% if post.content %}
+		{{post.content}}
+	{% endif %}
+	</div>
 
 {% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content_head %}
+	{% include 'headers/header-page.twig' %}
+{% endblock %}
+
+{% block content %}
+	<div class="contain-lg block">
+
+	{% for post in projects %}
+
+		<div class="tease tease-thumb">
+			<a href="{{post.permalink}}" title="{{post.title}}">
+				<figure class="reveal-on-hover">
+					{# <img src="{{post.thumbnail.get_src|resize(300)}}" alt="Thumbnail for {{post.title}}"> #}
+					<img src="{{post.get_thumbnail.get_src|resize(300)}}" />
+					
+					{# <figcaption class="to-reveal"> #}
+						{# <a href="{{post.permalink}}" class="btn">Read more</a> #}
+						{# {% if post.project_link %}
+							<a href="{{post.project_link}}" class="btn" target="blank">Launch Project</a>
+						{% endif %} #}
+					{# </figcaption> #}
+				</figure>
+			</a>
+			<h5 class="text-center">{{post.title}}</h5>
+			 {{function('edit_post_link', 'Edit', '<strong class="edit-link">', '</strong>')}}
+		</div>
+			
+	{% endfor %}
+
+	</div>
+{% endblock %}

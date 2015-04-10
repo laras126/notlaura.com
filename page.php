@@ -32,6 +32,7 @@ foreach ($pagelist as $page) {
 
 $current = array_search($post->ID, $pages);
 
+
 $context = Timber::get_context();
 $post = new TimberPost();
 

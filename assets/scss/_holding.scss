@@ -6,6 +6,8 @@
 .main-more {
     // BAD
     position: absolute !important;
+    top: 40%;
+    right: 0;
 }
 
 .prevnext-header {
@@ -41,7 +43,6 @@
 
 
 .widgets {
-    padding-bottom: $sml;
     padding-top: $sml;
 }
 

@@ -1,0 +1,20 @@
+
+
+.gallery-item {
+	
+	img {
+		width: 100%;
+		height: auto;
+	}
+	@include make-xs-column($c/2);
+	
+	.gallery-columns-3 & {
+		@include make-md-column($c/3, false);
+	}
+
+	.gallery-columns-4 & {
+		@include make-sm-column($c/2, false);
+		@include make-md-column($c/4, false);
+	}
+
+}

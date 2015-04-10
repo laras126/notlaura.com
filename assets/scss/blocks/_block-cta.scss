@@ -2,9 +2,9 @@
 	text-align: center;
 	
 	.contain-md {
-		@include alert-color($color: $accent-vlight);	
-		padding: $h3;
-		// padding-top: $h3;
+		// border-top: $accent-border;
+		// border-bottom: $accent-border;
+		// padding: $h3;
 	}
 }
 

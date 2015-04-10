@@ -46,15 +46,7 @@
                     "type": "text",
                     "instructions": "The title for the section. Does not have to be the same as the \"Menu Item Title\", but should be limited to 4 or so words.",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": 75,
                         "class": "",
@@ -76,15 +68,7 @@
                     "type": "text",
                     "instructions": "If in the submenu.",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": 25,
                         "class": "",
@@ -106,99 +90,19 @@
                     "type": "textarea",
                     "instructions": "A phrase introducing the section. Short and sweet.",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 4,
-                    "new_lines": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_54ff2df4eb42d",
-                    "label": "Paragraph Intro",
-                    "name": "para_intro",
-                    "prefix": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 6,
-                    "new_lines": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_54fdc8d8a156f",
-                    "label": "Inlcude in accordian?",
-                    "name": "accordian",
-                    "prefix": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_54f6614c3fb0d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 33,
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0
-                },
-                {
-                    "key": "field_54f6614c3fb0d",
-                    "label": "Full section?",
-                    "name": "full_section",
-                    "prefix": "",
-                    "type": "true_false",
-                    "instructions": "Uncheck this to keep the content inline and not in a new section.",
-                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 1
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": "",
+                    "readonly": 0,
+                    "disabled": 0
                 },
                 {
                     "key": "field_54fe14550cd52",
@@ -614,7 +518,9 @@
                                         "search",
                                         "post_type"
                                     ],
-                                    "elements": "",
+                                    "elements": [
+                                        "featured_image"
+                                    ],
                                     "max": "",
                                     "return_format": "object"
                                 },
@@ -1208,5 +1114,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1427301008
+    "modified": 1428677121
 }

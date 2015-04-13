@@ -36,11 +36,16 @@ exclusively.
     @include clearfix;
 }
 
+
+// Bleeds
+
+// TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
+
 @mixin bleed {
     @include bp(med) {
         width: 110%;
         margin-right: -5%;
-        margin-left: -5%;    
+        margin-left: -5%;   
     }
 }
 
@@ -59,7 +64,19 @@ exclusively.
     @include inverse-bleed;
 }
 
+// Mainly for images.
 
+.bleed-left {
+    @include bp(med) {
+        margin-left: -10%;
+    }
+}
+
+.bleed-right {
+    @include bp(med) {
+        margin-right: -10%;
+    }
+}
 
 // ----
 // Typography
@@ -300,6 +317,18 @@ exclusively.
         @include upperspace;
         @include meta($text-med);
     }
+
+
+// Text alignment shortcuts 
+// Mainly for prototyping and where semantics aren't crucial (which is nowhere? Discuss!)
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
 
 
 // This can be used to add a border around a title, like this:

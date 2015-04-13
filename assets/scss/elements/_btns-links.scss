@@ -24,8 +24,14 @@
 	@include button($alert-success);
 }
 
+.btn-warning {
+    @include button(desaturate(darken($alert-warning, 40%), 30%));
+}
+
+
 
 // Specific buttons
+
 .link-more {
 	@include button($alert-info);
 }
@@ -37,7 +43,6 @@
     margin-top: $sml;
 	font-weight: 700;
 }
-
 
 .link-back-top .icon {
     display: block;

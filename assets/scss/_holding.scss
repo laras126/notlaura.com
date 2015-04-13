@@ -15,32 +15,7 @@
 }
 
 
-.acc {
-    overflow:hidden;
-    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-    border-radius:3px;
-    background:#f7f7f7;
-}
- 
-/*----- Section Titles -----*/
-.acc-link {
-    text-align: center;
-    display: inline-block;
-    font-size: $h4;
-}
- 
- 
-.acc-section:last-child .acc-link {
-    border-bottom:none;
-}
- 
 /*----- Section Content -----*/
-.acc-content {
-    padding:15px;
-    display:none;
-}
-
-
 
 .widgets {
     padding-top: $sml;
@@ -61,4 +36,11 @@
     p {
         font-size: $sml;
     }
+}
+
+
+// Legacy styles for posts from old site
+
+.fig-large {
+    @include bleed;
 }

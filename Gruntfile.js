@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'assets/js/*.js'
+                'assets/js/*.js',
             ]
         },
 

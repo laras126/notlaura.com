@@ -1,3 +1,29 @@
+
+.tease-post {
+	margin-top: $h1*1.5;
+}
+
+.tease-title {
+	margin-top: $base;
+	margin-bottom: $base;
+}
+
+.header-tease {
+	border-top: $accent-border;
+	padding-top: $h4;
+	margin-top: $h2;
+	padding-bottom: $h2;
+	text-align: center;
+}
+
+.tease-meta {
+	@extend .meta-greyed;
+}
+
+.tease-footer {
+
+}
+
 .tease-thumb {
 	@include make-md-column($c/2);
 	margin-bottom: $h4;

@@ -1,3 +1,16 @@
+
+// Small Prism override
+pre {
+    background: $accent-vlight;
+    border: $accent-border;
+    margin: $base 0;
+    padding-top: 0;
+    font-size: $sml;
+}
+
+
+// Captions
+
 figcaption {
 	padding: $sml/3;
 	text-align: center;
@@ -12,6 +25,23 @@ figcaption {
 	.caption-clear {
 		@include meta($text-med);
 	}
+
+
+
+// Entry content (for legacy posts)
+
+.entry-content,
+.tease-content {
+	figure {
+		@include bleed();
+		margin-top: $base;
+	}	
+
+	figcaption {
+		@extend .caption-clear;
+	}
+}
+
 
 
 // Tags and category lists

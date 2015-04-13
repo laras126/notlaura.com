@@ -1,23 +1,25 @@
-{% extends "page.twig" %}
+{% extends "base.twig" %}
+
+{% block content_head %}
+	{% include 'headers/header-single.twig' %}
+{% endblock %}
 
 {% block content %}
 
 	<div class="contain-sm">
-	{% if content.acf_fc_layout == 'blocks' %}
-        
-        {% for blck in content.block_singles %} 
 
-            {% if blck.acf_fc_layout == 'block_wysiwg' %}
-        		{{blck.wysiwyg}}
-        	{% endif %}
-		
-		{% endfor %}
+		{% if post.content %}
+			{# Show post content for legacy posts. All new posts are created with blocks. #}
+			<div class="entry-content">
+				{{post.content}}
+			</div>
+		{% else %}
+			{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+		{% endif %}
+	
+		{% include 'partials/edit-link.twig' %}
+		{% include 'partials/prev-next.twig' %}
 
-	{% endif %}
-
-	{% if post.content %}
-		{{post.content}}
-	{% endif %}
 	</div>
 
 {% endblock %}

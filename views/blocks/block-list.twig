@@ -46,7 +46,7 @@
 
 					{% elseif type == 'connected' %}
 						{# TODO: make this featured image instead #}
-						<img src="{{item.thumbnail.src}}" alt="{{item.post_title}}"/>
+						<img src="{{TimberImage(item.thumbnail).src('medium')}}" alt="{{item.post_title}}"/>
 					{% endif %}
 					
 				</div> <!-- /.item-support -->
@@ -57,7 +57,6 @@
 						<div class="main-content">
 							<h4 class="item-title"><a href="{{item.guid}}">{{item.post_title}}</a></h4>
 							<p>{{item.post_excerpt}}</p>
-							<pre>{{item|print_r}}</pre>
 						</div>
 						<div class="main-more">
 							<a href="{{item.guid}}">{% include 'partials/svg.twig' with {'file': 'arrow-right', 'prefix': 'icon' } %}</a>

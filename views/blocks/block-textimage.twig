@@ -15,11 +15,8 @@
 			<figcaption class="caption-clear">{{blck.caption}}</figcaption>
 		</figure>
 	{% elseif blck.text_format == 'paragraph'%}
-		<h4>{{blck.text_heading}}</h4>
-		<div class="textimage-image">
-			<img src="{{TimberImage(blck.image).src|resize(600)}}" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
-		</div>
-		<div class="contain-sm">
+		<div class="textimage-para">
+			<img class="para-img {% if blck.image_location == 'left' %}bleed-left alignleft{% else %}bleed-right alignright{% endif %}" src="{{TimberImage(blck.image).src|resize(600)}}" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
 			{{blck.text}}
 		</div>
 	{% endif %}

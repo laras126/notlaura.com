@@ -21,6 +21,7 @@ body {
 
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 hr {
@@ -32,8 +33,9 @@ ul, ol {
 	margin-top: $base;
 }
 
-
-
+figure {
+	margin: 0;
+}
 
 // ---
 // Typography 
@@ -42,5 +44,6 @@ ul, ol {
 .lead {
 	font-size: $h4;
 }
+
 
 

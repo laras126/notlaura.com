@@ -1,6 +1,6 @@
 
 figure {
-	margin: 0;
+	// margin: 0;
 
 	img {
 		@extend .aligncenter;
@@ -13,24 +13,16 @@ figure {
 		border-top: $accent-border;
 	}
 
-.textimage-image {
-
-	@include bp(small) {
-		padding-right: $gutter;
-	}
-
+.textimage-para {
 	@include bp(med) {
-		margin-left: percentage(1/7)*-1;
+		width: 110%;
 	}
-	
-	@include bp(large) {
-		margin-left: percentage(2/7)*-1;
-	}
-
-	padding-bottom: $gutter/2;
-	position: relative;
 }
 
-.textimage-text {
-	
-}
+	.para-img {
+		@include make-sm-column($c * 1/2);
+		padding-bottom: $base;
+		@include bp(med) {
+			padding-bottom: 0;
+		}
+	}

@@ -1,5 +1,5 @@
 
 <header class="contain-md header-single">
 	<h2 class="tease-title">{{post.title}}</h2>
-	<p class="meta-greyed">Posted: {{post.date}}, filed under: {% for cat in post.categories %}<a href="{{cat.link}}" title="{{cat.name}} Archives">{{cat.name}}</a>{% endfor %}</p>
+	<p class="meta-greyed">Posted: {{post.date}}{% if post.categories %}, filed under: {% for cat in post.categories %}<a href="{{cat.link}}" title="{{cat.name}} Archives">{{cat.name}}</a>{{ loop.last ? '' : ', ' }}{% endfor %}{% endif %}</p>
 </header>

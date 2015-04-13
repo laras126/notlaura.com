@@ -18,8 +18,17 @@
 		{% endif %}
 	
 		{% include 'partials/edit-link.twig' %}
-		{% include 'partials/prev-next.twig' %}
+		
+		{% if post.get_terms('tag') %}
+			<p class="meta-greyed text-center spacer-top">Tagged: 
+				{% for tag in post.get_terms('tag') %}
+					<a href="{{tag.link}}">{{tag.name}}</a>{{ loop.last ? '' : ', ' }}
+				{% endfor %}
+			</p> 
+		{% endif %}
 
 	</div>
+
+	{% include 'partials/prev-next.twig' %}
 
 {% endblock %}

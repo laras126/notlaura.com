@@ -48,9 +48,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em 1em 0 1em;
-	margin: .5em 0;
-	overflow: auto;
+	padding: $base;
+	background: $accent-vlight;
+    border: $accent-border;
+    margin: $h4 0;
+    font-size: $sml;
 }
 
 :not(pre) > code[class*="language-"],
@@ -60,8 +62,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+	padding: .1rem;
+	border-radius: .3rem;
 }
 
 .token.comment,

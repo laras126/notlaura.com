@@ -1,5 +1,20 @@
 
+<nav class="contain-lg prevnext-nav">
+	{% if post.prev %}
+		<div class="prev">
+			<a href="{{post.prev.permalink}}" title="{{post.prev.post_title}}">
+				<span class="meta-greyed">Previous</span><br>
+				{{post.prev.post_title}}</a>
+			</a>
+		</div>
+	{% endif %}
 
-
-<h3>{{post.prev.permalink}}</h3>
-<h3>{{post.next.permalink}}</h3>
+	{% if post.next %}
+		<div class="next">
+			<a href="{{post.next.permalink}}" title="{{post.next.post_title}}">
+				<span class="meta-greyed">Next</span><br>
+				{{post.next.post_title}}</a>
+			</a>
+		</div>
+	{% endif %}
+</nav>

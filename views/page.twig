@@ -24,13 +24,13 @@
 
 	{# {% if prev and next %}
 		<nav class="contain-lg page-nav">
-			<div class="half">
+			<div class="xs-1of2">
 				<a href="{{prev.permalink}}" title="{{prev.post_title}}">
 					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-left' } %}
 					<p class="page-nav-text">{{prev.post_title}}</p>
 				</a>
 			</div>
-			<div class="half text-right">
+			<div class="xs-1of2 text-right">
 				<a href="{{next.permalink}}" title="{{next.post_title}}">
 					<p class="page-nav-text">{{next.post_title}}</p>
 					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-right' } %}

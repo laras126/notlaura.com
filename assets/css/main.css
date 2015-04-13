@@ -446,8 +446,8 @@ th {
 }
 
 .row {
-  margin-left: -0.88rem;
-  margin-right: -0.88rem;
+  margin-left: -0.99rem;
+  margin-right: -0.99rem;
 }
 .row:before, .row:after {
   content: " ";
@@ -460,8 +460,8 @@ th {
 .col-xs-1 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 12.5%;
 }
 
@@ -484,8 +484,8 @@ th {
 .col-xs-2 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 25%;
 }
 
@@ -508,8 +508,8 @@ th {
 .col-xs-3 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 37.5%;
 }
 
@@ -532,8 +532,8 @@ th {
 .col-xs-4 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 50%;
 }
 
@@ -556,8 +556,8 @@ th {
 .col-xs-5 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 62.5%;
 }
 
@@ -580,8 +580,8 @@ th {
 .col-xs-6 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 75%;
 }
 
@@ -604,8 +604,8 @@ th {
 .col-xs-7 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 87.5%;
 }
 
@@ -629,8 +629,8 @@ th {
   .col-sm-1 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 12.5%;
   }
 }
@@ -667,8 +667,8 @@ th {
   .col-sm-2 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 25%;
   }
 }
@@ -705,8 +705,8 @@ th {
   .col-sm-3 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 37.5%;
   }
 }
@@ -743,8 +743,8 @@ th {
   .col-sm-4 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -781,8 +781,8 @@ th {
   .col-sm-5 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 62.5%;
   }
 }
@@ -819,8 +819,8 @@ th {
   .col-sm-6 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 75%;
   }
 }
@@ -857,8 +857,8 @@ th {
   .col-sm-7 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 87.5%;
   }
 }
@@ -895,8 +895,8 @@ th {
   .col-md-1 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 12.5%;
   }
 }
@@ -927,8 +927,8 @@ th {
   .col-md-2 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 25%;
   }
 }
@@ -959,8 +959,8 @@ th {
   .col-md-3 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 37.5%;
   }
 }
@@ -991,8 +991,8 @@ th {
   .col-md-4 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -1023,8 +1023,8 @@ th {
   .col-md-5 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 62.5%;
   }
 }
@@ -1055,8 +1055,8 @@ th {
   .col-md-6 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 75%;
   }
 }
@@ -1087,8 +1087,8 @@ th {
   .col-md-7 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 87.5%;
   }
 }
@@ -1119,8 +1119,8 @@ th {
   .col-lg-1 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 12.5%;
   }
 }
@@ -1151,8 +1151,8 @@ th {
   .col-lg-2 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 25%;
   }
 }
@@ -1183,8 +1183,8 @@ th {
   .col-lg-3 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 37.5%;
   }
 }
@@ -1215,8 +1215,8 @@ th {
   .col-lg-4 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -1247,8 +1247,8 @@ th {
   .col-lg-5 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 62.5%;
   }
 }
@@ -1279,8 +1279,8 @@ th {
   .col-lg-6 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 75%;
   }
 }
@@ -1311,8 +1311,8 @@ th {
   .col-lg-7 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 87.5%;
   }
 }
@@ -1450,8 +1450,8 @@ exclusively.
   .col-16 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 16.66667%;
   }
 }
@@ -1460,8 +1460,8 @@ exclusively.
   .col-56 {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 83.33333%;
   }
 }
@@ -1635,7 +1635,7 @@ h2, h3, h4, h6 {
 h1 {
   font-size: 2.64rem;
   font-weight: 300;
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
 }
 @media (min-width: 36em) {
   h1 {
@@ -1650,18 +1650,18 @@ h2 {
 }
 
 h3 {
-  font-size: 1.76rem;
+  font-size: 1.98rem;
   margin-top: 2.64rem;
 }
 
 h4 {
   font-size: 1.43rem;
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
 }
 
 h5, .home .section-title, .list-minor li h4 {
   font-size: 0.88rem;
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #9a9a9a;
@@ -1694,9 +1694,9 @@ blockquote {
   text-align: center;
   margin: 1.43rem 0;
   font-family: "museo-slab-1", "Georgia", serif;
-  padding-left: 1.76rem;
+  padding-left: 1.98rem;
   border-left: 1px dotted #86b2c6;
-  margin-bottom: 1.76rem;
+  margin-bottom: 1.98rem;
   font-style: italic;
   overflow: visible;
 }
@@ -1852,7 +1852,7 @@ input[type="checkbox"]:focus {
 .gform_wrapper .top_label .gfield_label {
   font-size: 1.1rem;
   font-weight: 500;
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
   margin-bottom: 0.88rem;
 }
 .gform_wrapper .gfield_checkbox li input[type=checkbox],
@@ -1867,7 +1867,7 @@ input[type="checkbox"]:focus {
 }
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
   display: inline-block;
 }
 .gform_wrapper .ginput_complex label,
@@ -1881,7 +1881,7 @@ input[type="checkbox"]:focus {
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
   color: #3e3739;
-  margin-bottom: 1.76rem;
+  margin-bottom: 1.98rem;
   margin-top: 0.88rem;
 }
 .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer input.button {
@@ -1930,19 +1930,19 @@ input[type="checkbox"]:focus {
 }
 @media (min-width: 42em) {
   .gf_left_half {
-    margin-bottom: 1.76rem;
+    margin-bottom: 1.98rem;
   }
 }
 
 .gf_right_half {
   float: right;
   clear: right !important;
-  margin-bottom: 1.76rem;
+  margin-bottom: 1.98rem;
 }
 
 .mc-signup {
   margin-top: 1.43rem;
-  padding: 1.76rem;
+  padding: 1.98rem;
 }
 @media (min-width: 36em) {
   .mc-signup {
@@ -1952,8 +1952,8 @@ input[type="checkbox"]:focus {
 .mc-signup .email {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 100%;
   padding: 0.88rem 1.1rem;
   margin-bottom: 0.88rem;
@@ -1975,8 +1975,8 @@ input[type="checkbox"]:focus {
 .mc-signup .button {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 100%;
   background: #86b2c6;
   font-weight: 500;
@@ -2353,8 +2353,8 @@ th:last-child {
 .gallery-item {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 50%;
 }
 .gallery-item img {
@@ -2429,15 +2429,17 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em 1em 0 1em;
-  margin: .5em 0;
-  overflow: auto;
+  padding: 1.1rem;
+  background: #f4f7f9;
+  border: 1px dotted #86b2c6;
+  margin: 1.43rem 0;
+  font-size: 0.88rem;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
+  padding: .1rem;
+  border-radius: .3rem;
 }
 
 .token.comment,
@@ -2663,8 +2665,8 @@ figure {
 .pagenav-middle {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 75%;
 }
 
@@ -2713,7 +2715,7 @@ figure {
 
 .site-title {
   text-transform: lowercase;
-  font-size: 1.76rem;
+  font-size: 1.98rem;
   margin-top: 1.1rem;
 }
 .site-title a {
@@ -2760,14 +2762,6 @@ figure {
   z-index: 3;
 }
 
-.page-nav .icon {
-  display: inline-block;
-}
-
-.page-nav-text {
-  display: inline-block;
-}
-
 .home .page-tagline, .home .header-single {
   border-bottom: none;
 }
@@ -2785,15 +2779,15 @@ figure {
 }
 
 .section-header {
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
 }
 
 @media (min-width: 36em) {
   .intent-type {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 14.28571%;
   }
 }
@@ -2802,22 +2796,14 @@ figure {
   .intent-content {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 85.71429%;
   }
 }
 
 .section-content {
   padding-bottom: 3.3rem;
-}
-
-pre {
-  background: #f4f7f9;
-  border: 1px dotted #86b2c6;
-  margin: 1.1rem 0;
-  padding-top: 0;
-  font-size: 0.88rem;
 }
 
 figcaption {
@@ -2900,8 +2886,8 @@ figcaption {
   .to-reveal a {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -2931,8 +2917,8 @@ figcaption {
   .tease-thumb {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -2995,8 +2981,8 @@ figcaption {
   .widget {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -3048,7 +3034,7 @@ figcaption {
 }
 
 .list-major li {
-  padding-top: 1.76rem;
+  padding-top: 1.98rem;
 }
 .list-major li:before, .list-major li:after {
   content: " ";
@@ -3062,8 +3048,8 @@ figcaption {
 }
 @media (min-width: 42em) {
   .list-major li {
-    margin-left: -0.88rem;
-    margin-right: -0.88rem;
+    margin-left: -0.99rem;
+    margin-right: -0.99rem;
   }
   .list-major li:before, .list-major li:after {
     content: " ";
@@ -3077,8 +3063,8 @@ figcaption {
   .list-major li .item-support {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 33.33333%;
   }
 }
@@ -3086,8 +3072,8 @@ figcaption {
   .list-major li .item-main {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 66.66667%;
   }
 }
@@ -3097,7 +3083,7 @@ figcaption {
 }
 
 .list-minor li {
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
   float: left;
   position: relative;
   width: 100%;
@@ -3128,8 +3114,8 @@ figcaption {
 .list-minor li .item-main {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 80%;
 }
 .list-minor li p {
@@ -3181,7 +3167,7 @@ figcaption {
 }
 
 .item-support {
-  padding-right: 0.88rem;
+  padding-right: 0.99rem;
 }
 .item-support img {
   margin: 0 auto;
@@ -3220,8 +3206,8 @@ img.caption-image {
   .para-img {
     float: left;
     position: relative;
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
     width: 50%;
   }
 }
@@ -3243,7 +3229,7 @@ img.caption-image {
 }
 
 .block_testimonial {
-  padding-top: 1.76rem;
+  padding-top: 1.98rem;
 }
 
 .special,
@@ -3270,23 +3256,23 @@ a.special-alt {
 }
 
 .space-hack-table {
-  margin-left: 1.76rem;
+  margin-left: 1.98rem;
 }
 
 .spacer-top {
-  margin-top: 1.76rem;
+  margin-top: 1.98rem;
 }
 
 .spacer-left {
-  margin-left: 1.76rem;
+  margin-left: 1.98rem;
 }
 
 .spacer-right {
-  margin-right: 1.76rem;
+  margin-right: 1.98rem;
 }
 
 .spacer-bot {
-  margin-bottom: 1.76rem;
+  margin-bottom: 1.98rem;
 }
 
 .text-left {
@@ -3318,6 +3304,41 @@ a.special-alt {
   display: block;
 }
 
+.prevnext-nav {
+  border-top: 1px dotted #86b2c6;
+  padding-top: 1.1rem;
+  margin-top: 1.1rem;
+}
+
+.prev,
+.next {
+  display: inline-block;
+  font-size: 0.88rem;
+  background-repeat: no-repeat;
+  padding: 0.66rem;
+}
+.prev span,
+.next span {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prev {
+  float: left;
+  padding-left: 1.98rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" fill="#237fa9" height="32" viewBox="0 0 32 32"><path d="M18.3 7.226c-.67.653-7.204 7.514-7.204 7.514-.357.35-.534.805-.534 1.26s.178.913.534 1.262c0 0 6.534 6.86 7.203 7.512.668.653 1.87.698 2.585 0 .712-.696.768-1.667-.002-2.52L14.888 16l5.995-6.252c.77-.854.714-1.826.002-2.522-.715-.696-1.918-.653-2.586 0z"/></svg>');
+  background-position: left;
+}
+
+.next {
+  float: right;
+  text-align: right;
+  padding-right: 1.98rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" fill="#237fa9" height="32" viewBox="0 0 32 32"><path d="M13.7 7.226c.67.653 7.204 7.514 7.204 7.514.358.35.536.805.536 1.26s-.178.913-.536 1.262c0 0-6.534 6.86-7.203 7.512-.668.653-1.87.698-2.585 0-.714-.696-.77-1.667 0-2.52L17.112 16 11.117 9.75c-.77-.854-.714-1.826 0-2.522.714-.696 1.917-.653 2.584 0z"/></svg>');
+  background-position: right;
+}
+
 .main-more {
   position: absolute !important;
   top: 40%;
@@ -3333,12 +3354,59 @@ a.special-alt {
   padding-top: 0.88rem;
 }
 
-.half {
+.table {
+  display: table;
+  vertical-align: middle;
+}
+
+.t-row {
+  vertical-align: middle;
+  display: table-row;
+}
+
+.t-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.xs-1of2 {
   float: left;
   position: relative;
-  padding-left: 0.88rem;
-  padding-right: 0.88rem;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
   width: 50%;
+}
+
+.xs-1of3 {
+  float: left;
+  position: relative;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
+  width: 33.33333%;
+}
+
+.xs-2of3 {
+  float: left;
+  position: relative;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
+  width: 66.66667%;
+}
+
+.xs-1of4 {
+  float: left;
+  position: relative;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
+  width: 25%;
+}
+
+.xs-3of4 {
+  float: left;
+  position: relative;
+  padding-left: 0.99rem;
+  padding-right: 0.99rem;
+  width: 75%;
 }
 
 .alert-details h5, .alert-details .home .section-title, .home .alert-details .section-title, .alert-details .list-minor li h4, .list-minor li .alert-details h4 {

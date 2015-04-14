@@ -25,7 +25,7 @@
 }
 
 .tease-thumb {
-	@include make-md-column($c/3);
+	@include make-md-column($c/2);
 
 	margin-bottom: $h4;
 	height: $h1*6.5;

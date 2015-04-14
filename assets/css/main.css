@@ -2782,6 +2782,10 @@ figure {
   margin-top: 1.98rem;
 }
 
+.section-header:not(.story-intro) .contain-sm {
+  border-top: 1px dotted #86b2c6;
+}
+
 @media (min-width: 36em) {
   .intent-type {
     float: left;
@@ -2838,21 +2842,8 @@ figcaption {
   }
 }
 
-.list-tags {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 0;
-  margin-top: 1.1rem;
-}
-.list-tags > li {
-  display: inline-block;
-  margin-right: 1.1rem;
-}
-.list-tags > li:last-child {
-  margin-right: 0;
-}
-.list-tags li {
-  font-size: 0.88rem;
+.tags-list {
+  text-align: center;
 }
 
 .reveal-on-hover {
@@ -2919,8 +2910,11 @@ figcaption {
     position: relative;
     padding-left: 0.99rem;
     padding-right: 0.99rem;
-    width: 50%;
+    width: 33.33333%;
   }
+}
+.tease-thumb img {
+  border: 5px solid #e6e6e6;
 }
 
 .site-footer {

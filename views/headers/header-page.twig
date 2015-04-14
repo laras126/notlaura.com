@@ -2,34 +2,10 @@
 
 	<div class="contain-md">
 		
-		{% if post.post_type == 'project' %}
-			<nav class="clearfix pagenav bleed">
-				<div class="pagenav-link link-prev">
-					{% if post.prev %}
-					<a href="{{post.prev.link}}" title="Previous Project">
-						{% include 'partials/svg.twig' with { 'file': 'arrow-left', 'prefix': 'icon' } %}
-					</a>
-					{% endif %}
-				</div>
-				<div class="pagenav-middle">	
-			
-		{% endif %}
+		{% block title_area %}
+			<h1 class="page-title">{{post.title}}</h1>
+		{% endblock %}
 
-		<h1 class="page-title">{{post.title}}</h1>
-		
-		{% if post.post_type == 'project' %}
-				</div>	
-
-				<div class="pagenav-link link-next">
-					{% if post.next %}
-					<a href="{{post.next.link}}" title="Next Project">
-						{% include 'partials/svg.twig' with { 'file': 'arrow-right', 'prefix': 'icon' } %}
-					</a>
-					{% endif %}
-				</div>
-
-			</nav> <!-- /.pagenav -->
-		{% endif %}
 		{% if post.tagline %} 
 			<p class="page-tagline">{{post.tagline}}</p>
 		{% endif %}
@@ -37,7 +13,7 @@
 		{% if post.image and post.svg is empty%}
 			<figure class="bleed">
 				
-				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src}}" alt="{{post.title|striptags}}">
+				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
 				
 				{% if post.image_caption %}
 					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>

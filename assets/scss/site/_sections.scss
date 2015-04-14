@@ -3,6 +3,12 @@
 	margin-top: $h3;
 }
 
+	.section-header:not(.story-intro) {
+		.contain-sm {
+			border-top: $accent-border;
+		}
+	}
+
 	.section-intent {}
 	.intent-type {
 		@include make-sm-column($c * 1/7);

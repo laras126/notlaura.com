@@ -1,22 +1,37 @@
 {% extends "page.twig" %}
 
+{% block content_head %}
+	{% include 'headers/header-project.twig' %}
+{% endblock %}
+
 {% block content %}
 	
 	<div class="contain-md">
-		{% if post.image %}
-			<hr>
+		{% if post.get_terms('project-type') %}
+			<p class="meta-greyed tags-list spacer-top">Filed under: 
+				{% for type in post.get_terms('project-type') %}
+					<a href="{{type.link}}">{{type.name}}</a>{{ loop.last ? '' : ', ' }}
+				{% endfor %}
+			</p>
 		{% endif %}
-		
-		<ul class="list-tags text-center">
-			{% for type in post.get_terms('project-type') %}
-				<li>{{type.name}}</li>
-			{% endfor %}
-			{% if post.project_link %}
-				<li><a href="{{post.project_link}}" target="blank" class="btn">Launch project</a></li>
-			{% endif %}
-		</ul>
+	
+		{{ post.image ? '<hr>' }}
+	
+		{% if post.project_link %}
+			<a href="{{post.project_link}}" target="blank" class="btn">Launch project</a>
+		{% endif %}
 	</div>
 	
 	{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+	<div class="contain-md">
+		{% if post.get_terms('project-keyword') %}
+			<p class="meta-greyed tags-list">Keywords:  
+				{% for tag in post.get_terms('post_tag') %}
+					<a href="{{tag.link}}">{{tag.name}}</a>{{ loop.last ? '' : ', ' }}
+				{% endfor %}
+			</p>
+		{% endif %}
+	</div>
+
 
 {% endblock %}

@@ -37,14 +37,8 @@ figcaption {
 
 // Tags and category lists
 
-.list-tags {
-	@include unstyle-list();
-	@include horizontal-list(true);
-	margin-top: $base;
-
-	li {
-		font-size: $sml;
-	}
+.tags-list {
+	text-align: center;
 }
 
 

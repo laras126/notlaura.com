@@ -1,7 +1,7 @@
-<header class="section-header" id="{{section.menu_item_title|sanitize}}">
-	<div class="contain-sm">
+{% if section.section_title %}
 
-		<hr class="bleed">
+<header class="section-header{{section.css_class ? ' ' ~ section.css_class}}"{{section.menu_item_title ? ' id="' ~ section.menu_item_title|sanitize ~ '"'}}>
+	<div class="contain-sm">
 
 		<h3 class="section-title">{{section.section_title}}</h3>
 		
@@ -22,3 +22,5 @@
 	
 	</div>
 </header> <!-- /.section-header -->
+
+{% endif %}

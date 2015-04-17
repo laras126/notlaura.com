@@ -2,33 +2,27 @@
 
 {% block title_area %}
 
-	{% if post.post_type == 'project' %}
-		<nav class="clearfix pagenav bleed">
-			<div class="pagenav-link link-prev">
-				{% if post.prev %}
-				<a href="{{post.prev.link}}" title="Previous Project">
-					{% include 'partials/svg.twig' with { 'file': 'arrow-left', 'prefix': 'icon' } %}
-				</a>
-				{% endif %}
-			</div>
-			<div class="pagenav-middle">
-	{% endif %}
+	<nav class="clearfix pagenav bleed">
+		<div class="pagenav-link link-prev">
+			{% if post.prev %}
+			<a href="{{post.prev.link}}" title="Previous Project">
+				{% include 'partials/svg.twig' with { 'file': 'arrow-left', 'prefix': 'icon' } %}
+			</a>
+			{% endif %}
+		</div>
+		<div class="pagenav-middle">
+			<h1 class="page-title">{{post.title}}</h1>
+		</div>	
 
-	<h1 class="page-title">{{post.title}}</h1>
-	
-	{% if post.post_type == 'project' %}
-			</div>	
+		<div class="pagenav-link link-next">
+			{% if post.next %}
+			<a href="{{post.next.link}}" title="Next Project">
+				{% include 'partials/svg.twig' with { 'file': 'arrow-right', 'prefix': 'icon' } %}
+			</a>
+			{% endif %}
+		</div>
 
-			<div class="pagenav-link link-next">
-				{% if post.next %}
-				<a href="{{post.next.link}}" title="Next Project">
-					{% include 'partials/svg.twig' with { 'file': 'arrow-right', 'prefix': 'icon' } %}
-				</a>
-				{% endif %}
-			</div>
-
-		</nav> <!-- /.pagenav -->
-	{% endif %}
+	</nav> <!-- /.pagenav -->
 
 {% endblock %}
 

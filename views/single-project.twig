@@ -27,6 +27,8 @@
 	</div>
 	
 	{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+
+	{# Not using these at the moment. #}
 {# 	<div class="contain-md">
 		{% if post.get_terms('tag') %}
 			<p class="meta-greyed tags-list">Keywords:  
@@ -37,5 +39,6 @@
 		{% endif %}
 	</div> #}
 
-
+	{% include 'partials/prev-next.twig' %}
+	
 {% endblock %}

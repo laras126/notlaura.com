@@ -33,35 +33,54 @@ $(document).ready(function() {
 		
 
 
-	// ----
- 	// Accordian
- 	// ----
+	// // ----
+ // 	// Accordian
+ // 	// ----
 
- 	// Needs to be cleaned up still
+ // 	// Needs to be cleaned up still
 
-  function close_accordion_section() {
-        $('.accordion .acc-link').removeClass('active');
-        $('.accordion .acc-content').slideUp(300).removeClass('open');
-    }
+ //  function close_accordion_section() {
+ //        $('.accordion .acc-link').removeClass('active');
+ //        $('.accordion .acc-content').slideUp(300).removeClass('open');
+ //    }
  
-    $('.acc-link').on('click', function(e) {
-        // Grab current anchor value
-        var currentAttrValue = $(this).attr('href');
+ //    $('.acc-link').on('click', function(e) {
+ //        // Grab current anchor value
+ //        var currentAttrValue = $(this).attr('href');
  
-        if($(e.target).is('.active')) {
-            close_accordion_section();
-        } else {
-            close_accordion_section();
+ //        if($(e.target).is('.active')) {
+ //            close_accordion_section();
+ //        } else {
+ //            close_accordion_section();
  
-            // Add active class to section title
-            $(this).addClass('active');
+ //            // Add active class to section title
+ //            $(this).addClass('active');
 
-            // Open up the hidden content panel
-            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
-        }
+ //            // Open up the hidden content panel
+ //            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+ //        }
  
-        e.preventDefault();
-    });
+ //        e.preventDefault();
+ //    });
+
+// ----
+// Smooth scrolling
+// ----
+
+// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+
+	$('a[href*=#]:not([href=#])').click(function() {
+    	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+	      		var target = $(this.hash);
+	      		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      		if (target.length) {
+	        		$('html,body').animate({
+	          			scrollTop: target.offset().top
+	        		}, 1000);
+	        	return false;
+      		}
+    	}
+ 	});
 
 
 

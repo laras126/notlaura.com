@@ -2837,7 +2837,7 @@ figure {
 }
 
 figcaption {
-  padding: 0.29333rem;
+  padding: 0.66rem;
   text-align: center;
   font-size: 0.88rem;
 }
@@ -2925,7 +2925,6 @@ figcaption {
 
 .tease-thumb {
   margin-bottom: 1.43rem;
-  height: 21.45rem;
 }
 @media (min-width: 42em) {
   .tease-thumb {

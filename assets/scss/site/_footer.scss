@@ -44,22 +44,15 @@
 			}
 		}
 
-		// .credit {
-		// 	@include make-sm-column($c * 1/2, false);
-		// }
-		
-		// .tech {
-		// 	@include bp(small) {
-		// 		text-align: right;	
-		// 	}
-				
-		// }
-
 	}
 
 
+.col-15 {
+	@include make-md-column($c * 1/5);
+}
+
 .widget {
-	@include make-md-column($c/2);
+	@include make-md-column($c * 2/5);
 }
 
 	.widget-title {}

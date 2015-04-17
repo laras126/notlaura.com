@@ -2994,12 +2994,22 @@ figcaption {
 }
 
 @media (min-width: 42em) {
+  .col-15 {
+    float: left;
+    position: relative;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
+    width: 20%;
+  }
+}
+
+@media (min-width: 42em) {
   .widget {
     float: left;
     position: relative;
     padding-left: 0.99rem;
     padding-right: 0.99rem;
-    width: 50%;
+    width: 40%;
   }
 }
 

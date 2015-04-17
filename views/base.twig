@@ -5,7 +5,7 @@
     </head>
 {% endblock %}
 
-    <body class="{{body_class}} wf-loading" data-template="base.twig" id="pageTop">
+    <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
         
         <div class="invisible">
             {% include 'partials/svg-defs.svg' %}    
@@ -38,10 +38,10 @@
 
         {% block footer %}
             
-            <nav class="link-back-top">
+            <nav class="link-back-top spacer-bot">
                 {# <div id="back-top"> #}
                     <a href="#top">
-                        {% include 'partials/svg.twig' with {'icon': 'arrow-up', 'prefix': 'icon' } %}
+                        {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
                     </a>
                 {# </div> #}
             </nav>

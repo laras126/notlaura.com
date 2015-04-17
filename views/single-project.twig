@@ -7,6 +7,7 @@
 {% block content %}
 	
 	<div class="contain-md">
+
 		{% if post.get_terms('project-type') %}
 			<p class="meta-greyed tags-list spacer-top">Filed under: 
 				{% for type in post.get_terms('project-type') %}
@@ -14,24 +15,27 @@
 				{% endfor %}
 			</p>
 		{% endif %}
-	
-		{{ post.image ? '<hr>' }}
-	
+
 		{% if post.project_link %}
-			<a href="{{post.project_link}}" target="blank" class="btn">Launch project</a>
+			<div class="text-center spacer-top spacer-bot">
+				<a href="{{post.project_link}}" target="blank" class="btn">Launch Project</a>
+			</div>
 		{% endif %}
+		
+		{{ post.image ? '<hr>' }}
+
 	</div>
 	
 	{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
-	<div class="contain-md">
-		{% if post.get_terms('project-keyword') %}
+{# 	<div class="contain-md">
+		{% if post.get_terms('tag') %}
 			<p class="meta-greyed tags-list">Keywords:  
-				{% for tag in post.get_terms('post_tag') %}
+				{% for tag in post.get_terms('tag') %}
 					<a href="{{tag.link}}">{{tag.name}}</a>{{ loop.last ? '' : ', ' }}
 				{% endfor %}
 			</p>
 		{% endif %}
-	</div>
+	</div> #}
 
 
 {% endblock %}

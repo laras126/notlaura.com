@@ -125,11 +125,31 @@ input[type="checkbox"]:focus {
 		-webkit-appearance: none;
 	}
 
-	.top_label .gfield_label {
-		font-size: $base;
-		font-weight: 500;
+	.gfield {
 		margin-top: $h3;
-		margin-bottom: $sml;
+	}
+
+	.top_label .gfield_label {
+		font-size: $h4;
+		font-family: $heading-font;
+		font-weight: 500;
+		margin-bottom: $xsml;
+	}
+
+	.gfield_checkbox {
+		@include unstyle-list;
+		
+		li {
+			line-height: 2;
+		}
+
+		input, label {
+			display: inline-block;
+		}
+
+		label {
+			margin-left: $xsml;
+		}
 	}
 
 	.gfield_checkbox li input[type=checkbox],
@@ -147,8 +167,8 @@ input[type="checkbox"]:focus {
 
 	.gform_footer input.button,
 	.gform_footer input[type=submit] {
+		@extend .btn-cta;
 		margin-top: $h3;
-		display: inline-block;
 	}
 
 	.ginput_complex label, 
@@ -181,11 +201,6 @@ input[type="checkbox"]:focus {
 .gf_left_half,
 .gf_right_half {
 	
-	.gfield_label {
-		// Ew.
-		margin-top: 0 !important;
-	}
-	
 	@include make-xs-column($c, false);
 	@include make-md-column($c/2, false);
 
@@ -205,14 +220,14 @@ input[type="checkbox"]:focus {
 		clear:left !important;
 
 		@include bp(med) {
-			margin-bottom: $h3;
+			margin-bottom: $h2;
 		}
 	}
 
 	.gf_right_half {
 		float:right;
 		clear:right !important;
-		margin-bottom: $h3;
+		margin-bottom: $h2;
 	}
 
 

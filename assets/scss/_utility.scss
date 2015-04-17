@@ -22,10 +22,6 @@ a.special-alt {
 		top: 55%;
 	}
 
-.space-hack-table {
-	margin-left: $h3;
-}
-
 .spacer-top {
 	margin-top: $h3;
 }
@@ -56,6 +52,10 @@ a.special-alt {
 
 .outline {
 	border: 5px solid $accent-light;
+}
+
+.rm-margin {
+	margin: 0;
 }
 
 // WordPress utility classes

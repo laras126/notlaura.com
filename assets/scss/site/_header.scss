@@ -1,25 +1,10 @@
 
 .site-header { 
     @include container($screen-lg);
-
-    @include bp(med) {
-        // display: table;
-    }
 }
 
-    .site-header .contain-lg {
-        @include bp(med) {
-            // display: table-row;
-        }
-    }
-
 .site-info,
-.site-nav {
-    @include bp(med) {
-        // display: table-cell;
-        // vertical-align: middle;
-    }
-    
+.site-nav {    
     @include make-xs-column($c, false);
 }
 

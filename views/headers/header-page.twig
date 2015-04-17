@@ -1,7 +1,7 @@
 <header class="page-header">
 
 	<div class="contain-md">
-		
+
 		{% block title_area %}
 			<h1 class="page-title">{{post.title}}</h1>
 		{% endblock %}
@@ -12,13 +12,14 @@
 		
 		{% if post.image and post.svg is empty%}
 			<figure class="bleed">
-				
-				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
-				
+				{# Logic for project link. #}
+				{{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}
+					<img class="page-header-image img-flex" src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
+				{{post.project_link ? '</a>'}}
+
 				{% if post.image_caption %}
 					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
 				{% endif %}
-
 			</figure>
 		{% endif %}
 

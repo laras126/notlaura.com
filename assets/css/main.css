@@ -1357,6 +1357,11 @@ Those are primarily for prototyping purposes, but not
 exclusively.
 
 */
+.center-block {
+  margin: 0 auto;
+  display: block;
+}
+
 .img-flex {
   width: 100%;
 }
@@ -1394,6 +1399,11 @@ exclusively.
   .bleed-right {
     margin-right: -10%;
   }
+}
+
+.upperspace {
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .meta-cite {
@@ -1463,6 +1473,26 @@ exclusively.
     padding-left: 0.99rem;
     padding-right: 0.99rem;
     width: 83.33333%;
+  }
+}
+
+@media (min-width: 36em) {
+  .col-14 {
+    float: left;
+    position: relative;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
+    width: 25%;
+  }
+}
+
+@media (min-width: 36em) {
+  .col-34 {
+    float: left;
+    position: relative;
+    padding-left: 0.99rem;
+    padding-right: 0.99rem;
+    width: 75%;
   }
 }
 
@@ -1849,11 +1879,28 @@ input[type="checkbox"]:focus {
   padding: 0.66rem 0.88rem;
   -webkit-appearance: none;
 }
-.gform_wrapper .top_label .gfield_label {
-  font-size: 1.1rem;
-  font-weight: 500;
+.gform_wrapper .gfield {
   margin-top: 1.98rem;
-  margin-bottom: 0.88rem;
+}
+.gform_wrapper .top_label .gfield_label {
+  font-size: 1.43rem;
+  font-family: "museo-slab-1", "Georgia", serif;
+  font-weight: 500;
+  margin-bottom: 0.66rem;
+}
+.gform_wrapper .gfield_checkbox {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+.gform_wrapper .gfield_checkbox li {
+  line-height: 2;
+}
+.gform_wrapper .gfield_checkbox input, .gform_wrapper .gfield_checkbox label {
+  display: inline-block;
+}
+.gform_wrapper .gfield_checkbox label {
+  margin-left: 0.66rem;
 }
 .gform_wrapper .gfield_checkbox li input[type=checkbox],
 .gform_wrapper .gfield_radio li input[type=radio],
@@ -1868,7 +1915,6 @@ input[type="checkbox"]:focus {
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
   margin-top: 1.98rem;
-  display: inline-block;
 }
 .gform_wrapper .ginput_complex label,
 .gform_wrapper .gfield_time_hour label,
@@ -1902,10 +1948,6 @@ input[type="checkbox"]:focus {
   position: relative;
   width: 100%;
 }
-.gf_left_half .gfield_label,
-.gf_right_half .gfield_label {
-  margin-top: 0 !important;
-}
 @media (min-width: 42em) {
   .gf_left_half,
   .gf_right_half {
@@ -1930,14 +1972,14 @@ input[type="checkbox"]:focus {
 }
 @media (min-width: 42em) {
   .gf_left_half {
-    margin-bottom: 1.98rem;
+    margin-bottom: 2.64rem;
   }
 }
 
 .gf_right_half {
   float: right;
   clear: right !important;
-  margin-bottom: 1.98rem;
+  margin-bottom: 2.64rem;
 }
 
 .mc-signup {
@@ -2040,7 +2082,8 @@ input[type="checkbox"]:focus {
   text-align: center;
 }
 
-.btn-cta {
+.btn-cta, .gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit] {
   background: #237fa9;
   font-weight: 500;
   border-radius: 2px;
@@ -2052,12 +2095,15 @@ input[type="checkbox"]:focus {
   margin-top: 1.43rem;
   font-size: 1.43rem;
 }
-.btn-cta:hover, .btn-cta:focus {
+.btn-cta:hover, .gform_wrapper .gform_footer input.button:hover,
+.gform_wrapper .gform_footer input[type=submit]:hover, .btn-cta:focus, .gform_wrapper .gform_footer input.button:focus,
+.gform_wrapper .gform_footer input[type=submit]:focus {
   background: #1a5f7f;
   color: #ffffff;
   border-color: #237fa9;
 }
-.btn-cta:active {
+.btn-cta:active, .gform_wrapper .gform_footer input.button:active,
+.gform_wrapper .gform_footer input[type=submit]:active {
   background: #09202a;
   border-color: #1a5f7f;
 }
@@ -2786,26 +2832,6 @@ figure {
   border-top: 1px dotted #86b2c6;
 }
 
-@media (min-width: 36em) {
-  .intent-type {
-    float: left;
-    position: relative;
-    padding-left: 0.99rem;
-    padding-right: 0.99rem;
-    width: 14.28571%;
-  }
-}
-
-@media (min-width: 36em) {
-  .intent-content {
-    float: left;
-    position: relative;
-    padding-left: 0.99rem;
-    padding-right: 0.99rem;
-    width: 85.71429%;
-  }
-}
-
 .section-content {
   padding-bottom: 3.3rem;
 }
@@ -2884,7 +2910,7 @@ figcaption {
 }
 
 .tease-post {
-  margin-top: 4.95rem;
+  margin-bottom: 6.6rem;
 }
 
 .tease-title {
@@ -2892,10 +2918,7 @@ figcaption {
   margin-bottom: 1.1rem;
 }
 
-.header-tease {
-  border-top: 1px dotted #86b2c6;
-  padding-top: 1.43rem;
-  margin-top: 2.64rem;
+.tease-header {
   padding-bottom: 2.64rem;
   text-align: center;
 }
@@ -3215,13 +3238,6 @@ img.caption-image {
   text-align: center;
 }
 
-.block_related_page {
-  background-color: #f4f7f9;
-  padding-bottom: 1.1rem;
-  padding-top: 1.1rem;
-  margin-top: 1.1rem;
-}
-
 .block_testimonial {
   padding-top: 1.98rem;
 }
@@ -3247,10 +3263,6 @@ a.special-alt {
   right: 0;
   left: 0;
   top: 55%;
-}
-
-.space-hack-table {
-  margin-left: 1.98rem;
 }
 
 .spacer-top {
@@ -3283,6 +3295,10 @@ a.special-alt {
 
 .outline {
   border: 5px solid #e6e6e6;
+}
+
+.rm-margin {
+  margin: 0;
 }
 
 .alignleft {

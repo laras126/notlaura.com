@@ -28,6 +28,10 @@ exclusively.
     display: block;
 }
 
+.center-block {
+    @include center-block;
+}
+
 .img-flex {
     width: 100%;
 }
@@ -142,6 +146,10 @@ exclusively.
     letter-spacing: 1px;
 }
 
+.upperspace {
+    @include upperspace;
+}
+
 
 // Small, sans-serif text.
 // Used primarily for forms and complimentary information.
@@ -242,6 +250,8 @@ exclusively.
 // Layout
 // ----
 
+// Note: the two numbers indicate 1 of 6 (16), 3 of 4 (34), etc.
+
 .col-16 {
     @include make-sm-column($c * 1/6);
 }
@@ -250,6 +260,13 @@ exclusively.
     @include make-sm-column($c * 5/6);
 }
 
+.col-14 {
+    @include make-sm-column($c * 1/4);
+}
+
+.col-34 {
+    @include make-sm-column($c * 3/4);
+}
 
 .invisible {
     display: none;

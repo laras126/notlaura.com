@@ -86,7 +86,11 @@ h5 {
 	font-size: $h5;
 	margin-top: $h3;
 	@include upperspace;
-	color: $text-med;
+
+	.site-main & {
+		color: $text-med;
+	}
+	
 	font-family: $body-font;
 	font-weight: 300;
 }

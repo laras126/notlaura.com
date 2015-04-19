@@ -20,14 +20,18 @@
 {% endblock %}
 
 {% block content %}
+
 	{% for post in posts %}
 		{% include ['teases/tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
 	{% endfor %}
-		<div class="tool-pagination">
-	    {% if pagination.prev %}
-	        <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
-	    {% endif %}
-	    <ul class="pages">
+
+	<nav class="pagination contain-sm">
+    	<div class="pagenav-link">
+    		{% if pagination.prev %}
+    			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Previous</a>
+			{% endif %}
+		</div>
+	    <ul class="pages pagenav-middle">
 	        {% for page in pagination.pages %}
 	            <li>
 	                {% if page.link %}
@@ -38,8 +42,12 @@
 	            </li>
 	        {% endfor %}
 	    </ul>
-	    {% if pagination.next %}
-	        <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
-	    {% endif %}
-	</div>
+	    <div class="pagenav-link">
+	    	{% if pagination.next %}
+	    		<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+	        {% endif %}
+	    </div>
+	</nav> <!-- /.pagination -->
+	
+
 {% endblock %}

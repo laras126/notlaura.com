@@ -1,14 +1,28 @@
 
 .site-footer {
 	border-top: $sml/2 solid $accent-light;
-	@include rotate;	
-	font-size: $sml;
+	@include rotate;
 
 	a {
 		@include unstyle-link;
 	}
 
 }
+	
+	.list-services {
+		@include unstyle-list;
+		margin-top: $base;
+		@include bp(small) {
+			@include horizontal-list;
+		}
+
+		li {
+			font-size: $sml;
+			
+			&:before {
+			}
+		}
+	}
 
 	.list-social {
 		@include unstyle-list(false);
@@ -47,12 +61,13 @@
 	}
 
 
-.col-15 {
-	@include make-md-column($c * 1/5);
-}
+// .col-15 {
+// 	@include make-lg-column($c * 1/5);
+// }
 
 .widget {
-	@include make-md-column($c * 2/5);
+	@include make-md-column($c * 1/2);
+	font-size: $sml;
 }
 
 	.widget-title {}

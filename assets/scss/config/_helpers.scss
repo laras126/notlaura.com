@@ -129,7 +129,9 @@ exclusively.
 }
 
 .meta-cite {
+    @include meta($color: $accent-dark);
     text-align: right;
+    margin-top: $base;
 }
 
 .meta-greyed {

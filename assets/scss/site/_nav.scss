@@ -126,13 +126,19 @@
         border-top: 0;    
     }
 
-.content-nav ul {
-    @include horizontal-list;
-    text-align: center;
+
+// Section nav on pages
+
+.section-nav ul {
+    @include horizontal-list($center: true, $margin: $xsml);
     margin-top: $h4;
 
     li {
         padding: $sml;    
+    }
+
+    a {
+        @include meta($color: $accent-dark);
     }
     
 }

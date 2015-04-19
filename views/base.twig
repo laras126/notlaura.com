@@ -39,11 +39,9 @@
         {% block footer %}
             
             <nav class="link-back-top spacer-bot">
-                {# <div id="back-top"> #}
-                    <a href="#top">
-                        {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
-                    </a>
-                {# </div> #}
+                <a href="#top">
+                    {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
+                </a>
             </nav>
 
             <footer class="site-footer" role="contentinfo">
@@ -51,7 +49,7 @@
                 <div class="contain-md text-center">
                     <h5>What can I do for you?</h5>
                     <ul class="list-services">
-                        <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish</a></li>
+                        <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish.</a></li>
                         <li><a href="{{site.link}}/fish-with-me">Let's fish together!</li>
                         <li><a href="{{site.link}}/fish-for-me">Fish for me.</a></li>
                     </ul>
@@ -64,7 +62,7 @@
 
                 <div class="colophon rotate-med text-center">
                     <div class="contain-lg">
-                        <p class="credit">&copy; Lara Schenck, LLC. Powered by <a href="http://wordpress.org" target="blank">WordPress</a> and <a href="http://upstatement.com/timber" target="blank">Timber</a>, hosted by WebFaction. Source <a href="http://github.com/laras126/notlaura.com" target="blank">on Github</a>.</p>
+                        <p class="credit">&copy; Lara Schenck, LLC. Powered by <a href="http://wordpress.org" target="blank">WordPress</a> and <a href="http://upstatement.com/timber" target="blank">Timber</a>, hosted by <a href="http://webfaction.com" target="blank">WebFaction</a>. Source <a href="http://github.com/laras126/notlaura.com" target="blank">on Github</a>.</p>
                     </div>
                 </div>
             </footer>

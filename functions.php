@@ -81,10 +81,7 @@
 	/*
 	 **************************
 	 * Custom Theme Functions *
-	 **************************
-	 *
-	 * Namespaced "nl" - find and replace with your own three-letter-thing.
-	 * 
+	 ************************** 
 	 */ 
 
 	// Enqueue scripts
@@ -196,7 +193,7 @@
 	// https://imperativeideas.com/making-custom-fields-work-yoast-wordpress-seo/
 
 	if ( is_admin() ) { // check to make sure we aren't on the front end
-		add_filter('wpseo_pre_analysis_post_content', 'dfi_add_custom_to_yoast');
+		add_filter('wpseo_pre_analysis_post_content', 'nl_add_custom_to_yoast');
 
 		function dfi_add_custom_to_yoast( $content ) {
 			global $post;
@@ -214,10 +211,45 @@
 			$content = $content . ' ' . $custom_content;
 			return $content;
 
-			remove_filter('wpseo_pre_analysis_post_content', 'dfi_add_custom_to_yoast'); // don't let WP execute this twice
+			remove_filter('wpseo_pre_analysis_post_content', 'nl_add_custom_to_yoast'); // don't let WP execute this twice
 		}
 	}
 
 	// Remove inline gallery styles
 	add_filter( 'use_default_gallery_style', '__return_false' );
+
+
+
+
+
+
+	/**
+	 * Google Analytics snippet from HTML5 Boilerplate
+	 * 
+	 * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
+	 */
+
+	define('GOOGLE_ANALYTICS_ID', 'UA-12198561-4');
+	function mtn_google_analytics() { ?>
+	<script>
+	  <?php if (WP_ENV === 'production') : ?>
+	    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	    e.src='//www.google-analytics.com/analytics.js';
+	    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	  <?php else : ?>
+	    function ga() {
+	      console.log('GoogleAnalytics: ' + [].slice.call(arguments));
+	    }
+	  <?php endif; ?>
+	  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>','auto');ga('send','pageview');
+	</script>
+
+	<?php }
+
+	if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
+	  add_action('wp_footer', 'mtn_google_analytics', 20);
+	}
+
 

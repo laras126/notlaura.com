@@ -130,12 +130,19 @@
 // Section nav on pages
 
 .section-nav ul {
-    @include horizontal-list($center: true, $margin: $xsml);
+    padding-left: 0;
+    text-align: center;
+    @include unstyle-list;
+    
+    @include bp(small) {
+        @include horizontal-list($margin: $xsml);
+        li {
+            padding: $xsml;    
+        }
+    }
+
     margin-top: $h4;
 
-    li {
-        padding: $sml;    
-    }
 
     a {
         @include meta($color: $accent-dark);

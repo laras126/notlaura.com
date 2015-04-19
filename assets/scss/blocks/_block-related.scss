@@ -4,3 +4,9 @@
 	// padding-left: $base;
 	// padding-right: $base;
 }
+
+
+.related-thumb {
+	border: $accent-border-thick;
+	@include center-block;
+}

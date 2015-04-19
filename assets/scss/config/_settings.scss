@@ -121,7 +121,8 @@ $heading-font-weight: 500;
 // ---- Utilities 
 // ----
 
-$accent-border: 	1px dotted $accent-med;
+$accent-border: 		1px dotted $accent-med;
+$accent-border-thick: 	5px solid $accent-light;
 
 // Z-Index Scale
 $zbase: 			1;

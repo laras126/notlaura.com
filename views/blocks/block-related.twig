@@ -5,9 +5,10 @@
 		
 	{% for related in blck.page %}
 		<div class="alert clearfix">
-			{{related.post.thumbnail.src}}
 			<div class="col-14">
-				<img class="spacer-top" src="http://placehold.it/300x300" alt="">
+				<a href="'~related.guid~'">
+					<img class="related-thumb spacer-top" src="{{TimberImage(blck.thumbnail).src|resize(300, 300)}}" alt="{{related.title}}">
+				</a>
 			</div>
 			<div class="col-34 spacer-bot">
 				<h4 class="related-title">{{related.post_title}}</h4>

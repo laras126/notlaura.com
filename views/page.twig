@@ -18,25 +18,7 @@
 				{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
 			</div> <!-- /.section-content -->
 
-		</section> <!-- /#{{menu_link_id}} -->
+		</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
 	
 	{% endfor %}
-
-	{# {% if prev and next %}
-		<nav class="contain-lg page-nav">
-			<div class="xs-1of2">
-				<a href="{{prev.permalink}}" title="{{prev.post_title}}">
-					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-left' } %}
-					<p class="page-nav-text">{{prev.post_title}}</p>
-				</a>
-			</div>
-			<div class="xs-1of2 text-right">
-				<a href="{{next.permalink}}" title="{{next.post_title}}">
-					<p class="page-nav-text">{{next.post_title}}</p>
-					{% include 'partials/svg.twig' with { 'prefix': 'icon', 'file': 'arrow-right' } %}
-				</a>
-			</div>
-		</nav>
-	{% endif %} #}
-
 {% endblock %}

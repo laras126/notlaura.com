@@ -100,52 +100,16 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// For subnav
-	// $menuTrigger.click(function(e) {
-	// 	e.preventDefault();
-	// 	var $this = $(this);
-	// 	$this.toggleClass('active').next('ul').toggleClass('active');
-	// });
-		
 
 
-	// // ----
- // 	// Accordian
- // 	// ----
 
- // 	// Needs to be cleaned up still
+	// ----
+	// Smooth scrolling
+	// ----
 
- //  function close_accordion_section() {
- //        $('.accordion .acc-link').removeClass('active');
- //        $('.accordion .acc-content').slideUp(300).removeClass('open');
- //    }
- 
- //    $('.acc-link').on('click', function(e) {
- //        // Grab current anchor value
- //        var currentAttrValue = $(this).attr('href');
- 
- //        if($(e.target).is('.active')) {
- //            close_accordion_section();
- //        } else {
- //            close_accordion_section();
- 
- //            // Add active class to section title
- //            $(this).addClass('active');
+	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
- //            // Open up the hidden content panel
- //            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
- //        }
- 
- //        e.preventDefault();
- //    });
-
-// ----
-// Smooth scrolling
-// ----
-
-// https://css-tricks.com/snippets/jquery/smooth-scrolling/
-
-	$('a[href*=#]:not([href=#])').click(function() {
+	$('a[href*=#]:not([href=#menu])').click(function() {
     	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
 	      		var target = $(this.hash);
 	      		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -198,7 +162,7 @@ $(document).ready(function() {
 	// Hack to keep out widows
 	// http://css-tricks.com/preventing-widows-in-post-titles/
    
-	$('.item-title, .section-title, .main p, .lead').each( function() {
+	$('.page-title, .page-tagline, .lead').each( function() {
 		var wordArray = $(this).text().split(" ");
 		if (wordArray.length > 3) {
 			wordArray[wordArray.length-2] += "&nbsp;" + wordArray[wordArray.length-1];

@@ -2717,6 +2717,7 @@ figure {
 
 .site-nav {
   text-align: center;
+  background-color: #ffffff;
   margin-top: 0.88rem;
   padding: 0.88rem 0;
   text-transform: lowercase;
@@ -2854,6 +2855,42 @@ figure {
 }
 .pages .current {
   border-bottom: 3px solid #86b2c6;
+}
+
+.menu-link {
+  padding: 0.88rem;
+}
+
+.menu-link a {
+  float: right;
+}
+
+.menu-link span {
+  transition: all 0.05s ease-in-out;
+  width: 30px;
+  height: 3px;
+  display: block;
+  background: #237fa9;
+  margin: 0 0 5px 0;
+  border-radius: 1px;
+}
+
+.menu-link span:last-child {
+  margin: 0;
+}
+
+.menu-link.active span:nth-of-type(1) {
+  transform: rotate(45deg);
+  margin: 10px 0 0 0;
+}
+
+.menu-link.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-link.active span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  margin: -11px 0 0 0;
 }
 
 .site-header {

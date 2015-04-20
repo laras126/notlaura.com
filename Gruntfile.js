@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+    // Load all tasks
+    require('load-grunt-tasks')(grunt);
+
     // 1. All configuration goes here 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -23,6 +26,14 @@ module.exports = function(grunt) {
                     'assets/js/_*.js'
                 ],
                 dest: 'assets/js/build/scripts.js',
+            }
+        },
+
+        uglify: {
+            dest: {
+                files: {
+                    'assets/js/build/scripts.min.js': ['assets/js/scripts.js']
+                }
             }
         },
 
@@ -73,6 +84,33 @@ module.exports = function(grunt) {
             }
         },
 
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
+            },
+            
+            dev: {
+                options: {
+                    map: {
+                        prev: 'assets/css/'
+                    }
+                },
+            
+                src: 'assets/css/main.min.css'
+            }
+        },
+
+        cssmin: {
+            options: {
+                keepSpecialComments: 0
+            },
+            
+            css: {
+                src: 'assets/css/main.css',
+                dest: 'assets/css/main.min.css'
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['assets/js/*.js', 'assets/**/*.scss'],
@@ -106,22 +144,28 @@ module.exports = function(grunt) {
         
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-svgstore');
-    grunt.loadNpmTasks('grunt-svgmin');
+    // grunt.loadNpmTasks('grunt-contrib-concat');
+    // grunt.loadNpmTasks('grunt-contrib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-watch');
+    // grunt.loadNpmTasks('grunt-contrib-sass');
+    // grunt.loadNpmTasks('grunt-svgstore');
+    // grunt.loadNpmTasks('grunt-svgmin');
     
     // Register tasks
     grunt.registerTask('default', [
         'sass',
         'concat',
+        'uglify',
         'jshint',
         'svgstore',
         'svgmin'
       ]);
 
+    grunt.registerTask('build', [
+        'autoprefixer:dev',
+        'cssmin'
+    ]);        
+    
     grunt.registerTask('svgs', [
         'svgmin',
         'svgstore'

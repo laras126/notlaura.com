@@ -30,6 +30,7 @@
 
 .site-nav {
     text-align: center;
+    background-color: $body-bkgd;
     margin-top: $sml;
     padding: $sml 0;
     text-transform: lowercase;
@@ -182,3 +183,48 @@
         border-bottom: 3px solid $accent-med;
     }
 }
+
+
+
+
+// ----
+// Hamburger menu Icon
+// http://codepen.io/lexstefan/pen/mwtcn
+// ----
+
+.menu-link {
+    padding: $sml;
+}
+
+    .menu-link a {
+        float: right;
+    }
+
+    .menu-link span {
+        transition: all 0.05s ease-in-out;
+        width: 30px;
+        height: 3px;
+        display: block;
+        background: $accent-dark;
+        margin: 0 0 5px 0;
+        border-radius: 1px;
+    }
+    
+    .menu-link span:last-child {
+        margin:0;
+    }
+    
+    .menu-link.active span:nth-of-type(1) {
+        transform: rotate(45deg);
+        margin: 10px 0 0 0;
+    }
+
+    .menu-link.active span:nth-of-type(2) {
+        opacity:0;
+    }
+
+    .menu-link.active span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        margin: -11px 0 0 0;
+    }
+

@@ -130,7 +130,9 @@
 	 * 
 	 * Nice to Haves
 	 *
-	 * These functions aren't necessary, more things I find myself writing over and over
+	 * These functions aren't necessary, 
+	 * more things I find myself writing over and over
+	 *
 	 */
 
 	
@@ -195,7 +197,7 @@
 	if ( is_admin() ) { // check to make sure we aren't on the front end
 		add_filter('wpseo_pre_analysis_post_content', 'nl_add_custom_to_yoast');
 
-		function dfi_add_custom_to_yoast( $content ) {
+		function nl_add_custom_to_yoast( $content ) {
 			global $post;
 			$pid = $post->ID;
 			
@@ -221,13 +223,8 @@
 
 
 
-
-
-	/**
-	 * Google Analytics snippet from HTML5 Boilerplate
-	 * 
-	 * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
-	 */
+	// Google Analytics snippet from HTML5 Boilerplate
+	// Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
 
 	define('GOOGLE_ANALYTICS_ID', 'UA-12198561-4');
 	function mtn_google_analytics() { ?>
@@ -251,5 +248,4 @@
 	if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
 	  add_action('wp_footer', 'mtn_google_analytics', 20);
 	}
-
 

@@ -1562,6 +1562,12 @@ exclusively.
   display: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  top: -9999999px;
+  left: -9999999px;
+}
+
 @media (min-width: 36em) {
   .col-16 {
     float: left;

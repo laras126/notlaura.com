@@ -6,11 +6,7 @@
 {% endblock %}
 
     <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
-        
-        <div class="invisible">
-            {% include 'partials/svg-defs.svg' %}    
-        </div>
-        
+    
         <header class="site-header" role="banner">
             {% block header %}
                 {% include 'headers/header-site.twig' %}

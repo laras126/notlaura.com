@@ -70,8 +70,8 @@
 
             // https://css-tricks.com/ajaxing-svg-sprite/
 
-            var template_url = "{{site.link}}";
-            $.get(template_url+"/wp-content/themes/nlv2/views/partials/svg-defs.svg", function(data) {
+            var template_url = "{{site.theme.link}}";
+            $.get(template_url+"/views/partials/svg-defs.svg", function(data) {
                 var div = document.createElement('div');
                 div.className = 'visually-hidden';
                 div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);

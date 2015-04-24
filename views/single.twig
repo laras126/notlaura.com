@@ -22,7 +22,8 @@
 		{% if post.get_terms('tag') %}
 			<p class="meta-greyed tags-list spacer-top">Tagged: 
 				{% for tag in post.get_terms('tag') %}
-					<a href="{{tag.link}}">{{tag.name}}</a>{{ loop.last ? '' : ', ' }}
+					{# Keeping the links out for now until the archive template is ready. #}
+					{#<a href="{{tag.link}}">{{tag.name}}</a>#}{{tag.name}}{{ loop.last ? '' : ', ' }}
 				{% endfor %}
 			</p> 
 		{% endif %}

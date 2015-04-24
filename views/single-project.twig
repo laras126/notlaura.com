@@ -11,7 +11,9 @@
 		{% if post.get_terms('project-type') %}
 			<p class="meta-greyed tags-list spacer-top">Filed under: 
 				{% for type in post.get_terms('project-type') %}
-					<a href="{{type.link}}">{{type.name}}</a>{{ loop.last ? '' : ', ' }}
+					{# Keeping link out until archive template is ready #}
+					{# <a href="{{type.link}}">{{type.name}}</a>{{ loop.last ? '' : ', ' }} #}
+					{{type.name}}{{ loop.last ? '' : ', ' }}
 				{% endfor %}
 			</p>
 		{% endif %}

@@ -104,24 +104,6 @@ $(document).ready(function() {
 
 
 	// ----
-	// Ajax SVG Sprite
-	// ----
-
-	// https://css-tricks.com/ajaxing-svg-sprite/
-	
-	// TODO: Either use the SVG-spritemap plugin or move the defs file out of views. Shouldn't be in there.
-	$.get("http://nl.local/wp-content/themes/nlv2/views/partials/svg-defs.svg", function(data) {
-		var div = document.createElement("div");
-		div.className = 'visually-hidden';
-		div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
-		document.body.insertBefore(div, document.body.childNodes[0]);
-	});
-
-
-
-
-
-	// ----
 	// Smooth scrolling
 	// ----
 

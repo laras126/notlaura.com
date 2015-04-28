@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 node_modules/
 .sass-cache/
 .DS_Store
 
+=======
+.sass-cache/
+.DS_Store
+
+node_modules/
+bower_components/
+>>>>>>> a41342730da1843a52ea2caf9f17127e09ec4c17

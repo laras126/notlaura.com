@@ -1,0 +1,19 @@
+// ----
+// Import Partials
+// Grabbing styles for the site
+// ----
+
+@import "grid";
+@import "forms";
+
+// Main styles
+@import "base";
+@import "nav";
+@import "content";
+
+// Utliity grid for blog
+@import "1140grid";	
+
+// More fluff for larger devices
+// Will move these into the other partials instead
+@import "middle";

@@ -1,0 +1,86 @@
+// -----
+// Settings
+// Variables for fonts, colors, and what not
+// ----- 
+
+
+// -----
+// Breakpoints
+// -----
+
+$small 			: 30em;
+$msm 			: 40em;
+$medium 		: 58em;
+$large 	 		: 100rem;
+
+
+
+// -----
+// Colors
+// -----
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$white:  		#ffffff;
+$black: 		#231f20;
+$grey: 			lighten($black, 10%);
+
+$orange: 		#a94d25;
+
+$dark-blue: 	#237fa9;
+$light-blue: 	lighten(desaturate($dark-blue, 30%), 25%);
+
+$link-color: 	$dark-blue;
+$link-hover: 	darken($link-color, 9%);
+
+$main-font-clr: 	lighten($black, 10%);
+
+$vlight-accent: 	#f4f7f9;
+$light-accent: 		darken($white, 10%);
+$medium-accent: 	$light-blue;
+$dark-accent: 		$dark-blue;
+
+$btn-color: 		$light-blue;
+
+$txt-light: 		darken($light-accent, 20%);
+
+
+
+// -----
+// Typography
+// -----
+
+// Rem Units
+// http://gregrickaby.com/using-the-golden-ratio-and-rems/
+
+$base:  			1.8rem;
+$line-height-base: 	1.5;
+$sml:  				$base*0.8;
+
+$h1:  				$base*2.8;
+$h2:  				$base*1.8;
+$h3:  				$base*1.6;
+$h4:  				$base*1.2;
+$h5:  				$sml;
+
+$sans-serif:        "museo-sans-1";
+$serif:             "museo-slab-1";
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 500;
+}
+
+
+// -----
+// Utilities
+// -----
+
+$accent-border: 	1px dotted $medium-accent;
+

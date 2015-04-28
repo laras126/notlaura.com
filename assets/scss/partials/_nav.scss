@@ -1,0 +1,113 @@
+// ----
+// Navigation
+// ----
+
+// Ze Toggle menu
+
+.menu-link {
+
+    i {
+        font-size: $h2;
+        line-height: $h2;    
+        color: $light-blue;
+    }
+
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+
+    @include bp(baby-bear) {
+        bottom: 25%;
+    }
+
+    // Hide the menu button on mobile
+    @include bp(mama-bear) {
+        display: none;
+    }
+}
+
+
+.site-nav {
+    text-align: center;
+    margin-top: $sml;
+    padding: $sml 0;
+    text-transform: lowercase;
+
+    @include transition(0.3s ease-out);
+    
+    // .js & {
+        overflow: hidden;
+        max-height: 0;
+    // }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    &.active {
+        max-height: 25em;
+    }
+
+    li {
+
+        &:first-child {
+            border-top: $accent-border;
+        }
+
+        a {
+            border-bottom: $accent-border;
+            display: block;
+            padding: $sml;
+            text-align: center;   
+        }
+    }
+
+    // ----
+    // Styles for desktop menu
+    // ----
+
+    @include bp(mama-bear) {
+        text-align: right; 
+        padding-top: 0;
+
+        .js & {
+            max-height: none;
+        }
+
+        ul {
+            // border: 0;
+        }
+
+        li {
+            display: inline-block;
+            
+            a {
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                padding-top: $sml/2;
+                padding-bottom: $sml/2;
+                
+                &:hover, &:focus {
+                    border-bottom: $accent-border;
+                    border-top: $accent-border;
+                }
+            }
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+
+        // Current page highlighter
+        li.current-menu-item, 
+        li.current_page_item,
+        li.current-page-ancestor {
+            a {
+                border-bottom: $accent-border;
+                border-top: $accent-border;
+            }
+        }
+    }
+
+}

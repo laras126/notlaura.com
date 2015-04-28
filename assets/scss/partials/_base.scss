@@ -1,0 +1,193 @@
+// ----
+// Base styles for mobile
+// Includes base selector and content styles
+// ----
+
+// ----
+// General/root
+// ----
+
+html {
+    font-size: 66%;    
+}
+
+body {
+    background-color: $white;
+    font-family: $sans-serif;
+    font-size: $base;
+    font-weight: 300;
+    line-height: $line-height-base;
+    color: $main-font-clr;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dotted $dark-accent;
+}
+
+#container {
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+// ----
+// Links
+// ----
+
+a, a:visited {
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 1px dotted $light-accent;
+
+    /* on hover */
+    &:hover, &:focus {
+        color: $link-hover;
+    }
+
+    /* on click */
+    &:active {
+
+    }
+
+    /* mobile tap color */
+    &:link {
+        /*
+        this highlights links on iPhones/iPads.
+        so it basically works like the :hover selector
+        for mobile devices.
+        */
+        -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+    }
+}
+
+// ----
+// Typography
+// ----
+
+// Bones includes there .h1-.h6 utility styles - not entirely sure how I feel about them anymore, but I'm probably using them in the blog somewhere
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family: $serif;
+    text-rendering: optimizelegibility;
+    font-weight: 500;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1, .h1 {
+    font-size: $h1;
+    margin-top: $h3;
+    margin-bottom: 0;
+}
+
+h2, .h2 {
+    font-size: $h3;
+    margin-top: $h2;
+    margin-bottom: $sml;
+    
+}
+
+h3, .h3 {
+    font-size: $h3;
+    margin-top: $h2;
+    margin-bottom: $sml;
+}
+
+h4, .h4 {
+    font-size: $h4;
+    margin-top: $h2;
+    margin-bottom: $sml;
+}
+
+h5, .h5 {
+    margin: $h3 0 $sml;
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    letter-spacing: 2px;
+    font-size: $sml;
+    font-weight: 300;
+}
+
+blockquote {
+    font-size: $h4;
+    margin: $h4 0;
+    font-family: $serif;
+    padding-left: 2rem;
+    border-left: 1px solid $light-blue;
+    margin-bottom: $h3;
+    font-style: italic;
+}
+
+p {
+    margin-bottom: $sml;
+}
+
+.lead {
+    font-size: $base;
+}
+
+
+// Tables
+// Yes, I may use tables sometime!
+
+table {
+    width: 100%;
+    border: 1px solid $light-accent;
+    margin-bottom: 1.5em;
+
+    caption {
+        margin: 0 0 7px;
+        font-size: 0.75em;
+        color: $txt-light;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+tr {
+    border-bottom: 1px solid $light-accent;
+
+    &:nth-child(even) {
+        background-color: $vlight-accent;
+    }
+}
+
+td {
+    padding: 7px;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+th {
+    background-color: $vlight-accent;
+    border-bottom: 1px solid $light-accent;
+    border-right: 1px solid $light-accent;
+
+    &:last-child {
+        border-right: 0;
+    }
+}
+
+
+dl {}
+
+dt {}
+
+dd {
+    margin-left: 0;
+    font-size: $sml;
+    color: $light-accent;
+    margin-bottom: $base;
+}
+

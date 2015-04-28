@@ -1,4 +1,8 @@
 
+// ----
+// Shameful and need-to-be-cleaned-up styles here.
+// ----
+
 
 // Prev next nav
 
@@ -14,6 +18,7 @@
     font-size: $sml;
     background-repeat: no-repeat;
     padding: $xsml;
+    margin-top: $xsml;
 
     span {
         font-size: $xsml;
@@ -39,6 +44,8 @@
 
 
 // There's a more elegant solution for this, obviously.
+// Like, ew.
+
 .pagenav-middle h1,
 .pagenav-middle h2,
 .tease-title {
@@ -50,18 +57,14 @@
 }
 
 
-// Shameful and need-to-be-cleaned-up styles here.
+// BAD
 
 .main-more {
-    // BAD
     position: absolute !important;
     top: 40%;
     right: 0;
 }
 
-.prevnext-header {
-    position: relative;
-}
 
 
 // Misc spacing fixes
@@ -69,6 +72,8 @@
 .widgets {
     padding-top: $sml;
 }
+
+
 
 // Layout Utilities
 
@@ -106,20 +111,12 @@
     @include make-xs-column($c * 3/4);
 }
 
-.alert-details {
-    @extend .alert;
-    h5 {
-        margin-top: 0;
-    }
-
-    p {
-        font-size: $sml;
-    }
-}
 
 
 // Legacy styles for posts from old site
 
 .fig-large {
     @include bleed;
+    margin-top: $base;
+    margin-bottom: $base;
 }

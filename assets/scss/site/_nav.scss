@@ -155,35 +155,31 @@
 
 // Prev-next Navigation
 
-.pagenav {
+.pagenav,
+.pagination {
     position: relative;
 }
 
 .pagenav-link {
-    // @include make-xs-column($c * 1/8, false);
     position: absolute;
-    margin-top: $h1;
-    top: 10%;
+    margin-top: $h2;
+    top: 0;
     z-index: 5;
 }
 
-    .link-next {
-        right: 0;
-    }
+.link-next {
+    right: 0;
+}
 
-    .link-prev {
-        left: 0;
-    }
+.link-prev {
+    left: 0;
+}
 
     .pagenav-middle {
-        // @include make-xs-column($c * 6/8);
-        padding-left: $h1;
-        padding-right: $h1;
+        padding-left: $h2;
+        padding-right: $h2;
     }
 
-    
-
-// Pagination
 
 .pages {
     @include horizontal-list($margin: $xsml);

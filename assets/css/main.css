@@ -1520,8 +1520,7 @@ exclusively.
 .alert,
 .alert-warning,
 .alert-info,
-.alert-danger,
-.alert-details {
+.alert-danger {
   background-color: #f4f7f9;
   color: #3e3739;
   padding: 1.1rem;
@@ -1530,31 +1529,26 @@ exclusively.
 .alert-warning a,
 .alert-info a,
 .alert-danger a,
-.alert-details a,
 .alert a:link,
 .alert-warning a:link,
 .alert-info a:link,
 .alert-danger a:link,
-.alert-details a:link,
 .alert a:visited,
 .alert-warning a:visited,
 .alert-info a:visited,
-.alert-danger a:visited,
-.alert-details a:visited {
+.alert-danger a:visited {
   color: #f4f7f9;
 }
 .alert a:hover,
 .alert-warning a:hover,
 .alert-info a:hover,
-.alert-danger a:hover,
-.alert-details a:hover {
+.alert-danger a:hover {
   color: #d3dfe7;
 }
 .alert a:active,
 .alert-warning a:active,
 .alert-info a:active,
-.alert-danger a:active,
-.alert-details a:active {
+.alert-danger a:active {
   color: #b2c7d5;
 }
 
@@ -2520,8 +2514,7 @@ th:last-child {
 .alert,
 .alert-warning,
 .alert-info,
-.alert-danger,
-.alert-details {
+.alert-danger {
   padding: 1.1rem;
   margin-top: 1.1rem;
   margin-bottom: 1.1rem;
@@ -2530,8 +2523,7 @@ th:last-child {
   .alert,
   .alert-warning,
   .alert-info,
-  .alert-danger,
-  .alert-details {
+  .alert-danger {
     width: 110%;
     margin-right: -5%;
     margin-left: -5%;
@@ -2871,14 +2863,15 @@ figure {
   color: #237fa9;
 }
 
-.pagenav {
+.pagenav,
+.pagination {
   position: relative;
 }
 
 .pagenav-link {
   position: absolute;
-  margin-top: 3.3rem;
-  top: 10%;
+  margin-top: 2.64rem;
+  top: 0;
   z-index: 5;
 }
 
@@ -2891,8 +2884,8 @@ figure {
 }
 
 .pagenav-middle {
-  padding-left: 3.3rem;
-  padding-right: 3.3rem;
+  padding-left: 2.64rem;
+  padding-right: 2.64rem;
 }
 
 .pages {
@@ -3614,6 +3607,7 @@ a.special-alt {
   font-size: 0.88rem;
   background-repeat: no-repeat;
   padding: 0.66rem;
+  margin-top: 0.66rem;
 }
 .prev span,
 .next span {
@@ -3654,10 +3648,6 @@ a.special-alt {
   position: absolute !important;
   top: 40%;
   right: 0;
-}
-
-.prevnext-header {
-  position: relative;
 }
 
 .widgets {
@@ -3719,13 +3709,10 @@ a.special-alt {
   width: 75%;
 }
 
-.alert-details h5, .alert-details .home .section-title, .home .alert-details .section-title, .alert-details .list-minor li h4, .list-minor li .alert-details h4 {
-  margin-top: 0;
+.fig-large {
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
 }
-.alert-details p {
-  font-size: 0.88rem;
-}
-
 @media (min-width: 42em) {
   .fig-large {
     width: 110%;

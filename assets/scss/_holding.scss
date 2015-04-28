@@ -38,9 +38,19 @@
 
 
 
+// There's a more elegant solution for this, obviously.
+.pagenav-middle h1,
+.pagenav-middle h2,
+.tease-title {
+    font-size: $h3;
+
+    @include bp(med) {
+        font-size: $h2;        
+    }
+}
+
+
 // Shameful and need-to-be-cleaned-up styles here.
-
-
 
 .main-more {
     // BAD
@@ -54,7 +64,7 @@
 }
 
 
-/*----- Section Content -----*/
+// Misc spacing fixes
 
 .widgets {
     padding-top: $sml;

@@ -42,7 +42,7 @@ $accent-dark:		$dark-blue;
 
 $accent-alt: 		$pink;
 
-$alert-danger: 		lighten($pink, 40%);
+$alert-danger: 		darken($pink, 20%);
 $alert-warning: 	$l-yellow;
 $alert-info: 		$dark-blue;
 $alert-success: 	$green;

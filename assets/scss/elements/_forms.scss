@@ -231,6 +231,12 @@ input[type="checkbox"]:focus {
 	}
 
 
+.gfield_required {
+	color: $alert-danger;
+	font-weight: 300;
+}
+
+
 // Mailchimp
 
 .mc-signup {

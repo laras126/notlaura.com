@@ -4,12 +4,21 @@
 		{% include 'headers/header-tease.twig' %}
 
 		<div class="contain-sm tease-content">
-			{% if post.content %}
-				{# Show post content for legacy posts. All new posts are created with blocks (is this a bad idea?). #}
+			
+			{% if '<!--more-->' in post.content %}
+				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)}}
+			{% else %}
+				{{post.content}}
+			{% endif %}
+
+			{# {{function('the_excerpt', 250)}} #}
+
+			{# {% if post.content %} #}
+				{# Show post content for legacy posts. All new posts are created with blocks (is this a bad idea?).
 				{{post.content}}
 			{% else %}
 				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
-			{% endif %}
+			{% endif %} #}
 			
 			{% include 'partials/edit-link.twig' %}
 		</div>

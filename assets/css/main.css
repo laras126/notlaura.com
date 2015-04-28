@@ -2096,6 +2096,11 @@ input[type="checkbox"]:focus {
   margin-bottom: 2.64rem;
 }
 
+.gfield_required {
+  color: #993365;
+  font-weight: 300;
+}
+
 .mc-signup {
   margin-top: 1.43rem;
   padding: 1.98rem;
@@ -2296,6 +2301,44 @@ input[type="checkbox"]:focus {
 .link-back-top .icon {
   display: block;
   margin: 0 auto;
+}
+
+.read-more {
+  display: block;
+  border-bottom: 0;
+  color: #ffffff !important;
+}
+.read-more:before, .read-more:after {
+  content: " ";
+  display: table;
+}
+.read-more:after {
+  clear: both;
+}
+
+.more-inner {
+  font-weight: 700;
+  display: inline-block;
+  float: right;
+  background: #237fa9;
+  font-weight: 500;
+  border-radius: 2px;
+  color: #ffffff !important;
+  border: 2px solid #2c9fd3;
+  padding: 0.88rem 1.43rem;
+  display: inline-block;
+  font-family: "museo-sans-1", "Helvetica", serif;
+  position: relative;
+  top: 1.1rem;
+}
+.more-inner:hover, .more-inner:focus {
+  background: #1a5f7f;
+  color: #ffffff;
+  border-color: #237fa9;
+}
+.more-inner:active {
+  background: #09202a;
+  border-color: #1a5f7f;
 }
 
 table {
@@ -2506,8 +2549,8 @@ th:last-child {
 }
 
 .alert-danger {
-  background-color: white;
-  border: 1px solid #e6b3cb;
+  background-color: #993365;
+  border: 1px solid #4d1a32;
 }
 
 .gallery-item {
@@ -2828,19 +2871,28 @@ figure {
   color: #237fa9;
 }
 
-.pagenav-link {
-  float: left;
+.pagenav {
   position: relative;
-  width: 12.5%;
+}
+
+.pagenav-link {
+  position: absolute;
   margin-top: 3.3rem;
+  top: 10%;
+  z-index: 5;
+}
+
+.link-next {
+  right: 0;
+}
+
+.link-prev {
+  left: 0;
 }
 
 .pagenav-middle {
-  float: left;
-  position: relative;
-  padding-left: 0.99rem;
-  padding-right: 0.99rem;
-  width: 75%;
+  padding-left: 3.3rem;
+  padding-right: 3.3rem;
 }
 
 .pages {
@@ -3585,6 +3637,19 @@ a.special-alt {
   background-position: right;
 }
 
+.pagenav-middle h1,
+.pagenav-middle h2,
+.tease-title {
+  font-size: 1.98rem;
+}
+@media (min-width: 42em) {
+  .pagenav-middle h1,
+  .pagenav-middle h2,
+  .tease-title {
+    font-size: 2.64rem;
+  }
+}
+
 .main-more {
   position: absolute !important;
   top: 40%;
@@ -3595,7 +3660,6 @@ a.special-alt {
   position: relative;
 }
 
-/*----- Section Content -----*/
 .widgets {
   padding-top: 0.88rem;
 }

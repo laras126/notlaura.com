@@ -1,0 +1,78 @@
+
+.site-footer {
+	border-top: $sml/2 solid $accent-light;
+	@include rotate;
+
+	a {
+		@include unstyle-link;
+	}
+
+}
+	
+	.list-services {
+		@include unstyle-list;
+		margin-top: $base;
+		@include bp(small) {
+			@include horizontal-list;
+		}
+
+		li {
+			font-size: $sml;
+			
+			&:before {
+			}
+		}
+	}
+
+	.list-social {
+		@include unstyle-list(false);
+		@include horizontal-list();
+		margin-top: $h4;
+		padding-left: 0;
+
+		text-align: center;
+
+		@include bp(med) {
+			text-align: left;
+		}	
+
+		.icon {
+			@extend .icon-rotate;
+			margin-right: $sml;
+		}
+	}
+
+	.colophon {
+		padding-bottom: $base;
+		margin-top: $base;
+		@include clearfix;
+
+		p {
+			font-size: $sml;
+		}
+
+		a {
+			color: $accent-light;
+			&:hover {
+				color: $accent-dark;
+			}
+		}
+
+	}
+
+
+// .col-15 {
+// 	@include make-lg-column($c * 1/5);
+// }
+
+.widget {
+	@include make-md-column($c * 1/2);
+	font-size: $sml;
+}
+
+	.widget-title {}
+
+	.widget-list {}
+
+	.links-social {}
+

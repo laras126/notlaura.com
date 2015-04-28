@@ -1,0 +1,194 @@
+
+
+.block_list {
+	margin-bottom: $sml;
+}
+
+
+
+// ----
+// General Lists
+// ----
+
+.list {
+	@include unstyle-list();
+
+	& > li {
+		// margin-top: $xsml;
+	}
+}
+
+	.list-minor,
+	.list-major {
+		@include clearfix;
+		margin-top: 0;
+	}
+	
+	.list-minor {
+		@include bleed;
+	}
+
+	
+	// Major lists are 1 across, image on the left
+	
+	.list-major li {
+		@include clearfix();
+		
+		img {
+			width: 100%;
+		}
+
+		@include bp(med) {
+			@include make-row();
+		}
+		
+		.item-support {
+			@include make-md-column($c/3);
+		}
+
+		.item-main {
+			@include make-md-column($c/3*2);
+		}
+
+		padding-top: $h3;
+
+
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+	}
+
+
+	// Minor lists are two across with an icon
+
+	.list-minor li {
+
+		margin-top: $h3;
+
+		@include make-xs-column($c, false);
+		@include make-md-column($c/2, false);
+		float: left;
+
+		@include bp(med) {
+	        &:nth-child(2n+1){
+	            clear: left;
+	        }  
+	    }
+
+		// Grid is getting hacky here.
+		.item-support {
+			@include make-xs-column($c/5, false);
+			float: left;
+			padding-right: 0;
+			@include bp(med) {
+				// padding-left: $gutter / 2;
+				// padding-right: $gutter / 2;
+			}
+
+			.icon {
+				margin: 0 auto;
+			}
+		}
+
+		.item-main {
+			@include make-xs-column($c/5*4);
+		}
+	
+		h4 {
+			@extend h5;
+		}
+
+		p {
+			font-size: $sml;
+		}
+	}
+	
+	.item {
+		display: table;
+	}
+
+	.item-main {
+		position: relative;
+	}
+
+		.main-content {
+			@include make-sm-column($c * 7/8, false);
+		}
+
+		.main-more {
+		    @include make-sm-column($c * 1/8, false);
+		}
+
+		.header-main {
+		    @include make-sm-column($c * 6/8, false);
+		}
+
+
+// FAQ format
+
+.list-text {
+	@include inverse-bleed;
+
+	h5 {
+		text-transform: none;
+		letter-spacing: 0;
+		color: $body-text-clr;
+	}
+}
+
+
+
+// ----
+// List items
+// ----
+
+.item-support {
+
+	img {	
+		@include center-block;
+	}
+
+	.list-minor & {
+		img {
+			padding: $base 25%; 
+
+			@include bp(small) {
+				padding: 0;
+			}
+		}
+	}
+	
+	padding-right: $gutter/2;	
+	
+}
+
+.item-main {
+	
+	// .list-major & {
+	// 	@include make-md-column(2);
+	// }
+
+	.list-minor & {
+		h5 {
+			margin-top: 0;
+		}
+
+		p {
+			margin-top: $xsml;
+
+		}
+	}
+	
+	p, li {
+		// font-family: $sans-serif;			
+		@include bp(small) {
+			// @include font-size(med);	
+			// font-size: $sml;
+		}
+	}
+}
+
+
+

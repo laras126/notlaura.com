@@ -1,0 +1,18 @@
+
+.section-header {
+	margin-top: $h3;
+}
+
+	.section-header:not(.story-intro) {
+		.contain-sm {
+			border-top: $accent-border;
+		}
+	}
+
+.section-title {
+	// padding-top: $h2;
+}
+
+.section-content {
+	padding-bottom: $h1;
+}

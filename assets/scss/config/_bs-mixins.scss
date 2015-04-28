@@ -1,0 +1,210 @@
+
+// ---
+// Cusomized Bootstrap Scaffolding Mixins
+// ---
+
+
+// ---
+//
+// Changes made by Lara:
+// - Added "@if $gutter != 0" conditional to prevent overriding gutter padding
+// - Changed pixel values to values defined in _settings.scss
+// - Moved all styles into MQ
+// - Created an @extend for static styles
+// - Generate classes with a mixin
+// - Not using those $screen-sm-min breakpoints
+//
+// ---
+
+
+
+
+// ----
+// Grid Settings
+// ----
+
+$grid-columns:              8 !default;
+$c:                         $grid-columns;
+
+//** Padding between columns. Gets divided in half for the left and right.
+$gutter:                    $h3 !default;
+
+
+
+// ----
+// Containers
+// ---
+
+// Wrapper to contain internal columns.
+// The negative margin accounts for the extra padding from nested columns
+
+
+@mixin container($size) {
+    margin: 0 auto;
+    width: 90%;
+    
+    @include bp(med) {
+      // width: 82%;  
+      max-width: $size;
+    }
+    
+    @include clearfix;
+}
+
+// To contain a primary section of content. 
+// Max width of the widest inner wrap (below).
+
+.contain-sm {
+    @include container($screen-sm);
+}
+
+.contain-md {
+    @include container($screen-md);
+}
+
+.contain-lg {
+    @include container($screen-lg);
+}
+
+
+
+// ----
+// Rows
+// ----
+// For wrapping nested columns
+
+@mixin make-row($gutter: $gutter, $margin: true) {
+    @if $margin == true {
+        margin-left:  ($gutter / -2);
+        margin-right: ($gutter / -2);      
+    }
+  
+    @include clearfix();
+}
+
+.row {
+    @include make-row();
+}
+
+
+
+// ----
+// Grid Mixins
+// ---
+
+
+// Conditionally print the gutter
+
+@mixin bs-gutter($gutter, $pos: true) {
+    @if $pos == true {
+        float: left;
+        position: relative;
+    }
+    @if $gutter != false {
+        padding-left:  ($gutter / 2);
+        padding-right: ($gutter / 2);
+    }
+}
+
+
+
+// Extra Small
+
+@mixin make-xs-column($columns, $gutter: $gutter, $pos: true) {
+  // @include bs-base;
+  @include bs-gutter($gutter, $pos);
+  
+  width: percentage(($columns / $grid-columns));
+}
+@mixin make-xs-column-offset($columns, $side: left) {
+  margin-#{$side}: percentage(($columns / $grid-columns));
+}
+@mixin make-xs-column-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+@mixin make-xs-column-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+
+
+
+// Small
+
+@mixin make-sm-column($columns, $gutter: $gutter, $pos: true) {
+  // @include bs-base;
+
+  @media (min-width: $screen-sm) {
+    @include bs-gutter($gutter, $pos);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-offset($columns, $side: left) {
+  @media (min-width: $screen-sm) {
+    margin-#{$side}: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-push($columns) {
+  @media (min-width: $screen-sm) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-pull($columns) {
+  @media (min-width: $screen-sm) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+
+// Medium
+
+@mixin make-md-column($columns, $gutter: $gutter, $pos: true) {
+  // @include bs-base;
+
+  @media (min-width: $screen-md) {
+    @include bs-gutter($gutter, $pos);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-offset($columns, $side: left) {
+  @media (min-width: $screen-md) {
+    margin-#{$side}: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-push($columns) {
+  @media (min-width: $screen-md) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-pull($columns) {
+  @media (min-width: $screen-md) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+
+// Large
+
+@mixin make-lg-column($columns, $gutter: $gutter, $pos: true) {
+  // @include bs-base;
+
+  @media (min-width: $screen-lg) {
+    @include bs-gutter($gutter, $pos);
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-offset($columns, $side: left) {
+  @media (min-width: $screen-lg) {
+    margin-#{$side}: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-push($columns) {
+  @media (min-width: $screen-lg) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-pull($columns) {
+  @media (min-width: $screen-lg) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+

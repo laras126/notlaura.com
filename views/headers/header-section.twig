@@ -1,0 +1,15 @@
+{% if section.section_title %}
+
+<header class="section-header{{section.css_class ? ' ' ~ section.css_class}}"{{section.menu_item_title ? ' id="'~section.menu_item_title|sanitize~'"'}}>
+	<div class="contain-sm">
+
+		<h3 class="section-title">{{section.section_title}}</h3>
+		
+		{% if section.lead %}
+			<p class="lead">{{section.lead}}</p>
+		{% endif %}
+	
+	</div>
+</header> <!-- /.section-header -->
+
+{% endif %}

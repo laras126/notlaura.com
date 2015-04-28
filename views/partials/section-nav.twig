@@ -1,0 +1,20 @@
+{% if post.subnav %}
+
+<nav class="section-nav">
+	<div class="contain-md">
+
+		<ul>
+			<li class="upperspace meta-greyed">Jump to: </li>
+			{% for item in post.get_field('sections') %}
+				{% if item.menu_item_title %}
+					<li class="section-nav-item">
+						<a href="#{{item.menu_item_title|sanitize}}">{{item.menu_item_title}}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+
+	</div>
+</nav> <!-- /.content-nav -->
+
+{% endif %}

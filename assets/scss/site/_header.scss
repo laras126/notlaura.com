@@ -1,0 +1,58 @@
+
+.site-header { 
+    @include container($screen-lg);
+}
+
+.site-info,
+.site-nav {    
+    @include make-xs-column($c, false);
+}
+
+    .site-info {
+        @include make-lg-column($c * 1/3, false);
+    }
+
+    .site-nav {
+        margin-top: $sml;
+        @include make-lg-column($c * 2/3, false);
+    }
+
+.site-title {
+    text-transform: lowercase;
+    font-size: $h3;
+    margin-top: $base;
+
+    a {
+        @include unstyle-link;
+    }
+    
+}
+
+.site-desc { 
+	@include meta($accent-med);
+    letter-spacing: 2px;
+
+    @include bp(small) {
+        display: block;
+    }
+
+    text-transform: lowercase;
+}
+
+.site-header {}	
+
+.header-brand {
+	// display: table-row;
+}
+
+.header-tag, 
+.header-logo {
+	// display: table-cell;
+	// vertical-align: middle;
+}
+
+.header-nav-link {}
+
+.header-nav {}
+
+

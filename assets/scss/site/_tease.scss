@@ -1,0 +1,37 @@
+
+.tease-post {
+	margin-bottom: $h1*2;
+}
+
+.tease-title {
+	margin-top: $base;
+	margin-bottom: $base;
+}
+
+.tease-header {
+	padding-bottom: $h4;
+	text-align: center;
+}
+
+.tease-meta {
+	@extend .meta-greyed;
+}
+
+.tease-footer {
+
+}
+
+.tease-thumb {
+	@include make-md-column($c/2);
+
+	margin-bottom: $h4;
+	
+	img {
+		border: 5px solid $accent-light;
+	}
+}
+
+	.thumb-title {
+		margin-top: $sml;
+		margin-bottom: $h3;
+	}

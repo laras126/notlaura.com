@@ -1,0 +1,20 @@
+
+<nav class="contain-md prevnext-nav">
+	{% if post.prev %}
+		<div class="prev">
+			<a href="{{post.prev.permalink}}" title="{{post.prev.post_title}}">
+				<span class="meta-greyed">Previous</span><br>
+				{{post.prev.post_title}}</a>
+			</a>
+		</div>
+	{% endif %}
+
+	{% if post.next %}
+		<div class="next">
+			<a href="{{post.next.permalink}}" title="{{post.next.post_title}}">
+				<span class="meta-greyed">Next</span><br>
+				{{post.next.post_title}}</a>
+			</a>
+		</div>
+	{% endif %}
+</nav>

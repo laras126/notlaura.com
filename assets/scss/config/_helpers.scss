@@ -1,0 +1,378 @@
+
+/*  
+
+Harry Roberts says:
+
+"Only use @extend when the rulesets that you are trying 
+to DRY out are inherently and thematically related."
+
+- http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
+- http://www.sitepoint.com/avoid-sass-extend/
+
+These are mixins because they are "helpers" and not used
+in a thematically related fashion.
+
+There are a few classes printed here as well as mixins.
+Those are primarily for prototyping purposes, but not
+exclusively.
+
+*/
+
+
+// ----
+// Formatting
+// ----
+
+@mixin center-block() {
+    margin: 0 auto;
+    display: block;
+}
+
+.center-block {
+    @include center-block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.img-flex {
+    width: 100%;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+
+// Bleeds
+
+// TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
+
+@mixin bleed {
+    @include bp(med) {
+        width: 110%;
+        margin-right: -5%;
+        margin-left: -5%;   
+    }
+}
+
+.bleed {
+    @include bleed;
+}
+
+@mixin inverse-bleed {
+    @include bp(med) {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+.inverse-bleed {
+    @include inverse-bleed;
+}
+
+// Mainly for images.
+
+.bleed-left {
+    @include bp(med) {
+        margin-left: -10%;
+    }
+}
+
+.bleed-right {
+    @include bp(med) {
+        margin-right: -10%;
+    }
+}
+
+
+// ----
+// Typography
+// ----
+
+
+// Change text alignment at a certain breakpoint.
+
+@mixin change-text-align($base, $bp, $new) {
+    text-align: $base;
+    
+    @include bp($bp) {
+        text-align: $new;
+    }
+}
+
+
+// Uppercase and letterspacing.
+
+@mixin upperspace {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.upperspace {
+    @include upperspace;
+}
+
+
+// Small, sans-serif text.
+// Used primarily for forms and complimentary information.
+
+@mixin meta($color: $body-text-clr) {
+    font-size: $sml;
+    font-family: $form-font;
+    margin: 0;
+
+    @if $color {
+        color: $color;
+    }
+}
+
+.meta-cite {
+    @include meta($color: $accent-dark);
+    text-align: right;
+    margin-top: $base;
+}
+
+.meta-greyed {
+    @include meta($text-med);
+}
+
+
+
+
+
+// ----
+// Visual Design
+// ----
+
+
+// Change background and text color.
+
+@mixin rotate($text: $accent-vlight, $bkgd: $accent-dark, $link-clr: $accent-vlight) {
+    background-color: $bkgd;
+    color: $text;
+
+    a,
+    a:link,
+    a:visited {
+        color: $link-clr;
+    }
+
+    a:hover {
+        color: darken($link-clr, 10%);
+    }
+
+    a:active {
+        color: darken($link-clr, 20%);
+    }
+}
+
+.rotate {
+    @include rotate;
+
+    &-dark {
+        @include rotate($text-light, $text-dark);
+    }
+
+    &-med {
+        @include rotate($text-light, $accent-med);
+    }
+
+    &-light {
+        @include rotate($text-light, $accent-light);    
+    }
+
+    &-vlight {
+        @include rotate($text-light, $accent-vlight);   
+    }
+
+    &-info {
+        @include rotate($text-light, $alert-info);
+    }
+}
+
+
+
+
+// ----
+// Content
+// ----
+
+
+%img_highlight {
+    border: $accent-border;
+}
+
+
+// Alerts
+
+%alert,
+.alert {
+    @include rotate($text-dark, $accent-vlight);
+    padding: $base;
+}
+
+
+
+
+
+
+// ----
+// Utlities
+// ----
+
+.invisible {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    top: -9999999px;
+    left: -9999999px;
+}
+
+
+
+
+// ----
+// Layout
+// ----
+
+// Note: the two numbers indicate 1 of 6 (16), 3 of 4 (34), etc.
+
+.col-16 {
+    @include make-sm-column($c * 1/6);
+}
+
+.col-56 {
+    @include make-sm-column($c * 5/6);
+}
+
+.col-14 {
+    @include make-sm-column($c * 1/4);
+}
+
+.col-34 {
+    @include make-sm-column($c * 3/4);
+}
+
+.invisible {
+    display: none;
+}
+
+
+
+
+// Hold
+
+@mixin form-base($pad-tb, $pad-rl, $font) {
+    padding: $pad-tb $pad-rl;
+    font-family: $font;
+}
+
+%form-base {
+    @include form-base($sml/3, $sml/2, $form-font);
+}
+
+.hide-after-lg {
+    @include bp(large) {
+        display: none; 
+    }
+}
+
+// Ew!
+.hide-until-md, 
+%hide-until-md {
+   	display: none !important;
+    @include bp(med) {
+        display: inline-block !important; 
+    }   
+}
+
+.hide-after-md, 
+%hide-after-md {
+	@include bp(med) {
+        display: none !important;
+    }
+}
+
+%rotate {
+	color: $rotate-text;
+	background-color: $rotate-bkgd;
+}
+
+
+// Typography helpers
+
+.meta,
+%meta {
+    @include meta;
+}
+
+    %meta-light {
+        @include meta;
+        color: $text-med;
+    }
+
+    %meta-dark {
+        @include meta;
+        color: $text-med;
+    }
+
+    .meta-colon {
+        @include upperspace;
+        @include meta($text-med);
+    }
+
+
+// Text alignment shortcuts 
+// Mainly for prototyping and where semantics aren't crucial (which is nowhere? Discuss!)
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+// This can be used to add a border around a title, like this:
+
+//  <div class="decor-wrap">
+//      <h4 class="decor"><span>{{blck.list_title}}</span></h4>  
+//  </div>
+
+// .decor {
+//     @include meta;
+//     border-bottom: $accent-border; 
+//     position:relative; 
+    
+//     span { 
+//         position: relative; 
+//         top: $sml/1.5; 
+//         padding: 0 $sml 0 0;
+//         background-color: $body-bkgd;
+//     }
+// }
+
+// .decor-wrap{
+//     display: block; 
+//     margin: 0;
+//     @include clearfix;
+// }
+
+
+// Interactive (bad description?)
+// If you'd like a sticky nav...
+    .stuck {
+        @include bp(med) {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: $ztop;
+        }
+    }
+
+

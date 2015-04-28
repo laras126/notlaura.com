@@ -1,0 +1,73 @@
+
+.special,
+a.special {
+	color: $accent-dark;
+}
+
+.special-alt,
+a.special-alt {
+	color: $accent-alt;
+}
+
+.strike {
+	position: relative;
+}
+
+	.strike:after {
+		border-bottom: 2px solid $accent-med;
+		position: absolute;
+		content: '';
+		right: 0;
+		left: 0;
+		top: 55%;
+	}
+
+.spacer-top {
+	margin-top: $h3;
+}
+
+.spacer-left {
+	margin-left: $h3;
+}
+
+.spacer-right {
+	margin-right: $h3;
+}
+
+.spacer-bot {
+	margin-bottom: $h3;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.outline {
+	border: 5px solid $accent-light;
+}
+
+.rm-margin {
+	margin: 0;
+}
+
+// WordPress utility classes
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	@include center-block;
+}

@@ -1,0 +1,82 @@
+{% extends "blocks/block.twig" %}
+
+{# List Block #}
+
+{# Set some variables for brevity #}
+{% set type = blck.list_type %}
+{% set display = blck.list_display %}
+
+{% if type == 'connected' %}
+	{% set list = blck.connected_content %}
+{% elseif type == 'free_form' %}
+	{% set list = blck.freeform_items %}
+{% elseif type == 'faq' %}
+	{% set list = blck.q_and_a %}
+{% endif %}
+
+
+{% block content %}	
+<div class="contain-md">
+
+
+	{% if blck.list_title %}
+		<h4 class="list-title">{{blck.list_title}}</h4>
+	{% endif %}
+
+	<ul class="list {% if display %}list-{{display}} {% endif %}{{ blck.css_class ? blck.css_class}}">
+
+		{% for item in list %}
+			<li>
+
+				{% if type != 'faq'  %}
+				<div class="item-support">
+					
+					{% if type != 'connected' %}
+						{% if item.image and item.svg is empty %}
+							<img src="{{TimberImage(item.image).src('medium')}}" alt="{{item.post_title}}"/>
+						{% endif %}
+
+						{% if item.svg %}
+							{% include 'partials/svg.twig' with {'file': item.svg, 'prefix': 'icon' } %}
+						{% endif %}
+
+						{% if item.svg is empty and item.image is empty %}
+							<img src="{{site.theme.link}}/assets/img/util/placeholder.png" alt="{{item.post_title}}" />
+						{% endif %}
+
+					{% elseif type == 'connected' %}
+						{# TODO: make this featured image instead #}
+						<img src="{{TimberImage(item.thumbnail).src('medium')}}" alt="{{item.post_title}}"/>
+					{% endif %}
+					
+				</div> <!-- /.item-support -->
+
+				<div class="item-main">
+
+					{% if type == 'connected' %}
+						<div class="main-content">
+							<h4 class="item-title"><a href="{{item.guid}}">{{item.post_title}}</a></h4>
+							<p>{{item.post_excerpt}}</p>
+						</div>
+						<div class="main-more">
+							<a href="{{item.guid}}">{% include 'partials/svg.twig' with {'file': 'arrow-right', 'prefix': 'icon' } %}</a>
+						</div>
+					{% elseif type == 'free_form' %}
+						<h4 class="item-title">{{item.item_title}}</h4>
+						<p>{{item.description}}</p>
+					{% endif %}
+
+				</div> <!-- /.item-main -->
+
+				{% elseif type == 'faq'  %}
+					<h4>{{item.question}}</h4>
+					<p>{{item.answer}}</p>
+				{% endif %}
+
+			</li>
+		{% endfor %}
+			
+	</ul> <!-- /.list-{{display}} -->
+	
+</div>
+{% endblock %}

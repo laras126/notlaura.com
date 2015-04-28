@@ -1,0 +1,44 @@
+
+
+// Tables
+// Yes, I may use tables sometime!
+
+table {
+    font-family: $form-font;
+    margin-bottom: $base;
+    font-size: $sml;
+}
+
+tr {
+    border-bottom: $accent-border;
+    &:nth-child(odd) {
+        background-color: $white-alt;
+    }
+}
+
+td {
+    padding: $sml $base;
+    border-right: $accent-border;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &:first-child {
+        font-family: $heading-font;
+        font-weight: 500;
+    }
+}
+
+th {
+    border-bottom: $accent-border;
+    border-right: $accent-border;
+    text-align: left;
+    padding: $sml $base;
+    font-family: $heading-font;
+    font-size: $base;
+
+    &:last-child {
+        border-right: 0;
+    }
+}

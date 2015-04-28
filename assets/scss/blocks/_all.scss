@@ -1,0 +1,19 @@
+.block {
+	padding-bottom: $h4;
+
+	.page-body & {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Block modules
+
+@import 'block-intro';
+@import 'block-list';
+@import 'block-text';
+@import 'block-textimage';
+@import 'block-cta';
+@import 'block-related';
+@import 'block-testimonial';

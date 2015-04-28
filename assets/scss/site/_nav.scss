@@ -1,0 +1,243 @@
+// ----
+// Navigation
+// ----
+
+// Toggle menu
+
+.menu-link {
+
+    i {
+        font-size: $h2;
+        line-height: $h2;    
+        color: $light-blue;
+        background-color: $accent-dark;
+    }
+
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+
+    @include bp(sml) {
+        bottom: 25%;
+    }
+
+    // Hide the menu button on mobile
+    @include bp(menu) {
+        display: none;
+    }
+}
+
+
+.site-nav {
+    text-align: center;
+    background-color: $body-bkgd;
+    margin-top: $sml;
+    padding: $sml 0;
+    text-transform: lowercase;
+    position: relative;
+    z-index: $ztop; 
+
+    overflow: hidden;
+    max-height: 0;
+
+    ul {
+        @include unstyle-list;
+    }
+
+    &.active {
+        max-height: 25em;
+        overflow: visible;
+    }
+
+    li a {
+        border-bottom: $accent-border;
+        display: block;
+        padding: $sml;
+        text-align: center;
+    }
+
+    > ul {
+        border-top: $accent-border;
+        @include bp(menu) {
+            border-top: 0;
+        }
+    }    
+    
+
+    // ----
+    // Styles for desktop menu
+    // ----
+
+    @include bp(menu) {
+        text-align: right; 
+        max-height: none;
+        overflow: visible;
+
+        li {
+            display: inline-block;
+            
+            a {
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                padding-top: $sml/2;
+                padding-bottom: $sml/2;
+                
+                &:hover, &:focus {
+                    border-bottom: $accent-border;
+                    border-top: $accent-border;
+                }
+            }
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+
+        // Current page highlighter
+        li.current-menu-item, 
+        li.current_page_item,
+        li.current-page-ancestor {
+            a {
+                border-bottom: $accent-border;
+                border-top: $accent-border;
+            }
+        }
+    }
+
+} // END .site-nav
+
+
+// Subnav
+
+.menu-has-children {
+ 
+}
+
+    .menu-children {
+        background-color: $accent-vlight;
+        @include bp(menu) {
+            background: none;
+            position: absolute;    
+            text-align: right;
+            border-top: $accent-border;
+        }
+    }
+    
+    .menu-children {
+        border-top: 0;    
+    }
+
+
+// Section nav on pages
+
+.section-nav ul {
+    padding-left: 0;
+    text-align: center;
+    @include unstyle-list;
+    
+    @include bp(small) {
+        @include horizontal-list($margin: $xsml);
+        li {
+            padding: $xsml;    
+        }
+    }
+
+    margin-top: $h4;
+
+
+    a {
+        @include meta($color: $accent-dark);
+    }
+    
+}
+
+
+
+// Prev-next Navigation
+
+.pagenav,
+.pagination {
+    position: relative;
+}
+
+.pagenav-link {
+    position: absolute;
+    margin-top: $h2;
+    top: 0;
+    z-index: 5;
+}
+
+.link-next {
+    right: 0;
+}
+
+.link-prev {
+    left: 0;
+}
+
+    .pagenav-middle {
+        padding-left: $h2;
+        padding-right: $h2;
+    }
+
+
+.pages {
+    @include horizontal-list($margin: $xsml);
+    margin-top: $h1;
+    margin-bottom: $h1;
+    text-align: center;
+    padding: $xsml;
+
+    a {
+        border: none; 
+    }
+
+    .current {
+        border-bottom: 3px solid $accent-med;
+    }
+}
+
+
+
+
+// ----
+// Hamburger menu Icon
+// http://codepen.io/lexstefan/pen/mwtcn
+// ----
+
+.menu-link {
+    padding: $sml;
+}
+
+    .menu-link a {
+        float: right;
+    }
+
+    .menu-link span {
+        transition: all 0.05s ease-in-out;
+        width: 30px;
+        height: 3px;
+        display: block;
+        background: $accent-dark;
+        margin: 0 0 5px 0;
+        border-radius: 1px;
+    }
+    
+    .menu-link span:last-child {
+        margin:0;
+    }
+    
+    .menu-link.active span:nth-of-type(1) {
+        transform: rotate(45deg);
+        margin: 10px 0 0 0;
+    }
+
+    .menu-link.active span:nth-of-type(2) {
+        opacity:0;
+    }
+
+    .menu-link.active span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        margin: -11px 0 0 0;
+    }
+

@@ -4,6 +4,7 @@
 	<div class="contain-md">
 	{% if blck.text_format == 'caption'%}
 		<figure class="bleed opaque">
+			
 			{% if blck.image and blck.svg is empty %}
 				<img src="{{TimberImage(blck.image).src('medium')}}" alt="{{blck.post_title}}"/>
 			{% endif %}
@@ -11,8 +12,11 @@
 			{% if blck.svg %}
 				{% include 'partials/svg.twig' with {'file': blck.svg, 'prefix': 'shape' } %}
 			{% endif %}
+			
+			{% if blck.caption %}
+				<figcaption class="caption-clear">{{blck.caption}}</figcaption>
+			{% endif %}
 
-			<figcaption class="caption-clear">{{blck.caption}}</figcaption>
 		</figure>
 	{% elseif blck.text_format == 'paragraph'%}
 		<div class="textimage-para">

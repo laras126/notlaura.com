@@ -6,7 +6,9 @@
 {% endblock %}
 
     <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
-    
+        <div class="visually-hidden">
+            {% include 'partials/svg-defs.svg' %}
+        </div>
         <header class="site-header" role="banner">
             {% block header %}
                 {% include 'headers/header-site.twig' %}
@@ -65,7 +67,7 @@
 
             {{ function('wp_footer') }}
             
-            <script>
+{#            <script>
             // NOTE: It's kinda bad to have this down here. Need to figure out a filepath solution for the sprite. Oh well for now!
 
             // https://css-tricks.com/ajaxing-svg-sprite/
@@ -77,7 +79,8 @@
                 div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
                 document.body.insertBefore(div, document.body.childNodes[0]);
             });
-            </script>
+
+            </script> #}
 
 
 

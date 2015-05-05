@@ -135,22 +135,18 @@
 	 *
 	 */
 
-	
+
 
 	// Change Title field placeholders for Custom Post Types
 	// (You'll need to register the types, of course)
 
 	function nl_title_placeholder_text ( $title ) {
-		if ( get_post_type() == 'service' ) {
-			$title = __( 'Service Name' );
-		} else if ( get_post_type() == 'case-study' ) {
-	        $title = __( 'Case Study Name' );
-		} else if ( get_post_type() == 'testimonial' ) {
-	        $title = __( 'Testimonial Nickname' );
+		if ( get_post_type() == 'project' ) {
+			$title = __( 'Project Name' );
 		}
 		return $title;
 	} 
-	// add_filter( 'enter_title_here', 'nl_title_placeholder_text' );
+	add_filter( 'enter_title_here', 'nl_title_placeholder_text' );
 
 
 
@@ -172,8 +168,7 @@
 	add_action( 'init', 'nl_add_excerpts_to_pages' );
 	
 
-
-
+	
 	// Add a 'Very Simple' toolbar style for the WYSIWYG editor in ACF
 	// http://www.advancedcustomfields.com/resources/customize-the-wysiwyg-toolbars/
 	function nl_acf_wysiwyg_toolbar( $toolbars ) {

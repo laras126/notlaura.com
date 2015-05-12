@@ -57,7 +57,8 @@
 			$social = array(
 				'twitter' => 'http://twitter.com/laras126',
 				'linkedin' => 'http://www.linkedin.com/in/notlaura/',
-				'github' => 'http://github.com/laras126'
+				'github' => 'http://github.com/laras126',
+				'rss' => 'https://feeds.feedburner.com/notlaura'
 			);
 
 			$context['social'] = $social;

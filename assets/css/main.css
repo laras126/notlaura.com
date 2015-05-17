@@ -1178,6 +1178,10 @@ input[type="checkbox"]:focus {
   color: #3e3739;
   margin-bottom: 0.66rem;
 }
+.gform_wrapper .gfield_description.validation_message {
+  color: #993365;
+  padding-top: 0.33rem;
+}
 
 .gf_left_half,
 .gf_right_half {

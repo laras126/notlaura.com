@@ -199,6 +199,11 @@ input[type="checkbox"]:focus {
 		font-family: $body-font;
 		@include meta();
 		margin-bottom: $xsml;
+
+		&.validation_message {
+			color: $alert-danger;
+			padding-top: $xsml/2;
+		}
 	}
 
 }
@@ -277,7 +282,6 @@ input[type="checkbox"]:focus {
 	padding-top: $xsml/3;
 	cursor: pointer;
 }
-
 
 
 // Mailchimp

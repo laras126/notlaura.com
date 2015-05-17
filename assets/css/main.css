@@ -876,9 +876,12 @@ a:link {
 }
 
 h1, h2, h3, h4, h5, .home .section-title, .list-minor li h4, h6 {
-  font-family: "museo-slab-1", "Georgia", serif;
   margin-bottom: 0;
   line-height: 1.3;
+}
+
+h2, h3, h4, h5, .home .section-title, .list-minor li h4, h6 {
+  font-family: "museo-sans-1", "Helvetica", serif;
 }
 
 h3, h4, h6 {
@@ -888,6 +891,7 @@ h3, h4, h6 {
 h1 {
   font-size: 2.64rem;
   font-weight: 300;
+  font-family: "museo-slab-1", "Georgia", serif;
   margin-top: 1.98rem;
 }
 @media (min-width: 36em) {
@@ -917,7 +921,6 @@ h5, .home .section-title, .list-minor li h4 {
   margin-top: 1.98rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: "museo-sans-1", "Helvetica", serif;
   font-weight: 300;
 }
 .site-main h5, .site-main .home .section-title, .home .site-main .section-title, .site-main .list-minor li h4, .list-minor li .site-main h4 {
@@ -2217,43 +2220,6 @@ figcaption {
 
 .tags-list {
   text-align: center;
-}
-
-.reveal-on-hover {
-  position: relative;
-}
-.reveal-on-hover img {
-  width: 100%;
-}
-
-.reveal-on-hover:hover .to-reveal {
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-.reveal-on-hover:hover img {
-  opacity: 0.5;
-}
-
-.to-reveal {
-  position: absolute;
-  bottom: 1.1rem;
-  width: 80%;
-  left: 10%;
-  opacity: 0;
-}
-.to-reveal a {
-  margin-bottom: 1.1rem;
-  margin: 0 auto;
-  display: block;
-}
-@media (min-width: 36em) {
-  .to-reveal a {
-    float: left;
-    position: relative;
-    padding-left: 0.99rem;
-    padding-right: 0.99rem;
-    width: 50%;
-  }
 }
 
 .tease-post {

@@ -92,6 +92,8 @@ button {
 select,
 input[type="file"] {
 	*margin-top: 4px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+	font-size: $sml;
+	color: $text-med;
 }
 
 select:focus,

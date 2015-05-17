@@ -48,7 +48,11 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: $line-height-sm;
 }
 
-	h2, h3, h4, h5, h6 {
+	h1, h2, h3 {
+		font-family: $heading-font;
+	}
+
+	h4, h5, h6 {
 		font-family: $body-font;
 	}
 
@@ -59,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: $h2;
 	font-weight: 300;
-	font-family: $heading-font;
 	
 	@include bp(small) {
 		font-size: $h1;	

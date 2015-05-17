@@ -1082,8 +1082,12 @@ select,
 input[type="file"] {
   *margin-top: 4px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  font-size: 0.88rem;
-  color: #9a9a9a;
+}
+
+input[type="file"] {
+  font-size: 0.66rem;
+  background-color: #f4f7f9;
+  padding: 0.66rem 0.88rem;
 }
 
 select:focus,
@@ -1218,6 +1222,43 @@ input[type="checkbox"]:focus {
 .gfield_required {
   color: #993365;
   font-weight: 300;
+}
+
+.gform_drop_instructions {
+  font-size: 0.88rem;
+}
+
+.gform_drop_area {
+  padding: 0.88rem 1.43rem 1.43rem 1.43rem;
+  background-color: #f4f7f9;
+  border: 2px dashed #e6e6e6;
+}
+
+.gform_button_select_files {
+  background-color: #86b2c6;
+  border: 1px solid #bad3de;
+  font-size: 0.88rem;
+  color: #ffffff;
+  padding: 0.33rem 0.66rem;
+  margin-top: 0.88rem;
+  margin-left: 0.88rem;
+}
+.gform_button_select_files:hover {
+  background-color: #639cb6;
+}
+
+.ginput_preview,
+.ginput_preview strong {
+  font-size: 0.88rem;
+  font-family: "museo-sans-1", "Helvetica", serif;
+  margin: 0;
+  color: #3e3739;
+}
+
+.gform_delete {
+  opacity: 0.7;
+  padding-top: 0.22rem;
+  cursor: pointer;
 }
 
 .mc-signup {

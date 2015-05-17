@@ -92,10 +92,13 @@ button {
 select,
 input[type="file"] {
 	*margin-top: 4px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
-	font-size: $sml;
-	color: $text-med;
 }
 
+input[type="file"] {
+	font-size: $xsml;
+	background-color: $accent-vlight;
+	padding: $xsml $sml; 
+}
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -107,7 +110,7 @@ input[type="checkbox"]:focus {
 
 
 
-// Gravity form overrides
+// Gravity forms
 
 .gform_fields {
 	@include unstyle-list;
@@ -237,6 +240,44 @@ input[type="checkbox"]:focus {
 	color: $alert-danger;
 	font-weight: 300;
 }
+
+
+.gform_drop_instructions {
+	font-size: $sml;
+}
+
+.gform_drop_area {
+	padding: $h5 $h4 $h4 $h4;
+	background-color: $accent-vlight;
+	border: 2px dashed $accent-light;
+	// text-align: center;
+}
+
+.gform_button_select_files {
+	background-color: $accent-med;
+	border: 1px solid lighten($accent-med, 15%);
+	font-size: $sml;
+	color: $text-light;
+	padding: $xsml/2 $xsml;
+	margin-top: $sml; 
+	margin-left: $sml; 
+
+	&:hover {
+		background-color: darken($accent-med, 10%);
+	}
+}
+
+.ginput_preview,
+.ginput_preview strong {
+	@include meta;
+}
+
+.gform_delete {
+	opacity: 0.7;
+	padding-top: $xsml/3;
+	cursor: pointer;
+}
+
 
 
 // Mailchimp

@@ -28,7 +28,8 @@ $white-alt:  		#f4f7f9;
 
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $green: 			#1BBF54;
-$l-yellow: 			lighten(#FCF7D8, 5%);
+$yellow: 			#FCF7D8;
+$l-yellow: 			lighten($yellow, 5%);
 
 $pink: 				#CC6698;
 

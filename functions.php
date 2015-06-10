@@ -49,6 +49,8 @@
 		}
 
 		function add_to_context($context) {
+			$context['callout_tf'] = get_field('callout_tf', 'options');
+			$context['callout_bar'] = get_field('callout_bar', 'options');
 			
 			$context['main_nav'] = new TimberMenu('main_nav');
 			$context['footer_nav'] = new TimberMenu('footer_nav');
@@ -108,6 +110,11 @@
 	add_action( 'wp_enqueue_scripts', 'nl_scripts' );
 
 	
+	// Add Options Page
+	if( function_exists('acf_add_options_page') ) {	
+		acf_add_options_page('Theme Settings');
+	}
+
 	
 	// Load Gravity Forms JS in the footer...really? Sheesh.
 	// https://bjornjohansen.no/load-gravity-forms-js-in-footer

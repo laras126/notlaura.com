@@ -9,6 +9,12 @@
 {#         <div class="visually-hidden">
             {% include 'partials/svg-defs.svg' %}
         </div> #}
+        {% if callout_tf == true %}
+            <div class="callout">
+                <div class="contain">{{callout_bar}}</div>
+            </div>
+        {% endif %}
+
         <header class="site-header" role="banner">
             {% block header %}
                 {% include 'headers/header-site.twig' %}

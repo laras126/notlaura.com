@@ -27,3 +27,8 @@
     @extend .alert;
     @include alert-color($alert-danger);
 }
+
+.alert-success {
+    @extend .alert;
+    @include alert-color($alert-success);
+}

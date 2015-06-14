@@ -33,6 +33,7 @@ a {
 	color: $link-color;
 	text-decoration: none;
     border-bottom: 1px dotted $accent-light;
+	font-weight: 300;
 	
 	&:hover, &:focus {
 		color: $link-hover;
@@ -113,6 +114,10 @@ h5 {
 h6 {	
 	font-size: $h6;
 	margin-top: $h4;	
+}
+
+p, a, li {
+	font-weight: 300;	
 }
 
 p {

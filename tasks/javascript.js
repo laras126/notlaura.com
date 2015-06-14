@@ -1,7 +1,7 @@
 module.exports = function(grunt, config) {
     
     var jsFileList = [
-    	config.jsConcatDir + 'bower.js',
+    	'assets/js/main.js', // should get this into src/more organized.
         config.jsSrcDir + '*.js'
     ];  
 

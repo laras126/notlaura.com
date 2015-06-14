@@ -70,7 +70,7 @@ module.exports = function(grunt, config) {
                     width: 1200,
                     height: 900,
                     outputfile: config.cssDir + "critical.css",
-                    filename: config.cssDir + "main.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                    filename: config.cssDir + "main.css", // Using path.resolve( path.join( ... ) ) is a good idea here...what?
                     buffer: 800*1024,
                     ignoreConsole: true
                 }

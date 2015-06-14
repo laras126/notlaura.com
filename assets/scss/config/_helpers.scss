@@ -138,6 +138,10 @@ exclusively.
     @include meta($text-med);
 }
 
+.meta-light {
+    @include meta($text-light);
+}
+
 
 
 

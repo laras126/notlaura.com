@@ -17,10 +17,17 @@ html {
 }
 
 body {
-	font-family: $body-font;
-	font-size: $base; 
+	font-style: normal;
+	font-weight: normal;
 	color: $text-dark;
+	font-size: $base; 
+	font-family: Helvetica, sans-serif;
 }
+
+	.wf-active body {
+		font-family: $body-font;
+	}
+
 
 a {
 	color: $link-color;
@@ -48,12 +55,14 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: $line-height-sm;
 }
 
-	h1, h2, h3 {
-		font-family: $heading-font;
-	}
-
-	h4, h5, h6 {
-		font-family: $body-font;
+	.wf-active {
+		h1, h2, h3 {
+			font-family: $heading-font;
+		}
+	
+		h4, h5, h6 {
+			font-family: $body-font;
+		}
 	}
 
 	h3, h4, h6 {

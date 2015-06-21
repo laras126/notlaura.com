@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Show elapsed time
-    require('time-grunt')(grunt);
+    // require('time-grunt')(grunt);
 
     // Configure tasks
     require('./tasks/scss.js')(grunt, config);

@@ -6,7 +6,7 @@
 		<div class="contain-sm tease-content">
 			
 			{% if '<!--more-->' in post.content %}
-				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)}}
+				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)|wpautop}}
 			{% else %}
 				{{post.content}}
 			{% endif %}

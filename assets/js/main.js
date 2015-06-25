@@ -26,7 +26,6 @@ $(document).ready(function() {
 
 
 
-
 	// ----
 	// Smooth scrolling
 	// ----
@@ -46,37 +45,6 @@ $(document).ready(function() {
     	}
  	});
 
-
-
-	// ----
-	// Delicious Feed
-	// ----
-
-	// Included in the footer of each page.
-	
-	// $.ajax({
-	// 	url: 'http://feeds.delicious.com/v2/json/notlaura',
-	// 	jsonp: 'callback',
-	// 	dataType: 'jsonp',
-
-	// 	success: function( data ) {
-	// 		var items = [Math.floor(Math.random()*items.length)];
-	// 		$.each( data, function(key,val) {
-	// 			var title = val.d,
-	// 				date = val.dt,
-	// 				url = val.u,
-	// 				desc = val.t;
-
-	// 			var html = '<li>';
-	// 				html += '<h4><a href="' + url + '" target=\"blank\">' + title + '</a></h4>';
-	// 				html += '<p class="meta">' + date + '</p>';
-	// 				html += '<p>' + desc + '</p>';
-
-	// 				html += '</li>';
-	// 			$('.items').append(html);
-	// 		} );
-	// 	}
-	// });
 
 
 	// Fit Vids

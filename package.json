@@ -40,7 +40,6 @@
     "grunt-sass": "~1.0.0",
     "grunt-shell": "~1.1.2",
     "grunt-bower-concat": "~0.5.0",
-    "grunt-criticalcss": "~0.5.0",
     "grunt-perfbudget": "~0.1.6"
   }
 }

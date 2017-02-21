@@ -6,9 +6,7 @@
 {% endblock %}
 
     <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
-{#         <div class="visually-hidden">
-            {% include 'partials/svg-defs.svg' %}
-        </div> #}
+
         {% if callout_tf == true %}
             <div class="callout">
                 <div class="contain"><p class="meta-light">{{callout_bar}}</p></div>
@@ -20,9 +18,9 @@
                 {% include 'headers/header-site.twig' %}
             {% endblock %}
         </header>
-        
+
         <main class="site-main" role="main">
-            
+
             <div class="page-body">
                 {% block content_head %}
                     {% include 'headers/header-page.twig' %}
@@ -41,7 +39,7 @@
         </main>
 
         {% block footer %}
-            
+
             <nav class="link-back-top spacer-bot">
                 <a href="#top">
                     {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
@@ -49,7 +47,7 @@
             </nav>
 
             <footer class="site-footer" role="contentinfo">
-                
+
                 <div class="contain-md text-center">
                     <h5>What can I do for you?</h5>
                     <ul class="list-services">
@@ -61,7 +59,7 @@
                 </div>
 
                 <div class="widgets">
-                    {% include 'footer.twig' %}    
+                    {% include 'footer.twig' %}
                 </div>
 
                 <div class="colophon rotate-med text-center">
@@ -72,7 +70,7 @@
             </footer>
 
             {{ function('wp_footer') }}
-            
+
              <script>
             // NOTE: It's kinda bad to have this down here. Need to figure out a filepath solution for the sprite. Oh well for now!
 

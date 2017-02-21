@@ -22,12 +22,16 @@
 }
 
 .tease-thumb {
-	@include make-md-column($c/2);
+	display: flex;
 
 	margin-bottom: $h4;
-	
+
 	img {
 		border: 5px solid $accent-light;
+	}
+
+	> * {
+		@include make-md-column($c);
 	}
 }
 

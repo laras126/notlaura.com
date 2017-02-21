@@ -26,7 +26,7 @@
 
 		// Note that the following included files only need to contain the taxonomy/CPT/Menu arguments and register_whatever function. They are initialized here.
 		// http://generatewp.com is nice
-		
+
 		function register_post_types(){
 			require('lib/custom-types.php');
 		}
@@ -51,7 +51,7 @@
 		function add_to_context($context) {
 			$context['callout_tf'] = get_field('callout_tf', 'options');
 			$context['callout_bar'] = get_field('callout_bar', 'options');
-			
+
 			$context['main_nav'] = new TimberMenu('main_nav');
 			$context['footer_nav'] = new TimberMenu('footer_nav');
 			$context['footer_widgets'] = Timber::get_sidebar('sidebar.php');
@@ -80,12 +80,12 @@
 
 	new StarterSite();
 
-	
+
 	/*
 	 **************************
 	 * Custom Theme Functions *
-	 ************************** 
-	 */ 
+	 **************************
+	 */
 
 	// Enqueue scripts
 	function nl_scripts() {
@@ -111,13 +111,13 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'nl_scripts' );
 
-	
+
 	// Add Options Page
-	if( function_exists('acf_add_options_page') ) {	
+	if( function_exists('acf_add_options_page') ) {
 		acf_add_options_page('Theme Settings');
 	}
 
-	
+
 	// Load Gravity Forms JS in the footer...really? Sheesh.
 	// https://bjornjohansen.no/load-gravity-forms-js-in-footer
 
@@ -136,11 +136,11 @@
 
 
 
-	/* 
-	 * 
+	/*
+	 *
 	 * Nice to Haves
 	 *
-	 * These functions aren't necessary, 
+	 * These functions aren't necessary,
 	 * more things I find myself writing over and over
 	 *
 	 */
@@ -155,7 +155,7 @@
 			$title = __( 'Project Name' );
 		}
 		return $title;
-	} 
+	}
 	add_filter( 'enter_title_here', 'nl_title_placeholder_text' );
 
 
@@ -167,7 +167,7 @@
 		add_editor_style( 'assets/css/editor-style.css' );
 	}
 	add_action( 'after_setup_theme', 'nl_editor_styles' );
-	
+
 
 
 
@@ -176,9 +176,9 @@
 		add_post_type_support( 'page', 'excerpt' );
 	}
 	add_action( 'init', 'nl_add_excerpts_to_pages' );
-	
 
-	
+
+
 	// Add a 'Very Simple' toolbar style for the WYSIWYG editor in ACF
 	// http://www.advancedcustomfields.com/resources/customize-the-wysiwyg-toolbars/
 	function nl_acf_wysiwyg_toolbar( $toolbars ) {
@@ -205,7 +205,7 @@
 		function nl_add_custom_to_yoast( $content ) {
 			global $post;
 			$pid = $post->ID;
-			
+
 			$custom = get_post_custom($pid);
 			unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
 
@@ -254,3 +254,14 @@
 	  add_action('wp_footer', 'mtn_google_analytics', 20);
 	}
 
+
+
+
+
+
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}

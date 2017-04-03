@@ -106,9 +106,11 @@ $h6:  				$base;
 $serif:             'museo-slab-1', 'Georgia', serif;
 $sans-serif:        'museo-sans-1', 'Helvetica', serif;
 
+$heading-font-fallback:    'Helvetica', sans-serif;
+
 $heading-font: 		$serif;
-$body-font: 		$sans-serif;
-$quote-font: 		$serif;
+$body-font: 		  $sans-serif;
+$quote-font: 		  $serif;
 $nav-font: 			$sans-serif;
 $form-font: 		$sans-serif;
 $lead-font: 		$sans-serif;

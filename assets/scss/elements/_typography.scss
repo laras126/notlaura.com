@@ -19,7 +19,7 @@ html {
 body {
 	font-style: normal;
 	color: $text-dark;
-	font-size: $base; 
+	font-size: $base;
 	font-family: Helvetica, sans-serif;
 }
 
@@ -32,16 +32,16 @@ a {
 	color: $link-color;
 	text-decoration: none;
     border-bottom: 1px dotted $accent-light;
-	
+
 	&:hover, &:focus {
 		color: $link-hover;
 	}
 
 	&:active {
-		
+
 	}
 
-	// mobile tap color 
+	// mobile tap color
 	&:link {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
@@ -57,32 +57,37 @@ h1, h2, h3, h4, h5, h6 {
 	.wf-active {
 		h1, h2, h3 {
 			font-family: $heading-font;
+			font-weight: 300;
 		}
-	
+
 		h4, h5, h6 {
 			font-family: $body-font;
 		}
 	}
 
-	h3, h4, h6 {
+	h1, h2, h3 {
+		font-family: $heading-font-fallback;
+		font-weight: 300;
+	}
+
+	h4, h5, h6 {
 		font-weight: $heading-font-weight;
 	}
 
+
 h1 {
 	font-size: $h2;
-	font-weight: 300;
-	
+
 	@include bp(small) {
-		font-size: $h1;	
+		font-size: $h1;
 	}
-	
+
 	margin-top: $h3;
 
 }
 
 h2 {
 	font-size: $h2;
-	font-weight: 300;
 	margin-top: $h2;
 }
 
@@ -91,7 +96,7 @@ h3 {
 	margin-top: $h3;
 }
 
-h4 { 
+h4 {
 	font-size: $h4;
 	margin-top: $h3;
 }
@@ -104,18 +109,18 @@ h5 {
 	.site-main & {
 		color: $text-med;
 	}
-	
+
 	// font-family: $body-font;
 	font-weight: 300;
 }
 
-h6 {	
+h6 {
 	font-size: $h6;
-	margin-top: $h4;	
+	margin-top: $h4;
 }
 
 p, a, li {
-	font-weight: 300;	
+	font-weight: 300;
 }
 
 p {
@@ -140,11 +145,11 @@ blockquote {
     font-family: $quote-font;
 
     padding-left: $h3;
-    
+
     border-left: $accent-border;
     margin-bottom: $h3;
     font-style: italic;
-	
+
 	overflow: visible;
 
 	.special {

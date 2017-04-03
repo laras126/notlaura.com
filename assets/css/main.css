@@ -731,17 +731,21 @@ h1, h2, h3, h4, h5, .home .section-title, .list-minor li h4, h6 {
   line-height: 1.3; }
 
 .wf-active h1, .wf-active h2, .wf-active h3 {
-  font-family: "museo-slab-1", "Georgia", serif; }
+  font-family: "museo-slab-1", "Georgia", serif;
+  font-weight: 300; }
 
 .wf-active h4, .wf-active h5, .wf-active .home .section-title, .home .wf-active .section-title, .wf-active .list-minor li h4, .list-minor li .wf-active h4, .wf-active h6 {
   font-family: "museo-sans-1", "Helvetica", serif; }
 
-h3, h4, h6 {
+h1, h2, h3 {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 300; }
+
+h4, h5, .home .section-title, .list-minor li h4, h6 {
   font-weight: 500; }
 
 h1 {
   font-size: 2.64rem;
-  font-weight: 300;
   margin-top: 1.98rem; }
   @media (min-width: 36em) {
     h1 {
@@ -749,7 +753,6 @@ h1 {
 
 h2 {
   font-size: 2.64rem;
-  font-weight: 300;
   margin-top: 2.64rem; }
 
 h3 {

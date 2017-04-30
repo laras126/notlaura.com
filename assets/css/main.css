@@ -396,11 +396,11 @@ th {
   .row:after {
     clear: both; }
 
-/*  
+/*
 
 Harry Roberts says:
 
-"Only use @extend when the rulesets that you are trying 
+"Only use @extend when the rulesets that you are trying
 to DRY out are inherently and thematically related."
 
 - http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
@@ -565,7 +565,8 @@ exclusively.
 .invisible {
   display: none; }
 
-.visually-hidden {
+.visually-hidden,
+.screen-reader {
   position: absolute;
   top: -9999999px;
   left: -9999999px; }
@@ -674,25 +675,35 @@ exclusively.
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown; }
 
-.icon, .icon-rotate, .list-social .icon {
-  width: 2.64rem;
-  height: 2.64rem;
-  display: block;
-  margin: 0 auto; }
-
 .shape {
   width: 100%;
   fill: #237fa9; }
 
 .icon {
-  fill: #237fa9; }
+  width: 2.64rem;
+  height: 2.64rem;
+  fill: #86b2c6;
+  display: block;
+  margin: 0 auto; }
   a .icon:hover {
-    fill: #86b2c6; }
+    fill: #237fa9; }
 
 .icon-rotate, .list-social .icon {
-  fill: #f4f7f9; }
+  width: 2.64rem;
+  height: 2.64rem;
+  fill: #f4f7f9;
+  display: block;
+  margin: 0 auto; }
   a .icon-rotate:hover, a .list-social .icon:hover, .list-social a .icon:hover {
     fill: #86b2c6; }
+
+.icon-inline {
+  width: 1.43rem;
+  height: 1.43rem;
+  fill: #86b2c6;
+  display: inline-block; }
+  a .icon-inline:hover {
+    fill: #237fa9; }
 
 html {
   font-size: 90%;
@@ -1924,24 +1935,30 @@ figcaption {
   padding-bottom: 1.43rem;
   text-align: center; }
 
-.tease-thumb {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 1.43rem; }
-  .tease-thumb img {
-    border: 5px solid #e6e6e6; }
+.tease-project {
+  margin-bottom: 3.3rem; }
   @media (min-width: 42em) {
-    .tease-thumb > * {
+    .tease-project {
       float: left;
       position: relative;
       padding-left: 0.99rem;
       padding-right: 0.99rem;
-      width: 100%; } }
+      width: 50%; } }
+  .tease-project img {
+    border: 5px solid #e6e6e6; }
+    @media (min-width: 42em) {
+      .tease-project img:hover {
+        opacity: 0.7; } }
 
 .thumb-title {
   margin-top: 0.88rem;
-  margin-bottom: 1.98rem; }
+  margin-bottom: 0.88rem; }
+  .thumb-title > a {
+    border-bottom: 0; }
+
+.tease-tagline {
+  margin-top: 0;
+  margin-bottom: 0.88rem; }
 
 .site-footer {
   border-top: 0.44rem solid #e6e6e6;

@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     modernizr = require('gulp-modernizr'),
     browserSync = require('browser-sync').create(),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    cheerio = require('gulp-cheerio');
 
 // Put JS files into array
 var jsFileList = [
@@ -60,21 +61,27 @@ gulp.task('modernizr', function() {
 
 gulp.task('svgs', function () {
   return gulp.src('assets/img/svg/*.svg')
-    .pipe(rename({prefix: 'shape-'}))
+    .pipe(rename({prefix: 'svg-'}))
+    .pipe(cheerio({
+        run: function ($) {
+            $('[fill]').removeAttr('fill');
+        },
+        parserOptions: { xmlMode: true }
+    }))
     .pipe(svgmin(function (file) {
         var prefix = path.basename(file.relative, path.extname(file.relative));
         return {
           plugins: [{
             cleanupIDs: {
               prefix: prefix + '-',
-              minify: true
+              minify: true,
             }
           }]
         }
     }))
-    .pipe(svgstore())
+    .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('svg-defs.svg'))
-    .pipe(gulp.dest('views/utility'));
+    .pipe(gulp.dest('views/partials'));
 });
 
 gulp.task('browser-sync', function() {

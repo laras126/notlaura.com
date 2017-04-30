@@ -1,10 +1,11 @@
+
 <article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
 	{% block content %}
-		
+
 		{% include 'headers/header-tease.twig' %}
 
 		<div class="contain-sm tease-content">
-			
+
 			{% if '<!--more-->' in post.content %}
 				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)|wpautop}}
 			{% else %}
@@ -19,7 +20,7 @@
 			{% else %}
 				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 			{% endif %} #}
-			
+
 			{% include 'partials/edit-link.twig' %}
 		</div>
 

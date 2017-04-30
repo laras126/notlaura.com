@@ -5,25 +5,10 @@
 {% endblock %}
 
 {% block content %}
-	<div class="contain-lg block">
+	<div class="contain-lg teases-wrap">
 
 	{% for post in projects %}
-
-		<div class="tease tease-thumb">
-			<div class="cell-half">
-				<a href="{{post.link}}" title="{{post.title}}">
-					<figure class="reveal-on-hover">
-						<img src="{{post.thumbnail.src|resize(500,300)}}" alt="Thumbnail for {{post.title}}">
-					</figure>
-				</a>
-			</div>
-			<div class="cell-half">
-				<h5 class="text-center thumb-title">{{post.title}}</h5>
-				<p class="page-tagline">{{post.tagline}}</p>
-				<a href="{{post.project_link}}" target="blank" class="btn">Launch Project</a>
-			</div>
-		</div>
-
+		{% include 'teases/tease-project.twig' %}
 	{% endfor %}
 
 	</div>

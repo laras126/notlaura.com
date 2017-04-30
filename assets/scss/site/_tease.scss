@@ -17,25 +17,33 @@
 	@extend .meta-greyed;
 }
 
-.tease-footer {
 
-}
 
-.tease-thumb {
-	display: flex;
-
-	margin-bottom: $h4;
+.tease-project {
+	margin-bottom: $h1;
+	@include make-md-column(4);
 
 	img {
 		border: 5px solid $accent-light;
+		@include bp(med) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
 	}
 
-	> * {
-		@include make-md-column($c);
-	}
 }
 
 	.thumb-title {
 		margin-top: $sml;
-		margin-bottom: $h3;
+		margin-bottom: $sml;
+
+		> a {
+			border-bottom: 0;
+		}
 	}
+
+.tease-tagline {
+	margin-top: 0;
+	margin-bottom: $sml;
+}

@@ -8,10 +8,8 @@
 	background: $button-color;
 	font-weight: 500;
 	border-radius: 2px;
-	
-	// TODO: BAD BAD
-	// Remove important
-	// Or is this better than a new style to override the <a> color?
+
+	// :-/
 	color: $text-color !important;
 
     border: 2px solid lighten($button-color, 10%);
@@ -48,7 +46,7 @@
 
 @mixin unstyle-list($remove-pm: true) {
     list-style: none;
-    
+
     @if $remove-pm == true {
         padding-left: 0;
         margin-top: 0;
@@ -63,9 +61,9 @@
     }
 
     > li {
-        display: inline-block;    
+        display: inline-block;
         margin-right: $margin;
-        
+
         &:last-child {
             margin-right: 0;
         }

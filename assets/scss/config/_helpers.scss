@@ -1,9 +1,9 @@
 
-/*  
+/*
 
 Harry Roberts says:
 
-"Only use @extend when the rulesets that you are trying 
+"Only use @extend when the rulesets that you are trying
 to DRY out are inherently and thematically related."
 
 - http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
@@ -53,7 +53,7 @@ exclusively.
     @include bp(med) {
         width: 110%;
         margin-right: -5%;
-        margin-left: -5%;   
+        margin-left: -5%;
     }
 }
 
@@ -96,7 +96,7 @@ exclusively.
 
 @mixin change-text-align($base, $bp, $new) {
     text-align: $base;
-    
+
     @include bp($bp) {
         text-align: $new;
     }
@@ -184,11 +184,11 @@ exclusively.
     }
 
     &-light {
-        @include rotate($text-light, $accent-light);    
+        @include rotate($text-light, $accent-light);
     }
 
     &-vlight {
-        @include rotate($text-light, $accent-vlight);   
+        @include rotate($text-light, $accent-vlight);
     }
 
     &-info {
@@ -230,7 +230,8 @@ exclusively.
     display: none;
 }
 
-.visually-hidden {
+.visually-hidden,
+.screen-reader {
     position: absolute;
     top: -9999999px;
     left: -9999999px;
@@ -281,20 +282,20 @@ exclusively.
 
 .hide-after-lg {
     @include bp(large) {
-        display: none; 
+        display: none;
     }
 }
 
 // Ew!
-.hide-until-md, 
+.hide-until-md,
 %hide-until-md {
    	display: none !important;
     @include bp(med) {
-        display: inline-block !important; 
-    }   
+        display: inline-block !important;
+    }
 }
 
-.hide-after-md, 
+.hide-after-md,
 %hide-after-md {
 	@include bp(med) {
         display: none !important;
@@ -330,7 +331,7 @@ exclusively.
     }
 
 
-// Text alignment shortcuts 
+// Text alignment shortcuts
 // Mainly for prototyping and where semantics aren't crucial (which is nowhere? Discuss!)
 
 .text-center {
@@ -345,24 +346,24 @@ exclusively.
 // This can be used to add a border around a title, like this:
 
 //  <div class="decor-wrap">
-//      <h4 class="decor"><span>{{blck.list_title}}</span></h4>  
+//      <h4 class="decor"><span>{{blck.list_title}}</span></h4>
 //  </div>
 
 // .decor {
 //     @include meta;
-//     border-bottom: $accent-border; 
-//     position:relative; 
-    
-//     span { 
-//         position: relative; 
-//         top: $sml/1.5; 
+//     border-bottom: $accent-border;
+//     position:relative;
+
+//     span {
+//         position: relative;
+//         top: $sml/1.5;
 //         padding: 0 $sml 0 0;
 //         background-color: $body-bkgd;
 //     }
 // }
 
 // .decor-wrap{
-//     display: block; 
+//     display: block;
 //     margin: 0;
 //     @include clearfix;
 // }

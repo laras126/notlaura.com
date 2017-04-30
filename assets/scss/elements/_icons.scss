@@ -1,14 +1,16 @@
 
-%icon-base {
-	width: $h2;
-	height: $h2;
-	display: block;
-	margin: 0 auto;
-}
-
-@mixin icon($fill, $hover: $accent-med) {
-	@extend %icon-base;
+@mixin icon($fill, $hover: $accent-med, $size: $h2, $inline: false) {
+	width: $size;
+	height: $size;
 	fill: $fill;
+
+	@if $inline {
+		display: inline-block;
+	} @else {
+		display: block;
+		margin: 0 auto;
+	}
+
 	a &:hover {
 		fill: $hover;
 	}
@@ -20,9 +22,13 @@
 }
 
 .icon {
-	@include icon($accent-dark);
+	@include icon($accent-med, $hover: $accent-dark);
 }
 
 .icon-rotate {
 	@include icon($accent-vlight);
+}
+
+.icon-inline {
+	@include icon($fill: $accent-med, $hover: $accent-dark, $size: $h4, $inline: true);
 }

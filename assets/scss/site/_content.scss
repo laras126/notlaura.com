@@ -10,7 +10,7 @@ figcaption {
 
 	.caption-opaque {
 		background: $accent-vlight;
-		z-index: $ztop;	
+		z-index: $ztop;
 	}
 
 	.caption-clear {
@@ -26,7 +26,7 @@ figcaption {
 	figure {
 		@include bleed();
 		margin-top: $base;
-	}	
+	}
 
 	figcaption {
 		@extend .caption-clear;
@@ -41,40 +41,3 @@ figcaption {
 	text-align: center;
 }
 
-
-
-// Reveal on project hover
-
-// .reveal-on-hover {
-// 	position: relative;
-
-// 	img {
-// 		width: 100%;
-// 	}
-
-// }
-
-// 	.reveal-on-hover:hover {
-// 		.to-reveal {
-// 			opacity: 1;
-// 			transition: all 0.5s ease;
-// 		}
-		
-// 		img {
-// 			opacity: 0.5;
-// 		}	
-// 	} 
-	
-// 	.to-reveal {
-// 		position: absolute;
-// 		bottom: $base;
-// 		width: 80%;
-// 		left: 10%;
-// 		opacity: 0;
-	
-// 		a {
-// 			margin-bottom: $base;
-// 			@include center-block;
-// 			@include make-sm-column($c/2);
-// 		}
-// 	}

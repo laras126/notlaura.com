@@ -122,6 +122,7 @@ exclusively.
     font-size: $sml;
     font-family: $form-font;
     margin: 0;
+    line-height: $line-height-sm;
 
     @if $color {
         color: $color;

@@ -458,6 +458,7 @@ exclusively.
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #237fa9;
   text-align: right;
   margin-top: 1.1rem; }
@@ -466,12 +467,14 @@ exclusively.
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #9a9a9a; }
 
 .meta-light {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #ffffff; }
 
 .rotate {
@@ -624,6 +627,7 @@ exclusively.
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #3e3739; }
 
 .meta-colon {
@@ -632,6 +636,7 @@ exclusively.
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #9a9a9a; }
 
 .text-center {
@@ -996,6 +1001,7 @@ input[type="checkbox"]:focus {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #3e3739;
   margin-bottom: 2.2rem;
   margin-top: 0.88rem; }
@@ -1008,6 +1014,7 @@ input[type="checkbox"]:focus {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #3e3739;
   margin-bottom: 0.66rem; }
   .gform_wrapper .gfield_description.validation_message {
@@ -1072,6 +1079,7 @@ input[type="checkbox"]:focus {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #3e3739; }
 
 .gform_delete {
@@ -1242,6 +1250,7 @@ input[type="checkbox"]:focus {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #3e3739;
   text-align: center;
   margin-top: 0.88rem;
@@ -1734,6 +1743,7 @@ figure {
     font-size: 0.88rem;
     font-family: "museo-sans-1", "Helvetica", serif;
     margin: 0;
+    line-height: 1.3;
     color: #237fa9; }
 
 .pagenav,
@@ -1848,6 +1858,7 @@ figure {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #86b2c6;
   letter-spacing: 2px;
   text-transform: lowercase; }
@@ -1911,6 +1922,7 @@ figcaption {
   font-size: 0.88rem;
   font-family: "museo-sans-1", "Helvetica", serif;
   margin: 0;
+  line-height: 1.3;
   color: #9a9a9a; }
 
 .entry-content figure,

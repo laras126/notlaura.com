@@ -127,6 +127,10 @@ exclusively.
     @if $color {
         color: $color;
     }
+
+    .entry-content & {
+        margin-top: $base;
+    }
 }
 
 .meta-cite {

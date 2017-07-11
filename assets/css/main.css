@@ -462,6 +462,8 @@ exclusively.
   color: #237fa9;
   text-align: right;
   margin-top: 1.1rem; }
+  .entry-content .meta-cite {
+    margin-top: 1.1rem; }
 
 .meta-greyed, .tease-meta {
   font-size: 0.88rem;
@@ -469,6 +471,8 @@ exclusively.
   margin: 0;
   line-height: 1.3;
   color: #9a9a9a; }
+  .entry-content .meta-greyed, .entry-content .tease-meta {
+    margin-top: 1.1rem; }
 
 .meta-light {
   font-size: 0.88rem;
@@ -476,6 +480,8 @@ exclusively.
   margin: 0;
   line-height: 1.3;
   color: #ffffff; }
+  .entry-content .meta-light {
+    margin-top: 1.1rem; }
 
 .rotate {
   background-color: #237fa9;
@@ -629,6 +635,8 @@ exclusively.
   margin: 0;
   line-height: 1.3;
   color: #3e3739; }
+  .entry-content .meta {
+    margin-top: 1.1rem; }
 
 .meta-colon {
   text-transform: uppercase;
@@ -638,6 +646,8 @@ exclusively.
   margin: 0;
   line-height: 1.3;
   color: #9a9a9a; }
+  .entry-content .meta-colon {
+    margin-top: 1.1rem; }
 
 .text-center {
   text-align: center; }
@@ -1005,6 +1015,14 @@ input[type="checkbox"]:focus {
   color: #3e3739;
   margin-bottom: 2.2rem;
   margin-top: 0.88rem; }
+  .entry-content .gform_wrapper .ginput_complex label, .entry-content
+  .gform_wrapper .gfield_time_hour label, .entry-content
+  .gform_wrapper .gfield_time_minute label, .entry-content
+  .gform_wrapper .gfield_date_month label, .entry-content
+  .gform_wrapper .gfield_date_day label, .entry-content
+  .gform_wrapper .gfield_date_year label, .entry-content
+  .gform_wrapper .instruction {
+    margin-top: 1.1rem; }
 
 .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer input.button {
   display: block; }
@@ -1017,6 +1035,8 @@ input[type="checkbox"]:focus {
   line-height: 1.3;
   color: #3e3739;
   margin-bottom: 0.66rem; }
+  .entry-content .gform_wrapper .gfield_description {
+    margin-top: 1.1rem; }
   .gform_wrapper .gfield_description.validation_message {
     color: #993365;
     padding-top: 0.33rem; }
@@ -1081,6 +1101,9 @@ input[type="checkbox"]:focus {
   margin: 0;
   line-height: 1.3;
   color: #3e3739; }
+  .entry-content .ginput_preview, .entry-content
+  .ginput_preview strong {
+    margin-top: 1.1rem; }
 
 .gform_delete {
   opacity: 0.7;
@@ -1255,6 +1278,9 @@ input[type="checkbox"]:focus {
   text-align: center;
   margin-top: 0.88rem;
   font-weight: 700; }
+  .entry-content .link-edit, .entry-content
+  .link-more {
+    margin-top: 1.1rem; }
 
 .link-back-top .icon {
   display: block;
@@ -1745,6 +1771,8 @@ figure {
     margin: 0;
     line-height: 1.3;
     color: #237fa9; }
+    .entry-content .section-nav ul a {
+      margin-top: 1.1rem; }
 
 .pagenav,
 .pagination {
@@ -1862,6 +1890,8 @@ figure {
   color: #86b2c6;
   letter-spacing: 2px;
   text-transform: lowercase; }
+  .entry-content .site-desc {
+    margin-top: 1.1rem; }
   @media (min-width: 36em) {
     .site-desc {
       display: block; } }
@@ -1924,6 +1954,10 @@ figcaption {
   margin: 0;
   line-height: 1.3;
   color: #9a9a9a; }
+  .entry-content .caption-clear, .entry-content figcaption, .entry-content
+  .tease-content figcaption,
+  .tease-content .entry-content figcaption {
+    margin-top: 1.1rem; }
 
 .entry-content figure,
 .tease-content figure {

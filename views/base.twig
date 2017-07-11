@@ -6,9 +6,11 @@
 {% endblock %}
 
     <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
+
         <div class="visually-hidden">
             {% include 'partials/svg-defs.svg' %}
         </div>
+
         {% if callout_tf == true %}
             <div class="callout">
                 <div class="contain"><p class="meta-light">{{callout_bar}}</p></div>

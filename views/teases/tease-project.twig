@@ -2,11 +2,16 @@
 
 {% block content %}
 
-  <figure class="tease-thumb">
+  <div class="tease-thumb">
     <a href="{{post.project_link ? post.project_link : post.link}}" {{post.project_link ? 'target="blank"'}} title="{{post.title}}">
-      <img src="{{post.thumbnail.src|resize(700, 450)}}" alt="Thumbnail for {{post.title}}">
+      {# {{function('the_post_thumbnail')}} #}
+      <img
+        src="{{ post.thumbnail.src('medium') }}"
+        srcset="
+            {{ post.thumbnail.src('large') }} 480w"
+        alt="{{ variation.thumbnail.alt }}" />
     </a>
-  </figure>
+  </div>
 
   <div class="tease-info">
     <h4 class="thumb-title">{{post.title}}{% if post.project_link %}
@@ -15,7 +20,8 @@
     </h4>
     <p class="tease-tagline">{{post.tagline}}</p>
     <p class="meta">{{post.para_intro}} <a href="{{post.link}}" title="{{post.title}}"><strong>Read More &rarr;</strong></a></p>
-    {% for c in post.get_terms('project_type') %}{{c.name}}{% endfor %}
+    <p></p>
+    <p class="meta-greyed tease-tax">{% for c in post.get_terms('project-type') %}{{c.name}}{{loop.last ? '' : ', '}}{% endfor %}</p>
   </div>
 
 {% endblock %}

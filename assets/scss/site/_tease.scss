@@ -17,11 +17,30 @@
 	@extend .meta-greyed;
 }
 
-
-
 .tease-project {
-	margin-bottom: $h1;
-	@include make-md-column(4);
+	&:first-child {
+		padding-top: $h3;
+	}
+	margin-bottom: $h3;
+	padding-bottom: $h3;
+
+	@include bp(large) {
+		&:first-child {
+			padding-top: $h1;
+		}
+		margin-bottom: $h1;
+		padding-bottom: $h1;
+	}
+
+	border-bottom: $accent-border;
+
+	@include bp(large) {
+		display: flex;
+
+		> * {
+			@include make-md-column(4);
+		}
+	}
 
 	img {
 		border: 5px solid $accent-light;
@@ -31,7 +50,21 @@
 			}
 		}
 	}
+}
 
+.tease-tax {
+	margin-top: auto;
+}
+
+.tease-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.tease-thumb {
+	@include bp(large) {
+		width: 45%;
+	}
 }
 
 	.thumb-title {

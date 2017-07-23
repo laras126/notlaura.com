@@ -11,14 +11,13 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    modernizr = require('gulp-modernizr'),
     browserSync = require('browser-sync').create(),
     livereload = require('gulp-livereload'),
     cheerio = require('gulp-cheerio');
 
 // Put JS files into array
 var jsFileList = [
-  'assets/js/vendor/*.js',
+  'assets/js/plugins.js',
   'assets/js/main.js'
 ];
 
@@ -42,21 +41,6 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('assets/js/build'));
-});
-
-gulp.task('js-head', function() {
-  return gulp.src('assets/js/vendor-head/*.js')
-    .pipe(concat('scripts-head.js'))
-    .pipe(gulp.dest('assets/js/build'))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('assets/js/build'));
-});
-
-gulp.task('modernizr', function() {
-  return gulp.src('assets/js/build/*.js')
-    .pipe(modernizr())
-    .pipe(gulp.dest('assets/js/vendor-head'))
 });
 
 gulp.task('svgs', function () {

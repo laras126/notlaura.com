@@ -21,25 +21,10 @@
  * @since    Timber 0.1
  */
 
-// Get sibling pages
-// http://pastebin.com/SUCUP6qu
-$pagelist = get_pages('sort_column=menu_order&amp;sort_order=asc&amp;child_of='.$post->post_parent);
-$pages = array();
- 
-foreach ($pagelist as $page) {
-       $pages[] += $page->ID;
-}
-
-$current = array_search($post->ID, $pages);
 
 $context = Timber::get_context();
 $post = new TimberPost();
 
-$context['test_post'] = new TimberPost(192);
-
 $context['post'] = $post;
-
-$context['prev'] = new TimberPost($pages[$current-1]);
-$context['next'] = new TimberPost($pages[$current+1]);
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

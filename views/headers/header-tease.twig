@@ -1,7 +1,9 @@
 
 {# TODO: reactivate the cat archive link once template is styled. #}
 
-<header class="contain-md tease-header">
-	<h2 class="tease-title"><a href="{{post.link}}">{{post.title}}</a></h2>
-	<p class="meta-greyed">Posted: {{post.date}}, filed under: {% for cat in post.categories %}{# <a href="{{cat.link}}" title="{{cat.name}} Archives"> #}{{cat.name}}{# </a> #}{{ loop.last ? '' : ', ' }} {% endfor %}</p>
+<header class="tease-header">
+  <div class="contain-md">
+  	<h2 class="tease-title"><a href="{{post.link}}">{{post.title}}</a></h2>
+  	<p class="meta-greyed">Posted: {{post.date}}, filed under: {% for cat in post.categories %}<a href="{{cat.link}}" title="{{cat.name}} Archives">{{cat.name}}</a>{{ loop.last ? '' : ', ' }} {% endfor %}</p>
+  </div>
 </header>

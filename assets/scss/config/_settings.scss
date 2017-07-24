@@ -27,6 +27,7 @@ $white: 			#ffffff;
 $white-alt:  		#f4f7f9;
 
 $l-teal: 			desaturate(#BDF2E3, 10%);
+$seagreen:    #21A99C;
 $green: 			#1BBF54;
 $yellow: 			#FCF7D8;
 $l-yellow: 			lighten($yellow, 5%);
@@ -104,19 +105,20 @@ $h6:  				$base;
 
 // Fonts
 
-$serif:             'museo-slab-1', 'Georgia', serif;
-$sans-serif:        'museo-sans-1', 'Helvetica', serif;
+$serif:             'henriette', 'Georgia', serif;
+$sans-serif:        'europa', 'Helvetica', serif;
 
 $heading-font-fallback:    'Helvetica', sans-serif;
 
-$heading-font: 		$serif;
-$body-font: 		  $sans-serif;
-$quote-font: 		  $serif;
+$heading-font:  $serif;
+$body-font: 		$sans-serif;
+$quote-font: 		$sans-serif;
 $nav-font: 			$sans-serif;
 $form-font: 		$sans-serif;
 $lead-font: 		$sans-serif;
 
-$heading-font-weight: 500;
+$font-weight-base:    400;
+$font-weight-strong:  700;
 
 
 

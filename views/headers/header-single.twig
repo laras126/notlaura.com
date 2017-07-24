@@ -1,7 +1,6 @@
 
 <header class="header-single">
-	<div class="contain-lg">
-		<nav class="clearfix pagenav bleed">
+		{# <nav class="clearfix pagenav bleed">
 			<div class="pagenav-link link-prev">
 				{% if post.prev %}
 				<a href="{{post.prev.link}}" title="Previous Project">
@@ -10,9 +9,9 @@
 				{% endif %}
 			</div>
 
-			<div class="pagenav-middle">
+			<div class="pagenav-middle"> #}
 				<h1 class="page-title">{{post.title}}</h1>
-			</div>
+			{# </div>
 
 			<div class="pagenav-link link-next">
 				{% if post.next %}
@@ -23,9 +22,9 @@
 			</div>
 
 		</nav> <!-- /.pagenav -->
+ #}
+		<p class="meta-greyed">{% if post.categories %}Filed under: {% for cat in post.categories %}{#<a href="{{cat.link}}" title="{{cat.name}} Archives">#}{{cat.name}}{# </a> #}{{ loop.last ? '' : ', ' }}{% endfor %}{% endif %}</p>
 
-		<p class="meta-greyed">Posted: {{post.date}}{% if post.categories %}, filed under: {% for cat in post.categories %}{#<a href="{{cat.link}}" title="{{cat.name}} Archives">#}{{cat.name}}{# </a> #}{{ loop.last ? '' : ', ' }}{% endfor %}{% endif %}</p>
-</div>
 </header>
 
 

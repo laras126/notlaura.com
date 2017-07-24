@@ -6,7 +6,20 @@
 
 {% block content %}
 
-	<div class="contain-md">
+	<div class="entry-wrap">
+
+		<aside class="entry-aside">
+			<p class="meta-greyed">Posted: {{post.date}}</p>
+			{% if post.get_terms('tag') %}
+				<p class="meta-greyed">Keywords:</p>
+				<ul class="tags-list">
+					{% for tag in post.get_terms('tag') %}
+						<li><a href="{{tag.link}}" class="tag">{{tag.name}}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% include 'partials/edit-link.twig' %}
+		</aside>
 
 		{% if post.content %}
 			{# Show post content for legacy posts. All new posts are created with blocks. #}
@@ -17,23 +30,11 @@
 			{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 		{% endif %}
 
-		{% include 'partials/edit-link.twig' %}
-
-		{% if post.get_terms('tag') %}
-			<p class="meta-greyed tags-list spacer-top">Tagged:
-				{% for tag in post.get_terms('tag') %}
-					{# Keeping the links out for now until the archive template is ready. #}
-					{#<a href="{{tag.link}}">{{tag.name}}</a>#}{{tag.name}}{{ loop.last ? '' : ', ' }}
-				{% endfor %}
-			</p>
-		{% endif %}
-
 	</div>
 
 	{% include 'partials/prev-next.twig' %}
 
-	<div class="contain-sm spacer-top spacer-bot">
-		<div id="disqus_thread"></div>
+		<div class="comments" id="disqus_thread"></div>
 		<script type="text/javascript">
 		    /* * * CONFIGURATION VARIABLES * * */
 		    var disqus_shortname = 'notlaura';

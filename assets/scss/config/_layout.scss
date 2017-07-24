@@ -1,23 +1,4 @@
 
-// ---
-// Cusomized Bootstrap Scaffolding Mixins
-// ---
-
-
-// ---
-//
-// Changes made by Lara:
-// - Added "@if $gutter != 0" conditional to prevent overriding gutter padding
-// - Changed pixel values to values defined in _settings.scss
-// - Moved all styles into MQ
-// - Created an @extend for static styles
-// - Generate classes with a mixin
-// - Not using those $screen-sm-min breakpoints
-//
-// ---
-
-
-
 
 // ----
 // Grid Settings
@@ -38,37 +19,79 @@ $gutter:                    $h3 !default;
 // Wrapper to contain internal columns.
 // The negative margin accounts for the extra padding from nested columns
 
-@mixin container($size, $leftalign: false) {
-    margin: 0 auto;
-    width: 85%;
-
-    @include bp(large) {
-      width: 80%;
-      @if $leftalign == true {
-        padding-right: ($screen-xl - $size) / 2.5;
-        max-width: $screen-xl;
-      } @else {
-        max-width: $size;
-      }
-    }
-
-    @include clearfix;
+@mixin contain($size) {
+  margin: 0 auto;
+  width: 90%;
+  max-width: $size;
 }
 
 // To contain a primary section of content.
 // Max width of the widest inner wrap (below).
 
-.contain-sm {
-    @include container($screen-sm, true);
+// .contain-sm {
+//     @include container($screen-sm);
+// }
+
+// .contain-md {
+//     @include container($screen-md);
+// }
+
+// .contain-lg {
+//     @include container($screen-lg);
+// }
+
+
+
+// Bleeds
+
+.fig-large {
+
 }
 
-.contain-md {
-    @include container($screen-md, true);
+
+// TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
+
+@mixin bleed() {
+
+  @include bp(med) {
+    width: 110%;
+  }
+
+  @include bp(large) {
+    width: 120%;
+  }
 }
 
-.contain-lg {
-    @include container($screen-lg, true);
+.bleed {
+    // @include bleed;
 }
+
+@mixin inverse-bleed {
+    @include bp(med) {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+.inverse-bleed {
+    @include inverse-bleed;
+}
+
+// Mainly for images.
+
+.bleed-left {
+    @include bp(med) {
+        margin-left: -10%;
+    }
+}
+
+.bleed-right {
+    @include bp(med) {
+        margin-right: -10%;
+    }
+}
+
+
 
 
 

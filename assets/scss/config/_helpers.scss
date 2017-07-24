@@ -25,50 +25,6 @@
 }
 
 
-// Bleeds
-
-// TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
-
-@mixin bleed {
-
-  @include bp(med) {
-    width: 110%;
-  }
-
-  @include bp(large) {
-    width: 120%;
-  }
-}
-
-.bleed {
-    @include bleed;
-}
-
-@mixin inverse-bleed {
-    @include bp(med) {
-        margin-left: 7%;
-        margin-right: 7%;
-    }
-}
-
-.inverse-bleed {
-    @include inverse-bleed;
-}
-
-// Mainly for images.
-
-.bleed-left {
-    @include bp(med) {
-        margin-left: -10%;
-    }
-}
-
-.bleed-right {
-    @include bp(med) {
-        margin-right: -10%;
-    }
-}
-
 
 // ----
 // Typography
@@ -158,30 +114,6 @@
 
     a:active {
         color: darken($link-clr, 20%);
-    }
-}
-
-.rotate {
-    @include rotate;
-
-    &-dark {
-        @include rotate($text-light, $text-dark);
-    }
-
-    &-med {
-        @include rotate($text-light, $accent-med);
-    }
-
-    &-light {
-        @include rotate($text-light, $accent-light);
-    }
-
-    &-vlight {
-        @include rotate($text-light, $accent-vlight);
-    }
-
-    &-info {
-        @include rotate($text-light, $alert-info);
     }
 }
 

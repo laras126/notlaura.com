@@ -39,14 +39,14 @@
 .link-edit,
 .link-more {
 	@include meta;
-    text-align: center;
-    margin-top: $sml;
+  text-align: center;
+  margin-top: $sml;
 	font-weight: 700;
 }
 
 .link-back-top .icon {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: $h3 auto;
 }
 
 .read-more {

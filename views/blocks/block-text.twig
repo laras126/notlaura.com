@@ -2,8 +2,8 @@
 
 {% block content %}
 
-	<div class="contain-sm {{blck.class}}">
+	{% if blck.class %}<div class="{{blck.class}}">{% endif %}
 		{{blck.text}}
-	</div>
-		
+	{% if blck.class %}</div>{% endif %}
+
 {% endblock %}

@@ -4,7 +4,7 @@
 
 		{% include 'headers/header-tease.twig' %}
 
-		<div class="contain-sm tease-content">
+		<div class="tease-content">
 
 			{% if '<!--more-->' in post.content %}
 				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)|wpautop}}
@@ -15,6 +15,7 @@
 			{% endif %}
 
 			{% include 'partials/edit-link.twig' %}
+
 		</div>
 
 		{% if post.get_thumbnail %}

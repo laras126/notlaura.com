@@ -1,10 +1,10 @@
 {% extends "blocks/block.twig" %}
 
 {% block content %}
-	
-	<div class="contain-md {{blck.css_class}}">
-		<p>{{blck.cta_text}}</p>	
+
+	{% if blck.css_class %}<div class="{{blck.css_class}}">{% endif %}
+		<p>{{blck.cta_text}}</p>
 		<a href="{{blck.page_link ? blck.page_link : blck.text_link}}" class="btn-cta">{{blck.button_text}}</a>
-	</div>
+	{% if blck.css_class %}</div>{% endif %}
 
 {% endblock %}

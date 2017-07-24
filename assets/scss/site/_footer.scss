@@ -1,14 +1,8 @@
 
 .site-footer {
-	border-top: $sml/2 solid $accent-light;
-	@include rotate;
-
-	a {
-		@include unstyle-link;
-	}
-
+	border-top: $accent-border;
 }
-	
+
 	.list-services {
 		@include unstyle-list;
 		margin-top: $base;
@@ -18,7 +12,7 @@
 
 		li {
 			font-size: $sml;
-			
+
 			&:before {
 			}
 		}
@@ -34,40 +28,33 @@
 
 		@include bp(med) {
 			text-align: left;
-		}	
+		}
 
 		.icon {
-			@extend .icon-rotate;
+			@extend .icon;
 			margin-right: $sml;
 		}
 	}
 
 	.colophon {
 		padding-bottom: $base;
-		margin-top: $base;
-		@include clearfix;
-
 		p {
 			font-size: $sml;
 		}
-
-		a {
-			color: $accent-light;
-			&:hover {
-				color: $accent-dark;
-			}
-		}
-
 	}
 
+.footer-content {
+	@include divide-with-border(bottom);
+}
 
-// .col-15 {
-// 	@include make-lg-column($c * 1/5);
-// }
+.widgets {
+	display: flex;
+	justify-content: space-between;
+}
 
 .widget {
-	@include make-md-column($c * 1/2);
 	font-size: $sml;
+	width: 45%;
 }
 
 	.widget-title {}

@@ -15,9 +15,7 @@
 {% endif %}
 
 
-{% block content %}	
-<div class="contain-md">
-
+{% block content %}
 
 	{% if blck.list_title %}
 		<h4 class="list-title">{{blck.list_title}}</h4>
@@ -30,7 +28,7 @@
 
 				{% if type != 'faq'  %}
 				<div class="item-support">
-					
+
 					{% if type != 'connected' %}
 						{% if item.image and item.svg is empty %}
 							<img src="{{TimberImage(item.image).src('medium')}}" alt="{{item.post_title}}"/>
@@ -48,7 +46,7 @@
 						{# TODO: make this featured image instead #}
 						<img src="{{TimberImage(item.thumbnail).src('medium')}}" alt="{{item.post_title}}"/>
 					{% endif %}
-					
+
 				</div> <!-- /.item-support -->
 
 				<div class="item-main">
@@ -75,8 +73,7 @@
 
 			</li>
 		{% endfor %}
-			
+
 	</ul> <!-- /.list-{{display}} -->
-	
-</div>
+
 {% endblock %}

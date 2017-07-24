@@ -5,78 +5,70 @@
     </head>
 {% endblock %}
 
-    <body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
+<body class="{{body_class}} wf-loading" data-template="base.twig" id="top">
 
-        <div class="visually-hidden">
-            {% include 'partials/svg-defs.svg' %}
-        </div>
+  <div class="visually-hidden">
+    {% include 'partials/svg-defs.svg' %}
+  </div>
 
-        {% if callout_tf == true %}
-            <div class="callout">
-                <div class="contain"><p class="meta-light">{{callout_bar}}</p></div>
-            </div>
-        {% endif %}
+  <div class="site">
 
-        <header class="site-header" role="banner">
-            {% block header %}
-                {% include 'headers/header-site.twig' %}
-            {% endblock %}
-        </header>
+  {% if callout_tf == true %}
+    <div class="callout">
+      <p class="meta-light">{{callout_bar}}</p>
+    </div>
+  {% endif %}
 
-        <main class="site-main" role="main">
+  <header class="site-header" role="banner">
+    {% block header %}
+        {% include 'headers/header-site.twig' %}
+    {% endblock %}
+  </header>
 
-            <div class="page-body">
-                {% block content_head %}
-                    {% include 'headers/header-page.twig' %}
-                {% endblock %}
-                {% block content %}
-                    Sorry, no content
-                {% endblock %}
-            </div>
+  <main class="site-main" role="main">
 
-            {% if sidebar %}
-                <aside class="layout-sidebar">
-                    {{sidebar}}
-                </aside>
-            {% endif %}
+    {% block content_head %}
+        {% include 'headers/header-page.twig' %}
+    {% endblock %}
+    {% block content %}
+        Sorry, no content
+    {% endblock %}
 
-        </main>
+  </main>
 
-        {% block footer %}
+  <footer class="site-footer" role="contentinfo">
 
-            <nav class="link-back-top spacer-bot">
-                <a href="#top">
-                    {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
-                </a>
-            </nav>
+  {% block footer %}
 
-            <footer class="site-footer" role="contentinfo">
+    <nav class="link-back-top">
+      <a href="#top">
+        {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
+      </a>
+    </nav>
 
-                <div class="contain-md text-center">
-                    <h5>What can I do for you?</h5>
-                    <ul class="list-services">
-                        <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish.</a></li>
-                        <li><a href="{{site.link}}/fish-with-me">Let's fish together!</li>
-                        <li><a href="{{site.link}}/fish-for-me">Fish for me.</a></li>
-                    </ul>
-                    <hr>
-                </div>
+    <div class="footer-content">
+      <h5>What now?</h5>
+      <ul class="list-services">
+        <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish.</a></li>
+        <li><a href="{{site.link}}/fish-with-me">Let's fish together!</a></li>
+        <li><a href="{{site.link}}/fish-for-me">Fish for me.</a></li>
+      </ul>
+    </div>
 
-                <div class="widgets">
-                    {% include 'footer.twig' %}
-                </div>
+    <div class="footer-content widgets">
+      {% include 'footer.twig' %}
+    </div>
 
-                <div class="colophon rotate-med text-center">
-                    <div class="contain-lg">
-                        <p class="credit">&copy; Lara Schenck, LLC. Powered by <a href="http://wordpress.org" target="blank">WordPress</a> and <a href="http://upstatement.com/timber" target="blank">Timber</a>, hosted by <a href="http://webfaction.com" target="blank">WebFaction</a>. Source <a href="http://github.com/laras126/notlaura.com" target="blank">on Github</a>.</p>
-                    </div>
-                </div>
-            </footer>
+    <div class="colophon">
+      <p class="credit">&copy; {{ "now"|date('Y') }} Lara Schenck, LLC. Powered by <a href="http://wordpress.org">WordPress</a> and <a href="http://upstatement.com/timber">Timber</a>, hosted by <a href="http://webfaction.com" target="blank">WebFaction</a>. Source <a href="http://github.com/laras126/notlaura.com">on Github</a>.</p>
+    </div>
 
-            {{ function('wp_footer') }}
+    {{ function('wp_footer') }}
 
-        {% endblock %}
+  {% endblock %}
+</footer>
+</site>
 
-    </body>
+</body>
 
 </html>

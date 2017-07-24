@@ -9,11 +9,11 @@
 }
 
 body {
-	background-color: $body-bkgd;
+	// background-color: $body-bkgd;
 	// border-top: $sml/2 solid $accent-dark;
-	
+
 	word-wrap: break-word;
-	
+
 	@include bp(small) {
 		word-wrap: normal;
 	}
@@ -42,11 +42,42 @@ figure {
 
 
 // ---
-// Typography 
+// Typography
 // ---
 
 .lead {
 	font-size: $h4;
+}
+
+
+// Site
+
+.site {
+	@include grid(yes) {
+		display: grid;
+		background-color: yellow;
+	}
+}
+
+.site-header,
+.site-footer {
+  @include grid(no) {
+    @include contain($screen-lg);
+  }
+}
+
+.site-main {
+	@include grid(no) {
+    @include contain($screen-md);
+  }
+}
+
+.site-main {
+
+}
+
+.site-footer {
+
 }
 
 

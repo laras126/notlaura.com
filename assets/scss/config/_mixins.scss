@@ -40,6 +40,7 @@
 
 
 
+
 // ----
 // Lists
 // ----
@@ -96,6 +97,39 @@
 }
 
 
+
+
+// ----
+// Detect CSS Grid support
+// ----
+
+$production: false;
+
+@mixin grid($supports) {
+  @if not $production {
+    @if $supports == yes {
+      @supports not (grid-area: auto) {
+        @content;
+      }
+    }
+    @if $supports == no {
+      @supports (grid-area: auto) {
+        @content;
+      }
+    }
+  } @else {
+    @if $supports == yes {
+      @supports (grid-area: auto) {
+        @content;
+      }
+    }
+    @if $supports == no {
+      @supports not (grid-area: auto) {
+        @content;
+      }
+    }
+  }
+}
 
 
 

@@ -6,7 +6,7 @@
 
 {% block content %}
 
-	<div class="contain-sm">
+	<div class="contain-md">
 
 		{% if post.content %}
 			{# Show post content for legacy posts. All new posts are created with blocks. #}
@@ -16,16 +16,16 @@
 		{% else %}
 			{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 		{% endif %}
-	
+
 		{% include 'partials/edit-link.twig' %}
-		
+
 		{% if post.get_terms('tag') %}
-			<p class="meta-greyed tags-list spacer-top">Tagged: 
+			<p class="meta-greyed tags-list spacer-top">Tagged:
 				{% for tag in post.get_terms('tag') %}
 					{# Keeping the links out for now until the archive template is ready. #}
 					{#<a href="{{tag.link}}">{{tag.name}}</a>#}{{tag.name}}{{ loop.last ? '' : ', ' }}
 				{% endfor %}
-			</p> 
+			</p>
 		{% endif %}
 
 	</div>
@@ -37,7 +37,7 @@
 		<script type="text/javascript">
 		    /* * * CONFIGURATION VARIABLES * * */
 		    var disqus_shortname = 'notlaura';
-		    
+
 		    /* * * DON'T EDIT BELOW THIS LINE * * */
 		    (function() {
 		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,10 +1,10 @@
 
-.site-header { 
+.site-header {
     @include container($screen-lg);
 }
 
 .site-info,
-.site-nav {    
+.site-nav {
     @include make-xs-column($c, false);
 }
 
@@ -18,34 +18,34 @@
     }
 
 .site-title {
-    text-transform: lowercase;
+    // text-transform: lowercase;
     font-size: $h3;
     margin-top: $base;
 
     a {
         @include unstyle-link;
     }
-    
+
 }
 
-.site-desc { 
+.site-desc {
 	@include meta($accent-med);
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
 
     @include bp(small) {
         display: block;
     }
 
-    text-transform: lowercase;
+    // text-transform: lowercase;
 }
 
-.site-header {}	
+.site-header {}
 
 .header-brand {
 	// display: table-row;
 }
 
-.header-tag, 
+.header-tag,
 .header-logo {
 	// display: table-cell;
 	// vertical-align: middle;

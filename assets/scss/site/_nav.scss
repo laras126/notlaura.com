@@ -8,7 +8,7 @@
 
     i {
         font-size: $h2;
-        line-height: $h2;    
+        line-height: $h2;
         color: $light-blue;
         background-color: $accent-dark;
     }
@@ -33,9 +33,9 @@
     background-color: $body-bkgd;
     margin-top: $sml;
     padding: $sml 0;
-    text-transform: lowercase;
+    // text-transform: lowercase;
     position: relative;
-    z-index: $ztop; 
+    z-index: $ztop;
 
     overflow: hidden;
     max-height: 0;
@@ -61,27 +61,27 @@
         @include bp(menu) {
             border-top: 0;
         }
-    }    
-    
+    }
+
 
     // ----
     // Styles for desktop menu
     // ----
 
     @include bp(menu) {
-        text-align: right; 
+        text-align: right;
         max-height: none;
         overflow: visible;
 
         li {
             display: inline-block;
-            
+
             a {
                 border-bottom: 1px solid transparent;
                 border-top: 1px solid transparent;
                 padding-top: $sml/2;
                 padding-bottom: $sml/2;
-                
+
                 &:hover, &:focus {
                     border-bottom: $accent-border;
                     border-top: $accent-border;
@@ -94,7 +94,7 @@
         }
 
         // Current page highlighter
-        li.current-menu-item, 
+        li.current-menu-item,
         li.current_page_item,
         li.current-page-ancestor {
             a {
@@ -110,21 +110,21 @@
 // Subnav
 
 .menu-has-children {
- 
+
 }
 
     .menu-children {
         background-color: $accent-vlight;
         @include bp(menu) {
             background: none;
-            position: absolute;    
+            position: absolute;
             text-align: right;
             border-top: $accent-border;
         }
     }
-    
+
     .menu-children {
-        border-top: 0;    
+        border-top: 0;
     }
 
 
@@ -134,11 +134,11 @@
     padding-left: 0;
     text-align: center;
     @include unstyle-list;
-    
+
     @include bp(small) {
         @include horizontal-list($margin: $xsml);
         li {
-            padding: $xsml;    
+            padding: $xsml;
         }
     }
 
@@ -148,7 +148,7 @@
     a {
         @include meta($color: $accent-dark);
     }
-    
+
 }
 
 
@@ -189,7 +189,7 @@
     padding: $xsml;
 
     a {
-        border: none; 
+        border: none;
     }
 
     .current {
@@ -222,11 +222,11 @@
         margin: 0 0 5px 0;
         border-radius: 1px;
     }
-    
+
     .menu-link span:last-child {
         margin:0;
     }
-    
+
     .menu-link.active span:nth-of-type(1) {
         transform: rotate(45deg);
         margin: 10px 0 0 0;

@@ -13,10 +13,6 @@ figcaption {
 		z-index: $ztop;
 	}
 
-	.caption-clear {
-		@include meta($text-med);
-	}
-
 
 
 // Entry content (for legacy posts)
@@ -29,7 +25,7 @@ figcaption {
 	}
 
 	figcaption {
-		@extend .caption-clear;
+		@include meta($text-med);
 	}
 }
 

@@ -1,24 +1,4 @@
 
-/*
-
-Harry Roberts says:
-
-"Only use @extend when the rulesets that you are trying
-to DRY out are inherently and thematically related."
-
-- http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/
-- http://www.sitepoint.com/avoid-sass-extend/
-
-These are mixins because they are "helpers" and not used
-in a thematically related fashion.
-
-There are a few classes printed here as well as mixins.
-Those are primarily for prototyping purposes, but not
-exclusively.
-
-*/
-
-
 // ----
 // Formatting
 // ----
@@ -50,11 +30,14 @@ exclusively.
 // TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
 
 @mixin bleed {
-    @include bp(med) {
-        width: 110%;
-        margin-right: -5%;
-        margin-left: -5%;
-    }
+
+  @include bp(med) {
+    width: 110%;
+  }
+
+  @include bp(large) {
+    width: 120%;
+  }
 }
 
 .bleed {
@@ -139,7 +122,8 @@ exclusively.
     margin-top: $base;
 }
 
-.meta-greyed {
+.meta-greyed,
+.caption {
     @include meta($text-med);
 }
 

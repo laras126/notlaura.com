@@ -1,6 +1,5 @@
 
 .header-single {
 	padding-top: $h4;
-	text-align: center;
-	@extend .page-tagline;
+  @include divide-with-border(bottom);
 }

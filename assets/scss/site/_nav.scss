@@ -42,6 +42,11 @@
     overflow: visible;
   }
 
+
+  &:first-child a {
+    border-top: 1px solid transparent;
+  }
+
 }
 
 .menu-item-link {
@@ -49,10 +54,6 @@
   display: block;
   padding: $sml;
   text-align: center;
-
-  &:first-child {
-    border-top: 0;
-  }
 
   @include bp(menu) {
     border-bottom: 1px solid transparent;

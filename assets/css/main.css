@@ -1602,14 +1602,14 @@ figure {
     .site-nav {
       max-height: none;
       overflow: visible; } }
+  .site-nav:first-child a {
+    border-top: 1px solid transparent; }
 
 .menu-item-link {
   border-bottom: 1px dotted #86b2c6;
   display: block;
   padding: 0.88rem;
   text-align: center; }
-  .menu-item-link:first-child {
-    border-top: 0; }
   @media (min-width: 50rem) {
     .menu-item-link {
       border-bottom: 1px solid transparent;
@@ -1888,8 +1888,8 @@ figure {
   margin-top: 0;
   margin-bottom: 0.88rem; }
 
-.site-footer {
-  border-top: 1px dotted #86b2c6; }
+.footer-content {
+  text-align: center; }
 
 .list-services {
   list-style: none;
@@ -1926,22 +1926,26 @@ figure {
   .colophon p {
     font-size: 0.88rem; }
 
-.footer-content {
+.widgets {
+  border-top: 1px dotted #86b2c6;
+  padding-top: 1.1rem;
+  margin-top: 1.1rem;
   border-bottom: 1px dotted #86b2c6;
   padding-bottom: 1.1rem;
   margin-bottom: 1.1rem; }
+  @media (min-width: 40rem) {
+    .widgets {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
 
-.widgets {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
-.widget {
-  font-size: 0.88rem;
-  width: 45%; }
+@media (min-width: 40rem) {
+  .widget {
+    font-size: 0.88rem;
+    width: 45%; } }
 
 .block {
   padding-bottom: 1.43rem; }

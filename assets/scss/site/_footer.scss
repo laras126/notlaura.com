@@ -1,60 +1,62 @@
-
-.site-footer {
-	border-top: $accent-border;
-}
-
-	.list-services {
-		@include unstyle-list;
-		margin-top: $base;
-		@include bp(small) {
-			@include horizontal-list;
-		}
-
-		li {
-			font-size: $sml;
-
-			&:before {
-			}
-		}
-	}
-
-	.list-social {
-		@include unstyle-list(false);
-		@include horizontal-list();
-		margin-top: $h4;
-		padding-left: 0;
-
-		text-align: center;
-
-		@include bp(med) {
-			text-align: left;
-		}
-
-		.icon {
-			@extend .icon;
-			margin-right: $sml;
-		}
-	}
-
-	.colophon {
-		padding-bottom: $base;
-		p {
-			font-size: $sml;
-		}
-	}
-
 .footer-content {
-	@include divide-with-border(bottom);
+	text-align: center;
 }
+
+.list-services {
+	@include unstyle-list;
+	margin-top: $base;
+	@include bp(small) {
+		@include horizontal-list;
+	}
+
+	li {
+		font-size: $sml;
+
+		&:before {
+		}
+	}
+}
+
+.list-social {
+	@include unstyle-list(false);
+	@include horizontal-list();
+	margin-top: $h4;
+	padding-left: 0;
+
+	text-align: center;
+
+	@include bp(med) {
+		text-align: left;
+	}
+
+	.icon {
+		@extend .icon;
+		margin-right: $sml;
+	}
+}
+
+.colophon {
+	padding-bottom: $base;
+	p {
+		font-size: $sml;
+	}
+}
+
 
 .widgets {
-	display: flex;
-	justify-content: space-between;
+	@include divide-with-border(top);
+	@include divide-with-border(bottom);
+	@include bp(med) {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .widget {
-	font-size: $sml;
-	width: 45%;
+	@include bp(med) {
+		font-size: $sml;
+		width: 45%;
+	}
 }
 
 	.widget-title {}

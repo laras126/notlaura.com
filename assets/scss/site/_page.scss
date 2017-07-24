@@ -9,14 +9,11 @@
 	}
 
 	.page-tagline {
-		border-bottom: $accent-border;
-		padding-bottom: $base;
-		margin-bottom: $base;
+		@include divide-with-border(bottom);
 	}
 
 	.page-title,
 	.page-tagline {
-		text-align: center;
 	}
 
 	.page-intro {

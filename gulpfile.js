@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     svgstore = require('gulp-svgstore'),
     path = require('path'),
+    notify = require('gulp-notify'),
     autoprefix = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
@@ -23,7 +24,12 @@ var jsFileList = [
 
 gulp.task('sass', function() {
   return gulp.src('assets/scss/main.scss')
-    .pipe(sass())
+    .pipe(sass({
+      errLogToConsole: false,
+      onError: function(err) {
+        return notify().write(err);
+      }
+    }))
     .pipe(autoprefix({
         browsers: 'last 5 versions'
     }))
@@ -31,7 +37,7 @@ gulp.task('sass', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
     .pipe(gulp.dest('assets/css'))
-    .pipe(livereload());
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 gulp.task('js', function() {
@@ -69,13 +75,12 @@ gulp.task('svgs', function () {
 });
 
 gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "nl.local"
-    });
+  browserSync.init({
+      proxy: "nl.local"
+  });
 });
 
 gulp.task('watch', function() {
-  livereload.listen();
   gulp.watch('assets/scss/**/*.scss', ['sass']);
   gulp.watch('assets/js/**/*.js', ['js']);
 });

@@ -1,7 +1,7 @@
 html {
 	font-size: $contain;
 	line-height: $line-height-base;
-	font-weight: 300;
+	font-weight: $font-weight-base;
 
 	@include bp(small) {
 		font-size: $contain-sm;
@@ -31,7 +31,7 @@ body {
 a {
 	color: $link-color;
 	text-decoration: none;
-    border-bottom: 1px dotted $accent-light;
+  border-bottom: 1px dotted $accent-light;
 
 	&:hover, &:focus {
 		color: $link-hover;
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 	.wf-active {
 		h1, h2 {
 			font-family: $heading-font;
-			font-weight: 300;
+			font-weight: $font-weight-strong;
 		}
 
 		h3, h4, h5, h6 {
@@ -67,11 +67,11 @@ h1, h2, h3, h4, h5, h6 {
 
 	h1, h2 {
 		font-family: $heading-font-fallback;
-		font-weight: 300;
+		font-weight: $font-weight-strong;
 	}
 
 	h3, h4, h5, h6 {
-		font-weight: $heading-font-weight;
+		font-weight: $font-weight-strong;
 	}
 
 
@@ -111,16 +111,12 @@ h5 {
 	}
 
 	// font-family: $body-font;
-	font-weight: 300;
+	font-weight: $font-weight-base;
 }
 
 h6 {
 	font-size: $h6;
 	margin-top: $h4;
-}
-
-p, a, li {
-	font-weight: 300;
 }
 
 p {
@@ -135,7 +131,7 @@ small {
 
 strong {
 	font-weight: normal;
-	font-weight: 500;
+	font-weight: $font-weight-strong;
 }
 
 blockquote {

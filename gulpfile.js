@@ -17,8 +17,8 @@ var gulp = require('gulp'),
 
 // Put JS files into array
 var jsFileList = [
-  'assets/js/plugins.js',
-  'assets/js/main.js'
+  'assets/js/src/plugins.js',
+  'assets/js/src/main.js'
 ];
 
 gulp.task('sass', function() {

@@ -17,13 +17,14 @@ $screen-xl:     60rem;
 // ----
 
 
-$dark-blue: 		#237fa9;
-$light-blue: 		#86b2c6;
+$dark-blue: 		#0C6693;
+$light-blue: 		#15B1FF;
+$vlight-blue:   #A6DDF8;
 
-$grey: 				#e6e6e6;
-$dark-grey: 		#3e3739;
+$grey: 				  #EEF0FF;
+$dark-grey: 		#272727;
 
-$white: 			#ffffff;
+$white: 			  #ffffff;
 $white-alt:  		#f4f7f9;
 
 $l-teal: 			desaturate(#BDF2E3, 10%);
@@ -39,8 +40,8 @@ $pink: 				#CC6698;
 
 $accent-vlight:		$white-alt;
 $accent-light:		$grey;
-$accent-med:		$light-blue;
-$accent-dark:		$dark-blue;
+$accent-med:		  $light-blue;
+$accent-dark:		  $dark-blue;
 
 $accent-alt: 		$pink;
 
@@ -111,8 +112,8 @@ $sans-serif:        'europa', 'Helvetica', serif;
 $heading-font-fallback:    'Helvetica', sans-serif;
 
 $heading-font:  $serif;
-$body-font: 		$sans-serif;
-$quote-font: 		$sans-serif;
+$body-font: 		$serif;
+$quote-font: 		$serif;
 $nav-font: 			$sans-serif;
 $form-font: 		$sans-serif;
 $lead-font: 		$sans-serif;
@@ -120,6 +121,7 @@ $lead-font: 		$sans-serif;
 $font-weight-base:    400;
 $font-weight-strong:  700;
 
+$heading-font-weight: $font-weight-base;
 
 
 
@@ -127,7 +129,7 @@ $font-weight-strong:  700;
 // ---- Utilities
 // ----
 
-$accent-border: 		1px dotted $accent-med;
+$accent-border: 		1px solid rgba($accent-med, 0.4);
 $accent-border-thick: 	5px solid $accent-light;
 
 // Z-Index Scale

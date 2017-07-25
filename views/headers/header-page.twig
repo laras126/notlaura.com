@@ -10,9 +10,10 @@
 
 	{% if post.image and post.svg is empty%}
 		<figure class="bleed">
+			{# TODO do responsive images here and fix caption style #}
 			{# Logic for project link. #}
 			{{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}
-				<img class="page-header-image img-flex" src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
+				<img src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
 			{{post.project_link ? '</a>'}}
 
 			{% if post.image_caption %}

@@ -49,6 +49,12 @@
 
 }
 
+.menu-item {
+  @include bp(menu) {
+    padding-left: $xsml;
+  }
+}
+
 .menu-item-link {
   border-bottom: $accent-border;
   display: block;

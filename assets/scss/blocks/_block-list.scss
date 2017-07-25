@@ -23,17 +23,19 @@
 		@include clearfix;
 		margin-top: 0;
 	}
-	
+
 	.list-minor {
 		@include bleed;
 	}
 
-	
+
 	// Major lists are 1 across, image on the left
-	
+
+
+	// TODO: yeah, all of this later.
 	.list-major li {
 		@include clearfix();
-		
+
 		img {
 			width: 100%;
 		}
@@ -41,7 +43,7 @@
 		@include bp(med) {
 			@include make-row();
 		}
-		
+
 		.item-support {
 			@include make-md-column($c/3);
 		}
@@ -74,7 +76,7 @@
 		@include bp(med) {
 	        &:nth-child(2n+1){
 	            clear: left;
-	        }  
+	        }
 	    }
 
 		// Grid is getting hacky here.
@@ -95,7 +97,7 @@
 		.item-main {
 			@include make-xs-column($c/5*4);
 		}
-	
+
 		h4 {
 			@extend h5;
 		}
@@ -104,7 +106,7 @@
 			font-size: $sml;
 		}
 	}
-	
+
 	.item {
 		display: table;
 	}
@@ -146,26 +148,26 @@
 
 .item-support {
 
-	img {	
+	img {
 		@include center-block;
 	}
 
 	.list-minor & {
 		img {
-			padding: $base 25%; 
+			padding: $base 25%;
 
 			@include bp(small) {
 				padding: 0;
 			}
 		}
 	}
-	
-	padding-right: $gutter/2;	
-	
+
+	padding-right: $gutter/2;
+
 }
 
 .item-main {
-	
+
 	// .list-major & {
 	// 	@include make-md-column(2);
 	// }
@@ -180,11 +182,11 @@
 
 		}
 	}
-	
+
 	p, li {
-		// font-family: $sans-serif;			
+		// font-family: $sans-serif;
 		@include bp(small) {
-			// @include font-size(med);	
+			// @include font-size(med);
 			// font-size: $sml;
 		}
 	}

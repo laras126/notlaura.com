@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 	.wf-active {
 		h1, h2 {
 			font-family: $heading-font;
-			font-weight: $font-weight-strong;
+			font-weight: $heading-font-weight;
 		}
 
 		h3, h4, h5, h6 {
@@ -67,11 +67,11 @@ h1, h2, h3, h4, h5, h6 {
 
 	h1, h2 {
 		font-family: $heading-font-fallback;
-		font-weight: $font-weight-strong;
+		font-weight: $heading-font-weight;
 	}
 
 	h3, h4, h5, h6 {
-		font-weight: $font-weight-strong;
+		font-weight: $heading-font-weight;
 	}
 
 

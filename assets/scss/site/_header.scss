@@ -1,8 +1,11 @@
 
 .site-header {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  @include bp(menu) {
+    flex-wrap: nowrap;
+  }
 }
 
 .site-info,

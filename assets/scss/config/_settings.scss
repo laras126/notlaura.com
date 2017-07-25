@@ -106,10 +106,11 @@ $h6:  				$base;
 
 // Fonts
 
-$serif:             'henriette', 'Georgia', serif;
-$sans-serif:        'europa', 'Helvetica', serif;
+$serif:             'henriette';
+$sans-serif:        'europa';
 
-$heading-font-fallback:    'Helvetica', sans-serif;
+$heading-font-fallback: 'George', sans-serif;
+$body-font-fallback:    'Helvetica', sans-serif;
 
 $heading-font:  $serif;
 $body-font: 		$serif;

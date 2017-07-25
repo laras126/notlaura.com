@@ -20,12 +20,13 @@ body {
 	font-style: normal;
 	color: $text-dark;
 	font-size: $base;
-	font-family: Helvetica, sans-serif;
-}
+	font-family: $body-font-fallback;
 
-	.wf-active body {
+	.wf-active & {
 		font-family: $body-font;
 	}
+}
+
 
 
 a {
@@ -57,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 	.wf-active {
 		h1, h2 {
 			font-family: $heading-font;
-			font-weight: $heading-font-weight;
 		}
 
 		h3, h4, h5, h6 {

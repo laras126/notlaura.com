@@ -103,7 +103,7 @@
 // Detect CSS Grid support
 // ----
 
-$production: false;
+$production: true;
 
 @mixin grid($supports) {
   @if not $production {

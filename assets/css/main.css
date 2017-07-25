@@ -396,7 +396,7 @@ th {
 
 .meta-cite {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #0C6693;
@@ -408,7 +408,7 @@ th {
 .meta-greyed, .tease-meta,
 .caption {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #5569ff; }
@@ -418,7 +418,7 @@ th {
 
 .meta-light {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #ffffff; }
@@ -506,7 +506,7 @@ th {
 
 .meta {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727; }
@@ -517,7 +517,7 @@ th {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #5569ff; }
@@ -613,10 +613,9 @@ body {
   font-style: normal;
   color: #272727;
   font-size: 1.1rem;
-  font-family: Helvetica, sans-serif; }
-
-.wf-active body {
-  font-family: "henriette", "Georgia", serif; }
+  font-family: "Helvetica", sans-serif; }
+  .wf-active body {
+    font-family: "henriette"; }
 
 a {
   color: #0C6693;
@@ -632,14 +631,13 @@ h1, h2, h3, h4, h5, .page-template-page-story_layout .section-title, .list-minor
   line-height: 1.3; }
 
 .wf-active h1, .wf-active h2 {
-  font-family: "henriette", "Georgia", serif;
-  font-weight: 400; }
+  font-family: "henriette"; }
 
 .wf-active h3, .wf-active h4, .wf-active h5, .wf-active .page-template-page-story_layout .section-title, .page-template-page-story_layout .wf-active .section-title, .wf-active .list-minor li h4, .list-minor li .wf-active h4, .wf-active h6 {
-  font-family: "henriette", "Georgia", serif; }
+  font-family: "henriette"; }
 
 h1, h2 {
-  font-family: "Helvetica", sans-serif;
+  font-family: "George", sans-serif;
   font-weight: 400; }
 
 h3, h4, h5, .page-template-page-story_layout .section-title, .list-minor li h4, h6 {
@@ -692,7 +690,7 @@ strong {
 blockquote {
   font-size: 1.43rem;
   margin: 1.43rem 0;
-  font-family: "henriette", "Georgia", serif;
+  font-family: "henriette";
   padding-left: 2.2rem;
   border-left: 1px solid rgba(21, 177, 255, 0.4);
   margin-bottom: 2.2rem;
@@ -791,7 +789,7 @@ button {
   border: 2px solid #1087c2;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   cursor: pointer;
   -webkit-appearance: none; }
   input[type="submit"]:hover, input[type="submit"]:focus,
@@ -844,7 +842,7 @@ input[type="checkbox"]:focus {
 
 .gform_wrapper .top_label .gfield_label {
   font-size: 1.43rem;
-  font-family: "henriette", "Georgia", serif;
+  font-family: "henriette";
   font-weight: 500;
   margin-bottom: 0.66rem; }
 
@@ -881,7 +879,7 @@ input[type="checkbox"]:focus {
 .gform_wrapper .gfield_date_year label,
 .gform_wrapper .instruction {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727;
@@ -900,9 +898,9 @@ input[type="checkbox"]:focus {
   display: block; }
 
 .gform_wrapper .gfield_description {
-  font-family: "henriette", "Georgia", serif;
+  font-family: "henriette";
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727;
@@ -969,7 +967,7 @@ input[type="checkbox"]:focus {
 .ginput_preview,
 .ginput_preview strong {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727; }
@@ -1019,7 +1017,7 @@ input[type="checkbox"]:focus {
     border: 2px solid #48c2ff;
     padding: 0.88rem 1.43rem;
     display: inline-block;
-    font-family: "europa", "Helvetica", serif; }
+    font-family: "europa"; }
     @media (min-width: 30rem) {
       .mc-signup .button {
         width: 33.33333%; } }
@@ -1047,7 +1045,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #1087c2;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif; }
+  font-family: "europa"; }
   
   .btn:hover,
   .btn:focus {
@@ -1075,7 +1073,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #1087c2;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin-top: 1.43rem;
   font-size: 1.43rem; }
   .btn-cta:hover, .gform_wrapper .gform_footer input.button:hover,
@@ -1097,7 +1095,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #2ce16b;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif; }
+  font-family: "europa"; }
   .btn-success:hover, .btn-success:focus {
     background: #159240;
     color: #ffffff;
@@ -1114,7 +1112,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #d9cc7b;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif; }
+  font-family: "europa"; }
   .btn-warning:hover, .btn-warning:focus {
     background: #baa735;
     color: #ffffff;
@@ -1131,7 +1129,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #1087c2;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif; }
+  font-family: "europa"; }
   .link-more:hover, .link-more:focus {
     background: #084564;
     color: #ffffff;
@@ -1143,7 +1141,7 @@ input[type="checkbox"]:focus {
 .link-edit,
 .link-more {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727;
@@ -1179,7 +1177,7 @@ input[type="checkbox"]:focus {
   border: 2px solid #1087c2;
   padding: 0.88rem 1.43rem;
   display: inline-block;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   position: relative;
   top: 1.1rem; }
   .more-inner:hover, .more-inner:focus {
@@ -1191,7 +1189,7 @@ input[type="checkbox"]:focus {
     border-color: #084564; }
 
 table {
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin-bottom: 1.1rem;
   font-size: 0.88rem; }
 
@@ -1206,7 +1204,7 @@ td {
   td:last-child {
     border-right: 0; }
   td:first-child {
-    font-family: "henriette", "Georgia", serif;
+    font-family: "henriette";
     font-weight: 500; }
 
 th {
@@ -1214,7 +1212,7 @@ th {
   border-right: 1px solid rgba(21, 177, 255, 0.4);
   text-align: left;
   padding: 0.88rem 1.1rem;
-  font-family: "henriette", "Georgia", serif;
+  font-family: "henriette";
   font-size: 1.1rem; }
   th:last-child {
     border-right: 0; }
@@ -1553,15 +1551,34 @@ figure {
   font-size: 1.43rem; }
 
 .site {
-  background-image: url(../img/svg/code.svg);
   background-color: #15B1FF; }
-  @supports not (grid-area: auto) {
+  @supports (grid-area: auto) {
     .site {
-      display: -ms-grid;
-      display: grid;
-      background-color: yellow; } }
+      background-color: yellow; }
+      @media (min-width: 40rem) {
+        .site {
+          display: -ms-grid;
+          display: grid;
+          -ms-grid-columns: [pad-l] 2.2rem [rail-l] 1fr [content] 4fr [rail-r] 1fr [pad-r] 2.2rem;
+              grid-template-columns: [pad-l] 2.2rem [rail-l] 1fr [content] 4fr [rail-r] 1fr [pad-r] 2.2rem;
+          -ms-grid-rows: [callout] auto [nav] auto [content] 2fr [footer] auto;
+              grid-template-rows: [callout] auto [nav] auto [content] 2fr [footer] auto;
+          grid-column-gap: 1.1rem;
+          grid-row-gap: 1.1rem; } } }
 
-@supports (grid-area: auto) {
+.site-callout,
+.site-header,
+.site-footer {
+  grid-column: 1 / -1; }
+
+.site-header {
+  grid-column: rail-l / pad-r; }
+
+.site-main {
+  -ms-grid-column: content;
+      grid-column: content; }
+
+@supports not (grid-area: auto) {
   .site-header,
   .site-footer {
     margin: 0 auto;
@@ -1571,7 +1588,7 @@ figure {
 .site-main {
   background-color: #ffffff;
   padding: 1.43rem; }
-  @supports (grid-area: auto) {
+  @supports not (grid-area: auto) {
     .site-main {
       margin: 0 auto;
       width: 90%;
@@ -1651,7 +1668,7 @@ figure {
       padding: 0.66rem; } }
   .section-nav ul a {
     font-size: 0.88rem;
-    font-family: "europa", "Helvetica", serif;
+    font-family: "europa";
     margin: 0;
     line-height: 1.3;
     color: #0C6693; }
@@ -1760,7 +1777,7 @@ figure {
 
 .site-desc {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #15B1FF; }
@@ -1796,7 +1813,7 @@ figure {
 
 figcaption {
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #5569ff; }
@@ -1828,7 +1845,7 @@ figure {
   color: #272727;
   border-bottom: none;
   font-size: 0.88rem;
-  font-family: "europa", "Helvetica", serif;
+  font-family: "europa";
   margin: 0;
   line-height: 1.3;
   color: #272727;
@@ -1948,19 +1965,29 @@ figure {
   border-bottom: 1px solid rgba(21, 177, 255, 0.4);
   padding-bottom: 1.1rem;
   margin-bottom: 1.1rem; }
-  @media (min-width: 40rem) {
+  @supports (grid-area: auto) {
     .widgets {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between; } }
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: (1fr)[2];
+          grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1.1rem; } }
+  @supports not (grid-area: auto) {
+    @media (min-width: 40rem) {
+      .widgets {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } } }
 
 @media (min-width: 40rem) {
   .widget {
-    font-size: 0.88rem;
-    width: 45%; } }
+    font-size: 0.88rem; }
+    @supports not (grid-area: auto) {
+      .widget {
+        width: 45%; } } }
 
 .block {
   padding-bottom: 1.43rem; }

@@ -1,3 +1,4 @@
+
 .footer-content {
 	text-align: center;
 }
@@ -46,16 +47,28 @@
 .widgets {
 	@include divide-with-border(top);
 	@include divide-with-border(bottom);
-	@include bp(med) {
-		display: flex;
-		justify-content: space-between;
+
+	@include grid(yes) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: $base;
 	}
+
+	@include grid(no) {
+		@include bp(med) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
 }
 
 .widget {
 	@include bp(med) {
 		font-size: $sml;
-		width: 45%;
+		@include grid(no) {
+			width: 45%;
+		}
 	}
 }
 

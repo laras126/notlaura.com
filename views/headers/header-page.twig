@@ -9,7 +9,7 @@
 	{% endif %}
 
 	{% if post.image and post.svg is empty%}
-		<figure class="bleed">
+		<figure class="page-image">
 			{# TODO do responsive images here and fix caption style #}
 			{# Logic for project link. #}
 			{{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}

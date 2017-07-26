@@ -1790,7 +1790,8 @@ figure {
     .site-desc {
       display: block; } }
 
-.js-typed-src {
+.js-typed-src,
+.visually-hidden {
   opacity: 0;
   position: absolute;
   text-indent: -99999px; }
@@ -1802,18 +1803,12 @@ figure {
   -ms-grid-row: header;
       grid-row: header; }
 
-.home .page-title,
-.home .page-tagline {
-  display: inline-block; }
-
 .home .page-title {
   font-size: 15vh;
-  font-weight: 700;
-  font-family: "grafolita-script"; }
+  font-weight: 700; }
 
 .home .page-tagline {
-  font-size: 10vh;
-  text-align: right; }
+  font-size: 10vh; }
 
 .home .page-section {
   -ms-grid-row: content;

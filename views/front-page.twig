@@ -3,20 +3,30 @@
 
 {% block content_head %}
 	{# {% include 'headers/header-front-page.twig' %} #}
-{# 	<h1 class="page-title js-typed-src">{{post.title}}</h1>
-	<span class="js-typed"></span>
- #}
-	<p class="page-tagline js-typed-src">{{post.tagline}}</p>
-	<span class="js-typed page-tagline"></span>
+	<h1 class="page-title js-typed-src">{{post.title}}</h1>
+	<span class="js-typed page-title"></span>
+
+	<p data-speed="40" class="page-tagline js-typed-src visually-hidden">{{post.tagline}}</p>
+	<p class="js-typed page-tagline"></p>
 
 {% endblock %}
 
 {% block content %}
-	{# {% include 'partials/section-nav.twig'%}
+	{# {% include 'partials/section-nav.twig'%} #}
+
+	{# <section class="page-section js-typed-src visually-hidden">
+		<h2 >I'm a front-end web and WordPress developer.</h2>
+
+		<p>I've been independent for most of my career, building custom WordPress sites, web-app front-ends, and teaching.</p>
+
+		<p>Now, though, I'm looking for a full-time <span class="special">job</span>.</p>
+	</section>
+	<section class="page-section js-typed"></section>
+ #}
 
 	{% for section in post.get_field('sections') %}
 
-		<section class="page-section">
+		<span class="page-section js-typed-src visually-hidden">
 
 			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
 
@@ -24,7 +34,9 @@
 				{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
 			</div> <!-- /.section-content -->
 
-		</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
+		</span> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
 
-	{% endfor %} #}
+		<section class="page-section js-typed"></section>
+
+	{% endfor %}
 {% endblock %}

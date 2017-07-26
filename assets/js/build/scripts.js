@@ -115,19 +115,68 @@ $(document).ready(function () {
 
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
-	var path1 = document.querySelector('.path-first');
+	// ----
+	// Typed.js
+	// ----
 
-	var str = document.querySelector('.js-typed-src');
+	// Get an array of all elements to be typed.
+	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+	var TYPED_ELS = document.querySelectorAll('.js-typed');
+	var TYPE_SPEED = 20,
+	    SHOW_CURSOR = false;
 
 	var options = {
-		strings: [str.innerHTML],
-		typeSpeed: 40,
+		elIndex: 0,
+		strings: [TYPED_SRCS[0].innerHTML],
+		typeSpeed: TYPE_SPEED,
+		showCursor: SHOW_CURSOR,
 		onComplete: function onComplete() {
-			alert('done');
+			typeNextInArray();
 		}
-	};
 
-	var typed = new Typed(".js-typed", options);
+		// Start the typing elements, starting with index 0
+	};var typed = new Typed(TYPED_ELS[0], options);
+
+	// Function to type next item in typedEls array
+	function typeNextInArray() {
+
+		// Move through the array
+		options.elIndex++;
+		var newIndex = options.elIndex;
+		var currentEl = TYPED_SRCS[newIndex];
+
+		// Allow for data attributes to provide some settings
+		var newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
+		var callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
+
+		// New options set
+		var newOptions = {
+			elIndex: newIndex,
+			startDelay: 500,
+			strings: [TYPED_SRCS[newIndex].innerHTML],
+			typeSpeed: newTypeSpeed,
+			showCursor: SHOW_CURSOR,
+			onComplete: function onComplete() {
+				if (newIndex + 1 <= TYPED_ELS.length - 1) {
+					return typeNextInArray();
+				} else {
+					console.log('done');
+				}
+			}
+		};
+
+		var typed = new Typed(TYPED_ELS[newIndex], newOptions);
+	}
+
+	// function executeFunctionFromData(){
+	//   var d = 'hello' // Save `data-myattr` to d; (Obviously, this is just a hardcoded value as an example)
+	//   window[d](); // Execute the function.
+	// }
+
+
+	function executeFunctionFromData(data) {}
+	// var d = data;
+
 
 	// ----
 	// Toggle Menu

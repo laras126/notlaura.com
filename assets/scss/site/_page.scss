@@ -1,3 +1,70 @@
+.js-typed-src {
+	@include visually-hidden;
+}
+
+.home {
+
+	.site-header {
+		// display: none;
+	}
+
+	.site-callout {
+		display: none;
+	}
+
+	.page-header {
+		grid-row: header;
+	}
+
+	.page-title,
+	.page-tagline {
+		display: inline-block;
+	}
+
+	.page-title {
+		font-size: 15vh;
+		font-weight: $font-weight-strong;
+		font-family: $display;
+	}
+
+	.page-tagline {
+		font-size: 10vh;
+		text-align: right;
+	}
+
+	.page-section {
+		grid-row: content;
+	}
+
+	.page-image {
+		width: calc(100% + #{$gap * 2});
+		margin-left: -$gap;
+	}
+
+	.path {
+		fill: none;
+		stroke: $accent-dark;
+		stroke-width: 4px;
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	}
+
+	.path-first {
+		animation: dash 2s ease-in-out;
+	}
+
+	@keyframes dash {
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+
+	.line {
+
+	}
+
+}
+
 
 .page-header {
 	// text-align: center;

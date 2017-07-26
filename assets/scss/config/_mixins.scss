@@ -1,4 +1,11 @@
 
+@mixin visually-hidden {
+  opacity: 0;
+  position: absolute;
+  text-indent: -99999px;
+}
+
+
 // ----
 // Buttons/Links
 // ----
@@ -102,6 +109,8 @@
 // ----
 // Detect CSS Grid support
 // ----
+
+// https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/#side-note-a-word-on-browser-support
 
 $production: true;
 

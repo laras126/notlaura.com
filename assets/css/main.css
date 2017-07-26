@@ -1552,47 +1552,50 @@ figure {
 
 .site {
   background-color: #15B1FF; }
+  .site > * {
+    padding-left: 2.2rem;
+    padding-right: 2.2rem; }
   @supports (grid-area: auto) {
     .site {
       background-color: yellow; }
-      @media (min-width: 40rem) {
+      @media (min-width: 30rem) {
         .site {
           display: -ms-grid;
           display: grid;
-          -ms-grid-columns: [pad-l] 2.2rem [rail-l] 1fr [content] 4fr [rail-r] 1fr [pad-r] 2.2rem;
-              grid-template-columns: [pad-l] 2.2rem [rail-l] 1fr [content] 4fr [rail-r] 1fr [pad-r] 2.2rem;
-          -ms-grid-rows: [callout] auto [nav] auto [content] 2fr [footer] auto;
-              grid-template-rows: [callout] auto [nav] auto [content] 2fr [footer] auto;
+          grid-template-areas: "callout callout callout" "header header header" "content content content" "footer footer footer";
+          -ms-grid-columns: [pad-l] 2.2rem [content] 4fr [pad-r] 2.2rem;
+              grid-template-columns: [pad-l] 2.2rem [content] 4fr [pad-r] 2.2rem;
+          -ms-grid-rows: [callout] auto [nav] auto [header] 2fr [content] auto [footer] auto;
+              grid-template-rows: [callout] auto [nav] auto [header] 2fr [content] auto [footer] auto;
           grid-column-gap: 1.1rem;
           grid-row-gap: 1.1rem; } } }
 
-.site-callout,
-.site-header,
-.site-footer {
-  grid-column: 1 / -1; }
+.site-callout {
+  grid-area: callout; }
 
 .site-header {
-  grid-column: rail-l / pad-r; }
+  grid-area: header;
+  background-color: #15B1FF; }
 
 .site-main {
-  -ms-grid-column: content;
-      grid-column: content; }
+  background-color: #ffffff;
+  padding: 1.43rem;
+  grid-area: content; }
+
+.site-footer {
+  grid-area: footer;
+  background-color: #EEF0FF; }
 
 @supports not (grid-area: auto) {
   .site-header,
   .site-footer {
     margin: 0 auto;
     width: 90%;
-    max-width: 50rem; } }
-
-.site-main {
-  background-color: #ffffff;
-  padding: 1.43rem; }
-  @supports not (grid-area: auto) {
-    .site-main {
-      margin: 0 auto;
-      width: 90%;
-      max-width: 40rem; } }
+    max-width: 50rem; }
+  .site-main {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 40rem; } }
 
 .menu-link {
   margin-left: auto; }
@@ -1786,6 +1789,58 @@ figure {
   @media (min-width: 30rem) {
     .site-desc {
       display: block; } }
+
+.js-typed-src {
+  opacity: 0;
+  position: absolute;
+  text-indent: -99999px; }
+
+.home .site-callout {
+  display: none; }
+
+.home .page-header {
+  -ms-grid-row: header;
+      grid-row: header; }
+
+.home .page-title,
+.home .page-tagline {
+  display: inline-block; }
+
+.home .page-title {
+  font-size: 15vh;
+  font-weight: 700;
+  font-family: "grafolita-script"; }
+
+.home .page-tagline {
+  font-size: 10vh;
+  text-align: right; }
+
+.home .page-section {
+  -ms-grid-row: content;
+      grid-row: content; }
+
+.home .page-image {
+  width: calc(100% + 2.2rem);
+  margin-left: -1.1rem; }
+
+.home .path {
+  fill: none;
+  stroke: #0C6693;
+  stroke-width: 4px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000; }
+
+.home .path-first {
+  -webkit-animation: dash 2s ease-in-out;
+          animation: dash 2s ease-in-out; }
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
 
 .page-title {
   position: relative; }

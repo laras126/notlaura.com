@@ -1,10 +1,24 @@
 
+
 $(document).ready(function() {
 
 	$('body').addClass('js');
 
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
+	var path1 = document.querySelector('.path-first');
+
+	var str = document.querySelector('.js-typed-src');
+
+	var options = {
+	  strings: [str.innerHTML],
+	  typeSpeed: 40,
+	  onComplete: () => {
+	  	alert('done');
+	  },
+	}
+
+	var typed = new Typed(".js-typed", options);
 
 	// ----
 	// Toggle Menu

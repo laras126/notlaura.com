@@ -2,6 +2,12 @@
 'use strict';
 
 var gulp = require('gulp'),
+    browserify = require('browserify'),
+    babel = require('gulp-babel'),
+    addsrc = require('gulp-add-src'),
+    sourcemaps = require('gulp-sourcemaps'),
+    source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer'),
     sass = require('gulp-sass'),
     svgmin = require('gulp-svgmin'),
     svgstore = require('gulp-svgstore'),
@@ -18,9 +24,11 @@ var gulp = require('gulp'),
 
 // Put JS files into array
 var jsFileList = [
-  'assets/js/src/plugins.js',
-  'assets/js/src/main.js'
+  './assets/js/src/plugins.js',
+  './assets/js/src/main.js'
 ];
+
+// var entryPoint = './assets/js/src/main.js';
 
 gulp.task('sass', function() {
   return gulp.src('assets/scss/main.scss')
@@ -33,15 +41,32 @@ gulp.task('sass', function() {
     .pipe(autoprefix({
         browsers: 'last 5 versions'
     }))
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
+// https://gist.github.com/dverbovyi/7f71879bec8a16847dee
+// gulp.task('js', function() {
+//   return browserify(entryPoint, {debug: true, extensions: ['es6']})
+//     .transform("babelify", {presets: ["es2015"]})
+//     .bundle()
+//     .pipe(source('./assets/js/src/bundle.js'))
+//     .pipe(buffer())
+//     .pipe(sourcemaps.init({loadMaps: true}))
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest('./assets/js/build/'))
+// });
+
+
 gulp.task('js', function() {
-  return gulp.src(jsFileList)
+  return gulp.src('./assets/js/src/main.js')
+    .pipe(babel({
+            presets: ['es2015']
+        }))
+    .pipe(addsrc.prepend('./assets/js/src/plugins.js'))
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('assets/js/build'))
     .pipe(uglify())

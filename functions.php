@@ -91,11 +91,11 @@
 	function nl_scripts() {
 
 		// Use jQuery from CDN, enqueue in footer
-		if (!is_admin()) {
-			wp_deregister_script('jquery');
-			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+		// if (!is_admin()) {
+			// wp_deregister_script('jquery');
+			// wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 			wp_enqueue_script('jquery');
-		}
+		// }
 
 		// Enqueue stylesheet
 		if( WP_ENV == 'production' ) {

@@ -19,7 +19,7 @@ Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(break|cas
 
   'use strict';
 
-  $.fn.fitVids = function( options ) {
+  jQuery.fn.fitVids = function( options ) {
     var settings = {
       customSelector: null,
       ignore: null

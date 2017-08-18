@@ -19,7 +19,7 @@ Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(break|cas
 
   'use strict';
 
-  $.fn.fitVids = function( options ) {
+  jQuery.fn.fitVids = function( options ) {
     var settings = {
       customSelector: null,
       ignore: null
@@ -109,7 +109,9 @@ Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(break|cas
 
 'use strict';
 
-$(document).ready(function () {
+var $ = jQuery;
+
+jQuery(document).ready(function () {
 
 	$('body').addClass('js');
 
@@ -122,7 +124,7 @@ $(document).ready(function () {
 	// Get an array of all elements to be typed.
 	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 	var TYPED_ELS = document.querySelectorAll('.js-typed');
-	var TYPE_SPEED = 20,
+	var TYPE_SPEED = 30,
 	    SHOW_CURSOR = false;
 
 	var options = {
@@ -135,10 +137,10 @@ $(document).ready(function () {
 		}
 
 		// Start the typing elements, starting with index 0
-	};var typed = new Typed(TYPED_ELS[0], options);
+		// var typed = new Typed(TYPED_ELS[0], options);
 
-	// Function to type next item in typedEls array
-	function typeNextInArray() {
+		// Function to type next item in typedEls array
+	};function typeNextInArray() {
 
 		// Move through the array
 		options.elIndex++;
@@ -159,6 +161,7 @@ $(document).ready(function () {
 			onComplete: function onComplete() {
 				if (newIndex + 1 <= TYPED_ELS.length - 1) {
 					return typeNextInArray();
+					eval(currentEl.dataset.callback);
 				} else {
 					console.log('done');
 				}

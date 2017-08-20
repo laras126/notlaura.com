@@ -1,5 +1,9 @@
 
 .site-header {
+  background: $accent-med;
+}
+
+.site-header > * {
   display: flex;
   align-items: center;
   flex-wrap: wrap;

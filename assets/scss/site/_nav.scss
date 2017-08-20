@@ -60,6 +60,7 @@
   display: block;
   padding: $sml;
   text-align: center;
+  color: $accent-vlight;
 
   @include bp(menu) {
     border-bottom: 1px solid transparent;

@@ -6,8 +6,8 @@
 // ----
 
 
-$dark-blue: 		#0C6693;
-$light-blue: 		#15B1FF;
+$dark-blue: 		#0b5c84;
+$light-blue: 		#2696CE;
 $vlight-blue:   #A6DDF8;
 
 $grey: 				  #EEF0FF;
@@ -21,6 +21,7 @@ $seagreen:    #21A99C;
 $green: 			#1BBF54;
 $yellow: 			#FCF7D8;
 $l-yellow: 			lighten($yellow, 5%);
+$orange: 			#FC625D;
 
 $pink: 				#CC6698;
 
@@ -36,16 +37,16 @@ $accent-alt: 		$pink;
 
 $alert-danger: 		darken($pink, 20%);
 $alert-warning: 	$l-yellow;
-$alert-info: 		$dark-blue;
+$alert-info: 			$dark-blue;
 $alert-success: 	$green;
 
-$text-dark: 		$dark-grey;
+$text-dark: 		$accent-dark;
 $text-med: 			darken($grey, 30%);
-$text-medlight: 	lighten($text-med, 20%);
+$text-medlight: lighten($text-med, 20%);
 $text-light: 		$white;
 
-$link-color:		$dark-blue;
-$link-hover: 		darken($link-color, 20%);
+$link-color:		$light-blue;
+$link-hover: 		$orange;
 
 $twitter: 			#4099FF;
 $facebook: 			#3B5998;

@@ -3,12 +3,12 @@
 // Breakpoints
 
 $screen-sm:     480px;
-$screen-md:     740px;
+$screen-md:     800px;
 $screen-lg:   	1040px;
 $screen-xl:   	1400px;
 
 $grid-gap: $h4;
-$rail: 126px;
+$rail: 150px;
 
 // ----
 // Grids
@@ -71,7 +71,7 @@ $rail: 126px;
     grid-column-gap: $grid-gap;
     grid-template-columns: $rail minmax(500px,1fr);
     grid-template-areas:
-      "....     header"
+      "header     header"
       "content  content"
       "aside    aside"
       "misc     misc";
@@ -79,9 +79,9 @@ $rail: 126px;
 
   @include bp(large) {
     grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(500px,700px) minmax(200px, 25%);
+    grid-template-columns: $rail minmax(500px,760px) minmax(150px, 20%);
     grid-template-areas:
-      ".....   header   header"
+      "header  header   header"
       "content content  aside"
       "misc    misc     misc";
   }
@@ -119,38 +119,34 @@ $rail: 126px;
 
 @include bp(med) {
 
-	.content-tease {
+  .module {
 		display: grid;
 		grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(auto,700px);
+    grid-template-columns: 1fr 3fr;
     grid-template-areas:
       "...  header"
       "rail content";
 	}
 
-	.tease-header {
+	.module-header {
 		grid-area: header;
 	}
 
-	.tease-rail {
+  .module-rail {
     grid-area: rail;
     text-align: right;
 	}
 
-	.tease-content {
+  .module-content {
 		grid-area: content;
   }
 
 }
 
-.tease-meta {
-	@include meta;
-	@include bp(med) {
-    text-align: right;
-	}
+.module-rail {
+  border: $accent-border;
+  padding: $sml;
 }
-
-
 
 
 // $grid-columns:              8 !default;

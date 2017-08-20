@@ -15,59 +15,84 @@
 
   {% if callout_tf == true %}
     <div class="site-callout callout">
-      <p class="meta-light">{{callout_bar}}</p>
+      <div class="inner">
+        <p class="meta-light">{{callout_bar}}</p>
+      </div>
     </div>
   {% endif %}
 
   <header class="site-header" role="banner">
-    {% block header %}
-        {% include 'headers/header-site.twig' %}
-    {% endblock %}
+    <div class="inner">
+      {% include 'headers/header-site.twig' %}
+    </div>
   </header>
 
-  <main class="site-main" role="main">
+  <main class="site-main inner" role="main">
 
-    {% block content_head %}
+    <header class="main-header">
+      {% block header %}
         {% include 'headers/header-page.twig' %}
-    {% endblock %}
-    {% block content %}
-        Sorry, no content
-    {% endblock %}
+      {% endblock %}
+    </header>
+
+    <div class="main-content">
+      {% block content %}
+          Sorry, no content
+      {% endblock %}
+    </div>
+
+    <aside class="main-aside">
+      <h3>Hey aside.</h3>
+      <p>Lots of dfun stuff here, maybes some links.</p>
+      <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+      </ul>
+      <a href="" class="button">Hi button</a>
+    </aside>
+
+    <div class="main-misc">
+      <h4>Maybe some fun content here or something. Or not.</h4>
+    </div>
 
   </main>
 
   <footer class="site-footer" role="contentinfo">
+    <div class="inner">
 
-  {% block footer %}
+    {% block footer %}
 
-    <nav class="link-back-top">
-      <a href="#top">
-        {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
-      </a>
-    </nav>
+      <nav class="link-back-top">
+        <a href="#top">
+          {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
+        </a>
+      </nav>
 
-    <div class="footer-content">
-      <h5>What now?</h5>
-      <ul class="list-services">
-        <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish.</a></li>
-        <li><a href="{{site.link}}/fish-with-me">Let's fish together!</a></li>
-        <li><a href="{{site.link}}/fish-for-me">Fish for me.</a></li>
-      </ul>
-    </div>
+      <div class="footer-content">
+        <h5>What now?</h5>
+        <ul class="list-services">
+          <li><a href="{{site.link}}/teach-me-to-fish">Teach me to fish.</a></li>
+          <li><a href="{{site.link}}/fish-with-me">Let's fish together!</a></li>
+          <li><a href="{{site.link}}/fish-for-me">Fish for me.</a></li>
+        </ul>
+      </div>
 
-    <div class="footer-content widgets">
-      {% include 'footer.twig' %}
-    </div>
+      <div class="footer-content widgets">
+        {% include 'footer.twig' %}
+      </div>
 
-    <div class="footer-content colophon">
-      <p class="credit">&copy; {{ "now"|date('Y') }} Lara Schenck, LLC. Powered by <a href="http://wordpress.org">WordPress</a> and <a href="http://upstatement.com/timber">Timber</a>, hosted by <a href="http://webfaction.com" target="blank">WebFaction</a>. Source <a href="http://github.com/laras126/notlaura.com">on Github</a>.</p>
-    </div>
+      <div class="footer-content colophon">
+        <p class="credit">&copy; {{ "now"|date('Y') }} Lara Schenck, LLC. Powered by <a href="http://wordpress.org">WordPress</a> and <a href="http://upstatement.com/timber">Timber</a>, hosted by <a href="http://webfaction.com" target="blank">WebFaction</a>. Source <a href="http://github.com/laras126/notlaura.com">on Github</a>.</p>
+      </div>
 
-    {{ function('wp_footer') }}
+      {{ function('wp_footer') }}
 
-  {% endblock %}
+    {% endblock %}
+  </div>
 </footer>
-</site>
+
+</div> <!-- /.site -->
 
 </body>
 

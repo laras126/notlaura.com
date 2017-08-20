@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
-{% block content_head %}
+{% block header %}
 	{% include 'headers/header-page.twig' %}
 {% endblock %}
 
@@ -11,7 +11,7 @@
 	{% for section in post.get_field('sections') %}
 
 		<section class="page-section">
-			
+
 			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
 
 			<div class="section-content" id="{{menu_link_id}}-content">
@@ -19,6 +19,6 @@
 			</div> <!-- /.section-content -->
 
 		</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
-	
+
 	{% endfor %}
 {% endblock %}

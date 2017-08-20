@@ -3,19 +3,19 @@
 	margin-bottom: $h1*2;
 }
 
+
 .tease-title {
 	margin-top: $base;
-	margin-bottom: $base;
+}
+
+.tease-title-link {
+	font-size: $h2;
 }
 
 .tease-header {
 	padding-bottom: $h4;
-	// text-align: center;
 }
 
-.tease-meta {
-	@extend .meta-greyed;
-}
 
 .tease-project {
 	&:first-child {
@@ -38,7 +38,8 @@
 		display: flex;
 
 		> * {
-			@include make-md-column(4);
+			// TODO new styles needed
+			// @include make-md-column(4);
 		}
 	}
 

@@ -23,22 +23,23 @@
 	}
 
 	.page-title {
-		font-size: 15vh;
+		font-size: 10vw;
 		font-weight: $font-weight-strong;
 	}
 
 	.page-tagline {
-		font-size: 10vh;
+		font-size: 5vw;
 		// text-align: right;
 	}
 
 	.page-section {
 		grid-row: content;
+		background-color: $accent-light;
 	}
 
 	.page-image {
-		width: calc(100% + #{$gap * 2});
-		margin-left: -$gap;
+		width: calc(100% + #{$base * 2});
+		margin-left: -$base;
 	}
 
 	.path {
@@ -57,10 +58,6 @@
 	  to {
 	    stroke-dashoffset: 0;
 	  }
-	}
-
-	.line {
-
 	}
 
 }

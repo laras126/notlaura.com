@@ -9,8 +9,20 @@
 }
 
 body {
-	// background-color: $body-bkgd;
-	// border-top: $sml/2 solid $accent-dark;
+	background-color: $body-bkgd;
+
+	// For testing
+	@include bp(small) {
+    background: #D4EBF3;
+  }
+  @include bp(med) {
+    background: #FFFDEC;
+  }
+  @include bp(large) {
+    background: #B8E2B8;
+  }
+
+	border-top: $sml/2 solid $accent-dark;
 
 	word-wrap: break-word;
 
@@ -49,108 +61,6 @@ figure {
 	font-size: $h4;
 }
 
-
-// Site
-
-$gap: $base;
-
-.site {
-	// background-image: url(../img/svg/code.svg);
-	background-color: $accent-med;
-// 	background:
-// radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-// radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
-// #8a3;
-// 	background-size: 20px 20px;
-
-	//
-	> * {
-		padding-left: $h3;
-		padding-right: $h3;
-	}
-
-	@include grid(yes) {
-		background-color: yellow;
-
-	// 	grid-template-columns: 1fr 3fr 1fr;
-	// 	grid-template-rows: 1fr;
-		@include bp(small) {
-			display: grid;
-
-			grid-template-areas:
-				"callout callout callout"
-				"header header header"
-				"content content content"
-				"footer footer footer";
-
-			grid-template-columns:
-				[pad-l] $h3
-				[content] 4fr
-				[pad-r] $h3;
-
-	    grid-template-rows:
-	    	[callout] auto
-	    	[nav] auto
-	    	[header] 2fr
-	    	[content] auto
-	    	[footer] auto;
-
-
-			grid-column-gap: $base;
-			grid-row-gap: $base;
-		}
-
-		// @include bp(large) {
-		// 	display: grid;
-
-		// 	grid-template-columns:
-		// 		[pad-l] $h3
-		// 		[rail-l] 1fr
-		// 		[content] 4fr
-		// 		[rail-r] 1fr
-		// 		[pad-r] $h3;
-
-	 //    grid-template-rows:
-	 //    	[callout] auto
-	 //    	[nav] auto
-	 //    	[content] 2fr
-	 //    	[footer] auto;
-		// }
-	}
-}
-
-.site-callout {
-	// grid-column: 1 / -1;
-	grid-area: callout;
-}
-
-.site-header {
-	grid-area: header;
-	background-color: $accent-med;
-	// grid-column: pad-l / pad-r;
-}
-
-.site-main {
-	background-color: $body-bkgd;
-	padding: $h4;
-	grid-area: content;
-	// grid-column: content;
-}
-
-.site-footer {
-	grid-area: footer;
-	background-color: $accent-light;
-}
-
-@include grid(no) {
-	.site-header,
-	.site-footer {
-	    @include contain($screen-lg);
-	}
-	.site-main {
-    @include contain($screen-md);
-  }
-}
 
 .site-main {
 

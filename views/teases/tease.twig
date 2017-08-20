@@ -1,10 +1,22 @@
 
-<article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
+<article class="content-tease" id="tease-{{post.ID}}">
 	{% block content %}
 
-		{% include 'headers/header-tease.twig' %}
+		<header class="tease-header">
+			<h3 class="tease-title"><a class="tease-title-link" href="{{post.link}}">{{post.title}}</a></h3>
+		</header>
+
+		<aside class="tease-rail">
+			<p class="meta-greyed">{{post.date}}</p>
+			<h5>Filed under:</h5>
+			<p>{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{ loop.last ? '' : ', ' }} {% endfor %}</p>
+		</aside>
 
 		<div class="tease-content">
+
+			{% if post.get_thumbnail %}
+				<img src="{{post.thumbnail.src}}" />
+			{% endif %}
 
 			{% if '<!--more-->' in post.content %}
 				{{post.get_preview(150, false, "<div class=\"more-inner\">Read More &rarr;</div>", false)|wpautop}}
@@ -17,10 +29,5 @@
 			{% include 'partials/edit-link.twig' %}
 
 		</div>
-
-		{% if post.get_thumbnail %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
-
 	{% endblock %}
 </article>

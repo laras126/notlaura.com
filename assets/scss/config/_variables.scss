@@ -1,16 +1,5 @@
 
 
-// ----
-// ---- Screen sizes
-// ----
-
-$screen-sm:     30rem;
-$screen-md:     40rem;
-$screen-lg:   	50rem;
-$screen-xl:     60rem;
-
-
-
 
 // ----
 // ---- Colors
@@ -39,7 +28,7 @@ $pink: 				#CC6698;
 // Semantic variable names
 
 $accent-vlight:		$white-alt;
-$accent-light:		$grey;
+$accent-light:		cornsilk;
 $accent-med:		  $light-blue;
 $accent-dark:		  $dark-blue;
 
@@ -64,7 +53,7 @@ $facebook: 			#3B5998;
 
 // Components
 
-$body-bkgd: 		$white;
+$body-bkgd: 			$white;
 $body-text-clr: 	$text-dark;
 
 $rotate-bkgd: 		$accent-dark;
@@ -107,14 +96,14 @@ $h6:  				$base;
 // Fonts
 
 $serif:             'henriette';
-$sans-serif:        'europa';
+$sans-serif:        'adelle-sans';
 
-$heading-font-fallback: 'George', sans-serif;
-$body-font-fallback:    'Helvetica', sans-serif;
+$heading-font-fallback: 'system', sans-serif;
+$body-font-fallback:    'system', sans-serif;
 
-$heading-font:  $serif;
-$body-font: 		$serif;
-$quote-font: 		$serif;
+$heading-font:  $sans-serif;
+$body-font: 		$sans-serif;
+$quote-font: 		$sans-serif;
 $nav-font: 			$sans-serif;
 $form-font: 		$sans-serif;
 $lead-font: 		$sans-serif;
@@ -122,7 +111,7 @@ $lead-font: 		$sans-serif;
 $font-weight-base:    400;
 $font-weight-strong:  700;
 
-$heading-font-weight: $font-weight-base;
+$heading-font-weight: $font-weight-strong;
 
 
 

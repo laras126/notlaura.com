@@ -1,18 +1,17 @@
 
-<article class="content-tease" id="tease-{{post.ID}}">
+<article class="module" id="tease-{{post.ID}}">
 	{% block content %}
 
-		<header class="tease-header">
+		<header class="module-header">
 			<h3 class="tease-title"><a class="tease-title-link" href="{{post.link}}">{{post.title}}</a></h3>
 		</header>
 
-		<aside class="tease-rail">
-			<p class="meta-greyed">{{post.date}}</p>
-			<h5>Filed under:</h5>
+		<aside class="module-rail">
+			<p class="meta">{{post.date}}</p>
 			<p>{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{ loop.last ? '' : ', ' }} {% endfor %}</p>
 		</aside>
 
-		<div class="tease-content">
+		<div class="module-content">
 
 			{% if post.get_thumbnail %}
 				<img src="{{post.thumbnail.src}}" />

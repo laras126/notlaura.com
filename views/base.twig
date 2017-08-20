@@ -29,11 +29,12 @@
 
   <main class="site-main inner" role="main">
 
-    <header class="main-header">
-      {% block header %}
-        {% include 'headers/header-page.twig' %}
-      {% endblock %}
-    </header>
+    {% block header %}
+      <header class="main-header">
+        <h1 class="page-title">{{post.title}}</h1>
+        <p class="page-tagline">{{post.tagline}}</p>
+      </header>
+    {% endblock %}
 
     <div class="main-content">
       {% block content %}
@@ -41,16 +42,11 @@
       {% endblock %}
     </div>
 
-    <aside class="main-aside">
-      <h3>Hey aside.</h3>
-      <p>Lots of dfun stuff here, maybes some links.</p>
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-      <a href="" class="button">Hi button</a>
-    </aside>
+    {% block sidebar %}
+      <aside class="main-aside">
+        {{sidebar}}
+      </aside>
+    {% endblock %}
 
     <div class="main-misc">
       <h4>Maybe some fun content here or something. Or not.</h4>

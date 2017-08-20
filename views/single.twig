@@ -1,17 +1,19 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	{% include 'headers/header-single.twig' %}
 {% endblock %}
 
 {% block content %}
+	<div class="module">
 
-	<div class="entry-wrap">
+		<header class="module-header">
+			<h1 class="single-title">{{post.title}}</h1>
+		</header>
 
-		<aside class="entry-aside">
+		<aside class="module-rail">
 			<p class="meta-greyed">Posted: {{post.date}}</p>
+			<p>{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{ loop.last ? '' : ', ' }} {% endfor %}</p>
 			{% if post.get_terms('tag') %}
-				<p class="meta-greyed">Keywords:</p>
 				<ul class="tags-list">
 					{% for tag in post.get_terms('tag') %}
 						<li><a href="{{tag.link}}" class="tag">{{tag.name}}</a></li>
@@ -21,18 +23,15 @@
 			{% include 'partials/edit-link.twig' %}
 		</aside>
 
-		{% if post.content %}
-			{# Show post content for legacy posts. All new posts are created with blocks. #}
-			<div class="entry-content">
+		<div class="module-content">
+			{% if post.content %}
 				{{post.content}}
-			</div>
-		{% else %}
-			{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
-		{% endif %}
+			{% else %}
+			{# I don't think these are being used. TODO check. #}
+				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+			{% endif %}
 
-	</div>
-
-	{% include 'partials/prev-next.twig' %}
+		{% include 'partials/prev-next.twig' %}
 
 		<div class="comments" id="disqus_thread"></div>
 		<script type="text/javascript">
@@ -47,6 +46,10 @@
 		    })();
 		</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	</div>
 
+		</div>
+	</div> <!-- /.module -->
 {% endblock %}
+
+{# Remove the sidebar on singles. #}
+{% block sidebar %}{% endblock %}

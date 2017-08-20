@@ -1,10 +1,5 @@
 {% extends "base.twig" %}
 
-{% block header %}
-	<h1 class="page-title">{{post.title}}</h1>
-	<p class="page-tagline">{{post.tagline}}</p>
-{% endblock %}
-
 {% block content %}
 
 	{% for post in all_posts %}

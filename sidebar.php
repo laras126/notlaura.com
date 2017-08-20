@@ -9,6 +9,6 @@
 
 
 $context = array();
-$context['footer_widgets'] = Timber::get_widgets('footer_widgets');
+$context['blog_widgets'] = Timber::get_widgets('blog_widgets');
 
-Timber::render('partials/sidebar-footer.twig', $context);
+Timber::render('sidebar.twig', $context);

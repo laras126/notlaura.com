@@ -30,6 +30,7 @@
 
 	// TODO remove when plugin is created
 	$context['all_posts'] = Timber::get_posts($all_post_args);
+	$context['sidebar'] = Timber::get_sidebar('sidebar.php');
 
 	$context['pagination'] = Timber::get_pagination();
 	$templates = array('index.twig');

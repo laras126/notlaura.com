@@ -57,21 +57,6 @@
 // Small, sans-serif text.
 // Used primarily for forms and complimentary information.
 
-@mixin meta($color: $body-text-clr) {
-    font-size: $sml;
-    font-family: $form-font;
-    margin: 0;
-    line-height: $line-height-sm;
-
-    @if $color {
-        color: $color;
-    }
-
-    .entry-content & {
-        margin-top: $base;
-    }
-}
-
 .meta-cite {
     @include meta($color: $accent-dark);
     text-align: right;
@@ -166,22 +151,22 @@
 // ----
 
 // Note: the two numbers indicate 1 of 6 (16), 3 of 4 (34), etc.
+// TODO remove
+// .col-16 {
+//     @include make-sm-column($c * 1/6);
+// }
 
-.col-16 {
-    @include make-sm-column($c * 1/6);
-}
+// .col-56 {
+//     @include make-sm-column($c * 5/6);
+// }
 
-.col-56 {
-    @include make-sm-column($c * 5/6);
-}
+// .col-14 {
+//     @include make-sm-column($c * 1/4);
+// }
 
-.col-14 {
-    @include make-sm-column($c * 1/4);
-}
-
-.col-34 {
-    @include make-sm-column($c * 3/4);
-}
+// .col-34 {
+//     @include make-sm-column($c * 3/4);
+// }
 
 .invisible {
     display: none;

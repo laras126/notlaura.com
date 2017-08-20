@@ -97,7 +97,7 @@ input[type="file"] {
 input[type="file"] {
 	font-size: $xsml;
 	background-color: $accent-vlight;
-	padding: $xsml $sml; 
+	padding: $xsml $sml;
 }
 select:focus,
 input[type="file"]:focus,
@@ -120,7 +120,7 @@ input[type="checkbox"]:focus {
 
 	textarea,
 	input[type=text],
-	input[type=url], 
+	input[type=url],
 	input[type=email],
 	input[type=tel],
 	input[type=number],
@@ -143,7 +143,7 @@ input[type="checkbox"]:focus {
 
 	.gfield_checkbox {
 		@include unstyle-list;
-		
+
 		li {
 			line-height: 2;
 		}
@@ -164,7 +164,7 @@ input[type="checkbox"]:focus {
 		margin-top: 6px !important;
 		margin-left: 2px;
 	}
-	
+
 	ul.gfield_radio li input[type="radio"]:checked+label,
 	ul.gfield_checkbox li input[type="checkbox"]:checked+label {
 		font-weight: 500;
@@ -176,12 +176,12 @@ input[type="checkbox"]:focus {
 		margin-top: $h3;
 	}
 
-	.ginput_complex label, 
+	.ginput_complex label,
 	.gfield_time_hour label,
 	.gfield_time_minute label,
 	.gfield_date_month label,
 	.gfield_date_day label,
-	.gfield_date_year label, 
+	.gfield_date_year label,
 	.instruction {
 		@include meta;
 		margin-bottom: $h3;
@@ -193,7 +193,7 @@ input[type="checkbox"]:focus {
 		input[type=submit], input.button {
 			display: block;
 		}
-	} 
+	}
 
 	.gfield_description {
 		font-family: $body-font;
@@ -210,9 +210,10 @@ input[type="checkbox"]:focus {
 
 .gf_left_half,
 .gf_right_half {
-	
-	@include make-xs-column($c, false);
-	@include make-md-column($c/2, false);
+
+	// TODO restlye this
+	// @include make-xs-column($c, false);
+	// @include make-md-column($c/2, false);
 
 	input {
 		width: 100%;
@@ -223,9 +224,9 @@ input[type="checkbox"]:focus {
 		@include bp(med) {
 			input {
 				width: 90%;
-			}	
+			}
 		}
-		
+
 		float:left;
 		clear:left !important;
 
@@ -264,8 +265,8 @@ input[type="checkbox"]:focus {
 	font-size: $sml;
 	color: $text-light;
 	padding: $xsml/2 $xsml;
-	margin-top: $sml; 
-	margin-left: $sml; 
+	margin-top: $sml;
+	margin-left: $sml;
 
 	&:hover {
 		background-color: darken($accent-med, 10%);
@@ -289,14 +290,15 @@ input[type="checkbox"]:focus {
 .mc-signup {
 	margin-top: $h4;
 	padding: $gutter;
-	
+
 	@include bp(small) {
 		padding: 0;
 	}
 
 	.email {
-		@include make-xs-column($c);
-		@include make-sm-column($c * 2/3, false, false);
+		// TODO relayout this
+		// @include make-xs-column($c);
+		// @include make-sm-column($c * 2/3, false, false);
 		padding: $sml $base;
 		margin-bottom: $sml;
 		text-align: center;
@@ -304,22 +306,23 @@ input[type="checkbox"]:focus {
 		@include bp(small) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
-			text-align: left;	
+			text-align: left;
 			margin-bottom: 0;
 		}
 
 	}
-	
+
 	.button {
-		@include make-xs-column($c);
-		@include make-sm-column($c * 1/3, false, false);
+		// TODO check if messed up
+		// @include make-xs-column($c);
+		// @include make-sm-column($c * 1/3, false, false);
 		@include button($accent-med);
 
 		@include bp(small) {
 			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;	
+			border-bottom-left-radius: 0;
 		}
-		
+
 	}
 }
 

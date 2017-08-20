@@ -1,6 +1,6 @@
 // Alerts
 
-@mixin alert-color($color: $alert-warning) {  
+@mixin alert-color($color: $alert-warning) {
     background-color: $color;
     border: 1px solid darken($color, 20%);
 }
@@ -10,7 +10,7 @@
     padding: $base;
     margin-top: $base;
     margin-bottom: $base;
-    @include bleed;
+    // @include bleed;
 }
 
 .alert-warning {

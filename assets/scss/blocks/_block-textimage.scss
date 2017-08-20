@@ -19,10 +19,11 @@ figure {
 	}
 }
 
-	.para-img {
-		@include make-sm-column($c * 1/2);
-		padding-bottom: $base;
-		@include bp(med) {
-			padding-bottom: 0;
-		}
-	}
+// TODO test if there
+	// .para-img {
+	// 	@include make-sm-column($c * 1/2);
+	// 	padding-bottom: $base;
+	// 	@include bp(med) {
+	// 		padding-bottom: 0;
+	// 	}
+	// }

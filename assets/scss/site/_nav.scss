@@ -85,19 +85,21 @@
 
 // Section nav on pages
 
+.section-nav {
+  margin-top: $h1;
+}
+
 .section-nav ul {
   padding-left: 0;
-  text-align: center;
+
   @include unstyle-list;
 
   @include bp(small) {
-    @include horizontal-list($margin: $xsml);
     li {
-      padding: $xsml;
+      // padding: $xsml;
     }
   }
 
-  margin-top: $h4;
 
   a {
     @include meta($color: $accent-dark);

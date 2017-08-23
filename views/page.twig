@@ -6,19 +6,26 @@
 {% endblock %}
 
 {% block content %}
-	{% include 'partials/section-nav.twig'%}
+	<div class="module">
 
-	{% for section in post.get_field('sections') %}
+		<div class="module-rail">
+			{% include 'partials/section-nav.twig'%}
+		</div>
 
-		<section class="page-section">
+		<div class="module-content">
+		{% for section in post.get_field('sections') %}
 
-			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
+			<section class="page-section">
 
-			<div class="section-content" id="{{menu_link_id}}-content">
-				{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
-			</div> <!-- /.section-content -->
+				{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
 
-		</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
+				<div class="section-content" id="{{menu_link_id}}-content">
+					{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
+				</div> <!-- /.section-content -->
 
-	{% endfor %}
+			</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
+
+		{% endfor %}
+		</div>
+	</div>
 {% endblock %}

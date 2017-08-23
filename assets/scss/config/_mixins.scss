@@ -170,17 +170,12 @@ $MQs: true;
 // ----
 
 
-@mixin meta($color: $body-text-clr) {
-    font-size: $sml;
-    font-family: $form-font;
-    margin: 0;
-    line-height: $line-height-sm;
+@mixin meta($color: inherit) {
+  font-size: $sml;
+  margin: 0;
+  line-height: $line-height-sm;
 
-    @if $color {
-      color: $color;
-    }
-
-    .entry-content & {
-      margin-top: $base;
-    }
+  @if $color {
+    color: $color;
+  }
 }

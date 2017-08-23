@@ -1,43 +1,41 @@
 
-<header class="main-header">
+<header class="main-header page-header">
 
 	{% block title_area %}
-		<h1 class="page-title">{{post.title}}</h1>
+		{% if not post.image %}
+			<h1 class="header-title">{{post.title}}</h1>
+		{% endif %}
 	{% endblock %}
-
+{#
 	{% if post.tagline %}
 		<p class="page-tagline">{{post.tagline}}</p>
-	{% endif %}
+	{% endif %} #}
 
-	{% if post.image and post.svg is empty%}
-		<figure class="page-image">
-			{# TODO do responsive images here and fix caption style #}
-			{# Logic for project link. #}
-			{{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}
-				<img src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
-			{{post.project_link ? '</a>'}}
+		{% if post.image and post.svg is empty %}
+			<div class="header-decor" style="background-image: url({{TimberImage(post.image).src('large')}})">
+				<h1 class="header-title">{{post.title}}</h1>
+				{# TODO do responsive images here and fix caption style #}
+				{# Logic for project link. #}
+				{# {{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}
+					<img src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
+				{{post.project_link ? '</a>'}} #}
 
-			{% if post.image_caption %}
-				<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
+				{# {% if post.image_caption %}
+					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
+				{% endif %} #}
+			</div>
+		{% endif %}
+
+		<div class="header-details">
+			{% if post.intro %}
+				<p class="lead page-intro">{{post.intro}}</p>
 			{% endif %}
-		</figure>
-	{% endif %}
 
-	{% if post.svg %}
-		<figure class="bleed">
-			{% include 'partials/svg.twig' with { 'file': post.svg, 'prefix': 'shape' } %}
-			{% if post.image_caption %}
-				<figcaption class="caption-clear">{{post.image_caption}}</figcaption>
+			{% if post.para_intro %}
+				<p>{{post.para_intro}}</p>
 			{% endif %}
-		</figure>
-	{% endif %}
+		</div>
 
-	{% if post.intro %}
-		<p class="lead page-intro">{{post.intro}}</p>
-	{% endif %}
 
-	{% if post.para_intro %}
-		<p>{{post.para_intro}}</p>
-	{% endif %}
 
 </header>

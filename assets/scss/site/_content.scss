@@ -1,9 +1,41 @@
 
 
-// Captions
+// ----
+// Figures and Captions
+// ----
+
+.fig-large {
+
+  @include bp(med) {
+    margin-left: -$grid-gap;
+
+    .single & {
+      margin-right: -$h1*2;
+      width: calc(100% + #{$h1});
+    }
+
+    figcaption {
+      padding-left: $grid-gap;
+    }
+  }
+
+  @include bp(large) {
+
+    .single & {
+      margin-right: -$h1*2;
+      width: calc(100% + #{($h1*2) + $grid-gap});
+    }
+
+    .blog & {
+      margin-left: -$grid-gap;
+      width: calc(100% + #{$grid-gap*2});
+    }
+  }
+
+}
 
 figcaption {
-	@include meta($text-med);
+  padding-top: $sml;
 }
 
 .caption-opaque {
@@ -11,63 +43,10 @@ figcaption {
 	z-index: $ztop;
 }
 
-
-
-// Entry content (for legacy posts)
-
-figure {
-	margin-top: $base;
+.cp_embed_wrapper {
+  margin-top: $grid-gap;
 }
 
 
 
-// .entry-wrap {
-//   display: flex;
-//   flex-direction: column;
-//   @include bp(large) {
-//     flex-direction: row;
-//   }
-// }
 
-// .entry-content {
-//   order: 0;
-//   @include bp(large) {
-//     order: 1;
-//   }
-// }
-
-// .entry-aside {
-// 	padding-top: $h4;
-// 	@include rotate($accent-med);
-//   flex-shrink: 0;
-//   order: 1;
-//   @include bp(large) {
-//     order: 0;
-//     width: calc(100% / 4);
-//     margin-right: $h4;
-//   }
-// }
-
-
-
-
-// Tags and category lists
-
-.tags-list {
-	@include unstyle-list;
-	display: flex;
-	flex-wrap: wrap;
-
-	> li {
-		margin-top: $xsml/1.7;
-		margin-right: $xsml/2;
-	}
-}
-
-.tag {
-	@include unstyle-link;
-	@include meta;
-	background-color: $accent-light;
-	padding: $xsml/2 $xsml;
-	border-radius: 2px;
-}

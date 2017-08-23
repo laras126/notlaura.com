@@ -4,24 +4,24 @@
 // ----
 
 @mixin center-block() {
-    margin: 0 auto;
-    display: block;
+	margin: 0 auto;
+	display: block;
 }
 
 .center-block {
-    @include center-block;
+	@include center-block;
 }
 
 .inline {
-    display: inline-block;
+	display: inline-block;
 }
 
 .img-flex {
-    width: 100%;
+	width: 100%;
 }
 
 .clearfix {
-    @include clearfix;
+	@include clearfix;
 }
 
 
@@ -34,23 +34,23 @@
 // Change text alignment at a certain breakpoint.
 
 @mixin change-text-align($base, $bp, $new) {
-    text-align: $base;
+	text-align: $base;
 
-    @include bp($bp) {
-        text-align: $new;
-    }
+	@include bp($bp) {
+		text-align: $new;
+	}
 }
 
 
 // Uppercase and letterspacing.
 
 @mixin upperspace {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .upperspace {
-    @include upperspace;
+	@include upperspace;
 }
 
 
@@ -58,18 +58,17 @@
 // Used primarily for forms and complimentary information.
 
 .meta-cite {
-    @include meta($color: $accent-dark);
-    text-align: right;
-    margin-top: $base;
+	@include meta($color: $accent-dark);
+	text-align: right;
+	margin-top: $base;
 }
 
-.meta-greyed,
 .caption {
-    @include meta($text-med);
+	@include meta($text-med);
 }
 
 .meta-light {
-    @include meta($text-light);
+	@include meta($text-light);
 }
 
 
@@ -84,22 +83,22 @@
 // Change background and text color.
 
 @mixin rotate($text: $accent-vlight, $bkgd: $accent-dark, $link-clr: $accent-vlight) {
-    background-color: $bkgd;
-    color: $text;
+	background-color: $bkgd;
+	color: $text;
 
-    a,
-    a:link,
-    a:visited {
-        color: $link-clr;
-    }
+	a,
+	a:link,
+	a:visited {
+		color: $link-clr;
+	}
 
-    a:hover {
-        color: darken($link-clr, 10%);
-    }
+	a:hover {
+		color: darken($link-clr, 10%);
+	}
 
-    a:active {
-        color: darken($link-clr, 20%);
-    }
+	a:active {
+		color: darken($link-clr, 20%);
+	}
 }
 
 
@@ -111,7 +110,7 @@
 
 
 %img_highlight {
-    border: $accent-border;
+	border: $accent-border;
 }
 
 
@@ -119,8 +118,8 @@
 
 %alert,
 .alert {
-    @include rotate($text-dark, $accent-vlight);
-    padding: $base;
+	@include rotate($text-dark, $accent-vlight);
+	padding: $base;
 }
 
 
@@ -133,119 +132,38 @@
 // ----
 
 .invisible {
-    display: none;
+	display: none;
 }
 
 .visually-hidden,
 .screen-reader {
-    position: absolute;
-    top: -9999999px;
-    left: -9999999px;
+		@include visually-hidden;
 }
 
 
 
 
-// ----
-// Layout
-// ----
-
-// Note: the two numbers indicate 1 of 6 (16), 3 of 4 (34), etc.
-// TODO remove
-// .col-16 {
-//     @include make-sm-column($c * 1/6);
-// }
-
-// .col-56 {
-//     @include make-sm-column($c * 5/6);
-// }
-
-// .col-14 {
-//     @include make-sm-column($c * 1/4);
-// }
-
-// .col-34 {
-//     @include make-sm-column($c * 3/4);
-// }
-
-.invisible {
-    display: none;
-}
 
 
 
-
-// Hold
-
-@mixin form-base($pad-tb, $pad-rl, $font) {
-    padding: $pad-tb $pad-rl;
-    font-family: $font;
-}
-
-%form-base {
-    @include form-base($sml/3, $sml/2, $form-font);
-}
-
-.hide-after-lg {
-    @include bp(large) {
-        display: none;
-    }
-}
-
-// Ew!
-.hide-until-md,
-%hide-until-md {
-   	display: none !important;
-    @include bp(med) {
-        display: inline-block !important;
-    }
-}
-
-.hide-after-md,
-%hide-after-md {
-	@include bp(med) {
-        display: none !important;
-    }
-}
-
-%rotate {
-	color: $rotate-text;
-	background-color: $rotate-bkgd;
-}
 
 
 // Typography helpers
 
-.meta,
-%meta {
-    @include meta;
+.meta {
+	@include meta;
 }
-
-    %meta-light {
-        @include meta;
-        color: $text-med;
-    }
-
-    %meta-dark {
-        @include meta;
-        color: $text-med;
-    }
-
-    .meta-colon {
-        @include upperspace;
-        @include meta($text-med);
-    }
 
 
 // Text alignment shortcuts
 // Mainly for prototyping and where semantics aren't crucial (which is nowhere? Discuss!)
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 
 .text-right {
-    text-align: right;
+	text-align: right;
 }
 
 
@@ -273,17 +191,4 @@
 //     margin: 0;
 //     @include clearfix;
 // }
-
-
-// Interactive (bad description?)
-// If you'd like a sticky nav...
-    .stuck {
-        @include bp(med) {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: $ztop;
-        }
-    }
-
 

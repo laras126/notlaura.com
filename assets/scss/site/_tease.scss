@@ -1,21 +1,58 @@
 
 .tease-post {
 	margin-bottom: $h1*2;
+
+	.module-content {
+		@include bp(small) {
+			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap;
+			background: $white;
+			border: $accent-border;
+		}
+	}
+
+	.module-header {
+		display: flex;
+		align-items: center;
+	}
 }
 
+.tease-thumbnail {
+	border: $accent-border;
+	display: block;
+}
+
+.tease-meta {
+	color: $text-light;
+	border-top: $accent-border;
+	padding: $sml;
+	border-bottom: none;
+
+	> * {
+		display: inline-block;
+		margin-right: $base;
+	}
+
+	@include bp(med) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
+
+.meta-date {
+	margin-top: 0;
+}
 
 .tease-title {
 	margin-top: $base;
+	margin-bottom: $base;
 }
 
 .tease-title-link {
 	font-size: $h2;
+	color: $link-color;
+	border-bottom: none;
 }
-
-.tease-header {
-	padding-bottom: $h4;
-}
-
 
 .tease-project {
 	&:first-child {

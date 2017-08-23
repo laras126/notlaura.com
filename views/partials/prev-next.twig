@@ -2,7 +2,7 @@
 <nav class="prevnext-nav">
 	{% if post.prev %}
 		<div class="prev">
-			<a href="{{post.prev.link}}" title="{{post.prev.post_title}}">
+			<a href="{{post.prev.link}}" title="{{post.prev.post_title|striptags}}">
 				<span class="meta-greyed">Previous</span><br>
 				{{post.prev.post_title}}</a>
 			</a>
@@ -11,7 +11,7 @@
 
 	{% if post.next %}
 		<div class="next">
-			<a href="{{post.next.link}}" title="{{post.next.post_title}}">
+			<a href="{{post.next.link}}" title="{{post.next.post_title|striptags}}">
 				<span class="meta-greyed">Next</span><br>
 				{{post.next.post_title}}</a>
 			</a>

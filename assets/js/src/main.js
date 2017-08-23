@@ -14,56 +14,56 @@ jQuery(document).ready(function() {
 	// ----
 
 	// Get an array of all elements to be typed.
-	const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-	const TYPED_ELS = document.querySelectorAll('.js-typed');
-	const TYPE_SPEED = 30,
-				SHOW_CURSOR = false;
+	// const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+	// const TYPED_ELS = document.querySelectorAll('.js-typed');
+	// const TYPE_SPEED = 30,
+	// 			SHOW_CURSOR = false;
 
-	var options = {
-		elIndex: 0,
-	  strings: [TYPED_SRCS[0].innerHTML],
-	  typeSpeed: TYPE_SPEED,
-	  showCursor: SHOW_CURSOR,
-	  onComplete: () => {
-  		typeNextInArray();
-	  },
-	}
+	// var options = {
+	// 	elIndex: 0,
+	//   strings: [TYPED_SRCS[0].innerHTML],
+	//   typeSpeed: TYPE_SPEED,
+	//   showCursor: SHOW_CURSOR,
+	//   onComplete: () => {
+  // 		typeNextInArray();
+	//   },
+	// }
 
-	// Start the typing elements, starting with index 0
-	// var typed = new Typed(TYPED_ELS[0], options);
+	// // Start the typing elements, starting with index 0
+	// // var typed = new Typed(TYPED_ELS[0], options);
 
-	// Function to type next item in typedEls array
-	function typeNextInArray() {
+	// // Function to type next item in typedEls array
+	// function typeNextInArray() {
 
-		// Move through the array
-		options.elIndex++;
-	  let newIndex = options.elIndex;
-		let currentEl = TYPED_SRCS[newIndex];
+	// 	// Move through the array
+	// 	options.elIndex++;
+	//   let newIndex = options.elIndex;
+	// 	let currentEl = TYPED_SRCS[newIndex];
 
-	  // Allow for data attributes to provide some settings
-	  let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-	  let callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
+	//   // Allow for data attributes to provide some settings
+	//   let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
+	//   let callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
 
 
-	  // New options set
-  	let newOptions = {
-  		elIndex: newIndex,
-  		startDelay: 500,
-  		strings: [TYPED_SRCS[newIndex].innerHTML],
-  		typeSpeed: newTypeSpeed,
-		  showCursor: SHOW_CURSOR,
-  		onComplete: () => {
-  			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-	  			return typeNextInArray();
-	  			eval(currentEl.dataset.callback);
-	  		} else {
-	  			console.log('done');
-	  		}
-  		}
-  	}
+	//   // New options set
+  // 	let newOptions = {
+  // 		elIndex: newIndex,
+  // 		startDelay: 500,
+  // 		strings: [TYPED_SRCS[newIndex].innerHTML],
+  // 		typeSpeed: newTypeSpeed,
+	// 	  showCursor: SHOW_CURSOR,
+  // 		onComplete: () => {
+  // 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
+	//   			return typeNextInArray();
+	//   			eval(currentEl.dataset.callback);
+	//   		} else {
+	//   			console.log('done');
+	//   		}
+  // 		}
+  // 	}
 
-  	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
-	}
+  // 	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
+	// }
 
 
 	// function executeFunctionFromData(){
@@ -76,6 +76,10 @@ jQuery(document).ready(function() {
 	function executeFunctionFromData(data){
     // var d = data;
 	}
+
+
+
+
 
 	// ----
 	// Toggle Menu
@@ -119,7 +123,7 @@ jQuery(document).ready(function() {
 
 
 	// Fit Vids
-	 $(".page-body").fitVids({ customSelector: 'iframe' });
+	 $(".main-content").fitVids({ customSelector: 'iframe' });
 
 });
 

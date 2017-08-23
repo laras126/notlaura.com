@@ -1,5 +1,7 @@
 
 
+
+
 // ----
 // Shameful and need-to-be-cleaned-up styles here.
 // ----
@@ -49,52 +51,9 @@
 
 
 
-// There's a more elegant solution for this, obviously.
-// Like, ew.
-
-.pagenav-middle h1,
-.pagenav-middle h2,
-.tease-title {
-  font-size: $h3;
-
-  @include bp(med) {
-    font-size: $h2;
-  }
-}
-
-
-// BAD
-
-.main-more {
-  position: absolute !important;
-  top: 40%;
-  right: 0;
-}
-
-
 
 // Misc spacing fixes
 
 .widgets {
   padding-top: $sml;
 }
-
-
-
-// Layout Utilities
-
-.table {
-  display: table;
-  vertical-align: middle;
-}
-
-.t-row {
-  vertical-align: middle;
-  display: table-row;
-}
-
-.t-cell {
-  display: table-cell;
-  vertical-align: middle;
-}
-

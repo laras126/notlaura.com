@@ -4,23 +4,15 @@
 {% endblock %}
 
 {% block content %}
-	<div class="module">
+
+<div class="module">
 
 		<header class="module-header">
 			<h1 class="single-title">{{post.title}}</h1>
 		</header>
 
 		<aside class="module-rail">
-			<p class="meta-greyed">Posted: {{post.date}}</p>
-			<p>{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{ loop.last ? '' : ', ' }} {% endfor %}</p>
-			{% if post.get_terms('tag') %}
-				<ul class="tags-list">
-					{% for tag in post.get_terms('tag') %}
-						<li><a href="{{tag.link}}" class="tag">{{tag.name}}</a></li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-			{% include 'partials/edit-link.twig' %}
+			{% include "partials/tease-meta.twig" %}
 		</aside>
 
 		<div class="module-content">
@@ -31,21 +23,21 @@
 				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 			{% endif %}
 
-		{% include 'partials/prev-next.twig' %}
+			{% include 'partials/prev-next.twig' %}
 
-		<div class="comments" id="disqus_thread"></div>
-		<script type="text/javascript">
-		    /* * * CONFIGURATION VARIABLES * * */
-		    var disqus_shortname = 'notlaura';
+			<div class="comments" id="disqus_thread"></div>
+			<script type="text/javascript">
+					/* * * CONFIGURATION VARIABLES * * */
+					var disqus_shortname = 'notlaura';
 
-		    /* * * DON'T EDIT BELOW THIS LINE * * */
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 		</div>
 	</div> <!-- /.module -->

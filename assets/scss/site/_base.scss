@@ -19,7 +19,7 @@ body {
     background: #FFFDEC;
   }
   @include bp(large) {
-    background: #B8E2B8;
+    background: #FFF;
   }
 
 	border-top: $sml/2 solid $accent-dark;
@@ -62,11 +62,14 @@ figure {
 }
 
 // body {
-// 	background: $accent-dark;
-// }
+	// }
 
-.site-main {
-	background: $white;
+.blog {
+	// background-color: $accent-dark;
+}
+
+.main-header {
+	// color: $text-light;
 }
 
 .site-footer {

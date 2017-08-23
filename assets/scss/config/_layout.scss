@@ -61,9 +61,13 @@ $rail: 150px;
 .site-main {
 
   @include bp(med) {
+
+    .page & {
+      grid-template-rows: minmax(500px, auto) auto;
+    }
+
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(500px, auto) auto;
     grid-template-areas:
       "header"
       "content"
@@ -90,6 +94,12 @@ $rail: 150px;
 
 .main-content {
   grid-area: content;
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
+
+  @include bp(large) {
+    padding: 0;
+  }
 }
 
 .main-aside {
@@ -135,6 +145,7 @@ $rail: 150px;
   padding-left: $grid-gap;
   padding-right: $grid-gap;
   justify-content: center;
+  justify-content: flex-end;
 
   @include bp(med) {
     padding-left: 0;
@@ -148,7 +159,8 @@ $rail: 150px;
 	font-weight: $font-weight-strong;
 	background-image: linear-gradient(transparent, $accent-dark);
 	padding-top: $grid-gap*2;
-	padding-left: $grid-gap;
+  padding-left: $grid-gap;
+  text-transform: uppercase;
 }
 
 

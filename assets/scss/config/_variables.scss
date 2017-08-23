@@ -7,8 +7,8 @@
 
 
 $dark-blue: 		#0b5c84;
-$light-blue: 		#2696CE;
-$vlight-blue:   #A6DDF8;
+$light-blue: 		#93B6CB;
+$vlight-blue:   #E0E6F2;
 
 $grey: 				  #999999;
 $dark-grey: 		#272727;
@@ -16,6 +16,7 @@ $dark-grey: 		#272727;
 $white: 			  #ffffff;
 $white-alt:  		#f4f7f9;
 
+$maroon: 			#8E256C;
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $seagreen:    #21A99C;
 $green: 			#1BBF54;
@@ -45,8 +46,8 @@ $text-med: 			darken($grey, 30%);
 $text-medlight: lighten($text-med, 20%);
 $text-light: 		$white;
 
-$link-color:		$light-blue;
-$link-hover: 		$orange;
+$link-color:		$maroon;
+$link-hover: 		darken($link-color, 10%);
 
 $twitter: 			#4099FF;
 $facebook: 			#3B5998;
@@ -99,7 +100,7 @@ $h6:  				$base;
 $serif:             'henriette';
 $sans-serif:        'adelle-sans';
 
-$heading-font-fallback: 'system', sans-serif;
+$heading-font-fallback: 'Helvetica', sans-serif;
 $body-font-fallback:    'system', sans-serif;
 
 $heading-font:  $sans-serif;

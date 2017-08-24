@@ -10,6 +10,39 @@ jQuery(document).ready(function() {
 
 
 	// ----
+	// Animations (GreenSock)
+	//----
+
+	// Character 1 (Blog)
+
+	const mainBody = document.querySelectorAll(".main"),
+				eyes = document.querySelector(".eyes"),
+				pupils = document.querySelector(".pupils"),
+				characterArea = document.querySelector(".character-1");
+
+		var tl = new TimelineLite();
+
+		TweenLite.set(mainBody, { y: 150 });
+
+		console.log(tl);
+
+		// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
+
+		characterArea.addEventListener("mouseover", () => {
+			tl.to(mainBody, 1, {
+				y: 0,
+				ease: Power1.easeOut
+			});
+		});
+
+		// function myFunction() {
+		setInterval( () => {
+			tl.fromTo(eyes, 1, { fill: '#1B75BC' }, { fill: 'white' })
+				.fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
+		}, 3000);
+
+
+	// ----
 	// Typed.js
 	// ----
 

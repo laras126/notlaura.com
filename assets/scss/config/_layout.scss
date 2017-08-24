@@ -89,7 +89,6 @@ $rail: 150px;
 
 .main-header {
   grid-area: header;
-  background: $body-bkgd;
 }
 
 .main-content {
@@ -133,24 +132,24 @@ $rail: 150px;
     display: flex;
     flex-direction: column;
   }
+
 }
 
-.header-decor {
+.header-left {
   background-size: cover;
   background-position: center center;
   justify-content: flex-end;
 }
 
-.header-details {
+.header-right {
+  padding-top: $grid-gap;
   padding-left: $grid-gap;
   padding-right: $grid-gap;
   justify-content: center;
-  justify-content: flex-end;
 
   @include bp(med) {
     padding-left: 0;
   }
-
 }
 
 .header-title {
@@ -176,7 +175,7 @@ $rail: 150px;
   .module {
 		display: grid;
 		grid-column-gap: $grid-gap;
-    grid-template-columns: 1fr minmax(auto,650px) auto;
+    grid-template-columns: minmax(175px, 250px) minmax(auto,650px) auto;
     grid-template-areas:
       "thumb  header"
       "rail   content";

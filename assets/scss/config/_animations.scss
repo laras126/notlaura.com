@@ -1,58 +1,36 @@
-.character-1 {
-  // height: 176px;
-  // width: 316px;
+body {
+	background-color: #303030;
 }
 
-.self {
-  // fill: $accent-dark;
-  transform: translateY(100px);
-  animation: show-self 1s forwards;
+.character {
+	max-width: 150px;
+	// position: absolute;
+	// bottom: 0;
+}
+
+.eyes {
+	fill:#fff;
+}
+
+.body {
+	fill:#27aae1;
 }
 
 .hand {
-  fill: $accent-dark;
+	fill: #1b75bc;
 }
 
-@keyframes show-self {
-  0% {
-
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+.mouth-nose,
+.pupils {
+	fill: #231f20;
 }
 
-// .animated {
-//     -webkit-animation-duration: 1s;
-//     animation-duration: 1s;
-//     -webkit-animation-fill-mode: both;
-//     animation-fill-mode: both;
-// }
+.accents {
+	fill: none;
+	stroke: #1b75bc;
+	stroke-miterlimit: 10;
+}
 
-// @-webkit-keyframes fadeInDown {
-//     0% {
-//         opacity: 0;
-//         -webkit-transform: translateY(-20px);
-//     }
-//     100% {
-//         opacity: 1;
-//         -webkit-transform: translateY(0);
-//     }
-// }
-
-// @keyframes fadeInDown {
-//     0% {
-//         opacity: 0;
-//         transform: translateY(-20px);
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateY(0);
-//     }
-// }
-
-// .fadeInDown {
-//     -webkit-animation-name: fadeInDown;
-//     animation-name: fadeInDown;
-// }
+.teeth {
+	fill: white;
+}

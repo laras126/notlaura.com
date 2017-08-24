@@ -118,6 +118,37 @@ jQuery(document).ready(function () {
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
 	// ----
+	// Animations (GreenSock)
+	//----
+
+	// Character 1 (Blog)
+
+	var mainBody = document.querySelectorAll(".main"),
+	    eyes = document.querySelector(".eyes"),
+	    pupils = document.querySelector(".pupils"),
+	    characterArea = document.querySelector(".character-1");
+
+	var tl = new TimelineLite();
+
+	TweenLite.set(mainBody, { y: 150 });
+
+	console.log(tl);
+
+	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
+
+	characterArea.addEventListener("mouseover", function () {
+		tl.to(mainBody, 1, {
+			y: 0,
+			ease: Power1.easeOut
+		});
+	});
+
+	// function myFunction() {
+	setInterval(function () {
+		tl.fromTo(eyes, 1, { fill: '#1B75BC' }, { fill: 'white' }).fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
+	}, 3000);
+
+	// ----
 	// Typed.js
 	// ----
 

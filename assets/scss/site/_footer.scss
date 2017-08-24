@@ -45,31 +45,24 @@
 
 
 .widgets {
-	@include divide-with-border(top);
-	@include divide-with-border(bottom);
+	@include unstyle-list();
 
-	@include grid(yes) {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-column-gap: $base;
+	&.-blog {
+
 	}
 
-	@include grid(no) {
-		@include bp(med) {
-			display: flex;
-			justify-content: space-between;
-		}
-	}
+	&.-footer {
 
+	}
 }
 
 .widget {
-	@include bp(med) {
-		font-size: $sml;
-		@include grid(no) {
-			width: 45%;
-		}
-	}
+	// @include bp(med) {
+	// 	font-size: $sml;
+	// 	@include grid(no) {
+	// 		width: 45%;
+	// 	}
+	// }
 }
 
 	.widget-title {}

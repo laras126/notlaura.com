@@ -1,13 +1,8 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	<header class="main-header page-header">
-		<div class="header-decor">
-		<h1 class="header-title">{{post.title}}</h1>
-		</div>
-		<div class="header-details">
-		{% include "svgs/character-1.svg" %}
-		</div>
+	<header class="main-header single-header">
+		{% include 'headers/header-page.twig' %}
 	</header>
 {% endblock %}
 

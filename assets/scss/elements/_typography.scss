@@ -38,10 +38,12 @@ body {
 a {
 	color: $link-color;
 	text-decoration: none;
-  border-bottom: 1px dotted $accent-light;
 
 	&:hover, &:focus {
 		color: $link-hover;
+		.main-content & {
+			background-color: $accent-vlight;
+		}
 	}
 
 	&:active {
@@ -51,6 +53,10 @@ a {
 	// mobile tap color
 	&:link {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+
+	.main-content &:not(.tease-title-link) {
+		border-bottom: $accent-border;
 	}
 }
 

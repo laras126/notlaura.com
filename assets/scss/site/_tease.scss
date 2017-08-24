@@ -6,7 +6,6 @@
 		@include bp(small) {
 			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap;
 			background: $white;
-			border: $accent-border;
 		}
 	}
 
@@ -22,14 +21,21 @@
 }
 
 .tease-meta {
-	color: $text-light;
 	border-top: $accent-border;
 	padding: $sml;
 	border-bottom: none;
 
+	@include bp(large) {
+		margin-left: $grid-gap;
+	}
+
 	> * {
 		display: inline-block;
 		margin-right: $base;
+
+		@include bp(med) {
+			margin-right: 0;
+		}
 	}
 
 	@include bp(med) {
@@ -46,13 +52,27 @@
 .tease-title {
 	margin-top: $base;
 	margin-bottom: $base;
+	@include bp(large) {
+		margin-left: $grid-gap;
+	}
 }
 
 .tease-title-link {
 	font-size: $h2;
 	color: $link-color;
-	border-bottom: none;
+	border-bottom: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .tease-project {
 	&:first-child {

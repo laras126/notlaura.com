@@ -7,7 +7,7 @@
 
 
 $dark-blue: 		#0b5c84;
-$light-blue: 		#93B6CB;
+$light-blue: 		#27AAE1;
 $vlight-blue:   #E0E6F2;
 
 $grey: 				  #999999;
@@ -16,7 +16,7 @@ $dark-grey: 		#272727;
 $white: 			  #ffffff;
 $white-alt:  		#f4f7f9;
 
-$maroon: 			#8E256C;
+$maroon: 			#59405C;
 $l-teal: 			desaturate(#BDF2E3, 10%);
 $seagreen:    #21A99C;
 $green: 			#1BBF54;
@@ -33,6 +33,7 @@ $accent-vlight:		$white-alt;
 $accent-light:		cornsilk;
 $accent-med:		  $light-blue;
 $accent-dark:		  $dark-blue;
+$accent-vdark:		#242F4A;
 
 $accent-alt: 		$pink;
 
@@ -46,7 +47,7 @@ $text-med: 			darken($grey, 30%);
 $text-medlight: lighten($text-med, 20%);
 $text-light: 		$white;
 
-$link-color:		$maroon;
+$link-color:		$accent-med;
 $link-hover: 		darken($link-color, 10%);
 
 $twitter: 			#4099FF;

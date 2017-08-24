@@ -1,20 +1,21 @@
 
-<div class="site-info">
-	<h1 class="site-title"><a href="{{site.link}}" rel="nofollow">Lara <span class="special">Schenck</span></a></h1>
-	<p class="site-desc">{{site.description}}</p>
-</div> <!-- /.site-info -->
-
-<div class="menu-link">
-  <a href="#menu">Menu</a>
-</div> <!-- /.menu-link -->
+<div class="site-logo">
+  <a href="{{site.link}}">
+    {% include "svgs/lara-schenck.svg" %}
+    <h1 class="screen-reader">Lara Schenck</h1>
+  </a>
+</div>
 
 <nav id="menu" class="site-nav" role="navigation">
   <ul class="menu-list">
-  {% for item in main_nav.items %}
+    {% for item in main_nav.items %}
     <li class="menu-item {{ item.get_children ? 'menu-has-children' }} {{item.classes | join(' ')}}">
       <a class="menu-item-link" href="{{item.link}}">{{item.title}}</a>
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 </nav><!-- /#menu -->
 
+<div class="site-icon">
+  {% include "svgs/character-1.svg" %}
+</div>

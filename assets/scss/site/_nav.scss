@@ -4,59 +4,30 @@
 
 // Toggle menu
 
-.menu-link {
-  margin-left: auto;
-  // Hide the menu button on large screens
-  @include bp(menu) {
-    display: none;
-  }
-}
+// .menu-link {
+//   margin-left: auto;
+//   // Hide the menu button on large screens
+//   @include bp(menu) {
+//     display: none;
+//   }
+// }
 
 .menu-list {
-  border-top: $accent-border;
-  @include unstyle-list;
-
-  @include bp(menu) {
-    display: flex;
-    border-top: 0;
+  @include unstyle-list();
+  display: flex;
+  margin-bottom: 0;
+  @include bp(med) {
+    margin-left: $grid-gap;
+    text-align: center
   }
-
 }
 
 .site-nav {
   text-align: center;
-  margin-top: $sml;
-  padding: $sml 0;
-
-  overflow: hidden;
-  max-height: 0;
-
-  &.active {
-    max-height: 25em;
-    overflow: visible;
-  }
-
-  // Hide on large screens
-  @include bp(menu) {
-    max-height: none;
-    overflow: visible;
-  }
-
-
-  &:first-child a {
-    border-top: 1px solid transparent;
-  }
-
-}
-
-.menu-item {
-  @include bp(menu) {
-    padding-left: $xsml;
-  }
 }
 
 .menu-item-link {
-  border-bottom: $accent-border;
+  // border-bottom: $accent-border;
   display: block;
   padding: $sml;
   text-align: center;
@@ -75,6 +46,8 @@
     }
 
     &:hover, &:focus {
+      color: $accent-vlight;
+      background-color: transparent;
       border-bottom: $accent-border;
       border-top: $accent-border;
     }
@@ -164,39 +137,39 @@
 // http://codepen.io/lexstefan/pen/mwtcn
 // ----
 
-.menu-link {
-    padding: $sml;
-}
+// .menu-link {
+//     padding: $sml;
+// }
 
-    .menu-link a {
-        float: right;
-    }
+//     .menu-link a {
+//         float: right;
+//     }
 
-    .menu-link span {
-        transition: all 0.05s ease-in-out;
-        width: 30px;
-        height: 3px;
-        display: block;
-        background: $accent-dark;
-        margin: 0 0 5px 0;
-        border-radius: 1px;
-    }
+//     .menu-link span {
+//         transition: all 0.05s ease-in-out;
+//         width: 30px;
+//         height: 3px;
+//         display: block;
+//         background: $accent-dark;
+//         margin: 0 0 5px 0;
+//         border-radius: 1px;
+//     }
 
-    .menu-link span:last-child {
-        margin:0;
-    }
+//     .menu-link span:last-child {
+//         margin:0;
+//     }
 
-    .menu-link.active span:nth-of-type(1) {
-        transform: rotate(45deg);
-        margin: 10px 0 0 0;
-    }
+//     .menu-link.active span:nth-of-type(1) {
+//         transform: rotate(45deg);
+//         margin: 10px 0 0 0;
+//     }
 
-    .menu-link.active span:nth-of-type(2) {
-        opacity:0;
-    }
+//     .menu-link.active span:nth-of-type(2) {
+//         opacity:0;
+//     }
 
-    .menu-link.active span:nth-of-type(3) {
-        transform: rotate(-45deg);
-        margin: -11px 0 0 0;
-    }
+//     .menu-link.active span:nth-of-type(3) {
+//         transform: rotate(-45deg);
+//         margin: -11px 0 0 0;
+//     }
 

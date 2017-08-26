@@ -16,17 +16,29 @@
 			{# <img src="{{TimberImage(post.image).src('large')}}" alt=""> #}
 			{# <img src="{{function('wp_get_attachment_image_url', post.image, 'medium')}}" srcset="{{function('wp_get_attachment_image_srcset', post.image, 'medium' )}}" sizes="(max-width: 1024px) 100vw, 1024px" alt="Page Image"> #}
 			<div class="mask"></div>
-			<h2 class="header-title screen-reader">{{post.title}}</h2>
+			{% if post.type == "page" %}
+				<h2 class="header-title screen-reader">{{post.title}}</h2>
+			{% endif %}
+
 		</div>
 
 		<div class="header-right">
+			{% if post.type == "project" %}
+
+				{% if post.get_terms('project-type') %}
+					<p class="meta upperspace">{% for type in post.get_terms('project-type') %}
+							{{type.name}}{{ loop.last ? '' : ', ' }}{% endfor %}
+					</p>
+				{% endif %}
+				<h2 class="project-title">{{post.title}}</h2>
+			{% endif %}
 
 			{% if post.intro %}
-			<p class="lead page-intro">{{post.intro}}</p>
+				<p class="header-lead">{{post.intro}}</p>
 			{% endif %}
 
 			{% if post.para_intro %}
-			<p>{{post.para_intro}}</p>
+				<p class="header-intro">{{post.para_intro}}</p>
 			{% endif %}
 
 		</div>

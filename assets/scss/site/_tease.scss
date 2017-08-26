@@ -70,71 +70,84 @@
 
 
 
+// TODO: credit scott kellum's site for scroller
+.project-grid {
+	display: grid;
+	// width: 100%;
+	// display: flex;
+	// flex-direction: column;
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	grid-template-rows: minmax(200px, 500px);
+}
 
 
+.project-header {
 
+}
 
 .tease-project {
-	&:first-child {
-		padding-top: $h3;
-	}
-	margin-bottom: $h3;
-	padding-bottom: $h3;
+	// &:first-child {
+	// 	padding-top: $h3;
+	// }
 
-	@include bp(large) {
-		&:first-child {
-			padding-top: $h1;
-		}
-		margin-bottom: $h1;
-		padding-bottom: $h1;
-	}
+	// margin-bottom: $h3;
+	// padding-bottom: $h3;
 
-	border-bottom: $accent-border;
+	// @include bp(large) {
+	// 	&:first-child {
+	// 		padding-top: $h1;
+	// 	}
+	// 	margin-bottom: $h1;
+	// 	padding-bottom: $h1;
+	// }
 
-	@include bp(large) {
-		display: flex;
+	// border-bottom: $accent-border;
 
-		> * {
-			// TODO new styles needed
-			// @include make-md-column(4);
-		}
-	}
+	// @include bp(large) {
+	// 	display: flex;
 
-	img {
-		border: 5px solid $accent-light;
-		@include bp(med) {
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
+	// 	> * {
+	// 		// TODO new styles needed
+	// 		// @include make-md-column(4);
+	// 	}
+	// }
+
+	// img {
+	// 	border: 5px solid $accent-light;
+	// 	@include bp(med) {
+	// 		&:hover {
+	// 			opacity: 0.7;
+	// 		}
+	// 	}
+	// }
 }
 
-.tease-tax {
-	margin-top: auto;
-}
+// .tease-tax {
+// 	margin-top: auto;
+// }
 
-.tease-info {
-	display: flex;
-	flex-direction: column;
-}
+// .tease-info {
+// 	display: flex;
+// 	flex-direction: column;
+// }
 
-.tease-thumb {
-	@include bp(large) {
-		width: 45%;
-	}
-}
+// .tease-thumb {
+// 	@include bp(large) {
+// 		width: 45%;
+// 	}
+// }
 
-	.thumb-title {
-		margin-top: $sml;
-		margin-bottom: $sml;
+	// .thumb-title {
+	// 	margin-top: $sml;
+	// 	margin-bottom: $sml;
 
-		> a {
-			border-bottom: 0;
-		}
-	}
+	// 	> a {
+	// 		border-bottom: 0;
+	// 	}
+	// }
 
-.tease-tagline {
-	margin-top: 0;
-	margin-bottom: $sml;
-}
+// .tease-tagline {
+// 	margin-top: 0;
+// 	margin-bottom: $sml;
+// }

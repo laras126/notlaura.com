@@ -1,27 +1,27 @@
-{% extends "teases/tease.twig" %}
+<article class="tease-project {{post.thumbnail ? ' project-grid'}}" id="tease-{{post.ID}}">
 
-{% block content %}
-
-  <div class="tease-thumb">
+  <div class="project-thumbnail">
     <a href="{{post.project_link ? post.project_link : post.link}}" {{post.project_link ? 'target="blank"'}} title="{{post.title}}">
-      {# {{function('the_post_thumbnail')}} #}
-      <img
-        src="{{ post.thumbnail.src('medium') }}"
-        srcset="
-            {{ post.thumbnail.src('large') }} 480w"
-        alt="{{ variation.thumbnail.alt }}" />
     </a>
   </div>
 
-  <div class="tease-info">
-    <h4 class="thumb-title">{{post.title}}{% if post.project_link %}
-        <a href="{{post.project_link}}" class="launch-btn" target="blank"><span class="screen-reader">Launch Project</span> {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>
-      {% endif %}
+  <div class="project-header">
+    <img
+      src="{{ post.thumbnail.src('medium') }}"
+      srcset="
+          {{ post.thumbnail.src('large') }} 480w"
+      alt="{{ variation.thumbnail.alt }}" />
+    <h4 class="project-title">{{post.title}}{% if post.project_link %}
+      <a href="{{post.project_link}}" class="launch-btn" target="blank"><span class="screen-reader">Launch Project</span> {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>
+    {% endif %}
     </h4>
+  </div>
+  <div class="project-content">
     <p class="tease-tagline">{{post.tagline}}</p>
+
     <p class="meta">{{post.para_intro}} <a href="{{post.link}}" title="{{post.title}}"><strong>Read More &rarr;</strong></a></p>
-    <p></p>
+
     <p class="meta-greyed tease-tax">{% for c in post.get_terms('project-type') %}{{c.name}}{{loop.last ? '' : ', '}}{% endfor %}</p>
   </div>
 
-{% endblock %}
+</article>

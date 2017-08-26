@@ -1,25 +1,17 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	{# {% include "headers/header-single.twig" %} #}
+
 {% endblock %}
 
 {% block content %}
 
 <article class="module">
 
-{% set paged = function('get_query_var', 'page') %}
-
-		<div class="module-thumbnail">
-			{# {% if post.get_thumbnail %}
-				<img class="tease-thumbnail" alt="Post thumbnail" src="{{post.thumbnail.src('thumbnail')}}" />
-			{% endif %} #}
-		</div>
 		<header class="module-header">
 			<a href="{{site.link}}/blog">&larr; Back to Blog</a>
 			<h1 class="single-title">{{post.title}}</h1>
 		</header>
-
 
 		<aside class="module-rail">
 			{% include "partials/tease-meta.twig" %}

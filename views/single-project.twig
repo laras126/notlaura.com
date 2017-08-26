@@ -1,35 +1,39 @@
-{% extends "page.twig" %}
+{% extends "single.twig" %}
 
 {% block header %}
-	{% include 'headers/header-project.twig' %}
+	{% include "headers/header-page.twig" %}
 {% endblock %}
 
 {% block content %}
+<article class="module">
 
-	{# TODO: need to rename this class, what is this... #}
-	{% if post.get_terms('project-type') %}
-		<p class="tags-list">Filed under:
-			{% for type in post.get_terms('project-type') %}
-				{# Keeping link out until archive template is ready #}
-				{# <a href="{{type.link}}">{{type.name}}</a>{{ loop.last ? '' : ', ' }} #}
-				{{type.name}}{{ loop.last ? '' : ', ' }}
-			{% endfor %}
-		</p>
-	{% endif %}
+	<nav class="module-header">
+		<a href="{{site.link}}/portfolio">&larr; All Projects</a>
 
-	{# TODO: also this #}
-	{% if post.project_link %}
-		<div class="text-center spacer-top spacer-bot">
-			<a href="{{post.project_link}}" target="blank" class="btn">Launch Project</a>
-		</div>
-	{% endif %}
+		{% if post.prev %}
+		{# <a href="{{post.prev.link}}" title="Previous Project">
+			{% include 'partials/svg.twig' with { 'file': 'arrow-left', 'prefix': 'icon' } %}
+		</a> #}
+		{% endif %}
 
-	{{ post.image ? '<hr>' }}
 
-	{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+		{% if post.next %}
+		{# <a href="{{post.next.link}}" title="Next Project">
+			{% include 'partials/svg.twig' with { 'file': 'arrow-right', 'prefix': 'icon' } %}
+		</a> #}
+		{% endif %}
 
-	{# Not using these at the moment. #}
-{#
+	</nav>
+
+	<div class="module-rail">
+
+
+		{% if post.project_link %}
+			<div class="text-center spacer-top spacer-bot">
+				<a href="{{post.project_link}}" target="blank" class="btn">Launch Project</a>
+			</div>
+		{% endif %}
+
 		{% if post.get_terms('tag') %}
 			<p class="meta-greyed tags-list">Keywords:
 				{% for tag in post.get_terms('tag') %}
@@ -37,8 +41,20 @@
 				{% endfor %}
 			</p>
 		{% endif %}
-	#}
 
-	{% include 'partials/prev-next.twig' %}
+	</div>
+
+	<div class="module-content">
+		{# TODO: need to rename this class, what is this... #}
+
+		{# TODO: also this #}
+
+		{# {{ post.image ? '<hr>' }} #}
+
+		{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+		</div>
+</article>
+
+{% include 'partials/prev-next.twig' %}
 
 {% endblock %}

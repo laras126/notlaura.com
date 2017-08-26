@@ -128,11 +128,11 @@ $rail: minmax(100px,200px);
   background-color: $accent-dark;
   color: $text-light;
   display: grid;
-  grid-template-rows: minmax(250px, 400px) auto;
+  grid-template-rows: minmax(250px, 400px);
 
 
   @include bp(med) {
-    grid-template-rows: minmax(250px, 500px) auto;
+    grid-template-rows: minmax(250px, auto);
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
@@ -196,6 +196,13 @@ $rail: minmax(100px,200px);
   padding-left: $grid-gap;
 }
 
+.header-lead {
+	font-size: $h4;
+}
+
+.header-intro {
+  margin-bottom: $base;
+}
 
 .main-aside {
   // background: $accent-med;

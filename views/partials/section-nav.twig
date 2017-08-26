@@ -1,9 +1,9 @@
 {% if post.subnav %}
 
 <nav class="section-nav">
-	<ul>
+	<p class="upperspace meta">Jump to: </p>
+	<ul class="section-nav-items">
 		{# TODO: probably get rid of meta-greyed #}
-		<li class="upperspace meta-greyed">Jump to: </li>
 		{% for item in post.get_field('sections') %}
 			{% if item.menu_item_title %}
 				<li class="section-nav-item">

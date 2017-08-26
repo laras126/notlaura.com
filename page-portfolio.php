@@ -27,7 +27,8 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 $project_args = array(
-				'post_type' => 'project'
+				'post_type' => 'project',
+				'posts_per_page' => -1
 			);
 $context['types'] = Timber::get_terms('project-type');
 $context['projects'] = Timber::get_posts($project_args);

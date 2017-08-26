@@ -5,12 +5,33 @@
 {% endblock %}
 
 {% block content %}
-  {# TODO: maybe another name #}
-	<div class="project-loop">
+	<div class="module">
 
-	{% for post in projects %}
-		{% include 'teases/tease-project.twig' %}
-	{% endfor %}
+		<div class="module-rail">
+			<nav class="section-nav">
+				<p class="upperspace meta">Filter</p>
+				<ul class="section-nav-items">
+					{% for t in types %}
+					<li><a href="">{{t.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+
+		<div class="module-header">
+			<h3>Featured Work</h3>
+		</div>
+		<div class="module-content">
+			{% for post in projects %}
+				{% include 'teases/tease-project.twig' %}
+			{% endfor %}
+		</div>
 
 	</div>
+{% endblock %}
+
+{% block sidebar %}
+	<aside class="main-aside">
+		<h4>Some other stuff I do?</h4>
+	</aside>
 {% endblock %}

@@ -18,12 +18,11 @@
 
 		<div class="module-content">
 
-			{% if post.get_thumbnail %}
+			<!-- {% if post.get_thumbnail %}
 				<div class="fig-large">
 					<img src="{{function('wp_get_attachment_image_url', post.thumbnail.id, 'medium')}}" srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id, 'medium' )}}" sizes="(max-width: 1024px) 100vw, 1024px" alt="Post thumbnail">
 					</div>
-
-			{% endif %}
+			{% endif %} -->
 
 			{% if '<!--more-->' in post.content %}
 				{{post.get_preview(180, false, false, false)|wpautop}}

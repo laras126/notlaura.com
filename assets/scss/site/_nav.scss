@@ -1,39 +1,33 @@
+
 // ----
 // Navigation
 // ----
 
-// Toggle menu
-
-// .menu-link {
-//   margin-left: auto;
-//   // Hide the menu button on large screens
-//   @include bp(menu) {
-//     display: none;
-//   }
-// }
-
 .menu-list {
   @include unstyle-list();
   display: flex;
+  margin-left: -$grid-gap;
+  margin-right: -$grid-gap;
+  width: calc(100% + #{$grid-gap*2});
+  flex-wrap: wrap;
+  // justify-content: center;
   margin-bottom: 0;
+
   @include bp(med) {
     margin-left: $grid-gap;
+    margin-right: 0;
+    width: auto;
     text-align: center
   }
 }
 
-.site-nav {
-  text-align: center;
-}
-
 .menu-item-link {
-  // border-bottom: $accent-border;
   display: block;
   padding: $sml;
   text-align: center;
   color: $accent-vlight;
 
-  @include bp(menu) {
+  @include bp(med) {
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     padding-top: $xsml;
@@ -60,9 +54,9 @@
 
 .section-nav {
   margin-top: $h1;
-  margin: $h2;
+  // margin: $h2;
   border-right: $accent-border;
-  padding-right: $h3;
+  padding-right: $grid-gap;
 }
 
 .section-nav ul {

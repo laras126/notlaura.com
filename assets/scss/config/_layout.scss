@@ -4,11 +4,11 @@
 
 $screen-sm:     520px;
 $screen-md:     800px;
-$screen-lg:   	1040px;
+$screen-lg:   	1140px;
 $screen-xl:   	1400px;
 
 $grid-gap: $h4;
-$rail: 150px;
+$rail: minmax(100px,200px);
 
 // ----
 // Grids
@@ -63,7 +63,7 @@ $rail: 150px;
   @include bp(med) {
 
     .page & {
-      grid-template-rows: minmax(500px, auto) auto;
+      grid-template-rows: auto auto;
     }
 
     display: grid;
@@ -79,7 +79,7 @@ $rail: 150px;
 
   @include bp(large) {
     grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(500px,760px) minmax(150px, 1fr);
+    grid-template-columns: $rail minmax(450px, auto) minmax(150px, auto);
     grid-template-areas:
       "header  header   header"
       "content content  aside"
@@ -89,6 +89,15 @@ $rail: 150px;
 
 .main-header {
   grid-area: header;
+
+  &.-image {
+    min-height: 500px;
+  }
+
+  &.-svg {
+    background-image: linear-gradient(to top right, $accent-light, transparent);
+    border-bottom: 5px solid $accent-med;
+  }
 }
 
 .main-content {
@@ -115,7 +124,7 @@ $rail: 150px;
 // ----
 
 
-.page-header {
+.grid-header {
   background-color: $accent-dark;
   color: $text-light;
   display: grid;
@@ -139,6 +148,19 @@ $rail: 150px;
   background-size: cover;
   background-position: center center;
   justify-content: flex-end;
+  // overflow: hidden;
+  display: flex;
+  // img {
+    object-fit: fill;
+  // }
+
+  .mask {
+    height: $h1*2;
+    background-image: linear-gradient(transparent, $accent-dark);
+    @include bp(med) {
+      background-image: none;
+    }
+  }
 }
 
 .header-right {
@@ -155,15 +177,32 @@ $rail: 150px;
 .header-title {
 	font-size: 10vw;
 	line-height: 0.7;
-	font-weight: $font-weight-strong;
-	background-image: linear-gradient(transparent, $accent-dark);
+  font-weight: $font-weight-strong;
+  text-transform: uppercase;
+
+  .-image & {
+    background-image: linear-gradient(transparent, $accent-dark);
+  }
+
+  .-text & {
+    margin-bottom: $h3;
+    margin-top: 0;
+    font-size: $h1;
+    // border-bottom: $accent-border;
+    background: $accent-vlight;
+  }
+
 	padding-top: $grid-gap*2;
   padding-left: $grid-gap;
-  text-transform: uppercase;
 }
 
 
-
+.main-aside {
+  // background: $accent-med;
+  // margin-left: -$grid-gap;
+  // margin-top: -$grid-gap;
+  // padding: $grid-gap;
+}
 
 
 // ----
@@ -175,7 +214,7 @@ $rail: 150px;
   .module {
 		display: grid;
 		grid-column-gap: $grid-gap;
-    grid-template-columns: minmax(175px, 250px) minmax(auto,650px) auto;
+    grid-template-columns: $rail minmax(auto,650px) auto;
     grid-template-areas:
       "thumb  header"
       "rail   content";

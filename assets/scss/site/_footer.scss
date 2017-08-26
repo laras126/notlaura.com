@@ -1,21 +1,11 @@
 
-.footer-content {
-	text-align: center;
+.site-footer {
+	background-color: $accent-light;
+	color: $text-dark;
 }
 
-.list-services {
-	@include unstyle-list;
-	margin-top: $base;
-	@include bp(small) {
-		@include horizontal-list;
-	}
-
-	li {
-		font-size: $sml;
-
-		&:before {
-		}
-	}
+.footer-content {
+	text-align: center;
 }
 
 .list-social {
@@ -45,29 +35,46 @@
 
 
 .widgets {
-	@include unstyle-list();
 
 	&.-blog {
-
+		@include unstyle-list();
+		margin-left: -$grid-gap;
+		margin-right: $grid-gap;
 	}
 
 	&.-footer {
-
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+		grid-gap: $grid-gap;
 	}
 }
 
 .widget {
-	// @include bp(med) {
-	// 	font-size: $sml;
-	// 	@include grid(no) {
-	// 		width: 45%;
-	// 	}
-	// }
+	font-size: $sml;
+
+	ul {
+		@include unstyle-list();
+	}
+
+	.-blog & {
+		margin-bottom: $grid-gap;
+		padding: $grid-gap;
+		background-image: linear-gradient(to bottom right, $accent-light, transparent);
+	}
+
+	.-footer & {
+		border: $accent-border;
+	}
 }
 
-	.widget-title {}
+.widget-title {
+	margin-top: 0;
+	margin-bottom: $base;
+	font-size: $base;
+	text-transform: uppercase;
+}
 
-	.widget-list {}
+.widget-list {}
 
-	.links-social {}
+.links-social {}
 

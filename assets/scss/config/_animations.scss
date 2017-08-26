@@ -1,11 +1,17 @@
-body {
-	background-color: #303030;
+svg {
+	max-width: 100%;
 }
+
+.site-logo svg {
+	fill: $accent-light;
+}
+
+// body {
+// 	background-color: #303030;
+// }
 
 .character {
 	max-width: 150px;
-	// position: absolute;
-	// bottom: 0;
 }
 
 .eyes {

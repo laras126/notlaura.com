@@ -287,6 +287,10 @@ input[type="checkbox"]:focus {
 
 // Mailchimp
 
+.mc-form {
+	display: flex;
+}
+
 .mc-signup {
 	margin-top: $h4;
 	padding: $gutter;

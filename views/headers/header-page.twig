@@ -1,42 +1,40 @@
 
-<header class="main-header page-header">
+<header class="main-header {{ post.header_type == 'image' ? ' grid-header' }} {{ '-' ~ post.header_type }}">
 
 	{% block title_area %}
-		{% if not post.image %}
-			<h1 class="header-title">{{post.title}}</h1>
-		{% endif %}
 	{% endblock %}
-{#
-	{% if post.tagline %}
-		<p class="page-tagline">{{post.tagline}}</p>
-	{% endif %} #}
 
-		{% if post.image %}
-			<div class="header-left" style="background-image: url({{TimberImage(post.image).src('large')}})">
-				<h2 class="header-title">{{post.title}}</h2>
-				{# TODO do responsive images here and fix caption style #}
-				{# Logic for project link. #}
-				{# {{post.project_link ? '<a href="'~post.project_link~'" target="blank">'}}
-					<img src="{{TimberImage(post.image).src|resize(1024)}}" alt="{{post.title|striptags}}">
-				{{post.project_link ? '</a>'}} #}
+	{% if post.header_type == 'svg' %}
+		{% set svg_path = "svgs/" ~ post.title|replace({ (" ") : "-" })|lower ~ ".svg" %}
+		{% include svg_path %}
+		<h2 class="screen-reader">{{post.title}}</h2>
+	{% endif %}
 
-				{# {% if post.image_caption %}
-					<figcaption class="caption-opaque">{{post.image_caption}}</figcaption>
-				{% endif %} #}
-			</div>
+	{% if post.header_type == 'image' %}
+		<div class="header-left" style="background-image: url({{TimberImage(post.image).src('large')}})">
+		{# <div class="header-left"> #}
+			{# <img src="{{TimberImage(post.image).src('large')}}" alt=""> #}
+			{# <img src="{{function('wp_get_attachment_image_url', post.image, 'medium')}}" srcset="{{function('wp_get_attachment_image_srcset', post.image, 'medium' )}}" sizes="(max-width: 1024px) 100vw, 1024px" alt="Page Image"> #}
+			<div class="mask"></div>
+			<h2 class="header-title screen-reader">{{post.title}}</h2>
+		</div>
 
-			<div class="header-right">
+		<div class="header-right">
 
-				{% if post.intro %}
-				<p class="lead page-intro">{{post.intro}}</p>
-				{% endif %}
+			{% if post.intro %}
+			<p class="lead page-intro">{{post.intro}}</p>
+			{% endif %}
 
-				{% if post.para_intro %}
-				<p>{{post.para_intro}}</p>
-				{% endif %}
+			{% if post.para_intro %}
+			<p>{{post.para_intro}}</p>
+			{% endif %}
 
-				<!-- {% include "svgs/character-1.svg" %} -->
-			</div>
-		{% endif %}
+		</div>
+	{% endif %}
+
+	{% if post.header_type == 'text' %}
+		<h2 class="header-title">{{post.title}}</h2>
+		<p class="header-tagline">{{post.tagline}}</p>
+	{% endif %}
 
 </header>

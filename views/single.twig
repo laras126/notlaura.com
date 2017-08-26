@@ -1,15 +1,25 @@
 {% extends "base.twig" %}
 
 {% block header %}
+	{# {% include "headers/header-single.twig" %} #}
 {% endblock %}
 
 {% block content %}
 
-<div class="module">
+<article class="module">
 
+{% set paged = function('get_query_var', 'page') %}
+
+		<div class="module-thumbnail">
+			{# {% if post.get_thumbnail %}
+				<img class="tease-thumbnail" alt="Post thumbnail" src="{{post.thumbnail.src('thumbnail')}}" />
+			{% endif %} #}
+		</div>
 		<header class="module-header">
+			<a href="{{site.link}}/blog">&larr; Back to Blog</a>
 			<h1 class="single-title">{{post.title}}</h1>
 		</header>
+
 
 		<aside class="module-rail">
 			{% include "partials/tease-meta.twig" %}
@@ -40,7 +50,7 @@
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 		</div>
-	</div> <!-- /.module -->
+	</article> <!-- /.module -->
 {% endblock %}
 
 {# Remove the sidebar on singles. #}

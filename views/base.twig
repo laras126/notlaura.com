@@ -36,17 +36,21 @@
       </header>
     {% endblock %}
 
-    <div class="main-content">
-      {% block content %}
-          Sorry, no content
-      {% endblock %}
-    </div>
+    <div class="inner {{sidebar ? ' grid-content'}}">
 
-    {% block sidebar %}
-      <aside class="main-aside">
-        {{sidebar}}
-      </aside>
-    {% endblock %}
+      <div class="main-content">
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+      </div>
+
+      {% if sidebar %}
+        <aside class="main-aside">
+          {{sidebar}}
+        </aside>
+      {% endif %}
+
+    </div>
 
     <div class="main-misc text-center">
       <h4>Maybe some fun content here or something. Or not.</h4>

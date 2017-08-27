@@ -1,0 +1,19 @@
+{% if post.get_field('sections') %}
+
+	{% for section in post.get_field('sections') %}
+
+		{% set menu_link_id = section.menu_item_title|replace({ (" ") : "_" })|lower %}
+
+		<section class="page-section" >
+
+			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
+
+			<div class="section-content" id="{{menu_link_id}}-content">
+				{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
+			</div> <!-- /.section-content -->
+
+		</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
+
+	{% endfor %}
+
+{% endif %}

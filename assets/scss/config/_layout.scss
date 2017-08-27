@@ -17,7 +17,7 @@ $rail: minmax(100px,200px);
 // Container mixin for fallback styles
 
 @mixin contain($size) {
-  // margin: 0 auto;
+  margin: 0 auto;
   // width: 90%;
   padding-left: $grid-gap;
   padding-right: $grid-gap;
@@ -60,35 +60,34 @@ $rail: minmax(100px,200px);
 
 .site-main {
 
-  @include bp(med) {
+  // @include bp(med) {
 
-    .page & {
-      grid-template-rows: auto auto;
-    }
+  //   .page & {
+  //     grid-template-rows: auto auto;
+  //   }
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "content"
-      "aside"
-      "misc";
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  //   grid-template-areas:
+  //     "header"
+  //     "content"
+  //     "misc";
 
-    grid-row-gap: $grid-gap;
-  }
+  //   grid-row-gap: $grid-gap;
+  // }
 
-  @include bp(large) {
-    grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(450px, auto) minmax(150px, auto);
-    grid-template-areas:
-      "header  header   header"
-      "content content  aside"
-      "misc    misc     misc";
-  }
+  // @include bp(large) {
+  //   grid-column-gap: $grid-gap;
+  //   grid-template-columns: $rail minmax(450px, auto);
+  //   grid-template-areas:
+  //     "header  header"
+  //     "content content"
+  //     "misc    misc";
+  // }
 }
 
 .main-header {
-  grid-area: header;
+  // grid-area: header;
 
   &.-image {
     min-height: 500px;
@@ -101,7 +100,7 @@ $rail: minmax(100px,200px);
 }
 
 .main-content {
-  grid-area: content;
+  // grid-area: content;
   padding-left: $grid-gap;
   padding-right: $grid-gap;
 
@@ -110,13 +109,29 @@ $rail: minmax(100px,200px);
   }
 }
 
-.main-aside {
-  grid-area: aside;
+.grid-content {
+  // grid-auto-flow: column
+
+  @include bp(large) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: $grid-gap;
+  }
 }
 
-.main-misc {
-  grid-area: misc;
+.main-aside .widgets {
+  display: grid;
+  grid-auto-flow: column dense;
+  align-items: center;
+
+  @include bp(large) {
+    display: block;
+  }
 }
+
+// .main-misc {
+//   grid-area: misc;
+// }
 
 
 // ----
@@ -130,9 +145,8 @@ $rail: minmax(100px,200px);
   display: grid;
   grid-template-rows: minmax(250px, 400px);
 
-
   @include bp(med) {
-    grid-template-rows: minmax(250px, auto);
+    grid-template-rows: minmax(250px, 60vh);
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
@@ -221,7 +235,7 @@ $rail: minmax(100px,200px);
   .module {
 		display: grid;
 		grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(auto,650px) auto;
+    grid-template-columns: $rail minmax(auto,650px);
     grid-template-areas:
       "thumb  header"
       "rail   content";
@@ -246,10 +260,6 @@ $rail: minmax(100px,200px);
 
   .module-content {
 		grid-area: content;
-  }
-
-  .module-image {
-    grid-area: rail;
   }
 
 }

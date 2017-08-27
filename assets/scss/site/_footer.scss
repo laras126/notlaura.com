@@ -38,8 +38,8 @@
 
 	&.-blog {
 		@include unstyle-list();
-		margin-left: -$grid-gap;
-		margin-right: $grid-gap;
+		// margin-left: -$grid-gap;
+		// margin-right: $grid-gap;
 	}
 
 	&.-footer {

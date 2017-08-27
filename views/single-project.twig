@@ -8,7 +8,6 @@
 <article class="module">
 
 	<nav class="module-header">
-		<a href="{{site.link}}/portfolio">&larr; All Projects</a>
 
 		{% if post.prev %}
 		{# <a href="{{post.prev.link}}" title="Previous Project">
@@ -27,20 +26,23 @@
 
 	<div class="module-rail">
 
+		{% include "partials/section-nav.twig" %}
 
-		{% if post.project_link %}
+		<a href="{{site.link}}/portfolio">&larr; All Projects</a>
+
+		{# {% if post.project_link %}
 			<div class="text-center spacer-top spacer-bot">
 				<a href="{{post.project_link}}" target="blank" class="btn">Launch Project</a>
 			</div>
-		{% endif %}
+		{% endif %} #}
 
-		{% if post.get_terms('tag') %}
+		{# {% if post.get_terms('tag') %}
 			<p class="meta-greyed tags-list">Keywords:
 				{% for tag in post.get_terms('tag') %}
 					<a href="{{tag.link}}">{{tag.name}}</a>{{ loop.last ? '' : ', ' }}
 				{% endfor %}
 			</p>
-		{% endif %}
+		{% endif %} #}
 
 	</div>
 
@@ -52,7 +54,8 @@
 		{# {{ post.image ? '<hr>' }} #}
 
 		{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
-		</div>
+		{% include "partials/section-loop.twig" %}
+	</div>
 </article>
 
 {% include 'partials/prev-next.twig' %}

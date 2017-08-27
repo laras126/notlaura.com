@@ -52,6 +52,12 @@
 
 // Section nav on pages
 
+.section-nav-title {
+  font-size: $sml;
+  @include upperspace;
+  font-weight: $font-weight-strong;
+}
+
 .section-nav {
   margin-top: $h1;
   // margin: $h2;

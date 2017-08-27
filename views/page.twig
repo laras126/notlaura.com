@@ -14,19 +14,7 @@
 		</div>
 
 		<div class="module-content">
-		{% for section in post.get_field('sections') %}
-
-			<section class="page-section">
-
-				{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
-
-				<div class="section-content" id="{{menu_link_id}}-content">
-					{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
-				</div> <!-- /.section-content -->
-
-			</section> {{menu_link_id ? '<!-- /#'~menu_link_id~' -->'}}
-
-		{% endfor %}
+			{% include 'partials/section-loop.twig'%}
 		</div>
 	</div>
 {% endblock %}

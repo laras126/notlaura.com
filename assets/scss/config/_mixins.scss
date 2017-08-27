@@ -2,7 +2,8 @@
 @mixin visually-hidden {
   opacity: 0;
   position: absolute;
-  text-indent: -99999px;
+  left: -99999px;
+  top: -99999px;
 }
 
 

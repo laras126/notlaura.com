@@ -15,11 +15,11 @@ html {
 		font-size: $contain-sm;
 	}
 
-	@include bp(small) {
+	@include bp(med) {
 		font-size: $contain-md;
 	}
 
-	@include bp(small) {
+	@include bp(large) {
 		font-size: $contain-lg;
 	}
 }

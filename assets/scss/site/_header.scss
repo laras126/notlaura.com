@@ -26,9 +26,15 @@
   max-width: 40vw;
 }
 
+.site-logo,
+.site-icon {
+  display: flex;
+}
+
 .site-logo {
   grid-column: 1;
   grid-row: 1;
+  align-items: center;
 }
 
 .site-logo-link {
@@ -39,8 +45,7 @@
 
   //   color: $accent-light;
   // }
-  display: flex;
-  align-content: center;
+
   // padding-top: $base;
   @include bp(med) {
     // padding-bottom: $base;
@@ -50,7 +55,6 @@
 .site-icon {
   grid-column: 2;
   grid-row: 1;
-  display: flex;
   align-items: flex-start;
 
   @include bp(med) {

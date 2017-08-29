@@ -736,9 +736,6 @@ blockquote {
   blockquote .special {
     color: #27AAE1; }
 
-*:focus {
-  outline: 0; }
-
 label, select {
   display: block; }
 
@@ -1545,7 +1542,7 @@ figure {
       .current_page_item .menu-item-link {
         border-bottom: 1px solid rgba(39, 170, 225, 0.4);
         border-top: 1px solid rgba(39, 170, 225, 0.4); }
-      .menu-item-link:hover, .menu-item-link:focus {
+      .menu-item-link:hover {
         color: #f4f7f9;
         background-color: transparent;
         border-bottom: 1px solid rgba(39, 170, 225, 0.4);

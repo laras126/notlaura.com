@@ -123,30 +123,32 @@ jQuery(document).ready(function () {
 
 	// Character 1 (Blog)
 
-	var mainBody = document.querySelectorAll(".main"),
-	    eyes = document.querySelector(".eyes"),
-	    pupils = document.querySelector(".pupils"),
-	    characterArea = document.querySelector(".character-1");
+	// const mainBody = document.querySelectorAll(".main"),
+	// 			eyes = document.querySelector(".eyes"),
+	// 			pupils = document.querySelector(".pupils"),
+	// 			characterArea = document.querySelector(".character-1");
 
-	var tl = new TimelineLite();
+	// 	var tl = new TimelineLite();
 
-	TweenLite.set(mainBody, { y: 150 });
+	// 	TweenLite.set(mainBody, { y: 150 });
 
-	console.log(tl);
+	// 	console.log(tl);
 
-	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
+	// 	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
 
-	characterArea.addEventListener("mouseover", function () {
-		tl.to(mainBody, 1, {
-			y: 0,
-			ease: Power1.easeOut
-		});
-	});
+	// 	characterArea.addEventListener("mouseover", () => {
+	// 		tl.to(mainBody, 1, {
+	// 			y: 0,
+	// 			ease: Power1.easeOut
+	// 		});
+	// 	});
 
-	// function myFunction() {
-	setInterval(function () {
-		tl.fromTo(eyes, 1, { fill: '#1B75BC' }, { fill: 'white' }).fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
-	}, 3000);
+	// 	// function myFunction() {
+	// 	setInterval( () => {
+	// 		tl.fromTo(eyes, 1, { fill: '#1B75BC' }, { fill: 'white' })
+	// 			.fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
+	// 	}, 3000);
+
 
 	// ----
 	// Typed.js
@@ -216,30 +218,12 @@ jQuery(document).ready(function () {
 
 
 	// ----
-	// Toggle Menu
-	// ----
-
-	// TODO: better fallback for non-JS - adding a .js class but it causes the nav to blink
-	// Look into Modernizr for that
-
-	var $menu = $('#menu'),
-	    $menulink = $('.menu-link'),
-	    $menuTrigger = $('.has-subnav > a');
-
-	$menulink.on('click', function (e) {
-		e.preventDefault();
-		$(this).toggleClass('active');
-		$menu.toggleClass('active');
-		return false;
-	});
-
-	// ----
 	// Smooth scrolling
 	// ----
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-	$('a[href*=#]:not([href=#menu])').click(function () {
+	$('a[href*=#]:not([href=#menu])').on('click', function () {
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

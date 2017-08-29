@@ -11,8 +11,6 @@
     {% include 'partials/svg-defs.svg' %}
   </div>
 
-  <div class="site">
-
   {% if callout_tf == true %}
     <div class="site-callout callout">
       <div class="inner">
@@ -36,7 +34,7 @@
       </header>
     {% endblock %}
 
-    <div class="inner {{sidebar ? ' grid-content'}}">
+    <div class="inner{{sidebar ? ' grid-content'}}">
 
       <div class="main-content">
         {% block content %}
@@ -58,25 +56,17 @@
 
   </main>
 
+  <a href="#top" class="link-back-top">
+    {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
+  </a>
+
   <footer class="site-footer" role="contentinfo">
-    <div class="inner">
+    {% block footer %}
+      {% include 'footer.twig' %}
+    {% endblock %}
+  </footer>
 
-      <nav class="link-back-top">
-        <a href="#top">
-          {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
-        </a>
-      </nav>
-
-      {% block footer %}
-        {% include 'footer.twig' %}
-      {% endblock %}
-
-      {{ function('wp_footer') }}
-
-  </div>
-</footer>
-
-</div> <!-- /.site -->
+  {{ function('wp_footer') }}
 
 </body>
 

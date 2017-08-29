@@ -69,85 +69,92 @@
 
 
 
+.grid-projects {
+	// grid-template-columns: repeat(3, minmax(305px, 1fr));
+	// grid-auto-flow: column dense;
+	// display: flex;
+	// flex-wrap: wrap;
+	display: grid;
+	// grid-template-areas: "a a a";
+	grid-column-gap: $grid-gap;
+	grid-row-gap: $grid-gap;
+	// grid-auto-columns: fit-content(400px);
+
+	grid-template-rows: minmax(200px, auto);
+  grid-template-columns: repeat(4, auto);
+
+	grid-auto-flow: row dense;
+
+  grid-auto-rows: minmax(200px, auto);
+	grid-auto-columns: minmax(200px, auto);
+
+	@include grid(no) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		> * {
+			width: 32%;
+		}
+	}
+  // grid-template-columns: 1fr 1fr;
+}
 
 // TODO: credit scott kellum's site for scroller
-.project-grid {
-	display: grid;
-	// width: 100%;
-	// display: flex;
-	// flex-direction: column;
-	// background-size: cover;
-	// background-repeat: no-repeat;
-	grid-template-rows: minmax(200px, 500px);
+.tease-project {
+	background: $accent-vlight;
+	border: 3px solid $accent-light;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	&.-featured {
+
+		grid-column: span 2;
+		grid-row: span 2;
+
+		// display: grid;
+		// width: 25%;
+		// width: 100%;
+		// display: flex;
+		// flex-direction: column;
+		// background-size: cover;
+		// background-repeat: no-repeat;
+		// grid-template-rows: minmax(200px, 500px);
+
+		// padding-right: $grid-gap;
+		// grid-column-gap: $grid-gap;
+		// align-items: end;
+		// justify-content: center;
+
+		// min-height: 50vh;
+		// margin-bottom: $grid-gap;
+		// overflow: hidden;
+	}
 }
 
+.project-tease-tagline {
+	// margin-top: 0;
+	margin-bottom: $base;
+}
 
-.project-header {
+.project-tease-title {
 
 }
+
 
 .tease-project {
-	// &:first-child {
-	// 	padding-top: $h3;
-	// }
-
-	// margin-bottom: $h3;
-	// padding-bottom: $h3;
-
-	// @include bp(large) {
-	// 	&:first-child {
-	// 		padding-top: $h1;
-	// 	}
-	// 	margin-bottom: $h1;
-	// 	padding-bottom: $h1;
-	// }
-
-	// border-bottom: $accent-border;
-
-	// @include bp(large) {
-	// 	display: flex;
-
-	// 	> * {
-	// 		// TODO new styles needed
-	// 		// @include make-md-column(4);
-	// 	}
-	// }
-
-	// img {
-	// 	border: 5px solid $accent-light;
-	// 	@include bp(med) {
-	// 		&:hover {
-	// 			opacity: 0.7;
-	// 		}
-	// 	}
-	// }
+	position: relative;
 }
 
-// .tease-tax {
-// 	margin-top: auto;
-// }
+.project-cover {
+	// position: absolute;
+	// width: 100%;
+	// top: 0;
+	// z-index: 1;
+}
 
-// .tease-info {
-// 	display: flex;
-// 	flex-direction: column;
-// }
-
-// .tease-thumb {
-// 	@include bp(large) {
-// 		width: 45%;
-// 	}
-// }
-
-	// .thumb-title {
-	// 	margin-top: $sml;
-	// 	margin-bottom: $sml;
-
-	// 	> a {
-	// 		border-bottom: 0;
-	// 	}
-	// }
-
-// .tease-tagline {
-// 	margin-top: 0;
-// 	margin-bottom: $sml;
-// }
+.project-content {
+	z-index: 2;
+	background-image: linear-gradient(to top right, $white, rgba($white, 0.8));
+	padding: $grid-gap;
+}

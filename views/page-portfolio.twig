@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="module">
+	<section class="module">
 
 		<div class="module-rail">
 			<nav class="section-nav">
@@ -19,15 +19,18 @@
 		</div>
 
 		<div class="module-header">
-			<h3>Featured Work</h3>
+			<h2>Featured Work</h2>
 		</div>
-		<div class="module-content">
+
+		<div class="module-content-full">
+			<div class="grid-projects">
 			{% for post in projects %}
 				{% include 'teases/tease-project.twig' %}
 			{% endfor %}
+			</div>
 		</div>
 
-	</div>
+	</section>
 {% endblock %}
 
 {% block sidebar %}

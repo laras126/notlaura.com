@@ -43,7 +43,7 @@ $alert-info: 			$dark-blue;
 $alert-success: 	$green;
 
 $text-dark: 		$accent-dark;
-$text-med: 			darken($grey, 30%);
+$text-med: 			$grey;
 $text-medlight: lighten($text-med, 20%);
 $text-light: 		$white;
 

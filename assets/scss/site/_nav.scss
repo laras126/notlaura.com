@@ -56,26 +56,34 @@
   font-size: $sml;
   @include upperspace;
   font-weight: $font-weight-strong;
+  @include bp(med) {
+
+  }
 }
 
 .section-nav {
   margin-top: $h1;
-  // margin: $h2;
   border-right: $accent-border;
   padding-right: $grid-gap;
+  padding-left: $grid-gap;
 }
 
 .section-nav-items {
+  display: flex;
+  @include unstyle-list;
   padding-left: 0;
 
-  @include unstyle-list;
-
-  @include bp(small) {
-    li {
-      // padding: $xsml;
-    }
+  @include bp(med) {
+    display: block;
   }
 
+
+  > li {
+    padding-right: $sml;
+    @include bp(med) {
+      padding-right: 0;
+    }
+  }
 
   a {
     @include meta($color: $accent-dark);

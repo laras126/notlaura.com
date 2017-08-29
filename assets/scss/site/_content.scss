@@ -7,22 +7,22 @@
 .fig-large {
 
   @include bp(med) {
-    margin-left: -$grid-gap;
+
+    .blog & {
+      margin-left: -$grid-gap;
+    }
 
     .single & {
       margin-right: -$h1*2;
       width: calc(100% + #{$h1});
     }
 
-    figcaption {
-      padding-left: $grid-gap;
-    }
   }
 
   @include bp(large) {
 
     .single & {
-      margin-right: -$h1*2;
+      margin-right: -$h1*3;
       width: calc(100% + #{($h1*2) + $grid-gap});
     }
 
@@ -36,6 +36,9 @@
 
 figcaption {
   padding-top: $sml;
+  padding-bottom: $sml;
+  font-size: $sml;
+  color: $text-med;
 }
 
 .caption-opaque {

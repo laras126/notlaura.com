@@ -7,24 +7,19 @@
 	{% if post.header_type == 'svg' %}
 		{% set svg_path = "svgs/" ~ post.title|replace({ (" ") : "-" })|lower ~ ".svg" %}
 		{% include svg_path %}
-		<h2 class="screen-reader">{{post.title}}</h2>
+		<h1 class="screen-reader">{{post.title}}</h1>
 	{% endif %}
 
 	{% if post.header_type == 'image' %}
 		<div class="header-left" style="background-image: url({{TimberImage(post.image).src('large')}})">
-		{# <div class="header-left"> #}
-			{# <img src="{{TimberImage(post.image).src('large')}}" alt=""> #}
-			{# <img src="{{function('wp_get_attachment_image_url', post.image, 'medium')}}" srcset="{{function('wp_get_attachment_image_srcset', post.image, 'medium' )}}" sizes="(max-width: 1024px) 100vw, 1024px" alt="Page Image"> #}
 			<div class="mask"></div>
 			{% if post.type == "page" %}
 				<h2 class="header-title screen-reader">{{post.title}}</h2>
 			{% endif %}
-
 		</div>
 
 		<div class="header-right">
 			{% if post.type == "project" %}
-
 				{% if post.get_terms('project-type') %}
 					<p class="meta upperspace">{% for type in post.get_terms('project-type') %}
 							{{type.name}}{{ loop.last ? '' : ', ' }}{% endfor %}
@@ -38,9 +33,8 @@
 			{% endif %}
 
 			{% if post.para_intro %}
-				<p class="header-intro">{{post.para_intro}}</p>
+				<div class="header-intro">{{post.para_intro|wpautop}}</div>
 			{% endif %}
-
 		</div>
 	{% endif %}
 

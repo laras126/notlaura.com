@@ -1,11 +1,27 @@
 
 .site-footer {
-	background-color: $accent-light;
-	color: $text-dark;
+	background-color: $accent-vdark;
+	color: $text-light;
+	padding-left: $grid-gap;
+	padding-right: $grid-gap;
+
+	a {
+		color: $accent-light;
+	}
 }
 
-.footer-content {
+.footer-colophon {
 	text-align: center;
+	padding-bottom: $base;
+	background-color: $accent-med;
+	margin-left: -$grid-gap;
+	margin-right: -$grid-gap;
+
+	p {
+		margin-top: 0;
+		padding-top: $base;
+		font-size: $sml;
+	}
 }
 
 .list-social {
@@ -26,26 +42,16 @@
 	}
 }
 
-.colophon {
-	padding-bottom: $base;
-	p {
-		font-size: $sml;
-	}
-}
-
 
 .widgets {
-
-	&.-blog {
-		@include unstyle-list();
-		// margin-left: -$grid-gap;
-		// margin-right: $grid-gap;
-	}
+	@include unstyle-list();
 
 	&.-footer {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
-		grid-gap: $grid-gap;
+		display: flex;
+		flex-wrap: wrap;
+		@include bp(med) {
+			justify-content: center;
+		}
 	}
 }
 
@@ -63,7 +69,10 @@
 	}
 
 	.-footer & {
-		border: $accent-border;
+		// border: $accent-border;
+		// background-color: $accent-vlight;
+		padding: $grid-gap;
+		margin: $grid-gap/2;
 	}
 }
 

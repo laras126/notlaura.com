@@ -117,7 +117,6 @@ input[type="checkbox"]:focus {
 }
 
 .gform_wrapper {
-
 	textarea,
 	input[type=text],
 	input[type=url],
@@ -210,37 +209,10 @@ input[type="checkbox"]:focus {
 
 .gf_left_half,
 .gf_right_half {
-
-	// TODO restlye this
-	// @include make-xs-column($c, false);
-	// @include make-md-column($c/2, false);
-
 	input {
 		width: 100%;
 	}
 }
-
-	.gf_left_half {
-		@include bp(med) {
-			input {
-				width: 90%;
-			}
-		}
-
-		float:left;
-		clear:left !important;
-
-		@include bp(med) {
-			margin-bottom: $h2;
-		}
-	}
-
-	.gf_right_half {
-		float:right;
-		clear:right !important;
-		margin-bottom: $h2;
-	}
-
 
 .gfield_required {
 	color: $alert-danger;
@@ -332,4 +304,78 @@ input[type="checkbox"]:focus {
 
 .mc-prompt {
 	font-size: $sml;
+}
+
+
+
+
+// ----
+// Main Contact :ayout
+// TODO: don't style iDs, make it more modular to allow for other forms.
+// ----
+
+#gform_fields_3 {
+	//grid-template-rows: repeat(5, auto);
+	// grid-template-columns: 1fr;
+	// grid-auto-flow: row dense;
+
+	// li {
+	// 	grid-column: 1;
+	// }
+
+	@include bp(small) {
+		display: grid;
+		grid-column-gap: $grid-gap;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas:
+				"question question"
+				"name			email"
+				"msg  		msg"
+				"list 		list";
+	}
+}
+
+#field_3_10 {
+	grid-area: question;
+}
+
+#field_3_9 {
+	grid-area: name;
+}
+
+#field_3_2 {
+	grid-area: email;
+}
+
+#field_3_3 {
+	grid-area: msg;
+}
+
+#field_3_11 {
+	grid-area: list;
+}
+
+// Floats Fallback
+@include grid(no) {
+	.gf_left_half {
+		@include bp(med) {
+			input {
+				width: 90%;
+			}
+		}
+
+		float:left;
+		clear:left !important;
+
+		@include bp(med) {
+			margin-bottom: $h2;
+		}
+	}
+
+	.gf_right_half {
+		float:right;
+		clear:right !important;
+		margin-bottom: $h2;
+	}
 }

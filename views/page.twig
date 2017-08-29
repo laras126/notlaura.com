@@ -7,15 +7,33 @@
 {% endblock %}
 
 {% block content %}
-	<div class="module">
+	{% if post.get_field('sections') %}
 
-		<div class="module-rail">
-			{% include 'partials/section-nav.twig'%}
+		<div class="module">
+
+			<div class="module-rail">
+				{% block top_rail_content %}{% endblock %}
+				{% include 'partials/section-nav.twig'%}
+			</div>
+
+			<div class="module-content">
+				{{post.content}}
+			</div>
+
 		</div>
 
-		<div class="module-content">
-			{% include 'partials/section-loop.twig'%}
+		{% include 'partials/section-loop.twig'%}
+
+	{% else %}
+		<div class="module">
+
+			<div class="module-content">
+				{{post.content}}
+			</div>
+
 		</div>
-	</div>
+	{% endif %}
+
+
 {% endblock %}
 

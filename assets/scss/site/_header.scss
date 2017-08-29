@@ -7,6 +7,9 @@
 }
 
 .site-header > .inner {
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
+
   display: grid;
 
   grid-template-columns: 50% 50%;

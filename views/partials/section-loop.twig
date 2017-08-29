@@ -4,11 +4,24 @@
 
 		{% set menu_link_id = section.menu_item_title|replace({ (" ") : "_" })|lower %}
 
-		<section class="page-section" >
+		<section class="page-section module">
 
-			{% include 'headers/header-section.twig' with { menu_link_id: menu_link_id} %}
+			{# {% if loop.index == '1' %}
+				<nav class="module-rail">
+					{% include 'partials/section-nav.twig'%}
+				</nav>
+			{% endif %} #}
 
-			<div class="section-content" id="{{menu_link_id}}-content">
+			{% if section.section_title %}
+				<header class="module-header section-header{{section.css_class ? ' ' ~ section.css_class}}"{{section.menu_item_title ? ' id="'~menu_link_id~'"'}}>
+					<h3 class="section-title">{{section.section_title}}</h3>
+					{% if section.lead %}
+						<p class="lead">{{section.lead}}</p>
+					{% endif %}
+				</header> <!-- /.section-header -->
+			{% endif %}
+
+			<div class="module-content">
 				{% include 'partials/flexcontent-logic.twig' with { elem: section.blocks } %}
 			</div> <!-- /.section-content -->
 

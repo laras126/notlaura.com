@@ -1,7 +1,6 @@
 
 // Buttons
 
-%btn,
 .btn {
     @include button($accent-dark, $text-light);
 }
@@ -51,4 +50,23 @@
 
 .read-more {
 	display: inline-block;
+}
+
+.project-launch-btn {
+    display: inline-flex;
+    margin-right: auto;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    flex: 0;
+    margin-bottom: $grid-gap;
+    margin-top: $grid-gap;
+
+    .icon-inline {
+        fill: $accent-light;
+        margin-left: $sml;
+        &:hover {
+            fill: $accent-light;
+        }
+    }
 }

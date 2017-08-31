@@ -1,4 +1,47 @@
 
+.gallery {
+
+	br { // Generated from WP
+		display: none;
+	}
+
+	display: grid;
+	grid-column-gap: $grid-gap;
+	grid-row-gap: $grid-gap;
+	grid-template-rows: repeat(auto-fill, auto);
+
+	// TODO, this is redundant to fig-large, move to a mixin
+	@include bp(med) {
+		margin-right: -$h1*2;
+		width: calc(100% + #{$h1});
+	}
+
+	@include bp(large) {
+		width: calc(100% + #{($h1*2) + $grid-gap});
+		margin-right: -$h1*3;
+	}
+
+	@include bp(small) {
+		&-columns-2,
+		&-columns-3,
+		&-columns-4 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@include bp(med) {
+		&-columns-3 {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@include bp(large) {
+		&-columns-4 {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
 
 .gallery-item {
 
@@ -8,7 +51,7 @@
 	}
 
 	// TODO new style for galleries
-	// @include make-xs-column($c/2);
+	// width: calc
 
 	// .gallery-columns-3 & {
 	// 	@include make-md-column($c/3, false);

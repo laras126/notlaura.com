@@ -9,28 +9,38 @@
 {% block content %}
 	{% if post.get_field('sections') %}
 
-		<div class="module">
 
-			<div class="module-rail">
+		{# <div class="module">
+
+			<div class="module-rail nav-rail">
 				{% block top_rail_content %}{% endblock %}
 				{% include 'partials/section-nav.twig'%}
 			</div>
 
 			<div class="module-content">
-				{{post.content}}
+				{% if post.content %}
+					{{post.content}}
+				{% else %}
+					{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+				{% endif %}
 			</div>
 
-		</div>
+		</div> #}
 
-		{% include 'partials/section-loop.twig'%}
+	{% include 'partials/section-loop.twig'%}
 
 	{% else %}
+
 		<div class="module">
-
 			<div class="module-content">
-				{{post.content}}
-			</div>
 
+				{% if post.get_field('blocks') %}
+					{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
+				{% else %}
+					{{post.content}}
+				{% endif %}
+
+			</div>
 		</div>
 	{% endif %}
 

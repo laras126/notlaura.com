@@ -1,29 +1,4 @@
 
-figure {
-	// margin: 0;
-
-	img {
-		@extend .aligncenter;
-	}
+.textimage-image {
+	margin-top: $grid-gap;
 }
-
-.caption {}
-
-	img.caption-image {
-		border-top: $accent-border;
-	}
-
-.textimage-para {
-	@include bp(med) {
-		width: 110%;
-	}
-}
-
-// TODO test if there
-	// .para-img {
-	// 	@include make-sm-column($c * 1/2);
-	// 	padding-bottom: $base;
-	// 	@include bp(med) {
-	// 		padding-bottom: 0;
-	// 	}
-	// }

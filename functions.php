@@ -118,6 +118,7 @@
 	}
 
 
+
 	// Load Gravity Forms JS in the footer...really? Sheesh.
 	// https://bjornjohansen.no/load-gravity-forms-js-in-footer
 

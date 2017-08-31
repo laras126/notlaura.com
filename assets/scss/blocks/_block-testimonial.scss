@@ -1,5 +1,8 @@
 
 
 .block_testimonial {
-	padding-top: $h3;
+	padding-top: $base;
+	padding-bottom: 0;
+	margin-bottom: $base;
+	background-image: linear-gradient(to bottom right, $accent-vlight, rgba($white, 0));
 }

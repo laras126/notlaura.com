@@ -1,7 +1,15 @@
 
 
 <article class="tease-project{% for t in post.get_terms('project-type') %} -{{t.name|sanitize}}{% endfor %} {{post.thumbnail ? 'grid-project'}}" id="tease-{{post.ID}}">
-  <img class="project-cover" src="{{ post.thumbnail.src('large') }}" alt="">
+
+  <div class="project-thumb">
+    {% if post.thumbnail %}
+      <img src="{{function('wp_get_attachment_image_url', post.thumbnail.id, 'medium')}}" srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id, 'medium' )}}" sizes="(max-width: 1024px) 100vw, 1024px" alt="Post thumbnail">
+    {% else %}
+      <img src="http://placehold.it/200x200" alt="">
+    {% endif %}
+  </div>
+
   {# <div class="project-header">
     <img
       src="{{ post.thumbnail.src('medium') }}"
@@ -21,12 +29,8 @@
     </p>
 
     <p class="meta-greyed tease-tax">{% for c in post.get_terms('project-type') %}{{c.name}}{{loop.last ? '' : ', '}}{% endfor %}</p>
-  </div>
-{#
-  <div class="project-thumbnail">
-    <a href="{{post.project_link ? post.project_link : post.link}}" {{post.project_link ? 'target="blank"'}} title="{{post.title}}">
-    </a>
-  </div> #}
 
+    {% include "partials/edit-link.twig" %}
+  </div>
 
 </article>

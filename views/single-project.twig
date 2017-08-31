@@ -1,5 +1,10 @@
 {% extends "page.twig" %}
 
+{% block header %}
+	{% include 'headers/header-project.twig' %}
+{% endblock %}
+
 {% block top_rail_content %}
 	<a href="{{site.link}}/portfolio">&larr; All Projects</a>
 {% endblock %}
+

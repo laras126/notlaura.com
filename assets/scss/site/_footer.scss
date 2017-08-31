@@ -30,12 +30,6 @@
 	margin-top: $h4;
 	padding-left: 0;
 
-	text-align: center;
-
-	@include bp(med) {
-		text-align: left;
-	}
-
 	.icon {
 		@extend .icon;
 		margin-right: $sml;
@@ -47,9 +41,9 @@
 	@include unstyle-list();
 
 	&.-footer {
-		display: flex;
-		flex-wrap: wrap;
 		@include bp(med) {
+			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 		}
 	}
@@ -71,8 +65,12 @@
 	.-footer & {
 		// border: $accent-border;
 		// background-color: $accent-vlight;
-		padding: $grid-gap;
-		margin: $grid-gap/2;
+		padding-top: $grid-gap;
+		padding-bottom: $grid-gap;
+		@include bp(med) {
+			margin-left: $grid-gap/2;
+			margin-right: $grid-gap/2;
+		}
 	}
 }
 

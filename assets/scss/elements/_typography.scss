@@ -42,7 +42,9 @@ a {
 	&:hover, &:focus {
 		color: $link-hover;
 		.main-content & {
-			background-color: $accent-vlight;
+			&:not(.btn) {
+				background-color: $accent-vlight;
+			}
 		}
 	}
 
@@ -147,20 +149,14 @@ strong {
 }
 
 blockquote {
-	font-size: $h4;
-	@include bp(large) {
-		text-align: center;
-	}
-  margin: $h4 0;
-  font-family: $quote-font;
-
-  padding-left: $h3;
-
-  border-left: $accent-border;
+  // margin-top: $h4;
+  margin-right: $h4;
   margin-bottom: $h3;
-  font-style: italic;
+	// padding-left: $h3;
 
-	overflow: visible;
+  // border-left: $accent-border;
+  font-style: italic;
+	// overflow: visible;
 
 	.special {
 		color: $accent-med;

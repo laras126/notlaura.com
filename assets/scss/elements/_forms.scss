@@ -256,7 +256,7 @@ input[type="checkbox"]:focus {
 
 .mc-signup {
 	margin-top: $h4;
-	padding: $gutter;
+	padding: $grid-gap/2;
 
 	@include bp(small) {
 		padding: 0;

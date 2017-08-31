@@ -8,21 +8,22 @@ $screen-lg:   	1040px;
 $screen-xl:   	1600px;
 
 $grid-gap: $h4;
-$rail: minmax(70px, 200px);
+$rail: minmax(70px, 175px);
+
+
 
 // ----
 // Grids
 // ----
 
-// Container mixin for fallback styles
+// Container mixin for max width
 
 @mixin contain($size) {
   margin: 0 auto;
-  // width: 90%;
-  // padding-left: $grid-gap;
-  // padding-right: $grid-gap;
   max-width: $size;
 }
+
+
 
 // ----
 // Site Grid
@@ -32,63 +33,27 @@ $rail: minmax(70px, 200px);
   @include contain($screen-xl);
 }
 
-.site {
-
-	> * {
-		// padding-left: $grid-gap;
-		// padding-right: $grid-gap;
-  }
-
-}
 
 // Fallback
 
-// @include grid(no) {
-// 	.site-header,
-// 	.site-footer {
-//     @include contain($screen-lg);
-// 	}
-// 	.site-main {
-//     @include contain($screen-md);
-//   }
-// }
+@include grid(no) {
+	.site-header,
+	.site-footer {
+    @include contain($screen-lg);
+	}
+	.site-main {
+    @include contain($screen-md);
+  }
+}
+
+
 
 
 // ----
 // Main Content
 // ----
 
-.site-main {
-
-  // @include bp(med) {
-
-  //   .page & {
-  //     grid-template-rows: auto auto;
-  //   }
-
-  //   display: grid;
-  //   grid-template-columns: 1fr;
-  //   grid-template-areas:
-  //     "header"
-  //     "content"
-  //     "misc";
-
-  //   grid-row-gap: $grid-gap;
-  // }
-
-  // @include bp(large) {
-  //   grid-column-gap: $grid-gap;
-  //   grid-template-columns: $rail minmax(450px, auto);
-  //   grid-template-areas:
-  //     "header  header"
-  //     "content content"
-  //     "misc    misc";
-  // }
-}
-
 .main-header {
-  // grid-area: header;
-
   &.-svg {
     background-image: linear-gradient(to top right, $accent-light, transparent);
     border-bottom: 5px solid $accent-med;
@@ -96,7 +61,6 @@ $rail: minmax(70px, 200px);
 }
 
 .main-content {
-  // grid-area: content;
   padding-left: $grid-gap;
   padding-right: $grid-gap;
 
@@ -106,8 +70,6 @@ $rail: minmax(70px, 200px);
 }
 
 .grid-content {
-  // grid-auto-flow: column
-
   @include bp(large) {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -115,7 +77,7 @@ $rail: minmax(70px, 200px);
   }
 }
 
-.main-aside .widgets {
+.main-aside > .widgets {
   display: grid;
   grid-auto-flow: column dense;
   align-items: center;
@@ -125,9 +87,7 @@ $rail: minmax(70px, 200px);
   }
 }
 
-// .main-misc {
-//   grid-area: misc;
-// }
+
 
 
 // ----
@@ -146,8 +106,6 @@ $rail: minmax(70px, 200px);
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
-
-
 }
 
 .header-right,
@@ -158,15 +116,14 @@ $rail: minmax(70px, 200px);
 
 .header-left {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
   justify-content: flex-end;
-  // overflow: hidden;
-  // img {
-  // }
 
   .mask {
     height: $h1*2;
     background-image: linear-gradient(transparent, $accent-dark);
+
     @include bp(med) {
       background-image: none;
     }
@@ -204,7 +161,8 @@ $rail: minmax(70px, 200px);
   }
 }
 
-.header-lead {
+.header-lead,
+.section-lead {
 	font-size: $h4;
 }
 
@@ -221,268 +179,50 @@ $rail: minmax(70px, 200px);
 // Post Tease Grid
 // ----
 
-@include bp(med) {
 
-  .module {
-		display: grid;
-		grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(auto,650px) auto;
+.module {
+
+  @include bp(med) {
+    display: grid;
+    grid-template-columns: minmax(400px,650px);
+    place-content: center;
     grid-template-areas:
-      "thumb  header   ..."
-      "rail   content  extra";
-	}
+      "thumb"
+      "header"
+      "rail"
+      "content"
+      "extra";
 
-	.module-header {
-    grid-area: header;
-	}
+    .module-header {
+      grid-area: header;
+    }
 
-  .module-thumbnail {
-    grid-area: thumb;
+    .module-thumbnail {
+      grid-area: thumb;
+    }
 
-    > img {
-      // width: calc(100% + #{$grid-gap*2});
+    .module-rail {
+      grid-area: rail;
+      text-align: right;
+    }
+
+    .module-content {
+      grid-area: content;
     }
   }
 
-  .module-rail {
-    grid-area: rail;
-    text-align: right;
-	}
+  @include bp(large) {
+    place-content: start;
+    grid-column-gap: $grid-gap;
+    grid-template-columns: $rail minmax(300px,650px) auto;
+    grid-template-areas:
+      "thumb  header   ..."
+      "rail   content  ...";
+    // place-content: start;
 
-  .module-content {
-		grid-area: content;
-  }
-
-  .module-content-full {
-		grid-column: 2 / span 2;
+    .module-content-full {
+      grid-column: 2 / span 2;
+    }
   }
 }
-
-
-
-// $grid-columns:              8 !default;
-// $c:                         $grid-columns;
-
-// //** Padding between columns. Gets divided in half for the left and right.
-$gutter:                    $h3 !default;
-
-
-
-// // ----
-// // Containers
-// // ---
-
-// // Wrapper to contain internal columns.
-// // The negative margin accounts for the extra padding from nested columns
-
-
-// // To contain a primary section of content.
-// // Max width of the widest inner wrap (below).
-
-// // .contain-sm {
-// //     @include container($screen-sm);
-// // }
-
-// // .contain-md {
-// //     @include container($screen-md);
-// // }
-
-// // .contain-lg {
-// //     @include container($screen-lg);
-// // }
-
-
-
-// // Bleeds
-
-// .fig-large {
-
-// }
-
-
-// // TODO: it'd be better to remove these hard-coded percentages, and make them gutters or something based on the grid. Oh well, for now at least.
-
-// @mixin bleed() {
-
-//   @include bp(med) {
-//     width: 110%;
-//   }
-
-//   @include bp(large) {
-//     width: 120%;
-//   }
-// }
-
-// .bleed {
-//     // @include bleed;
-// }
-
-// @mixin inverse-bleed {
-//     @include bp(med) {
-//         margin-left: 7%;
-//         margin-right: 7%;
-//     }
-// }
-
-// .inverse-bleed {
-//     @include inverse-bleed;
-// }
-
-// // Mainly for images.
-
-// .bleed-left {
-//     @include bp(med) {
-//         margin-left: -10%;
-//     }
-// }
-
-// .bleed-right {
-//     @include bp(med) {
-//         margin-right: -10%;
-//     }
-// }
-
-
-
-
-
-// // ----
-// // Rows
-// // ----
-// // For wrapping nested columns
-
-// @mixin make-row($gutter: $gutter, $margin: true) {
-//     @if $margin == true {
-//         margin-left:  ($gutter / -2);
-//         margin-right: ($gutter / -2);
-//     }
-
-//     @include clearfix();
-// }
-
-// .row {
-//     @include make-row();
-// }
-
-
-
-// // ----
-// // Grid Mixins
-// // ---
-
-
-// // Conditionally print the gutter
-
-// @mixin bs-gutter($gutter, $pos: true) {
-//     @if $pos == true {
-//         float: left;
-//         position: relative;
-//     }
-//     @if $gutter != false {
-//         padding-left:  ($gutter / 2);
-//         padding-right: ($gutter / 2);
-//     }
-// }
-
-
-
-// // Extra Small
-
-// @mixin make-xs-column($columns, $gutter: $gutter, $pos: true) {
-//   // @include bs-base;
-//   @include bs-gutter($gutter, $pos);
-
-//   width: percentage(($columns / $grid-columns));
-// }
-// @mixin make-xs-column-offset($columns, $side: left) {
-//   margin-#{$side}: percentage(($columns / $grid-columns));
-// }
-// @mixin make-xs-column-push($columns) {
-//   left: percentage(($columns / $grid-columns));
-// }
-// @mixin make-xs-column-pull($columns) {
-//   right: percentage(($columns / $grid-columns));
-// }
-
-
-
-// // Small
-
-// @mixin make-sm-column($columns, $gutter: $gutter, $pos: true) {
-//   // @include bs-base;
-
-//   @media (min-width: $screen-sm) {
-//     @include bs-gutter($gutter, $pos);
-//     width: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-sm-column-offset($columns, $side: left) {
-//   @media (min-width: $screen-sm) {
-//     margin-#{$side}: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-sm-column-push($columns) {
-//   @media (min-width: $screen-sm) {
-//     left: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-sm-column-pull($columns) {
-//   @media (min-width: $screen-sm) {
-//     right: percentage(($columns / $grid-columns));
-//   }
-// }
-
-
-// // Medium
-
-// @mixin make-md-column($columns, $gutter: $gutter, $pos: true) {
-//   // @include bs-base;
-
-//   @media (min-width: $screen-md) {
-//     @include bs-gutter($gutter, $pos);
-//     width: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-md-column-offset($columns, $side: left) {
-//   @media (min-width: $screen-md) {
-//     margin-#{$side}: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-md-column-push($columns) {
-//   @media (min-width: $screen-md) {
-//     left: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-md-column-pull($columns) {
-//   @media (min-width: $screen-md) {
-//     right: percentage(($columns / $grid-columns));
-//   }
-// }
-
-
-// // Large
-
-// @mixin make-lg-column($columns, $gutter: $gutter, $pos: true) {
-//   // @include bs-base;
-
-//   @media (min-width: $screen-lg) {
-//     @include bs-gutter($gutter, $pos);
-//     width: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-lg-column-offset($columns, $side: left) {
-//   @media (min-width: $screen-lg) {
-//     margin-#{$side}: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-lg-column-push($columns) {
-//   @media (min-width: $screen-lg) {
-//     left: percentage(($columns / $grid-columns));
-//   }
-// }
-// @mixin make-lg-column-pull($columns) {
-//   @media (min-width: $screen-lg) {
-//     right: percentage(($columns / $grid-columns));
-//   }
-// }
 

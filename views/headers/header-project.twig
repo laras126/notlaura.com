@@ -1,2 +1,33 @@
-{# {% extends 'headers/header-page.twig' %} #}
 
+{# <header style="background-image: url({{TimberImage(post.image).src('large')}})" class="project-header{{ ' -' ~ post.header_type }}"> #}
+	<header class="project-header{{ ' -' ~ post.header_type }}">
+
+		{# TODO: soup city.  #}
+	{% include "partials/srcset.twig" with { img: TimberImage(post.image), class: 'project-header-image' } %}
+	<div class="mask">
+	<div class="inner">
+	<div class="module">
+		<div class="module-content">
+			{% if post.get_terms('project-type') %}
+				<p class="meta upperspace">{% for type in post.get_terms('project-type') %}
+						{{type.name}}{{ loop.last ? '' : ', ' }}{% endfor %}
+				</p>
+			{% endif %}
+			<h1 class="project-title">{{post.title}}</h2>
+			<p class="header-lead">{{post.intro}}</p>
+			<div class="project-header-intro">
+				{{post.para_intro|wpautop}}
+				{% if post.project_link %}<a class="btn project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+{#
+
+	{% if post.header_type == 'text' %}
+		<h2 class="header-title">{{post.title}}</h2>
+		<p class="header-tagline">{{post.tagline}}</p>
+	{% endif %} #}
+
+</header>

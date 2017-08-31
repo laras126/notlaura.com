@@ -19,7 +19,7 @@
 			{% if post.content %}
 				{{post.content}}
 			{% else %}
-			{# I don't think these are being used. TODO check. #}
+				{# I don't think these are being used. TODO check. #}
 				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 			{% endif %}
 

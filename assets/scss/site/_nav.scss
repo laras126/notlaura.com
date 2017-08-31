@@ -52,24 +52,29 @@
 
 // Section nav on pages
 
+.nav-rail {
+  position: sticky;
+  top: 0;
+}
+
 .section-nav-title {
   font-size: $sml;
   @include upperspace;
   font-weight: $font-weight-strong;
-  @include bp(med) {
-
-  }
 }
 
 .section-nav {
   margin-top: $h1;
   border-right: $accent-border;
-  padding-right: $grid-gap;
-  padding-left: $grid-gap;
+  @include bp(med) {
+    padding-right: $grid-gap;
+    padding-left: $grid-gap;
+  }
 }
 
 .section-nav-items {
   display: flex;
+  flex-wrap: wrap;
   @include unstyle-list;
   padding-left: 0;
 
@@ -138,46 +143,4 @@
 }
 
 
-
-
-// ----
-// Hamburger menu Icon
-// http://codepen.io/lexstefan/pen/mwtcn
-// ----
-
-// .menu-link {
-//     padding: $sml;
-// }
-
-//     .menu-link a {
-//         float: right;
-//     }
-
-//     .menu-link span {
-//         transition: all 0.05s ease-in-out;
-//         width: 30px;
-//         height: 3px;
-//         display: block;
-//         background: $accent-dark;
-//         margin: 0 0 5px 0;
-//         border-radius: 1px;
-//     }
-
-//     .menu-link span:last-child {
-//         margin:0;
-//     }
-
-//     .menu-link.active span:nth-of-type(1) {
-//         transform: rotate(45deg);
-//         margin: 10px 0 0 0;
-//     }
-
-//     .menu-link.active span:nth-of-type(2) {
-//         opacity:0;
-//     }
-
-//     .menu-link.active span:nth-of-type(3) {
-//         transform: rotate(-45deg);
-//         margin: -11px 0 0 0;
-//     }
 

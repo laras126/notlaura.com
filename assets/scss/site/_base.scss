@@ -19,7 +19,7 @@ body {
     background: #FFFDEC;
   }
   @include bp(large) {
-    background: #FFF;
+    background: $body-bkgd;
   }
 
 	// border-top: $sml/2 solid $accent-dark;

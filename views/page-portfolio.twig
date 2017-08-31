@@ -1,13 +1,14 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	{% include 'headers/header-page.twig' %}
+	{# {% include 'headers/header-page.twig' %} #}
 {% endblock %}
 
 {% block content %}
-	<section class="module">
+	<section class="">
 
-		<div class="module-rail">
+		{# <div class="module-rail"> #}
+			<h2>Featured Work</h2>
 			<nav class="section-nav">
 				<p class="upperspace meta">Filter</p>
 				<ul class="section-nav-items">
@@ -16,19 +17,16 @@
 					{% endfor %}
 				</ul>
 			</nav>
-		</div>
+		{# </div> #}
 
-		<div class="module-header">
-			<h2>Featured Work</h2>
-		</div>
+		{# <div class="module-header"> #}
+		{# </div> #}
 
-		<div class="module-content-full">
 			<div class="grid-projects">
 			{% for post in projects %}
 				{% include 'teases/tease-project.twig' %}
 			{% endfor %}
 			</div>
-		</div>
 
 	</section>
 {% endblock %}

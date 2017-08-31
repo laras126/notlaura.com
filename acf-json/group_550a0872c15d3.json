@@ -6,18 +6,55 @@
             "key": "field_550a0878b5aed",
             "label": "Project Link",
             "name": "project_link",
-            "prefix": "",
             "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "37.5",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_59a780919bd5c",
+            "label": "Project Link Text",
+            "name": "project_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Launch Project",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59a6feaa92193",
+            "label": "No Single Page",
+            "name": "no_single",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -35,5 +72,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1426725186
+    "active": 1,
+    "description": "",
+    "modified": 1504149760
 }

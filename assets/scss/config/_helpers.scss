@@ -58,9 +58,10 @@
 // Used primarily for forms and complimentary information.
 
 .meta-cite {
-	@include meta($color: $accent-dark);
+	@include meta($color: $text-med);
 	text-align: right;
 	margin-top: $base;
+	font-style: normal;
 }
 
 .caption {

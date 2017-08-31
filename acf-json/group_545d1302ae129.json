@@ -120,15 +120,7 @@
             "type": "textarea",
             "instructions": "Elaborate on the lead.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_59a087c725c12",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "66",
                 "class": "",
@@ -163,7 +155,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
         "custom_fields",
         "discussion",
         "comments",
@@ -176,5 +167,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1503692891
+    "modified": 1504117965
 }

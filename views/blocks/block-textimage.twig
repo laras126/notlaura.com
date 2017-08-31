@@ -2,25 +2,16 @@
 
 {% block content %}
 	{% if blck.text_format == 'caption'%}
-		<figure class="bleed opaque">
-
-			{% if blck.image and blck.svg is empty %}
-				<img src="{{TimberImage(blck.image).src('medium')}}" alt="{{blck.post_title}}"/>
-			{% endif %}
-
-			{% if blck.svg %}
-				{% include 'partials/svg.twig' with {'file': blck.svg, 'prefix': 'shape' } %}
-			{% endif %}
-
+		<figure class="fig-large">
+			{% include "partials/srcset.twig" with { img: TimberImage(blck.image) } %}
 			{% if blck.caption %}
 				<figcaption class="caption-clear">{{blck.caption}}</figcaption>
 			{% endif %}
-
 		</figure>
 	{% elseif blck.text_format == 'paragraph'%}
-		<div class="textimage-para">
-			<img class="para-img {% if blck.image_location == 'left' %}bleed-left alignleft{% else %}bleed-right alignright{% endif %}" src="{{TimberImage(blck.image).src|resize(600)}}" alt="{{item.post_title}}" alt="{{item.post_title}}"/>
-			{{blck.text}}
+		{{blck.text|wpautop}}
+		<div class="fig-large textimage-image">
+			{% include "partials/srcset.twig" with { img: TimberImage(blck.image) } %}
 		</div>
 	{% endif %}
 {% endblock %}

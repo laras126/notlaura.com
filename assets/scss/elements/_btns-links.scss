@@ -31,10 +31,6 @@
 
 // Specific buttons
 
-.link-more {
-	@include button($alert-info);
-}
-
 .link-edit,
 .link-more {
 	@include meta;

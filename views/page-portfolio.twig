@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-	<section class="">
 
-		{# <div class="module-rail"> #}
-			<h2>Featured Work</h2>
+	<section class="module">
+
+		<div class="module-rail">
 			<nav class="section-nav">
 				<p class="upperspace meta">Filter</p>
 				<ul class="section-nav-items">
@@ -17,18 +17,20 @@
 					{% endfor %}
 				</ul>
 			</nav>
-		{# </div> #}
+		</div>
 
-		{# <div class="module-header"> #}
-		{# </div> #}
+		<div class="module-header">
+				<h2>Featured Work</h2>
+		</div>
 
-			<div class="grid-projects">
-			{% for post in projects %}
-				{% include 'teases/tease-project.twig' %}
-			{% endfor %}
-			</div>
+		<div class="module-content-full grid-projects">
+		{% for post in projects %}
+			{% include 'teases/tease-project.twig' %}
+		{% endfor %}
+		</div>
 
 	</section>
+
 {% endblock %}
 
 {% block sidebar %}

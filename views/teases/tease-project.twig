@@ -1,6 +1,6 @@
 
 
-<article class="tease-project{% for t in post.get_terms('project-type') %} -{{t.name|sanitize}}{% endfor %} {{post.thumbnail ? 'grid-project'}}" id="tease-{{post.ID}}">
+<article class="tease-project{% if 'Featured' in post.get_terms('project-type') %} -featured{% else %} -not-featured{% endif %}{{post.thumbnail ? ' grid-project'}}" id="tease-{{post.ID}}">
 
   <div class="project-thumb">
     {% if post.thumbnail %}
@@ -19,14 +19,17 @@
   </div> #}
 
   <div class="project-content">
-    <h4 class="project-tease-title">{{post.title}}{% if post.project_link %}<a href="{{post.project_link}}" class="launch-btn" target="blank"><span class="screen-reader">Launch Project</span> {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}</h4>
+    <h4 class="project-tease-title">{% if not post.no_single %}<a href="{{post.link}}">{{post.title}}</a>{% else %}{{post.title}}{% endif %}</h4>
 
-    <p class="project-tease-tagline">{{post.tagline}}</p>
+    <p class="project-tease-tagline">{{post.intro}}</p>
 
     <p class="meta">{{post.para_intro}}</p>
-    <p>
-      <a href="{{post.link}}" title="{{post.title}}">(more...)</a>
-    </p>
+
+    {% if post.no_single == false %}
+      <p>
+        <a class="link-more" href="{{post.link}}" title="{{post.title}}">Details &rarr;</a>
+      </p>
+    {% endif %}
 
     <p class="meta-greyed tease-tax">{% for c in post.get_terms('project-type') %}{{c.name}}{{loop.last ? '' : ', '}}{% endfor %}</p>
 

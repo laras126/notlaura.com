@@ -42,6 +42,9 @@
 	}
 }
 
+.gallery-caption {
+	@include meta($text-med);
+}
 
 .gallery-item {
 

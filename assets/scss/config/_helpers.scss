@@ -31,17 +31,6 @@
 // ----
 
 
-// Change text alignment at a certain breakpoint.
-
-@mixin change-text-align($base, $bp, $new) {
-	text-align: $base;
-
-	@include bp($bp) {
-		text-align: $new;
-	}
-}
-
-
 // Uppercase and letterspacing.
 
 @mixin upperspace {
@@ -124,7 +113,9 @@
 }
 
 
-
+.bordered {
+	border: 5px solid $accent-light;
+}
 
 
 

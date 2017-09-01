@@ -18,19 +18,19 @@ a.special {
 	}
 
 .spacer-top {
-	margin-top: $h3;
+	margin-top: $base;
 }
 
 .spacer-left {
-	margin-left: $h3;
+	margin-left: $base;
 }
 
 .spacer-right {
-	margin-right: $h3;
+	margin-right: $base;
 }
 
 .spacer-bot {
-	margin-bottom: $h3;
+	margin-bottom: $base;
 }
 
 .text-left {
@@ -55,14 +55,18 @@ a.special {
 
 // WordPress utility classes
 
-.alignleft {
-	float: left;
-}
+// .alignleft {
+// 	float: left;
+// }
 
-.alignright {
-	float: right;
-}
+// .alignright {
+// 	float: right;
+// }
 
 .aligncenter {
 	@include center-block;
+}
+
+.alignnone {
+	display: block;
 }

@@ -5,7 +5,7 @@
 	.module-content {
 		@include bp(small) {
 			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap;
-			background: $white;
+			background: $body-bkgd;
 		}
 	}
 
@@ -75,15 +75,15 @@
 	grid-row-gap: $grid-gap;
 
 	grid-template-rows: minmax(200px, auto);
+
 	// grid-template-columns: minmax(200px, auto);
 	grid-auto-flow: row dense;
 
 
 	@include bp(large) {
 		grid-column-gap: $grid-gap;
-		grid-template-columns: repeat(4, auto);
+		grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: minmax(200px, auto);
-		grid-auto-columns: minmax(200px, auto);
 		align-items: start;
 
 		margin-right: $grid-gap;
@@ -103,13 +103,10 @@
 
 // TODO: credit scott kellum's site for scroller
 .tease-project {
-	// background: $accent-vlight;
-	// border: 3px solid $accent-light;
 	margin-left: -$grid-gap;
 	margin-right: -$grid-gap;
 
-	position: relative;
-	// background: $accent-light;
+	// position: relative;
 
 	display: flex;
 	flex-direction: column;
@@ -117,15 +114,18 @@
 
 	@include bp(med) {
 		margin: 0;
-		// grid-column: span 2;
-		// display: grid;
 
-		&:not(.-featured) {
+		&.-not-featured {
 			grid-row: span 2;
+			grid-column: span 1;
 
 			// Flexbox fallback
-			flex-direction: row;
-			align-items: center;
+			flex-direction: column;
+
+			@include bp(large) {
+				display: grid;
+				grid-template-rows: 400px auto;
+			}
 		}
 
 		&.-featured {
@@ -142,6 +142,24 @@
 	}
 }
 
+.project-thumb {
+	grid-row: 1;
+	.-not-featured & {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.project-content {
+	padding: $grid-gap;
+
+	.-not-featured & {
+		grid-row: 2;
+	}
+}
+
+
+
 .project-tease-tagline {
 	margin-bottom: $base;
 }
@@ -149,6 +167,11 @@
 .project-tease-title {
 	margin-top: 0;
 }
+
+
+
+
+// Single
 
 .project-header {
 	padding-top: 30%;
@@ -163,22 +186,22 @@
 		padding-top: $h1;
 		background-image: linear-gradient(
 				to top,
-				$white,
-				rgba($white, 0.8) 60%,
-				rgba($white, 0));
+				$body-bkgd,
+				rgba($body-bkgd, 0.8) 60%,
+				rgba($body-bkgd, 0));
 		@include bp(med) {
 			background-image: linear-gradient(
 				to top,
-				$white,
-				rgba($white, 0.7) 50%,
-				rgba($white, 0));
+				$body-bkgd,
+				rgba($body-bkgd, 0.7) 50%,
+				rgba($body-bkgd, 0));
 			}
 	}
 
 	.inner	{
 		margin-top: $h1;
 		@include bp(large) {
-			min-height: 100vh;
+			min-height: 8vh;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-end;
@@ -194,7 +217,7 @@
 		padding-right: $grid-gap;
 		padding-top: $grid-gap;
 
-		background: $white;
+		background: $body-bkgd;
 
 		@include bp(large) {
 
@@ -214,8 +237,6 @@
 }
 
 .project-header-image {
-	// height: 100%;
-	// max-width: auto;
 	position: absolute;
 	width: 100%;
 	top: 0;
@@ -226,9 +247,6 @@
 	text-transform: uppercase;
 }
 
-.project-content {
-	padding: $grid-gap;
-}
 
 
 // Fallback

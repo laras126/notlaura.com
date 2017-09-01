@@ -3,7 +3,10 @@
   // background-image: linear-gradient($accent-vdark, transparent);
   // position: fixed;
   // width: 100%;
-  background-color: $accent-vdark;
+  background-image: linear-gradient($accent-dark, $accent-vdark);
+  padding-top: $grid-gap;
+  padding-bottom: $grid-gap;
+  // margin-bottom: $grid-gap;
 }
 
 .site-header > .inner {
@@ -41,6 +44,9 @@
 }
 
 .site-logo-link {
+  svg {
+    // fill: $accent-dark;
+  }
   // .site-title {
   //   font-size: $h4;
   //   margin-top: 0;

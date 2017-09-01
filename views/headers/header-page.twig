@@ -14,20 +14,11 @@
 		<div class="header-left" style="background-image: url({{TimberImage(post.image).src('large')}})">
 			<div class="mask"></div>
 			{% if post.type == "page" %}
-				<h2 class="header-title screen-reader">{{post.title}}</h2>
+				<h2 class="header-title">{{post.title}}</h2>
 			{% endif %}
 		</div>
 
 		<div class="header-right">
-			{% if post.type == "project" %}
-				{% if post.get_terms('project-type') %}
-					<p class="meta upperspace">{% for type in post.get_terms('project-type') %}
-							{{type.name}}{{ loop.last ? '' : ', ' }}{% endfor %}
-					</p>
-				{% endif %}
-				<h2 class="project-title">{{post.title}}</h2>
-			{% endif %}
-
 			{% if post.intro %}
 				<p class="header-lead">{{post.intro}}</p>
 			{% endif %}
@@ -39,8 +30,13 @@
 	{% endif %}
 
 	{% if post.header_type == 'text' %}
-		<h2 class="header-title">{{post.title}}</h2>
-		<p class="header-tagline">{{post.tagline}}</p>
+		<div class="module">
+			<div class="module-content">
+				<h2 class="header-title">{{post.title}}</h2>
+				<p class="header-lead">{{post.intro}}</p>
+				<p>{{post.para_intro}}</p>
+			</div>
+		</div>
 	{% endif %}
 
 </header>

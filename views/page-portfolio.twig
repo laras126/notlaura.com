@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	{# {% include 'headers/header-page.twig' %} #}
+	{% include 'headers/header-page.twig' %}
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
 
 		<div class="module-rail">
 			<nav class="section-nav">
-				<p class="upperspace meta">Filter</p>
+				<p class="section-nav-title">Filter</p>
 				<ul class="section-nav-items">
 					{% for t in types %}
 					<li><a href="">{{t.name}}</a></li>
@@ -19,9 +19,9 @@
 			</nav>
 		</div>
 
-		<div class="module-header">
-				<h2>Featured Work</h2>
-		</div>
+		<header class="module-header main-header">
+			<!-- <h1>{{post.title}}</h1> -->
+		</header>
 
 		<div class="module-content-full grid-projects">
 		{% for post in projects %}

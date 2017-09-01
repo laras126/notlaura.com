@@ -1,3 +1,42 @@
+
+
+@keyframes scroll-page {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-80%);
+	}
+}
+
+
+@keyframes back-forth {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 10px;
+	}
+	80% {
+		// left: -2px;
+		// transform: skewX(25deg);
+	}
+	100% {
+		left: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// SVG
+
 svg {
 	max-width: 100%;
 }

@@ -8,12 +8,12 @@
 	<div class="inner">
 	<div class="module">
 		<div class="module-content">
-			{% if post.get_terms('project-type') %}
+			{# {% if post.get_terms('project-type') %}
 				<p class="meta upperspace">{% for type in post.get_terms('project-type') %}
 						{{type.name}}{{ loop.last ? '' : ', ' }}{% endfor %}
 				</p>
-			{% endif %}
-			<h1 class="project-title">{{post.title}}</h2>
+			{% endif %} #}
+			<h1 class="project-title">{{post.title}}</h1>
 			<p class="header-lead">{{post.intro}}</p>
 			<div class="project-header-intro">
 				{{post.para_intro|wpautop}}

@@ -31,12 +31,23 @@
 
 // Specific buttons
 
+.more-arrow {
+	will-change: left;
+
+	.link-more:hover & {
+		position: relative;
+		animation: back-forth 0.75s ease-in-out;
+		animation-iteration-count: 2;
+	}
+}
+
 .link-edit,
 .link-more {
-	@include meta;
+	// @include meta;
   text-align: center;
   margin-top: $sml;
-	font-weight: 700;
+  // font-weight: 700;
+
 }
 
 .link-back-top .icon {
@@ -49,20 +60,22 @@
 }
 
 .project-launch-btn {
-    display: inline-flex;
-    margin-right: auto;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-start;
-    flex: 0;
-    margin-bottom: $grid-gap;
-    margin-top: $grid-gap;
+	display: inline-flex;
+	margin-right: auto;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: flex-start;
+	flex: 0;
+	margin-bottom: $grid-gap;
+	margin-top: $grid-gap;
 
-    .icon-inline {
-        fill: $accent-light;
-        margin-left: $sml;
-        &:hover {
-            fill: $accent-light;
-        }
-    }
+	.icon-inline {
+		will-change: transform;
+		fill: $accent-light;
+		margin-left: $sml;
+
+		&:hover {
+			fill: $accent-light; // override default icon style
+		}
+	}
 }

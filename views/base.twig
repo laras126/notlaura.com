@@ -19,13 +19,13 @@
     </div>
   {% endif %}
 
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="inner">
       {% include 'headers/header-site.twig' %}
     </div>
   </header>
 
-  <main class="site-main" role="main">
+  <main class="site-main">
 
     {% block header %}
       <header class="main-header">
@@ -60,7 +60,7 @@
     {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
   </a>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     {% block footer %}
       {% include 'footer.twig' %}
     {% endblock %}

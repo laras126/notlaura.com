@@ -67,29 +67,27 @@
 
 
 
+// ----
+// Project Tease
+// ----
 
-
+// Projects grid on page-portfolio.twig
 .grid-projects {
 	display: grid;
 	grid-column-gap: $grid-gap;
-	grid-row-gap: $grid-gap;
-
+	grid-row-gap: $grid-gap * 2;
 	grid-template-rows: minmax(200px, auto);
-
-	// grid-template-columns: minmax(200px, auto);
 	grid-auto-flow: row dense;
 
-
+	// Two columns on large
 	@include bp(large) {
 		grid-column-gap: $grid-gap;
 		grid-template-columns: repeat(2, 1fr);
-		grid-auto-rows: minmax(200px, auto);
 		align-items: start;
-
 		margin-right: $grid-gap;
 	}
 
-
+	// Flexbox fallback
 	@include grid(no) {
 		display: flex;
 		flex-wrap: wrap;
@@ -98,67 +96,111 @@
 			width: 32%;
 		}
 	}
-  // grid-template-columns: 1fr 1fr;
 }
 
 // TODO: credit scott kellum's site for scroller
 .tease-project {
 	margin-left: -$grid-gap;
 	margin-right: -$grid-gap;
-
-	// position: relative;
+	overflow: hidden;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	transition: 0.3s all ease;
+
+	&:hover,
+	&:focus {
+		transition: 0.3s all ease;
+		background-color: $body-bkgd;
+		box-shadow: 0 0 10px rgba($text-med, 0.6);
+	}
 
 	@include bp(med) {
 		margin: 0;
+	}
 
-		&.-not-featured {
-			grid-row: span 2;
-			grid-column: span 1;
+}
 
-			// Flexbox fallback
-			flex-direction: column;
+.project-not-featured {
+	@include bp(med) {
+		grid-row: span 2;
+		grid-column: span 1;
 
-			@include bp(large) {
-				display: grid;
-				grid-template-rows: 400px auto;
-			}
+		@include bp(large) {
+			display: grid;
+			grid-template-rows: 350px auto;
 		}
 
-		&.-featured {
-			grid-row: span 2;
-			grid-column: 1 / -1;
+		flex-direction: column; // Flexbox fallback
+	}
+}
 
-			@include bp(large) {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-			}
-			// grid-
+.project-featured {
+	@include bp(large) {
+		height: 70vh;
+	}
+
+	@include bp(med) {
+		grid-row: span 2;
+		grid-column: 1 / -1;
+
+		@include bp(large) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 		}
+	}
 
+	@include bp(large) {
+		&:hover,
+		&:focus {
+			transform: translateX(-30px);
+		}
 	}
 }
 
 .project-thumb {
-	grid-row: 1;
-	.-not-featured & {
-		display: flex;
-		align-items: center;
+	order: 0;
+	overflow: hidden;
+	border: 1px solid $accent-light;
+
+	img {
+		display: block;
+	}
+
+	.project-featured & {
+		height: 50vh;
+		overflow: hidden;
+		@include bp(large) {
+			height: inherit;
+		}
 	}
 }
+
+	.long-thumb {
+		will-change: transform;
+		// TODO might be nice to add this in JS as an "animating" class
+		.tease-project:hover &,
+		.tease-project:focus & {
+				animation: scroll-page 15s forwards;
+				animation-delay: 0.5s;
+		}
+	}
 
 .project-content {
 	padding: $grid-gap;
+	order: 1;
 
-	.-not-featured & {
+	.project-featured & {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.project-not-featured & {
 		grid-row: 2;
 	}
 }
-
-
 
 .project-tease-tagline {
 	margin-bottom: $base;
@@ -166,12 +208,25 @@
 
 .project-tease-title {
 	margin-top: 0;
+	font-size: $h3;
+	// @include upperspace;
+
+	> a {
+		color: $text-dark;
+		border-bottom: none;
+	}
+}
+
+.project-types {
+	@include upperspace;
+	@include meta($text-med);
 }
 
 
 
-
+// ----
 // Single
+// ----
 
 .project-header {
 	padding-top: 30%;
@@ -232,6 +287,10 @@
 	}
 }
 
+.project-title {
+
+}
+
 .project-header-intro {
 
 }
@@ -244,7 +303,9 @@
 }
 
 .project-title {
-	text-transform: uppercase;
+	// text-transform: uppercase;
+	font-size: $h1*1.5;
+	line-height: $line-height-sm;
 }
 
 

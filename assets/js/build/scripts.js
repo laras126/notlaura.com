@@ -117,6 +117,12 @@ jQuery(document).ready(function () {
 
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
+	var $videos = document.querySelectorAll('.js-video-thumb');
+
+	$videos.forEach(function (element) {
+		this.play();
+	}, this);
+
 	// ----
 	// Animations (GreenSock)
 	//----

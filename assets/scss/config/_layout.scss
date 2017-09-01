@@ -4,7 +4,7 @@
 
 $screen-sm:     520px;
 $screen-md:     730px;
-$screen-lg:   	1040px;
+$screen-lg:   	1100px;
 $screen-xl:   	1600px;
 
 $grid-gap: $h4;
@@ -55,8 +55,16 @@ $rail: minmax(70px, 175px);
 
 .main-header {
   &.-svg {
-    background-image: linear-gradient(to top right, $accent-light, transparent);
+    background-image: linear-gradient(to top right, $accent-dark, $accent-vdark);
     border-bottom: 5px solid $accent-med;
+  }
+
+  &.-text {
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+    padding-bottom: $grid-gap;
+    margin-bottom: $grid-gap;
+    border-bottom: $accent-border;
   }
 }
 
@@ -98,6 +106,7 @@ $rail: minmax(70px, 175px);
 .grid-header {
   background-color: $accent-dark;
   color: $text-light;
+  margin-bottom: $h2;
   display: grid;
   grid-template-rows: minmax(250px, 400px);
 
@@ -142,27 +151,28 @@ $rail: minmax(70px, 175px);
 }
 
 .header-title {
-	font-size: 10vw;
+	font-size: $h1*2;
 	line-height: 0.7;
-  font-weight: $font-weight-strong;
-  text-transform: uppercase;
   padding-top: $grid-gap*2;
-  padding-left: $grid-gap;
 
   .-image & {
-    background-image: linear-gradient(transparent, $accent-dark);
+    font-weight: $font-weight-strong;
+    text-transform: uppercase;
+    padding-left: $grid-gap;
+    background-image: linear-gradient(transparent, $accent-vdark);
   }
 
   .-text & {
     margin-bottom: $h3;
-    margin-top: 0;
-    font-size: $h1;
-    background: $accent-vlight;
+    // margin-top: 0;
+    // font-size: $h1;
+    // background: $accent-vlight;
   }
 }
 
 .header-lead,
-.section-lead {
+.section-lead,
+.lead {
 	font-size: $h4;
 }
 
@@ -184,7 +194,7 @@ $rail: minmax(70px, 175px);
 
   @include bp(med) {
     display: grid;
-    grid-template-columns: minmax(400px,650px);
+    grid-template-columns: minmax(400px,750px);
     place-content: center;
     grid-template-areas:
       "thumb"
@@ -214,7 +224,7 @@ $rail: minmax(70px, 175px);
   @include bp(large) {
     place-content: start;
     grid-column-gap: $grid-gap;
-    grid-template-columns: $rail minmax(300px,650px) auto;
+    grid-template-columns: 200px minmax(auto,750px) auto;
     grid-template-areas:
       "thumb  header   ..."
       "rail   content  ...";

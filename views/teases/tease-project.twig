@@ -31,9 +31,9 @@
   <div class="project-thumb">
     {# Note/TODO: using an image field for video here, but seems to work for now #}
     {% if post.featured_media %}
-      {% include "partials/srcset.twig" with { img: TimberImage(post.featured_media), class: 'long-thumb' } %}
+      {% include "partials/srcset.twig" with { img: TimberImage(post.featured_media), class: 'long-thumb lazyload' } %}
     {% else %}
-      {% include "partials/srcset.twig" with { img: post.thumbnail, class: 'project-tease-img' } %}
+      {% include "partials/srcset.twig" with { img: post.thumbnail, class: 'project-tease-img lazyload' } %}
     {% endif %}
   </div>
 

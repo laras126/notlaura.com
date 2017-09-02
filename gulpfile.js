@@ -64,9 +64,9 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
   return gulp.src('./assets/js/src/main.js')
-    .pipe(babel({
-            presets: ['es2015']
-        }))
+    // .pipe(babel({
+    //         presets: ['es2015']
+    //     }))
     .pipe(addsrc.prepend('./assets/js/src/plugins.js'))
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('assets/js/build'))
@@ -108,7 +108,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function() {
   gulp.watch('assets/scss/**/*.scss', ['sass']);
-  gulp.watch('assets/js/**/*.js', ['js']);
+  gulp.watch('assets/js/src/*.js', ['js']);
 });
 
 

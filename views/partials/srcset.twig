@@ -1,5 +1,5 @@
 <img alt="Post thumbnail"
      sizes="(max-width: 1024px) 100vw, 1024px"
-     src="{{function('wp_get_attachment_image_url', img.id, 'medium')}}"
-     {% if class %} class="{{class}}" {% endif %}
-     srcset="{{function('wp_get_attachment_image_srcset', img.id, 'medium' )}}">
+     src="{{function('wp_get_attachment_image_url', img.id, 'thumbnail')}}"
+     class="lazyload{{class ? ' ' ~ class}}"
+     data-srcset="{{function('wp_get_attachment_image_srcset', img.id, 'medium' )}}">

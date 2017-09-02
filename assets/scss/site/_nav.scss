@@ -64,11 +64,21 @@
 }
 
 .section-nav {
-  margin-top: $h1;
-  border-right: $accent-border;
-  @include bp(med) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: $grid-gap;
+
+  background: white;
+  width: 100%;
+  z-index: 99;
+
+  @include bp(large) {
+    position: relative;
+    margin-top: $h1;
+    border-right: $accent-border;
     padding-right: $grid-gap;
-    padding-left: $grid-gap;
+    padding-left: $grid-gap / 2;
   }
 }
 

@@ -116,6 +116,10 @@
 		box-shadow: 0 0 10px rgba($text-med, 0.6);
 	}
 
+	&:focus {
+		outline: 5px solid $accent-light;
+	}
+
 	@include bp(med) {
 		margin: 0;
 	}
@@ -229,12 +233,12 @@
 // ----
 
 .project-header {
-	padding-top: 30%;
+	// padding-top: 30%;
+	padding-top: 20vh;
 	position: relative;
 	overflow: hidden;
 
-	@include bp(large) {
-		padding-top: 0;
+	@include bp(med) {
 	}
 
 	.mask {

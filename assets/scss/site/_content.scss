@@ -13,8 +13,13 @@
     }
 
     .single & {
-      margin-right: -$h1*2;
-      width: calc(100% + #{$h1});
+      margin-left: -$grid-gap;
+      margin-right: -$grid-gap;
+      width: calc(100% + #{$grid-gap*2});
+    }
+
+    figcaption {
+      padding-left: $grid-gap;
     }
 
   }

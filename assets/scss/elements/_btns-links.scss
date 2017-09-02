@@ -34,7 +34,7 @@
 .more-arrow {
 	will-change: left;
 
-	.link-more:hover & {
+	.tease-project:hover & {
 		position: relative;
 		animation: back-forth 0.75s ease-in-out;
 		animation-iteration-count: 2;
@@ -43,10 +43,8 @@
 
 .link-edit,
 .link-more {
-	// @include meta;
   text-align: center;
   margin-top: $sml;
-  // font-weight: 700;
 
 }
 

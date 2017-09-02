@@ -1153,7 +1153,7 @@ input[type="checkbox"]:focus {
 
 .more-arrow {
   will-change: left; }
-  .link-more:hover .more-arrow {
+  .tease-project:hover .more-arrow {
     position: relative;
     animation: back-forth 0.75s ease-in-out;
     animation-iteration-count: 2; }
@@ -1518,8 +1518,16 @@ pre[class*="language-"] {
   box-sizing: border-box; }
 
 body {
-  background-image: linear-gradient(to top right, #ffffff, #f4f7f9);
   word-wrap: break-word; }
+  @media (min-width: 520px) {
+    body {
+      background: #D4EBF3; } }
+  @media (min-width: 730px) {
+    body {
+      background: #FFFDEC; } }
+  @media (min-width: 1100px) {
+    body {
+      background: #ffffff; } }
   @media (min-width: 520px) {
     body {
       word-wrap: normal; } }
@@ -1593,12 +1601,20 @@ code {
   font-weight: 700; }
 
 .section-nav {
-  margin-top: 3.3rem;
-  border-right: 1px solid rgba(39, 170, 225, 0.4); }
-  @media (min-width: 730px) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 1.43rem;
+  background: white;
+  width: 100%;
+  z-index: 99; }
+  @media (min-width: 1100px) {
     .section-nav {
+      position: relative;
+      margin-top: 3.3rem;
+      border-right: 1px solid rgba(39, 170, 225, 0.4);
       padding-right: 1.43rem;
-      padding-left: 1.43rem; } }
+      padding-left: 0.715rem; } }
 
 .section-nav-items {
   display: flex;
@@ -1767,8 +1783,11 @@ code {
   .blog .fig-large {
     margin-left: -1.43rem; }
   .single .fig-large {
-    margin-right: -6.6rem;
-    width: calc(100% + 3.3rem); } }
+    margin-left: -1.43rem;
+    margin-right: -1.43rem;
+    width: calc(100% + 2.86rem); }
+  .fig-large figcaption {
+    padding-left: 1.43rem; } }
 
 @media (min-width: 1100px) {
   .single .fig-large {
@@ -1875,6 +1894,8 @@ video {
     transition: 0.3s all ease;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(153, 153, 153, 0.6); }
+  .tease-project:focus {
+    outline: 5px solid #E0E6F2; }
   @media (min-width: 730px) {
     .tease-project {
       margin: 0; } }
@@ -1955,12 +1976,9 @@ video {
   color: #999999; }
 
 .project-header {
-  padding-top: 30%;
+  padding-top: 20vh;
   position: relative;
   overflow: hidden; }
-  @media (min-width: 1100px) {
-    .project-header {
-      padding-top: 0; } }
   .project-header .mask {
     padding-top: 3.3rem;
     background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0)); }
@@ -2158,9 +2176,6 @@ a.special {
 
 .text-center {
   text-align: center; }
-
-.outline {
-  border: 5px solid #E0E6F2; }
 
 .rm-margin {
   margin: 0; }

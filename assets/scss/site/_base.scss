@@ -9,18 +9,18 @@
 }
 
 body {
-	background-image: linear-gradient(to top right, $body-bkgd, $accent-vlight);
+	// background-image: linear-gradient(to top right, $body-bkgd, $accent-vlight);
 
 	// For testing
-	// @include bp(small) {
-  //   background: #D4EBF3;
-  // }
-  // @include bp(med) {
-  //   background: #FFFDEC;
-  // }
-  // @include bp(large) {
-  //   background: $body-bkgd;
-  // }
+	@include bp(small) {
+    background: #D4EBF3;
+  }
+  @include bp(med) {
+    background: #FFFDEC;
+  }
+  @include bp(large) {
+    background: $body-bkgd;
+  }
 
 	// border-top: $sml/2 solid $accent-dark;
 

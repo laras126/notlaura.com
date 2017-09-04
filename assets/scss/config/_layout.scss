@@ -5,7 +5,7 @@
 $screen-sm:     520px;
 $screen-md:     730px;
 $screen-lg:   	1100px;
-$screen-xl:   	1600px;
+$screen-xl:   	1400px;
 
 $grid-gap: $h4;
 $rail: minmax(70px, 175px);
@@ -54,8 +54,9 @@ $rail: minmax(70px, 175px);
 // ----
 
 .main-header {
+  overflow: hidden;
+
   &.-svg {
-    background-image: linear-gradient(to top right, $accent-dark, $accent-vdark);
     border-bottom: 5px solid $accent-med;
   }
 
@@ -66,6 +67,10 @@ $rail: minmax(70px, 175px);
     margin-bottom: $grid-gap;
     border-bottom: $accent-border;
   }
+}
+
+.header-svg {
+  display: block;
 }
 
 .main-content {
@@ -80,7 +85,7 @@ $rail: minmax(70px, 175px);
 .grid-content {
   @include bp(large) {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: auto auto;
     grid-column-gap: $grid-gap;
   }
 }
@@ -194,7 +199,7 @@ $rail: minmax(70px, 175px);
 
   @include bp(med) {
     display: grid;
-    grid-template-columns: minmax(400px,750px);
+    grid-template-columns: minmax(400px,650px);
     place-content: center;
     grid-template-areas:
       "thumb"
@@ -224,7 +229,7 @@ $rail: minmax(70px, 175px);
   @include bp(large) {
     place-content: start;
     grid-column-gap: $grid-gap;
-    grid-template-columns: 200px minmax(auto,750px) auto;
+    grid-template-columns: 200px minmax(auto,675px) auto;
     grid-template-areas:
       "thumb  header   ..."
       "rail   content  ...";

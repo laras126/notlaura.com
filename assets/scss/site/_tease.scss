@@ -4,7 +4,7 @@
 
 	.module-content {
 		@include bp(small) {
-			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap;
+			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap/2;
 			background: $body-bkgd;
 		}
 	}
@@ -22,8 +22,10 @@
 
 .tease-meta {
 	border-top: $accent-border;
-	padding: $sml;
+	padding-top: $sml;
+	padding-right: $grid-gap/2;
 	border-bottom: none;
+	font-size: $sml;
 
 	@include bp(large) {
 		margin-left: $grid-gap;
@@ -166,10 +168,14 @@
 .project-thumb {
 	order: 0;
 	overflow: hidden;
+	position: relative;
 	border: 1px solid $accent-light;
 
 	img {
 		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	.project-featured & {

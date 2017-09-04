@@ -108,6 +108,73 @@ Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(break|cas
 //# sourceMappingURL=typed.min.js.map
 
 
+
+// Blog Header Character
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+
+var $main = document.querySelectorAll('.bc-main'),
+		$bubbles = document.querySelectorAll(".bc-bubble"),
+		$body = document.querySelectorAll(".bc-body"),
+		$mouth = document.querySelector(".bc-mouth");
+		$innerMouth = document.querySelector(".bc-inner-mouth"),
+		$eyeball = document.querySelector(".bc-eyeball");
+
+var tl = new TimelineLite();
+
+for (var i = 0; i < $bubbles.length; i++) {
+	$bubbles[i].style.opacity = 1;
+	$bubbles[i].style.fill = "indianred";
+}
+
+// $bubbles.forEach(function() {
+// 	this.style.opacity = 1;
+// }, this);
+
+tl.from($main, 1, { x: -300, ease: Power2.easeOut });
+
+// Mouth In
+tl.to([$mouth, $innerMouth], 1, { x: -20, ease: SlowMo.ease.config(0.7, 0.7, false) });
+
+// Body inflate
+tl.to($body, 2, { scale: 1.1, ease: Power2.easeIn }, "-=1.0");
+
+// Mouth Out
+tl.to([$mouth, $innerMouth], 1, { x: 0, ease: Elastic.easeOut.config(1, 0.7), force3D: true });
+
+// Fill body
+tl.to($body, 0.25, { scale: 1, ease: Power2.easeIn }, "-=1.0");
+
+// Blow bubbles
+tl.staggerFrom($bubbles, 2, { scale: 0.5, opacity: 0, delay: 0.1, ease: Elastic.easeInOut, force3D: true }, 0.1, "-=2.0");
+
+
+
+
+
+// var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+// // Set any attributes as desired
+// shape.setAttribute("cx", getRandomInt(20,100));
+// shape.setAttribute("cy", getRandomInt(20, 300));
+// shape.setAttribute("r", getRandomInt(1, 10));
+// shape.setAttribute("fill", "green");
+
+// document.querySelector('.blog-character').appendChild(shape);
+
+
+
+
+
+
+
+
+
+
+
 var $ = jQuery;
 
 jQuery(document).ready(function() {
@@ -116,26 +183,37 @@ jQuery(document).ready(function() {
 
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
+	// Pocket request
 
+	// $.ajax({
+	// 	url: 'https://getpocket.com/v3/oauth/request',
+	// 	data: {
+	// 		'consumer_key': '70389-600b69f12a120f79b1312e67',
+	// 		'redirect_uri': 'https://notlaura.com'
+	// 	},
+	// 	contentType: "application/json; charset=utf-8", // this
+	// 	dataType: "json", // and this
+	// }).done( function() {
+	// 	alert('stuff');
+	// });
 
 	// ----
 	// Animations (GreenSock)
 	//----
 
-	// Character 1 (Blog)
-
-	// const mainBody = document.querySelectorAll(".main"),
-	// 			eyes = document.querySelector(".eyes"),
-	// 			pupils = document.querySelector(".pupils"),
-	// 			characterArea = document.querySelector(".character-1");
+	// Character 1, header
+	// var mainBody = document.querySelectorAll(".main"),
+	// 		eyes = document.querySelector(".eyes"),
+	// 		pupils = document.querySelector(".pupils"),
+	// 		characterArea = document.querySelector(".character-1");
 
 	// 	var tl = new TimelineLite();
 
 	// 	TweenLite.set(mainBody, { y: 150 });
 
-	// 	console.log(tl);
+	// // 	console.log(tl);
 
-	// 	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
+	// 	tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
 
 	// 	characterArea.addEventListener("mouseover", () => {
 	// 		tl.to(mainBody, 1, {
@@ -150,6 +228,9 @@ jQuery(document).ready(function() {
 	// 			.fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
 	// 	}, 3000);
 
+
+
+	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
 
 	// ----
 	// Typed.js

@@ -32,9 +32,6 @@
 
 
 
-
-
-
 // SVG
 
 svg {
@@ -78,4 +75,43 @@ svg {
 
 .teeth {
 	fill: white;
+}
+
+
+// Blog Character
+
+.blog .main-header {
+	background-image: linear-gradient(to bottom right, $l-teal, $yellow);
+}
+
+.blog-character {
+	// margin-bottom: -50px;
+	padding-left: $grid-gap;
+	padding-right: $grid-gap;
+}
+
+.bc-bubble {
+	opacity: 0; // TODO have a way to hide them initially
+	// fill: $accent-vlight;
+}
+
+.bc-glare,
+.bc-eye-white {
+	fill: $white;
+}
+
+.bc-eyeball,
+.bc-inner-mouth {
+	fill: black;
+}
+
+.bc-body,
+.bc-mouth,
+.bc-eyelid {
+	fill: #27aae1;
+}
+
+.text {
+	fill: $accent-light;
+	display: none;
 }

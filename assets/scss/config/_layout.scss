@@ -85,7 +85,7 @@ $rail: minmax(70px, 175px);
 .grid-content {
   @include bp(large) {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 3fr 1fr;
     grid-column-gap: $grid-gap;
   }
 }

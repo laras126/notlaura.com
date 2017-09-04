@@ -6,9 +6,9 @@
 
 {% block content %}
 
-	<section class="module">
+	{# <section class="module"> #}
 
-		<div class="module-rail">
+		{# <div class="module-rail">
 			<nav class="section-nav">
 				<p class="section-nav-title">Filter</p>
 				<ul class="section-nav-items">
@@ -17,19 +17,15 @@
 					{% endfor %}
 				</ul>
 			</nav>
-		</div>
+		</div> #}
 
-		<header class="module-header main-header">
-			<!-- <h1>{{post.title}}</h1> -->
-		</header>
-
-		<div class="module-content-full grid-projects">
+		<div class="tease-loop grid-projects">
 		{% for post in projects %}
 			{% include 'teases/tease-project.twig' %}
 		{% endfor %}
 		</div>
 
-	</section>
+	{# </section> #}
 
 {% endblock %}
 

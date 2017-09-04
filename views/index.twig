@@ -6,15 +6,18 @@
 
 {% block content %}
 
+	{# TODO: Find in database, remove it #}
 	{% for post in all_posts %}
 		{% if 'margin-top:' in post.content %}
 			<a href="{{post.link}}">{{post.title}}</a> {{post.date}}<br>
 		{% endif %}
 	{% endfor %}
 
-	{% for post in posts %}
-		{% include ['teases/tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
-	{% endfor %}
+	<div class="tease-loop">
+		{% for post in posts %}
+			{% include ['teases/tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
+		{% endfor %}
+	</div>
 
 	<nav class="pagination">
   	<div class="pagenav-link link-prev">

@@ -15,6 +15,7 @@
     .single & {
       margin-left: -$grid-gap;
       margin-right: -$grid-gap;
+      margin-top: $base;
       width: calc(100% + #{$grid-gap*2});
     }
 

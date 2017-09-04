@@ -10,7 +10,7 @@
 	class StarterSite extends TimberSite {
 
 		function __construct(){
-			add_theme_support('post-formats');
+			add_theme_support('post-formats', array('link', 'image', 'quote', 'status', 'video'));
 			add_theme_support('post-thumbnails');
 			add_theme_support('menus');
 			add_filter('timber_context', array($this, 'add_to_context'));

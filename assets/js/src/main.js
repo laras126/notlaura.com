@@ -17,16 +17,25 @@ var $main = document.querySelectorAll('.bc-main'),
 
 var tl = new TimelineLite();
 
+const COLORS = ["#FC625D", "#21A99C", "slategray", "#F7DE32"];
+
 for (var i = 0; i < $bubbles.length; i++) {
+	let color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
 	$bubbles[i].style.opacity = 1;
-	$bubbles[i].style.fill = "indianred";
+	$bubbles[i].style.fill = color;
 }
 
-// $bubbles.forEach(function() {
-// 	this.style.opacity = 1;
-// }, this);
 
-tl.from($main, 1, { x: -300, ease: Power2.easeOut });
+// TODO adjust viewport on different size, maybe
+// console.log(window.innerWidth);
+// Mobile: 0 0 318 190
+// if (window.innerWidth >= 600) {
+// 	document.querySelector(".blog-character").setAttribute("viewBox", "0 0 618 190");
+// }
+
+
+tl.to($main, 1, { left: 0, ease: Power2.easeOut });
 
 // Mouth In
 tl.to([$mouth, $innerMouth], 1, { x: -20, ease: SlowMo.ease.config(0.7, 0.7, false) });

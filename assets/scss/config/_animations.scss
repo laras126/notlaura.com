@@ -80,14 +80,23 @@ svg {
 
 // Blog Character
 
-.blog .main-header {
-	background-image: linear-gradient(to bottom right, $l-teal, $yellow);
+.blog  {
+	// background: $accent-med;
+	background-image: linear-gradient(to bottom right, $accent-med, $yellow);
+
+	.main-header {
+		background-image: linear-gradient(to bottom right, $l-teal, $yellow);
+	}
 }
 
 .blog-character {
 	// margin-bottom: -50px;
 	padding-left: $grid-gap;
 	padding-right: $grid-gap;
+}
+
+.bc-main {
+	left: -300px;
 }
 
 .bc-bubble {
@@ -109,6 +118,7 @@ svg {
 .bc-mouth,
 .bc-eyelid {
 	fill: #27aae1;
+
 }
 
 .text {

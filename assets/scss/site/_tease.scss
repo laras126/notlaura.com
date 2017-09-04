@@ -1,26 +1,83 @@
 
-.tease-post {
-	margin-bottom: $h1*2;
+.blog {
+	// background-image: linear-gradient(to top, #FC625D, $yellow);
+}
 
-	.module-content {
-		@include bp(small) {
-			padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap/2;
-			background: $body-bkgd;
-		}
+.tease-loop {
+	margin-top: $grid-gap;
+
+	@include bp(med) {
+		padding-right: $grid-gap;
 	}
 
-	.module-header {
-		display: flex;
-		align-items: center;
+	@include bp(large) {
+		padding-left: $grid-gap;
 	}
 }
 
-.tease-thumbnail {
-	border: $accent-border;
-	display: block;
+.tease-loop {
+	@include bp(med) {
+		display: grid;
+		grid-row-gap: $grid-gap;
+		grid-column-gap: $grid-gap;
+		grid-template-columns: repeat(2, 50%);
+	}
+}
+
+.tease-thumb {
+	max-height: 400px;
+	padding-bottom: $sml;
+	overflow: hidden;
+	@include bp(med) {
+		max-height: none;
+	}
+}
+
+.grid-tease {
+	@include bp(med) {
+		grid-column: 1 / -1;
+
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-column-gap: $grid-gap;
+	}
+}
+
+.tease-post {
+	margin-bottom: $grid-gap;
+	padding: $grid-gap;
+	background: $body-bkgd;
+
+	@include bp(med) {
+		margin-bottom: 0;
+	}
+	// .module-content {
+	// 	@include bp(small) {
+	// 		padding: $grid-gap/2 $grid-gap $grid-gap $grid-gap/2;
+	// 		background: $body-bkgd;
+	// 	}
+	// }
+
+	// .module-header {
+	// 	display: flex;
+	// 	align-items: center;
+	// }
 }
 
 .tease-meta {
+	@include meta($text-med);
+}
+
+.tease-thumb {
+	margin-bottom: $sml;
+	img {
+		display: block;
+		border: $accent-border;
+		width: 100%;
+	}
+}
+
+.single-meta {
 	border-top: $accent-border;
 	padding-top: $sml;
 	padding-right: $grid-gap/2;
@@ -53,15 +110,15 @@
 
 .tease-title {
 	margin-top: $base;
+	font-size: $h3;
 	margin-bottom: $base;
 	@include bp(large) {
-		margin-left: $grid-gap;
+		// margin-left: $grid-gap;
 	}
 }
 
 .tease-title-link {
-	font-size: $h2;
-	color: $link-color;
+	color: $accent-dark;
 	border-bottom: 0;
 }
 
@@ -187,15 +244,15 @@
 	}
 }
 
-	.long-thumb {
-		will-change: transform;
-		// TODO might be nice to add this in JS as an "animating" class
-		.tease-project:hover &,
-		.tease-project:focus & {
-				animation: scroll-page 15s forwards;
-				animation-delay: 0.5s;
-		}
+.long-thumb {
+	will-change: transform;
+	// TODO might be nice to add this in JS as an "animating" class
+	.tease-project:hover &,
+	.tease-project:focus & {
+			animation: scroll-page 15s forwards;
+			animation-delay: 0.5s;
 	}
+}
 
 .project-content {
 	padding: $grid-gap;

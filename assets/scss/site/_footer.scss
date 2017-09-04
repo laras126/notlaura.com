@@ -40,6 +40,10 @@
 .widgets {
 	@include unstyle-list();
 
+	&.-blog {
+		padding-top: 0;
+	}
+
 	&.-footer {
 		@include bp(med) {
 			display: flex;

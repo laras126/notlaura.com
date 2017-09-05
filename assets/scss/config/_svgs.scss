@@ -48,9 +48,11 @@ svg {
 }
 
 
-// ---
+
+
+// ----
 // Blog Character
-// ---
+// ----
 
 .blog  {
 	background-image: linear-gradient(to bottom right, $accent-med, $yellow);
@@ -65,12 +67,19 @@ svg {
 	padding-right: $grid-gap;
 }
 
+.bc-text {
+	fill: rgba($accent-vdark, 0.8);
+}
+
 .bc-main {
 	left: -300px;
 }
 
-.bc-bubble {
+.bc-bubble,
+.bc-text {
 	opacity: 0; // TODO have a way to hide them initially
+	visibility: hidden;
+	// transform: scale(0.5);
 	// fill: $accent-vlight;
 }
 
@@ -89,9 +98,4 @@ svg {
 .bc-eyelid {
 	fill: #27aae1;
 
-}
-
-.text {
-	fill: $accent-light;
-	display: none;
 }

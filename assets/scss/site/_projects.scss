@@ -1,4 +1,13 @@
 
+// Main page styles
+
+.page-template-page-portfolio {
+	background-image: linear-gradient(to bottom right, $accent-med, $l-teal);
+
+	.main-header {
+		background-image: linear-gradient(to bottom right, $yellow, $pink);
+	}
+}
 
 
 // ----
@@ -18,7 +27,7 @@
 		grid-column-gap: $grid-gap;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: start;
-		margin-right: $grid-gap;
+		// margin-right: $grid-gap;
 	}
 
 	// Flexbox fallback
@@ -34,6 +43,7 @@
 
 // TODO: credit scott kellum's site for scroller
 .tease-project {
+	box-shadow: 0 0 10px rgba($text-med, 0.6);
 	margin-left: -$grid-gap;
 	margin-right: -$grid-gap;
 	overflow: hidden;
@@ -41,14 +51,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	transition: 0.3s all ease;
-
-	&:hover,
-	&:focus {
-		transition: 0.3s all ease;
-		background-color: $body-bkgd;
-		box-shadow: 0 0 10px rgba($text-med, 0.6);
-	}
 
 	&:focus {
 		outline: 5px solid $accent-light;
@@ -56,6 +58,16 @@
 
 	@include bp(med) {
 		margin: 0;
+	}
+
+	@include bp(large) {
+		transform-origin: 50% 50%;
+		will-change: transform;
+		transition: 0.3s transform ease;
+
+		&:hover {
+			transform: scale(1.025);
+		}
 	}
 
 }
@@ -86,13 +98,6 @@
 		@include bp(large) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-		}
-	}
-
-	@include bp(large) {
-		&:hover,
-		&:focus {
-			transform: translateX(-30px);
 		}
 	}
 }

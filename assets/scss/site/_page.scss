@@ -1,3 +1,25 @@
 .js-typed-src {
 	@include visually-hidden;
 }
+
+.main-header {
+	position: relative;
+}
+
+.page-title {
+	position: absolute;
+	transform: scale(0.5);
+	bottom: 15%;
+	z-index: 9;
+	font-weight: $font-weight-strong;
+	width: 100%;
+	text-align: right;
+	padding-right: 20%;
+	font-size: 20vw;
+
+	@include bp(med) {
+		font-size: 15vw;
+	}
+	opacity: 0;
+	visibility: hidden;
+}

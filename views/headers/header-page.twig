@@ -7,7 +7,7 @@
 	{% if post.header_type == 'svg' %}
 		{% set svg_path = "svgs/" ~ post.title|replace({ (" ") : "-" })|lower ~ ".svg" %}
 		{% include svg_path %}
-		<h1 class="screen-reader">{{post.title}}</h1>
+		<h1 class="page-title">{{post.title}}</h1>
 	{% endif %}
 
 	{% if post.header_type == 'image' %}

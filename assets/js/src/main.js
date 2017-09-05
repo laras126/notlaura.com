@@ -8,7 +8,8 @@ function getRandomInt(min, max) {
 }
 
 
-var $main = document.querySelectorAll('.bc-main'),
+var $main = document.querySelectorAll(".bc-main"),
+		$text = document.querySelectorAll(".page-title"),
 		$bubbles = document.querySelectorAll(".bc-bubble"),
 		$body = document.querySelectorAll(".bc-body"),
 		$mouth = document.querySelector(".bc-mouth");
@@ -27,12 +28,13 @@ for (var i = 0; i < $bubbles.length; i++) {
 }
 
 
-// TODO adjust viewport on different size, maybe
-// console.log(window.innerWidth);
+// Adjust viewport on small screens
+// TODO: maybe reverse.
 // Mobile: 0 0 318 190
-// if (window.innerWidth >= 600) {
-// 	document.querySelector(".blog-character").setAttribute("viewBox", "0 0 618 190");
-// }
+// Large: 0 0 618 190
+if (window.innerWidth <= 690) {
+	document.querySelector(".blog-character").setAttribute("viewBox", "50 0 318 190");
+}
 
 
 tl.to($main, 1, { left: 0, ease: Power2.easeOut });
@@ -50,8 +52,11 @@ tl.to([$mouth, $innerMouth], 1, { x: 0, ease: Elastic.easeOut.config(1, 0.7), fo
 tl.to($body, 0.25, { scale: 1, ease: Power2.easeIn }, "-=1.0");
 
 // Blow bubbles
-tl.staggerFrom($bubbles, 2, { scale: 0.5, opacity: 0, delay: 0.1, ease: Elastic.easeInOut, force3D: true }, 0.1, "-=2.0");
+tl.staggerTo($bubbles, 2, { scale: 1, delay: 0.1, ease: Elastic.easeInOut, force3D: true, autoAlpha: 1 }, 0.1, "-=2.0");
 
+tl.to($text, 1, { scale: 1, ease: Power4.easeInOut, autoAlpha: 1 }, "-=1.5");
+
+// tl.staggerFrom($text, 1, { scale: 0, })
 
 
 

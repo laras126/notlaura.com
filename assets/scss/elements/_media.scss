@@ -52,16 +52,8 @@
 
 	@include bp(med) {
 		margin-right: -$h1*2;
-		width: calc(100% + #{$h1});
 		margin-left: -$grid-gap;
-
-		// .single & {
-    //   margin-left: -$grid-gap;
-    //   margin-right: -$grid-gap;
-    //   margin-top: $base;
-    //   width: calc(100% + #{$grid-gap*2});
-    // }
-
+		width: calc(100% + #{$h1});
 	}
 
 	@include bp(large) {

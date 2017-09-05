@@ -33,6 +33,11 @@ $rail: minmax(70px, 175px);
   @include contain($screen-xl);
 }
 
+@mixin bleed($size: $grid-gap) {
+  margin-left: -$size;
+  margin-right: -$size;
+  max-width: calc(100% + #{$size * 2});
+}
 
 // Fallback
 
@@ -89,17 +94,6 @@ $rail: minmax(70px, 175px);
     grid-column-gap: $grid-gap;
   }
 }
-
-.main-aside > .widgets {
-  display: grid;
-  grid-auto-flow: column dense;
-  align-items: center;
-
-  @include bp(large) {
-    display: block;
-  }
-}
-
 
 
 

@@ -1,0 +1,36 @@
+
+.main-aside {
+	margin-top: $grid-gap;
+	padding-right: $grid-gap;
+}
+
+.main-aside > .widgets {
+  display: grid;
+  grid-auto-flow: column dense;
+  align-items: center;
+
+  @include bp(large) {
+    display: block;
+  }
+}
+
+
+.widget {
+
+	.-blog & {
+		color: $text-light;
+		margin-bottom: $grid-gap;
+		padding: $grid-gap;
+		background-image: linear-gradient(to bottom right, $accent-dark, $accent-vdark);
+		a {
+			color: $text-light;
+			&:hover {
+				color: $accent-light;
+			}
+		}
+	}
+}
+
+.about-widget-thumb {
+	// @include bleed;
+}

@@ -54,7 +54,7 @@ tl.to($body, 0.25, { scale: 1, ease: Power2.easeIn }, "-=1.0");
 // Blow bubbles
 tl.staggerTo($bubbles, 2, { scale: 1, delay: 0.1, ease: Elastic.easeInOut, force3D: true, autoAlpha: 1 }, 0.1, "-=2.0");
 
-tl.to($text, 1, { scale: 1, ease: Power4.easeInOut, autoAlpha: 1 }, "-=1.5");
+tl.to($text, 0.5, { scale: 1, ease: Power4.easeOut, autoAlpha: 1 }, "-=1.5");
 
 // tl.staggerFrom($text, 1, { scale: 0, })
 

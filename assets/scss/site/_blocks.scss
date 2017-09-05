@@ -20,3 +20,12 @@
 	margin-top: $base;
 	font-style: normal;
 }
+
+
+// List block
+
+.block_list {
+	> ul {
+		@include unstyle-list;
+	}
+}

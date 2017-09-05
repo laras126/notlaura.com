@@ -31,6 +31,12 @@
   <div class="project-thumb">
     {# Note/TODO: using an image field for video here, but seems to work for now #}
     {% if post.featured_media %}
+      {# <img alt="Post thumbnail"
+        class="lazyload"
+        src="{{TimberImagepost.featured_media.src('medium')}}"> #}
+        {# sizes="(max-width: 1024px) 100vw, 1024px" #}
+        {# src="{{function('wp_get_attachment_image_url', img.id, 'thumbnail')}}"> #}
+
       {% include "partials/srcset.twig" with { img: TimberImage(post.featured_media), class: 'long-thumb lazyload' } %}
     {% else %}
       {% include "partials/srcset.twig" with { img: post.thumbnail, class: 'project-tease-img lazyload' } %}

@@ -54,16 +54,12 @@
 }
 
 .widget {
-	font-size: $sml;
+	p, li, a {
+		font-size: $sml;
+	}
 
 	ul {
 		@include unstyle-list();
-	}
-
-	.-blog & {
-		margin-bottom: $grid-gap;
-		padding: $grid-gap;
-		background-image: linear-gradient(to bottom right, $accent-light, transparent);
 	}
 
 	.-footer & {
@@ -82,7 +78,7 @@
 	margin-top: 0;
 	margin-bottom: $base;
 	font-size: $base;
-	text-transform: uppercase;
+	@include upperspace;
 }
 
 .widget-list {}

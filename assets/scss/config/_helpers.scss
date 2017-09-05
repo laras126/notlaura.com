@@ -1,29 +1,4 @@
 
-// ----
-// Formatting
-// ----
-
-@mixin center-block() {
-	margin: 0 auto;
-	display: block;
-}
-
-.center-block {
-	@include center-block;
-}
-
-.inline {
-	display: inline-block;
-}
-
-.img-flex {
-	width: 100%;
-}
-
-.clearfix {
-	@include clearfix;
-}
-
 
 
 // ----
@@ -45,17 +20,6 @@
 
 // Small, sans-serif text.
 // Used primarily for forms and complimentary information.
-
-.meta-cite {
-	@include meta($color: $text-med);
-	text-align: right;
-	margin-top: $base;
-	font-style: normal;
-}
-
-.caption {
-	@include meta($text-med);
-}
 
 .meta-light {
 	@include meta($text-light);
@@ -98,21 +62,6 @@
 // Content
 // ----
 
-
-%img_highlight {
-	border: $accent-border;
-}
-
-
-// Alerts
-
-%alert,
-.alert {
-	@include rotate($text-dark, $accent-vlight);
-	padding: $base;
-}
-
-
 .bordered {
 	border: 5px solid $accent-light;
 }
@@ -146,17 +95,60 @@
 	@include meta;
 }
 
+.special,
+a.special {
+	color: $accent-dark;
+}
 
-// Text alignment shortcuts
-// Mainly for prototyping and where semantics aren't crucial (which is nowhere? Discuss!)
+.strike {
+	position: relative;
+}
 
-.text-center {
-	text-align: center;
+	.strike:after {
+		border-bottom: 2px solid $accent-med;
+		position: absolute;
+		content: '';
+		right: 0;
+		left: 0;
+		top: 55%;
+	}
+
+.text-left {
+	text-align: left;
 }
 
 .text-right {
 	text-align: right;
 }
+
+.text-center {
+	text-align: center;
+}
+
+
+
+// Spacers
+
+.spacer-top {
+	margin-top: $base;
+}
+
+.spacer-left {
+	margin-left: $base;
+}
+
+.spacer-right {
+	margin-right: $base;
+}
+
+.spacer-bot {
+	margin-bottom: $base;
+}
+
+.rm-margin {
+	margin: 0;
+}
+
 
 
 // This can be used to add a border around a title, like this:

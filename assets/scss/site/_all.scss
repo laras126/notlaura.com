@@ -3,15 +3,17 @@
 @import 'base';
 
 // Global site sections
-@import 'nav';
-@import 'header';
+@import 'site-nav';
+@import 'site-header';
 
-// TODO: these are too content dependent.
-// Mimic Sass structure to view directories.
+@import 'section-nav';
+@import 'pagination';
+
 @import 'page';
-@import 'single';
 
 @import 'sections';
-@import 'content';
-@import 'tease';
+@import 'blocks';
 @import 'footer';
+
+@import 'posts';
+@import 'projects';

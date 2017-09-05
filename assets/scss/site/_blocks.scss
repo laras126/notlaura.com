@@ -1,0 +1,22 @@
+
+// Text Image Block
+
+.textimage-image {
+	margin-top: $grid-gap;
+}
+
+// Testimonial Block
+
+.block_testimonial {
+	padding-top: $base;
+	padding-bottom: 0;
+	margin-bottom: $base;
+	background-image: linear-gradient(to bottom right, $accent-vlight, rgba($body-bkgd, 0));
+}
+
+.meta-cite {
+	@include meta($color: $text-med);
+	text-align: right;
+	margin-top: $base;
+	font-style: normal;
+}

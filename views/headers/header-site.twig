@@ -7,8 +7,9 @@
   </a>
 </div>
 
-<nav id="menu" class="site-nav" role="navigation">
-  <ul class="menu-list">
+<nav class="site-nav" role="navigation">
+  <button id="toggle" class="menu-btn">Menu</button>
+  <ul id="menu" class="menu-list">
     {% for item in main_nav.items %}
     <li class="menu-item {{ item.get_children ? 'menu-has-children' }} {{item.classes | join(' ')}}">
       <a class="menu-item-link" href="{{item.link}}">{{item.title}}</a>

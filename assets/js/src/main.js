@@ -32,9 +32,9 @@ for (var i = 0; i < $bubbles.length; i++) {
 // TODO: maybe reverse.
 // Mobile: 0 0 318 190
 // Large: 0 0 618 190
-if (window.innerWidth <= 690) {
-	document.querySelector(".blog-character").setAttribute("viewBox", "50 0 318 190");
-}
+// if (window.innerWidth <= 690) {
+// 	document.querySelector(".blog-character").setAttribute("viewBox", "50 0 318 190");
+// }
 
 
 tl.to($main, 1, { left: 0, ease: Power2.easeOut });
@@ -70,8 +70,17 @@ tl.to($text, 0.5, { scale: 1, ease: Power4.easeOut, autoAlpha: 1 }, "-=1.5");
 
 // document.querySelector('.blog-character').appendChild(shape);
 
+// http://www.a11ymatters.com/pattern/mobile-nav/#use-a-semantic-element-for-the-toggle-button
+const $toggle = document.querySelector('#toggle'),
+			$menu = document.querySelector('#menu');
 
-
+$toggle.addEventListener('click', function () {
+	if ($menu.classList.contains('js-open')) {
+		$menu.classList.remove('js-open');
+	} else {
+		$menu.classList.add('js-open');
+	}
+});
 
 
 

@@ -6,7 +6,6 @@
             "key": "field_54b57662f8b4c",
             "label": "About",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -16,13 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "message": "These options apply to elements that appear throughout the site."
+            "message": "These options apply to elements that appear throughout the site.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
             "key": "field_54b548a674aeb",
             "label": "Show Callout?",
             "name": "callout_tf",
-            "prefix": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -33,13 +33,15 @@
                 "id": ""
             },
             "message": "Show the call out bar",
-            "default_value": 1
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_54b53e74b01db",
             "label": "Callout Bar",
             "name": "callout_bar",
-            "prefix": "",
             "type": "text",
             "instructions": "Text to appear in the callout bar.",
             "required": 0,
@@ -69,7 +71,6 @@
             "key": "field_54b53ebd84421",
             "label": "Site tagline",
             "name": "site_tagline",
-            "prefix": "",
             "type": "text",
             "instructions": "A concise, one line sentence to appear below the logo in the header.",
             "required": 0,
@@ -91,7 +92,6 @@
             "key": "field_54b5752652bdc",
             "label": "Favicon (16x16)",
             "name": "favicon_16",
-            "prefix": "",
             "type": "image",
             "instructions": "Upload a 16x16 png image for the site's favicon.",
             "required": 0,
@@ -103,13 +103,19 @@
             },
             "return_format": "array",
             "preview_size": "full",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_54b5754952bdd",
             "label": "Favicon (32x32)",
             "name": "favicon_32",
-            "prefix": "",
             "type": "image",
             "instructions": "Upload a 32x32 png favicon image.",
             "required": 0,
@@ -121,7 +127,14 @@
             },
             "return_format": "array",
             "preview_size": "full",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -139,5 +152,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1421178520
+    "active": 1,
+    "description": "",
+    "modified": 1504646819
 }

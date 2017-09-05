@@ -1782,22 +1782,21 @@ code {
   padding-top: 1.43rem;
   padding-bottom: 1.43rem; }
 
+.logo-img {
+  height: 100px;
+  margin-right: 1.43rem;
+  margin-bottom: -1.43rem;
+  margin-top: -1.43rem; }
+
 .site-header > .inner {
   padding-left: 1.43rem;
   padding-right: 1.43rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  -ms-grid-rows: minmax(auto, 100px) 1fr;
-      grid-template-rows: minmax(auto, 100px) 1fr; }
-  @media (min-width: 730px) {
-    .site-header > .inner {
-      -ms-grid-rows: 1fr;
-          grid-template-rows: 1fr;
-      -ms-grid-columns: minmax(auto, 100px) 3fr 1fr;
-          grid-template-columns: minmax(auto, 100px) 3fr 1fr;
-      grid-template-areas: "logo nav icon"; } }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .site-header svg {
   width: 200px;

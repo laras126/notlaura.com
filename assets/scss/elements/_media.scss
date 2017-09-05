@@ -42,7 +42,6 @@
 
 	// TODO style fallback
 
-
 }
 
 
@@ -50,35 +49,37 @@
 
 .gallery,
 .fig-large {
+
 	@include bp(med) {
 		margin-right: -$h1*2;
 		width: calc(100% + #{$h1});
 		margin-left: -$grid-gap;
 
-    .single & {
-      margin-right: -$h1*3;
-      width: calc(100% + #{($h1*2) + $grid-gap});
-    }
+		// .single & {
+    //   margin-left: -$grid-gap;
+    //   margin-right: -$grid-gap;
+    //   margin-top: $base;
+    //   width: calc(100% + #{$grid-gap*2});
+    // }
 
-    .blog & {
-      margin-left: -$grid-gap;
-      width: calc(100% + #{$grid-gap*2});
-		}
 	}
 
 	@include bp(large) {
 		width: calc(100% + #{($h1*2) + $grid-gap});
 		margin-right: -$h1*3;
 
+		// .blog & {
+		// 	margin-left: -$grid-gap;
+    // }
+
 		.blog & {
-      margin-left: -$grid-gap;
-    }
+			margin-left: -$grid-gap;
+			width: calc(100% + #{$grid-gap*2});
+		}
 
     .single & {
-      margin-left: -$grid-gap;
-      margin-right: -$grid-gap;
-      margin-top: $base;
-      width: calc(100% + #{$grid-gap*2});
+      // margin-right: -$h1*3;
+      // width: calc(100% + #{($h1*2) + $grid-gap});
     }
 	}
 
@@ -87,6 +88,7 @@
 
 // Captions
 
+
 figcaption,
 .gallery-caption,
 .wp-caption-text {
@@ -94,14 +96,17 @@ figcaption,
   padding-bottom: $sml;
   font-size: $sml;
 	color: $text-med;
+}
 
-	@include bp(large) {
+.fig-large figcaption,
+.gallery-caption {
+	@include bp(med) {
 		padding-left: $grid-gap;
 	}
 }
 
 .gallery-caption {
-  padding-left: $grid-gap;
+	margin-left: 0;
 }
 
 .caption-opaque {

@@ -14,10 +14,10 @@
 // Fixed button. Bottom right at xsmall,
 // Top right at small-med
 .menu-btn {
-	@include button($pink);
+	@include button($alert-danger);
 	position: fixed;
 	z-index: 100;
-	bottom: $base;
+	top: $base;
 	right: $base;
 
 	@include bp(small) {
@@ -33,58 +33,58 @@
 .menu-list {
 	@include unstyle-list();
 	margin-bottom: 0;
+	right: -500vh;
 
-	.js & {
-		display: none;
-	}
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: right;
+
+	background-image: linear-gradient(to top, $accent-vdark, rgba($accent-vdark, 0.9));
+	transition: all 0.6s ease-out;
 
 	&.js-open {
-		opacity: 1;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 99;
-		width: 100vw;
-		height: 100vh;
+		right: 0;
+	}
 
+
+	@include bp(med) {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
+		flex-direction: row;
+		height: auto;
+		width: auto;
+		position: static;
 
-		background-image: linear-gradient(to top, $accent-vdark, rgba($accent-vdark, 0.9));
-	}
-
-	.js & {
-
-		@include bp(med) {
-			display: flex;
-			// flex-wrap: mowrap;
-			margin-left: $grid-gap;
-			margin-right: 0;
-			width: auto;
-			// text-align: center;
-		}
-	}
-}
-
-.menu-item {
-	&:last-child > a {
-		border-bottom: 0;
+		margin-left: $grid-gap;
+		margin-right: 0;
+		width: auto;
 	}
 }
 
 .menu-item-link {
 	font-size: $h4;
+	font-weight: $font-weight-strong;
   display: block;
-  padding: $sml;
+	padding-top: $sml;
+	padding-bottom: $sml;
+	padding-right: $grid-gap;
 	color: $accent-vlight;
+	border: 0;
 
   @include bp(med) {
+		font-size: $base;
+		font-weight: $font-weight-base;
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     padding-top: $xsml;
-    padding-bottom: $xsml;
+		padding-bottom: $xsml;
+		padding-right: $sml;
 
     .current-menu-item &,
     .current_page_item & {

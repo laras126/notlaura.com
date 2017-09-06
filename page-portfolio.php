@@ -14,6 +14,7 @@ $project_args = array(
 				'posts_per_page' => -1
 			);
 $context['types'] = Timber::get_terms('project-type');
+$context['sidebar'] = "stuff";
 $context['projects'] = Timber::get_posts($project_args);
 
 Timber::render(array('page-portfolio.twig', 'page.twig'), $context);

@@ -38,7 +38,7 @@
 	position: fixed;
 	top: 0;
 	z-index: 99;
-	width: 100vw;
+	min-width: 50vw;
 	height: 100vh;
 
 	display: flex;
@@ -53,12 +53,11 @@
 		right: 0;
 	}
 
-
 	@include bp(med) {
 		display: flex;
 		flex-direction: row;
 		height: auto;
-		width: auto;
+		min-width: auto;
 		position: static;
 
 		margin-left: $grid-gap;
@@ -71,9 +70,7 @@
 	font-size: $h4;
 	font-weight: $font-weight-strong;
   display: block;
-	padding-top: $sml;
-	padding-bottom: $sml;
-	padding-right: $grid-gap;
+	padding: $sml $grid-gap;
 	color: $accent-vlight;
 	border: 0;
 
@@ -84,7 +81,6 @@
     border-top: 1px solid transparent;
     padding-top: $xsml;
 		padding-bottom: $xsml;
-		padding-right: $sml;
 
     .current-menu-item &,
     .current_page_item & {

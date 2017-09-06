@@ -15,9 +15,9 @@
     <p class="project-types">{% for c in post.get_terms('project-type') %}{{ c.name != 'Featured' ? c.name }}{% endfor %}</p>
     <h4 class="project-tease-title">{% if not post.no_single %}<a href="{{post.link}}">{{post.title}}</a>{% else %}{{post.title}}{% endif %}</h4>
 
-    <p class="project-tease-tagline lead">{{post.intro}}</p>
+    <p class="project-tease-tagline">{{post.intro}}</p>
 
-    <p>{{post.para_intro}}</p>
+    <p class="project-tease-desc">{{post.para_intro}}</p>
 
     {% if post.no_single == false %}
       <p>

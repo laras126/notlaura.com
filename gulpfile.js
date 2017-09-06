@@ -23,9 +23,9 @@ var gulp = require('gulp'),
     cheerio = require('gulp-cheerio');
 
 // Put JS files into array
-var jsFileList = [
-  './assets/js/src/plugins.js',
-  './assets/js/src/main.js'
+var babelFileList = [
+  './assets/js/src/main.js',
+  './assets/js/src/animations.js'
 ];
 
 // var entryPoint = './assets/js/src/main.js';
@@ -63,7 +63,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('js', function() {
-  return gulp.src('./assets/js/src/main.js')
+  return gulp.src(babelFileList)
     .pipe(babel({
             presets: ['es2015']
         }))

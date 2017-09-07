@@ -3,19 +3,28 @@
 .front-page-header {
 	padding-top: $h1*2;
 	// min-height: 70vh;
+	background-image: linear-gradient(to top right, $yellow, $white);
 	display: flex;
 	align-items: flex-end;
 	// padding-top: 5rem;
 
-	svg {
-		max-height: 70vh;
+}
+
+.lara-character {
+	.js & {
+		visibility: hidden;
+		opacity: 0;
 	}
+	height: 70vh;
+	display: block;
+	margin: 0 auto;
 }
 
 .grid-panel {
 	@include bp(med) {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		display: flex;
+		// grid-column-gap: $grid-gap;
+		// grid-template-columns: repeat(6, 1fr);
 	}
 }
 
@@ -25,7 +34,7 @@
 }
 
 .panel-1 {
-	background: $white;
+	// background: $white;
 }
 
 .panel-2 {
@@ -33,14 +42,22 @@
 }
 
 .panel-svg {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	grid-column: span 2;
+	@include bp(med) {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		// grid-column: span 2;
+	}
 }
 
 .panel-desc {
-	grid-column: span 4;
+	// background: $accent-vdark;
+	// color: $text-light;
+	// @include bp(med) {
+	// 	background: none;
+	// 	color: $text-dark;
+	// }
+	// grid-column: span 4;
 	// display: flex;
 	// flex-direction: column;
 	// justify-content: center;
@@ -57,7 +74,7 @@
 	padding-top: 0;
 	font-size: $h1;
 	.rotate-colors {
-		animation: rotate-text-color 2.5s forwards;
+		animation: rotate-text-color 10s forwards;
 	}
 }
 
@@ -65,12 +82,5 @@
 	max-width: 600px;
 	padding: $grid-gap;
 	// background-color: $accent-vdark;
-}
-
-
-// SVG
-
-.ls-skin {
-	fill: #fbd3c8;
 }
 

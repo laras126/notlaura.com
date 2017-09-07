@@ -1,21 +1,4 @@
 
-@mixin icon($fill, $hover: $accent-med, $size: $h2, $inline: false) {
-	width: $size;
-	height: $size;
-	fill: $fill;
-
-	@if $inline {
-		display: inline-block;
-	} @else {
-		display: block;
-		margin: 0 auto;
-	}
-
-	a &:hover {
-		fill: $hover;
-	}
-}
-
 .shape {
 	width: 100%;
 	fill: $accent-dark;
@@ -33,10 +16,8 @@
 	@include icon($fill: $accent-med, $hover: $accent-dark, $size: $h4, $inline: true);
 }
 
-.project-launch-btn {
-
-}
-
-.project-launch-icon {
-
+.panel-icon-down {
+	@include icon($accent-med);
+	margin: 0;
+	margin-top: $grid-gap;
 }

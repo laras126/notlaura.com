@@ -675,6 +675,17 @@ svg {
 .bc-eyelid {
   fill: #27aae1; }
 
+.lara-character {
+  -webkit-transform: translateX(-130%);
+      -ms-transform: translateX(-130%);
+          transform: translateX(-130%); }
+
+.ls-skin {
+  fill: #fbd3c8; }
+
+.ls-clothes {
+  fill: #27AAE1; }
+
 .shape {
   width: 100%;
   fill: #0a5276; }
@@ -704,6 +715,17 @@ svg {
   display: inline-block; }
   a .icon-inline:hover {
     fill: #0a5276; }
+
+.panel-icon-down {
+  width: 2.64rem;
+  height: 2.64rem;
+  fill: #27AAE1;
+  display: block;
+  margin: 0 auto;
+  margin: 0;
+  margin-top: 1.43rem; }
+  a .panel-icon-down:hover {
+    fill: #27AAE1; }
 
 /* Define the "system" font family */
 @font-face {
@@ -1880,61 +1902,56 @@ code {
 
 .front-page-header {
   padding-top: 6.6rem;
+  background-image: linear-gradient(to top right, #FCF7D8, #ffffff);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end; }
-  .front-page-header svg {
-    max-height: 70vh; }
+
+.lara-character {
+  height: 70vh;
+  display: block;
+  margin: 0 auto; }
+  .js .lara-character {
+    visibility: hidden;
+    opacity: 0; }
 
 @media (min-width: 730px) {
   .grid-panel {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr); } }
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
 
 .panel p {
   font-size: 1.43rem; }
 
-.panel-1 {
-  background: #ffffff; }
-
 .panel-2 {
   background-color: #B4CDFC; }
 
-.panel-svg {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-grid-column: span 2;
-      grid-column: span 2; }
-
-.panel-desc {
-  -ms-grid-column: span 4;
-      grid-column: span 4; }
+@media (min-width: 730px) {
+  .panel-svg {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; } }
 
 .panel-title {
   padding-top: 0;
   font-size: 3.3rem; }
   .panel-title .rotate-colors {
-    -webkit-animation: rotate-text-color 2.5s forwards;
-            animation: rotate-text-color 2.5s forwards; }
+    -webkit-animation: rotate-text-color 10s forwards;
+            animation: rotate-text-color 10s forwards; }
 
 .panel-inner {
   max-width: 600px;
   padding: 1.43rem; }
-
-.ls-skin {
-  fill: #fbd3c8; }
 
 .main-aside {
   margin-top: 1.43rem;

@@ -46,6 +46,23 @@
 
 
 
+@mixin icon($fill, $hover: $accent-med, $size: $h2, $inline: false) {
+	width: $size;
+	height: $size;
+	fill: $fill;
+
+	@if $inline {
+		display: inline-block;
+	} @else {
+		display: block;
+		margin: 0 auto;
+	}
+
+	a &:hover {
+		fill: $hover;
+	}
+}
+
 
 
 

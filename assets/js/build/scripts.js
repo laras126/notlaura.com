@@ -387,5 +387,6 @@ if (window.location.pathname == "/") {
 
 	var tl = new TimelineLite();
 
-	tl.from($lara, 1, { x: -100, ease: Power2.easeInOut }).to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 500 });
+	// Slide in from left
+	tl.to($lara, 1, { x: 0, ease: Power2.easeInOut, autoAlpha: 1 }).to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 50 });
 }

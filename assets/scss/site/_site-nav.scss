@@ -33,7 +33,7 @@
 .menu-list {
 	@include unstyle-list();
 	margin-bottom: 0;
-	right: -500vh;
+	right: -100%;
 
 	position: fixed;
 	top: 0;
@@ -46,10 +46,11 @@
 	justify-content: center;
 	text-align: right;
 
-	background-image: linear-gradient(to top, $accent-vdark, rgba($accent-vdark, 0.9));
-	transition: all 0.6s ease-out;
+	transition: all 0.25s ease-out;
 
 	&.js-open {
+		background-color: $yellow;
+		border-left: 5px solid $accent-med;
 		right: 0;
 	}
 
@@ -71,12 +72,12 @@
 	font-weight: $font-weight-strong;
   display: block;
 	padding: $sml $grid-gap;
-	color: $accent-vlight;
+	color: $accent-vdark;
 	border: 0;
 
   @include bp(med) {
 		font-size: $base;
-		font-weight: $font-weight-base;
+		// font-weight: $font-weight-base;
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     padding-top: $xsml;

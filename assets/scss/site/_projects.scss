@@ -62,7 +62,6 @@
 
 	@include bp(large) {
 		transform-origin: 50% 50%;
-		will-change: transform;
 		transition: 0.3s transform ease;
 
 		&:hover {

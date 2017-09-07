@@ -191,57 +191,55 @@ jQuery(document).ready(function () {
 	// ----
 
 	// Get an array of all elements to be typed.
-	// const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-	// const TYPED_ELS = document.querySelectorAll('.js-typed');
-	// const TYPE_SPEED = 30,
-	// 			SHOW_CURSOR = false;
+	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+	var TYPED_ELS = document.querySelectorAll('.js-typed');
+	var TYPE_SPEED = 30,
+	    SHOW_CURSOR = false;
 
-	// var options = {
-	// 	elIndex: 0,
-	//   strings: [TYPED_SRCS[0].innerHTML],
-	//   typeSpeed: TYPE_SPEED,
-	//   showCursor: SHOW_CURSOR,
-	//   onComplete: () => {
-	// 		typeNextInArray();
-	//   },
-	// }
+	var options = {
+		elIndex: 0,
+		strings: [TYPED_SRCS[0].innerHTML],
+		typeSpeed: TYPE_SPEED,
+		showCursor: SHOW_CURSOR,
+		onComplete: function onComplete() {
+			typeNextInArray();
+		}
 
-	// // Start the typing elements, starting with index 0
-	// // var typed = new Typed(TYPED_ELS[0], options);
+		// Start the typing elements, starting with index 0
+	};var typed = new Typed(TYPED_ELS[0], options);
 
-	// // Function to type next item in typedEls array
-	// function typeNextInArray() {
+	// Function to type next item in typedEls array
+	function typeNextInArray() {
 
-	// 	// Move through the array
-	// 	options.elIndex++;
-	//   let newIndex = options.elIndex;
-	// 	let currentEl = TYPED_SRCS[newIndex];
+		// Move through the array
+		options.elIndex++;
+		var newIndex = options.elIndex;
+		var currentEl = TYPED_SRCS[newIndex];
 
-	//   // Allow for data attributes to provide some settings
-	//   let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-	//   let callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
+		// Allow for data attributes to provide some settings
+		// let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
+		// let callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
 
 
-	//   // New options set
-	// 	let newOptions = {
-	// 		elIndex: newIndex,
-	// 		startDelay: 500,
-	// 		strings: [TYPED_SRCS[newIndex].innerHTML],
-	// 		typeSpeed: newTypeSpeed,
-	// 	  showCursor: SHOW_CURSOR,
-	// 		onComplete: () => {
-	// 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-	//   			return typeNextInArray();
-	//   			eval(currentEl.dataset.callback);
-	//   		} else {
-	//   			console.log('done');
-	//   		}
-	// 		}
-	// 	}
+		// New options set
+		var newOptions = {
+			elIndex: newIndex,
+			startDelay: 500,
+			strings: [TYPED_SRCS[newIndex].innerHTML],
+			typeSpeed: newTypeSpeed,
+			showCursor: SHOW_CURSOR,
+			onComplete: function onComplete() {
+				if (newIndex + 1 <= TYPED_ELS.length - 1) {
+					return typeNextInArray();
+					// eval(currentEl.dataset.callback);
+				} else {
+					console.log('done');
+				}
+			}
+		};
 
-	// 	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
-	// }
-
+		var typed = new Typed(TYPED_ELS[newIndex], newOptions);
+	}
 
 	// function executeFunctionFromData(){
 	//   var d = 'hello' // Save `data-myattr` to d; (Obviously, this is just a hardcoded value as an example)
@@ -331,49 +329,63 @@ function getRandomInt(min, max) {
 }
 
 if (window.location.pathname == "/blog/") {
+	var blogAnimation = function blogAnimation() {
 
-	var $main = document.querySelectorAll(".bc-main"),
-	    $text = document.querySelectorAll(".page-title"),
-	    $bubbles = document.querySelectorAll(".bc-bubble"),
-	    $body = document.querySelectorAll(".bc-body"),
-	    $mouth = document.querySelector(".bc-mouth");
-	$innerMouth = document.querySelector(".bc-inner-mouth"), $eyeball = document.querySelector(".bc-eyeball");
+		var $main = document.querySelectorAll(".bc-main"),
+		    $text = document.querySelectorAll(".page-title"),
+		    $bubbles = document.querySelectorAll(".bc-bubble"),
+		    $body = document.querySelectorAll(".bc-body"),
+		    $mouth = document.querySelector(".bc-mouth");
+		$innerMouth = document.querySelector(".bc-inner-mouth"), $eyeball = document.querySelector(".bc-eyeball");
+
+		var tl = new TimelineLite();
+
+		var COLORS = ["#FC625D", "#21A99C", "slategray", "#F7DE32"];
+
+		for (var i = 0; i < $bubbles.length; i++) {
+			var color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+			$bubbles[i].style.opacity = 1;
+			$bubbles[i].style.fill = color;
+		}
+
+		// Adjust viewport on small screens
+		// TODO: maybe reverse.
+		// Mobile: 0 0 318 190
+		// Large: 0 0 618 190
+		if (window.innerWidth <= 690) {
+			document.querySelector(".blog-character").setAttribute("viewBox", "50 0 318 190");
+		}
+
+		tl.to($main, 1, { left: 0, ease: Power2.easeOut });
+
+		// Mouth In
+		tl.to([$mouth, $innerMouth], 1, { x: -20, ease: SlowMo.ease.config(0.7, 0.7, false) });
+
+		// Body inflate
+		tl.to($body, 2, { scale: 1.1, ease: Power2.easeIn }, "-=1.0");
+
+		// Mouth Out
+		tl.to([$mouth, $innerMouth], 1, { x: 0, ease: Elastic.easeOut.config(1, 0.7), force3D: true });
+
+		// Fill body
+		tl.to($body, 0.25, { scale: 1, ease: Power2.easeIn }, "-=1.0");
+
+		// Blow bubbles
+		tl.staggerTo($bubbles, 2, { scale: 1, delay: 0.1, ease: Elastic.easeInOut, force3D: true, autoAlpha: 1 }, 0.1, "-=2.0");
+
+		tl.to($text, 0.5, { ease: Power4.easeOut, autoAlpha: 1 }, "-=1");
+	};
+
+	blogAnimation();
+}
+
+if (window.location.pathname == "/") {
+
+	var $handLeft = document.querySelector('.ls-hand-left'),
+	    $lara = document.querySelector('.lara-character');
 
 	var tl = new TimelineLite();
 
-	var COLORS = ["#FC625D", "#21A99C", "slategray", "#F7DE32"];
-
-	for (var i = 0; i < $bubbles.length; i++) {
-		var color = COLORS[Math.floor(Math.random() * COLORS.length)];
-
-		$bubbles[i].style.opacity = 1;
-		$bubbles[i].style.fill = color;
-	}
-
-	// Adjust viewport on small screens
-	// TODO: maybe reverse.
-	// Mobile: 0 0 318 190
-	// Large: 0 0 618 190
-	if (window.innerWidth <= 690) {
-		document.querySelector(".blog-character").setAttribute("viewBox", "50 0 318 190");
-	}
-
-	tl.to($main, 1, { left: 0, ease: Power2.easeOut });
-
-	// Mouth In
-	tl.to([$mouth, $innerMouth], 1, { x: -20, ease: SlowMo.ease.config(0.7, 0.7, false) });
-
-	// Body inflate
-	tl.to($body, 2, { scale: 1.1, ease: Power2.easeIn }, "-=1.0");
-
-	// Mouth Out
-	tl.to([$mouth, $innerMouth], 1, { x: 0, ease: Elastic.easeOut.config(1, 0.7), force3D: true });
-
-	// Fill body
-	tl.to($body, 0.25, { scale: 1, ease: Power2.easeIn }, "-=1.0");
-
-	// Blow bubbles
-	tl.staggerTo($bubbles, 2, { scale: 1, delay: 0.1, ease: Elastic.easeInOut, force3D: true, autoAlpha: 1 }, 0.1, "-=2.0");
-
-	tl.to($text, 0.5, { scale: 1, ease: Power4.easeOut, autoAlpha: 1 }, "-=1.5");
+	tl.from($lara, 1, { x: -100, ease: Power2.easeInOut }).to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 500 });
 }

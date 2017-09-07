@@ -59,11 +59,6 @@ $rail: minmax(70px, 175px);
 // ----
 
 .main-header {
-  overflow: hidden;
-
-  &.-svg {
-    border-bottom: 5px solid $accent-med;
-  }
 
   &.-text {
     padding-left: $grid-gap;
@@ -102,8 +97,9 @@ $rail: minmax(70px, 175px);
 // ----
 
 
+// TODO - using this?
 .grid-header {
-  background-color: $accent-dark;
+  // background-color: $accent-dark;
   color: $text-light;
   margin-bottom: $h2;
   display: grid;
@@ -122,32 +118,33 @@ $rail: minmax(70px, 175px);
   flex-direction: column;
 }
 
-.header-left {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  justify-content: flex-end;
+// TODO remove for about page
+// .header-left {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   justify-content: flex-end;
 
-  .mask {
-    height: $h1*2;
-    background-image: linear-gradient(transparent, $accent-dark);
+//   .mask {
+//     height: $h1*2;
+//     background-image: linear-gradient(transparent, $accent-dark);
 
-    @include bp(med) {
-      background-image: none;
-    }
-  }
-}
+//     @include bp(med) {
+//       background-image: none;
+//     }
+//   }
+// }
 
-.header-right {
-  padding-top: $grid-gap;
-  padding-left: $grid-gap;
-  padding-right: $grid-gap;
-  justify-content: center;
+// .header-right {
+//   padding-top: $grid-gap;
+//   padding-left: $grid-gap;
+//   padding-right: $grid-gap;
+//   justify-content: center;
 
-  @include bp(med) {
-    padding-left: 0;
-  }
-}
+//   @include bp(med) {
+//     padding-left: 0;
+//   }
+// }
 
 .header-title {
 	font-size: $h1*2;

@@ -3,11 +3,11 @@
 
 {% block header %}
 	{% include 'headers/header-front-page.twig' %}
-	<h1 class="page-title {# js-typed-src #}">{{post.title}}</h1>
-	{# <span class="js-typed page-title"></span> #}
+	{# <h1 class="screen-reader js-typed-src">{{post.title}}</h1>
+	<span aria-hidden="true" class="js-typed page-title"></span>
 
 	<p data-speed="40" class="page-tagline js-typed-src visually-hidden">{{post.tagline}}</p>
-	<p class="js-typed page-tagline"></p>
+	<p class="js-typed page-tagline"></p> #}
 
 {% endblock %}
 

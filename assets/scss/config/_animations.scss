@@ -1,4 +1,31 @@
+.ls-left-hand,
+.tease-project {
+	@include accelerate(transform);
+}
 
+@keyframes rotate-text-color {
+	0% {
+		color: $accent-vdark;
+	}
+	10% {
+		color: $alert-danger;
+	}
+	30% {
+		color: $accent-med;
+	}
+	50% {
+		color: $accent-dark;
+	}
+	70% {
+		color: $alert-danger;
+	}
+	90% {
+		color: $accent-med;
+	}
+	100% {
+		color: $accent-vdark;
+	}
+}
 
 @keyframes scroll-page {
 	0% {

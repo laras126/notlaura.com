@@ -1,5 +1,12 @@
 
+.main-header {
+  // overflow: hidden;
 
+  &.-svg {
+		padding-top: $h1*2;
+    border-bottom: 5px solid $accent-med;
+	}
+}
 
 
 // SVG
@@ -9,7 +16,7 @@ svg {
 }
 
 .site-logo svg {
-	fill: $accent-light;
+	fill: $accent-vdark;
 }
 
 // body {
@@ -58,6 +65,9 @@ svg {
 	background-image: linear-gradient(to bottom right, $accent-med, $yellow);
 
 	.main-header {
+		@include bp(med) {
+			padding-top: 0;
+		}
 		background-image: linear-gradient(to bottom right, $l-teal, $yellow);
 	}
 }

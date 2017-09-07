@@ -1749,6 +1749,7 @@ code {
   @media (min-width: 730px) {
     .menu-item-link {
       font-size: 1.1rem;
+      color: #242F4A;
       border-bottom: 1px solid transparent;
       border-top: 1px solid transparent;
       padding-top: 0.66rem;

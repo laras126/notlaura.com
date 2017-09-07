@@ -14,7 +14,7 @@
 // Fixed button. Bottom right at xsmall,
 // Top right at small-med
 .menu-btn {
-	@include button($alert-danger);
+	@include button($accent-dark);
 	position: fixed;
 	z-index: 100;
 	top: $base;
@@ -49,7 +49,7 @@
 	transition: all 0.25s ease-out;
 
 	&.js-open {
-		background-color: $yellow;
+		background-color: $accent-vdark;
 		border-left: 5px solid $accent-med;
 		right: 0;
 	}
@@ -72,7 +72,7 @@
 	font-weight: $font-weight-strong;
   display: block;
 	padding: $sml $grid-gap;
-	color: $accent-vdark;
+	color: $text-light;
 	border: 0;
 
   @include bp(med) {
@@ -90,7 +90,7 @@
     }
 
     &:hover {
-      color: $accent-vlight;
+      color: $accent-med;
       background-color: transparent;
       border-bottom: $accent-border;
       border-top: $accent-border;

@@ -22,7 +22,7 @@
 // Get an array of all elements to be typed.
 const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 const TYPED_ELS = document.querySelectorAll('.js-typed');
-const TYPE_SPEED = 60,
+const TYPE_SPEED = 50,
 	SHOW_CURSOR = false;
 
 var options = {
@@ -87,11 +87,12 @@ function panel1Callback() {
 	revealHelper(document.querySelector('.btn-next'));
 }
 
+
 function panel2Callback() {
 	let target = document.querySelector('.btn-next');
 
-	alert('holla');
-
+	// TODO: in vanilla JS
+	// https://stackoverflow.com/questions/15521081/jquery-animate-in-pure-javascript
 	jQuery('html,body').animate({
 		scrollTop: (target.offsetTop + target.getBoundingClientRect().height)
 	}, 500);

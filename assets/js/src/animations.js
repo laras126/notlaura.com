@@ -81,3 +81,27 @@ function runLaraWaveAnimation() {
 // if (window.location.pathname == "/") {
 	// runLaraWaveAnimation();
 // }
+
+// const string = document.querySelector(".panel-title").textContent;
+
+// const array = string.split("");
+
+// var markup = "";
+
+// array.forEach(function(element) {
+// 	let span = `<span>${element}</span>`;
+// 	markup += span;
+// }, this);
+
+// document.querySelector(".panel-title").innerHTML = markup;
+// const spans = document.querySelectorAll('.panel-title span');
+
+const panelTitle = document.querySelector('.panel-title');
+
+var tl = new TimelineLite();
+
+TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
+
+// tl.from('.lara-name path', 1, { drawSVG: 0 } );
+
+// tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});

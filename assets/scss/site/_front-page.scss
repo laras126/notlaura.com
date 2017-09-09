@@ -1,51 +1,91 @@
+@mixin js-reveal {
+	visibility: hidden;
+	opacity: 0;
+}
 
+
+
+.home .main-content {
+	min-height: 200vh;
+}
 
 .front-page-header {
-	padding-top: $h1*2;
-	// min-height: 70vh;
-	background-image: linear-gradient(to top right, $yellow, $white);
-	display: flex;
-	align-items: flex-end;
+	// padding-top: $h1*2;
+
+	// display: flex;
+
+	// background-image: linear-gradient(to top right, $accent-light, $white);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+
+		@include bp(large) {
+			background-size: auto 100%;
+		}
+	// display: flex;
+	// align-items: flex-start;
 	// padding-top: 5rem;
 
 }
 
-.lara-character {
-	.js & {
-		visibility: hidden;
-		opacity: 0;
-	}
-	height: 70vh;
-	display: block;
-	margin: 0 auto;
+.scene > * {
+	max-width: 600px;
 }
+
+.front-page-img {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	// width: 100%;
+	max-height: 50vh;
+
+	@include bp(med) {
+		width: auto;
+	}
+
+	&-caption {
+		max-width: 40vw;
+		font-size: $sml;
+	}
+}
+
+// .lara-character {
+// 	.js & {
+// 		visibility: hidden;
+// 		opacity: 0;
+// 	}
+// 	height: 70vh;
+// 	display: block;
+// 	margin: 0 auto;
+// }
 
 .grid-panel {
 	@include bp(med) {
 		display: flex;
-		// grid-column-gap: $grid-gap;
-		// grid-template-columns: repeat(6, 1fr);
 	}
 }
 
 
-.panel p {
-	font-size: $h4;
-}
+// .panel p {
+// 	font-size: $h4;
+// 	&.highlight	{
+// 		font-size: $h3;
+// 	}
+// }
 
 .panel-1 {
 	// background: $white;
 }
 
 .panel-2 {
-	background-color: #B4CDFC;
+	// background-color: #B4CDFC;
 }
 
 .panel-svg {
 	@include bp(med) {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: flex-end;
 		// grid-column: span 2;
 	}
 }
@@ -72,15 +112,32 @@
 
 .panel-title {
 	padding-top: 0;
-	font-size: $h1;
+	// font-size: $h1;
+
 	.rotate-colors {
 		animation: rotate-text-color 10s forwards;
 	}
 }
 
-.panel-inner {
-	max-width: 600px;
-	padding: $grid-gap;
-	// background-color: $accent-vdark;
+.highlight-letter {
+	font-weight: $font-weight-strong;
+	animation: rotate-text-color 2s infinite;
 }
 
+.btn-next {
+	// Reset btn styles
+	background: none;
+	border: 0;
+	padding: 0;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: none;
+	}
+
+	// Reveal styles
+	@include js-reveal;
+	@include accelerate(transform);
+	transform: scale(0.5);
+}

@@ -25,7 +25,8 @@ var gulp = require('gulp'),
 // Put JS files into array
 var babelFileList = [
   './assets/js/src/main.js',
-  './assets/js/src/animations.js'
+  './assets/js/src/animations.js',
+  './assets/js/src/typing.js'
 ];
 
 // var entryPoint = './assets/js/src/main.js';

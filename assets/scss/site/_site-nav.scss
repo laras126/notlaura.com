@@ -5,24 +5,27 @@
 
 
 
-.site-nav {
-
-
-}
-
 
 // Fixed button. Bottom right at xsmall,
 // Top right at small-med
 .menu-btn {
 	@include button($accent-dark);
-	position: fixed;
-	z-index: 100;
-	top: $base;
-	right: $base;
+	position: relative;
+	z-index: 99;
+
+	.home & {
+		background: $accent-vlight;
+		border-color: $accent-light;
+		color: $text-dark;
+	}
+	// position: fixed;
+	// z-index: 100;
+	// top: $base;
+	// right: $base;
 
 	@include bp(small) {
-		top: $base;
-		bottom: auto;
+		// top: $base;
+		// bottom: auto;
 	}
 
 	@include bp(med) {
@@ -37,7 +40,7 @@
 
 	position: fixed;
 	top: 0;
-	z-index: 99;
+	z-index: 98;
 	min-width: 50vw;
 	height: 100vh;
 

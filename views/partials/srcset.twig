@@ -3,4 +3,4 @@
      class="lazyload{{class ? ' ' ~ class}}"
      data-srcset="{{function('wp_get_attachment_image_srcset', TimberImage(img).id, 'medium' )}}"
      sizes="(max-width: 1024px) 100vw, 1024px"
-     src="{{function('wp_get_attachment_image_url', img.id, 'thumbnail')}}"></img>
+     src="{{function('wp_get_attachment_image_url', TimberImage(img).id, 'thumbnail')}}">

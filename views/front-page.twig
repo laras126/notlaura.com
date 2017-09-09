@@ -2,7 +2,7 @@
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
 {% block header %}
-	{% include 'headers/header-front-page.twig' %}
+	{# {% include 'headers/header-front-page.twig' %} #}
 	{# <h1 class="screen-reader js-typed-src">{{post.title}}</h1>
 	<span aria-hidden="true" class="js-typed page-title"></span>
 
@@ -12,6 +12,87 @@
 {% endblock %}
 
 {% block content %}
+
+<section class="scene">
+	<div class="panel" id="panel-1">
+
+		<span class="js-typed-src">
+			<h2 class="panel-title">Hey! <span hidden>^100</span><br> My name is <span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h2>
+		</span>
+		<span class="js-typed"></span>
+
+		{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img' } %}
+
+		<span class="js-typed-src" data-callback="panel1Callback"></span>
+		<span class="js-typed" aria-hidden="true"></span>
+
+		<button class="btn-next">
+			{% include "svgs/arrow-down.svg" %}
+		</button>
+
+	</div>
+{# {# #}
+
+
+	<div class="panel-2">
+		<span class="js-typed-src" data-callback="panel2Callback">
+			<h2 class="rotate-colors"><span hidden>^200</span>That's <br>L -<span hidden>^50</span> A -<span hidden>^50</span> R -<span hidden>^50</span> A</span>.</h2>
+			<p class="lead">You know, like Lara Croft, Tomb Raider,<span hidden>^100</span> or like <em>the</em> Lara from Dr. Zhivago...<span hidden>^100</span> depending on your generation.</p>
+		</span>
+		<span class="js-typed" aria-hidden="true"></span>
+	</div>
+
+	<button class="skip-typing-btn" aria-hidden="true">Skip Typing Effect</button>
+
+</section>
+
+<!--
+	<div class="panel-2 panel">
+		<span class="js-typed-src">
+			<p class="highlight">That's <span class="highlight-letter">L <span hidden>^100span> A <span hidden>^100</span> R <span hidden>^100</span> A</span>.</p>
+			<p>Like Lara Croft, or like Lara from Dr. Zhivago...depending on your generation.</p>
+		</span>
+		<span class="js-typed"></span>
+	</div>
+
+	<div class="panel-3 panel">
+		{# <span class="js-typed-src"> #}
+			<p>Now I'd like to tell you about what I do. Would you like the techie version or the non-techie version?</p>
+			<button class="btn">&larr; Techie</button>
+			<button class="btn">Non-Techie &rarr;</button>
+		{# </span> #}
+		{# <span class="js-typed"></span> #}
+	</div>
+</section>
+-->
+
+{#
+<section class="scene -non-techie">
+	<header>
+		<h2 class="panel-title">I make websites!</h2>
+	</header>
+</section>
+
+<section class="scene -techie">
+	<header>
+		<h2 class="panel-title">I'm a front-end web developer.</h2>
+		A hybrid designer/developer, more on the UI side of things. Not a heavy-duty JavaScripter, but I aspire to be.
+	</header>
+</section> #}
+
+
+        {# <span class="js-typed-src">
+
+          <h2 class="panel-title">That's<br> L ^300 A ^300 R ^300 A.</h2>
+          <h2>Like Lara Croft, or like Lara from Dr. Zhivago...depending on your generation.</h2>
+
+          <h2>While I <em>definitely</em> do awesome things, raiding tombs and caring for injured Russian soldiers are not among them.</h2>
+
+        </span>
+
+        <span class="js-typed"></span> #}
+
+
 	{# {% include 'partials/section-nav.twig'%} #}
 
 	{# <section class="page-section js-typed-src visually-hidden">
@@ -24,6 +105,6 @@
 	<section class="page-section js-typed"></section>
  #}
 
-	{% include "partials/section-loop.twig" %}
+	{# {% include "partials/section-loop.twig" %} #}
 
 {% endblock %}

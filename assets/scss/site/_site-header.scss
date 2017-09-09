@@ -1,15 +1,14 @@
 
 .site-header {
-  // background-image: linear-gradient($accent-vdark, transparent);
   // position: fixed;
+  // z-index: 99;
   // width: 100%;
-  // background-image: linear-gradient($accent-dark, $accent-vdark);
-  // background-color: rbga($accent-vdark, 0.9);
-  padding-top: $grid-gap;
-  padding-bottom: $grid-gap;
-  position: absolute;
-  z-index: 99;
-  // margin-bottom: $grid-gap;
+
+  padding-top: $grid-gap/2;
+  padding-bottom: $grid-gap/2;
+  border-bottom: $accent-border;
+  margin-bottom: $grid-gap/2;
+  // background: $accent-vlight;
 }
 
 .logo-img {
@@ -24,10 +23,9 @@
   padding-right: $grid-gap;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
   @include bp(med) {
-    flex-direction: row;
   }
   // grid-template-columns: 50% 50%;
   // grid-template-rows: minmax(auto, 100px) 1fr;
@@ -42,8 +40,8 @@
 }
 
 .site-header svg {
-  width: 200px;
-  max-width: 40vw;
+  width: 150px;
+  // max-width: 40vw;
 }
 
 .site-logo-link {
@@ -60,3 +58,15 @@
   color: $text-light;
 }
 
+.site-nav {
+  margin-left: auto;
+}
+
+// .site-header {
+//   height: 5rem;
+//   position: fixed;
+// }
+
+// .site-main {
+//   padding-top: 5rem;
+// }

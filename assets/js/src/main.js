@@ -39,6 +39,36 @@ jQuery(document).ready(function() {
 
 	console.log('Check it: https://github.com/laras126/notlaura.com');
 
+
+
+
+	// TODO move to typing.js
+	// console.log('hi');
+
+	// const TITLE_TEXT = document.querySelector('.type-title').innerHTML;
+
+	// $('.type-it').typeIt({
+	// 	speed: 100,
+	// 	cursor: false,
+	// 	lifeLike: false
+	// })
+	// 	.tiType(TITLE_TEXT);
+		// .tiSettings({ speed: 100 })
+		// .tiType('but now I am typing pretty fasst')
+		// .tiDelete(2)
+		// .tiType('t!')
+
+
+
+
+
+
+
+
+
+
+
+
 	// Pocket request
 
 	// $.ajax({
@@ -52,6 +82,8 @@ jQuery(document).ready(function() {
 	// }).done( function() {
 	// 	alert('stuff');
 	// });
+
+
 
 	// ----
 	// Animations (GreenSock)
@@ -87,74 +119,6 @@ jQuery(document).ready(function() {
 
 
 	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
-
-	// ----
-	// Typed.js
-	// ----
-
-	// Get an array of all elements to be typed.
-	const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-	const TYPED_ELS = document.querySelectorAll('.js-typed');
-	const TYPE_SPEED = 30,
-				SHOW_CURSOR = false;
-
-	var options = {
-		elIndex: 0,
-	  strings: [TYPED_SRCS[0].innerHTML],
-	  typeSpeed: TYPE_SPEED,
-	  showCursor: SHOW_CURSOR,
-	  onComplete: () => {
-  		typeNextInArray();
-	  },
-	}
-
-	// Start the typing elements, starting with index 0
-	var typed = new Typed(TYPED_ELS[0], options);
-
-	// Function to type next item in typedEls array
-	function typeNextInArray() {
-
-		// Move through the array
-		options.elIndex++;
-	  let newIndex = options.elIndex;
-		let currentEl = TYPED_SRCS[newIndex];
-
-	  // Allow for data attributes to provide some settings
-	  // let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-	  // let callbackFunc = "callback" in currentEl.dataset ? currentEl.dataset.callback : console.log('no call back');
-
-
-	  // New options set
-  	let newOptions = {
-  		elIndex: newIndex,
-  		startDelay: 500,
-  		strings: [TYPED_SRCS[newIndex].innerHTML],
-  		typeSpeed: newTypeSpeed,
-		  showCursor: SHOW_CURSOR,
-  		onComplete: () => {
-  			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-	  			return typeNextInArray();
-	  			// eval(currentEl.dataset.callback);
-	  		} else {
-	  			console.log('done');
-	  		}
-  		}
-  	}
-
-  	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
-	}
-
-
-	// function executeFunctionFromData(){
-	//   var d = 'hello' // Save `data-myattr` to d; (Obviously, this is just a hardcoded value as an example)
-	//   window[d](); // Execute the function.
-	// }
-
-
-
-	function executeFunctionFromData(data){
-    // var d = data;
-	}
 
 
 	/**

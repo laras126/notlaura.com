@@ -63,13 +63,13 @@ svg {
 // ----
 
 .blog  {
-	background-image: linear-gradient(to bottom right, $accent-med, $yellow);
+	// background-image: linear-gradient(to bottom right, $accent-med, $yellow);
+	background-image: linear-gradient(to bottom right, $white, $accent-light);
 
 	.main-header {
 		@include bp(med) {
-			padding-top: 0;
+			// padding-top: 0;
 		}
-		background-image: linear-gradient(to bottom right, $l-teal, $yellow);
 	}
 }
 
@@ -111,7 +111,14 @@ svg {
 
 }
 
+// Name
 
+.lara-name {
+	path {
+		stroke: $accent-dark;
+		stroke-width: 1px;
+	}
+}
 
 
 // ----

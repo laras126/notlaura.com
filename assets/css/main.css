@@ -639,9 +639,6 @@ svg {
 .teeth {
   fill: white; }
 
-.blog {
-  background-image: linear-gradient(to bottom right, #ffffff, #E0E6F2); }
-
 .blog-character {
   padding-left: 1.43rem;
   padding-right: 1.43rem; }
@@ -1288,9 +1285,8 @@ input[type="checkbox"]:focus {
   font-size: 0.88rem;
   position: fixed;
   bottom: 0;
-  right: 0;
-  z-index: 100;
-  opacity: 0; }
+  left: 0;
+  z-index: 101; }
 
 table {
   font-family: "Interface", Arial, sans-serif;
@@ -1480,22 +1476,24 @@ th {
   width: 100%;
   height: auto; }
 
-@media (min-width: 730px) {
-  .gallery,
-  .fig-large {
-    margin-right: -6.6rem;
-    margin-left: -1.43rem;
-    width: calc(100% + 3.3rem); } }
-
-@media (min-width: 1100px) {
-  .gallery,
-  .fig-large {
-    width: calc(100% + 8.03rem);
-    margin-right: -9.9rem; }
-    .blog .gallery, .blog
+.gallery,
+.fig-large {
+  margin-top: 1.1rem; }
+  @media (min-width: 730px) {
+    .gallery,
     .fig-large {
+      margin-right: -6.6rem;
       margin-left: -1.43rem;
-      width: calc(100% + 2.86rem); } }
+      width: calc(100% + 3.3rem); } }
+  @media (min-width: 1100px) {
+    .gallery,
+    .fig-large {
+      width: calc(100% + 8.03rem);
+      margin-right: -9.9rem; }
+      .blog .gallery, .blog
+      .fig-large {
+        margin-left: -1.43rem;
+        width: calc(100% + 2.86rem); } }
 
 figcaption,
 .gallery-caption,
@@ -1919,8 +1917,10 @@ code {
 
 .front-page-img {
   position: fixed;
+  z-index: -1;
   bottom: 0;
   right: 0;
+  opacity: 0.9;
   max-height: 50vh; }
   @media (min-width: 730px) {
     .front-page-img {
@@ -1937,9 +1937,28 @@ code {
 
 .panel-title {
   padding-top: 0; }
-  .panel-title .rotate-colors {
-    -webkit-animation: rotate-text-color 10s forwards;
-            animation: rotate-text-color 10s forwards; }
+
+.panel-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0; }
+  .panel-list ul {
+    padding-left: 1.43rem; }
+  .panel-list ul > li {
+    margin-bottom: 0.88rem; }
+
+.panel-list-item-title {
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.rotate-colors {
+  -webkit-animation: rotate-text-color 10s forwards;
+          animation: rotate-text-color 10s forwards; }
+
+.highlight {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3; }
 
 .highlight-letter {
   font-weight: 700;
@@ -1949,7 +1968,11 @@ code {
 .btn-next {
   background: none;
   border: 0;
-  padding: 0;
+  padding: 0; }
+  .btn-next:hover, .btn-next:active, .btn-next:focus {
+    background: none; }
+
+.js-reveal {
   visibility: hidden;
   opacity: 0;
   will-change: transform;
@@ -1962,8 +1985,6 @@ code {
   -webkit-transform: scale(0.5);
       -ms-transform: scale(0.5);
           transform: scale(0.5); }
-  .btn-next:hover, .btn-next:active, .btn-next:focus {
-    background: none; }
 
 .main-aside {
   margin-top: 1.43rem;

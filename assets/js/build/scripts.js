@@ -1246,7 +1246,7 @@ TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ea
 // Get an array of all elements to be typed.
 var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 var TYPED_ELS = document.querySelectorAll('.js-typed');
-var TYPE_SPEED = 50,
+var TYPE_SPEED = 20,
     SHOW_CURSOR = false;
 
 var options = {
@@ -1255,10 +1255,7 @@ var options = {
 	typeSpeed: TYPE_SPEED,
 	showCursor: SHOW_CURSOR,
 	onComplete: function onComplete() {
-		// var arrow = document.querySelector('.panel-icon-down');
-		// TweenMax.to(arrow, 0.5, {autoAlpha: 1});
-		// helloCallback();
-		typeNextInArray();
+		showNextSection('intro');
 	}
 
 	// Start the typing elements, starting with index 0
@@ -1271,7 +1268,6 @@ function typeNextInArray() {
 	options.elIndex++;
 	var newIndex = options.elIndex;
 	var currentEl = TYPED_SRCS[newIndex];
-	var nextBtn = document.querySelector('.btn-next');
 
 	// Allow for data attributes to provide some settings
 	var newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
@@ -1292,9 +1288,9 @@ function typeNextInArray() {
 			// TYPED_SRCS[newIndex].setAttribute('aria-hidden', 'true');
 
 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-				nextBtn.addEventListener('click', function () {
-					return typeNextInArray();
-				});
+
+				showNextSection(newIndex.toString());
+				// return typeNextInArray();
 			} else {
 				console.log('done');
 			}
@@ -1304,46 +1300,36 @@ function typeNextInArray() {
 	var typed = new Typed(TYPED_ELS[newIndex], newOptions);
 }
 
+function showNextSection(id) {
+	var nextBtn = document.querySelector('#panel-' + id + '-btn');
+	console.log(id);
+	reveal(nextBtn);
+
+	nextBtn.addEventListener('click', function (e) {
+		jQuery('html,body').animate({
+			scrollTop: nextBtn.offsetTop + nextBtn.getBoundingClientRect().height - 5
+		}, 500);
+		return typeNextInArray();
+	});
+}
+
+// Specific callbacks
+
 // TODO user closest LATER
 function panel1Callback() {
-	revealHelper(document.querySelector('.btn-next'));
+	console.log('p1 is done');
 }
 
 function panel2Callback() {
-	var target = document.querySelector('.btn-next');
-
-	// TODO: in vanilla JS
-	// https://stackoverflow.com/questions/15521081/jquery-animate-in-pure-javascript
-	jQuery('html,body').animate({
-		scrollTop: target.offsetTop + target.getBoundingClientRect().height
-	}, 500);
+	console.log('p2 callback');
 }
 
-function revealHelper(el) {
+function panel3Callback() {
+	console.log('p3 call back');
+}
+
+// Helpers
+
+function reveal(el) {
 	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1.2, ease: Bounce.easeOut, autoAlpha: 1 });
-};
-
-// function executeFunctionFromData(){
-//   var d = 'hello' // Save `data-myattr` to d; (Obviously, this is just a hardcoded value as an example)
-//   window[d](); // Execute the function.
-// }
-
-
-function executeFunctionFromData(data) {}
-// var d = data;
-
-
-// Closest polyfill
-
-if (!Element.prototype.matches) Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-
-if (!Element.prototype.closest) Element.prototype.closest = function (s) {
-	var el = this;
-	var ancestor = this;
-	if (!document.documentElement.contains(el)) return null;
-	do {
-		if (ancestor.matches(s)) return ancestor;
-		ancestor = ancestor.parentElement;
-	} while (ancestor !== null);
-	return null;
 };

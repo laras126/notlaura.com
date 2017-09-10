@@ -45,10 +45,11 @@
 }
 
 
-// Overhand width/margins
+// Overhang width/margins
 
 .gallery,
 .fig-large {
+	margin-top: $base;
 
 	@include bp(med) {
 		margin-right: -$h1*2;

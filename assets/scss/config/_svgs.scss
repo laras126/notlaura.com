@@ -64,9 +64,13 @@ svg {
 
 .blog  {
 	// background-image: linear-gradient(to bottom right, $accent-med, $yellow);
-	background-image: linear-gradient(to bottom right, $white, $accent-light);
+	// background-image: linear-gradient(to top right, $white, $l-teal);
 
 	.main-header {
+
+		// transform: scaleX(-1);
+		// filter: FlipH;
+
 		@include bp(med) {
 			// padding-top: 0;
 		}

@@ -32,10 +32,13 @@
 	max-width: 600px;
 }
 
+
 .front-page-img {
 	position: fixed;
+	z-index: -1; // below main content
 	bottom: 0;
 	right: 0;
+	opacity: 0.9;
 	// width: 100%;
 	max-height: 50vh;
 
@@ -113,10 +116,32 @@
 .panel-title {
 	padding-top: 0;
 	// font-size: $h1;
+}
 
-	.rotate-colors {
-		animation: rotate-text-color 10s forwards;
+.panel-list {
+	@include unstyle-list;
+
+	ul {
+		padding-left: $grid-gap;
 	}
+
+	ul > li {
+		margin-bottom: $sml;
+	}
+}
+
+.panel-list-item-title {
+	@include upperspace;
+}
+
+.rotate-colors {
+	animation: rotate-text-color 10s forwards;
+}
+
+.highlight {
+	font-size: $h3;
+	font-weight: $font-weight-strong;
+	line-height: $line-height-sm;
 }
 
 .highlight-letter {
@@ -135,8 +160,9 @@
 	&:focus {
 		background: none;
 	}
+}
 
-	// Reveal styles
+.js-reveal {
 	@include js-reveal;
 	@include accelerate(transform);
 	transform: scale(0.5);

@@ -17,7 +17,7 @@
 			<p class="header-lead">{{post.intro}}</p>
 			<div class="project-header-intro">
 				{{post.para_intro|wpautop}}
-				{% if post.project_link %}<a class="btn project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}
+				{% if post.project_link %}<a class="btn -has-icon project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}
 			</div>
 		</div>
 	</div>

@@ -9,31 +9,36 @@
 
 		<!-- <aside class="module-rail">
 			</aside> -->
-			{% if post.get_thumbnail %}
-				<div class="tease-thumb">
-					<img class="lazyload" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
+			<div class="tease-thumb">
+				<a href="{{post.link}}">
+					{% if post.get_thumbnail %}
+						<img class="lazyload" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
 					{# {% include "partials/srcset.twig" with {img : post.thumbnail} %} #}
+					{% endif %}
+					</a>
 				</div>
-			{% endif %}
 
 		<div class="tease-content">
 
 			<header class="tease-header">
 				<p class="tease-meta">{{post.date}} / 	{% for cat in post.categories %}{{cat.name}}{{loop.last ? ' ' : ', '}}{%
 	endfor %}</p>
-				<h3 class="tease-title"><a class="tease-title-link" href="{{post.link}}">{{post.title}}</a></h3>
-				<!-- {% include "partials/tease-meta.twig" %} -->
+				<h3 class="tease-title"><a href="{{post.link}}" class="tease-title-link">
+					{% if post.format == 'link' %}
+						{% include "svgs/link.twig" with { class: 'icon-inline' } %}
+					{% endif %}
+					{{post.title}}
+				</a></h3>
 			</header>
-
 
 			{% if post.post_excerpt and post.format != "video" %}
 				{{post.post_excerpt}}
 			{% elseif post.format == "video" %}
 				{{post.content}}
 			{% else %}
-				{{post.get_preview(50, false, "")}}
-
+				{{post.preview.length(50).read_more('').end(' [&hellip;]')}}
 			{% endif %}
+
 			<p>
 				<a class="link-more" href="{{post.link}}" title="{{post.title}}">Read More <span class="more-arrow">&rarr;</span></a>
 			</p>

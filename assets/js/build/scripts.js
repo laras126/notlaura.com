@@ -1139,7 +1139,9 @@ function runBubbleAnimation() {
 	    $text = document.querySelectorAll(".page-title"),
 	    $bubbles = document.querySelectorAll(".bc-bubble"),
 	    $body = document.querySelectorAll(".bc-body"),
-	    $mouth = document.querySelector(".bc-mouth");
+
+	// $people = document.querySelectorAll(".people-list li a"),
+	$mouth = document.querySelector(".bc-mouth");
 	$innerMouth = document.querySelector(".bc-inner-mouth"), $eyeball = document.querySelector(".bc-eyeball");
 
 	var tl = new TimelineLite();
@@ -1154,6 +1156,14 @@ function runBubbleAnimation() {
 		$bubbles[i].style.opacity = 1;
 		$bubbles[i].style.fill = color;
 	}
+
+	// // Randomly people list
+	// for (var i = 0; i < $people.length; i++) {
+	// 	let color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+	// 	$bubbles[i].style.opacity = 1;
+	// 	$people[i].style.fill = color;
+	// }
 
 	tl.to($main, 1, { left: 0, ease: Power2.easeOut });
 
@@ -1331,5 +1341,5 @@ function panel3Callback() {
 // Helpers
 
 function reveal(el) {
-	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1.2, ease: Bounce.easeOut, autoAlpha: 1 });
+	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Bounce.easeOut, autoAlpha: 1 });
 };

@@ -121,10 +121,6 @@
 .panel-list {
 	@include unstyle-list;
 
-	ul {
-		padding-left: $grid-gap;
-	}
-
 	ul > li {
 		margin-bottom: $sml;
 	}

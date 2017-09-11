@@ -40,9 +40,9 @@ gulp.task('sass', function() {
       }
     }))
     // TODO enable
-    .pipe(autoprefix({
-        browsers: 'last 5 versions'
-    }))
+    // .pipe(autoprefix({
+    //     browsers: 'last 5 versions'
+    // }))
     .pipe(gulp.dest('./assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())

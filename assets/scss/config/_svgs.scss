@@ -20,6 +20,10 @@ svg {
 	fill: $accent-vdark;
 }
 
+.social-svg {
+
+}
+
 // body {
 // 	background-color: #303030;
 // }
@@ -62,20 +66,6 @@ svg {
 // Blog Character
 // ----
 
-.blog  {
-	// background-image: linear-gradient(to bottom right, $accent-med, $yellow);
-	// background-image: linear-gradient(to top right, $white, $l-teal);
-
-	.main-header {
-
-		// transform: scaleX(-1);
-		// filter: FlipH;
-
-		@include bp(med) {
-			// padding-top: 0;
-		}
-	}
-}
 
 .blog-character {
 	padding-left: $grid-gap;

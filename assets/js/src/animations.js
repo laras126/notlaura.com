@@ -12,6 +12,7 @@ function runBubbleAnimation() {
 			$text = document.querySelectorAll(".page-title"),
 			$bubbles = document.querySelectorAll(".bc-bubble"),
 			$body = document.querySelectorAll(".bc-body"),
+			// $people = document.querySelectorAll(".people-list li a"),
 			$mouth = document.querySelector(".bc-mouth");
 			$innerMouth = document.querySelector(".bc-inner-mouth"),
 			$eyeball = document.querySelector(".bc-eyeball");
@@ -28,6 +29,14 @@ function runBubbleAnimation() {
 		$bubbles[i].style.opacity = 1;
 		$bubbles[i].style.fill = color;
 	}
+
+	// // Randomly people list
+	// for (var i = 0; i < $people.length; i++) {
+	// 	let color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+	// 	$bubbles[i].style.opacity = 1;
+	// 	$people[i].style.fill = color;
+	// }
 
 	tl.to($main, 1, { left: 0, ease: Power2.easeOut });
 

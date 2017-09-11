@@ -57,15 +57,12 @@
 	display: inline-block;
 }
 
-.project-launch-btn {
-	display: inline-flex;
-	margin-right: auto;
-	flex-wrap: wrap;
+.btn.-has-icon {
+	display: flex;
+	// flex-wrap: wrap;
 	align-content: center;
 	justify-content: flex-start;
-	flex: 0;
-	margin-bottom: $grid-gap;
-	margin-top: $grid-gap;
+	// flex: 0;
 
 	.icon-inline {
 		will-change: transform;
@@ -76,6 +73,11 @@
 			fill: $accent-light; // override default icon style
 		}
 	}
+}
+
+.project-launch-btn {
+	margin-bottom: $grid-gap;
+	margin-top: $grid-gap;
 }
 
 .skip-typing-btn {

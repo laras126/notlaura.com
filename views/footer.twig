@@ -1,18 +1,5 @@
-<div class="inner">
-	<ul class="widgets -footer">
 
-		<li class="widget">
-			<h5 class="widget-title">Connect</h5>
-			<ul class="list-social">
-				{% for type, url in social %}
-					<li>
-						<a href="{{url}}" target="blank">
-							{% include 'partials/svg.twig' with {'file': type, 'prefix': 'icon' } %}
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</li> <!-- /.widget -->
+	<ul class="widgets -footer">
 
 		<li class="widget">
 			<h5 class="widget-title">Newsletter</h5>
@@ -44,7 +31,7 @@
 		</li>
 
 	</ul>
-</div>
+{# </div> #}
 
 <div class="footer-colophon">
 	<div class="inner">

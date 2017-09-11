@@ -130,13 +130,16 @@ h5 {
 		color: $text-med;
 	}
 
-	// font-family: $body-font;
 	font-weight: $font-weight-base;
 }
 
 h6 {
 	font-size: $h6;
 	margin-top: $h4;
+}
+
+ul, ol {
+	padding-left: $grid-gap;
 }
 
 p {
@@ -156,13 +159,24 @@ strong {
 
 blockquote {
   // margin-top: $h4;
-  margin-right: $h4;
-  margin-bottom: $h3;
-	// padding-left: $h3;
+  // margin-right: $h4;
+	margin-left: 0;
+	margin-right: 0;
 
-  // border-left: $accent-border;
+	padding-left: $grid-gap;
+	padding-right: $grid-gap;
+	padding-top: $base;
+	padding-bottom: $base;
+
+	> p {
+		margin-top: 0;
+	}
+
+	background-image: linear-gradient(to bottom right, $accent-vlight, rgba($body-bkgd, 0));
+
+
   font-style: italic;
-	// overflow: visible;
+
 
 	.special {
 		color: $accent-med;

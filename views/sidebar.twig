@@ -1,9 +1,6 @@
 <ul class="widgets -blog">
 	<li class="widget">
-		{# TODO: not great to hard code image ID #}
-		{% include "partials/srcset.twig" with { img: TimberImage(3127), class: 'about-widget-thumb' } %}
-		<h4 class="widget-title">Hello!</h4>
-		<p>I'm Lara...not <em>Laura</em>, though that's a nice name too.</p>
+		{{ include('partials/hello-widget.twig') }}
 	</li>
 	{{ blog_widgets }}
 </ul>

@@ -7,7 +7,6 @@
  * @subpackage  Timber
  */
 
-
 $context = array();
 $context['blog_widgets'] = Timber::get_widgets('blog_widgets');
 

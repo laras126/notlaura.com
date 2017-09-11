@@ -55,16 +55,6 @@
 			$context['main_nav'] = new TimberMenu('main_nav');
 			$context['footer_nav'] = new TimberMenu('footer_nav');
 			$context['footer_widgets'] = Timber::get_sidebar('sidebar.php');
-
-			$social = array(
-				'twitter' => 'http://twitter.com/laras126',
-				'linkedin' => 'http://www.linkedin.com/in/notlaura/',
-				'github' => 'http://github.com/laras126',
-				'rss' => 'https://feeds.feedburner.com/notlaura'
-			);
-
-			$context['social'] = $social;
-
 			$context['site'] = $this;
 			return $context;
 		}

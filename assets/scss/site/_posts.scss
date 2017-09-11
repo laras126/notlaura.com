@@ -4,11 +4,6 @@
 	padding-bottom: $h4;
 }
 
-
-.blog {
-	// background-image: linear-gradient(to top, #FC625D, $yellow);
-}
-
 // Post Teases
 
 .tease-loop {
@@ -50,8 +45,14 @@
 
 .tease-post {
 	margin-bottom: $grid-gap;
-	padding: $grid-gap;
+	padding-top: $grid-gap;
+	padding-bottom: $grid-gap;
 	background: $body-bkgd;
+
+	@include bp(small) {
+		padding-right: $grid-gap;
+		padding-left: $grid-gap;
+	}
 
 	@include bp(med) {
 		margin-bottom: 0;

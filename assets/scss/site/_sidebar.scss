@@ -2,12 +2,20 @@
 .main-aside {
 	margin-top: $grid-gap;
 	padding-right: $grid-gap;
+	padding-left: $grid-gap;
+
+	@include bp(large) {
+		padding: 0;
+	}
 }
 
 .main-aside > .widgets {
-  display: grid;
-  grid-auto-flow: column dense;
-  align-items: center;
+	@include bp(small) {
+		display: grid;
+		grid-auto-flow: column dense;
+		grid-column-gap: $grid-gap;
+		align-items: start;
+	}
 
   @include bp(large) {
     display: block;
@@ -18,16 +26,77 @@
 .widget {
 
 	.-blog & {
-		color: $text-light;
+		//color: $text-light;
 		margin-bottom: $grid-gap;
 		padding: $grid-gap;
-		background-image: linear-gradient(to bottom right, $accent-dark, $accent-vdark);
+		// background-image: linear-gradient(to bottom right, $accent-med, $body-bkgd);
+		background-color: $body-bkgd;
 		a {
-			color: $text-light;
+			//color: $text-light;
 			&:hover {
-				color: $accent-light;
+				// color: $accent-light;
 			}
 		}
+	}
+}
+
+.people-list {
+	@include unstyle-list;
+	margin-top: $sml;
+	display: flex;
+	flex-wrap: wrap;
+	// justify-content: space-around;
+
+
+	li {
+		margin-bottom: $sml/2;
+		margin-right: $sml/2;
+	}
+
+	a {
+		padding: $sml/4 $sml/2;
+		display: inline-block;
+		background-image: linear-gradient(to right, $accent-med, darken($accent-med, 10%));
+		color: $text-light;
+		// border-bottom: 0;
+
+		&:hover {
+			@include bp(med) {
+				transition: 0.2s ease all;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+}
+
+.pocket-list {
+	border-top: $base;
+	list-style: none;
+	padding-left: $sml;
+
+	li {
+		will-change: transform;
+		position: relative;
+		margin-bottom: $sml/2;
+
+		&:before {
+			position: absolute;
+			left: -$sml;
+			content: '\000BB';
+			color: $l-teal;
+		}
+
+		&:hover {
+			@include bp(med) {
+				transition: 0.2s ease all;
+				transform: translateX(5px);
+				&:before {
+					color: $accent-dark;
+				}
+			}
+		}
+	// list-style-type: disc;
 	}
 }
 

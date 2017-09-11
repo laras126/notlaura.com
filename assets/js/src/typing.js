@@ -117,7 +117,7 @@ function panel3Callback() {
 // Helpers
 
 function reveal(el) {
-	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1.2, ease: Bounce.easeOut, autoAlpha: 1 });
+	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Bounce.easeOut, autoAlpha: 1 });
 };
 
 

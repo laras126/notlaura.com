@@ -4,6 +4,20 @@
 	padding-bottom: $h4;
 }
 
+.blog-header {
+	background: linear-gradient(to top right, $accent-light, $body-bkgd);
+	&.-full {
+		grid-column: 1 / -1;
+	}
+
+	&.-half {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+}
+
+
 // Post Teases
 
 .tease-loop {

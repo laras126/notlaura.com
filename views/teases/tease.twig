@@ -3,6 +3,18 @@
 	{% set grid = true %}
 {% endif %}
 
+{# Show small character if first post is not gridded,
+	show large character if it is #}
+{% if loop.index == 1 %}
+	<header class="blog-header{{grid ? ' -full': ' -half'}}">
+		<h1 class="screen-reader">Blog</h1>
+		{% if	grid == false %}
+			{% include "svgs/character-1.svg" %}
+		{% else %}
+			{% include "svgs/blog.svg" %}
+		{% endif %}
+	</header>
+{% endif %}
 
 <article class="tease-{{post.post_type}}{{grid ? ' grid-tease'}}" id="tease-{{post.ID}}">
 	{% block content %}

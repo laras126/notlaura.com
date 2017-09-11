@@ -598,9 +598,6 @@ svg {
 .site-logo svg {
   fill: #242F4A; }
 
-.character {
-  max-width: 150px; }
-
 .eyes {
   fill: #fff; }
 
@@ -1605,16 +1602,8 @@ pre[class*="language-"] {
   box-sizing: border-box; }
 
 body {
+  background: #D4EBF3;
   word-wrap: break-word; }
-  @media (min-width: 520px) {
-    body {
-      background: #D4EBF3; } }
-  @media (min-width: 730px) {
-    body {
-      background: #FFFDEC; } }
-  @media (min-width: 1100px) {
-    body {
-      background-image: linear-gradient(to top right, #ffffff, #f4f7f9); } }
   @media (min-width: 520px) {
     body {
       word-wrap: normal; } }
@@ -1748,9 +1737,6 @@ code {
 
 .site-icon {
   color: #ffffff; }
-
-.site-nav {
-  margin-left: auto; }
 
 .nav-rail {
   position: sticky;
@@ -2110,6 +2096,15 @@ code {
 
 .header-single {
   padding-bottom: 1.43rem; }
+
+.blog-header {
+  background: linear-gradient(to top right, #E0E6F2, #ffffff); }
+  .blog-header.-full {
+    grid-column: 1 / -1; }
+  .blog-header.-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
 
 .tease-loop {
   margin-top: 1.43rem; }

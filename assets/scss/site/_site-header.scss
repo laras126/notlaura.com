@@ -1,14 +1,18 @@
 
 .site-header {
-  // position: fixed;
-  // z-index: 99;
-  // width: 100%;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
 
   padding-top: $grid-gap/2;
   padding-bottom: $grid-gap/2;
   border-bottom: $accent-border;
   margin-bottom: $grid-gap/2;
-  // background: $accent-vlight;
+  background: $accent-vlight;
+}
+
+.site-main {
+  padding-top: $h2;
 }
 
 .logo-img {

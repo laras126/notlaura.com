@@ -4,8 +4,18 @@
 	padding-bottom: $h4;
 }
 
+.blog {
+	// background-color: $accent-dark;
+}
+
 .blog-header {
-	background: linear-gradient(to top right, $accent-light, $body-bkgd);
+	background: linear-gradient(to top, $accent-light, $body-bkgd);
+	margin-bottom: $grid-gap;
+
+	@include bp(med) {
+		margin-bottom: 0;
+	}
+
 	&.-full {
 		grid-column: 1 / -1;
 	}
@@ -17,6 +27,10 @@
 	}
 }
 
+.blog-title {
+	font-size: $h1*2;
+	text-align: center;
+}
 
 // Post Teases
 
@@ -61,7 +75,8 @@
 	margin-bottom: $grid-gap;
 	padding-top: $grid-gap;
 	padding-bottom: $grid-gap;
-	background: $body-bkgd;
+	border: 1px solid $accent-light;
+	background: $white;
 
 	@include bp(small) {
 		padding-right: $grid-gap;

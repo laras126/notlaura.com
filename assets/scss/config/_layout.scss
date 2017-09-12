@@ -117,7 +117,9 @@ $rail: minmax(70px, 175px);
   padding-right: $grid-gap;
 
   @include bp(large) {
-    padding: 0;
+    .blog & {
+      padding: 0;
+    }
   }
 }
 

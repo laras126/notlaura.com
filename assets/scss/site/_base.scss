@@ -10,7 +10,7 @@
 
 body {
 
-	background: #D4EBF3;
+	background: $body-bkgd;
 	// For testing
 	@include bp(small) {
   }

@@ -21,14 +21,18 @@
 
 		<!-- <aside class="module-rail">
 			</aside> -->
+		{% if post.thumbnail %}
+
 			<div class="tease-thumb">
 				<a href="{{post.link}}">
 					{% if post.get_thumbnail %}
-						<img class="lazyload" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
+					<img class="lazyload" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
 					{# {% include "partials/srcset.twig" with {img : post.thumbnail} %} #}
 					{% endif %}
-					</a>
-				</div>
+				</a>
+			</div>
+
+		{% endif %}
 
 		<div class="tease-content">
 

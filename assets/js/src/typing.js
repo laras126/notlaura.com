@@ -22,7 +22,7 @@
 // Get an array of all elements to be typed.
 const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 const TYPED_ELS = document.querySelectorAll('.js-typed');
-const TYPE_SPEED = 20,
+const TYPE_SPEED = 2,
 	SHOW_CURSOR = false;
 
 var options = {
@@ -31,7 +31,9 @@ var options = {
 	typeSpeed: TYPE_SPEED,
 	showCursor: SHOW_CURSOR,
 	onComplete: () => {
-		showNextSection('intro');
+		let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+		showButtons(nextBtn);
+		clickToNextSection(options.elIndex+1, nextBtn);
 	},
 }
 
@@ -52,7 +54,7 @@ function typeNextInArray() {
 	let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
 
 	// Callbacks must be defined below
-	let callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log('no call back');
+	let callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
 
 	// New options set
 	let newOptions = {
@@ -67,8 +69,19 @@ function typeNextInArray() {
 			// TYPED_SRCS[newIndex].setAttribute('aria-hidden', 'true');
 
 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
+				let nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
 
-				showNextSection(newIndex.toString());
+				if (newIndex == 2) {
+					let nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
+
+					showButtons(nextBtnGroup);
+					clickToNextSection(newIndex.toString(), nextBtnGroup);
+
+				} else {
+					showButtons(nextBtn);
+					clickToNextSection(newIndex.toString(), nextBtn);
+				}
+
 					// return typeNextInArray();
 
 			} else {
@@ -81,19 +94,56 @@ function typeNextInArray() {
 }
 
 
-function showNextSection(id) {
-	let nextBtn = document.querySelector('#panel-' + id + '-btn');
-	console.log(id);
-	reveal(nextBtn);
+function clickToNextSection(index, btn) {
+	console.log('#panel-' + (+index - 1) + '-btn');
+	// Panel 2 has two options for next places to type
+	if( index == '2' ) {
+		btn.forEach(function(element) {
+			element.addEventListener('click', (e) => {
+				let type = element.dataset.contentRef;
+				let content = document.getElementById(type).innerHTML;
+				let container = document.getElementById('typeContentHolder');
+				let nextPanelBtn = document.getElementById('panel-3-btn');
 
-	nextBtn.addEventListener('click', (e) => {
-		jQuery('html,body').animate({
-			scrollTop: (nextBtn.offsetTop + nextBtn.getBoundingClientRect().height) - 5
-		}, 500);
-		return typeNextInArray();
-	});
+				container.dataset.type = type;
+				container.innerHTML = content;
+				nextPanelBtn.dataset.contentRef = type + '-2';
+
+				console.log(type, content, container);
+
+				return typeNextInArray();
+			});
+		}, this);
+
+	} else if( index == '3' ) {
+		btn.addEventListener('click', (e) => {
+			let type = btn.dataset.contentRef;
+			let content = document.getElementById(type).innerHTML;
+			let container = document.getElementById('typeContentHolder2');
+
+			container.dataset.type = type;
+			container.innerHTML = content;
+
+			return typeNextInArray();
+		});
+	} else {
+		btn.addEventListener('click', (e) => {
+			return typeNextInArray();
+		});
+	}
+
 }
 
+
+function showButtons(btn) {
+	console.log(typeof btn);
+	// Mark the stagger boolean true if selecting multiple buttons
+	if( btn.length > 1) {
+		reveal(btn, true);
+	} else {
+		reveal(btn);
+	}
+}
 
 
 
@@ -111,15 +161,25 @@ function panel2Callback() {
 
 function panel3Callback() {
 	console.log('p3 call back');
+	let toHide = document.querySelector('.js-hide');
+	hide(toHide);
 }
 
 
 // Helpers
 
-function reveal(el) {
-	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Bounce.easeOut, autoAlpha: 1 });
+function reveal(el, stagger = false) {
+	// Stagger aimation if more than one element comes in.
+	if (stagger == true) {
+		TweenMax.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+	} else {
+		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
+	}
 };
 
+function hide(el) {
+	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
+}
 
 
 

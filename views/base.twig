@@ -36,7 +36,7 @@
 
     <div class="inner{{sidebar ? ' grid-content'}}">
 
-      <div class="main-content">
+      <div class="main-content{{ function('is_front_page') == true ? ' module -article' }}">
         {% block content %}
             Sorry, no content
         {% endblock %}

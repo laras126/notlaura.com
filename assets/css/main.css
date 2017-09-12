@@ -380,7 +380,7 @@ th {
   padding-left: 1.43rem;
   padding-right: 1.43rem; }
   @media (min-width: 1100px) {
-    .main-content {
+    .blog .main-content {
       padding: 0; } }
 
 @media (min-width: 1100px) {
@@ -815,7 +815,7 @@ blockquote {
   padding-right: 1.43rem;
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
-  background-image: linear-gradient(to bottom right, #f4f7f9, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom right, #f4f7f9, rgba(244, 247, 249, 0));
   font-style: italic; }
   blockquote > p {
     margin-top: 0; }
@@ -1602,7 +1602,7 @@ pre[class*="language-"] {
   box-sizing: border-box; }
 
 body {
-  background: #D4EBF3;
+  background: #f4f7f9;
   word-wrap: break-word; }
   @media (min-width: 520px) {
     body {
@@ -1630,7 +1630,7 @@ code {
 
 .tease-post,
 .tease-project {
-  background-color: #ffffff; }
+  background-color: #f4f7f9; }
 
 .menu-btn {
   background: #0a5276;
@@ -1715,10 +1715,17 @@ code {
         border-top: 1px solid rgba(39, 170, 225, 0.4); } }
 
 .site-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
   padding-top: 0.715rem;
   padding-bottom: 0.715rem;
   border-bottom: 1px solid rgba(39, 170, 225, 0.4);
-  margin-bottom: 0.715rem; }
+  margin-bottom: 0.715rem;
+  background: #f4f7f9; }
+
+.site-main {
+  padding-top: 2.64rem; }
 
 .logo-img {
   height: 100px;
@@ -1833,9 +1840,6 @@ code {
     .page-title {
       font-size: 15vw; } }
 
-.home .main-content {
-  min-height: 200vh; }
-
 .front-page-header {
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1844,8 +1848,10 @@ code {
     .front-page-header {
       background-size: auto 100%; } }
 
-.scene > * {
-  max-width: 600px; }
+.scene {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .front-page-img {
   position: fixed;
@@ -1860,6 +1866,31 @@ code {
   .front-page-img-caption {
     max-width: 40vw;
     font-size: 0.88rem; }
+
+.panel {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2.64rem; }
+  @media (min-width: 520px) {
+    .panel {
+      padding: 1.1rem; } }
+  .panel:before {
+    content: ' ';
+    border-left: 5px solid #27AAE1;
+    position: relative;
+    left: -10px; }
+  .panel:focus {
+    transition: .2s ease all;
+    outline: 5px solid #CC6698; }
+  .panel h2 {
+    margin-top: 0; }
+  @media (min-width: 730px) {
+    .panel {
+      margin-top: 3.3rem; } }
+  .panel p {
+    font-size: 1.43rem; }
 
 @media (min-width: 730px) {
   .grid-panel {
@@ -1894,7 +1925,9 @@ code {
 .btn-next {
   background: none;
   border: 0;
-  padding: 0; }
+  padding: 0;
+  margin-bottom: 1.43rem;
+  font-size: 3.3rem; }
   .btn-next:hover, .btn-next:active, .btn-next:focus {
     background: none; }
 
@@ -1929,7 +1962,7 @@ code {
 .-blog .widget {
   margin-bottom: 1.43rem;
   padding: 1.43rem;
-  background-color: #ffffff; }
+  background-color: #f4f7f9; }
 
 .people-list {
   list-style: none;
@@ -2098,13 +2131,21 @@ code {
   padding-bottom: 1.43rem; }
 
 .blog-header {
-  background: linear-gradient(to top right, #E0E6F2, #ffffff); }
+  background: linear-gradient(to top, #E0E6F2, #f4f7f9);
+  margin-bottom: 1.43rem; }
+  @media (min-width: 730px) {
+    .blog-header {
+      margin-bottom: 0; } }
   .blog-header.-full {
     grid-column: 1 / -1; }
   .blog-header.-half {
     display: flex;
     flex-direction: column;
     justify-content: flex-end; }
+
+.blog-title {
+  font-size: 6.6rem;
+  text-align: center; }
 
 .tease-loop {
   margin-top: 1.43rem; }
@@ -2138,6 +2179,7 @@ code {
   margin-bottom: 1.43rem;
   padding-top: 1.43rem;
   padding-bottom: 1.43rem;
+  border: 1px solid #E0E6F2;
   background: #ffffff; }
   @media (min-width: 520px) {
     .tease-post {
@@ -2311,10 +2353,10 @@ code {
   overflow: hidden; }
   .project-header .mask {
     padding-top: 3.3rem;
-    background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0)); }
+    background-image: linear-gradient(to top, #f4f7f9, rgba(244, 247, 249, 0.8) 60%, rgba(244, 247, 249, 0)); }
     @media (min-width: 730px) {
       .project-header .mask {
-        background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0)); } }
+        background-image: linear-gradient(to top, #f4f7f9, rgba(244, 247, 249, 0.7) 50%, rgba(244, 247, 249, 0)); } }
   .project-header .inner {
     margin-top: 3.3rem; }
     @media (min-width: 1100px) {
@@ -2329,7 +2371,7 @@ code {
     padding-left: 1.43rem;
     padding-right: 1.43rem;
     padding-top: 1.43rem;
-    background: #ffffff; }
+    background: #f4f7f9; }
     @media (min-width: 1100px) {
       .project-header .module-content {
         margin-left: -1.43rem;

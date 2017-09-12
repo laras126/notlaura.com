@@ -6,7 +6,7 @@
 
 
 .home .main-content {
-	min-height: 200vh;
+	// min-height: 200vh;
 }
 
 .front-page-header {
@@ -28,8 +28,18 @@
 
 }
 
+.scene {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// height: 80vh;
+	// padding-top: $h1;
+	// margin-top: $h2;
+	// overflow: auto;
+}
+
 .scene > * {
-	max-width: 600px;
+	// max-width: 600px;
 }
 
 
@@ -49,6 +59,40 @@
 	&-caption {
 		max-width: 40vw;
 		font-size: $sml;
+	}
+}
+
+.panel {
+	@include bp(small) {
+		padding: $base;
+	}
+
+	min-height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	&:before {
+		content: ' ';
+		border-left: 5px solid $accent-med;
+		position: relative;
+		left: -10px;
+	}
+	&:focus {
+		transition: .2s ease all;
+		outline: 5px solid $pink;
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+
+	margin-top: $h2;
+	@include bp(med) {
+		margin-top: $h1;
+	}
+
+	p {
+		font-size: $h4;
 	}
 }
 
@@ -146,10 +190,11 @@
 }
 
 .btn-next {
-	// Reset btn styles
 	background: none;
 	border: 0;
 	padding: 0;
+	margin-bottom: $grid-gap;
+	font-size: $h1;
 
 	&:hover,
 	&:active,

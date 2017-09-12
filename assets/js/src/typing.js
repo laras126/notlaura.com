@@ -22,7 +22,7 @@
 // Get an array of all elements to be typed.
 const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 const TYPED_ELS = document.querySelectorAll('.js-typed');
-const TYPE_SPEED = 2,
+const TYPE_SPEED = 30,
 	SHOW_CURSOR = false;
 
 var options = {

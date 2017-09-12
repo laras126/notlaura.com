@@ -174,11 +174,12 @@ jQuery(document).ready(function() {
 		.not('[href="#menu"]')
 		.on('click', function() {
   	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-    		var target = $(this.hash);
+				var target = $(this.hash);
+				var header_ht = $('.site-header').outerHeight()+70;
 	  		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	  		if (target.length) {
 	    		$('html,body').animate({
-	      			scrollTop: target.offset().top
+	      			scrollTop: target.offset().top - header_ht
 	    		}, 1000, function() {
 						var $target = $(target);
 						$target.focus();

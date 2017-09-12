@@ -1101,10 +1101,11 @@ jQuery(document).ready(function () {
 	$('a[href*=#]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
+			var header_ht = $('.site-header').outerHeight() + 70;
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top
+					scrollTop: target.offset().top - header_ht
 				}, 1000, function () {
 					var $target = $(target);
 					$target.focus();
@@ -1237,6 +1238,8 @@ TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ea
 // tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});
 'use strict';
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 // $('.type-it').typeIt({
 // 	// speed: 900,
 // 	lifeLike: true,
@@ -1256,7 +1259,7 @@ TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ea
 // Get an array of all elements to be typed.
 var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 var TYPED_ELS = document.querySelectorAll('.js-typed');
-var TYPE_SPEED = 20,
+var TYPE_SPEED = 30,
     SHOW_CURSOR = false;
 
 var options = {
@@ -1265,7 +1268,9 @@ var options = {
 	typeSpeed: TYPE_SPEED,
 	showCursor: SHOW_CURSOR,
 	onComplete: function onComplete() {
-		showNextSection('intro');
+		var nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+		showButtons(nextBtn);
+		clickToNextSection(options.elIndex + 1, nextBtn);
 	}
 
 	// Start the typing elements, starting with index 0
@@ -1283,7 +1288,7 @@ function typeNextInArray() {
 	var newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
 
 	// Callbacks must be defined below
-	var callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log('no call back');
+	var callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
 
 	// New options set
 	var newOptions = {
@@ -1298,8 +1303,18 @@ function typeNextInArray() {
 			// TYPED_SRCS[newIndex].setAttribute('aria-hidden', 'true');
 
 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
+				var nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
 
-				showNextSection(newIndex.toString());
+				if (newIndex == 2) {
+					var nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
+
+					showButtons(nextBtnGroup);
+					clickToNextSection(newIndex.toString(), nextBtnGroup);
+				} else {
+					showButtons(nextBtn);
+					clickToNextSection(newIndex.toString(), nextBtn);
+				}
+
 				// return typeNextInArray();
 			} else {
 				console.log('done');
@@ -1310,17 +1325,52 @@ function typeNextInArray() {
 	var typed = new Typed(TYPED_ELS[newIndex], newOptions);
 }
 
-function showNextSection(id) {
-	var nextBtn = document.querySelector('#panel-' + id + '-btn');
-	console.log(id);
-	reveal(nextBtn);
+function clickToNextSection(index, btn) {
+	console.log('#panel-' + (+index - 1) + '-btn');
+	// Panel 2 has two options for next places to type
+	if (index == '2') {
+		btn.forEach(function (element) {
+			element.addEventListener('click', function (e) {
+				var type = element.dataset.contentRef;
+				var content = document.getElementById(type).innerHTML;
+				var container = document.getElementById('typeContentHolder');
+				var nextPanelBtn = document.getElementById('panel-3-btn');
 
-	nextBtn.addEventListener('click', function (e) {
-		jQuery('html,body').animate({
-			scrollTop: nextBtn.offsetTop + nextBtn.getBoundingClientRect().height - 5
-		}, 500);
-		return typeNextInArray();
-	});
+				container.dataset.type = type;
+				container.innerHTML = content;
+				nextPanelBtn.dataset.contentRef = type + '-2';
+
+				console.log(type, content, container);
+
+				return typeNextInArray();
+			});
+		}, this);
+	} else if (index == '3') {
+		btn.addEventListener('click', function (e) {
+			var type = btn.dataset.contentRef;
+			var content = document.getElementById(type).innerHTML;
+			var container = document.getElementById('typeContentHolder2');
+
+			container.dataset.type = type;
+			container.innerHTML = content;
+
+			return typeNextInArray();
+		});
+	} else {
+		btn.addEventListener('click', function (e) {
+			return typeNextInArray();
+		});
+	}
+}
+
+function showButtons(btn) {
+	console.log(typeof btn === 'undefined' ? 'undefined' : _typeof(btn));
+	// Mark the stagger boolean true if selecting multiple buttons
+	if (btn.length > 1) {
+		reveal(btn, true);
+	} else {
+		reveal(btn);
+	}
 }
 
 // Specific callbacks
@@ -1336,10 +1386,23 @@ function panel2Callback() {
 
 function panel3Callback() {
 	console.log('p3 call back');
+	var toHide = document.querySelector('.js-hide');
+	hide(toHide);
 }
 
 // Helpers
 
 function reveal(el) {
-	TweenLite.to(el, 1, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Bounce.easeOut, autoAlpha: 1 });
+	var stagger = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+	// Stagger aimation if more than one element comes in.
+	if (stagger == true) {
+		TweenMax.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+	} else {
+		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
+	}
 };
+
+function hide(el) {
+	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
+}

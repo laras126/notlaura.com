@@ -1,11 +1,11 @@
 
-{% if post.thumbnail %}
+{% if post.thumbnail or "sticky" in post.class %}
 	{% set grid = true %}
 {% endif %}
 
 {# Show small character if first post is not gridded,
 	show large character if it is #}
-{% if loop.index == 1 %}
+{# {% if loop.index == 1 %}
 	<header class="blog-header{{grid ? ' -full': ' -half'}}">
 		<h1 class="screen-reader">Blog</h1>
 		{% if	grid == false %}
@@ -14,30 +14,35 @@
 			{% include "svgs/blog.svg" %}
 		{% endif %}
 	</header>
-{% endif %}
-
-<article class="tease-{{post.post_type}}{{grid ? ' grid-tease'}}" id="tease-{{post.ID}}">
+{% endif %} #}
+{# <pre>
+	{{dump(post)}}
+</pre> #}
+<article class="{{post.class}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
 	{% block content %}
 
-		<!-- <aside class="module-rail">
-			</aside> -->
 		{% if post.thumbnail %}
-
 			<div class="tease-thumb">
 				<a href="{{post.link}}">
 					{% if post.get_thumbnail %}
-					<img class="lazyload" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
-					{# {% include "partials/srcset.twig" with {img : post.thumbnail} %} #}
+					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
 					{% endif %}
 				</a>
 			</div>
+		{% endif %}
 
+		{% if "sticky" in post.class and not post.thumbnail %}
+				<div class="tease-thumb">
+					<a href="{{post.link}}" class="sticky-thumb-link">
+						{% include "svgs/character-1.svg" %}
+					</a>
+				</div>
 		{% endif %}
 
 		<div class="tease-content">
 
 			<header class="tease-header">
-				<p class="tease-meta">{{post.date}} / 	{% for cat in post.categories %}{{cat.name}}{{loop.last ? ' ' : ', '}}{%
+				<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{%
 	endfor %}</p>
 				<h3 class="tease-title"><a href="{{post.link}}" class="tease-title-link">
 					{% if post.format == 'link' %}
@@ -48,7 +53,7 @@
 			</header>
 
 			{% if post.post_excerpt and post.format != "video" %}
-				{{post.post_excerpt}}
+				{{post.post_excerpt|striptags}}
 			{% elseif post.format == "video" %}
 				{{post.content}}
 			{% else %}

@@ -1,11 +1,11 @@
 
-// Blog Header Character
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+// Blog Header Character
 function runBubbleAnimation() {
 
 	const $main = document.querySelectorAll(".bc-main"),
@@ -69,12 +69,9 @@ function runBubbleAnimation() {
 
 }
 
-if (window.location.pathname == "/blog/") {
-	runBubbleAnimation();
-}
-
-
-
+// if (window.location.pathname == "/blog/") {
+// 	runBubbleAnimation();
+// }
 
 function runLaraWaveAnimation() {
 	const $handLeft = document.querySelector('.ls-hand-left'),
@@ -87,9 +84,59 @@ function runLaraWaveAnimation() {
 	.to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 50 });
 }
 
-// if (window.location.pathname == "/") {
+function runBlinkingAnimation() {
+	const mainBody = document.querySelectorAll(".c1-main"),
+				eyes = document.querySelector(".c1-eyes"),
+				pupils = document.querySelector(".c1-pupils"),
+				characterTrigger = document.querySelector(".sticky");
+
+	var characterVisible = false;
+	var tl = new TimelineLite();
+
+	// if( window.width > 600 ) {
+	// 	tl.set(mainBody, { y: 150 });
+	// }
+
+	characterTrigger.addEventListener("mouseover", () => {
+		tl.to(mainBody, 0.5, {
+			y: 0,
+			delay: 0.5,
+			ease: Power3.easeOut
+		});
+
+		characterVisible = true;
+	});
+
+	if( characterVisible == true ) {
+		var moveEye = new TimelineMax({ delay: 2 });
+		moveEye.add(TweenMax.to(pupils, 0.2, { x: 1, y: 2, rotation: 2, transformOrigin: "50% 100%" }));
+	}
+
+
+
+	// if( characterVisible == true ) {
+	var blink = new TimelineMax({ delay: 0.5, repeat: 20, repeatDelay: 2 });
+
+	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
+	blink.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
+
+	// }
+	// moveEye.add(TweenMax.to(pupils, 0.2, { x: 0 }));
+
+	// moveEye.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
+
+	// blink.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: 'black', repeat: -1, yoyo: true }, '-=0.5');
+	// tl.add(TweenMax.from('#img_skybox_dc', 0.5, { autoAlpha: 0 }));
+
+	// var blink = new TimelineLite();
+	// blink.
+	// blink.delay(2);
+}
+
+if (window.location.pathname == "/") {
 	// runLaraWaveAnimation();
-// }
+	runBlinkingAnimation();
+}
 
 // const string = document.querySelector(".panel-title").textContent;
 
@@ -105,11 +152,11 @@ function runLaraWaveAnimation() {
 // document.querySelector(".panel-title").innerHTML = markup;
 // const spans = document.querySelectorAll('.panel-title span');
 
-const panelTitle = document.querySelector('.panel-title');
+// const panelTitle = document.querySelector('.panel-title');
 
-var tl = new TimelineLite();
+// var tl = new TimelineLite();
 
-TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
+// TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
 
 // tl.from('.lara-name path', 1, { drawSVG: 0 } );
 

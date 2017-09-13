@@ -24,38 +24,38 @@ svg {
 
 }
 
-// body {
-// 	background-color: #303030;
-// }
 
-// .character {
-// 	max-width: 150px;
-// }
 
-.eyes {
+// Character 1
+
+.c1-main {
+	transform: translateY(150);
+}
+
+.c1-eyes {
 	fill:#fff;
 }
 
-.body {
+.c1-body {
 	fill:#27aae1;
 }
 
-.hand {
+.c1-hand {
 	fill: #1b75bc;
 }
 
-.mouth-nose,
-.pupils {
+.c1-mouth-nose,
+.c1-pupils {
 	fill: #231f20;
 }
 
-.accents {
+.c1-accents {
 	fill: none;
 	stroke: #1b75bc;
 	stroke-miterlimit: 10;
 }
 
-.teeth {
+.c1-teeth {
 	fill: white;
 }
 
@@ -122,7 +122,7 @@ svg {
 // ----
 
 .lara-character {
-	transform: translateX(-130%);
+	// transform: translateX(-130%);
 }
 
 .ls-skin {

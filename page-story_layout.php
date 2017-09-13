@@ -9,4 +9,4 @@ $post = new TimberPost();
 
 $context['post'] = $post;
 
-Timber::render('page.twig', $context);
+Timber::render('page-story.twig', $context);

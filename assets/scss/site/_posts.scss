@@ -48,19 +48,22 @@
 	}
 
 	@include bp(large) {
-		padding-left: $grid-gap;
+		// padding-left: $grid-gap;
 	}
 }
 
 .tease-thumb {
 	max-height: 400px;
-	padding-bottom: $sml;
+	// padding-bottom: $sml;
 	overflow: hidden;
 	@include bp(med) {
 		max-height: none;
 	}
-}
 
+	display: flex;
+	flex-direction: column;
+
+}
 .grid-tease {
 	@include bp(med) {
 		grid-column: 1 / -1;
@@ -71,34 +74,77 @@
 	}
 }
 
-.tease-post {
+.post {
 	margin-bottom: $grid-gap;
 	padding-top: $grid-gap;
 	padding-bottom: $grid-gap;
 	border: 1px solid $accent-light;
 	background: $white;
-
-	@include bp(small) {
-		padding-right: $grid-gap;
-		padding-left: $grid-gap;
-	}
+	border-top: 5px solid $accent-med;
+	padding-right: $grid-gap;
+	padding-left: $grid-gap;
 
 	@include bp(med) {
 		margin-bottom: 0;
 	}
+
+	> a {
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
 }
+
+@keyframes sticky {
+	0% {
+		// border-top-color: $yellow;
+		transform: rotate(0);
+	}
+	25% {
+		// border-top-color: $accent-med;
+		transform: rotate(10deg);
+	}
+
+	40% {
+		transform: rotate(0deg);
+	}
+
+	60% {
+		// border-top-color: $yellow;
+		transform: rotate(-10deg);
+	}
+	75% {
+		transform: rotate(0);
+		// border-top-color: $accent-med;
+	}
+}
+
+.sticky {
+	border-top-color: $pink;
+	// animation-name: sticky;
+	// animation-delay: 2s;
+	// animation-duration: .5s;
+	// animation-timing-function: forwards;
+}
+
+.sticky-thumb-link {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background: $accent-vlight;
+	height: 100%;
+}
+
 
 .tease-meta {
 	@include meta($text-med);
 }
 
-.tease-thumb {
-	margin-bottom: $sml;
-	img {
-		display: block;
-		border: $accent-border;
-		width: 100%;
-	}
+.tease-thumb-img {
+	display: block;
+	border: $accent-border;
+	width: 100%;
 }
 
 .tease-title {
@@ -117,33 +163,39 @@
 }
 
 
-// Single
+// ----
+// Singles
+// ----
+
+.list-tags {
+	@include unstyle-list;
+}
 
 .single-meta {
-	border-top: $accent-border;
-	padding-top: $sml;
-	padding-right: $grid-gap/2;
-	border-bottom: none;
+	// border-top: $accent-border;
+	// padding-top: $sml;
+	// padding-right: $grid-gap/2;
+	// border-bottom: none;
 	font-size: $sml;
 
-	@include bp(large) {
-		margin-left: $grid-gap;
-	}
+	// @include bp(large) {
+	// 	margin-left: $grid-gap;
+	// }
 
-	> * {
-		display: inline-block;
-		margin-right: $base;
+	// > * {
+	// 	display: inline-block;
+	// 	margin-right: $base;
 
-		@include bp(med) {
-			margin-right: 0;
-		}
-	}
+	// 	@include bp(med) {
+	// 		margin-right: 0;
+	// 	}
+	// }
 
-	@include bp(med) {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-	}
+	// @include bp(med) {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: flex-end;
+	// }
 }
 
 .meta-date {

@@ -7,8 +7,13 @@
 <article class="module -article">
 
 		<header class="module-header">
-			<a href="{{site.link}}/blog">&larr; Back to Blog</a>
 			<h1 class="single-title">{{post.title}}</h1>
+			<p class="single-meta">
+				<span class="meta-date">{{post.date}}</span>
+				<span class="meta-cat-title">Filed under:</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{%
+				endfor %}
+				{% include 'partials/edit-link.twig' %}
+			</p>
 		</header>
 
 		{% if post.format == 'link' %}
@@ -18,7 +23,13 @@
 		{% endif %}
 
 		<aside class="module-rail">
-			{% include "partials/tease-meta.twig" %}
+			{# {% include "partials/tease-meta.twig" %} #}
+			<h5 class="list-tags-title">Tagged</h5>
+			<ul class="list-tags">
+				{% for t in post.get_terms('post_tag') %}
+					<li>{{t.name}}</li>
+				{% endfor %}
+			</ul>
 		</aside>
 
 		<div class="module-content">
@@ -53,9 +64,11 @@
 {% block misc %}
 <div class="inner">
 	<aside class="module -article -flipped">
+
 		<div class="module-link">
 			<h4 class="widget-title">Hello!</h4>
 		</div>
+
 		<div class="module-content">
 			<div class="module -aside -flipped">
 				<div class="module-rail">

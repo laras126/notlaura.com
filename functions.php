@@ -81,11 +81,11 @@
 	function nl_scripts() {
 
 		// Use jQuery from CDN, enqueue in footer
-		// if (!is_admin()) {
-			// wp_deregister_script('jquery');
-			// wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+		if (!is_admin()) {
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, true);
 			wp_enqueue_script('jquery');
-		// }
+		}
 
 			wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
 

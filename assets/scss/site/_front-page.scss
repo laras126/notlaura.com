@@ -79,7 +79,8 @@
 	}
 	&:focus {
 		transition: .2s ease all;
-		outline: 5px solid $pink;
+		outline: 5px solid $white;
+		background: $white;
 	}
 
 	h2 {
@@ -190,9 +191,10 @@
 }
 
 .btn-next {
-	background: none;
+	// background: none;
+	// display: inline-block;
 	border: 0;
-	padding: 0;
+	padding: $sml;
 	margin-bottom: $grid-gap;
 	font-size: $h1;
 
@@ -200,6 +202,20 @@
 	&:active,
 	&:focus {
 		background: none;
+		@include bp(med) {
+			img {
+				transition: 0.2s transform ease;
+				transform: scale(1.1);
+				transform: rotate(-20deg);
+			}
+		}
+	}
+
+	&:active {
+		img {
+				transform: scale(0.9);
+				transform: rotate(0deg);
+		}
 	}
 }
 

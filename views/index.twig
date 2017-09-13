@@ -2,16 +2,34 @@
 
 {% block header %}
 	{# {% include 'headers/header-page.twig' %} #}
+	<header class="main-header">
+		<div class="inner">
+			<div class="grid-content">
+				<div class="main-aside">
+				{% include "partials/srcset.twig" with { img: TimberImage(3141), class: '' } %}
+				{# </div> #}
+			</div>
+			<div class="main-content">
+				<h1>Hey, I'm Lara!</h1>
+				<p class="lead">Not Laura, though that's a nice name, too.</p>
+				<h4 class="widget-title">Hello!</h4>
+				{# <p class="caption">Here's a picture if me in real life! Click to see another one.</p> #}
+				<p>I hope you find something interesting to read here on my blog! Find me at these other places on the web:</p>
+				{{ include('partials/social.twig') }}
+			</div>
+		</div>
+		{# <div class="grid-tease"> #}
+	</header>
 {% endblock %}
 
 {% block content %}
 
-	{# TODO: Find in database, remove it #}
-	{% for post in all_posts %}
+	{# TODO: Find in database, remove THIS and put in a plugin #}
+	{# {% for post in all_posts %}
 		{% if 'margin-top:' in post.content %}
 			<a href="{{post.link}}">{{post.title}}</a> {{post.date}}<br>
 		{% endif %}
-	{% endfor %}
+	{% endfor %} #}
 
 	<div class="tease-loop">
 		{% for post in posts %}
@@ -22,7 +40,7 @@
 	<nav class="pagination">
   	<div class="pagenav-link link-prev">
   		{% if pagination.prev %}
-  			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Previous</a>
+  			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Newer</a>
 		{% endif %}
 		</div>
 	    <ul class="pages pagenav-middle">
@@ -38,7 +56,7 @@
     	</ul>
 	    <div class="pagenav-link link-next">
 	    	{% if pagination.next %}
-	    		<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+	    		<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Older</a>
 	        {% endif %}
 	    </div>
 	</nav> <!-- /.pagination -->

@@ -1,5 +1,9 @@
-{% extends 'page.twig' %}
+{% extends 'index.twig' %}
 
-{% block content %}
-	{{title}}
+{% block header %}
+<div class="main-header">
+	<div class="inner">
+		<h1>Category: {{title}}</h1>
+	</div>
+</div>
 {% endblock %}

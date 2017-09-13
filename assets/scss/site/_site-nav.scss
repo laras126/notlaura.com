@@ -80,8 +80,7 @@
 
   @include bp(med) {
 		font-size: $base;
-		color: $text-dark;
-		// font-weight: $font-weight-base;
+		color: $text-light;
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     padding-top: $xsml;

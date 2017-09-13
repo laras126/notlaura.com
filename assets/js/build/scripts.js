@@ -1127,13 +1127,13 @@ jQuery(document).ready(function () {
 });
 "use strict";
 
-// Blog Header Character
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+// Blog Header Character
 function runBubbleAnimation() {
 
 	var $main = document.querySelectorAll(".bc-main"),
@@ -1195,9 +1195,9 @@ function runBubbleAnimation() {
 	}
 }
 
-if (window.location.pathname == "/blog/") {
-	runBubbleAnimation();
-}
+// if (window.location.pathname == "/blog/") {
+// 	runBubbleAnimation();
+// }
 
 function runLaraWaveAnimation() {
 	var $handLeft = document.querySelector('.ls-hand-left'),
@@ -1209,9 +1209,57 @@ function runLaraWaveAnimation() {
 	tl.to($lara, 1, { x: 0, ease: Power2.easeInOut, autoAlpha: 1 }).to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 50 });
 }
 
-// if (window.location.pathname == "/") {
-// runLaraWaveAnimation();
-// }
+function runBlinkingAnimation() {
+	var mainBody = document.querySelectorAll(".c1-main"),
+	    eyes = document.querySelector(".c1-eyes"),
+	    pupils = document.querySelector(".c1-pupils"),
+	    characterTrigger = document.querySelector(".sticky");
+
+	var characterVisible = false;
+	var tl = new TimelineLite();
+
+	// if( window.width > 600 ) {
+	// 	tl.set(mainBody, { y: 150 });
+	// }
+
+	characterTrigger.addEventListener("mouseover", function () {
+		tl.to(mainBody, 0.5, {
+			y: 0,
+			delay: 0.5,
+			ease: Power3.easeOut
+		});
+
+		characterVisible = true;
+	});
+
+	if (characterVisible == true) {
+		var moveEye = new TimelineMax({ delay: 2 });
+		moveEye.add(TweenMax.to(pupils, 0.2, { x: 1, y: 2, rotation: 2, transformOrigin: "50% 100%" }));
+	}
+
+	// if( characterVisible == true ) {
+	var blink = new TimelineMax({ delay: 0.5, repeat: 20, repeatDelay: 2 });
+
+	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
+	blink.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
+
+	// }
+	// moveEye.add(TweenMax.to(pupils, 0.2, { x: 0 }));
+
+	// moveEye.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
+
+	// blink.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: 'black', repeat: -1, yoyo: true }, '-=0.5');
+	// tl.add(TweenMax.from('#img_skybox_dc', 0.5, { autoAlpha: 0 }));
+
+	// var blink = new TimelineLite();
+	// blink.
+	// blink.delay(2);
+}
+
+if (window.location.pathname == "/") {
+	// runLaraWaveAnimation();
+	runBlinkingAnimation();
+}
 
 // const string = document.querySelector(".panel-title").textContent;
 
@@ -1227,18 +1275,16 @@ function runLaraWaveAnimation() {
 // document.querySelector(".panel-title").innerHTML = markup;
 // const spans = document.querySelectorAll('.panel-title span');
 
-var panelTitle = document.querySelector('.panel-title');
+// const panelTitle = document.querySelector('.panel-title');
 
-var tl = new TimelineLite();
+// var tl = new TimelineLite();
 
-TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
+// TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
 
 // tl.from('.lara-name path', 1, { drawSVG: 0 } );
 
 // tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});
 'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 // $('.type-it').typeIt({
 // 	// speed: 900,
@@ -1259,7 +1305,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // Get an array of all elements to be typed.
 var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 var TYPED_ELS = document.querySelectorAll('.js-typed');
-var TYPE_SPEED = 30,
+var TYPE_SPEED = 3,
     SHOW_CURSOR = false;
 
 var options = {
@@ -1274,10 +1320,11 @@ var options = {
 	}
 
 	// Start the typing elements, starting with index 0
-};var typed = new Typed(TYPED_ELS[0], options);
+	// var typed = new Typed(TYPED_ELS[0], options);
 
-// Function to type next item in typedEls array
-function typeNextInArray() {
+
+	// Function to type next item in typedEls array
+};function typeNextInArray() {
 
 	// Move through the array
 	options.elIndex++;
@@ -1300,8 +1347,6 @@ function typeNextInArray() {
 		callback: callbackFunc(TYPED_SRCS[newIndex]),
 		onComplete: function onComplete() {
 
-			// TYPED_SRCS[newIndex].setAttribute('aria-hidden', 'true');
-
 			if (newIndex + 1 <= TYPED_ELS.length - 1) {
 				var nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
 
@@ -1323,6 +1368,11 @@ function typeNextInArray() {
 	};
 
 	var typed = new Typed(TYPED_ELS[newIndex], newOptions);
+}
+
+function getPanelClassList(index) {
+	var elem = document.querySelector('#panel-' + index);
+	console.log(elem.classList);
 }
 
 function clickToNextSection(index, btn) {
@@ -1364,7 +1414,6 @@ function clickToNextSection(index, btn) {
 }
 
 function showButtons(btn) {
-	console.log(typeof btn === 'undefined' ? 'undefined' : _typeof(btn));
 	// Mark the stagger boolean true if selecting multiple buttons
 	if (btn.length > 1) {
 		reveal(btn, true);
@@ -1397,7 +1446,9 @@ function reveal(el) {
 
 	// Stagger aimation if more than one element comes in.
 	if (stagger == true) {
-		TweenMax.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+		var tm = new TimelineMax();
+		tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+		// tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", rotation: 30, ease: Power2.easeOut }, 0.1, "");
 	} else {
 		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
 	}

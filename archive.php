@@ -36,5 +36,6 @@
 		}
 
 		$data['posts'] = Timber::get_posts();
+		$data['sidebar'] = Timber::get_sidebar('sidebar.php');
 
 		Timber::render($templates, $data);

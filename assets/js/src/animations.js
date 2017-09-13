@@ -94,17 +94,15 @@ function runBlinkingAnimation() {
 	var tl = new TimelineLite();
 
 	// if( window.width > 600 ) {
-	// 	tl.set(mainBody, { y: 150 });
+		tl.set(mainBody, { y: 150 });
 	// }
 
-	characterTrigger.addEventListener("mouseover", () => {
-		tl.to(mainBody, 0.5, {
-			y: 0,
-			delay: 0.5,
-			ease: Power3.easeOut
-		});
+	characterTrigger.addEventListener("touchstart", () => {
+		showCharacter();
+	});
 
-		characterVisible = true;
+	characterTrigger.addEventListener("mouseover", () => {
+		showCharacter();
 	});
 
 	if( characterVisible == true ) {
@@ -120,6 +118,15 @@ function runBlinkingAnimation() {
 	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
 	blink.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
 
+
+    function showCharacter() {
+			tl.to(mainBody, 0.5, {
+				y: 0,
+				delay: 0.5,
+				ease: Power3.easeOut
+			});
+      characterVisible = true;
+    }
 	// }
 	// moveEye.add(TweenMax.to(pupils, 0.2, { x: 0 }));
 

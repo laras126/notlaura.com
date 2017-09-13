@@ -1,22 +1,12 @@
 
 
-<article tabindex="0" class="tease-project{% if 'Featured' in post.get_terms('project-type') %} project-featured{% else %} project-not-featured{% endif %}" id="tease-{{post.ID}}">
-
-  {# <div class="project-header">
-    <img
-      src="{{ post.thumbnail.src('medium') }}"
-      srcset="
-          {{ post.thumbnail.src('large') }} 480w"
-      alt="{{ variation.thumbnail.alt }}" />
-  </div> #}
+<article tabindex="0" class="tease-project{% if 'Featured' in post.get_terms('project-type') %} project-featured{% else %} project-not-featured{% endif %} fancy-hover" id="tease-{{post.ID}}">
 
   <div class="project-content">
     {# Don't show "Featured" #}
     <p class="project-types">{% for c in post.get_terms('project-type') %}{{ c.name != 'Featured' ? c.name }}{% endfor %}</p>
     <h4 class="project-tease-title">{% if not post.no_single %}<a href="{{post.link}}">{{post.title}}</a>{% else %}{{post.title}}{% endif %}</h4>
-
     <p class="project-tease-tagline">{{post.intro}}</p>
-
     <p class="project-tease-desc">{{post.para_intro}}</p>
 
     {% if post.no_single == false %}

@@ -1,6 +1,16 @@
 
 
-<article tabindex="0" class="tease-project{% if 'Featured' in post.get_terms('project-type') %} project-featured{% else %} project-not-featured{% endif %} fancy-hover" id="tease-{{post.ID}}">
+<article tabindex="0" class="project {% if 'Featured' in post.get_terms('project-type') %} project-featured{% else %} project-not-featured{% endif %} fancy-hover" id="tease-{{post.ID}}">
+
+
+  <div class="project-thumb">
+    {# Note/TODO: using an image field for video here, or no video? #}
+    {% if post.featured_media %}
+      {% include "partials/srcset.twig" with { img: TimberImage(post.featured_media), class: 'long-thumb lazyload' } %}
+    {% else %}
+      {% include "partials/srcset.twig" with { img: post.thumbnail, class: 'project-tease-img lazyload' } %}
+    {% endif %}
+  </div>
 
   <div class="project-content">
     {# Don't show "Featured" #}
@@ -17,14 +27,4 @@
 
     {% include "partials/edit-link.twig" %}
   </div>
-
-  <div class="project-thumb">
-    {# Note/TODO: using an image field for video here, or no video? #}
-    {% if post.featured_media %}
-      {% include "partials/srcset.twig" with { img: TimberImage(post.featured_media), class: 'long-thumb lazyload' } %}
-    {% else %}
-      {% include "partials/srcset.twig" with { img: post.thumbnail, class: 'project-tease-img lazyload' } %}
-    {% endif %}
-  </div>
-
 </article>

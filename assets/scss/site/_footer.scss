@@ -32,14 +32,25 @@
 .list-social {
 	@include unstyle-list();
 	margin-top: $h4;
-	padding-left: 0;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: $sml;
+
+	@include grid(yes) {
+		display: grid;
+		grid-template-columns: 0.5fr 1fr;
+		grid-column-gap: $sml;
+	}
+
+	@include grid(no) {
+		display: flex;
+		flex-wrap: wrap;
+		> * {
+			width: 40%;
+		}
+	}
 }
 
 .list-social-item {
 	margin-bottom: $sml/2;
+
 }
 
 .list-social-link {
@@ -47,7 +58,7 @@
 	// @include upperspace;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	// justify-content: flex-start;
 	border-bottom: 0;
 
 	svg {
@@ -122,25 +133,4 @@
 .about-widget {
 	// width: 40%;
 }
-
-.widget-title {
-	margin-top: 0;
-	margin-bottom: $base;
-	font-size: $base;
-	@include upperspace;
-}
-
-.about-widget {
-	display: flex;
-}
-
-.about-widget-thumb {
-	// width: 50%;
-	// height: auto;
-	// margin-right: $grid-gap;
-}
-
-.widget-list {}
-
-.links-social {}
 

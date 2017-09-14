@@ -1,7 +1,7 @@
 
 <nav class="prevnext-nav">
 	{% if post.prev %}
-		<div class="prev">
+		<div class="next">
 			<a href="{{post.prev.link}}" title="{{post.prev.post_title|striptags}}">
 				<span class="meta-greyed">Older</span><br>
 				{{post.prev.post_title}}</a>
@@ -10,7 +10,7 @@
 	{% endif %}
 
 	{% if post.next %}
-		<div class="next">
+		<div class="prev">
 			<a href="{{post.next.link}}" title="{{post.next.post_title|striptags}}">
 				<span class="meta-greyed">Newer</span><br>
 				{{post.next.post_title}}</a>

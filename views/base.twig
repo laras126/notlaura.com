@@ -35,11 +35,6 @@
     {% endblock %}
 
     <div class="inner{{sidebar ? ' grid-content'}}">
-      {% if sidebar %}
-        <aside class="main-aside">
-          {{sidebar}}
-        </aside>
-      {% endif %}
 
       <div class="main-content{{ function('is_page_template', 'page-story_layout.php') == true ? ' module -article' }}">
         {% block content %}
@@ -47,6 +42,11 @@
         {% endblock %}
       </div>
 
+      {% if sidebar %}
+        <aside class="main-aside">
+          {{sidebar}}
+        </aside>
+      {% endif %}
 
     </div>
 

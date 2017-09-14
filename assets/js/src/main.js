@@ -169,7 +169,7 @@ jQuery(document).ready(function() {
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-	$('a[href*=#]')
+	$('a[href*="#"]')
 		.not('[href="#"]')
 		.not('[href="#menu"]')
 		.on('click', function() {

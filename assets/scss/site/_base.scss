@@ -10,7 +10,7 @@
 
 body {
 
-	background: $body-bkgd;
+	background: linear-gradient(to right, $white, $accent-light);
 	// For testing
 	@include bp(small) {
   }

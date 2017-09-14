@@ -49,10 +49,8 @@ $text-medlight: lighten($text-med, 20%);
 $text-light: 		$white;
 
 $link-color:		$accent-med;
-$link-hover: 		darken($link-color, 10%);
+$link-hover: 		$accent-vdark;
 
-$twitter: 			#4099FF;
-$facebook: 			#3B5998;
 
 
 // Components

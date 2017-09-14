@@ -2,10 +2,10 @@
 // Main page styles
 
 .page-template-page-portfolio {
-	background-image: linear-gradient(to bottom right, $accent-med, $l-teal);
+	// background-image: linear-gradient(to bottom right, $accent-med, $l-teal);
 
 	.main-header {
-		background-image: linear-gradient(to bottom right, $yellow, $pink);
+		// background-image: linear-gradient(to bottom right, $yellow, $pink);
 	}
 }
 
@@ -16,14 +16,16 @@
 
 // Projects grid on page-portfolio.twig
 .grid-projects {
-	display: grid;
-	grid-column-gap: $grid-gap;
-	grid-row-gap: $grid-gap * 2;
-	grid-template-rows: minmax(200px, auto);
-	grid-auto-flow: row dense;
+	// display: grid;
+	// grid-template-rows: minmax(200px, auto);
+	// grid-auto-flow: row dense;
+
+	padding-left: $grid-gap;
+	padding-right: $grid-gap;
 
 	// Two columns on large
 	@include bp(med) {
+		grid-row-gap: $grid-gap * 2;
 		grid-column-gap: $grid-gap;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: start;
@@ -42,8 +44,10 @@
 }
 
 // TODO: credit scott kellum's site for scroller
-.tease-project {
-	box-shadow: 0 0 10px rgba($text-med, 0.6);
+.project {
+	// box-shadow: 0 0 10px rgba($text-med, 0.6);
+	background: $white;
+	border: 1px solid $accent-light;
 	margin-left: -$grid-gap;
 	margin-right: -$grid-gap;
 	overflow: hidden;
@@ -68,8 +72,9 @@
 		grid-column: span 1;
 
 		@include bp(large) {
-			display: grid;
-			grid-template-rows: 350px auto;
+			// display: grid;
+			// grid-template-rows: 350px auto;
+			// grid-auto-flow: row dense;
 		}
 
 		flex-direction: column; // Flexbox fallback
@@ -105,13 +110,17 @@
 		overflow: hidden;
 		// height: inherit;
 	}
+
+	.project-not-featured & {
+		width: 100%;
+	}
 }
 
 .long-thumb {
 	will-change: transform;
 	// TODO might be nice to add this in JS as an "animating" class
-	.tease-project:hover &,
-	.tease-project:focus & {
+	.project:hover &,
+	.project:focus & {
 			animation: scroll-page 15s forwards;
 			animation-delay: 0.5s;
 	}
@@ -119,7 +128,6 @@
 
 .project-content {
 	padding: $grid-gap;
-	order: 1;
 
 	.project-featured & {
 		display: flex;
@@ -130,10 +138,6 @@
 	.project-not-featured & {
 		grid-row: 2;
 	}
-}
-
-.project-tease-tagline {
-	// margin-bottom: $base;
 }
 
 .project-tease-desc {
@@ -165,7 +169,7 @@
 .project-header {
 	// padding-top: 30%;
 	padding-top: 20vh;
-	position: relative;
+	// position: relative;
 	overflow: hidden;
 
 	@include bp(med) {

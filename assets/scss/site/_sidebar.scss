@@ -28,9 +28,13 @@
 	.-blog & {
 		//color: $text-light;
 		margin-bottom: $grid-gap;
-		padding: $grid-gap;
+		padding-bottom: $grid-gap;
+		padding-top: $grid-gap;
+		@include bp(med) {
+			padding-right: $grid-gap;
+		}
 		// background-image: linear-gradient(to bottom right, $accent-med, $body-bkgd);
-		background-color: $body-bkgd;
+		// background-color: $body-bkgd;
 		a {
 			//color: $text-light;
 			&:hover {
@@ -40,13 +44,23 @@
 	}
 }
 
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: $base;
+	font-size: $base;
+	@include upperspace;
+
+	&.-hello {
+		margin-top: $grid-gap;
+	}
+}
+
 .people-list {
 	@include unstyle-list;
 	margin-top: $sml;
 	display: flex;
 	flex-wrap: wrap;
-	// justify-content: space-around;
-
 
 	li {
 		margin-bottom: $sml/2;
@@ -98,8 +112,4 @@
 		}
 	// list-style-type: disc;
 	}
-}
-
-.about-widget-thumb {
-	// @include bleed;
 }

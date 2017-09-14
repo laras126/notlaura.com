@@ -19,27 +19,33 @@
 // Typed.js
 // ----
 
-// Get an array of all elements to be typed.
-const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-const TYPED_ELS = document.querySelectorAll('.js-typed');
-const TYPE_SPEED = 3,
-	SHOW_CURSOR = false;
+function runTypingEffect() {
 
-var options = {
-	elIndex: 0,
-	strings: [TYPED_SRCS[0].innerHTML],
-	typeSpeed: TYPE_SPEED,
-	showCursor: SHOW_CURSOR,
-	onComplete: () => {
-		let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
-		showButtons(nextBtn);
-		clickToNextSection(options.elIndex+1, nextBtn);
-	},
+	// Get an array of all elements to be typed.
+	const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+	const TYPED_ELS = document.querySelectorAll('.js-typed');
+	const TYPE_SPEED = 3,
+		SHOW_CURSOR = false;
+
+	var options = {
+		elIndex: 0,
+		strings: [TYPED_SRCS[0].innerHTML],
+		typeSpeed: TYPE_SPEED,
+		showCursor: SHOW_CURSOR,
+		onComplete: () => {
+			let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+			showButtons(nextBtn);
+			clickToNextSection(options.elIndex+1, nextBtn);
+		},
+	}
+
+	var typed = new Typed(TYPED_ELS[0], options);
 }
 
 // Start the typing elements, starting with index 0
-var typed = new Typed(TYPED_ELS[0], options);
-
+if (window.location.pathname == "/about/") {
+	runTypingEffect();
+}
 
 
 // Function to type next item in typedEls array

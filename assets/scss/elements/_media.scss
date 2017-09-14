@@ -111,14 +111,13 @@ figcaption,
 
 // Fade in Lazy Loading
 
-.lazyload,
-.lazyloading {
-  opacity: 0;
-  transition: opacity 400ms;
+img.lazyload,
+img.lazyloading {
+	width: 100%;
 }
 
 img.lazyloaded {
-  opacity: 1;
+  // opacity: 1;
 }
 
 

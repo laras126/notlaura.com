@@ -1098,7 +1098,7 @@ jQuery(document).ready(function () {
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-	$('a[href*=#]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
+	$('a[href*="#"]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
 			var header_ht = $('.site-header').outerHeight() + 70;
@@ -1308,25 +1308,33 @@ if (window.location.pathname == "/") {
 // Typed.js
 // ----
 
-// Get an array of all elements to be typed.
-var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-var TYPED_ELS = document.querySelectorAll('.js-typed');
-var TYPE_SPEED = 3,
-    SHOW_CURSOR = false;
+function runTypingEffect() {
 
-var options = {
-	elIndex: 0,
-	strings: [TYPED_SRCS[0].innerHTML],
-	typeSpeed: TYPE_SPEED,
-	showCursor: SHOW_CURSOR,
-	onComplete: function onComplete() {
-		var nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
-		showButtons(nextBtn);
-		clickToNextSection(options.elIndex + 1, nextBtn);
-	}
+	// Get an array of all elements to be typed.
+	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+	var TYPED_ELS = document.querySelectorAll('.js-typed');
+	var TYPE_SPEED = 3,
+	    SHOW_CURSOR = false;
 
-	// Start the typing elements, starting with index 0
-};var typed = new Typed(TYPED_ELS[0], options);
+	var options = {
+		elIndex: 0,
+		strings: [TYPED_SRCS[0].innerHTML],
+		typeSpeed: TYPE_SPEED,
+		showCursor: SHOW_CURSOR,
+		onComplete: function onComplete() {
+			var nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+			showButtons(nextBtn);
+			clickToNextSection(options.elIndex + 1, nextBtn);
+		}
+	};
+
+	var typed = new Typed(TYPED_ELS[0], options);
+}
+
+// Start the typing elements, starting with index 0
+if (window.location.pathname == "/about/") {
+	runTypingEffect();
+}
 
 // Function to type next item in typedEls array
 function typeNextInArray() {

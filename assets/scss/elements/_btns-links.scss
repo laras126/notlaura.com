@@ -58,11 +58,9 @@
 }
 
 .btn.-has-icon {
-	display: flex;
-	// flex-wrap: wrap;
+	display: inline-flex;
 	align-content: center;
 	justify-content: flex-start;
-	// flex: 0;
 
 	.icon-inline {
 		will-change: transform;
@@ -78,6 +76,7 @@
 .project-launch-btn {
 	margin-bottom: $grid-gap;
 	margin-top: $grid-gap;
+	display: inline-block;
 }
 
 .skip-typing-btn {

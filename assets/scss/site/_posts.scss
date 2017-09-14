@@ -137,7 +137,8 @@
 }
 
 
-.tease-meta {
+.tease-meta,
+.single-meta {
 	@include meta($text-med);
 	padding-top: $sml;
 }
@@ -173,33 +174,7 @@
 }
 
 .single-meta {
-	// border-top: $accent-border;
-	// padding-top: $sml;
-	// padding-right: $grid-gap/2;
-	// border-bottom: none;
-	font-size: $sml;
-
-	// @include bp(large) {
-	// 	margin-left: $grid-gap;
-	// }
-
-	// > * {
-	// 	display: inline-block;
-	// 	margin-right: $base;
-
-	// 	@include bp(med) {
-	// 		margin-right: 0;
-	// 	}
-	// }
-
-	// @include bp(med) {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: flex-end;
-	// }
+	margin-bottom: $h2;
 }
 
-.meta-date {
-	margin-top: 0;
-}
 //

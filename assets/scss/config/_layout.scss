@@ -68,6 +68,8 @@ $rail: minmax(70px, 175px);
 
 .inner {
   @include contain($screen-xl);
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
 }
 
 @mixin bleed($size: $grid-gap) {
@@ -75,6 +77,8 @@ $rail: minmax(70px, 175px);
   margin-right: -$size;
   max-width: calc(100% + #{$size * 2});
 }
+
+
 
 // Fallback
 
@@ -100,11 +104,8 @@ $rail: minmax(70px, 175px);
 .main-header {
 
   &.-text {
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
     padding-bottom: $grid-gap;
     margin-bottom: $grid-gap;
-    // border-bottom: $accent-border;
   }
 }
 
@@ -118,8 +119,8 @@ $rail: minmax(70px, 175px);
   grid-template-areas: "content" "aside";
 
   @include bp(large) {
+    grid-template-columns: 1fr 3fr;
     grid-template-areas: "aside content";
-    grid-template-columns: 1.25fr 3fr;
     grid-column-gap: $grid-gap;
   }
 }
@@ -131,9 +132,15 @@ $rail: minmax(70px, 175px);
 .main-content {
   // padding-left: $grid-gap;
   grid-area: content;
+
+  @include bp(med) {
+    // padding-left: $grid-gap;
+    // padding-right: $grid-gap;
+  }
+
   @include bp(large) {
     .blog & {
-      padding-right: $grid-gap; // padding: 0;
+      // padding-right: $grid-gap; // padding: 0;
     }
   }
 }
@@ -166,7 +173,7 @@ $rail: minmax(70px, 175px);
 }
 
 .header-title {
-	font-size: $h1*2;
+	font-size: $h1;
 	line-height: 0.7;
   padding-top: $grid-gap*2;
 
@@ -179,9 +186,6 @@ $rail: minmax(70px, 175px);
 
   .-text & {
     margin-bottom: $h3;
-    // margin-top: 0;
-    // font-size: $h1;
-    // background: $accent-vlight;
   }
 }
 
@@ -217,6 +221,9 @@ $rail: minmax(70px, 175px);
   }
 
   &.-article {
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+
     @include bp(med) {
       @include main-module-layout;
     }

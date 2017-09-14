@@ -42,7 +42,7 @@ a {
 	&:hover, &:focus {
 		color: $link-hover;
 
-		.main-content & {
+		.single & {
 			&:not(.btn) {
 				background-color: $accent-vlight;
 			}
@@ -69,10 +69,6 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0;
 	line-height: $line-height-sm;
-
-	> a {
-		color: $link-hover;
-	}
 }
 
 	.wf-active {

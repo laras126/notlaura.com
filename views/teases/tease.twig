@@ -18,7 +18,7 @@
 {# <pre>
 	{{dump(post)}}
 </pre> #}
-<article class="{{post.class}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
+<article class="post {{"sticky" in post.class ? "sticky"}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
 	{% block content %}
 
 		{% if post.thumbnail %}
@@ -61,7 +61,7 @@
 			{% endif %}
 
 			<p>
-				<a class="link-more" href="{{post.link}}" title="{{post.title}}">Read More <span class="more-arrow">&rarr;</span></a>
+				<a class="link-more" href="{{post.link}}" title="{{post.title}}">(more ...)</a>
 			</p>
 		</div>
 

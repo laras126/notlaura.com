@@ -7,30 +7,26 @@
 <article class="module -article">
 
 		<header class="module-header">
-			<h1 class="single-title">{{post.title}}</h1>
+			<h1 class="single-title"><a href="{{post.link_url}}">{% include "svgs/link.twig" with { class: 'icon-title' } %} {{post.title}}</a></h1>
 			<p class="single-meta">
-				<span class="meta-date">Post {{post.date}}</span>
-				<span class="meta-cat-title">in</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{%
+				<span class="meta-date">Posted {{post.date}}</span>
+				<span class="meta-cat-title">in</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{%
 				endfor %}
 				{% include 'partials/edit-link.twig' %}
 			</p>
 		</header>
 
-		{% if post.format == 'link' %}
-			<div class="module-link">
-				<a href="{{post.link_url}}" class="btn -has-icon">Visit Link {% include "svgs/link.twig" with { class: 'icon-inline' } %}</a>
-			</div>
+		{% if post.get_terms('post_tag') %}
+			<aside class="module-rail">
+				{# {% include "partials/tease-meta.twig" %} #}
+				<h5 class="list-tags-title">Tagged</h5>
+				<ul class="list-tags">
+					{% for t in post.get_terms('post_tag') %}
+						<li>{{t.name}}</li>
+					{% endfor %}
+				</ul>
+			</aside>
 		{% endif %}
-
-		<aside class="module-rail">
-			{# {% include "partials/tease-meta.twig" %} #}
-			<h5 class="list-tags-title">Tagged</h5>
-			<ul class="list-tags">
-				{% for t in post.get_terms('post_tag') %}
-					<li>{{t.name}}</li>
-				{% endfor %}
-			</ul>
-		</aside>
 
 		<div class="module-content">
 			{% if post.content %}
@@ -40,24 +36,18 @@
 				{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
 			{% endif %}
 
-			{# <div class="comments" id="disqus_thread"></div>
-			<script type="text/javascript">
-					/* * * CONFIGURATION VARIABLES * * */
-					var disqus_shortname = 'notlaura';
+			{% if post.format == 'link' %}
+					<p>
+						<a href="{{post.link_url}}" class="btn -has-icon">Visit Link {% include "svgs/link.twig" with { class: 'icon-inline' } %}</a>
+					</p>
+				{% endif %}
+			{{ include('partials/comments.twig') }}
 
-					/* * * DON'T EDIT BELOW THIS LINE * * */
-					(function() {
-							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> #}
 		</div>
 
 	</article> <!-- /.module -->
 
-	{% include 'partials/prev-next.twig' %}
+	{# {% include 'partials/prev-next.twig' %} #}
 
 {% endblock %}
 

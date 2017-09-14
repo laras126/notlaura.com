@@ -1,52 +1,32 @@
-
-// $('.type-it').typeIt({
-// 	// speed: 900,
-// 	lifeLike: true,
-// 	autoStart: true
-// })
-// 	.tiType("hi")
-// 	.tiSettings({ speed: 100 })
-// 	.tiType('but now I am typing pretty fasst')
-// 	.tiDelete(2)
-// 	.tiType('t!');
-
-
-
-
-
-
 // ----
 // Typed.js
 // ----
 
-function runTypingEffect() {
 
-	// Get an array of all elements to be typed.
-	const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-	const TYPED_ELS = document.querySelectorAll('.js-typed');
-	const TYPE_SPEED = 3,
-		SHOW_CURSOR = false;
+// Start the typing elements on pages with the story layout
 
-	var options = {
-		elIndex: 0,
-		strings: [TYPED_SRCS[0].innerHTML],
-		typeSpeed: TYPE_SPEED,
-		showCursor: SHOW_CURSOR,
-		onComplete: () => {
-			let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
-			showButtons(nextBtn);
-			clickToNextSection(options.elIndex+1, nextBtn);
-		},
-	}
+if(document.querySelector('.page-template-page-story_layout')) {
 
-	var typed = new Typed(TYPED_ELS[0], options);
+// Get an array of all elements to be typed.
+const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
+const TYPED_ELS = document.querySelectorAll('.js-typed');
+const TYPE_SPEED = 3,
+	SHOW_CURSOR = false;
+
+var options = {
+	elIndex: 0,
+	strings: [TYPED_SRCS[0].innerHTML],
+	typeSpeed: TYPE_SPEED,
+	showCursor: SHOW_CURSOR,
+	onComplete: () => {
+		let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+		markPanelComplete(options.elIndex);
+		showButtons(nextBtn);
+		clickToNextSection(options.elIndex+1, nextBtn);
+	},
 }
 
-// Start the typing elements, starting with index 0
-if (window.location.pathname == "/about/") {
-	runTypingEffect();
-}
-
+var typed = new Typed(TYPED_ELS[0], options);
 
 // Function to type next item in typedEls array
 function typeNextInArray() {
@@ -72,16 +52,19 @@ function typeNextInArray() {
 		callback: callbackFunc(TYPED_SRCS[newIndex]),
 		onComplete: () => {
 
-			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-				let nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
+			markPanelComplete(newIndex);
 
-				if (newIndex == 2) {
+			if (newIndex <= TYPED_ELS.length ) {
+
+				if (panelClassesContain(newIndex, 'js-tabs')) {
 					let nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
 
 					showButtons(nextBtnGroup);
-					clickToNextSection(newIndex.toString(), nextBtnGroup);
+
+					// let tabs = document.querySelectorAll('.panel-tab');
 
 				} else {
+					let nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
 					showButtons(nextBtn);
 					clickToNextSection(newIndex.toString(), nextBtn);
 				}
@@ -98,63 +81,65 @@ function typeNextInArray() {
 }
 
 
-function getPanelClassList(index) {
-	let elem = document.querySelector('#panel-' + index);
-	console.log(elem.classList);
-}
-
 function clickToNextSection(index, btn) {
 	console.log('#panel-' + (+index - 1) + '-btn');
-	// Panel 2 has two options for next places to type
-	if( index == '2' ) {
-		btn.forEach(function(element) {
-			element.addEventListener('click', (e) => {
-				let type = element.dataset.contentRef;
-				let content = document.getElementById(type).innerHTML;
-				let container = document.getElementById('typeContentHolder');
-				let nextPanelBtn = document.getElementById('panel-3-btn');
+	let panelId = '#panel-' + (+index - 1);
 
-				container.dataset.type = type;
-				container.innerHTML = content;
-				nextPanelBtn.dataset.contentRef = type + '-2';
-
-				console.log(type, content, container);
-
-				return typeNextInArray();
-			});
-		}, this);
-
-	} else if( index == '3' ) {
-		btn.addEventListener('click', (e) => {
-			let type = btn.dataset.contentRef;
-			let content = document.getElementById(type).innerHTML;
-			let container = document.getElementById('typeContentHolder2');
-
-			container.dataset.type = type;
-			container.innerHTML = content;
-
-			return typeNextInArray();
-		});
-	} else {
+	// If it's a normal panel
+	if( !panelClassesContain(index, 'js-tabs') ) {
 		btn.addEventListener('click', (e) => {
 			return typeNextInArray();
 		});
 	}
-
 }
+
+
+function panelClassesContain(i, c) {
+	let elem = document.querySelector('#panel-' + i);
+	return elem.classList.contains(c);
+}
+
+
+function markPanelComplete(i) {
+	let elem = document.querySelector('#panel-' + i);
+	elem.classList.add('js-complete');
+}
+
 
 
 function showButtons(btn) {
 	// Mark the stagger boolean true if selecting multiple buttons
-	if( btn.length > 1) {
+	let tabbed = btn.length > 1;
+
+	if( tabbed ) {
 		reveal(btn, true);
+		btn.forEach(function (element) {
+			toggleTabs(element);
+		}, this);
+
 	} else {
 		reveal(btn);
 	}
 }
 
 
+function toggleTabs(element) {
+	let type = element.dataset.contentRef;
+	let content = document.getElementById(type);
+	let tabs = document.querySelectorAll('.panel-tab');
 
+	element.addEventListener('click', (e) => {
+
+		tabs.forEach(function (tab) {
+			tab.classList.add('js-reveal');
+
+			if (tab.getAttribute('id') == type) {
+				tab.classList.remove('js-reveal');
+			}
+		});
+
+	});
+}
 
 // Specific callbacks
 
@@ -193,3 +178,6 @@ function hide(el) {
 
 
 
+
+
+} // end if

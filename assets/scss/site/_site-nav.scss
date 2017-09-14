@@ -74,7 +74,7 @@
 	font-size: $h4;
 	font-weight: $font-weight-strong;
   display: block;
-	padding: $sml $grid-gap;
+	padding: $grid-gap $h2;
 	color: $text-light;
 	border: 0;
 
@@ -83,13 +83,15 @@
 		color: $text-light;
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
-    padding-top: $xsml;
-		padding-bottom: $xsml;
+    // padding-top: $xsml;
+		// padding-bottom: $xsml;
 
     .current-menu-item &,
     .current_page_item & {
-      border-bottom: $accent-border;
-      border-top: $accent-border;
+			background-color: $body-bkgd;
+			color: $text-dark;
+      // border-bottom: $accent-border;
+      // border-top: $accent-border;
     }
 
     &:hover {

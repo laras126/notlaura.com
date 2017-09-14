@@ -168,35 +168,17 @@
 
 .project-header {
 	// padding-top: 30%;
+	background-size: cover;
 	padding-top: 20vh;
 	// position: relative;
 	overflow: hidden;
 
-	@include bp(med) {
-	}
-
-	.mask {
-		padding-top: $h1;
-		background-image: linear-gradient(
-				to top,
-				$body-bkgd,
-				rgba($body-bkgd, 0.8) 60%,
-				rgba($body-bkgd, 0));
-		@include bp(med) {
-			background-image: linear-gradient(
-				to top,
-				$body-bkgd,
-				rgba($body-bkgd, 0.7) 50%,
-				rgba($body-bkgd, 0));
-			}
-	}
-
 	.inner	{
 		margin-top: $h1;
 		@include bp(large) {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-end;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: flex-end;
 		}
 	}
 
@@ -204,6 +186,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		align-items: flex-start;
 
 		padding-left: $grid-gap;
 		padding-right: $grid-gap;

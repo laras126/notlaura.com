@@ -17,13 +17,13 @@
   // position: fixed;
   // bottom: 0;
   // left: 0;
-  // padding-left: $grid-gap;
 
   // background: white;
   // width: 100%;
   // z-index: 99;
 
   @include bp(large) {
+    padding-right: $sml;
     border-right: $accent-border;
   }
 }

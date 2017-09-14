@@ -63,20 +63,13 @@
 }
 
 .panel {
-	@include bp(small) {
-		padding: $base;
-	}
+	position: relative;
 
 	min-height: 60vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	&:before {
-		content: ' ';
-		border-left: 5px solid $accent-med;
-		position: relative;
-		left: -10px;
-	}
+
 	&:focus {
 		transition: .2s ease all;
 		outline: 5px solid $white;
@@ -88,6 +81,11 @@
 	}
 
 	margin-top: $h2;
+
+	@include bp(small) {
+		padding: $base;
+	}
+
 	@include bp(med) {
 		margin-top: $h1;
 	}
@@ -217,6 +215,11 @@
 				transform: rotate(0deg);
 		}
 	}
+}
+
+.panel-tab {
+	position: absolute;
+	top: 0;
 }
 
 .js-reveal {

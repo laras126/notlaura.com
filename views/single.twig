@@ -7,7 +7,12 @@
 <article class="module -article">
 
 		<header class="module-header">
-			<h1 class="single-title"><a href="{{post.link_url}}">{% include "svgs/link.twig" with { class: 'icon-title' } %} {{post.title}}</a></h1>
+			<h1 class="single-title">
+				{% if post.format == 'link' %}
+					<a href="{{post.link_url}}">{% include "svgs/link.twig" with { class: 'icon-title' } %}
+				{% endif %}
+				{{post.title}}
+				{{post.format == 'link' ? '</a>'}}</h1>
 			<p class="single-meta">
 				<span class="meta-date">Posted {{post.date}}</span>
 				<span class="meta-cat-title">in</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{%

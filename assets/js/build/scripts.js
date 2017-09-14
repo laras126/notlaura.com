@@ -1262,7 +1262,7 @@ function runBlinkingAnimation() {
 	// blink.delay(2);
 }
 
-if (window.location.pathname == "/") {
+if (window.location.pathname == "/blog/") {
 	// runLaraWaveAnimation();
 	runBlinkingAnimation();
 }
@@ -1292,23 +1292,155 @@ if (window.location.pathname == "/") {
 // tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});
 'use strict';
 
-// $('.type-it').typeIt({
-// 	// speed: 900,
-// 	lifeLike: true,
-// 	autoStart: true
-// })
-// 	.tiType("hi")
-// 	.tiSettings({ speed: 100 })
-// 	.tiType('but now I am typing pretty fasst')
-// 	.tiDelete(2)
-// 	.tiType('t!');
-
-
 // ----
 // Typed.js
 // ----
 
-function runTypingEffect() {
+
+// Start the typing elements on pages with the story layout
+
+if (document.querySelector('.page-template-page-story_layout')) {
+
+	// Function to type next item in typedEls array
+	var typeNextInArray = function typeNextInArray() {
+
+		// Move through the array
+		options.elIndex++;
+		var newIndex = options.elIndex;
+		var currentEl = TYPED_SRCS[newIndex];
+
+		// Allow for data attributes to provide some settings
+		var newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
+
+		// Callbacks must be defined below
+		var callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
+
+		// New options set
+		var newOptions = {
+			elIndex: newIndex,
+			startDelay: 500,
+			strings: [TYPED_SRCS[newIndex].innerHTML],
+			typeSpeed: newTypeSpeed,
+			showCursor: SHOW_CURSOR,
+			callback: callbackFunc(TYPED_SRCS[newIndex]),
+			onComplete: function onComplete() {
+
+				markPanelComplete(newIndex);
+
+				if (newIndex <= TYPED_ELS.length) {
+
+					if (panelClassesContain(newIndex, 'js-tabs')) {
+						var nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
+
+						showButtons(nextBtnGroup);
+
+						// let tabs = document.querySelectorAll('.panel-tab');
+					} else {
+						var nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
+						showButtons(nextBtn);
+						clickToNextSection(newIndex.toString(), nextBtn);
+					}
+
+					// return typeNextInArray();
+				} else {
+					console.log('done');
+				}
+			}
+		};
+
+		var typed = new Typed(TYPED_ELS[newIndex], newOptions);
+	};
+
+	var clickToNextSection = function clickToNextSection(index, btn) {
+		console.log('#panel-' + (+index - 1) + '-btn');
+		var panelId = '#panel-' + (+index - 1);
+
+		// If it's a normal panel
+		if (!panelClassesContain(index, 'js-tabs')) {
+			btn.addEventListener('click', function (e) {
+				return typeNextInArray();
+			});
+		}
+	};
+
+	var panelClassesContain = function panelClassesContain(i, c) {
+		var elem = document.querySelector('#panel-' + i);
+		return elem.classList.contains(c);
+	};
+
+	var markPanelComplete = function markPanelComplete(i) {
+		var elem = document.querySelector('#panel-' + i);
+		elem.classList.add('js-complete');
+	};
+
+	var showButtons = function showButtons(btn) {
+		// Mark the stagger boolean true if selecting multiple buttons
+		var tabbed = btn.length > 1;
+
+		if (tabbed) {
+			reveal(btn, true);
+			btn.forEach(function (element) {
+				toggleTabs(element);
+			}, this);
+		} else {
+			reveal(btn);
+		}
+	};
+
+	var toggleTabs = function toggleTabs(element) {
+		var type = element.dataset.contentRef;
+		var content = document.getElementById(type);
+		var tabs = document.querySelectorAll('.panel-tab');
+
+		element.addEventListener('click', function (e) {
+
+			tabs.forEach(function (tab) {
+				tab.classList.add('js-reveal');
+
+				if (tab.getAttribute('id') == type) {
+					tab.classList.remove('js-reveal');
+				}
+			});
+		});
+	};
+
+	// Specific callbacks
+
+	// TODO user closest LATER
+
+
+	var panel1Callback = function panel1Callback() {
+		console.log('p1 is done');
+	};
+
+	var panel2Callback = function panel2Callback() {
+		console.log('p2 callback');
+	};
+
+	var panel3Callback = function panel3Callback() {
+		console.log('p3 call back');
+		var toHide = document.querySelector('.js-hide');
+		hide(toHide);
+	};
+
+	// Helpers
+
+	var reveal = function reveal(el) {
+		var stagger = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+		// Stagger aimation if more than one element comes in.
+		if (stagger == true) {
+			var tm = new TimelineMax();
+			tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+			// tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", rotation: 30, ease: Power2.easeOut }, 0.1, "");
+		} else {
+			TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
+		}
+	};
+
+	var hide = function hide(el) {
+		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
+	};
 
 	// Get an array of all elements to be typed.
 	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
@@ -1323,150 +1455,11 @@ function runTypingEffect() {
 		showCursor: SHOW_CURSOR,
 		onComplete: function onComplete() {
 			var nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+			markPanelComplete(options.elIndex);
 			showButtons(nextBtn);
 			clickToNextSection(options.elIndex + 1, nextBtn);
 		}
 	};
 
-	var typed = new Typed(TYPED_ELS[0], options);
-}
-
-// Start the typing elements, starting with index 0
-if (window.location.pathname == "/about/") {
-	runTypingEffect();
-}
-
-// Function to type next item in typedEls array
-function typeNextInArray() {
-
-	// Move through the array
-	options.elIndex++;
-	var newIndex = options.elIndex;
-	var currentEl = TYPED_SRCS[newIndex];
-
-	// Allow for data attributes to provide some settings
-	var newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-
-	// Callbacks must be defined below
-	var callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
-
-	// New options set
-	var newOptions = {
-		elIndex: newIndex,
-		startDelay: 500,
-		strings: [TYPED_SRCS[newIndex].innerHTML],
-		typeSpeed: newTypeSpeed,
-		showCursor: SHOW_CURSOR,
-		callback: callbackFunc(TYPED_SRCS[newIndex]),
-		onComplete: function onComplete() {
-
-			if (newIndex + 1 <= TYPED_ELS.length - 1) {
-				var nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
-
-				if (newIndex == 2) {
-					var nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
-
-					showButtons(nextBtnGroup);
-					clickToNextSection(newIndex.toString(), nextBtnGroup);
-				} else {
-					showButtons(nextBtn);
-					clickToNextSection(newIndex.toString(), nextBtn);
-				}
-
-				// return typeNextInArray();
-			} else {
-				console.log('done');
-			}
-		}
-	};
-
-	var typed = new Typed(TYPED_ELS[newIndex], newOptions);
-}
-
-function getPanelClassList(index) {
-	var elem = document.querySelector('#panel-' + index);
-	console.log(elem.classList);
-}
-
-function clickToNextSection(index, btn) {
-	console.log('#panel-' + (+index - 1) + '-btn');
-	// Panel 2 has two options for next places to type
-	if (index == '2') {
-		btn.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				var type = element.dataset.contentRef;
-				var content = document.getElementById(type).innerHTML;
-				var container = document.getElementById('typeContentHolder');
-				var nextPanelBtn = document.getElementById('panel-3-btn');
-
-				container.dataset.type = type;
-				container.innerHTML = content;
-				nextPanelBtn.dataset.contentRef = type + '-2';
-
-				console.log(type, content, container);
-
-				return typeNextInArray();
-			});
-		}, this);
-	} else if (index == '3') {
-		btn.addEventListener('click', function (e) {
-			var type = btn.dataset.contentRef;
-			var content = document.getElementById(type).innerHTML;
-			var container = document.getElementById('typeContentHolder2');
-
-			container.dataset.type = type;
-			container.innerHTML = content;
-
-			return typeNextInArray();
-		});
-	} else {
-		btn.addEventListener('click', function (e) {
-			return typeNextInArray();
-		});
-	}
-}
-
-function showButtons(btn) {
-	// Mark the stagger boolean true if selecting multiple buttons
-	if (btn.length > 1) {
-		reveal(btn, true);
-	} else {
-		reveal(btn);
-	}
-}
-
-// Specific callbacks
-
-// TODO user closest LATER
-function panel1Callback() {
-	console.log('p1 is done');
-}
-
-function panel2Callback() {
-	console.log('p2 callback');
-}
-
-function panel3Callback() {
-	console.log('p3 call back');
-	var toHide = document.querySelector('.js-hide');
-	hide(toHide);
-}
-
-// Helpers
-
-function reveal(el) {
-	var stagger = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-	// Stagger aimation if more than one element comes in.
-	if (stagger == true) {
-		var tm = new TimelineMax();
-		tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
-		// tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", rotation: 30, ease: Power2.easeOut }, 0.1, "");
-	} else {
-		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
-	}
-};
-
-function hide(el) {
-	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
-}
+	var typed = new Typed(TYPED_ELS[0], options);;
+} // end if

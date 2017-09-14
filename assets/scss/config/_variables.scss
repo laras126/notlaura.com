@@ -7,8 +7,8 @@
 
 
 // $dark-blue: 		#0b5c84;
-$dark-blue: 	#0a5276;
-$light-blue: 		#27AAE1;
+$dark-blue: 	#1b75bc;
+$light-blue: 		#27A9E0;
 $vlight-blue:   #E0E6F2;
 
 $grey: 				  #999999;
@@ -33,7 +33,7 @@ $pink: 				#CC6698;
 $accent-vlight:		$white-alt;
 $accent-light:		$vlight-blue;
 $accent-med:		  $light-blue;
-$accent-dark:		  $dark-blue;
+$accent-dark:		  darken($dark-blue,10%);
 $accent-vdark:		#242F4A;
 
 $accent-alt: 		$pink;

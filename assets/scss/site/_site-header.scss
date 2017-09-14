@@ -63,5 +63,8 @@
 }
 
 .site-nav {
-  // margin-left: auto;
+  margin-left: auto;
+  @include bp(med) {
+    margin-left: 0;
+  }
 }

@@ -38,7 +38,7 @@ var options = {
 }
 
 // Start the typing elements, starting with index 0
-// var typed = new Typed(TYPED_ELS[0], options);
+var typed = new Typed(TYPED_ELS[0], options);
 
 
 

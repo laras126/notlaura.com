@@ -1762,6 +1762,12 @@ code {
 .site-icon {
   color: #ffffff; }
 
+.site-nav {
+  margin-left: auto; }
+  @media (min-width: 730px) {
+    .site-nav {
+      margin-left: 0; } }
+
 .nav-rail {
   position: sticky;
   top: 0; }

@@ -1326,11 +1326,10 @@ var options = {
 	}
 
 	// Start the typing elements, starting with index 0
-	// var typed = new Typed(TYPED_ELS[0], options);
+};var typed = new Typed(TYPED_ELS[0], options);
 
-
-	// Function to type next item in typedEls array
-};function typeNextInArray() {
+// Function to type next item in typedEls array
+function typeNextInArray() {
 
 	// Move through the array
 	options.elIndex++;

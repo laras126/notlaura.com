@@ -66,8 +66,13 @@ $rail: minmax(70px, 175px);
 // Site Grid
 // ----
 
+
+.inner-np,
 .inner {
   @include contain($screen-xl);
+}
+
+.inner {
   padding-left: $grid-gap;
   padding-right: $grid-gap;
 }

@@ -5,8 +5,9 @@
 
 
 
-.home .main-content {
-	// min-height: 200vh;
+.home .main-content .inner {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .front-page-header {
@@ -29,9 +30,14 @@
 }
 
 .scene {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	min-height: 200vh;
+	margin-bottom: 50vh;
+
+	@include bp(med) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	// height: 80vh;
 	// padding-top: $h1;
 	// margin-top: $h2;
@@ -43,52 +49,51 @@
 }
 
 
-.front-page-img {
+.front-page-img-wrap {
 	position: fixed;
 	z-index: -1; // below main content
 	bottom: 0;
 	right: 0;
 	opacity: 0.9;
 	// width: 100%;
-	max-height: 50vh;
 
 	@include bp(med) {
 		width: auto;
 	}
+}
 
-	&-caption {
-		max-width: 40vw;
-		font-size: $sml;
-	}
+.front-page-img {
+	max-height: 50vh;
+	// height: 100%;
 }
 
 .panel {
 	position: relative;
 
-	min-height: 60vh;
+	@include bp(med) {
+		min-height: 60vh;
+	}
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: flex-start;
 
 	&:focus {
 		transition: .2s ease all;
-		outline: 5px solid $white;
-		background: $white;
+		outline: 1px solid $white;
+		background: linear-gradient(to bottom right, $white, rgba($white, 0.7));
 	}
 
-	h2 {
-		margin-top: 0;
-	}
-
-	margin-top: $h2;
+	// margin-top: $h2;
 
 	@include bp(small) {
-		padding: $base;
+		padding: $base $grid-gap;
 	}
 
-	@include bp(med) {
-		margin-top: $h1;
-	}
+	// @include bp(med) {
+	// 	margin-top: $h1;
+	// }
 
 	p {
 		font-size: $h4;
@@ -136,26 +141,6 @@
 	}
 }
 
-.panel-desc {
-	// background: $accent-vdark;
-	// color: $text-light;
-	// @include bp(med) {
-	// 	background: none;
-	// 	color: $text-dark;
-	// }
-	// grid-column: span 4;
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-
-	// margin-top: -$grid-gap;
-	// color: $text-light;
-}
-
-.panel-img {
-
-}
-
 .panel-title {
 	padding-top: 0;
 	// font-size: $h1;
@@ -192,9 +177,10 @@
 	// background: none;
 	// display: inline-block;
 	border: 0;
-	padding: $sml;
-	margin-bottom: $grid-gap;
+	padding: $sml $base;
 	font-size: $h1;
+	display: inline-block;
+	// margin-bottom: $grid-gap;
 
 	&:hover,
 	&:active,
@@ -215,15 +201,28 @@
 				transform: rotate(0deg);
 		}
 	}
+
+	&.js-selected {
+		border: 3px solid $accent-light;
+		background-color: $accent-med;
+	}
 }
 
 .panel-tab {
-	position: absolute;
-	top: 0;
+	&.js-hidden {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+	}
 }
 
 .js-reveal {
 	@include js-reveal;
 	@include accelerate(transform);
 	transform: scale(0.5);
+}
+
+.decision-btns {
+	margin-top: $grid-gap;
+	margin-bottom: $grid-gap;
 }

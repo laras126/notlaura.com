@@ -175,12 +175,12 @@ jQuery(document).ready(function() {
 		.on('click', function() {
   	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
 				var target = $(this.hash);
-				var header_ht = $('.site-header').outerHeight()+70;
+				var header_ht = $('.site-header').outerHeight();
 	  		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	  		if (target.length) {
 	    		$('html,body').animate({
 							scrollTop: target.offset().top - header_ht
-	    		}, 1000, function() {
+	    		}, 300, function() {
 						var $target = $(target);
 						$target.focus();
 						if ($target.is(":focus")) { // Checking if the target was focused

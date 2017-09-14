@@ -1,3 +1,5 @@
+{% set is_story = function('is_page_template', 'page-story_layout.php') %}
+
 {% block html_head_container %}
     {% include 'html-header.twig' %}
     {% block head %}
@@ -34,9 +36,9 @@
       </header>
     {% endblock %}
 
-    <div class="inner{{sidebar ? ' grid-content'}}">
+    <div class="inner{{ is_story == true ? '-np' }}{{sidebar ? ' grid-content'}}">
 
-      <div class="main-content{{ function('is_page_template', 'page-story_layout.php') == true ? ' module -article' }}">
+      <div class="main-content{{ is_story == true ? ' module -article' }}">
         {% block content %}
             Sorry, no content
         {% endblock %}

@@ -127,14 +127,21 @@ function toggleTabs(element) {
 	let type = element.dataset.contentRef;
 	let content = document.getElementById(type);
 	let tabs = document.querySelectorAll('.panel-tab');
+	let btns = document.querySelectorAll('.decision-btns > a');
 
 	element.addEventListener('click', (e) => {
 
+		btns.forEach( (btn) => {
+			btn.classList.remove('js-selected');
+		});
+
+		element.classList.add('js-selected');
+
 		tabs.forEach(function (tab) {
-			tab.classList.add('js-reveal');
+			tab.classList.add('js-hidden');
 
 			if (tab.getAttribute('id') == type) {
-				tab.classList.remove('js-reveal');
+				tab.classList.remove('js-hidden');
 			}
 		});
 
@@ -150,12 +157,12 @@ function panel1Callback() {
 
 function panel2Callback() {
 	console.log('p2 callback');
+	let toHide = document.querySelector('.js-hide');
+	hide(toHide);
 }
 
 function panel3Callback() {
 	console.log('p3 call back');
-	let toHide = document.querySelector('.js-hide');
-	hide(toHide);
 }
 
 

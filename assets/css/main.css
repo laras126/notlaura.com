@@ -354,9 +354,12 @@ td,
 th {
   padding: 0; }
 
+.inner-np,
 .inner {
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1400px; }
+
+.inner {
   padding-left: 1.43rem;
   padding-right: 1.43rem; }
 
@@ -1651,25 +1654,15 @@ code {
   background-color: #f4f7f9; }
 
 .menu-btn {
-  background-color: #15598f;
-  border-radius: 2px;
-  color: #ffffff;
-  border: 2px solid #1b75bc;
-  padding: 0.88rem 1.43rem;
-  display: inline-block;
-  font-family: "Interface", Arial, sans-serif;
   position: relative;
-  z-index: 99; }
-  .menu-btn:hover, .menu-btn:focus {
-    background-color: #0e3d63;
-    color: #ffffff;
-    border-color: #15598f; }
-  .menu-btn:active {
-    background-color: #01060a;
-    border-color: #0e3d63; }
+  z-index: 99;
+  right: -1.1rem; }
   .home .menu-btn {
-    background: #f4f7f9;
-    border-color: #E0E6F2;
+    background: #E0E6F2;
+    border-top: 5px solid #15598f;
+    border-bottom: 5px solid #15598f;
+    border-right: none;
+    border-left: none;
     color: #242F4A; }
   @media (min-width: 730px) {
     .menu-btn {
@@ -1693,7 +1686,6 @@ code {
   transition: all 0.25s ease-out; }
   .menu-list.js-open {
     background-color: #242F4A;
-    border-left: 5px solid #27A9E0;
     right: 0; }
   @media (min-width: 730px) {
     .menu-list {
@@ -1730,10 +1722,13 @@ code {
         border-top: 1px solid rgba(39, 169, 224, 0.4); } }
 
 .site-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
   background: #15598f; }
 
 .site-main {
-  padding-top: 2.64rem; }
+  padding-top: 3.3rem; }
 
 .logo-img {
   height: 100px;
@@ -1865,6 +1860,10 @@ code {
     .page-title {
       font-size: 15vw; } }
 
+.home .main-content .inner {
+  padding-left: 0;
+  padding-right: 0; }
+
 .front-page-header {
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1874,43 +1873,43 @@ code {
       background-size: auto 100%; } }
 
 .scene {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  min-height: 200vh;
+  margin-bottom: 50vh; }
+  @media (min-width: 730px) {
+    .scene {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; } }
 
-.front-page-img {
+.front-page-img-wrap {
   position: fixed;
   z-index: -1;
   bottom: 0;
   right: 0;
-  opacity: 0.9;
-  max-height: 50vh; }
+  opacity: 0.9; }
   @media (min-width: 730px) {
-    .front-page-img {
+    .front-page-img-wrap {
       width: auto; } }
-  .front-page-img-caption {
-    max-width: 40vw;
-    font-size: 0.88rem; }
+
+.front-page-img {
+  max-height: 50vh; }
 
 .panel {
   position: relative;
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2.64rem; }
-  .panel:focus {
-    transition: .2s ease all;
-    outline: 5px solid #ffffff;
-    background: #ffffff; }
-  .panel h2 {
-    margin-top: 0; }
-  @media (min-width: 520px) {
-    .panel {
-      padding: 1.1rem; } }
+  align-items: flex-start; }
   @media (min-width: 730px) {
     .panel {
-      margin-top: 3.3rem; } }
+      min-height: 60vh; } }
+  .panel:focus {
+    transition: .2s ease all;
+    outline: 1px solid #ffffff;
+    background: linear-gradient(to bottom right, #ffffff, rgba(255, 255, 255, 0.7)); }
+  @media (min-width: 520px) {
+    .panel {
+      padding: 1.1rem 1.43rem; } }
   .panel p {
     font-size: 1.43rem; }
 
@@ -1946,9 +1945,9 @@ code {
 
 .btn-next {
   border: 0;
-  padding: 0.88rem;
-  margin-bottom: 1.43rem;
-  font-size: 3.3rem; }
+  padding: 0.88rem 1.1rem;
+  font-size: 3.3rem;
+  display: inline-block; }
   .btn-next:hover, .btn-next:active, .btn-next:focus {
     background: none; }
     @media (min-width: 730px) {
@@ -1959,8 +1958,12 @@ code {
   .btn-next:active img {
     transform: scale(0.9);
     transform: rotate(0deg); }
+  .btn-next.js-selected {
+    border: 3px solid #E0E6F2;
+    background-color: #27A9E0; }
 
-.panel-tab {
+.panel-tab.js-hidden {
+  opacity: 0;
   position: absolute;
   top: 0; }
 
@@ -1972,6 +1975,10 @@ code {
   backface-visibility: hidden;
   perspective: 1000px;
   transform: scale(0.5); }
+
+.decision-btns {
+  margin-top: 1.43rem;
+  margin-bottom: 1.43rem; }
 
 .main-aside {
   margin-top: 1.43rem;

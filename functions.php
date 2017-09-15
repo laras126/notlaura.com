@@ -77,6 +77,12 @@
 	 **************************
 	 */
 
+	// Remove weird Jetpack CSS...why
+	add_action( 'wp_print_styles', 'nl_deregister_styles', 100 );
+	function nl_deregister_styles() {
+		wp_dequeue_style('simple-payments');
+	}
+
 	// Enqueue scripts
 	function nl_scripts() {
 

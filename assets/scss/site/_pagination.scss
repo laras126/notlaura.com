@@ -12,7 +12,7 @@
 
 .prev,
 .next {
-	@include button($accent-vdark);
+	@include button($accent-dark);
     display: inline-block;
     font-size: $sml;
     background-repeat: no-repeat;

@@ -72,10 +72,17 @@ $rail: minmax(70px, 175px);
   @include contain($screen-xl);
 }
 
-.inner {
+.page .inner,
+.single .inner,
+.inner-pad {
   padding-left: $grid-gap;
   padding-right: $grid-gap;
 }
+
+// .single .inner,
+// .site-header .inner {
+
+// }
 
 @mixin bleed($size: $grid-gap) {
   margin-left: -$size;

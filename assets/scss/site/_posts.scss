@@ -54,8 +54,9 @@
 
 .tease-thumb {
 	max-height: 400px;
-	// padding-bottom: $sml;
+	min-height: 100px;
 	overflow: hidden;
+
 	@include bp(med) {
 		max-height: none;
 	}
@@ -169,8 +170,15 @@
 // Singles
 // ----
 
+.list-tags-title {
+	margin-bottom: $sml;
+}
+
 .list-tags {
 	@include unstyle-list;
+	font-size: $sml;
+	font-style: italic;
+	color: $text-med;
 }
 
 .single-meta {

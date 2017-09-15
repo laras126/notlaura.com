@@ -356,7 +356,9 @@ th {
   margin: 0 auto;
   max-width: 1400px; }
 
-.inner {
+.page .inner,
+.single .inner,
+.inner-pad {
   padding-left: 1.43rem;
   padding-right: 1.43rem; }
 
@@ -1745,14 +1747,32 @@ code {
 
 .menu-btn {
   position: relative;
-  z-index: 99;
+  z-index: 5;
   right: -1.1rem;
-  background: #E0E6F2;
+  background: #27A9E0;
+  font-weight: 700;
   border-top: 5px solid #15598f;
   border-bottom: 5px solid #15598f;
   border-right: none;
   border-left: none;
-  color: #242F4A; }
+  color: #ffffff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .menu-btn:after {
+    position: relative;
+    bottom: 2px;
+    padding-left: 0.495rem;
+    content: ' \0002B';
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2);
+    font-weight: 500; }
+  .menu-btn.js-open:after {
+    content: ' \000D7'; }
   @media (min-width: 730px) {
     .menu-btn {
       display: none; } }
@@ -1765,7 +1785,7 @@ code {
   right: -100%;
   position: fixed;
   top: 0;
-  z-index: 98;
+  z-index: 4;
   min-width: 50vw;
   height: 100vh;
   display: -webkit-flex;
@@ -1781,7 +1801,11 @@ code {
   transition: all 0.25s ease-out; }
   .menu-list.js-open {
     background-color: #242F4A;
+    border-left: 5px solid #15598f;
     right: 0; }
+    @media (min-width: 730px) {
+      .menu-list.js-open {
+        background: none; } }
   @media (min-width: 730px) {
     .menu-list {
       display: -webkit-flex;
@@ -1803,24 +1827,23 @@ code {
   display: block;
   padding: 1.43rem 2.64rem;
   color: #ffffff;
-  border-bottom: 0; }
+  border-bottom: 0;
+  transition: 0.2s ease all; }
   @media (min-width: 730px) {
     .menu-item-link {
       font-size: 1.1rem;
-      color: #ffffff; }
-      .current-menu-item .menu-item-link,
-      .current_page_item .menu-item-link {
-        background-color: #f4f7f9;
-        color: #242F4A; }
-      .menu-item-link:hover, .menu-item-link:focus {
-        color: #242F4A;
-        background-color: #E0E6F2; } }
+      color: #ffffff; } }
+  .current-menu-item .menu-item-link,
+  .current_page_item .menu-item-link {
+    background-color: #f4f7f9;
+    color: #242F4A; }
+  .menu-item-link:hover, .menu-item-link:focus {
+    background-color: #27A9E0; }
 
 .site-header {
   position: fixed;
-  z-index: 99;
+  z-index: 4;
   width: 100%;
-  border-top: 5px solid #27A9E0;
   background: #15598f; }
 
 .site-main {
@@ -1832,7 +1855,7 @@ code {
   margin-bottom: -1.43rem;
   margin-top: -1.43rem; }
 
-.site-header > .inner {
+.site-header > * {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1912,10 +1935,10 @@ code {
 
 .prev,
 .next {
-  background-color: #242F4A;
+  background-color: #15598f;
   border-radius: 2px;
   color: #ffffff;
-  border: 2px solid #35456c;
+  border: 2px solid #1b75bc;
   padding: 0.88rem 1.43rem;
   display: inline-block;
   font-family: "adelle-sans", Arial, sans-serif;
@@ -1927,13 +1950,13 @@ code {
   .prev:hover, .prev:focus,
   .next:hover,
   .next:focus {
-    background-color: #131928;
+    background-color: #0e3d63;
     color: #ffffff;
-    border-color: #242F4A; }
+    border-color: #15598f; }
   .prev:active,
   .next:active {
-    background-color: black;
-    border-color: #131928; }
+    background-color: #01060a;
+    border-color: #0e3d63; }
   .prev span,
   .next span {
     font-size: 0.66rem;
@@ -1951,21 +1974,6 @@ code {
   position: absolute;
   left: -99999px;
   top: -99999px; }
-
-.page-title {
-  position: absolute;
-  bottom: 15%;
-  z-index: 9;
-  font-weight: 700;
-  width: 100%;
-  text-align: right;
-  padding-right: 20%;
-  font-size: 20vw;
-  opacity: 0;
-  visibility: hidden; }
-  @media (min-width: 730px) {
-    .page-title {
-      font-size: 15vw; } }
 
 .home .main-content .inner {
   padding-left: 0;
@@ -2382,6 +2390,7 @@ code {
 
 .tease-thumb {
   max-height: 400px;
+  min-height: 100px;
   overflow: hidden;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2476,10 +2485,16 @@ code {
   color: #15598f;
   border-bottom: 0; }
 
+.list-tags-title {
+  margin-bottom: 0.88rem; }
+
 .list-tags {
   list-style: none;
   padding-left: 0;
-  margin-top: 0; }
+  margin-top: 0;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: #999999; }
 
 .single-meta {
   margin-bottom: 2.64rem; }

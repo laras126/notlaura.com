@@ -140,7 +140,7 @@ function runBlinkingAnimation() {
 	// blink.delay(2);
 }
 
-if (window.location.pathname == "/blog/") {
+if (document.querySelector('.character-1' !== null)) {
 	// runLaraWaveAnimation();
 	runBlinkingAnimation();
 }

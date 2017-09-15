@@ -27,7 +27,7 @@
 				<h5 class="list-tags-title">Tagged</h5>
 				<ul class="list-tags">
 					{% for t in post.get_terms('post_tag') %}
-						<li>{{t.name}}</li>
+						<li><a href="{{t.link}}">{{t.name}}</a></li>
 					{% endfor %}
 				</ul>
 			</aside>

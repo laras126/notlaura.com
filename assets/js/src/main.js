@@ -24,8 +24,10 @@ const $toggle = document.querySelector('#toggle'),
 $toggle.addEventListener('click', function () {
 	if ($menu.classList.contains('js-open')) {
 		$menu.classList.remove('js-open');
+		$toggle.classList.remove('js-open');
 	} else {
 		$menu.classList.add('js-open');
+		$toggle.classList.add('js-open');
 	}
 });
 

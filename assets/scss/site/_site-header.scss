@@ -1,12 +1,12 @@
 
 .site-header {
   position: fixed;
-  z-index: 99;
+  z-index: $ztop;
   width: 100%;
 
   // padding-top: $grid-gap;
   // padding-bottom: $grid-gap/2;
-  border-top: 5px solid $accent-med;
+  // border-top: 5px solid $accent-med;
   background: $accent-dark;
 }
 
@@ -21,7 +21,7 @@
   margin-top: -$grid-gap;
 }
 
-.site-header > .inner {
+.site-header > * {
 
   display: flex;
   align-items: center;

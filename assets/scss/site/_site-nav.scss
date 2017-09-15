@@ -11,14 +11,32 @@
 .menu-btn {
 	// @include button($accent-dark);
 	position: relative;
-	z-index: 99;
+	z-index: $ztiptop;
 	right: -$base;
-	background: $accent-light;
+	background: $accent-med;
+	font-weight: $font-weight-strong;
 	border-top: 5px solid $accent-dark;
 	border-bottom: 5px solid $accent-dark;
 	border-right: none;
 	border-left: none;
-	color: $text-dark;
+	color: $text-light;
+	display: flex;
+	align-items: center;
+
+	&:after {
+		position: relative;
+		bottom: 2px;
+		padding-left: $xsml*0.75;
+		content: ' \0002B';
+		transform: scale(2);
+		font-weight: $font-weight-base;
+	}
+
+	&.js-open {
+		&:after {
+			content: ' \000D7';
+		}
+	}
 
 	@include bp(small) {
 		// top: $base;
@@ -37,7 +55,7 @@
 
 	position: fixed;
 	top: 0;
-	z-index: 98;
+	z-index: $ztop;
 	min-width: 50vw;
 	height: 100vh;
 
@@ -50,6 +68,10 @@
 
 	&.js-open {
 		background-color: $accent-vdark;
+		border-left: 5px solid $accent-dark;
+		@include bp(med) {
+			background: none;
+		}
 		// border-left: 5px solid $accent-dark;
 		right: 0;
 	}
@@ -82,20 +104,23 @@
     // padding-top: $xsml;
 		// padding-bottom: $xsml;
 
-    .current-menu-item &,
-    .current_page_item & {
-			background-color: $body-bkgd;
-			color: $text-dark;
-      // border-bottom: $accent-border;
-      // border-top: $accent-border;
-    }
-
-		&:hover,
-		&:focus {
-      color: $text-dark;
-      background-color: $accent-light;
-    }
   }
+
+	.current-menu-item &,
+	.current_page_item & {
+		background-color: $body-bkgd;
+		color: $text-dark;
+		// border-bottom: $accent-border;
+		// border-top: $accent-border;
+	}
+
+	transition: 0.2s ease all;
+
+	&:hover,
+	&:focus {
+		// color: $text-dark;
+		background-color: $accent-med;
+	}
 
 }
 

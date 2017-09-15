@@ -1195,9 +1195,9 @@ function runBubbleAnimation() {
 	}
 }
 
-// if (window.location.pathname == "/blog/") {
-// 	runBubbleAnimation();
-// }
+if (window.location.pathname == "/portfolio/") {
+	runBubbleAnimation();
+}
 
 function runLaraWaveAnimation() {
 	var $handLeft = document.querySelector('.ls-hand-left'),

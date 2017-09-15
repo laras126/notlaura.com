@@ -69,9 +69,9 @@ function runBubbleAnimation() {
 
 }
 
-// if (window.location.pathname == "/blog/") {
-// 	runBubbleAnimation();
-// }
+if (window.location.pathname == "/portfolio/") {
+	runBubbleAnimation();
+}
 
 function runLaraWaveAnimation() {
 	const $handLeft = document.querySelector('.ls-hand-left'),

@@ -686,8 +686,9 @@ a.special {
               transform: scale(1.025); } }
 
 .main-header.-svg {
-  padding-top: 6.6rem;
-  border-bottom: 5px solid #27A9E0; }
+  margin-top: -6.6rem;
+  border-bottom: 5px solid #27A9E0;
+  background-image: linear-gradient(to bottom right, #c1eee1, #ffffff); }
 
 svg {
   max-width: 100%; }

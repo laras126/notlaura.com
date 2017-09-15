@@ -46,7 +46,9 @@
 
       {% if sidebar %}
         <aside class="main-aside">
-          {{sidebar}}
+          {% block sidebar %}
+            {{sidebar}}
+          {% endblock %}
         </aside>
       {% endif %}
 

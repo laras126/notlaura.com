@@ -8,5 +8,4 @@
  */
 
 $context = array();
-
 Timber::render('sidebar-portfolio.twig', $context);

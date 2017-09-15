@@ -101,7 +101,6 @@ $rail: minmax(70px, 175px);
 
 
 
-
 // ----
 // Main Content
 // ----
@@ -226,10 +225,11 @@ $rail: minmax(70px, 175px);
   }
 
   &.-article {
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
 
     @include bp(med) {
+      padding-left: $grid-gap;
+      padding-right: $grid-gap;
+
       @include main-module-layout;
     }
 

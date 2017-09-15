@@ -153,12 +153,12 @@ function toggleTabs(element) {
 // TODO user closest LATER
 function panel1Callback() {
 	console.log('p1 is done');
+	let toHide = document.querySelector('.js-hide');
+	hide(toHide);
 }
 
 function panel2Callback() {
 	console.log('p2 callback');
-	let toHide = document.querySelector('.js-hide');
-	hide(toHide);
 }
 
 function panel3Callback() {

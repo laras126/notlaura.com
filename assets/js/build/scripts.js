@@ -1418,12 +1418,12 @@ if (document.querySelector('.page-template-page-story_layout')) {
 
 	var panel1Callback = function panel1Callback() {
 		console.log('p1 is done');
+		var toHide = document.querySelector('.js-hide');
+		hide(toHide);
 	};
 
 	var panel2Callback = function panel2Callback() {
 		console.log('p2 callback');
-		var toHide = document.querySelector('.js-hide');
-		hide(toHide);
 	};
 
 	var panel3Callback = function panel3Callback() {

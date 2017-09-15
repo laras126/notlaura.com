@@ -6,12 +6,12 @@
 
   // padding-top: $grid-gap;
   // padding-bottom: $grid-gap/2;
-  // border-top: 5px solid $accent-dark;
+  border-top: 5px solid $accent-med;
   background: $accent-dark;
 }
 
 .site-main {
-  padding-top: $h1;
+  padding-top: $h1*1.5;
 }
 
 .logo-img {
@@ -22,8 +22,6 @@
 }
 
 .site-header > .inner {
-  padding-left: $grid-gap;
-  padding-right: $grid-gap;
 
   display: flex;
   align-items: center;

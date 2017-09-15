@@ -13,18 +13,12 @@
 	position: relative;
 	z-index: 99;
 	right: -$base;
-	.home & {
-		background: $accent-light;
-		border-top: 5px solid $accent-dark;
-		border-bottom: 5px solid $accent-dark;
-		border-right: none;
-		border-left: none;
-		color: $text-dark;
-	}
-	// position: fixed;
-	// z-index: 100;
-	// top: $base;
-	// right: $base;
+	background: $accent-light;
+	border-top: 5px solid $accent-dark;
+	border-bottom: 5px solid $accent-dark;
+	border-right: none;
+	border-left: none;
+	color: $text-dark;
 
 	@include bp(small) {
 		// top: $base;
@@ -79,13 +73,12 @@
   display: block;
 	padding: $grid-gap $h2;
 	color: $text-light;
-	border: 0;
+	border-bottom: 0;
 
   @include bp(med) {
 		font-size: $base;
 		color: $text-light;
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
+
     // padding-top: $xsml;
 		// padding-bottom: $xsml;
 
@@ -97,11 +90,10 @@
       // border-top: $accent-border;
     }
 
-    &:hover {
-      color: $accent-med;
-      background-color: transparent;
-      border-bottom: $accent-border;
-      border-top: $accent-border;
+		&:hover,
+		&:focus {
+      color: $text-dark;
+      background-color: $accent-light;
     }
   }
 

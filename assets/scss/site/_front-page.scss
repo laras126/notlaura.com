@@ -85,11 +85,12 @@
 		background: linear-gradient(to bottom right, $white, rgba($white, 0.7));
 	}
 
+
 	// margin-top: $h2;
 
-	@include bp(small) {
+	// @include bp(small) {
 		padding: $base $grid-gap;
-	}
+	// }
 
 	// @include bp(med) {
 	// 	margin-top: $h1;

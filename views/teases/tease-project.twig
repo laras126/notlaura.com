@@ -16,12 +16,12 @@
     {# Don't show "Featured" #}
     <p class="project-types">{% for c in post.get_terms('project-type') %}{{ c.name != 'Featured' ? c.name }}{% endfor %}</p>
     <h4 class="project-tease-title">{% if not post.no_single %}<a href="{{post.link}}">{{post.title}}</a>{% else %}{{post.title}}{% endif %}</h4>
-    <p class="project-tease-tagline">{{post.intro}}</p>
+    <p class="project-tease-tagline lead">{{post.intro}}</p>
     <p class="project-tease-desc">{{post.para_intro}}</p>
 
     {% if post.no_single == false %}
       <p>
-        <a class="link-more btn" href="{{post.link}}" title="{{post.title}}">Details <span class="more-arrow">&rarr;</span></a>
+        <a class="link-more btn" href="{{post.link}}" title="{{post.title}}">{{'Featured' in post.get_terms('project-type') ? 'Read Case Study' : 'Details'}} <span class="more-arrow">&rarr;</span></a>
       </p>
     {% endif %}
 

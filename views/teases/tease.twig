@@ -1,5 +1,5 @@
 
-{% if post.thumbnail or "sticky" in post.class %}
+{% if post.thumbnail %}
 	{% set grid = true %}
 {% endif %}
 
@@ -15,9 +15,7 @@
 		{% endif %}
 	</header>
 {% endif %} #}
-{# <pre>
-	{{dump(post)}}
-</pre> #}
+
 <article class="post {{"sticky" in post.class ? "sticky"}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
 	{% block content %}
 
@@ -31,13 +29,13 @@
 			</div>
 		{% endif %}
 
-		{% if "sticky" in post.class and not post.thumbnail %}
+		{# {% if "sticky" in post.class and not post.thumbnail %}
 				<div class="tease-thumb">
 					<a href="{{post.link}}" class="sticky-thumb-link">
 						{% include "svgs/character-1.svg" %}
 					</a>
 				</div>
-		{% endif %}
+		{% endif %} #}
 
 		<div class="tease-content">
 

@@ -12,7 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="pingback" href="{{site.pingback_url}}" />
   <script src="{{site.theme.link}}/assets/js/build/lazysizes.min.js" async></script>
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/modernizr_copy.js" async></script>
   <script>
       WebFontConfig = {
         typekit: { id: 'pis2fvo' }
@@ -31,6 +30,14 @@
     })(document);
 
   </script>
+    // Credit: http://www.sarasoueidan.com/
+    if('querySelector' in document
+      && 'localStorage' in window
+      && 'addEventListener' in window) {
+
+      var root = document.getElementsByTagName( 'html' )[0];
+      root.classList.add('js');
+    }
 
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TimelineLite.min.js"></script>

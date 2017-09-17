@@ -69,7 +69,7 @@ function runBubbleAnimation() {
 
 }
 
-if (window.location.pathname == "/portfolio/") {
+if (document.querySelector('.blog-character' !== null)) {
 	runBubbleAnimation();
 }
 

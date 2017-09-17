@@ -9,9 +9,9 @@
 			{% endif %}
 		</figure>
 	{% elseif blck.text_format == 'paragraph'%}
-		{{blck.text|wpautop}}
-		<div class="fig-large textimage-image">
-			{% include "partials/srcset.twig" with { img: TimberImage(blck.image) } %}
-		</div>
+	<div class="fig-large textimage-image">
+		{% include "partials/srcset.twig" with { img: TimberImage(blck.image) } %}
+	</div>
+	{{blck.text|wpautop}}
 	{% endif %}
 {% endblock %}

@@ -4,49 +4,61 @@
 // Project Tease
 // ----
 
+
 .project {
 	background: $white;
 	border: 1px solid $accent-light;
 	border: 1px solid $accent-light;
 	overflow: hidden;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	@include grid(no) {
+		margin-bottom: $grid-gap;
+	}
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: flex-start;
 
 	&:focus {
 		outline: 5px solid $accent-light;
-	}
-
-	@include bp(med) {
-		margin: 0;
 	}
 
 }
 
 .project-not-featured {
 	@include bp(med) {
-		grid-row: span 2;
-		grid-column: span 1;
 
-		@include bp(large) {
-			// display: grid;
-			// grid-template-rows: 350px auto;
-			// grid-auto-flow: row dense;
+		@include grid(no) {
+			width: 49%;
 		}
 
-		flex-direction: column; // Flexbox fallback
+		@include grid(yes) {
+			grid-row: span 2;
+			grid-column: span 1;
+		}
+
 	}
 }
 
 .project-featured {
 	@include bp(med) {
 		min-height: 70vh;
-		grid-row: span 2;
-		grid-column: 1 / -1;
 
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		@include grid(yes) {
+			grid-row: span 2;
+			grid-column: 1 / -1;
+
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include grid(no) {
+			display: flex;
+			justify-content: space-between;
+			> * {
+				width: 48%;
+			}
+		}
+
 	}
 }
 
@@ -66,12 +78,8 @@
 
 	.project-featured & {
 		overflow: hidden;
-		// height: inherit;
 	}
 
-	.project-not-featured & {
-		// width: 100%;
-	}
 }
 
 .long-thumb {
@@ -94,7 +102,9 @@
 	}
 
 	.project-not-featured & {
-		grid-row: 2;
+		@include grid(yes) {
+			grid-row: 2;
+		}
 	}
 }
 
@@ -165,11 +175,11 @@
 
 // Fallback
 @include grid(no) {
-	.project-thumb {
-		width: 33%;
+	// .project-thumb {
+	// 	width: 33%;
 
-		.-featured & {
-			width: 100%;
-		}
-	}
+	// 	.-featured & {
+	// 		width: 100%;
+	// 	}
+	// }
 }

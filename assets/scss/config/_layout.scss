@@ -110,13 +110,13 @@ $rail: minmax(70px, 175px);
 // Fallback
 
 @include grid(no) {
-	.site-header,
-	.site-footer {
-    @include contain($screen-lg);
-	}
-	.site-main {
-    @include contain($screen-md);
-  }
+	// .site-header,
+	// .site-footer {
+  //   @include contain($screen-lg);
+	// }
+	// .site-main {
+  //   @include contain($screen-md);
+  // }
 }
 
 
@@ -182,6 +182,8 @@ $rail: minmax(70px, 175px);
   }
 
 } // .grid-main
+
+
 
 // ----
 // Content
@@ -282,31 +284,44 @@ $rail: minmax(70px, 175px);
 }
 
 
+
+
+// ----
+// Module
+// ----
+
+
 .module {
-  display: grid;
-  grid-auto-flow: row dense;
+  @include grid(yes) {
+    display: grid;
+    grid-auto-flow: row dense;
+  }
 
   &.-aside {
-    @include bp(small) {
-      @include main-module-layout;
-      @include grid-module-layout;
+    @include grid(yes) {
+      @include bp(small) {
+        @include main-module-layout;
+        @include grid-module-layout;
+      }
     }
   }
 
   &.-article {
-
     @include bp(med) {
       padding-left: $grid-gap;
       padding-right: $grid-gap;
 
-      @include main-module-layout;
+      @include grid(yes) {
+        @include main-module-layout;
+      }
     }
 
     @include bp(large) {
-      @include grid-module-layout;
+      @include grid(yes) {
+        @include grid-module-layout;
+      }
     }
   }
-
 }
 
 .module-link {

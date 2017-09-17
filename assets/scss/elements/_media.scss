@@ -6,29 +6,38 @@
 	br { // Generated from WP
 		display: none;
 	}
+	@include grid(yes) {
+		display: grid;
+		grid-column-gap: $grid-gap;
+		grid-row-gap: $grid-gap;
+		grid-template-rows: repeat(auto-fill, auto);
 
-	display: grid;
-	grid-column-gap: $grid-gap;
-	grid-row-gap: $grid-gap;
-	grid-template-rows: repeat(auto-fill, auto);
+		@include bp(small) {
+			&-columns-2,
+			&-columns-3,
+			&-columns-4 {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
 
-	@include bp(small) {
-		&-columns-2,
-		&-columns-3,
-		&-columns-4 {
-			grid-template-columns: repeat(2, 1fr);
+		@include bp(med) {
+			&-columns-3 {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		@include bp(large) {
+			&-columns-4 {
+				grid-template-columns: repeat(4, 1fr);
+			}
 		}
 	}
-
-	@include bp(med) {
-		&-columns-3 {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	@include bp(large) {
-		&-columns-4 {
-			grid-template-columns: repeat(4, 1fr);
+	@include grid(no) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		> * {
+			width: 49%;
 		}
 	}
 }

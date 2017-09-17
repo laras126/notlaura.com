@@ -141,7 +141,7 @@
 }
 
 .project-tease-desc {
-	font-size: $sml;
+	// font-size: $sml;
 }
 
 .project-tease-title {
@@ -167,44 +167,16 @@
 // ----
 
 .project-header {
-	// padding-top: 30%;
-	background-size: cover;
-	padding-top: 20vh;
-	// position: relative;
-	overflow: hidden;
+	color: $text-light;
+	margin-bottom: $h2;
+	background: $accent-vdark;
+	padding-top: $h1;
+	padding-bottom: $h1;
+}
 
-	.inner	{
-		margin-top: $h1;
-		@include bp(large) {
-			// display: flex;
-			// flex-direction: column;
-			// justify-content: flex-end;
-		}
-	}
-
-	.module-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-items: flex-start;
-
-		padding-left: $grid-gap;
-		padding-right: $grid-gap;
-		padding-top: $grid-gap;
-
-		background: $body-bkgd;
-
-		@include bp(large) {
-
-			margin-left: -$grid-gap;
-			margin-right: -$grid-gap;
-			width: calc(100% + #{$grid-gap * 2});
-			// padding: 0;
-			// border-top: 5px solid $accent-light;
-			// border-right: 5px solid $accent-light;
-			// border-left: 5px solid $accent-light;
-		}
-	}
+.header-testimonial {
+	background: linear-gradient(to bottom right, rgba($accent-dark,0.8), $accent-vdark);
+	padding: $h4;
 }
 
 .project-title {
@@ -216,14 +188,17 @@
 }
 
 .project-header-image {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	z-index: -1;
+	// position: absolute;
+	// width: 100%;
+	// top: 0;
+	// z-index: -1;
+}
+
+.project-header-title {
+	margin-top: 0;
 }
 
 .project-title {
-	// text-transform: uppercase;
 	font-size: $h1*1.5;
 	line-height: $line-height-sm;
 }

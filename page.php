@@ -26,6 +26,6 @@ $context = Timber::get_context();
 $post = new TimberPost();
 
 $context['post'] = $post;
-$context['sidebar'] = 'pages sidebar, hi!';
+// $context['sidebar'] = 'pages sidebar, hi!';
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

@@ -1036,29 +1036,32 @@ jQuery(document).ready(function () {
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-	$('a[href*="#"]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
-		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-			var target = $(this.hash);
-			var header_ht = $('.site-header').outerHeight();
-			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top - header_ht
-				}, 300, function () {
-					var $target = $(target);
-					$target.focus();
-					if ($target.is(":focus")) {
-						// Checking if the target was focused
-						return false;
-					} else {
-						$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-						$target.focus(); // Set focus again
-					};
-				});
-				return false;
-			}
-		}
-	});
+	// $('a[href*="#"]')
+	// 	.not('[href="#"]')
+	// 	.not('[href="#menu"]')
+	// 	.on('click', function() {
+	// 	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+	// 			var target = $(this.hash);
+	// 			var header_ht = $('.site-header').outerHeight();
+	//   		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	//   		if (target.length) {
+	//     		$('html,body').animate({
+	// 						scrollTop: target.offset().top - header_ht
+	//     		}, 300, function() {
+	// 					var $target = $(target);
+	// 					$target.focus();
+	// 					if ($target.is(":focus")) { // Checking if the target was focused
+	// 						return false;
+	// 					} else {
+	// 						$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+	// 						$target.focus(); // Set focus again
+	// 					};
+	// 				});
+	//     	return false;
+	// 		}
+	// 	}
+	// });
+
 
 	// Fit Vids
 	$(".main-content").fitVids({ customSelector: 'iframe' });
@@ -1268,13 +1271,13 @@ if (document.querySelector('.page-template-page-story_layout')) {
 				if (newIndex <= TYPED_ELS.length) {
 
 					if (panelClassesContain(newIndex, 'js-tabs')) {
-						var nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
+						var nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + ' .btn-next');
 
 						showButtons(nextBtnGroup);
 
 						// let tabs = document.querySelectorAll('.panel-tab');
 					} else {
-						var nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
+						var nextBtn = document.querySelector('#panel-' + newIndex + ' .btn-next');
 						showButtons(nextBtn);
 						clickToNextSection(newIndex.toString(), nextBtn);
 					}
@@ -1376,16 +1379,38 @@ if (document.querySelector('.page-template-page-story_layout')) {
 		// Stagger aimation if more than one element comes in.
 		if (stagger == true) {
 			var tm = new TimelineMax();
-			tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+			tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
 			// tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", rotation: 30, ease: Power2.easeOut }, 0.1, "");
 		} else {
-			TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
+			TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 });
 		}
 	};
 
 	var hide = function hide(el) {
 		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 	};
+
+	var PANELS = document.querySelectorAll('.panel');
+
+	// ----
+	// Prepare the panels
+	// ----
+
+	// Add ids to each panel.
+	// Link to the next panel
+	PANELS.forEach(function (el, index) {
+		el.id = 'panel-' + index;
+		var kids = el.children;
+
+		for (var i = 0; i < kids.length; i++) {
+			var kid = kids[i];
+
+			if (kid.classList.contains('btn-next')) {
+				// kid.id = 'panel-' + index + '-btn';
+				kid.setAttribute('href', '#panel-' + (index + 1));
+			}
+		}
+	});
 
 	// Get an array of all elements to be typed.
 	var TYPED_SRCS = document.querySelectorAll('.js-typed-src');
@@ -1399,7 +1424,7 @@ if (document.querySelector('.page-template-page-story_layout')) {
 		typeSpeed: TYPE_SPEED,
 		showCursor: SHOW_CURSOR,
 		onComplete: function onComplete() {
-			var nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+			var nextBtn = document.querySelector('#panel-' + options.elIndex + ' .btn-next');
 			markPanelComplete(options.elIndex);
 			showButtons(nextBtn);
 			clickToNextSection(options.elIndex + 1, nextBtn);

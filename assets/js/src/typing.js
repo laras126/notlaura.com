@@ -7,6 +7,28 @@
 
 if(document.querySelector('.page-template-page-story_layout')) {
 
+const PANELS = document.querySelectorAll('.panel');
+
+// ----
+// Prepare the panels
+// ----
+
+// Add ids to each panel.
+// Link to the next panel
+PANELS.forEach((el, index) => {
+	el.id = 'panel-'+index;
+	let kids = el.children;
+
+	for (let i = 0; i < kids.length; i++) {
+		let kid = kids[i];
+
+		if(kid.classList.contains('btn-next')) {
+			// kid.id = 'panel-' + index + '-btn';
+			kid.setAttribute('href', '#panel-'+(index+1));
+		}
+	}
+});
+
 // Get an array of all elements to be typed.
 const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
 const TYPED_ELS = document.querySelectorAll('.js-typed');
@@ -19,7 +41,7 @@ var options = {
 	typeSpeed: TYPE_SPEED,
 	showCursor: SHOW_CURSOR,
 	onComplete: () => {
-		let nextBtn = document.querySelector('#panel-' + options.elIndex + '-btn');
+		let nextBtn = document.querySelector('#panel-' + options.elIndex + ' .btn-next');
 		markPanelComplete(options.elIndex);
 		showButtons(nextBtn);
 		clickToNextSection(options.elIndex+1, nextBtn);
@@ -57,14 +79,14 @@ function typeNextInArray() {
 			if (newIndex <= TYPED_ELS.length ) {
 
 				if (panelClassesContain(newIndex, 'js-tabs')) {
-					let nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + '-btn .btn-next');
+					let nextBtnGroup = document.querySelectorAll('#panel-' + newIndex + ' .btn-next');
 
 					showButtons(nextBtnGroup);
 
 					// let tabs = document.querySelectorAll('.panel-tab');
 
 				} else {
-					let nextBtn = document.querySelector('#panel-' + newIndex + '-btn');
+					let nextBtn = document.querySelector('#panel-' + newIndex + ' .btn-next');
 					showButtons(nextBtn);
 					clickToNextSection(newIndex.toString(), nextBtn);
 				}
@@ -172,19 +194,16 @@ function reveal(el, stagger = false) {
 	// Stagger aimation if more than one element comes in.
 	if (stagger == true) {
 		let tm = new TimelineMax();
-		tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+		tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
 		// tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", rotation: 30, ease: Power2.easeOut }, 0.1, "");
 	} else {
-		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 1, ease: Power2.easeOut, autoAlpha: 1 });
+		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 });
 	}
 };
 
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
-
-
-
 
 
 } // end if

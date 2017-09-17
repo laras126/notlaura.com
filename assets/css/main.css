@@ -430,12 +430,23 @@ Modules
                 order: 1; } } }
 
 @media (min-width: 730px) {
-  .grid-header {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% minmax(auto, 650px);
-        grid-template-columns: 50% minmax(auto, 650px);
-    grid-column-gap: 1.43rem; } }
+  @supports (grid-area: auto) {
+    .grid-header {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 50% minmax(auto, 650px);
+          grid-template-columns: 50% minmax(auto, 650px);
+      grid-column-gap: 1.43rem; } }
+  @supports not (grid-area: auto) {
+    .grid-header {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .grid-header > * {
+        width: 48%; } } }
 
 .header-right,
 .header-left {

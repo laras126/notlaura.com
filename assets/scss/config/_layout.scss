@@ -187,14 +187,24 @@ $rail: minmax(70px, 175px);
 // Content
 // ----
 
+// Grid Layout isn't really helping here, but why not.
 .grid-header {
-  // background-color: $accent-dark;
+@include bp(med) {
 
-  @include bp(med) {
+  @include grid(yes) {
     display: grid;
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
+  @include grid(no) {
+    display: flex;
+    justify-content: space-between;
+    > * {
+      width: 48%;
+    }
+  }
+
+}
 }
 
 .header-right,
@@ -202,7 +212,6 @@ $rail: minmax(70px, 175px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
 }
 
 .header-right,

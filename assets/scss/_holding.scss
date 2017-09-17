@@ -13,3 +13,21 @@
 .widgets {
   padding-top: $sml;
 }
+
+
+// Not sure where to put these atm
+
+.header-title {
+  // @include upperspace;
+  // padding-top: $h3;
+}
+
+.header-lead,
+.section-lead,
+.lead {
+  font-size: $h4;
+}
+
+.header-intro {
+  margin-bottom: $base;
+}

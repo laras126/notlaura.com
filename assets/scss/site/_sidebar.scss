@@ -4,17 +4,19 @@
 	padding-right: $grid-gap;
 	padding-left: $grid-gap;
 
-	@include bp(large) {
-		padding: 0;
+	@include bp(med) {
+		padding-right: 0;
 	}
 }
 
 .main-aside > .widgets {
-	@include bp(small) {
-		display: grid;
-		grid-auto-flow: column dense;
-		grid-column-gap: $grid-gap;
-		align-items: start;
+	@include grid(yes) {
+		@include bp(small) {
+			display: grid;
+			grid-auto-flow: column dense;
+			grid-column-gap: $grid-gap;
+			align-items: start;
+		}
 	}
 
   @include bp(large) {
@@ -30,11 +32,11 @@
 		margin-bottom: $grid-gap;
 		padding-bottom: $grid-gap;
 		padding-top: $grid-gap;
+
 		@include bp(med) {
 			padding-right: $grid-gap;
 		}
-		// background-image: linear-gradient(to bottom right, $accent-med, $body-bkgd);
-		// background-color: $body-bkgd;
+
 		a {
 			//color: $text-light;
 			&:hover {
@@ -110,6 +112,5 @@
 				}
 			}
 		}
-	// list-style-type: disc;
 	}
 }

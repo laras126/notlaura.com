@@ -136,9 +136,6 @@
 	margin-top: $base;
 	font-size: $h3;
 	margin-bottom: $base;
-	@include bp(large) {
-		// margin-left: $grid-gap;
-	}
 }
 
 .tease-title-link {

@@ -256,7 +256,7 @@ $rail: minmax(70px, 175px);
     .grid-tease {
       display: flex;
       .tease-thumb {
-        width: 30%;
+        width: 40%;
         padding-right: $grid-gap;
       }
       .tease-content {
@@ -274,6 +274,9 @@ $rail: minmax(70px, 175px);
       flex-wrap: wrap;
       justify-content: space-between;
     }
+  }
+
+  @include bp(large) {
     .post {
       width: 49%;
     }

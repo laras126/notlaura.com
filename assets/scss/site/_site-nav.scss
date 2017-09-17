@@ -110,16 +110,19 @@
 	.current_page_item & {
 		background-color: $body-bkgd;
 		color: $text-dark;
-		// border-bottom: $accent-border;
-		// border-top: $accent-border;
+
+		&:hover { // Repeated styles, meh
+			background-color: $body-bkgd;
+			color: $text-dark;
+		}
 	}
 
 	transition: 0.2s ease all;
 
 	&:hover,
 	&:focus {
-		// color: $text-dark;
-		background-color: $accent-med;
+		color: $text-light;
+		background-color: $accent-vdark;
 	}
 
 }

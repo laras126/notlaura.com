@@ -3,15 +3,12 @@
   position: fixed;
   z-index: $ztop;
   width: 100%;
-
-  // padding-top: $grid-gap;
-  // padding-bottom: $grid-gap/2;
-  // border-top: 5px solid $accent-med;
+  top: 0;
   background: $accent-dark;
 }
 
 .site-main {
-  padding-top: $h1*1.5;
+  padding-top: $grid-gap*3;
 }
 
 .logo-img {

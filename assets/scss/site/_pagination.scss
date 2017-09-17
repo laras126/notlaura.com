@@ -3,9 +3,14 @@
 // Prev next nav
 
 .prevnext-nav {
-    @include divide-with-border(top);
-    @include divide-with-border(bottom);
-
+    // @include divide-with-border(top);
+    // @include divide-with-border(bottom);
+		padding-left: $grid-gap;
+		padding-right: $grid-gap;
+		@include bp(med) {
+			padding-left: 0;
+			padding-right: 0;
+		}
     display: flex;
     justify-content: center;
 }

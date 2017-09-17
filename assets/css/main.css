@@ -387,7 +387,7 @@ Modules
 .header-svg {
   display: block; }
 
-@supports not (grid-area: auto) {
+@supports (grid-area: auto) {
   .grid-main {
     display: -ms-grid;
     display: grid;
@@ -403,7 +403,7 @@ Modules
     .grid-main .main-content {
       grid-area: content; } }
 
-@supports (grid-area: auto) {
+@supports not (grid-area: auto) {
   @media (min-width: 730px) {
     .grid-main {
       display: -webkit-flex;
@@ -421,14 +421,14 @@ Modules
                 order: 1; } } }
 
 @media (min-width: 730px) {
-  @supports not (grid-area: auto) {
+  @supports (grid-area: auto) {
     .grid-header {
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: 50% minmax(auto, 650px);
           grid-template-columns: 50% minmax(auto, 650px);
       grid-column-gap: 1.43rem; } }
-  @supports (grid-area: auto) {
+  @supports not (grid-area: auto) {
     .grid-header {
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -451,7 +451,7 @@ Modules
       -ms-flex-pack: center;
           justify-content: center; }
 
-@supports not (grid-area: auto) {
+@supports (grid-area: auto) {
   @media (min-width: 730px) {
     .grid-tease {
       grid-column: 1 / -1;
@@ -468,14 +468,14 @@ Modules
       -ms-grid-columns: (50%)[2];
           grid-template-columns: repeat(2, 50%); } } }
 
-@supports (grid-area: auto) {
+@supports not (grid-area: auto) {
   @media (min-width: 520px) {
     .grid-tease {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
       .grid-tease .tease-thumb {
-        width: 30%;
+        width: 40%;
         padding-right: 1.43rem; }
       .grid-tease .tease-content {
         width: 60%; } }
@@ -494,19 +494,20 @@ Modules
               flex-wrap: wrap;
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
-              justify-content: space-between; }
+              justify-content: space-between; } }
+  @media (min-width: 1100px) {
     .post {
       width: 49%; }
     .grid-tease {
       width: 100%; } } }
 
-@supports not (grid-area: auto) {
+@supports (grid-area: auto) {
   .module {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: row dense; } }
 
-@supports not (grid-area: auto) {
+@supports (grid-area: auto) {
   @media (min-width: 520px) {
     .module.-aside {
       -ms-grid-columns: minmax(400px, 650px);
@@ -540,7 +541,7 @@ Modules
   .module.-article {
     padding-left: 1.43rem;
     padding-right: 1.43rem; }
-    @supports not (grid-area: auto) {
+    @supports (grid-area: auto) {
       .module.-article {
         -ms-grid-columns: minmax(400px, 650px);
             grid-template-columns: minmax(400px, 650px);
@@ -557,7 +558,7 @@ Modules
           grid-area: content; } } }
 
 @media (min-width: 1100px) {
-  @supports not (grid-area: auto) {
+  @supports (grid-area: auto) {
     .module.-article {
       place-content: start;
       grid-column-gap: 1.43rem;
@@ -819,6 +820,40 @@ svg {
 .lara-name path {
   stroke: #15598f;
   stroke-width: 1px; }
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg); }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg); } }
+
+@keyframes wave {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg); }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg); } }
+
+.ls-hand-left {
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-animation: wave 0.3s infinite;
+          animation: wave 0.3s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-transform-origin: 50% 90%;
+      -ms-transform-origin: 50% 90%;
+          transform-origin: 50% 90%; }
 
 .ls-skin {
   fill: #fbd3c8; }
@@ -1297,7 +1332,7 @@ input[type="checkbox"]:focus {
 #field_3_11 {
   grid-area: list; }
 
-@supports (grid-area: auto) {
+@supports not (grid-area: auto) {
   .gf_left_half {
     float: left;
     clear: left !important; }
@@ -1603,7 +1638,7 @@ th {
 .gallery br {
   display: none; }
 
-@supports not (grid-area: auto) {
+@supports (grid-area: auto) {
   .gallery {
     display: -ms-grid;
     display: grid;
@@ -1624,7 +1659,7 @@ th {
         -ms-grid-columns: (1fr)[4];
             grid-template-columns: repeat(4, 1fr); } } }
 
-@supports (grid-area: auto) {
+@supports not (grid-area: auto) {
   .gallery {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1683,7 +1718,16 @@ figcaption,
 
 img.lazyload,
 img.lazyloading {
-  width: 100%; }
+  width: 100%;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  transition: -webkit-filter 400ms;
+  transition: filter 400ms;
+  transition: filter 400ms, -webkit-filter 400ms; }
+
+img.lazyloaded {
+  -webkit-filter: blur(0);
+          filter: blur(0); }
 
 video,
 .cp_embed_wrapper {
@@ -2010,12 +2054,18 @@ code {
     color: #15598f; }
 
 .prevnext-nav {
+  padding-left: 1.43rem;
+  padding-right: 1.43rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media (min-width: 730px) {
+    .prevnext-nav {
+      padding-left: 0;
+      padding-right: 0; } }
 
 .prev,
 .next {
@@ -2214,19 +2264,20 @@ code {
   margin-top: 1.43rem;
   padding-right: 1.43rem;
   padding-left: 1.43rem; }
-  @media (min-width: 1100px) {
+  @media (min-width: 730px) {
     .main-aside {
-      padding: 0; } }
+      padding-right: 0; } }
 
-@media (min-width: 520px) {
-  .main-aside > .widgets {
-    display: -ms-grid;
-    display: grid;
-    grid-auto-flow: column dense;
-    grid-column-gap: 1.43rem;
-    -webkit-align-items: start;
-        -ms-flex-align: start;
-            align-items: start; } }
+@supports (grid-area: auto) {
+  @media (min-width: 520px) {
+    .main-aside > .widgets {
+      display: -ms-grid;
+      display: grid;
+      grid-auto-flow: column dense;
+      grid-column-gap: 1.43rem;
+      -webkit-align-items: start;
+          -ms-flex-align: start;
+              align-items: start; } } }
 
 @media (min-width: 1100px) {
   .main-aside > .widgets {
@@ -2409,7 +2460,7 @@ code {
   padding-left: 0;
   margin-top: 0; }
   @media (min-width: 730px) {
-    @supports not (grid-area: auto) {
+    @supports (grid-area: auto) {
       .widgets.-footer {
         display: -ms-grid;
         display: grid;
@@ -2419,7 +2470,7 @@ code {
         -ms-grid-columns: (minmax(200px, 450px))[3];
             grid-template-columns: repeat(3, minmax(200px, 450px));
         grid-column-gap: 1.43rem; } }
-    @supports (grid-area: auto) {
+    @supports not (grid-area: auto) {
       .widgets.-footer {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -2581,17 +2632,17 @@ code {
   border: 1px solid #E0E6F2;
   border: 1px solid #E0E6F2;
   overflow: hidden; }
-  @supports (grid-area: auto) {
+  @supports not (grid-area: auto) {
     .project {
       margin-bottom: 1.43rem; } }
   .project:focus {
     outline: 5px solid #E0E6F2; }
 
 @media (min-width: 730px) {
-  @supports (grid-area: auto) {
+  @supports not (grid-area: auto) {
     .project-not-featured {
       width: 49%; } }
-  @supports not (grid-area: auto) {
+  @supports (grid-area: auto) {
     .project-not-featured {
       -ms-grid-row: span 2;
           grid-row: span 2;
@@ -2601,7 +2652,7 @@ code {
 @media (min-width: 730px) {
   .project-featured {
     min-height: 70vh; }
-    @supports not (grid-area: auto) {
+    @supports (grid-area: auto) {
       .project-featured {
         -ms-grid-row: span 2;
             grid-row: span 2;
@@ -2610,7 +2661,7 @@ code {
         display: grid;
         -ms-grid-columns: 1fr 1fr;
             grid-template-columns: 1fr 1fr; } }
-    @supports (grid-area: auto) {
+    @supports not (grid-area: auto) {
       .project-featured {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -2658,7 +2709,7 @@ code {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
-  @supports not (grid-area: auto) {
+  @supports (grid-area: auto) {
     .project-not-featured .project-content {
       -ms-grid-row: 2;
           grid-row: 2; } }

@@ -962,6 +962,8 @@ Prism.languages.twig = { comment: /\{#[\s\S]*?#\}/, tag: { pattern: /\{\{[\s\S]*
 }());
 'use strict';
 
+console.log('Check it: https://github.com/laras126/notlaura.com');
+
 // FastClick
 if ('addEventListener' in document) {
 	document.addEventListener('DOMContentLoaded', function () {
@@ -969,15 +971,7 @@ if ('addEventListener' in document) {
 	}, false);
 }
 
-// var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-// // Set any attributes as desired
-// shape.setAttribute("cx", getRandomInt(20,100));
-// shape.setAttribute("cy", getRandomInt(20, 300));
-// shape.setAttribute("r", getRandomInt(1, 10));
-// shape.setAttribute("fill", "green");
-
-// document.querySelector('.blog-character').appendChild(shape);
-
+// Toggle Menu
 // http://www.a11ymatters.com/pattern/mobile-nav/#use-a-semantic-element-for-the-toggle-button
 var $toggle = document.querySelector('#toggle'),
     $menu = document.querySelector('#menu');
@@ -996,76 +990,9 @@ var $ = jQuery;
 
 jQuery(document).ready(function () {
 
-	$('body').addClass('js');
-
-	console.log('Check it: https://github.com/laras126/notlaura.com');
-
-	// TODO move to typing.js
-	// console.log('hi');
-
-	// const TITLE_TEXT = document.querySelector('.type-title').innerHTML;
-
-	// $('.type-it').typeIt({
-	// 	speed: 100,
-	// 	cursor: false,
-	// 	lifeLike: false
-	// })
-	// 	.tiType(TITLE_TEXT);
-	// .tiSettings({ speed: 100 })
-	// .tiType('but now I am typing pretty fasst')
-	// .tiDelete(2)
-	// .tiType('t!')
-
-
-	// Pocket request
-
-	// $.ajax({
-	// 	url: 'https://getpocket.com/v3/oauth/request',
-	// 	data: {
-	// 		'consumer_key': '70389-600b69f12a120f79b1312e67',
-	// 		'redirect_uri': 'https://notlaura.com'
-	// 	},
-	// 	contentType: "application/json; charset=utf-8", // this
-	// 	dataType: "json", // and this
-	// }).done( function() {
-	// 	alert('stuff');
-	// });
-
-
 	// ----
 	// Animations (GreenSock)
 	//----
-
-	// Character 1, header
-	// var mainBody = document.querySelectorAll(".main"),
-	// 		eyes = document.querySelector(".eyes"),
-	// 		pupils = document.querySelector(".pupils"),
-	// 		characterArea = document.querySelector(".character-1");
-
-	// 	var tl = new TimelineLite();
-
-	// 	TweenLite.set(mainBody, { y: 150 });
-
-	// // 	console.log(tl);
-
-	// 	tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
-
-	// 	characterArea.addEventListener("mouseover", () => {
-	// 		tl.to(mainBody, 1, {
-	// 			y: 0,
-	// 			ease: Power1.easeOut
-	// 		});
-	// 	});
-
-	// 	// function myFunction() {
-	// 	setInterval( () => {
-	// 		tl.fromTo(eyes, 1, { fill: '#1B75BC' }, { fill: 'white' })
-	// 			.fromTo(pupils, 1, { fill: '#1B75BC' }, { fill: 'black' }, '-=1');
-	// 	}, 3000);
-
-
-	// tl.set(document.querySelector(".main-header"), { backgroundColor: "green" });
-
 
 	/**
   * on scroll
@@ -1206,7 +1133,7 @@ function runBubbleAnimation() {
 	}
 }
 
-if (window.location.pathname == "/portfolio/") {
+if (document.querySelector('.blog-character' !== null)) {
 	runBubbleAnimation();
 }
 

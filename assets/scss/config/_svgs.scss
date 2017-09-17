@@ -125,6 +125,23 @@ svg {
 	// transform: translateX(-130%);
 }
 
+@keyframes wave {
+	0% {
+		transform: rotate(-15deg);
+	}
+	100% {
+		transform: rotate(10deg);
+	}
+}
+
+.ls-hand-left {
+	@include accelerate(transform);
+	animation: wave 0.3s infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	transform-origin: 50% 90%;
+}
+
 .ls-skin {
 	fill: #fbd3c8;
 }

@@ -1,12 +1,12 @@
-<?php 
+<?php
 
-/* 
- * 
+/*
+ *
  * Custom Post Types
  *
  */
 
-// Add your custom types here. 
+// Add your custom types here.
 // http://generatewp.com is nice!
 
 // Projects post type
@@ -27,7 +27,7 @@
 		'not_found_in_trash'  => __( 'Not found in Trash', 'notlaura' ),
 	);
 	$rewrite = array(
-		'slug'                => 'projects',
+		'slug'                => 'portfolio',
 		'with_front'          => true,
 		'pages'               => true,
 		'feeds'               => true,

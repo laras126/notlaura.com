@@ -183,7 +183,12 @@ $rail: minmax(70px, 175px);
 
 } // .grid-main
 
-
+.main-content {
+  @include bp(small) {
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+  }
+}
 
 // ----
 // Content

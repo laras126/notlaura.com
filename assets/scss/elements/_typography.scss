@@ -42,11 +42,11 @@ a {
 	&:hover, &:focus {
 		color: $link-hover;
 
-		.single & {
-			&:not(.btn) {
-				background-color: $accent-vlight;
-			}
-		}
+		// .main-content & {
+		// 	&:not(.btn) {
+		// 		background-color: $accent-vlight;
+		// 	}
+		// }
 	}
 
 	&:active {

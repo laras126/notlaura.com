@@ -57,7 +57,7 @@
 	display: inline-block;
 }
 
-.btn.-has-icon {
+.-has-icon {
 	display: inline-flex;
 	align-content: center;
 	justify-content: flex-start;
@@ -74,9 +74,9 @@
 }
 
 .project-launch-btn {
+	@extend .-has-icon;
 	margin-bottom: $grid-gap;
 	margin-top: $grid-gap;
-	// display: inline-block;
 }
 
 .skip-typing-btn {

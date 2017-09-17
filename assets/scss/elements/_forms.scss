@@ -43,7 +43,7 @@ input[type="tel"] {
 	background: $accent-vlight;
 	color: $body-text-clr;
 	border: 2px solid $accent-light;
-	font-family: $body-text-clr;
+	font-family: $body-font;
 	font-weight: 300;
 	border-radius: 2px;
 
@@ -70,7 +70,8 @@ input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
-	width: auto;
+	width: 100%;
+	max-width: 400px;
 }
 
 input[type="submit"],

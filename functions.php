@@ -78,10 +78,57 @@
 	 */
 
 	// Remove weird Jetpack CSS...why
-	add_action( 'wp_print_styles', 'nl_deregister_styles', 100 );
-	function nl_deregister_styles() {
-		wp_dequeue_style('simple-payments');
+	// add_action( 'wp_print_styles', 'nl_deregister_styles', 100 );
+	// function nl_deregister_styles() {
+	// 	wp_dequeue_style('simple-payments');
+	// }
+
+
+	// [bartag foo="foo-value"]
+	function nl_btn_func( $atts ) {
+		$a = shortcode_atts( array(
+				'text' => 'Launch Project',
+				'url' => '#',
+				'icon' => 'new-window'
+		), $atts );
+
+		// $text = esc_html($a['text']);
+		// $url = esc_url($a['url']);
+
+		$elem = "<p><a class=\"btn -has-icon\" href=\"{$a['url']}\">";
+		$elem .= esc_html($a['text']);
+		$elem .= "<svg viewBox=\"0 0 100 100\" class=\"icon-inline icon-inline-{$a['icon']}\">";
+		$elem .= "<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#svg-{$a['icon']}\"></use></svg></a></p>";
+		return $elem;
 	}
+	add_shortcode( 'btn', 'nl_btn_func' );
+
+  add_action('nav_menu_css_class', 'nl_add_current_nav_class', 10, 2 );
+
+	function nl_add_current_nav_class($classes, $item) {
+
+		// Getting the current post details
+		global $post;
+
+		// Getting the post type of the current post
+		$current_post_type = get_post_type_object(get_post_type($post->ID));
+		$current_post_type_slug = $current_post_type->rewrite[slug];
+
+		// Getting the URL of the menu item
+		$menu_slug = strtolower(trim($item->url));
+
+		// If the menu item URL contains the current post types slug add the current-menu-item class
+		if (strpos($menu_slug,$current_post_type_slug) !== false) {
+
+		   $classes[] = 'current-menu-item';
+
+		}
+
+		// Return the corrected set of classes to be added to the menu item
+		return $classes;
+
+	}
+
 
 	// Enqueue scripts
 	function nl_scripts() {

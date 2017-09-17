@@ -1,3 +1,23 @@
+/*
+
+Types of grids:
+.grid-main - for main page layout:
+  .main-aside (1/3)
+  .main-content (2/3)
+
+.grid-header - for image headers:
+  .header-left (1/2)
+  .header-right (1/2)
+
+Modules
+.-article
+.
+
+
+*/
+
+
+
 @mixin main-module-layout() {
   grid-template-columns: minmax(400px, 650px);
   place-content: center;
@@ -37,6 +57,10 @@
    }
 }
 
+
+
+
+
 // Breakpoints
 
 $screen-sm:     520px;
@@ -47,11 +71,6 @@ $screen-xl:   	1400px;
 $grid-gap: $h4;
 $rail: minmax(70px, 175px);
 
-
-
-// ----
-// Grids
-// ----
 
 // Container mixin for max width
 
@@ -68,6 +87,7 @@ $rail: minmax(70px, 175px);
 
 
 .inner-np,
+.inner-pad,
 .inner {
   @include contain($screen-xl);
 }
@@ -84,11 +104,6 @@ $rail: minmax(70px, 175px);
 
 // }
 
-@mixin bleed($size: $grid-gap) {
-  margin-left: -$size;
-  margin-right: -$size;
-  max-width: calc(100% + #{$size * 2});
-}
 
 
 
@@ -125,53 +140,58 @@ $rail: minmax(70px, 175px);
 }
 
 
-.grid-content {
-  display: grid;
-  grid-template-areas: "content" "aside";
 
-  @include bp(large) {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "aside content";
-    grid-column-gap: $grid-gap;
-  }
-}
+// Main content grid
+// Comes into play if there is sidebar content
 
-.main-aside {
-  grid-area: aside;
-}
+.grid-main {
 
-.main-content {
-  // padding-left: $grid-gap;
-  grid-area: content;
+  @include grid(yes) {
+    display: grid;
+    grid-template-areas: "content" "aside";
 
-  @include bp(med) {
-    // padding-left: $grid-gap;
-    // padding-right: $grid-gap;
-  }
+    @include bp(large) {
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "aside content";
+      grid-column-gap: $grid-gap;
+    }
 
-  @include bp(large) {
-    .blog & {
-      // padding-right: $grid-gap; // padding: 0;
+    .main-aside {
+      grid-area: aside;
+    }
+
+    .main-content {
+      grid-area: content;
     }
   }
-}
 
+  @include grid(no) {
+    @include bp(med) {
+      display: flex;
+
+      .main-aside {
+        width: calc(100% / 3);
+        order: 0;
+      }
+
+      .main-content {
+        width: calc(100% * 2/3);
+        order: 1;
+      }
+    }
+  }
+
+} // .grid-main
 
 // ----
 // Content
 // ----
 
-
-// TODO - using this?
 .grid-header {
   // background-color: $accent-dark;
-  color: $text-light;
-  margin-bottom: $h2;
-  display: grid;
-  grid-template-rows: minmax(250px, 400px);
 
   @include bp(med) {
-    grid-template-rows: minmax(500px, 60vh);
+    display: grid;
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
@@ -181,35 +201,15 @@ $rail: minmax(70px, 175px);
 .header-left {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  // align-items: center;
 }
 
-.header-title {
-	font-size: $h1;
-	line-height: 0.7;
-  padding-top: $grid-gap*2;
-
-  .-image & {
-    font-weight: $font-weight-strong;
-    text-transform: uppercase;
-    padding-left: $grid-gap;
-    background-image: linear-gradient(transparent, $accent-vdark);
-  }
-
-  .-text & {
-    margin-bottom: $h3;
-  }
+.header-right,
+.header-left {
+  // display: flex;
+  // flex-direction: column;
 }
-
-.header-lead,
-.section-lead,
-.lead {
-	font-size: $h4;
-}
-
-.header-intro {
-  margin-bottom: $base;
-}
-
 
 
 

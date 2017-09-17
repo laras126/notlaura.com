@@ -14,7 +14,7 @@
 		{% endif %}
 	{% endfor %} #}
 
-	<div class="tease-loop">
+	<div class="tease-loop grid-loop">
 		{% for post in posts %}
 			{% include ['teases/tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
 		{% endfor %}

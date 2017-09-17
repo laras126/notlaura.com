@@ -460,6 +460,55 @@ Modules
       -ms-flex-pack: center;
           justify-content: center; }
 
+@supports (grid-area: auto) {
+  @media (min-width: 730px) {
+    .grid-tease {
+      grid-column: 1 / -1;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 2fr;
+          grid-template-columns: 1fr 2fr;
+      grid-column-gap: 1.43rem; }
+    .grid-loop {
+      display: -ms-grid;
+      display: grid;
+      grid-row-gap: 1.43rem;
+      grid-column-gap: 1.43rem;
+      -ms-grid-columns: (50%)[2];
+          grid-template-columns: repeat(2, 50%); } } }
+
+@supports not (grid-area: auto) {
+  @media (min-width: 520px) {
+    .grid-tease {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .grid-tease .tease-thumb {
+        width: 30%;
+        padding-right: 1.43rem; }
+      .grid-tease .tease-content {
+        width: 60%; } }
+  @media (min-width: 730px) {
+    .post {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 1.43rem; }
+    .tease-loop {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+    .post {
+      width: 49%; }
+    .grid-tease {
+      width: 100%; } } }
+
 .module {
   display: -ms-grid;
   display: grid;
@@ -2414,13 +2463,7 @@ code {
   margin-top: 1.43rem; }
   @media (min-width: 730px) {
     .tease-loop {
-      padding-right: 1.43rem;
-      display: -ms-grid;
-      display: grid;
-      grid-row-gap: 1.43rem;
-      grid-column-gap: 1.43rem;
-      -ms-grid-columns: (50%)[2];
-          grid-template-columns: repeat(2, 50%); } }
+      padding-right: 1.43rem; } }
 
 .tease-thumb {
   max-height: 400px;
@@ -2435,15 +2478,6 @@ code {
   @media (min-width: 730px) {
     .tease-thumb {
       max-height: none; } }
-
-@media (min-width: 730px) {
-  .grid-tease {
-    grid-column: 1 / -1;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 2fr;
-        grid-template-columns: 1fr 2fr;
-    grid-column-gap: 1.43rem; } }
 
 .post {
   padding-top: 1.43rem;

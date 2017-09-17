@@ -229,6 +229,58 @@ $rail: minmax(70px, 175px);
 // ----
 
 
+@include grid(yes) {
+  @include bp(med) {
+    .grid-tease {
+      grid-column: 1 / -1;
+
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-column-gap: $grid-gap;
+    }
+
+    .grid-loop {
+      display: grid;
+      grid-row-gap: $grid-gap;
+      grid-column-gap: $grid-gap;
+      grid-template-columns: repeat(2, 50%); // TODO flexbox fallback
+    }
+  }
+}
+
+// Fallback
+@include grid(no) {
+  @include bp(small) {
+    .grid-tease {
+      display: flex;
+      .tease-thumb {
+        width: 30%;
+        padding-right: $grid-gap;
+      }
+      .tease-content {
+        width: 60%;
+      }
+    }
+  }
+  @include bp(med) {
+    .post {
+      display: flex;
+      margin-bottom: $grid-gap;
+    }
+    .tease-loop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .post {
+      width: 49%;
+    }
+    .grid-tease {
+      width: 100%;
+    }
+  }
+}
+
 .module {
   display: grid;
   grid-auto-flow: row dense;

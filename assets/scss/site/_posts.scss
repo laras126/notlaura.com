@@ -39,16 +39,6 @@
 
 	@include bp(med) {
 		padding-right: $grid-gap;
-		display: grid;
-		grid-row-gap: $grid-gap;
-		grid-column-gap: $grid-gap;
-		grid-template-columns: repeat(2, 50%);
-
-		// TODO flexbox fallback
-	}
-
-	@include bp(large) {
-		// padding-left: $grid-gap;
 	}
 }
 
@@ -64,15 +54,6 @@
 	display: flex;
 	flex-direction: column;
 
-}
-.grid-tease {
-	@include bp(med) {
-		grid-column: 1 / -1;
-
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-column-gap: $grid-gap;
-	}
 }
 
 .post {

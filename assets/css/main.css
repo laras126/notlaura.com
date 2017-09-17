@@ -2567,37 +2567,10 @@ code {
 .single-meta {
   margin-bottom: 2.64rem; }
 
-.grid-projects {
-  padding-left: 1.43rem;
-  padding-right: 1.43rem; }
-  @media (min-width: 730px) {
-    .grid-projects {
-      grid-row-gap: 2.86rem;
-      grid-column-gap: 1.43rem;
-      -ms-grid-columns: (1fr)[2];
-          grid-template-columns: repeat(2, 1fr);
-      -webkit-align-items: start;
-          -ms-flex-align: start;
-              align-items: start; } }
-  @supports not (grid-area: auto) {
-    .grid-projects {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
-      .grid-projects > * {
-        width: 32%; } }
-
 .project {
   background: #ffffff;
   border: 1px solid #E0E6F2;
-  margin-left: -1.43rem;
-  margin-right: -1.43rem;
+  border: 1px solid #E0E6F2;
   overflow: hidden;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2650,8 +2623,6 @@ code {
     left: 0; }
   .project-featured .project-thumb {
     overflow: hidden; }
-  .project-not-featured .project-thumb {
-    width: 100%; }
 
 .long-thumb {
   will-change: transform; }

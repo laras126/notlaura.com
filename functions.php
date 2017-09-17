@@ -103,8 +103,9 @@
 	}
 	add_shortcode( 'btn', 'nl_btn_func' );
 
-  add_action('nav_menu_css_class', 'nl_add_current_nav_class', 10, 2 );
 
+
+  // add_action('nav_menu_css_class', 'nl_add_current_nav_class', 10, 2 );
 	function nl_add_current_nav_class($classes, $item) {
 
 		// Getting the current post details

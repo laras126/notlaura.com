@@ -1,55 +1,13 @@
 
-// Main page styles
-
-.page-template-page-portfolio {
-	// background-image: linear-gradient(to bottom right, $accent-med, $l-teal);
-
-	.main-header {
-		// background-image: linear-gradient(to bottom right, $yellow, $pink);
-	}
-}
-
 
 // ----
 // Project Tease
 // ----
 
-// Projects grid on page-portfolio.twig
-.grid-projects {
-	// display: grid;
-	// grid-template-rows: minmax(200px, auto);
-	// grid-auto-flow: row dense;
-
-	padding-left: $grid-gap;
-	padding-right: $grid-gap;
-
-	// Two columns on large
-	@include bp(med) {
-		grid-row-gap: $grid-gap * 2;
-		grid-column-gap: $grid-gap;
-		grid-template-columns: repeat(2, 1fr);
-		align-items: start;
-		// margin-right: $grid-gap;
-	}
-
-	// Flexbox fallback
-	@include grid(no) {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		> * {
-			width: 32%;
-		}
-	}
-}
-
-// TODO: credit scott kellum's site for scroller
 .project {
-	// box-shadow: 0 0 10px rgba($text-med, 0.6);
 	background: $white;
 	border: 1px solid $accent-light;
-	margin-left: -$grid-gap;
-	margin-right: -$grid-gap;
+	border: 1px solid $accent-light;
 	overflow: hidden;
 
 	display: flex;
@@ -112,7 +70,7 @@
 	}
 
 	.project-not-featured & {
-		width: 100%;
+		// width: 100%;
 	}
 }
 

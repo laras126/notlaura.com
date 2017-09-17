@@ -2,25 +2,21 @@
 
 {% block header %}
 
-<header class="main-header {{ '-' ~ post.header_type }}">
+<header class="project-header {{ '-' ~ post.header_type }}">
 
-<div class="inner-pad">
-
-		<div class="module -article">
-			<div class="module-content">
-				<h1 class="header-title">Portfolio</h1>
-				<p class="header-lead">Case studies from projects I've completed as an independent consultant.</p>
-				<p>My independent client work has ranged from custom WordPress theme builds to branding to front-end UI development and refactors with startups. Working independently has allowed me the ability to pursue my teaching career as well, notably the development of a set of online courses and a tutoring business I called the Tackle Box.</p>
-			</div>
+	<div class="inner-pad grid-header">
+		<div class="header-left">
+			<h1>Portfolio</h1>
+			<p class="header-lead">Case studies from projects I've completed as an independent consultant.</p>
+			<p>My independent client work primarily consists of custom WordPress theme builds and front-end UI development for startups. I have both worked as a front-end development contractor within teams as well as a one-woman agency, designing, developing, and launching websites for a variety of businesses.</p>
+			<p>Working independently has allowed me the ability to pursue my teaching career as well, notably the development of a set of online courses and a tutoring business I called the Tackle Box.</p>
 		</div>
-
-</div>
 </header>
 {% endblock %}
 
 {% block content %}
 
-	<div class="tease-loop grid-projects">
+	<div class="tease-loop grid-loop">
 	{% for post in projects %}
 		{% include 'teases/tease-project.twig' %}
 	{% endfor %}
@@ -29,11 +25,10 @@
 {% endblock %}
 
 {% block sidebar %}
-	<ul class="widgets -blog">
-		<div class="module-content">
-			<h1 class="header-title">{{post.title}}</h1>
-			<p class="header-lead">{{post.intro}}</p>
-			<p>{{post.para_intro}}</p>
-		</div>
-	</ul>
+	{# <ul class="widgets -blog"> #}
+		<h1>Portfolio</h1>
+		<p class="header-lead">Case studies from projects I've completed as an independent consultant.</p>
+		<p>My independent client work has ranged from custom WordPress theme builds to branding to front-end UI development and refactors with startups.</p>
+		<p>Working independently has allowed me the ability to pursue my teaching career as well, notably the development of a set of online courses and a tutoring business I called the Tackle Box.</p>
+	{# </ul> #}
 {% endblock %}

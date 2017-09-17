@@ -51,7 +51,7 @@
 		function add_to_context($context) {
 			$context['callout_tf'] = get_field('callout_tf', 'options');
 			$context['callout_bar'] = get_field('callout_bar', 'options');
-
+			$conext['ENV'] = WP_ENV;
 			$context['main_nav'] = new TimberMenu('main_nav');
 			$context['footer_nav'] = new TimberMenu('footer_nav');
 			$context['footer_widgets'] = Timber::get_sidebar('sidebar.php');
@@ -77,23 +77,22 @@
 	 **************************
 	 */
 
-	// Remove weird Jetpack CSS...why
-	// add_action( 'wp_print_styles', 'nl_deregister_styles', 100 );
-	// function nl_deregister_styles() {
-	// 	wp_dequeue_style('simple-payments');
-	// }
+
+	add_action( 'send_headers', 'nl_add_header' );
+	function nl_add_header() {
+		if( WP_ENV != 'development') {
+			header( 'Link: <'.get_template_directory_uri() . '/assets/css/main.min.css>; rel=preload; as=style' );
+		}
+	}
 
 
-	// [bartag foo="foo-value"]
+	// Shortcode for buttons
 	function nl_btn_func( $atts ) {
 		$a = shortcode_atts( array(
 				'text' => 'Launch Project',
 				'url' => '#',
 				'icon' => 'new-window'
 		), $atts );
-
-		// $text = esc_html($a['text']);
-		// $url = esc_url($a['url']);
 
 		$elem = "<p><a class=\"btn -has-icon\" href=\"{$a['url']}\">";
 		$elem .= esc_html($a['text']);
@@ -141,7 +140,7 @@
 			wp_enqueue_script('jquery');
 		}
 
-			wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
+			// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
 
 			// TODO - just use these, not Max
 			// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TimelineLite.min.js', array(), false, true );
@@ -149,12 +148,12 @@
 			// wp_enqueue_script( 'gsap-js-css', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSRulePlugin.min.js', array(), false, true );
 
 		// Enqueue stylesheet
-		if( WP_ENV == 'production' ) {
+		if( WP_ENV != 'development' ) {
 			wp_enqueue_style( 'nl-styles', get_template_directory_uri() . '/assets/css/main.min.css', 1.0);
 			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.min.js', array('jquery'), '1.0.0', true );
 		} else {
 			wp_enqueue_style( 'nl-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
-			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery', 'gsap-js'), '1.0.0', true );
+			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery'), '1.0.0', true );
 
 			// Loading files indiv.
 			// wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery', 'gsap-js', 'gsap-js-2', 'gsap-js-css'), '1.0.0', true );

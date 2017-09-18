@@ -1,6 +1,10 @@
 {% extends "base.twig" %}
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
+{% block head %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js" async></script>
+{% endblock %}
+
 {% block header %}
 	{# {% include 'headers/header-front-page.twig' %} #}
 	{# <h1 class="screen-reader js-typed-src">{{post.title}}</h1>
@@ -14,73 +18,87 @@
 {% block content %}
 <div class="module-content">
 	<section class="scene">
-		<header class="panel" id="panel-0">
 
-			<span class="js-typed-src" id="panel-0">
+		<header class="panel">
+
+			<span class="js-typed-src">
 				<h2> <span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h2>
 			</span>
-			<span class="js-typed" aria-hidden="true"></span>
 
 			<div class="front-page-img-wrap">
 				{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img js-hide' } %}
 			</div>
-
-			<a class="btn-next js-reveal" id="panel-0-btn" href="#panel-1" role="presentation">👍</a>
-
+			<a class="btn-next js-reveal">Got it 👍</a>
 		</header>
 
-		<div class="panel" id="panel-1">
-			<span class="js-typed-src" data-callback="panel1Callback">
+		<div class="panel">
+			<span class="js-typed-src">
 				<h2 class="panel-title rotate-colors"><span hidden>^200</span>That's <br>L -<span hidden>^50</span> A -<span hidden>^50</span> R -<span hidden>^50</span> A</span>.</h2>
 				<p class="lead">You know, like Lara Croft, Tomb Raider?<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
 				<p class="lead">I guess that depends on your generation ;).</p>
 			</span>
-			<span class="js-typed" aria-hidden="true"></span>
 
-			<a class="btn-next js-reveal" href="#panel-2" id="panel-1-btn" role="presentation">👍</a>
+			<a class="btn-next js-reveal">Got it 👌</a>
 		</div>
 
-		<div class="panel js-tabs" id="panel-2">
-			<span class="js-typed-src" data-callback="panel2Callback">
+		<div class="panel">
+			<span class="js-typed-src" data-callback="hideLaraPic">
+				<h2>Before we begin...</h2>
+				<p class="lead">I built this page as a welcome-to-my-website / choose-your-own-adventure interactive kind of reading experience.</p>
+				<p>If you'd like to skip it and reveal all content at any time, you can use the "Show all Content" button at the bottom left, or scroll back up to test out other options.</p>
+				<p>Okay, ready?</p>
+				<span hidden>^50</span>
+			</span>
+
+			<a class="btn-next js-reveal">Ready 🤘</a>
+		</div>
+
+		<div class="panel js-tabs">
+			<span class="js-typed-src">
 				<h2>What do I do?</h2>
-				<p class="lead">While I may not raid tombs or tend to injured Russian soldiers like those Laras, <span hidden>^50</span> I <em>do</em> do some cool things I’d like to tell you about.</p>
+				<p class="lead">While I may not raid tombs or tend to injured Russian soldiers like the aforementioned Laras, <span hidden>^50</span> I <em>do</em> do some cool things I’d like to tell you about.</p>
 				<span hidden>^50</span>
 				<p class="lead">Would you like the techie 🖥 or non-techie 📝 version?</p>
 			</span>
-			<span class="js-typed" aria-hidden="true"></span>
+			{# <span class="js-typed" aria-hidden="true"></span> #}
 
 			<div class="decision-btns" id="panel-2-btn">
-				<a href="#panel-3" data-content-ref="techie" class="js-reveal btn-next">🖥</a>
-				<a href="#panel-3" data-content-ref="non-techie" class="js-reveal btn-next">📝</a>
+				<a data-content-ref="techie" class="js-reveal btn-next">🖥</a>
+				<a data-content-ref="non-techie" class="js-reveal btn-next">📝</a>
 			</div>
 		</div>
 
-		<div class="panel" id="panel-3">
+		<div class="panel">
 
 			<span class="panel-tab js-hidden" id="techie">
-				<h2 class="panel-title">Greetings, fellow web enthusiast!</h2>
-				<p>I identify as the illustrious:</p>
-				<h3 class="highlight rotate-colors">Front-end Web Developer</h3>
-				<p>I absolutely love writing Sass, component-izing markup, and staying on top of the latest and greatest. CSS Grid Layout & Flexbox (💜), SVG animation, and accessibility are a few things I'm especially jazzed about these days.</p>
+				<span class="js-typed-src">
+					<h2 class="panel-title">Greetings, fellow web enthusiast!</h2>
+					<p>I identify as the illustrious:</p>
+					<h3 class="highlight rotate-colors">Front-end Web Developer</h3>
+					<p>I absolutely love writing Sass, component-izing markup, and staying on top of the latest and greatest. CSS Grid Layout & Flexbox (💜), SVG animation, and accessibility are a few things I'm especially jazzed about these days.</p>
+				</span>
+				<span class="js-typed" aria-hidden="true"></span>
 			</span>
 
 			<span class="panel-tab js-hidden" id="non-techie">
-				<h2 class="panel-title">I'm a <span class="rotate-colors">Front-end Web Developer</span>.</h2>
-				<p>Wait a sec, that sounds pretty techie to me!</p>
-				<p>Let me explain.</p>
-				<p>Every website has a "front-end" and a "back-end". You've been to Google.com before, right? Let's use that as an an example.</p>
-				<p>{{ include('svgs/google.twig') }}</p>
-				<p>The <strong>front-end</strong> for Google.com is everything you see on the page: the search box, the logo, the shadow around the box, and if you are looking at it on a computer, even that little animation that happens when you hover your mouse on the "I'm Feeling Lucky" button.</p>
-				<p>The <strong>back-end</strong> is all of the logic and data and algorithm-related stuff that happens once type in your query and hit "Search".</p>
-				<p>So, as a Front-end Web Developer, I would be in charge of putting the search box on the page and applying the visual effects or animations to make it look nice and pleasurable to use.</p>
-				<p>You can think of it like a restaurant, too: the "back-end" is the kitchen or back-of-the-house, and the "front-end" is the plating and service, or front-of-the-house.</p>
-				{# <p>You know what? I really love what I do! The coding part is kind of like constantly solving puzzles, and since I work on the front-end, I can exercise my visual creativity, too. I especially love designing and building interactive things like this little typing effect you are using now.</p> #}
+				<span class="js-typed-src">
+					<h2 class="panel-title">I'm a <span class="rotate-colors">Front-end Web Developer</span>.</h2>
+					<p>Wait a sec, that sounds pretty techie to me!</p>
+					<p>Let me explain.</p>
+					<p>Every website has a "front-end" and a "back-end". You've been to Google.com before, right? Let's use that as an an example.</p>
+					{# <p>{{ include('svgs/google.twig') }}</p> #}
+					<p>The <strong>front-end</strong> for Google.com is everything you see on the page: the search box, the logo, the shadow around the box, and if you are looking at it on a computer, even that little animation that happens when you hover your mouse on the "I'm Feeling Lucky" button.</p>
+					<p>The <strong>back-end</strong> is all of the logic and data and algorithm-related stuff that happens once type in your query and hit "Search".</p>
+					<p>So, as a Front-end Web Developer, I would be in charge of putting the search box on the page and applying the visual effects or animations to make it look nice and pleasurable to use.</p>
+					<p>You can think of it like a restaurant, too: the "back-end" is the kitchen or back-of-the-house, and the "front-end" is the plating and service, or front-of-the-house.</p>
+				</span>
+				<span class="js-typed" aria-hidden="true"></span>
 			</span>
 
-			<a class="btn-next js-reveal" href="#panel-4" id="panel-3-btn" role="presentation">🙌</a>
+			<a class="btn-next js-reveal">🙌</a>
 		</div>
-{#
-		<div class="panel" id="panel-4">
+
+		<div class="panel">
 			<span class="js-typed-src" id="typeContentHolder2" aria-hidden="true"></span>
 
 			<span class="screen-reader" id="techie-2">
@@ -96,11 +114,11 @@
 			</span>
 
 			<span class="js-typed" aria-hidden="true"></span>
-		</div> #}
+		</div>
 
 	</section>
 
-	<button class="skip-typing-btn" aria-hidden="true">Skip Typing Effect</button>
+	<button class="skip-typing-btn" aria-hidden="true">Show All Content</button>
 
 </div>
 {% endblock %}

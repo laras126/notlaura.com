@@ -71,7 +71,8 @@
 	position: relative;
 
 	@include bp(med) {
-		min-height: 60vh;
+		padding-top: $h1;
+		min-height: 70vh;
 	}
 
 	display: flex;
@@ -175,22 +176,25 @@
 }
 
 .btn-next {
-	// background: none;
-	// display: inline-block;
-	border: 0;
-	padding: $sml $base;
-	font-size: $h1;
+	@include button($accent-dark);
+	// border: 0;
+	// padding: $sml $base;
+	font-size: $h4;
 	display: inline-block;
-	// margin-bottom: $grid-gap;
+
+	// background-color: $accent-dark;
+
+	// color: $text-light;
+	margin-top: $grid-gap;
+	// font-weight: $font-weight-strong;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: none;
+
 		@include bp(med) {
 			img {
 				transition: 0.2s transform ease;
-				transform: scale(1.1);
 				transform: rotate(-20deg);
 			}
 		}
@@ -198,8 +202,7 @@
 
 	&:active {
 		img {
-				transform: scale(0.9);
-				transform: rotate(0deg);
+			transform: rotate(0deg);
 		}
 	}
 
@@ -220,7 +223,6 @@
 .js-reveal {
 	@include js-reveal;
 	@include accelerate(transform);
-	transform: scale(0.5);
 }
 
 .decision-btns {

@@ -2171,7 +2171,8 @@ code {
   padding: 1.1rem 1.43rem; }
   @media (min-width: 730px) {
     .panel {
-      min-height: 60vh; } }
+      padding-top: 3.3rem;
+      min-height: 70vh; } }
   .panel:focus {
     transition: .2s ease all;
     outline: 1px solid #ffffff;
@@ -2214,27 +2215,32 @@ code {
           animation: rotate-text-color 2s infinite; }
 
 .btn-next {
-  border: 0;
-  padding: 0.88rem 1.1rem;
-  font-size: 3.3rem;
-  display: inline-block; }
-  .btn-next:hover, .btn-next:active, .btn-next:focus {
-    background: none; }
-    @media (min-width: 730px) {
-      .btn-next:hover img, .btn-next:active img, .btn-next:focus img {
-        transition: 0.2s -webkit-transform ease;
-        transition: 0.2s transform ease;
-        transition: 0.2s transform ease, 0.2s -webkit-transform ease;
-        -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-                transform: scale(1.1);
-        -webkit-transform: rotate(-20deg);
-            -ms-transform: rotate(-20deg);
-                transform: rotate(-20deg); } }
+  background-color: #15598f;
+  border-radius: 2px;
+  color: #ffffff;
+  border: 2px solid #1b75bc;
+  padding: 0.88rem 1.43rem;
+  display: inline-block;
+  font-family: "adelle-sans", Arial, sans-serif;
+  font-size: 1.43rem;
+  display: inline-block;
+  margin-top: 1.43rem; }
+  .btn-next:hover, .btn-next:focus {
+    background-color: #0e3d63;
+    color: #ffffff;
+    border-color: #15598f; }
+  .btn-next:active {
+    background-color: #01060a;
+    border-color: #0e3d63; }
+  @media (min-width: 730px) {
+    .btn-next:hover img, .btn-next:active img, .btn-next:focus img {
+      transition: 0.2s -webkit-transform ease;
+      transition: 0.2s transform ease;
+      transition: 0.2s transform ease, 0.2s -webkit-transform ease;
+      -webkit-transform: rotate(-20deg);
+          -ms-transform: rotate(-20deg);
+              transform: rotate(-20deg); } }
   .btn-next:active img {
-    -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-            transform: scale(0.9);
     -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
             transform: rotate(0deg); }
@@ -2256,10 +2262,7 @@ code {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-perspective: 1000px;
-          perspective: 1000px;
-  -webkit-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-          transform: scale(0.5); }
+          perspective: 1000px; }
 
 .decision-btns {
   margin-top: 1.43rem;
@@ -2391,7 +2394,8 @@ code {
   background-color: #242F4A;
   color: #ffffff;
   padding-left: 1.43rem;
-  padding-right: 1.43rem; }
+  padding-right: 1.43rem;
+  position: relative; }
   .site-footer a {
     color: #E0E6F2; }
 

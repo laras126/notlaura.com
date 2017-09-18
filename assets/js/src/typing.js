@@ -18,6 +18,8 @@ if(document.querySelector('.page-template-page-story_layout')) {
 	// Hook up typing.
 	PANELS.forEach((el, index) => {
 		el.id = 'panel-'+index;
+		el.classList.add('js-incomplete');
+
 		let kids = el.children;
 
 		for (let i = 0; i < kids.length; i++) {
@@ -56,6 +58,7 @@ function addButtonHrefs(kid, index) {
 
 function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
+
 		let typedEl = document.createElement('span');
 		typedEl.classList.add('js-typed');
 		typedEl.setAttribute('aria-hidden', 'true');
@@ -82,6 +85,8 @@ function typeNextSection(index) {
 	let typedSrc = document.querySelector('#panel-' + index + ' .js-typed-src');
 	let typedEl = document.querySelector('#panel-'+index+' .js-typed');
 
+	let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
+
 	let determineTrigger = function(index) {
 		if (panelClassesContain(index, 'js-tabs')) {
 			trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
@@ -97,6 +102,7 @@ function typeNextSection(index) {
 		strings: [typedSrc.innerHTML],
 		typeSpeed: TYPE_SPEED,
 		showCursor: false,
+		callback: callbackFunc(index),
 		onComplete: () => {
 			markPanelComplete(index);
 			addBtnClickEvent(index, nextBtn, options);
@@ -126,9 +132,26 @@ function addBtnClickEvent(index, btn, options) {
 
 
 
+const SKIP_BTN = document.querySelector('.js-skipBtn');
+
+SKIP_BTN.addEventListener('click', (e) => {
+	e.preventDefault();
+	let TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src')
+	TYPED_ELS.forEach((el) => {
+		el.classList.remove('js-typed-src');
+	});
+});
+
+
 // ----
 // Panel Helpers
 // ----
+
+function typeFirstPanel(index, typedEl, options) {
+	if (index == 0) {
+		let typed = new Typed(typedEl, options);
+	}
+}
 
 function panelClassesContain(i, c) {
 	let elem = document.querySelector('#panel-' + i);
@@ -138,6 +161,7 @@ function panelClassesContain(i, c) {
 function markPanelComplete(i) {
 	let elem = document.querySelector('#panel-' + i);
 	elem.classList.add('js-complete');
+	elem.classList.remove('js-incomplete');
 }
 
 function showButtons(btn) {
@@ -218,58 +242,4 @@ function reveal(el, stagger = false) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
-
-
-
-
-
-
-
-
-
-
-
-function typeFirstPanel(index, typedEl, options) {
-  if(index == 0) {
-    let typed = new Typed(typedEl, options);
-	}
-}
-// // Function to type next item in typedEls array
-// function typeNextInArray() {
-
-// 	// Move through the array
-// 	options.elIndex++;
-// 	let newIndex = options.elIndex;
-// 	let currentEl = TYPED_SRCS[newIndex];
-// 	let morePanels = newIndex <= TYPED_ELS.length;
-
-// 	// Allow for data attributes to provide some settings (not really using ATM)
-// 	let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-
-// 	// Callbacks must be defined below
-// 	let callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
-
-// 	// New options set
-// 	let newOptions = {
-// 		elIndex: newIndex,
-// 		startDelay: 500,
-// 		strings: [TYPED_SRCS[newIndex].innerHTML],
-// 		typeSpeed: newTypeSpeed,
-// 		showCursor: SHOW_CURSOR,
-// 		callback: callbackFunc(TYPED_SRCS[newIndex]),
-// 		onComplete: () => {
-
-// 			markPanelComplete(newIndex);
-
-// 			// If there are remaining panels:
-// 			if (morePanels) {
-// 				handlePanelTransition(newIndex);
-// 			} else {
-// 				console.log('done');
-// 			}
-// 		}
-// 	}
-
-// 	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
-// }
 

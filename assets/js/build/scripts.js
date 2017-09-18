@@ -1036,32 +1036,29 @@ jQuery(document).ready(function () {
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
-	// $('a[href*="#"]')
-	// 	.not('[href="#"]')
-	// 	.not('[href="#menu"]')
-	// 	.on('click', function() {
-	// 	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-	// 			var target = $(this.hash);
-	// 			var header_ht = $('.site-header').outerHeight();
-	//   		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	//   		if (target.length) {
-	//     		$('html,body').animate({
-	// 						scrollTop: target.offset().top - header_ht
-	//     		}, 300, function() {
-	// 					var $target = $(target);
-	// 					$target.focus();
-	// 					if ($target.is(":focus")) { // Checking if the target was focused
-	// 						return false;
-	// 					} else {
-	// 						$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-	// 						$target.focus(); // Set focus again
-	// 					};
-	// 				});
-	//     	return false;
-	// 		}
-	// 	}
-	// });
-
+	$('a[href*="#"]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
+		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+			var target = $(this.hash);
+			var header_ht = $('.site-header').outerHeight();
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top - header_ht
+				}, 300, function () {
+					var $target = $(target);
+					$target.focus();
+					if ($target.is(":focus")) {
+						// Checking if the target was focused
+						return false;
+					} else {
+						$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+						$target.focus(); // Set focus again
+					};
+				});
+				return false;
+			}
+		}
+	});
 
 	// Fit Vids
 	$(".main-content").fitVids({ customSelector: 'iframe' });
@@ -1252,6 +1249,8 @@ if (document.querySelector('.page-template-page-story_layout')) {
 	// Hook up typing.
 	PANELS.forEach(function (el, index) {
 		el.id = 'panel-' + index;
+		el.classList.add('js-incomplete');
+
 		var kids = el.children;
 
 		for (var i = 0; i < kids.length; i++) {
@@ -1279,6 +1278,7 @@ function addButtonHrefs(kid, index) {
 
 function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
+
 		var typedEl = document.createElement('span');
 		typedEl.classList.add('js-typed');
 		typedEl.setAttribute('aria-hidden', 'true');
@@ -1304,6 +1304,8 @@ function typeNextSection(index) {
 	var typedSrc = document.querySelector('#panel-' + index + ' .js-typed-src');
 	var typedEl = document.querySelector('#panel-' + index + ' .js-typed');
 
+	var callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
+
 	var determineTrigger = function determineTrigger(index) {
 		if (panelClassesContain(index, 'js-tabs')) {
 			trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
@@ -1319,6 +1321,7 @@ function typeNextSection(index) {
 		strings: [typedSrc.innerHTML],
 		typeSpeed: TYPE_SPEED,
 		showCursor: false,
+		callback: callbackFunc(index),
 		onComplete: function onComplete() {
 			markPanelComplete(index);
 			addBtnClickEvent(index, nextBtn, options);
@@ -1343,9 +1346,25 @@ function addBtnClickEvent(index, btn, options) {
 	}
 }
 
+var SKIP_BTN = document.querySelector('.js-skipBtn');
+
+SKIP_BTN.addEventListener('click', function (e) {
+	e.preventDefault();
+	var TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
+	TYPED_ELS.forEach(function (el) {
+		el.classList.remove('js-typed-src');
+	});
+});
+
 // ----
 // Panel Helpers
 // ----
+
+function typeFirstPanel(index, typedEl, options) {
+	if (index == 0) {
+		var typed = new Typed(typedEl, options);
+	}
+}
 
 function panelClassesContain(i, c) {
 	var elem = document.querySelector('#panel-' + i);
@@ -1355,6 +1374,7 @@ function panelClassesContain(i, c) {
 function markPanelComplete(i) {
 	var elem = document.querySelector('#panel-' + i);
 	elem.classList.add('js-complete');
+	elem.classList.remove('js-incomplete');
 }
 
 function showButtons(btn) {
@@ -1425,47 +1445,3 @@ function reveal(el) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
-
-function typeFirstPanel(index, typedEl, options) {
-	if (index == 0) {
-		var typed = new Typed(typedEl, options);
-	}
-}
-// // Function to type next item in typedEls array
-// function typeNextInArray() {
-
-// 	// Move through the array
-// 	options.elIndex++;
-// 	let newIndex = options.elIndex;
-// 	let currentEl = TYPED_SRCS[newIndex];
-// 	let morePanels = newIndex <= TYPED_ELS.length;
-
-// 	// Allow for data attributes to provide some settings (not really using ATM)
-// 	let newTypeSpeed = "speed" in currentEl.dataset ? +currentEl.dataset.speed : TYPE_SPEED;
-
-// 	// Callbacks must be defined below
-// 	let callbackFunc = "callback" in currentEl.dataset ? window[currentEl.dataset.callback] : console.log;
-
-// 	// New options set
-// 	let newOptions = {
-// 		elIndex: newIndex,
-// 		startDelay: 500,
-// 		strings: [TYPED_SRCS[newIndex].innerHTML],
-// 		typeSpeed: newTypeSpeed,
-// 		showCursor: SHOW_CURSOR,
-// 		callback: callbackFunc(TYPED_SRCS[newIndex]),
-// 		onComplete: () => {
-
-// 			markPanelComplete(newIndex);
-
-// 			// If there are remaining panels:
-// 			if (morePanels) {
-// 				handlePanelTransition(newIndex);
-// 			} else {
-// 				console.log('done');
-// 			}
-// 		}
-// 	}
-
-// 	let typed = new Typed(TYPED_ELS[newIndex], newOptions);
-// }

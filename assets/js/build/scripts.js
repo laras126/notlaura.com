@@ -1236,7 +1236,7 @@ if (document.querySelector('.character-1' !== null)) {
 // ----
 // Typed.js
 // ----
-
+var TYPE_SPEED = 5;
 
 // Start the typing elements on pages with the story layout
 
@@ -1246,11 +1246,10 @@ if (document.querySelector('.page-template-page-story_layout')) {
 	// Prepare the panels
 	// ----
 
-	// Add ids to each panel.
-	// Link to the next panel
-
 	var PANELS = document.querySelectorAll('.panel');
 
+	// Add ids to each panel and hrefs to buttons.
+	// Hook up typing.
 	PANELS.forEach(function (el, index) {
 		el.id = 'panel-' + index;
 		var kids = el.children;
@@ -1261,35 +1260,7 @@ if (document.querySelector('.page-template-page-story_layout')) {
 			addButtonHrefs(kid, index);
 			setUpTyping(kid, index);
 		}
-
-		// clickToNextSection();
 	});
-
-	// ----
-	// Typing program
-	// ----
-
-	// Get an array of all elements to be typed.
-	// const TYPED_SRCS = document.querySelectorAll('.js-typed-src');
-	// const TYPED_ELS = document.querySelectorAll('.js-typed');
-	// const TYPE_SPEED = 3,
-	// 	SHOW_CURSOR = false;
-
-	// var options = {
-	// 	elIndex: 0,
-	// 	strings: [TYPED_SRCS[0].innerHTML],
-	// 	typeSpeed: TYPE_SPEED,
-	// 	showCursor: SHOW_CURSOR,
-	// 	onComplete: () => {
-	// 		let nextBtn = document.querySelector('#panel-' + options.elIndex + ' .btn-next');
-	// 		markPanelComplete(options.elIndex);
-	// 		showButtons(nextBtn);
-	// 		clickToNextSection(options.elIndex + 1, nextBtn);
-	// 	},
-	// }
-
-
-	// var typed = new Typed(TYPED_ELS[0], options);
 } // end if
 
 
@@ -1315,7 +1286,7 @@ function setUpTyping(kid, index) {
 
 		var options = {
 			strings: [kid.innerHTML],
-			typeSpeed: 10,
+			typeSpeed: TYPE_SPEED,
 			showCursor: false,
 			onComplete: function onComplete() {
 				var nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
@@ -1323,11 +1294,9 @@ function setUpTyping(kid, index) {
 				addBtnClickEvent(index, nextBtn, typedEl, options);
 				showButtons(nextBtn);
 			}
+		};
 
-			// If it's the first panel, start typing
-		};if (index == 0) {
-			var typed = new Typed(typedEl, options);
-		}
+		typeFirstPanel(index, typedEl, options);
 	}
 }
 
@@ -1344,13 +1313,14 @@ function typeNextSection(index) {
 		return trigger;
 	};
 
+	var nextBtn = determineTrigger(index);
+
 	var options = {
 		strings: [typedSrc.innerHTML],
-		typeSpeed: 10,
+		typeSpeed: TYPE_SPEED,
 		showCursor: false,
 		onComplete: function onComplete() {
 			markPanelComplete(index);
-			var nextBtn = determineTrigger(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
 		}
@@ -1360,10 +1330,10 @@ function typeNextSection(index) {
 }
 
 function addBtnClickEvent(index, btn, options) {
-
 	if (!panelClassesContain(index, 'js-tabs')) {
 		btn.addEventListener('click', function (e) {
 			console.log('clicked');
+			hide(btn);
 			typeNextSection(index + 1);
 		});
 	} else {
@@ -1372,6 +1342,10 @@ function addBtnClickEvent(index, btn, options) {
 		}, this);
 	}
 }
+
+// ----
+// Panel Helpers
+// ----
 
 function panelClassesContain(i, c) {
 	var elem = document.querySelector('#panel-' + i);
@@ -1384,9 +1358,7 @@ function markPanelComplete(i) {
 }
 
 function showButtons(btn) {
-	// Mark the stagger boolean true if selecting multiple buttons
 	var tabbed = btn.length > 1;
-
 	if (tabbed) {
 		reveal(btn, true);
 	} else {
@@ -1430,7 +1402,7 @@ function hideLaraPic() {
 }
 
 // ----
-// Helpers
+// General Helpers
 // ----
 
 // https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
@@ -1454,6 +1426,11 @@ function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
 
+function typeFirstPanel(index, typedEl, options) {
+	if (index == 0) {
+		var typed = new Typed(typedEl, options);
+	}
+}
 // // Function to type next item in typedEls array
 // function typeNextInArray() {
 

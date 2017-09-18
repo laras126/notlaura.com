@@ -1,1 +1,29 @@
 {% extends "page.twig" %}
+
+{% block header %}
+	<header class="main-header scene">
+		<div class="inner-pad">
+			<h1 class="page-title">Hey there! <br>My name is <span class="rotate-colors">Lara</span>.</h1>
+			<p class="lead">{{post.intro}}</p>
+			{% include "svgs/arrow-down.svg" %}
+		</div>
+	</header>
+{% endblock %}
+
+{% block misc %}
+	<div class="front-page-img-wrap">
+		{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img js-hide' } %}
+	</div>
+{% endblock %}
+{#
+{% block header %}
+	<header class="main-header">
+		<div class="inner-pad">
+			<h1>Hey there! <br>I'm <span class="rotate-colors">Lara Schenck</span>.</h1>
+		</div>
+		<div class="front-page-img-wrap">
+			{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img js-hide' } %}
+		</div>
+	</header>
+{% endblock %}
+ #}

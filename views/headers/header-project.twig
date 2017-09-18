@@ -1,28 +1,22 @@
 
-{# <header class="project-header"> #}
-	<header class="project-header{{ ' -' ~ post.header_type }}">
 
-		{# TODO: soup city.  #}
+<header class="project-header{{ ' -' ~ post.header_type }}">
 
-		<div class="inner grid-header">
-			{# {% if post.header_type == 'text' %} #}
-			{# <div class="module -article">
-				<div class="module-content"> #}
-					<div class="header-left">
-						<p class="project-types">{% for c in post.get_terms('project-type') %}{{ c.name != 'Featured' ? c.name }}{% endfor %}</p>
-						<h1 class="project-header-title">{{post.title}}</h1>
-						<p class="lead">{{post.intro}}</p>
-						<p>{{post.para_intro}}</p>
-						{# {% include "partials/srcset.twig" with { img: TimberImage(post.image), class: 'project-header-image' } %} #}
-						{% if post.project_link or post.codebase_link %}
-							<div class="project-links">
-								{% if post.project_link %}<a class="btn project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}&nbsp;
-								{% if post.codebase_link %}<a class="btn project-launch-btn" href="{{post.codebase_link}}">View Repository{% include 'partials/svg.twig' with { file: 'github', prefix: 'icon-inline'}%}</a>{% endif %}
-							</div>
-						{% endif %}
-					</div>
-						{# </div> #}
-						{# {% endif %} #}
+	<div class="inner grid-header">
+
+		<div class="header-left">
+			<p class="project-types">{% for c in post.get_terms('project-type') %}{{ c.name != 'Featured' ? c.name }}{% endfor %}</p>
+			<h1 class="project-header-title">{{post.title}}</h1>
+			<p class="lead">{{post.intro}}</p>
+			<p>{{post.para_intro}}</p>
+			{% if post.project_link or post.codebase_link %}
+				<div class="project-links">
+					{% if post.project_link %}<a class="btn project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}&nbsp;
+					{% if post.codebase_link %}<a class="btn project-launch-btn" href="{{post.codebase_link}}">View Repository{% include 'partials/svg.twig' with { file: 'github', prefix: 'icon-inline'}%}</a>{% endif %}
+				</div>
+			{% endif %}
+		</div>
+
 		<div class="header-right">
 			{% if post.testimonial %}
 				<blockquote class="header-testimonial">

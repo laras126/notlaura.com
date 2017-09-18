@@ -20,11 +20,9 @@
 	<section class="scene">
 
 		<header class="panel">
-
 			<span class="js-typed-src">
-				<h2> <span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h2>
+				<h2><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h2>
 			</span>
-
 			<div class="front-page-img-wrap">
 				{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img js-hide' } %}
 			</div>
@@ -45,12 +43,14 @@
 			<span class="js-typed-src" data-callback="hideLaraPic">
 				<h2>Before we begin...</h2>
 				<p class="lead">I built this page as a welcome-to-my-website / choose-your-own-adventure interactive kind of reading experience.</p>
-				<p>If you'd like to skip it and reveal all content at any time, you can use the "Show all Content" button at the bottom left, or scroll back up to test out other options.</p>
+				<p>If you'd like to skip it and reveal all the content at any time, you can use the "Show All Content" button at the bottom left.</p>
 				<p>Okay, ready?</p>
-				<span hidden>^50</span>
 			</span>
 
-			<a class="btn-next js-reveal">Ready 🤘</a>
+			<div class="decision-btns">
+				<a class="btn-next js-reveal">Ready 🤘</a>
+			</div>
+
 		</div>
 
 		<div class="panel js-tabs">
@@ -118,7 +118,7 @@
 
 	</section>
 
-	<button class="skip-typing-btn" aria-hidden="true">Show All Content</button>
+	<button class="js-skipBtn skip-typing-btn" aria-hidden="true">Show All Content</button>
 
 </div>
 {% endblock %}

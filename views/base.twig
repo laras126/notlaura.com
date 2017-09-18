@@ -57,10 +57,6 @@
     {% block misc %}{% endblock %}
   </main>
 
-  <a href="#top" class="link-back-top">
-    {% include 'partials/svg.twig' with {'file': 'arrow-up', 'prefix': 'icon' } %}
-  </a>
-
   <footer class="site-footer">
     {% block footer %}
       {% include 'footer.twig' %}
@@ -68,7 +64,6 @@
   </footer>
 
   {{ function('wp_footer') }}
-
 </body>
 
 </html>

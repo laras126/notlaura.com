@@ -1,5 +1,5 @@
 
-<header class="main-header {{ post.header_type == 'image' ? ' grid-header' }} {{ '-' ~ post.header_type }}">
+<header class="main-header{{ ' -' ~ post.header_type }}">
 
 	{% if post.header_type == 'svg' %}
 	{% set svg_path = "svgs/" ~ post.title|replace({ (" ") : "-" })|lower ~ ".svg" %}
@@ -7,29 +7,24 @@
 	{# <h1 class="page-title">{{post.title}}</h1> #}
 {% endif %}
 
-<div class="inner-pad">
-
-	{% block title_area %}
-	{% endblock %}
-
+<div class="inner-pad {{ post.header_type == 'image' ? ' grid-header' }} ">
 
 	{% if post.header_type == 'image' %}
-		<div class="header-left" style="background-image: url({{TimberImage(post.image).src('large')}})">
-			<div class="mask"></div>
-			{% if post.type == "page" %}
-				<h2 class="screen-reader">{{post.title}}</h2>
+
+	<div class="header-left">
+			{% if post.intro %}
+			<p class="header-lead">{{post.intro}}</p>
+			{% endif %}
+
+			{% if post.para_intro %}
+			<div class="header-intro">{{post.para_intro|wpautop}}</div>
 			{% endif %}
 		</div>
 
 		<div class="header-right">
-			{% if post.intro %}
-				<p class="header-lead">{{post.intro}}</p>
-			{% endif %}
-
-			{% if post.para_intro %}
-				<div class="header-intro">{{post.para_intro|wpautop}}</div>
-			{% endif %}
+			{% include "partials/srcset.twig" with { img: post.image } %}
 		</div>
+
 	{% endif %}
 
 	{% if post.header_type == 'text' %}

@@ -105,35 +105,54 @@ function typeNextSection(index) {
 
 }
 
+function addBtnClickEvent(index, btn, options) {
+	if (!panelClassesContain(index, 'js-tabs')) {
+		btn.addEventListener('click', (e) => {
+			hide(btn);
+			typeNextSection(index + 1);
+		});
+	} else {
+		btn.forEach(function (b) {
+			prepareTabbedSection(b, index);
+		}, this);
+	}
+}
 
-function prepareTabbedSection(element, index) {
+function prepareTabbedSection(btn, index) {
 
-	let type = element.dataset.contentRef;
+	let type = btn.dataset.contentRef;
 	let content = document.getElementById(type);
 
 	let tabs = document.querySelectorAll('.panel-tab');
 	let btns = document.querySelectorAll('.decision-btns > a');
 
-	let nextBtn = determineTrigger(index);
+	let getIndex = () => {
+		return index;
+	}
 
-	// var getIndex = (index) => {
-	// 	return index;
-	// }
+	let getNextIndex = () => {
+		let ni = index+1;
+		return ni;
+	}
+
 	console.log('indexOuter:' + getIndex(index));
 
-	element.addEventListener('click', (e, index) => {
+	btn.addEventListener('click', (e, i) => {
+		i = getIndex();
 
-		console.log('indexInner:'+ getIndex(i));
+		let ni = getNextIndex();
+		let nextBtn = determineTrigger(ni);
+		// console.log(nextBtn);
 
-		addBtnClickEvent(i, nextBtn, null);
 		markPanelComplete(i);
+		addBtnClickEvent(ni, nextBtn, null);
 		showButtons(nextBtn);
 
 		btns.forEach((btn) => {
 			btn.classList.remove('js-selected');
 		});
 
-		element.classList.add('js-selected');
+		btn.classList.add('js-selected');
 
 		tabs.forEach(function (tab) {
 			tab.classList.add('js-hidden');
@@ -146,18 +165,6 @@ function prepareTabbedSection(element, index) {
 	});
 }
 
-function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-tabs')) {
-		btn.addEventListener('click', (e) => {
-			hide(btn);
-			typeNextSection(index + 1);
-		});
-	} else {
-		btn.forEach(function (el) {
-			prepareTabbedSection(el, index);
-		}, this);
-	}
-}
 
 
 

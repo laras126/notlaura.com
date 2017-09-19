@@ -1253,8 +1253,8 @@ if (document.querySelector('.page-template-page-story_layout')) {
 
 		var kids = el.children;
 
-		for (var _i = 0; _i < kids.length; _i++) {
-			var kid = kids[_i];
+		for (var i = 0; i < kids.length; i++) {
+			var kid = kids[i];
 
 			addButtonHrefs(kid, index);
 			setUpTyping(kid, index);
@@ -1270,8 +1270,8 @@ function addButtonHrefs(kid, index) {
 		kid.setAttribute('href', '#panel-' + (index + 1));
 	}
 	if (kid.classList.contains('decision-btns')) {
-		for (var _i2 = 0; _i2 < kid.children.length; _i2++) {
-			kid.children[_i2].setAttribute('href', '#panel-' + (index + 1));
+		for (var i = 0; i < kid.children.length; i++) {
+			kid.children[i].setAttribute('href', '#panel-' + (index + 1));
 		}
 	}
 }
@@ -1323,34 +1323,54 @@ function typeNextSection(index) {
 	var typed = new Typed(typedEl, options);
 }
 
-function prepareTabbedSection(element, index) {
+function addBtnClickEvent(index, btn, options) {
+	if (!panelClassesContain(index, 'js-tabs')) {
+		btn.addEventListener('click', function (e) {
+			hide(btn);
+			typeNextSection(index + 1);
+		});
+	} else {
+		btn.forEach(function (b) {
+			prepareTabbedSection(b, index);
+		}, this);
+	}
+}
 
-	var type = element.dataset.contentRef;
+function prepareTabbedSection(btn, index) {
+
+	var type = btn.dataset.contentRef;
 	var content = document.getElementById(type);
 
 	var tabs = document.querySelectorAll('.panel-tab');
 	var btns = document.querySelectorAll('.decision-btns > a');
 
-	var nextBtn = determineTrigger(index);
+	var getIndex = function getIndex() {
+		return index;
+	};
 
-	// var getIndex = (index) => {
-	// 	return index;
-	// }
+	var getNextIndex = function getNextIndex() {
+		var ni = index + 1;
+		return ni;
+	};
+
 	console.log('indexOuter:' + getIndex(index));
 
-	element.addEventListener('click', function (e, index) {
+	btn.addEventListener('click', function (e, i) {
+		i = getIndex();
 
-		console.log('indexInner:' + getIndex(i));
+		var ni = getNextIndex();
+		var nextBtn = determineTrigger(ni);
+		// console.log(nextBtn);
 
-		addBtnClickEvent(i, nextBtn, null);
 		markPanelComplete(i);
+		addBtnClickEvent(ni, nextBtn, null);
 		showButtons(nextBtn);
 
 		btns.forEach(function (btn) {
 			btn.classList.remove('js-selected');
 		});
 
-		element.classList.add('js-selected');
+		btn.classList.add('js-selected');
 
 		tabs.forEach(function (tab) {
 			tab.classList.add('js-hidden');
@@ -1360,19 +1380,6 @@ function prepareTabbedSection(element, index) {
 			}
 		});
 	});
-}
-
-function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-tabs')) {
-		btn.addEventListener('click', function (e) {
-			hide(btn);
-			typeNextSection(index + 1);
-		});
-	} else {
-		btn.forEach(function (el) {
-			prepareTabbedSection(el, index);
-		}, this);
-	}
 }
 
 var SKIP_BTN = document.querySelector('.js-skipBtn');

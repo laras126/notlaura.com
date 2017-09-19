@@ -1331,12 +1331,13 @@ function addBtnClickEvent(index, btn, options) {
 		});
 	} else {
 		btn.forEach(function (b) {
-			prepareTabbedSection(b, index);
+			prepareTabbedSection(index);
+			goToTabbedSection(b, index);
 		}, this);
 	}
 }
 
-function prepareTabbedSection(btn, index) {
+function goToTabbedSection(btn, index) {
 
 	var type = btn.dataset.contentRef;
 	var content = document.getElementById(type);
@@ -1348,23 +1349,9 @@ function prepareTabbedSection(btn, index) {
 		return index;
 	};
 
-	var getNextIndex = function getNextIndex() {
-		var ni = index + 1;
-		return ni;
-	};
-
-	console.log('indexOuter:' + getIndex(index));
-
 	btn.addEventListener('click', function (e, i) {
 		i = getIndex();
-
-		var ni = getNextIndex();
-		var nextBtn = determineTrigger(ni);
-		// console.log(nextBtn);
-
 		markPanelComplete(i);
-		addBtnClickEvent(ni, nextBtn, null);
-		showButtons(nextBtn);
 
 		btns.forEach(function (btn) {
 			btn.classList.remove('js-selected');
@@ -1380,6 +1367,13 @@ function prepareTabbedSection(btn, index) {
 			}
 		});
 	});
+}
+
+function prepareTabbedSection(index) {
+	var nextIndex = index + 1;
+	var nextBtn = determineTrigger(nextIndex);
+	addBtnClickEvent(nextIndex, nextBtn, null);
+	showButtons(nextBtn);
 }
 
 var SKIP_BTN = document.querySelector('.js-skipBtn');

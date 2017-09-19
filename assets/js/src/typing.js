@@ -113,12 +113,14 @@ function addBtnClickEvent(index, btn, options) {
 		});
 	} else {
 		btn.forEach(function (b) {
-			prepareTabbedSection(b, index);
+			prepareTabbedSection(index);
+			goToTabbedSection(b, index);
 		}, this);
 	}
 }
 
-function prepareTabbedSection(btn, index) {
+
+function goToTabbedSection(btn, index) {
 
 	let type = btn.dataset.contentRef;
 	let content = document.getElementById(type);
@@ -130,23 +132,9 @@ function prepareTabbedSection(btn, index) {
 		return index;
 	}
 
-	let getNextIndex = () => {
-		let ni = index+1;
-		return ni;
-	}
-
-	console.log('indexOuter:' + getIndex(index));
-
 	btn.addEventListener('click', (e, i) => {
 		i = getIndex();
-
-		let ni = getNextIndex();
-		let nextBtn = determineTrigger(ni);
-		// console.log(nextBtn);
-
 		markPanelComplete(i);
-		addBtnClickEvent(ni, nextBtn, null);
-		showButtons(nextBtn);
 
 		btns.forEach((btn) => {
 			btn.classList.remove('js-selected');
@@ -163,6 +151,13 @@ function prepareTabbedSection(btn, index) {
 		});
 
 	});
+}
+
+function prepareTabbedSection(index) {
+	let nextIndex = index + 1;
+	let nextBtn = determineTrigger(nextIndex);
+	addBtnClickEvent(nextIndex, nextBtn, null);
+	showButtons(nextBtn);
 }
 
 

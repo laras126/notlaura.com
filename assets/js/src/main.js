@@ -89,7 +89,7 @@ jQuery(document).ready(function() {
 	  		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	  		if (target.length) {
 	    		$('html,body').animate({
-							scrollTop: target.offset().top
+							scrollTop: target.offset().top - header_ht/2
 	    		}, 300, function() {
 						var $target = $(target);
 						$target.focus();

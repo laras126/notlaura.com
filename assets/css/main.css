@@ -692,7 +692,7 @@ a.special {
   90% {
     color: #27A9E0; }
   100% {
-    color: #242F4A; } }
+    color: #15598f; } }
 
 @keyframes rotate-text-color {
   0% {
@@ -708,7 +708,7 @@ a.special {
   90% {
     color: #27A9E0; }
   100% {
-    color: #242F4A; } }
+    color: #15598f; } }
 
 @-webkit-keyframes scroll-page {
   0% {
@@ -2110,7 +2110,7 @@ code {
 .prev {
   margin-left: auto; }
 
-.js-typed-src {
+.js .js-typed-src {
   opacity: 0;
   position: absolute;
   left: -99999px;
@@ -2148,9 +2148,15 @@ code {
   right: 0;
   bottom: 0;
   z-index: 0; }
+  @media (min-width: 520px) {
+    .panel-decor {
+      max-width: 60vw; } }
   @media (min-width: 730px) {
     .panel-decor {
-      max-width: 50vw; } }
+      max-width: 40vw; } }
+
+.decor-img {
+  display: block; }
 
 .panel-content {
   max-width: 600px; }
@@ -2182,13 +2188,16 @@ code {
           -ms-flex-pack: center;
               justify-content: center;
       padding-left: 2.86rem;
-      min-height: 80vh; } }
+      min-height: 80vh;
+      margin-top: 5vh;
+      margin-bottom: 5vh; } }
   .panel:focus {
     transition: .2s ease all;
     outline: none;
+    background-color: #ffffff;
     border-color: #27A9E0; }
 
-.panel-tab.js-hidden {
+.js .panel-tab.js-hidden {
   opacity: 0;
   transition: .2s ease all;
   height: 1px;
@@ -2260,8 +2269,6 @@ code {
     background-color: #27A9E0; }
 
 .js-reveal {
-  visibility: hidden;
-  opacity: 0;
   will-change: transform;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
@@ -2269,6 +2276,9 @@ code {
           backface-visibility: hidden;
   -webkit-perspective: 1000px;
           perspective: 1000px; }
+  .js .js-reveal {
+    visibility: hidden;
+    opacity: 0; }
 
 .decision-btns {
   margin-top: 1.43rem;

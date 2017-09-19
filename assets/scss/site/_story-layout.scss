@@ -1,8 +1,13 @@
 @mixin js-reveal {
-	visibility: hidden;
-	opacity: 0;
+	.js & {
+		visibility: hidden;
+		opacity: 0;
+	}
 }
 
+.js .js-typed-src {
+	@include visually-hidden;
+}
 
 
 .home .main-content .inner {
@@ -54,9 +59,16 @@
 	bottom: 0;
 	z-index: $zbase;
 
-	@include bp(med) {
-		max-width: 50vw;
+	@include bp(small) {
+		max-width: 60vw;
 	}
+	@include bp(med) {
+		max-width: 40vw;
+	}
+}
+
+.decor-img {
+	display: block;
 }
 
 .panel-content {
@@ -86,6 +98,8 @@
 		justify-content: center;
 		padding-left: $grid-gap*2;
 		min-height: 80vh;
+		margin-top: 5vh;
+		margin-bottom: 5vh;
 	}
 
 	&.-tabbed {
@@ -108,21 +122,28 @@
 	&:focus {
 		transition: .2s ease all;
 		outline: none;
+		background-color: $white;
 		border-color: $accent-med;
 	}
 
 	&.js-incomplete {
 		// height: 10px;
 	}
+
+	&.js-complete {
+		// background-color: $accent-light;
+	}
 }
 
 
 .panel-tab {
 	&.js-hidden {
-		opacity: 0;
-		transition: .2s ease all;
-		height: 1px;
-		width: 1px;
+		.js & {
+			opacity: 0;
+			transition: .2s ease all;
+			height: 1px;
+			width: 1px;
+		}
 	}
 	@include bp(med) {}
 }
@@ -139,7 +160,6 @@
 .panel-title {
 	padding-top: 0;
 	margin-top: 0;
-	// font-size: $h1;
 }
 
 .panel-list {
@@ -172,16 +192,9 @@
 
 .btn-next {
 	@include button($accent-dark);
-	// border: 0;
-	// padding: $sml $base;
 	font-size: $h4;
 	display: inline-block;
-
-	// background-color: $accent-dark;
-
-	// color: $text-light;
 	margin-top: $grid-gap;
-	// font-weight: $font-weight-strong;
 
 	&:hover,
 	&:active,

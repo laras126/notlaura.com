@@ -70,7 +70,6 @@ function setUpTyping(kid, index) {
 			showCursor: false,
 			onComplete: () => {
 				let nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
-				markPanelComplete(index);
 				addBtnClickEvent(index, nextBtn, typedEl, options);
 				showButtons(nextBtn);
 			}
@@ -95,7 +94,6 @@ function typeNextSection(index) {
 		showCursor: false,
 		callback: callbackFunc(index),
 		onComplete: () => {
-			markPanelComplete(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
 		}
@@ -109,6 +107,7 @@ function addBtnClickEvent(index, btn, options) {
 	if (!panelClassesContain(index, 'js-tabs')) {
 		btn.addEventListener('click', (e) => {
 			hide(btn);
+			markPanelComplete(index);
 			typeNextSection(index + 1);
 		});
 	} else {
@@ -122,24 +121,23 @@ function addBtnClickEvent(index, btn, options) {
 
 function goToTabbedSection(btn, index) {
 
-	let type = btn.dataset.contentRef;
-	let content = document.getElementById(type);
-
-	let tabs = document.querySelectorAll('.panel-tab');
-	let btns = document.querySelectorAll('.decision-btns > a');
+	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .panel-tab');
+	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
 
 	let getIndex = () => {
 		return index;
 	}
 
-	btn.addEventListener('click', (e, i) => {
-		i = getIndex();
-		markPanelComplete(i);
+	btn.addEventListener('click', (e) => {
 
-		btns.forEach((btn) => {
-			btn.classList.remove('js-selected');
+		let index = getIndex();
+		markPanelComplete(index);
+
+		btns.forEach((b) => {
+			b.classList.remove('js-selected');
 		});
 
+		let type = btn.dataset.contentRef;
 		btn.classList.add('js-selected');
 
 		tabs.forEach(function (tab) {

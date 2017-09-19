@@ -1043,7 +1043,7 @@ jQuery(document).ready(function () {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top
+					scrollTop: target.offset().top - header_ht / 2
 				}, 300, function () {
 					var $target = $(target);
 					$target.focus();
@@ -1290,7 +1290,6 @@ function setUpTyping(kid, index) {
 			showCursor: false,
 			onComplete: function onComplete() {
 				var nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
-				markPanelComplete(index);
 				addBtnClickEvent(index, nextBtn, typedEl, options);
 				showButtons(nextBtn);
 			}
@@ -1314,7 +1313,6 @@ function typeNextSection(index) {
 		showCursor: false,
 		callback: callbackFunc(index),
 		onComplete: function onComplete() {
-			markPanelComplete(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
 		}
@@ -1327,6 +1325,7 @@ function addBtnClickEvent(index, btn, options) {
 	if (!panelClassesContain(index, 'js-tabs')) {
 		btn.addEventListener('click', function (e) {
 			hide(btn);
+			markPanelComplete(index);
 			typeNextSection(index + 1);
 		});
 	} else {
@@ -1339,24 +1338,23 @@ function addBtnClickEvent(index, btn, options) {
 
 function goToTabbedSection(btn, index) {
 
-	var type = btn.dataset.contentRef;
-	var content = document.getElementById(type);
-
-	var tabs = document.querySelectorAll('.panel-tab');
-	var btns = document.querySelectorAll('.decision-btns > a');
+	var tabs = document.querySelectorAll('#panel-' + (index + 1) + ' .panel-tab');
+	var btns = document.querySelectorAll('#panel-' + index + ' .decision-btns > a');
 
 	var getIndex = function getIndex() {
 		return index;
 	};
 
-	btn.addEventListener('click', function (e, i) {
-		i = getIndex();
-		markPanelComplete(i);
+	btn.addEventListener('click', function (e) {
 
-		btns.forEach(function (btn) {
-			btn.classList.remove('js-selected');
+		var index = getIndex();
+		markPanelComplete(index);
+
+		btns.forEach(function (b) {
+			b.classList.remove('js-selected');
 		});
 
+		var type = btn.dataset.contentRef;
 		btn.classList.add('js-selected');
 
 		tabs.forEach(function (tab) {

@@ -38,7 +38,8 @@
 
     <div class="inner{{ is_story == true ? '-np' }}{{sidebar ? ' grid-main'}}">
 
-      <div class="main-content{{ is_story == true ? ' module -article' }}">
+      {# <div class="main-content{{ is_story == true ? ' module -article' }}"> #}
+      <div class="main-content">
         {% block content %}
             Sorry, no content
         {% endblock %}

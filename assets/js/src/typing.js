@@ -1,7 +1,7 @@
 // ----
 // Typed.js
 // ----
-const TYPE_SPEED = 5;
+const TYPE_SPEED = 1;
 
 // Start the typing elements on pages with the story layout
 
@@ -60,7 +60,7 @@ function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
 
 		let typedEl = document.createElement('span');
-		typedEl.classList.add('js-typed');
+		typedEl.classList.add('js-typed', 'panel-content');
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
 
@@ -87,15 +87,6 @@ function typeNextSection(index) {
 
 	let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
 
-	let determineTrigger = function(index) {
-		if (panelClassesContain(index, 'js-tabs')) {
-			trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
-		} else {
-			trigger = document.querySelector('#panel-' + index + ' .btn-next');
-		}
-		return trigger;
-	};
-
 	let nextBtn = determineTrigger(index);
 
 	let options = {
@@ -115,17 +106,55 @@ function typeNextSection(index) {
 }
 
 
+function prepareTabbedSection(element, index) {
+
+	let type = element.dataset.contentRef;
+	let content = document.getElementById(type);
+
+	let tabs = document.querySelectorAll('.panel-tab');
+	let btns = document.querySelectorAll('.decision-btns > a');
+
+	let nextBtn = determineTrigger(index);
+
+	// var getIndex = (index) => {
+	// 	return index;
+	// }
+	console.log('indexOuter:' + getIndex(index));
+
+	element.addEventListener('click', (e, index) => {
+
+		console.log('indexInner:'+ getIndex(i));
+
+		addBtnClickEvent(i, nextBtn, null);
+		markPanelComplete(i);
+		showButtons(nextBtn);
+
+		btns.forEach((btn) => {
+			btn.classList.remove('js-selected');
+		});
+
+		element.classList.add('js-selected');
+
+		tabs.forEach(function (tab) {
+			tab.classList.add('js-hidden');
+
+			if (tab.getAttribute('id') == type) {
+				tab.classList.remove('js-hidden');
+			}
+		});
+
+	});
+}
 
 function addBtnClickEvent(index, btn, options) {
 	if (!panelClassesContain(index, 'js-tabs')) {
 		btn.addEventListener('click', (e) => {
-			console.log('clicked');
 			hide(btn);
 			typeNextSection(index + 1);
 		});
 	} else {
-		btn.forEach(function (element) {
-			toggleTabs(element);
+		btn.forEach(function (el) {
+			prepareTabbedSection(el, index);
 		}, this);
 	}
 }
@@ -136,11 +165,17 @@ const SKIP_BTN = document.querySelector('.js-skipBtn');
 
 SKIP_BTN.addEventListener('click', (e) => {
 	e.preventDefault();
-	let TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src')
+	let TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
+	let HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
 	TYPED_ELS.forEach((el) => {
 		el.classList.remove('js-typed-src');
 	});
+	HIDDEN_ELS.forEach((el) => {
+		el.classList.remove('js-reveal');
+	});
 });
+
+
 
 
 // ----
@@ -164,6 +199,15 @@ function markPanelComplete(i) {
 	elem.classList.remove('js-incomplete');
 }
 
+function determineTrigger(index) {
+	if (panelClassesContain(index, 'js-tabs')) {
+		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
+	} else {
+		trigger = document.querySelector('#panel-' + index + ' .btn-next');
+	}
+	return trigger;
+}
+
 function showButtons(btn) {
 	let tabbed = btn.length > 1;
 	if( tabbed ) {
@@ -173,30 +217,7 @@ function showButtons(btn) {
 	}
 }
 
-function toggleTabs(element) {
-	let type = element.dataset.contentRef;
-	let content = document.getElementById(type);
-	let tabs = document.querySelectorAll('.panel-tab');
-	let btns = document.querySelectorAll('.decision-btns > a');
 
-	element.addEventListener('click', (e) => {
-
-		btns.forEach( (btn) => {
-			btn.classList.remove('js-selected');
-		});
-
-		element.classList.add('js-selected');
-
-		tabs.forEach(function (tab) {
-			tab.classList.add('js-hidden');
-
-			if (tab.getAttribute('id') == type) {
-				tab.classList.remove('js-hidden');
-			}
-		});
-
-	});
-}
 
 
 
@@ -209,9 +230,14 @@ function toggleTabs(element) {
 
 // TODO user closest LATER
 function hideLaraPic() {
-	console.log('p1 is done');
-	let toHide = document.querySelector('.js-hide');
-	hide(toHide);
+	// console.log('p1 is done');
+	// let toHide = document.querySelector('.js-hide');
+	// hide(toHide);
+}
+
+function showSkipBtn() {
+	let btn = document.querySelector('.js-skipBtn');
+	reveal(btn);
 }
 
 
@@ -242,4 +268,5 @@ function reveal(el, stagger = false) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
+
 

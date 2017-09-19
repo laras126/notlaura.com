@@ -16,34 +16,34 @@
 {% endblock %}
 
 {% block content %}
-<div class="module-content">
+{# <div class="module-content"> #}
 	<section class="scene">
 
 		<header class="panel">
-			<span class="js-typed-src">
-				<h2><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h2>
-			</span>
-			<div class="front-page-img-wrap">
-				{% include "partials/srcset.twig" with { img: post.image, class: 'front-page-img js-hide' } %}
+			<div class="js-typed-src">
+				<h1 class="panel-title"><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h1>
 			</div>
 			<a class="btn-next js-reveal">Got it 👍</a>
+			<div class="panel-decor">
+				{% include "partials/srcset.twig" with { img: post.image, class: 'decor-img' } %}
+			</div>
 		</header>
 
 		<div class="panel">
-			<span class="js-typed-src">
+			<span class="js-typed-src" data-callback="showSkipBtn">
 				<h2 class="panel-title rotate-colors"><span hidden>^200</span>That's <br>L -<span hidden>^50</span> A -<span hidden>^50</span> R -<span hidden>^50</span> A</span>.</h2>
-				<p class="lead">You know, like Lara Croft, Tomb Raider?<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
-				<p class="lead">I guess that depends on your generation ;).</p>
+				{# <p class="lead">You know, like Lara Croft, Tomb Raider?<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
+				<p class="lead">I guess that depends on your generation ;).</p> #}
 			</span>
 
 			<a class="btn-next js-reveal">Got it 👌</a>
 		</div>
-
+{#
 		<div class="panel">
-			<span class="js-typed-src" data-callback="hideLaraPic">
-				<h2>Before we begin...</h2>
+			<span class="js-typed-src">
+				<h2 class="panel-title">Before we begin...</h2>
 				<p class="lead">I built this page as a welcome-to-my-website / choose-your-own-adventure interactive kind of reading experience.</p>
-				<p>If you'd like to skip it and reveal all the content at any time, you can use the "Show All Content" button at the bottom left.</p>
+				<p>If you'd like to skip all the fun and reveal the remaining content at any time, you can use the "Show All Content" button that has appeared at the bottom right.</p>
 				<p>Okay, ready?</p>
 			</span>
 
@@ -51,76 +51,56 @@
 				<a class="btn-next js-reveal">Ready 🤘</a>
 			</div>
 
-		</div>
+		</div> #}
 
 		<div class="panel js-tabs">
-			<span class="js-typed-src">
-				<h2>What do I do?</h2>
-				<p class="lead">While I may not raid tombs or tend to injured Russian soldiers like the aforementioned Laras, <span hidden>^50</span> I <em>do</em> do some cool things I’d like to tell you about.</p>
-				<span hidden>^50</span>
-				<p class="lead">Would you like the techie 🖥 or non-techie 📝 version?</p>
-			</span>
-			{# <span class="js-typed" aria-hidden="true"></span> #}
 
+			<span class="js-typed-src">
+				<h2 class="panel-title">What do I do?</h2>
+				{# <p class="lead">While I may not raid tombs or tend to injured Russian soldiers like the aforementioned Laras, <span hidden>^50</span> I <em>do</em> do some cool things I’d like to tell you about.</p> #}
+				<span hidden>^50</span>
+				<p class="lead">Are you a tech person 🖥 or non-tech person 📝?</p>
+			</span>
 			<div class="decision-btns" id="panel-2-btn">
-				<a data-content-ref="techie" class="js-reveal btn-next">🖥</a>
-				<a data-content-ref="non-techie" class="js-reveal btn-next">📝</a>
+				<a data-content-ref="techie" class="js-reveal btn-next">Tech Person 🖥</a>
+				<a data-content-ref="non-techie" class="js-reveal btn-next">Non-tech Person 📝</a>
 			</div>
 		</div>
 
 		<div class="panel">
 
-			<span class="panel-tab js-hidden" id="techie">
-				<span class="js-typed-src">
-					<h2 class="panel-title">Greetings, fellow web enthusiast!</h2>
-					<p>I identify as the illustrious:</p>
-					<h3 class="highlight rotate-colors">Front-end Web Developer</h3>
-					<p>I absolutely love writing Sass, component-izing markup, and staying on top of the latest and greatest. CSS Grid Layout & Flexbox (💜), SVG animation, and accessibility are a few things I'm especially jazzed about these days.</p>
-				</span>
-				<span class="js-typed" aria-hidden="true"></span>
-			</span>
+			<section class="panel-tab panel-content js-hidden" id="techie">
+				<p class="decision-indicator">Techie</p>
+				<h2 class="panel-title">Greetings, fellow tech person!</h2>
+				<p class="lead">I identify as the illustrious:</p>
+				<p class="highlight">Front-end Web Developer</p>
+				<p>I absolutely love writing Sass, component-izing markup, and staying on top of the latest and greatest. CSS Grid Layout & Flexbox (💜), SVG animation, and accessibility are a few things I'm especially jazzed about these days.</p>
+				<p>I also want to mention...</p>
+				<p class="highlight">JavaScript</p>
+				<p>As a UX-oriented front-end developer, my work to date hasn't invovled all that much JavaScript, or I've been able to lean on jQuery when I needed it. Now, however – and maybe you reading this can relate – I am on a personal and professional mission to learn JavaScript and to learn it deeply. </p>
+				<p>And I'm making progress!<br>I built this whole page without jQuery, gosh-darnit.</p>
+			</section>
 
-			<span class="panel-tab js-hidden" id="non-techie">
-				<span class="js-typed-src">
-					<h2 class="panel-title">I'm a <span class="rotate-colors">Front-end Web Developer</span>.</h2>
-					<p>Wait a sec, that sounds pretty techie to me!</p>
-					<p>Let me explain.</p>
-					<p>Every website has a "front-end" and a "back-end". You've been to Google.com before, right? Let's use that as an an example.</p>
-					{# <p>{{ include('svgs/google.twig') }}</p> #}
-					<p>The <strong>front-end</strong> for Google.com is everything you see on the page: the search box, the logo, the shadow around the box, and if you are looking at it on a computer, even that little animation that happens when you hover your mouse on the "I'm Feeling Lucky" button.</p>
-					<p>The <strong>back-end</strong> is all of the logic and data and algorithm-related stuff that happens once type in your query and hit "Search".</p>
-					<p>So, as a Front-end Web Developer, I would be in charge of putting the search box on the page and applying the visual effects or animations to make it look nice and pleasurable to use.</p>
-					<p>You can think of it like a restaurant, too: the "back-end" is the kitchen or back-of-the-house, and the "front-end" is the plating and service, or front-of-the-house.</p>
-				</span>
-				<span class="js-typed" aria-hidden="true"></span>
-			</span>
+			<section class="panel-tab panel-content js-hidden" id="non-techie">
+				<p class="decision-indicator">Non-Techie</p>
+				<h2 class="panel-title">I'm a web designer!</h2>
+				<p class="lead">...but, officially, I call myself a "Front-end Web Developer". Let me explain.</p>
+				<p>A front-end developer is someone who specializes in developing (and sometimes designing) <em>what you see</em> on a web page, rather than the logic, data, and algorithms that power the functionality of a website, a.k.a. the back-end.</p>
+				<p>For example, if I was the front-end developer helping to build Google.com, I would be in charge of placing the search box on the appropriate part of the page, adding a box shadow to it, and creating a nice, satisfying to click button. Making the search button actually work &dash; that's the role of a back-end developer.</p>
+			</section>
 
 			<a class="btn-next js-reveal">🙌</a>
 		</div>
 
 		<div class="panel">
-			<span class="js-typed-src" id="typeContentHolder2" aria-hidden="true"></span>
 
-			<span class="screen-reader" id="techie-2">
-				<p>But wait! There is a gaping hole in this description of a Front-end Web Developer's skills! It's name is...</p>
-				<p><span class="js-reveal enter-big">JavaScript</span></p>
-				<p>I am on a personal (and professional) mission to learn JavaScript really well.</p>
-				<p>As I pile on the side projects, I am also on the lookout for freelance and full-time jobs that will offer me the opportunity to hone my JavaScript skills whilst still practicing and sharing those I know best.</p>
-				<p>Read more about what type of job I'm looking for on my Reverse Job Posting.</p>
-			</span>
-
-			<span class="screen-reader" id="non-techie-2">
-				<h2 class="panel-title">Oh yeah, web designer!!</h2>
-			</span>
-
-			<span class="js-typed" aria-hidden="true"></span>
 		</div>
 
 	</section>
 
-	<button class="js-skipBtn skip-typing-btn" aria-hidden="true">Show All Content</button>
+	<button class="js-skipBtn js-reveal skip-typing-btn" aria-hidden="true">Show All <br>Content</button>
 
-</div>
+{# </div> #}
 {% endblock %}
 
 

@@ -1043,7 +1043,7 @@ jQuery(document).ready(function () {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top - header_ht
+					scrollTop: target.offset().top
 				}, 300, function () {
 					var $target = $(target);
 					$target.focus();
@@ -1233,7 +1233,7 @@ if (document.querySelector('.character-1' !== null)) {
 // ----
 // Typed.js
 // ----
-var TYPE_SPEED = 5;
+var TYPE_SPEED = 1;
 
 // Start the typing elements on pages with the story layout
 
@@ -1253,8 +1253,8 @@ if (document.querySelector('.page-template-page-story_layout')) {
 
 		var kids = el.children;
 
-		for (var i = 0; i < kids.length; i++) {
-			var kid = kids[i];
+		for (var _i = 0; _i < kids.length; _i++) {
+			var kid = kids[_i];
 
 			addButtonHrefs(kid, index);
 			setUpTyping(kid, index);
@@ -1270,8 +1270,8 @@ function addButtonHrefs(kid, index) {
 		kid.setAttribute('href', '#panel-' + (index + 1));
 	}
 	if (kid.classList.contains('decision-btns')) {
-		for (var i = 0; i < kid.children.length; i++) {
-			kid.children[i].setAttribute('href', '#panel-' + (index + 1));
+		for (var _i2 = 0; _i2 < kid.children.length; _i2++) {
+			kid.children[_i2].setAttribute('href', '#panel-' + (index + 1));
 		}
 	}
 }
@@ -1280,7 +1280,7 @@ function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
 
 		var typedEl = document.createElement('span');
-		typedEl.classList.add('js-typed');
+		typedEl.classList.add('js-typed', 'panel-content');
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
 
@@ -1306,15 +1306,6 @@ function typeNextSection(index) {
 
 	var callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
 
-	var determineTrigger = function determineTrigger(index) {
-		if (panelClassesContain(index, 'js-tabs')) {
-			trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
-		} else {
-			trigger = document.querySelector('#panel-' + index + ' .btn-next');
-		}
-		return trigger;
-	};
-
 	var nextBtn = determineTrigger(index);
 
 	var options = {
@@ -1332,16 +1323,54 @@ function typeNextSection(index) {
 	var typed = new Typed(typedEl, options);
 }
 
+function prepareTabbedSection(element, index) {
+
+	var type = element.dataset.contentRef;
+	var content = document.getElementById(type);
+
+	var tabs = document.querySelectorAll('.panel-tab');
+	var btns = document.querySelectorAll('.decision-btns > a');
+
+	var nextBtn = determineTrigger(index);
+
+	// var getIndex = (index) => {
+	// 	return index;
+	// }
+	console.log('indexOuter:' + getIndex(index));
+
+	element.addEventListener('click', function (e, index) {
+
+		console.log('indexInner:' + getIndex(i));
+
+		addBtnClickEvent(i, nextBtn, null);
+		markPanelComplete(i);
+		showButtons(nextBtn);
+
+		btns.forEach(function (btn) {
+			btn.classList.remove('js-selected');
+		});
+
+		element.classList.add('js-selected');
+
+		tabs.forEach(function (tab) {
+			tab.classList.add('js-hidden');
+
+			if (tab.getAttribute('id') == type) {
+				tab.classList.remove('js-hidden');
+			}
+		});
+	});
+}
+
 function addBtnClickEvent(index, btn, options) {
 	if (!panelClassesContain(index, 'js-tabs')) {
 		btn.addEventListener('click', function (e) {
-			console.log('clicked');
 			hide(btn);
 			typeNextSection(index + 1);
 		});
 	} else {
-		btn.forEach(function (element) {
-			toggleTabs(element);
+		btn.forEach(function (el) {
+			prepareTabbedSection(el, index);
 		}, this);
 	}
 }
@@ -1351,8 +1380,12 @@ var SKIP_BTN = document.querySelector('.js-skipBtn');
 SKIP_BTN.addEventListener('click', function (e) {
 	e.preventDefault();
 	var TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
+	var HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
 	TYPED_ELS.forEach(function (el) {
 		el.classList.remove('js-typed-src');
+	});
+	HIDDEN_ELS.forEach(function (el) {
+		el.classList.remove('js-reveal');
 	});
 });
 
@@ -1377,6 +1410,15 @@ function markPanelComplete(i) {
 	elem.classList.remove('js-incomplete');
 }
 
+function determineTrigger(index) {
+	if (panelClassesContain(index, 'js-tabs')) {
+		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
+	} else {
+		trigger = document.querySelector('#panel-' + index + ' .btn-next');
+	}
+	return trigger;
+}
+
 function showButtons(btn) {
 	var tabbed = btn.length > 1;
 	if (tabbed) {
@@ -1386,39 +1428,20 @@ function showButtons(btn) {
 	}
 }
 
-function toggleTabs(element) {
-	var type = element.dataset.contentRef;
-	var content = document.getElementById(type);
-	var tabs = document.querySelectorAll('.panel-tab');
-	var btns = document.querySelectorAll('.decision-btns > a');
-
-	element.addEventListener('click', function (e) {
-
-		btns.forEach(function (btn) {
-			btn.classList.remove('js-selected');
-		});
-
-		element.classList.add('js-selected');
-
-		tabs.forEach(function (tab) {
-			tab.classList.add('js-hidden');
-
-			if (tab.getAttribute('id') == type) {
-				tab.classList.remove('js-hidden');
-			}
-		});
-	});
-}
-
 // ----
 // Panel Callbacks
 // ----
 
 // TODO user closest LATER
 function hideLaraPic() {
-	console.log('p1 is done');
-	var toHide = document.querySelector('.js-hide');
-	hide(toHide);
+	// console.log('p1 is done');
+	// let toHide = document.querySelector('.js-hide');
+	// hide(toHide);
+}
+
+function showSkipBtn() {
+	var btn = document.querySelector('.js-skipBtn');
+	reveal(btn);
 }
 
 // ----

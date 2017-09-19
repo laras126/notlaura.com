@@ -10,9 +10,17 @@
 // Top right at small-med
 .menu-btn {
 	// @include button($accent-dark);
-	position: relative;
+	position: fixed;
+	top: 5px;
+	right: $sml;
+
+	.home & {
+		position: relative;
+		top: 0;
+		right: -$sml;
+	}
+
 	z-index: $ztiptop;
-	right: -$base;
 	background: $accent-med;
 	font-weight: $font-weight-strong;
 	border-top: 5px solid $accent-dark;
@@ -32,7 +40,13 @@
 		font-weight: $font-weight-base;
 	}
 
+	&:focus,
+	&:active {
+		background-color: $accent-vdark;
+	}
+
 	&.js-open {
+		border-color: $accent-vdark;
 		&:after {
 			content: ' \000D7';
 		}

@@ -1,6 +1,6 @@
 
 .site-header {
-  position: fixed;
+  // position: fixed;
   z-index: $ztop;
   width: 100%;
   top: 0;
@@ -8,7 +8,7 @@
 }
 
 .site-main {
-  padding-top: $grid-gap*3;
+  // padding-top: $grid-gap;
 }
 
 .logo-img {
@@ -39,7 +39,9 @@
 
 .site-header svg {
   width: 150px;
-  // max-width: 40vw;
+  padding-top: $sml;
+  padding-bottom: $sml;
+
 }
 
 .site-logo-link {

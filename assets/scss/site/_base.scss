@@ -11,6 +11,11 @@
 body {
 
 	background: linear-gradient(to right, $white, $accent-light);
+
+	&.home {
+		background: $accent-light;
+	}
+
 	// For testing
 	@include bp(small) {
   }

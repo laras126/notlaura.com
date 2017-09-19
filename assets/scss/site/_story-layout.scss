@@ -48,90 +48,83 @@
 	// max-width: 600px;
 }
 
-
-.front-page-img-wrap {
-	position: fixed;
-	z-index: -1; // below main content
-	bottom: 0;
+.panel-decor {
+	position: absolute;
 	right: 0;
-	opacity: 0.9;
-	// width: 100%;
+	bottom: 0;
+	z-index: $zbase;
 
 	@include bp(med) {
-		width: auto;
+		max-width: 50vw;
 	}
 }
 
-.front-page-img {
-	max-height: 50vh;
-	// height: 100%;
+.panel-content {
+	max-width: 600px;
+}
+
+.panel-content,
+.btn-next {
+	position: relative;
+	z-index: $zback;
 }
 
 .panel {
+	padding: $grid-gap;
+	min-height: calc(100vh - #{$grid-gap*3.5}); // Minus nav-height/.site-main top padding
+	overflow: hidden;
 	position: relative;
-
-	@include bp(med) {
-		padding-top: $h1;
-		min-height: 70vh;
-	}
+	background-color: $white;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: flex-start;
+
+	border: 5px solid $accent-light;
+
+	@include bp(med) {
+		justify-content: center;
+		padding-left: $grid-gap*2;
+		min-height: 80vh;
+	}
+
+	&.-tabbed {
+		@include bp(med) {
+			// @include grid(yes) {
+			// 	display: grid;
+			// 	grid-template-columns: repeat(2, 1fr);
+			// 	grid-column-gap: $grid-gap;
+			// }
+			// @include grid(no) {
+			// 	display: flex;
+			// 	justify-content: space-between;
+			// 	> * {
+			// 		width: 48%;
+			// 	}
+			// }
+		}
+	}
 
 	&:focus {
 		transition: .2s ease all;
-		outline: 1px solid $white;
-		background: linear-gradient(to bottom right, $white, rgba($white, 0.7));
+		outline: none;
+		border-color: $accent-med;
 	}
 
-
-	// margin-top: $h2;
-
-	// @include bp(small) {
-		padding: $base $grid-gap;
-	// }
-
-	// @include bp(med) {
-	// 	margin-top: $h1;
-	// }
-
-	p {
-		font-size: $h4;
-	}
-}
-
-// .lara-character {
-// 	.js & {
-// 		visibility: hidden;
-// 		opacity: 0;
-// 	}
-// 	height: 70vh;
-// 	display: block;
-// 	margin: 0 auto;
-// }
-
-.grid-panel {
-	@include bp(med) {
-		display: flex;
+	&.js-incomplete {
+		// height: 10px;
 	}
 }
 
 
-// .panel p {
-// 	font-size: $h4;
-// 	&.highlight	{
-// 		font-size: $h3;
-// 	}
-// }
-
-.panel-1 {
-	// background: $white;
-}
-
-.panel-2 {
-	// background-color: #B4CDFC;
+.panel-tab {
+	&.js-hidden {
+		opacity: 0;
+		transition: .2s ease all;
+		height: 1px;
+		width: 1px;
+	}
+	@include bp(med) {}
 }
 
 .panel-svg {
@@ -145,6 +138,7 @@
 
 .panel-title {
 	padding-top: 0;
+	margin-top: 0;
 	// font-size: $h1;
 }
 
@@ -165,9 +159,10 @@
 }
 
 .highlight {
-	font-size: $h3;
+	font-size: $h4;
 	font-weight: $font-weight-strong;
 	line-height: $line-height-sm;
+	@include upperspace;
 }
 
 .highlight-letter {
@@ -212,13 +207,6 @@
 	}
 }
 
-.panel-tab {
-	&.js-hidden {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-	}
-}
 
 .js-reveal {
 	@include js-reveal;
@@ -228,4 +216,17 @@
 .decision-btns {
 	margin-top: $grid-gap;
 	margin-bottom: $grid-gap;
+}
+
+.decision-indicator {
+	font-size: $sml;
+	@include upperspace;
+	color: $accent-med;
+}
+
+.skip-typing-btn {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
 }

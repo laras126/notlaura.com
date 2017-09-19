@@ -190,6 +190,9 @@ $rail: minmax(70px, 175px);
   }
 }
 
+
+
+
 // ----
 // Content
 // ----
@@ -203,6 +206,7 @@ $rail: minmax(70px, 175px);
     grid-template-columns: 50% minmax(auto, 650px);
     grid-column-gap: $grid-gap;
   }
+
   @include grid(no) {
     display: flex;
     justify-content: space-between;
@@ -229,6 +233,29 @@ $rail: minmax(70px, 175px);
 
 
 
+// ----
+// Panels
+// ----
+@include grid(yes) {
+
+  // .panel {
+  //   display: grid;
+  //   @include bp(med) {
+  //     grid-template-columns: repeat(6, 1fr);
+  //   }
+  // }
+
+  // .panel-content {
+  //   grid-column: 1 / -1;
+  // }
+
+  // .panel-img {
+  //   grid-column: 3 / 6;
+  // }
+
+}
+
+// @include
 
 
 // ----
@@ -239,7 +266,7 @@ $rail: minmax(70px, 175px);
 @include grid(yes) {
   @include bp(med) {
     .grid-tease {
-      grid-column: 1 / -1;
+      grid-column: 1 / -1; // Full row tease
 
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -260,20 +287,24 @@ $rail: minmax(70px, 175px);
   @include bp(small) {
     .grid-tease {
       display: flex;
+
       .tease-thumb {
         width: 40%;
         padding-right: $grid-gap;
       }
+
       .tease-content {
         width: 60%;
       }
     }
   }
+
   @include bp(med) {
     .post {
       display: flex;
       margin-bottom: $grid-gap;
     }
+
     .tease-loop {
       display: flex;
       flex-wrap: wrap;
@@ -285,6 +316,7 @@ $rail: minmax(70px, 175px);
     .post {
       width: 49%;
     }
+
     .grid-tease {
       width: 100%;
     }

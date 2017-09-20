@@ -70,6 +70,11 @@
 			max-width: 40vw;
 		}
 	}
+
+	.character-1 {
+		width: 100%;
+		display: block;
+	}
 }
 
 .decor-img {
@@ -81,10 +86,11 @@
 
 .panel-tab {
 	width: 100%;
+
 	@include grid(yes) {
 		@include bp(med) {
 			display: grid;
-			grid-template-columns: minmax(auto, 600px) minmax(200px, auto);
+			grid-template-columns: minmax(50%, 600px) minmax(200px, 50%);
 			grid-column-gap: $grid-gap;
 		}
 	}
@@ -105,6 +111,7 @@
 }
 
 .panel-img {
+	overflow: hidden;
 	@include grid(yes) {
 		grid-column: 2;
 		min-height: 50vh;
@@ -131,12 +138,10 @@
 #llama {
 	display: block;
 	margin: 0 auto;
-
 	@include grid(yes) {
 		grid-row: 1;
 		align-self: end;
 	}
-
 }
 
 .ground {

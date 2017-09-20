@@ -2,7 +2,7 @@
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
 {% block head %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js" async></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 {% endblock %}
 
 {% block header %}
@@ -37,11 +37,14 @@
 				<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
 				<p class="lead">I guess that depends on your generation ;).</p>
 			</span>
+			<div class="panel-decor js-character">
+				{% include "svgs/character-1.svg" %}
+			</div>
 
 			<a class="btn-next js-reveal">Heh, okay 👌</a>
 		</section>
 
-		{# <section class="panel">
+		<section class="panel">
 			<span class="js-typed-src">
 				<h2 class="panel-title">Before we begin...</h2>
 				<p class="lead">I built this page as a interactive sort of choose-your-own-adventure-esque reading experience to help you get to know me from afar.</p>
@@ -107,7 +110,7 @@
 				<span hidden>^50</span>
 			</span>
 			<a class="btn-next js-reveal">Keep going 👇</a>
-		</section> #}
+		</section>
 
 		<section class="panel js-decision">
 			<span class="js-typed-src" data-callback="showLlamaStuff">
@@ -125,9 +128,10 @@
 		<div class="panel">
 			<section class="js-tab js-hidden panel-tab -illustrated" id="pittsburgh">
 				<div class="panel-content">
-					<h2 class="panel-title">Steel City, baby!</h2>
-					<p class="lead">I love Pittsburgh, and I plan to end up there after I've had my fill of the aforementioned big city vibes.</p>
-					<p>While it's 💯 my home city, I didn't <em>technically</em> grow up in Pittsburgh. I grew up on llama farm about an hour away. Yes, you read correctly, a <em>llama</em> farm.</p>
+					<h2 class="panel-title">The Llama Girl</h2>
+					<p class="lead">I grew up on a llama farm outside of Pittsburgh, PA.</p>
+					<p>I showed llamas in 4-H in my childhood and was known as the "Llama Girl" in school. This became a major source of mortification around age 15 when I shifted my energies to art class and ska music.</p>
+					<p>All said, Pittsburgh is 💯 my home city, and I plan to end up there after I've had my fill of 'dem big city vibes.</p>
 					<p>Here's a llama I illustrated <em>and</em> animated, especially for your viewing pleasure!</p>
 				</div>
 				<div class="panel-img -llama">
@@ -136,7 +140,9 @@
 				</div>
 			</section>
 			<section class="js-tab panel-content js-hidden" id="nyc">
-				<h2 class="panel-title">I love NYC.</h2>
+				<h2 class="panel-title">Lara Schenck, LLC</h2>
+				<p class="lead">I lived in the East Village in Manhattan from late 2013 to late 2016.</p>
+				<p></p>
 			</section>
 			<a class="btn-next js-reveal">That's nice 🎉</a>
 		</div>

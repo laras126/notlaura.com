@@ -1102,14 +1102,6 @@ function runBubbleAnimation() {
 		$bubbles[i].style.fill = color;
 	}
 
-	// // Randomly people list
-	// for (var i = 0; i < $people.length; i++) {
-	// 	let color = COLORS[Math.floor(Math.random() * COLORS.length)];
-
-	// 	$bubbles[i].style.opacity = 1;
-	// 	$people[i].style.fill = color;
-	// }
-
 	tl.to($main, 1, { left: 0, ease: Power2.easeOut });
 
 	// Mouth In
@@ -1143,28 +1135,16 @@ if (document.querySelector('.blog-character' !== null)) {
 	runBubbleAnimation();
 }
 
-function runLaraWaveAnimation() {
-	var $handLeft = document.querySelector('.ls-hand-left'),
-	    $lara = document.querySelector('.lara-character');
-
-	var tl = new TimelineLite();
-
-	// Slide in from left
-	tl.to($lara, 1, { x: 0, ease: Power2.easeInOut, autoAlpha: 1 }).to($handLeft, 0.25, { rotation: -20, transformOrigin: "50% 90%", ease: Power2.easeInOut, yoyo: true, repeatDelay: 0, repeat: 50 });
-}
-
 function runBlinkingAnimation() {
 	var mainBody = document.querySelectorAll(".c1-main"),
 	    eyes = document.querySelector(".c1-eyes"),
 	    pupils = document.querySelector(".c1-pupils"),
-	    characterTrigger = document.querySelector(".sticky");
+	    characterTrigger = document.querySelector(".js-character");
 
 	var characterVisible = false;
 	var tl = new TimelineLite();
 
-	// if( window.width > 600 ) {
 	tl.set(mainBody, { y: 150 });
-	// }
 
 	characterTrigger.addEventListener("touchstart", function () {
 		showCharacter();
@@ -1179,7 +1159,6 @@ function runBlinkingAnimation() {
 		moveEye.add(TweenMax.to(pupils, 0.2, { x: 1, y: 2, rotation: 2, transformOrigin: "50% 100%" }));
 	}
 
-	// if( characterVisible == true ) {
 	var blink = new TimelineMax({ delay: 0.5, repeat: 20, repeatDelay: 2 });
 
 	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
@@ -1193,21 +1172,9 @@ function runBlinkingAnimation() {
 		});
 		characterVisible = true;
 	}
-	// }
-	// moveEye.add(TweenMax.to(pupils, 0.2, { x: 0 }));
-
-	// moveEye.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
-
-	// blink.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: 'black', repeat: -1, yoyo: true }, '-=0.5');
-	// tl.add(TweenMax.from('#img_skybox_dc', 0.5, { autoAlpha: 0 }));
-
-	// var blink = new TimelineLite();
-	// blink.
-	// blink.delay(2);
 }
 
-if (document.querySelector('.character-1' !== null)) {
-	// runLaraWaveAnimation();
+if (document.querySelector('.character-1')) {
 	runBlinkingAnimation();
 }
 

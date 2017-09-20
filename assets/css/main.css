@@ -2281,6 +2281,9 @@ code {
   @media (min-width: 730px) {
     .panel-decor.-image {
       max-width: 40vw; } }
+  .panel-decor .character-1 {
+    width: 100%;
+    display: block; }
 
 .decor-img {
   display: block; }
@@ -2292,8 +2295,8 @@ code {
       .panel-tab {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: minmax(auto, 600px) minmax(200px, auto);
-            grid-template-columns: minmax(auto, 600px) minmax(200px, auto);
+        -ms-grid-columns: minmax(50%, 600px) minmax(200px, 50%);
+            grid-template-columns: minmax(50%, 600px) minmax(200px, 50%);
         grid-column-gap: 1.43rem; } } }
 
 .panel-content {
@@ -2312,35 +2315,35 @@ code {
           -ms-flex-pack: center;
               justify-content: center; } }
 
-@supports (grid-area: auto) {
-  .panel-img {
-    -ms-grid-column: 2;
-        grid-column: 2;
-    min-height: 50vh; } }
-
-@supports not (grid-area: auto) {
-  .panel-img {
-    margin-top: 1.43rem;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%; } }
-
-.panel-img.-llama {
-  padding-top: 2.64rem;
-  background-image: linear-gradient(to top, #80cded, #ffffff); }
+.panel-img {
+  overflow: hidden; }
   @supports (grid-area: auto) {
-    .panel-img.-llama {
-      display: -ms-grid;
-      display: grid;
-      -ms-grid-rows: auto minmax(50px, 100px);
-          grid-template-rows: auto minmax(50px, 100px); } }
+    .panel-img {
+      -ms-grid-column: 2;
+          grid-column: 2;
+      min-height: 50vh; } }
+  @supports not (grid-area: auto) {
+    .panel-img {
+      margin-top: 1.43rem;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: 100%; } }
+  .panel-img.-llama {
+    padding-top: 2.64rem;
+    background-image: linear-gradient(to top, #80cded, #ffffff); }
+    @supports (grid-area: auto) {
+      .panel-img.-llama {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: auto minmax(50px, 100px);
+            grid-template-rows: auto minmax(50px, 100px); } }
 
 #llama {
   display: block;

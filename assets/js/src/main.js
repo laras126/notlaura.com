@@ -78,6 +78,13 @@ jQuery(document).ready(function() {
 	// ----
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+	var header_ht;
+
+	if (window.innerWidth <= 690) {
+		header_ht = ($('.site-header').outerHeight())/2;
+	} else {
+		header_ht = ($('.site-header').outerHeight())*1.5;
+	}
 
 	$('a[href*="#"]')
 		.not('[href="#"]')
@@ -85,11 +92,10 @@ jQuery(document).ready(function() {
 		.on('click', function() {
   	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
 				var target = $(this.hash);
-				var header_ht = $('.site-header').outerHeight();
 	  		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	  		if (target.length) {
 	    		$('html,body').animate({
-							scrollTop: target.offset().top - header_ht/2
+							scrollTop: target.offset().top - header_ht
 	    		}, 300, function() {
 						var $target = $(target);
 						$target.focus();
@@ -104,8 +110,6 @@ jQuery(document).ready(function() {
 			}
   	}
  	});
-
-
 
 	// Fit Vids
 	 $(".main-content").fitVids({ customSelector: 'iframe' });

@@ -17,60 +17,58 @@
 
 {% block content %}
 {# <div class="module-content"> #}
-	<section class="scene">
+	<article class="scene">
 
 		<header class="panel">
 			<div class="js-typed-src">
 				<h1 class="panel-title"><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h1>
+				<p>I don't actually like the beach as much as you might think based on that photo.</p>
 			</div>
 			<a class="btn-next js-reveal">Got it 👍</a>
-			<div class="panel-decor">
+			<div class="panel-decor -image">
 				{% include "partials/srcset.twig" with { img: post.image, class: 'decor-img' } %}
 			</div>
 		</header>
 
-		<div class="panel">
+		<section class="panel">
 			<span class="js-typed-src" data-callback="showSkipBtn">
 				<h2 class="panel-title rotate-colors"><span hidden>^200</span>That's <br>L -<span hidden>^50</span> A -<span hidden>^50</span> R -<span hidden>^50</span> A</span>.</h2>
-				{# <p class="lead">You know, like Lara Croft, Tomb Raider?<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
-				<p class="lead">I guess that depends on your generation ;).</p> #}
+				<p class="lead">You know, like Lara Croft, Tomb Raider?
+				<span hidden>^100</span><br>Or like <em>the</em> Lara from Dr. Zhivago? <span hidden>^100</span></p>
+				<p class="lead">I guess that depends on your generation ;).</p>
 			</span>
 
-			<a class="btn-next js-reveal">Got it 👌</a>
-		</div>
-{#
-		<div class="panel">
+			<a class="btn-next js-reveal">Heh, okay 👌</a>
+		</section>
+
+		{# <section class="panel">
 			<span class="js-typed-src">
 				<h2 class="panel-title">Before we begin...</h2>
-				<p class="lead">I built this page as a welcome-to-my-website / choose-your-own-adventure interactive kind of reading experience.</p>
-				<p>If you'd like to skip all the fun and reveal the remaining content at any time, you can use the "Show All Content" button that has appeared at the bottom right.</p>
-				<p>Okay, ready?</p>
+				<p class="lead">I built this page as a interactive sort of choose-your-own-adventure-esque reading experience to help you get to know me from afar.</p>
+				<p class="lead">If you'd like to skip all the fun, you can use the "Show All Content" button that has appeared at the bottom right of your screen.</p>
 			</span>
 
-			<div class="decision-btns">
-				<a class="btn-next js-reveal">Ready 🤘</a>
-			</div>
+			<a class="btn-next js-reveal">Roger that 🤘</a>
+		</section>
 
-		</div> #}
-
-		<div class="panel js-tabs">
+		<section class="panel js-decision">
 
 			<span class="js-typed-src">
 				<h2 class="panel-title">What do I do?</h2>
-				{# <p class="lead">While I may not raid tombs or tend to injured Russian soldiers like the aforementioned Laras, <span hidden>^50</span> I <em>do</em> do some cool things I’d like to tell you about.</p> #}
+				<p class="lead">I do some cool things I’d like to tell you about, but I don't want to bog you down with jargon if you're not into it.</p>
 				<span hidden>^50</span>
 				<p class="lead">Are you a tech person 🖥 or non-tech person 📝?</p>
 			</span>
-			<div class="decision-btns" id="panel-2-btn">
+			<div class="decision-btns">
 				<a data-content-ref="techie" class="js-reveal btn-next">Tech Person 🖥</a>
 				<a data-content-ref="non-techie" class="js-reveal btn-next">Non-tech Person 📝</a>
 			</div>
-		</div>
+		</section>
 
 		<div class="panel">
 
-			<section class="panel-tab panel-content js-hidden" id="techie">
-				<p class="decision-indicator">Techie</p>
+			<section class="js-tab panel-content js-hidden" id="techie">
+				<p class="panel-indicator">Techie</p>
 				<h2 class="panel-title">Greetings, fellow tech person!</h2>
 				<p class="lead">Thanks for coming by! I identify as the illustrious:</p>
 				<p class="highlight">Front-end Web Developer</p>
@@ -80,26 +78,73 @@
 				<p>I am on a personal and professional mission to learn JavaScript and to learn it deeply. And I'm making progress! I built this whole interactive thing <em>without</em> jQuery, gosh-darnit.</p>
 			</section>
 
-			<section class="panel-tab panel-content js-hidden" id="non-techie">
-				<p class="decision-indicator">Non-Techie</p>
-				<h2 class="panel-title">I'm a web designer!</h2>
+			<section class="js-tab panel-content js-hidden" id="non-techie">
+				<p class="panel-indicator">Non-Techie</p>
+				<h2 class="panel-title">I build websites!</h2>
 				<p class="lead">More specifically, a "Front-end Web Developer". Let me explain.</p>
 				<p>A front-end developer is someone who specializes in developing (and sometimes designing) <em>what you see</em> on a web page, rather than the logic, data, and algorithms that power the functionality of a website, a.k.a. the back-end.</p>
 				<p>For example, if I was the front-end developer helping to build Google.com, I would be in charge of placing the search box on the appropriate part of the page, adding a box shadow to it, and creating a nice, satisfying to click button. Making the search button actually work &dash; that's the role of a back-end developer.</p>
 			</section>
 
-			<a class="btn-next js-reveal">Cooool 🙌</a>
+			<a class="btn-next js-reveal">Preach 🙌</a>
 		</div>
+
+		<section class="panel">
+			<span class="js-typed-src">
+				<h2 class="panel-title">I'm also a teacher.</h2>
+				<p class="lead">I'm great at breaking down coding concepts into fun metaphors and digestable chunks.</p>
+				<p class="lead">I really love what I do, and I get super excited about sharing all the things I've figured out, especially with those who are at the beginning of their developer journey.</p>
+				<span hidden>^50</span>
+			</span>
+			<a class="btn-next js-reveal">Awe, sweet 🙏</a>
+		</section>
+
+		<section class="panel">
+			<span class="js-typed-src">
+				<h2 class="panel-title">You are half-way through.</h2>
+				<p class="lead">Here's your out if you are getting impatient and want to <a href="/blog/">read my blog</a> or <a href="/portfolio/">see my work</a>.</p>
+				<p class="lead">The second half of this adventure is more fun though, so if you're up for it, please continue!</p>
+				<span hidden>^50</span>
+			</span>
+			<a class="btn-next js-reveal">Keep going 👇</a>
+		</section> #}
+
+		<section class="panel js-decision">
+			<span class="js-typed-src" data-callback="showLlamaStuff">
+				<h2 class="panel-title">I live in <br>Los Angeles.</h2>
+				<p class="lead">It's pretty much always sunny, and there's pretty much always traffic, but I love 'dem big city vibes.</p>
+				<p class="lead">I already did New York 🍎, and I don't want to go back to Pittsburgh 🌧 quite yet so here I am on the west coast.</p>
+				<span hidden>^50</span>
+			</span>
+			<nav class="decision-btns">
+				<a class="btn-next js-reveal" data-content-ref="pittsburgh">Pittsbugh 🌧</a>
+				<a class="btn-next js-reveal" data-content-ref="nyc">New York 🍎</a>
+			</nav>
+		</section>
 
 		<div class="panel">
-
+			<section class="js-tab js-hidden panel-tab -illustrated" id="pittsburgh">
+				<div class="panel-content">
+					<h2 class="panel-title">Steel City, baby!</h2>
+					<p class="lead">I love Pittsburgh, and I plan to end up there after I've had my fill of the aforementioned big city vibes.</p>
+					<p>While it's 💯 my home city, I didn't <em>technically</em> grow up in Pittsburgh. I grew up on llama farm about an hour away. Yes, you read correctly, a <em>llama</em> farm.</p>
+					<p>Here's a llama I illustrated <em>and</em> animated, especially for your viewing pleasure!</p>
+				</div>
+				<div class="panel-img -llama">
+					{% include "svgs/llama.svg" %}
+					<span class="ground"></span>
+				</div>
+			</section>
+			<section class="js-tab panel-content js-hidden" id="nyc">
+				<h2 class="panel-title">I love NYC.</h2>
+			</section>
+			<a class="btn-next js-reveal">That's nice 🎉</a>
 		</div>
 
-	</section>
+	</article>
 
 	<button class="js-skipBtn js-reveal skip-typing-btn" aria-hidden="true">Show All <br>Content</button>
 
-{# </div> #}
 {% endblock %}
 
 

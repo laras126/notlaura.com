@@ -1,7 +1,7 @@
 // ----
 // Typed.js
 // ----
-const TYPE_SPEED = 1;
+const TYPE_SPEED = 0;
 
 // Start the typing elements on pages with the story layout
 
@@ -64,6 +64,10 @@ function setUpTyping(kid, index) {
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
 
+		// let indicator = document.createElement('span');
+		// indicator.innerHTML('Important Fact #'+index);
+		// document.querySelector('#panel-' + index + ' .panel-title';
+
 		let options = {
 			strings: [kid.innerHTML],
 			typeSpeed: TYPE_SPEED,
@@ -92,8 +96,8 @@ function typeNextSection(index) {
 		strings: [typedSrc.innerHTML],
 		typeSpeed: TYPE_SPEED,
 		showCursor: false,
-		callback: callbackFunc(index),
 		onComplete: () => {
+			callbackFunc(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
 		}
@@ -104,9 +108,9 @@ function typeNextSection(index) {
 }
 
 function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-tabs')) {
+	if (!panelClassesContain(index, 'js-decision')) {
 		btn.addEventListener('click', (e) => {
-			hide(btn);
+			// hide(btn);
 			markPanelComplete(index);
 			typeNextSection(index + 1);
 		});
@@ -119,9 +123,17 @@ function addBtnClickEvent(index, btn, options) {
 }
 
 
+
+function prepareTabbedSection(index) {
+	let nextIndex = index + 1;
+	let nextBtn = determineTrigger(nextIndex);
+	addBtnClickEvent(nextIndex, nextBtn, null);
+	showButtons(nextBtn);
+}
+
 function goToTabbedSection(btn, index) {
 
-	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .panel-tab');
+	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
 	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
 
 	let getIndex = () => {
@@ -151,14 +163,6 @@ function goToTabbedSection(btn, index) {
 	});
 }
 
-function prepareTabbedSection(index) {
-	let nextIndex = index + 1;
-	let nextBtn = determineTrigger(nextIndex);
-	addBtnClickEvent(nextIndex, nextBtn, null);
-	showButtons(nextBtn);
-}
-
-
 
 
 const SKIP_BTN = document.querySelector('.js-skipBtn');
@@ -166,12 +170,19 @@ const SKIP_BTN = document.querySelector('.js-skipBtn');
 SKIP_BTN.addEventListener('click', (e) => {
 	e.preventDefault();
 	let TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
-	let HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
+	let REVEAL_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
+	let HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-hidden');
+
 	TYPED_ELS.forEach((el) => {
 		el.classList.remove('js-typed-src');
 	});
-	HIDDEN_ELS.forEach((el) => {
+
+	REVEAL_ELS.forEach((el) => {
 		el.classList.remove('js-reveal');
+	});
+
+	HIDDEN_ELS.forEach((el) => {
+		el.classList.remove('js-hidden');
 	});
 });
 
@@ -200,7 +211,7 @@ function markPanelComplete(i) {
 }
 
 function determineTrigger(index) {
-	if (panelClassesContain(index, 'js-tabs')) {
+	if (panelClassesContain(index, 'js-decision')) {
 		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
 	} else {
 		trigger = document.querySelector('#panel-' + index + ' .btn-next');
@@ -242,8 +253,15 @@ function showSkipBtn() {
 
 
 
+function showLlamaStuff() {
+	const EYE = document.querySelector('#llama .eye'),
+		JAW = document.querySelector('#llama .jaw'),
+		TAIL = document.querySelector('#llama .tail');
 
-
+	EYE.classList.add("blinking");
+	JAW.classList.add("chewing");
+	TAIL.classList.add("flicking");
+}
 
 
 // ----

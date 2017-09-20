@@ -1035,15 +1035,21 @@ jQuery(document).ready(function () {
 	// ----
 
 	// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+	var header_ht;
+
+	if (window.innerWidth <= 690) {
+		header_ht = $('.site-header').outerHeight() / 2;
+	} else {
+		header_ht = $('.site-header').outerHeight() * 1.5;
+	}
 
 	$('a[href*="#"]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
-			var header_ht = $('.site-header').outerHeight();
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top - header_ht / 2
+					scrollTop: target.offset().top - header_ht
 				}, 300, function () {
 					var $target = $(target);
 					$target.focus();
@@ -1233,7 +1239,7 @@ if (document.querySelector('.character-1' !== null)) {
 // ----
 // Typed.js
 // ----
-var TYPE_SPEED = 1;
+var TYPE_SPEED = 0;
 
 // Start the typing elements on pages with the story layout
 
@@ -1284,6 +1290,10 @@ function setUpTyping(kid, index) {
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
 
+		// let indicator = document.createElement('span');
+		// indicator.innerHTML('Important Fact #'+index);
+		// document.querySelector('#panel-' + index + ' .panel-title';
+
 		var options = {
 			strings: [kid.innerHTML],
 			typeSpeed: TYPE_SPEED,
@@ -1311,8 +1321,8 @@ function typeNextSection(index) {
 		strings: [typedSrc.innerHTML],
 		typeSpeed: TYPE_SPEED,
 		showCursor: false,
-		callback: callbackFunc(index),
 		onComplete: function onComplete() {
+			callbackFunc(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
 		}
@@ -1322,9 +1332,9 @@ function typeNextSection(index) {
 }
 
 function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-tabs')) {
+	if (!panelClassesContain(index, 'js-decision')) {
 		btn.addEventListener('click', function (e) {
-			hide(btn);
+			// hide(btn);
 			markPanelComplete(index);
 			typeNextSection(index + 1);
 		});
@@ -1336,9 +1346,16 @@ function addBtnClickEvent(index, btn, options) {
 	}
 }
 
+function prepareTabbedSection(index) {
+	var nextIndex = index + 1;
+	var nextBtn = determineTrigger(nextIndex);
+	addBtnClickEvent(nextIndex, nextBtn, null);
+	showButtons(nextBtn);
+}
+
 function goToTabbedSection(btn, index) {
 
-	var tabs = document.querySelectorAll('#panel-' + (index + 1) + ' .panel-tab');
+	var tabs = document.querySelectorAll('#panel-' + (index + 1) + ' .js-tab');
 	var btns = document.querySelectorAll('#panel-' + index + ' .decision-btns > a');
 
 	var getIndex = function getIndex() {
@@ -1367,24 +1384,24 @@ function goToTabbedSection(btn, index) {
 	});
 }
 
-function prepareTabbedSection(index) {
-	var nextIndex = index + 1;
-	var nextBtn = determineTrigger(nextIndex);
-	addBtnClickEvent(nextIndex, nextBtn, null);
-	showButtons(nextBtn);
-}
-
 var SKIP_BTN = document.querySelector('.js-skipBtn');
 
 SKIP_BTN.addEventListener('click', function (e) {
 	e.preventDefault();
 	var TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
-	var HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
+	var REVEAL_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
+	var HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-hidden');
+
 	TYPED_ELS.forEach(function (el) {
 		el.classList.remove('js-typed-src');
 	});
-	HIDDEN_ELS.forEach(function (el) {
+
+	REVEAL_ELS.forEach(function (el) {
 		el.classList.remove('js-reveal');
+	});
+
+	HIDDEN_ELS.forEach(function (el) {
+		el.classList.remove('js-hidden');
 	});
 });
 
@@ -1410,7 +1427,7 @@ function markPanelComplete(i) {
 }
 
 function determineTrigger(index) {
-	if (panelClassesContain(index, 'js-tabs')) {
+	if (panelClassesContain(index, 'js-decision')) {
 		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
 	} else {
 		trigger = document.querySelector('#panel-' + index + ' .btn-next');
@@ -1441,6 +1458,16 @@ function hideLaraPic() {
 function showSkipBtn() {
 	var btn = document.querySelector('.js-skipBtn');
 	reveal(btn);
+}
+
+function showLlamaStuff() {
+	var EYE = document.querySelector('#llama .eye'),
+	    JAW = document.querySelector('#llama .jaw'),
+	    TAIL = document.querySelector('#llama .tail');
+
+	EYE.classList.add("blinking");
+	JAW.classList.add("chewing");
+	TAIL.classList.add("flicking");
 }
 
 // ----

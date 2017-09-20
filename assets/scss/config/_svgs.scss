@@ -26,11 +26,116 @@ svg {
 
 
 
-// Character 1
 
-.c1-main {
-	// transform: translateY(150);
+
+// Llama
+
+$llamaColor: cornsilk;
+$strokeWidth: 1.75;
+$strokeColor: slategray;
+$groundColor: mediumseagreen;
+$skyColor: skyblue;
+$eyeFill: url(#eye-open-gradient);
+$eyeCloseFill: url(#eye-close-gradient);
+$breakpoint: 500px;
+
+
+// ----
+// Llama
+// ----
+
+#llama {
+	overflow: visible;
+	fill: $llamaColor;
+	stroke-width: $strokeWidth;
+	stroke: $strokeColor;
+	transform: scale(-1, 1);
+
+	& .eye,
+	& .jaw,
+	& .tail {
+		@include accelerate(transform);
+	}
+
+	.nostril {
+		fill: $strokeColor;
+	}
+
+	.eye {
+		stroke-width: 0;
+		fill: $eyeFill;
+	}
+
+	// ----
+	// Animations
+	// ----
+
+	.flicking,
+	.chewing {
+		transform-box: fill-box; // For Firefox
+	}
+
+	.flicking {
+		animation-name: flick;
+		animation-duration: 5s;
+		animation-iteration-count: 20;
+		animation-delay: 3s;
+	}
+
+	.chewing {
+		animation-name: chew;
+		animation-duration: 0.75s;
+		animation-iteration-count: 20;
+	}
+
+	.blinking {
+		animation-name: blink;
+		animation-duration: 5s;
+		animation-iteration-count: 20;
+		animation-delay: 3s;
+	}
 }
+
+@keyframes blink {
+	0% {
+		fill: $eyeCloseFill;
+		transform: translateY(-1px);
+	}
+	30% {
+		fill: $eyeFill;
+	}
+	100% {
+		fill: $eyeFill;
+	}
+}
+
+@keyframes chew {
+	0% {
+		transform: rotate(10deg);
+		transform-origin: 0 50%;
+	}
+	100% {
+		transform: rotate(-1deg);
+		transform-origin: 100% 100%;
+	}
+}
+
+@keyframes flick {
+	10%,
+	70% {
+		transform: rotate(-20deg);
+		transform-origin: 100% 100%;
+	}
+	20% {
+		transform: rotate(50deg);
+		transform-origin: 100% 100%;
+	}
+	100% {
+		transform: rotate(0);
+	}
+}
+
+// Character 1 (Bubbles)
 
 .c1-eyes {
 	fill:#fff;

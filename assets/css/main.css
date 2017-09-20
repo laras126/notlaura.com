@@ -773,6 +773,134 @@ svg {
 .site-logo svg {
   fill: #242F4A; }
 
+#llama {
+  overflow: visible;
+  fill: cornsilk;
+  stroke-width: 1.75;
+  stroke: slategray;
+  -webkit-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+          transform: scale(-1, 1); }
+  #llama .eye,
+  #llama .jaw,
+  #llama .tail {
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+            perspective: 1000px; }
+  #llama .nostril {
+    fill: slategray; }
+  #llama .eye {
+    stroke-width: 0;
+    fill: url(#eye-open-gradient); }
+  #llama .flicking,
+  #llama .chewing {
+    transform-box: fill-box; }
+  #llama .flicking {
+    -webkit-animation-name: flick;
+            animation-name: flick;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: 20;
+            animation-iteration-count: 20;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s; }
+  #llama .chewing {
+    -webkit-animation-name: chew;
+            animation-name: chew;
+    -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+    -webkit-animation-iteration-count: 20;
+            animation-iteration-count: 20; }
+  #llama .blinking {
+    -webkit-animation-name: blink;
+            animation-name: blink;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: 20;
+            animation-iteration-count: 20;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s; }
+
+@-webkit-keyframes blink {
+  0% {
+    fill: url(#eye-close-gradient);
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px); }
+  30% {
+    fill: url(#eye-open-gradient); }
+  100% {
+    fill: url(#eye-open-gradient); } }
+
+@keyframes blink {
+  0% {
+    fill: url(#eye-close-gradient);
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px); }
+  30% {
+    fill: url(#eye-open-gradient); }
+  100% {
+    fill: url(#eye-open-gradient); } }
+
+@-webkit-keyframes chew {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%; }
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; } }
+
+@keyframes chew {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%; }
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; } }
+
+@-webkit-keyframes flick {
+  10%,
+  70% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; }
+  20% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
+
+@keyframes flick {
+  10%,
+  70% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; }
+  20% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
+
 .c1-eyes {
   fill: #fff; }
 
@@ -1983,10 +2111,17 @@ code {
     background-color: #242F4A; }
 
 .site-header {
-  z-index: 3;
-  width: 100%;
-  top: 0;
   background: #15598f; }
+  @media (min-width: 730px) {
+    .site-header {
+      position: fixed;
+      z-index: 3;
+      width: 100%;
+      top: 0; } }
+
+@media (min-width: 730px) {
+  .site-main {
+    padding-top: 4.29rem; } }
 
 .logo-img {
   height: 100px;
@@ -2116,32 +2251,24 @@ code {
   left: -99999px;
   top: -99999px; }
 
-.home .main-content .inner {
-  padding-left: 0;
-  padding-right: 0; }
+.js .js-hidden {
+  opacity: 0;
+  transition: .2s ease all;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
 
-.front-page-header {
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: bottom right; }
-  @media (min-width: 1100px) {
-    .front-page-header {
-      background-size: auto 100%; } }
-
-.scene {
-  min-height: 200vh;
-  margin-bottom: 50vh; }
-  @media (min-width: 730px) {
-    .scene {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center; } }
+@media (min-width: 730px) {
+  .scene {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; } }
 
 .panel-decor {
   position: absolute;
@@ -2152,14 +2279,86 @@ code {
     .panel-decor {
       max-width: 60vw; } }
   @media (min-width: 730px) {
-    .panel-decor {
+    .panel-decor.-image {
       max-width: 40vw; } }
 
 .decor-img {
   display: block; }
 
+.panel-tab {
+  width: 100%; }
+  @supports (grid-area: auto) {
+    @media (min-width: 730px) {
+      .panel-tab {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(auto, 600px) minmax(200px, auto);
+            grid-template-columns: minmax(auto, 600px) minmax(200px, auto);
+        grid-column-gap: 1.43rem; } } }
+
 .panel-content {
   max-width: 600px; }
+  @supports (grid-area: auto) {
+    .panel-content {
+      -ms-grid-column: 1;
+          grid-column: 1;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+
+@supports (grid-area: auto) {
+  .panel-img {
+    -ms-grid-column: 2;
+        grid-column: 2;
+    min-height: 50vh; } }
+
+@supports not (grid-area: auto) {
+  .panel-img {
+    margin-top: 1.43rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%; } }
+
+.panel-img.-llama {
+  padding-top: 2.64rem;
+  background-image: linear-gradient(to top, #80cded, #ffffff); }
+  @supports (grid-area: auto) {
+    .panel-img.-llama {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-rows: auto minmax(50px, 100px);
+          grid-template-rows: auto minmax(50px, 100px); } }
+
+#llama {
+  display: block;
+  margin: 0 auto; }
+  @supports (grid-area: auto) {
+    #llama {
+      -ms-grid-row: 1;
+          grid-row: 1;
+      -webkit-align-self: end;
+          -ms-flex-item-align: end;
+                  -ms-grid-row-align: end;
+              align-self: end; } }
+
+.ground {
+  -ms-grid-row: 2;
+      grid-row: 2;
+  background: linear-gradient(to top, #5ac88b, mediumseagreen);
+  margin-top: -1.43rem; }
 
 .panel-content,
 .btn-next {
@@ -2188,6 +2387,7 @@ code {
           -ms-flex-pack: center;
               justify-content: center;
       padding-left: 2.86rem;
+      padding-right: 2.86rem;
       min-height: 80vh;
       margin-top: 5vh;
       margin-bottom: 5vh; } }
@@ -2196,12 +2396,6 @@ code {
     outline: none;
     background-color: #ffffff;
     border-color: #27A9E0; }
-
-.js .panel-tab.js-hidden {
-  opacity: 0;
-  transition: .2s ease all;
-  height: 1px;
-  width: 1px; }
 
 .panel-title {
   padding-top: 0;
@@ -2284,7 +2478,7 @@ code {
   margin-top: 1.43rem;
   margin-bottom: 1.43rem; }
 
-.decision-indicator {
+.panel-indicator {
   font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 1px;

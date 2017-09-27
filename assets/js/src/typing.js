@@ -18,13 +18,14 @@ if(document.querySelector('.page-template-page-story_layout')) {
 	// Hook up typing.
 	PANELS.forEach((el, index) => {
 		el.id = 'panel-'+index;
-		el.classList.add('js-incomplete');
+		el.setAttribute('data-complete', false);
 
 		let kids = el.children;
 
 		for (let i = 0; i < kids.length; i++) {
 			let kid = kids[i];
 
+			// addDataAttrs(kid, index);
 			addButtonHrefs(kid, index);
 			setUpTyping(kid, index);
 		}
@@ -33,9 +34,16 @@ if(document.querySelector('.page-template-page-story_layout')) {
 } // end if
 
 
+/**
 
+panel {
+	complete: false,
+	decision: false,
+	typed: true,
 
+}
 
+ */
 
 
 
@@ -206,8 +214,7 @@ function panelClassesContain(i, c) {
 
 function markPanelComplete(i) {
 	let elem = document.querySelector('#panel-' + i);
-	elem.classList.add('js-complete');
-	elem.classList.remove('js-incomplete');
+	elem.dataset.complete = true;
 }
 
 function determineTrigger(index) {

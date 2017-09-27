@@ -1222,19 +1222,31 @@ if (document.querySelector('.page-template-page-story_layout')) {
 	// Hook up typing.
 	PANELS.forEach(function (el, index) {
 		el.id = 'panel-' + index;
-		el.classList.add('js-incomplete');
+		el.setAttribute('data-complete', false);
 
 		var kids = el.children;
 
 		for (var i = 0; i < kids.length; i++) {
 			var kid = kids[i];
 
+			// addDataAttrs(kid, index);
 			addButtonHrefs(kid, index);
 			setUpTyping(kid, index);
 		}
 	});
 } // end if
 
+
+/**
+
+panel {
+	complete: false,
+	decision: false,
+	typed: true,
+
+}
+
+ */
 
 // Setting up Panel Functions
 
@@ -1389,8 +1401,7 @@ function panelClassesContain(i, c) {
 
 function markPanelComplete(i) {
 	var elem = document.querySelector('#panel-' + i);
-	elem.classList.add('js-complete');
-	elem.classList.remove('js-incomplete');
+	elem.dataset.complete = true;
 }
 
 function determineTrigger(index) {

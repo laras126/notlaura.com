@@ -16,6 +16,7 @@ $context['post'] = $post;
 $context['categories'] = Timber::get_terms('category', array('parent' => 0));
 $context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
+// $context['sidebar'] = Timber::get_sidebar('sidebar.php');
 
 if (post_password_required($post->ID)){
 	Timber::render('single-password.twig', $context);

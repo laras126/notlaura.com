@@ -78,12 +78,12 @@
 	 */
 
 
-	add_action( 'send_headers', 'nl_add_header' );
-	function nl_add_header() {
-		if( WP_ENV != 'development') {
-			header( 'Link: <'.get_template_directory_uri() . '/assets/css/main.min.css>; rel=preload; as=style' );
-		}
-	}
+	// add_action( 'send_headers', 'nl_add_header' );
+	// function nl_add_header() {
+		// if( WP_ENV != 'development') {
+		// 	header( 'Link: <'.get_template_directory_uri() . '/assets/css/main.min.css>; rel=preload; as=style' );
+		// }
+	// }
 
 
 	// Shortcode for buttons

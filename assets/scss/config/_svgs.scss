@@ -237,6 +237,8 @@ $breakpoint: 500px;
 
 .ls-hand-left {
 	@include accelerate(transform);
+	transform-box: fill-box; // For Firefox
+
 	animation: wave 0.3s infinite;
 	animation-direction: alternate;
 	animation-timing-function: ease-in-out;

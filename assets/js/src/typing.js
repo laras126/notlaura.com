@@ -67,14 +67,10 @@ function addButtonHrefs(kid, index) {
 function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
 
-		let typedEl = document.createElement('span');
+		let typedEl = document.createElement('div');
 		typedEl.classList.add('js-typed', 'panel-content');
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
-
-		// let indicator = document.createElement('span');
-		// indicator.innerHTML('Important Fact #'+index);
-		// document.querySelector('#panel-' + index + ' .panel-title';
 
 		let options = {
 			strings: [kid.innerHTML],
@@ -87,7 +83,10 @@ function setUpTyping(kid, index) {
 			}
 		}
 
-		typeFirstPanel(index, typedEl, options);
+		// Type the first panel
+		if (index == 0) {
+			let typed = new Typed(typedEl, options);
+		}
 	}
 }
 
@@ -108,6 +107,8 @@ function typeNextSection(index) {
 			callbackFunc(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
+			// typedSrc.remove();
+			removeTypedSrc(typedSrc);
 		}
 	}
 
@@ -177,9 +178,9 @@ const SKIP_BTN = document.querySelector('.js-skipBtn');
 
 SKIP_BTN.addEventListener('click', (e) => {
 	e.preventDefault();
-	let TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
-	let REVEAL_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
-	let HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-hidden');
+	let TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
+	let REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
+	let HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
 
 	TYPED_ELS.forEach((el) => {
 		el.classList.remove('js-typed-src');
@@ -200,12 +201,6 @@ SKIP_BTN.addEventListener('click', (e) => {
 // ----
 // Panel Helpers
 // ----
-
-function typeFirstPanel(index, typedEl, options) {
-	if (index == 0) {
-		let typed = new Typed(typedEl, options);
-	}
-}
 
 function panelClassesContain(i, c) {
 	let elem = document.querySelector('#panel-' + i);
@@ -235,6 +230,11 @@ function showButtons(btn) {
 	}
 }
 
+function removeTypedSrc(elem) {
+	let srcEl = elem;
+	elem.nextSibling.setAttribute("aria-hidden", "false");
+	elem.parentNode.removeChild(srcEl);
+}
 
 
 
@@ -293,5 +293,4 @@ function reveal(el, stagger = false) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
-
 

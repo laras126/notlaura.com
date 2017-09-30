@@ -92,6 +92,10 @@ $rail: minmax(70px, 175px);
   @include contain($screen-xl);
 }
 
+.inner-story {
+  @include contain($screen-lg);
+}
+
 .page .inner,
 .single .inner,
 .inner-pad {
@@ -192,6 +196,32 @@ $rail: minmax(70px, 175px);
 
 
 
+// ----
+// Panel
+// ----
+
+// @include grid(yes) {
+//   .panel {
+//     @include bp(med) {
+//       display: grid;
+//       grid-template-columns: repeat(6, 1fr);
+//       grid-column-gap: $grid-gap;
+//       grid-template-rows: 1fr [btn] 100px;
+//     }
+//   }
+
+//   .panel-content {
+//     grid-column: 1 / span 4;
+//   }
+
+//   .panel-decor {
+//     grid-column: 1 / span 2;
+//   }
+// }
+
+
+
+
 
 // ----
 // Content
@@ -266,10 +296,8 @@ $rail: minmax(70px, 175px);
 @include grid(yes) {
   @include bp(med) {
     .grid-tease {
-      grid-column: 1 / -1; // Full row tease
-
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: repeat(4, 1fr);
       grid-column-gap: $grid-gap;
     }
 
@@ -277,7 +305,22 @@ $rail: minmax(70px, 175px);
       display: grid;
       grid-row-gap: $grid-gap;
       grid-column-gap: $grid-gap;
-      grid-template-columns: repeat(2, 50%); // TODO flexbox fallback
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .post {
+      grid-column: 1 / span 2;
+      &.grid-tease {
+        grid-column: 1 / -1; // Full row tease
+      }
+
+      .tease-thumb {
+        grid-column: 3 / span 2;
+      }
+
+      .tease-content {
+        grid-column: 1 / span 2;
+      }
     }
   }
 }

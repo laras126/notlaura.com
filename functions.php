@@ -140,12 +140,13 @@
 			wp_enqueue_script('jquery');
 		}
 
-			// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
+		// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
 
 			// TODO - just use these, not Max
 			// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TimelineLite.min.js', array(), false, true );
 			// wp_enqueue_script( 'gsap-js-2', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js', array(), false, true );
 			// wp_enqueue_script( 'gsap-js-css', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSRulePlugin.min.js', array(), false, true );
+
 
 		// Enqueue stylesheet
 		if( WP_ENV != 'development' ) {
@@ -153,13 +154,9 @@
 			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.min.js', array('jquery'), '1.0.0', true );
 		} else {
 			wp_enqueue_style( 'nl-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
-			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery'), '1.0.0', true );
-
-			// Loading files indiv.
-			// wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery', 'gsap-js', 'gsap-js-2', 'gsap-js-css'), '1.0.0', true );
+			wp_enqueue_script( 'js', get_template_directory_uri() . '/assets/js/build/scripts.js', array('jquery', 'gsap-js'), '1.0.0', true );
 		}
 
-		// Add our JS
 	}
 	add_action( 'wp_enqueue_scripts', 'nl_scripts' );
 

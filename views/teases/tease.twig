@@ -19,16 +19,6 @@
 <article class="post {{"sticky" in post.class ? "sticky"}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
 	{% block content %}
 
-		{% if post.thumbnail %}
-			<div class="tease-thumb">
-				<a href="{{post.link}}">
-					{% if post.get_thumbnail %}
-					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
-					{% endif %}
-				</a>
-			</div>
-		{% endif %}
-
 		{# {% if "sticky" in post.class and not post.thumbnail %}
 				<div class="tease-thumb">
 					<a href="{{post.link}}" class="sticky-thumb-link">
@@ -62,6 +52,16 @@
 				<a class="link-more" href="{{post.link}}" title="{{post.title}}">(more ...)</a>
 			</p>
 		</div>
+
+		{% if post.thumbnail %}
+			<div class="tease-thumb">
+				<a href="{{post.link}}">
+					{% if post.get_thumbnail %}
+					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
+					{% endif %}
+				</a>
+			</div>
+		{% endif %}
 
 
 	{% endblock %}

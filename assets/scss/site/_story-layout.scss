@@ -17,63 +17,56 @@
 	overflow: hidden;
 }
 
-// .home .main-content .inner {
-	// padding-left: 0;
-	// padding-right: 0;
-// }
-
-// .front-page-header {
-// 	background-size: 100% auto;
-// 	background-repeat: no-repeat;
-// 	background-position: bottom right;
-
-// 		@include bp(large) {
-// 			background-size: auto 100%;
-// 		}
-// 	// display: flex;
-// 	// align-items: flex-start;
-// 	// padding-top: 5rem;
-
-// }
-
 .scene {
-	// min-height: 200vh;
-	// margin-bottom: 50vh;
-
 	@include bp(med) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	// height: 80vh;
-	// padding-top: $h1;
-	// margin-top: $h2;
-	// overflow: auto;
 }
 
-.scene > * {
-	// max-width: 600px;
+.panel-content {
+	@include bp(large) {
+		max-width: 600px;
+	}
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .panel-decor {
-	position: absolute;
 	right: 0;
 	bottom: 0;
 	z-index: $zbase;
+	position: absolute;
+	width: 80vw;
 
 	@include bp(small) {
-		max-width: 60vw;
+		width: 60vw;
 	}
 
 	&.-image {
+
 		@include bp(med) {
 			max-width: 40vw;
 		}
 	}
 
-	.character-1 {
-		width: 100%;
+	svg {
+		width: 400px;
+		max-width: 100%;
 		display: block;
+		margin-left: auto;
+	}
+
+	&.-llama {
+		@include grid(yes) {
+			display: grid;
+			grid-template-rows: auto minmax(50px, 100px);
+		}
+		padding-top: $h2;
+		background-image: linear-gradient(to top, lighten($accent-med, 20%), $white);
 	}
 }
 
@@ -81,8 +74,6 @@
 	display: block;
 }
 
-.panel {
-}
 
 .panel-tab {
 	width: 100%;
@@ -98,41 +89,14 @@
 	&.-illustrated {
 
 	}
-}
 
-.panel-content {
-	max-width: 600px;
-	@include grid(yes) {
-		grid-column: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+	&.-text {
+
 	}
 }
 
-.panel-img {
-	overflow: hidden;
-	@include grid(yes) {
-		grid-column: 2;
-		min-height: 50vh;
-	}
+.panel-tab {
 
-	@include grid(no) {
-		margin-top: $grid-gap;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-	}
-
-	&.-llama {
-		@include grid(yes) {
-			display: grid;
-			grid-template-rows: auto minmax(50px, 100px);
-		}
-		padding-top: $h2;
-		background-image: linear-gradient(to top, lighten($accent-med,20%), $white);
-	}
 }
 
 #llama {
@@ -265,6 +229,17 @@
 	&.js-selected {
 		border: 3px solid $accent-light;
 		background-color: $accent-med;
+	}
+}
+
+.btn-tab {
+	background: $accent-light;
+	padding: 0 $sml/2;
+	color: $text-dark;
+	font-weight: $font-weight-strong;
+	&:hover {
+		background: $accent-med;
+		color: $text-light;
 	}
 }
 

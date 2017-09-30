@@ -2,8 +2,7 @@
 
 {% block html_head_container %}
     {% include 'html-header.twig' %}
-    {% block head %}
-    {% endblock %}
+    {{ block('head') }}
     </head>
 {% endblock %}
 
@@ -36,7 +35,7 @@
       </header>
     {% endblock %}
 
-    <div class="inner{{ is_story == true ? '-np' }}{{sidebar ? ' grid-main'}}">
+    <div class="inner{{ is_story == true ? '-story' }}{{sidebar ? ' grid-main'}}">
 
       {# <div class="main-content{{ is_story == true ? ' module -article' }}"> #}
       <div class="main-content">
@@ -64,7 +63,33 @@
     {% endblock %}
   </footer>
 
+  <script>
+      WebFontConfig = {
+        typekit: { id: 'pis2fvo' }
+      };
+
+      (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+
+    // Credit: http://www.sarasoueidan.com/
+    if('querySelector' in document
+      && 'localStorage' in window
+      && 'addEventListener' in window) {
+
+      var root = document.getElementsByTagName( 'html' )[0];
+      root.classList.add('js');
+    }
+
+  </script>
+
+  {{ block('footer_scripts') }}
+
   {{ function('wp_footer') }}
+
 </body>
 
 </html>

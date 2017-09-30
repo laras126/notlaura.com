@@ -7,6 +7,8 @@
     // @include divide-with-border(bottom);
 		padding-left: $grid-gap;
 		padding-right: $grid-gap;
+		margin-bottom: $grid-gap;
+
 		@include bp(med) {
 			padding-left: 0;
 			padding-right: 0;

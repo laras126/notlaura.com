@@ -1264,14 +1264,10 @@ function addButtonHrefs(kid, index) {
 function setUpTyping(kid, index) {
 	if (kid.classList.contains('js-typed-src')) {
 
-		var typedEl = document.createElement('span');
+		var typedEl = document.createElement('div');
 		typedEl.classList.add('js-typed', 'panel-content');
 		typedEl.setAttribute('aria-hidden', 'true');
 		insertAfter(kid, typedEl);
-
-		// let indicator = document.createElement('span');
-		// indicator.innerHTML('Important Fact #'+index);
-		// document.querySelector('#panel-' + index + ' .panel-title';
 
 		var options = {
 			strings: [kid.innerHTML],
@@ -1282,9 +1278,11 @@ function setUpTyping(kid, index) {
 				addBtnClickEvent(index, nextBtn, typedEl, options);
 				showButtons(nextBtn);
 			}
-		};
 
-		typeFirstPanel(index, typedEl, options);
+			// Type the first panel
+		};if (index == 0) {
+			var typed = new Typed(typedEl, options);
+		}
 	}
 }
 
@@ -1304,6 +1302,8 @@ function typeNextSection(index) {
 			callbackFunc(index);
 			addBtnClickEvent(index, nextBtn, options);
 			showButtons(nextBtn);
+			// typedSrc.remove();
+			removeTypedSrc(typedSrc);
 		}
 	};
 
@@ -1367,9 +1367,9 @@ var SKIP_BTN = document.querySelector('.js-skipBtn');
 
 SKIP_BTN.addEventListener('click', function (e) {
 	e.preventDefault();
-	var TYPED_ELS = document.querySelectorAll('.js-incomplete .js-typed-src');
-	var REVEAL_ELS = document.querySelectorAll('.js-incomplete .js-reveal');
-	var HIDDEN_ELS = document.querySelectorAll('.js-incomplete .js-hidden');
+	var TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
+	var REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
+	var HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
 
 	TYPED_ELS.forEach(function (el) {
 		el.classList.remove('js-typed-src');
@@ -1387,12 +1387,6 @@ SKIP_BTN.addEventListener('click', function (e) {
 // ----
 // Panel Helpers
 // ----
-
-function typeFirstPanel(index, typedEl, options) {
-	if (index == 0) {
-		var typed = new Typed(typedEl, options);
-	}
-}
 
 function panelClassesContain(i, c) {
 	var elem = document.querySelector('#panel-' + i);
@@ -1420,6 +1414,12 @@ function showButtons(btn) {
 	} else {
 		reveal(btn);
 	}
+}
+
+function removeTypedSrc(elem) {
+	var srcEl = elem;
+	elem.nextSibling.setAttribute("aria-hidden", "false");
+	elem.parentNode.removeChild(srcEl);
 }
 
 // ----

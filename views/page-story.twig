@@ -38,7 +38,7 @@
 				{% include "svgs/character-1.svg" %}
 			</div>
 		</section>
-{#
+
 		<section class="panel">
 			<div class="js-typed-src panel-content">
 				<h2 class="panel-title">Before we begin...</h2>
@@ -47,9 +47,9 @@
 			</div>
 
 			<a class="btn-next js-reveal">Roger that 🤘</a>
-		</section> #}
+		</section>
 
-		{# <section class="panel js-decision">
+		<section class="panel js-decision">
 			<div class="js-typed-src panel-content">
 				<h2 class="panel-title">What do I do?</h2>
 				<p class="lead">I do some cool things I’d like to tell you about, but I don't want to bog you down with jargon if you're not into it.</p>
@@ -60,8 +60,8 @@
 				<a data-content-ref="techie" class="js-reveal btn-next">Tech Person 🖥</a>
 				<a data-content-ref="non-techie" class="js-reveal btn-next">Non-tech Person 📝</a>
 			</div>
-		</section> #}
-{#
+		</section>
+
 		<div class="panel">
 			<section class="js-tab panel-content js-hidden" id="techie">
 				<p class="panel-indicator">Techie</p>
@@ -83,8 +83,8 @@
 			</section>
 
 			<a class="btn-next js-reveal">Preach 🙌</a>
-		</div> #}
-{#
+		</div>
+
 		<section class="panel">
 			<div class="js-typed-src panel-content">
 				<h2 class="panel-title">I'm also a teacher.</h2>
@@ -93,19 +93,9 @@
 				<span hidden>^50</span>
 			</div>
 			<a class="btn-next js-reveal">Awe, sweet 🙏</a>
-		</section> #}
+		</section>
 
-		{# <section class="panel">
-			<div class="js-typed-src panel-content">
-				<h2 class="panel-title">I live in Los Angeles.</h2>
-				<p class="lead">It's okay. I've got an east-coast back-bone, but wanted to try something different, so here </p>
-				<p class="lead">The second half of this adventure is more fun though, so if you're up for it, please continue!</p>
-				<span hidden>^50</span>
-			</div>
-			<a class="btn-next js-reveal">Keep going 👇</a>
-		</section> #}
-
-		{# <section class="panel">
+		<section class="panel">
 			<div class="js-typed-src panel-content">
 				<h2 class="panel-title">You are half-way through.</h2>
 				<p class="lead">Here's your out if you are getting impatient and want to <a href="/blog/">read my blog</a> or <a href="/portfolio/">see my work</a>.</p>
@@ -113,28 +103,37 @@
 				<span hidden>^50</span>
 			</div>
 			<a class="btn-next js-reveal">Keep going 👇</a>
-		</section> #}
-
-		<section class="panel js-decision">
-			<div class="js-typed-src panel-content" data-callback="showLlamaStuff">
-				<h2 class="panel-title">Where do I live?</h2>
-				<p class="lead">Currently? Los Angeles. But...</p>
-				<p class="lead">I grew up near Pittsburgh on a <a class="btn-tab" href="">llama farm 🌽</a>,
-					<br>started college in Boulder ⛰, <br>finished college in Boston 🦀,<br> worked with startups in Pittsburgh 🌧, <br>worked for myself in New York 🍎, <br>and ski bummed in Utah 🎿. </p>
-				<p class="lead">Now here I am, <strong>for hire</strong>, in Los Angeles 🌴.</p>
-				<span hidden>^50</span>
-			</div>
-			<nav class="decision-btns">
-				<a class="btn-next js-reveal" data-content-ref="llama">Llama Farm 🌽</a>
-				<a class="btn-next js-reveal" data-content-ref="boulder">Boulder ⛰</a>
-				<a class="btn-next js-reveal" data-content-ref="boston">Boston 🦀</a>
-				<a class="btn-next js-reveal" data-content-ref="pittsburgh">Pittsbugh 🌧</a>
-				<a class="btn-next js-reveal" data-content-ref="nyc">New York 🍎</a>
-				<a class="btn-next js-reveal" data-content-ref="utah">Utah 🎿</a>
-				<a class="btn-next js-reveal" data-content-ref="la">Los Angeles 🌴</a>
-			</nav>
 		</section>
 
+		<section class="panel">
+			<div class="js-typed-src panel-content">
+				<h2 class="panel-title">But where?</h2>
+				<p class="lead">I grew up near Pittsburgh on a <a class="btn-tab" href="">llama farm 🌽,</a>
+					started school in <a class="btn-tab" href="">Boulder ⛰,</a>
+					finished school in <a class="btn-tab" href="">Boston 🦀,</a>
+					worked for startups in <a class="btn-tab" href="">Pittsburgh 🌧,</a>
+					worked for myself in <a class="btn-tab" href="">New York 🗽,</a>
+					and tried to be a ski bum <a class="btn-tab" href="">Utah 🎿.</a> </p>
+				<p class="lead">Now here I am, <strong>for hire</strong>, in <a class="btn-tab" href="">Los Angeles 🚘.</a></p>
+				<span hidden>^50</span>
+			</div>
+			<a class="btn-next js-reveal">That's nice 🎉</a>
+		</section>
+
+		<section class="panel">
+			<div class="js-typed-src panel-content">
+				<h2 class="panel-title rotate-colors">All done!</h2>
+				<p class="lead">Thanks for reading! Really though, thanks. I worked hard on this.</p>
+				<p class="lead">Here are some things you can do now:</p>
+				<ul class="lead">
+					<li><a href="/blog/">Read my blog 📰</a></li>
+					<li><a href="/portfolio/">See my work ⌨</a></li>
+					<li><a href="/contact/">Say hi 👋</a></li>
+					<li><a href="/hire-me/">Hire me 💸</a></li>
+				</ul>
+			</div>
+		</section>
+{#
 		<div class="panel">
 			<section class="js-tab js-hidden panel-tab -illustrated" id="pittsburgh">
 				<div class="panel-content">
@@ -144,10 +143,6 @@
 					<p>All said, Pittsburgh is 💯 my home city, and I plan to end up there after I've had my fill of 'dem big city vibes.</p>
 					<p>Here's a llama I illustrated <em>and</em> animated, especially for your viewing pleasure!</p>
 				</div>
-				{# <div class="panel-decor -llama">
-					{% include "svgs/llama.svg" %}
-					<span class="ground"></span>
-				</div> #}
 			</section>
 			<section class="js-tab panel-content js-hidden" id="nyc">
 				<h2 class="panel-title">New York looked good on me.</h2>
@@ -163,7 +158,7 @@
 					operated an independent consultancy, aptly named Lara Schenck LLC, wherein I built custom WordPress websites for lots of different clients and taught web development to lots of different people.</p>
 			</section>
 			<a class="btn-next js-reveal">That's nice 🎉</a>
-		</div>
+		</div> #}
 
 	</article>
 

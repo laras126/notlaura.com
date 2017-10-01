@@ -476,9 +476,8 @@ Modules
       -ms-grid-columns: (1fr)[4];
           grid-template-columns: repeat(4, 1fr); }
     .post {
-      -ms-grid-column-span: 2;
-      -ms-grid-column: 1;
-          grid-column: 1 / span 2; }
+      -ms-grid-column: span 2;
+          grid-column: span 2; }
       .post.grid-tease {
         grid-column: 1 / -1; }
       .post .tease-thumb {
@@ -2216,7 +2215,6 @@ code {
 .prevnext-nav {
   padding-left: 1.43rem;
   padding-right: 1.43rem;
-  margin-bottom: 1.43rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2465,11 +2463,10 @@ code {
     background-color: #27A9E0; }
 
 .btn-tab {
-  background: #E0E6F2;
-  padding: 0 0.44rem;
-  color: #242F4A;
-  font-weight: 700; }
-  .btn-tab:hover {
+  color: #15598f;
+  white-space: nowrap;
+  display: inline-block; }
+  .btn-tab:hover, .btn-tab:active, .btn-tab:focus {
     background: #27A9E0;
     color: #ffffff; }
 
@@ -2628,7 +2625,8 @@ code {
   color: #ffffff;
   padding-left: 1.43rem;
   padding-right: 1.43rem;
-  position: relative; }
+  position: relative;
+  margin-top: 1.43rem; }
   .site-footer a {
     color: #E0E6F2; }
 
@@ -2888,8 +2886,8 @@ code {
     .project-not-featured {
       -ms-grid-row: span 2;
           grid-row: span 2;
-      -ms-grid-column: span 1;
-          grid-column: span 1; } } }
+      -ms-grid-column: span 2;
+          grid-column: span 2; } } }
 
 @media (min-width: 730px) {
   .project-featured {

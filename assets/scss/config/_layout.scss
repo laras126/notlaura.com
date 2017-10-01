@@ -309,7 +309,7 @@ $rail: minmax(70px, 175px);
     }
 
     .post {
-      grid-column: 1 / span 2;
+      grid-column: span 2;
       &.grid-tease {
         grid-column: 1 / -1; // Full row tease
       }

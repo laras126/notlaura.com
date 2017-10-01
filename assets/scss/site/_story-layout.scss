@@ -233,11 +233,12 @@
 }
 
 .btn-tab {
-	background: $accent-light;
-	padding: 0 $sml/2;
-	color: $text-dark;
-	font-weight: $font-weight-strong;
-	&:hover {
+	color: $accent-dark;
+	white-space: nowrap;
+	display: inline-block;
+	&:hover,
+	&:active,
+	&:focus {
 		background: $accent-med;
 		color: $text-light;
 	}

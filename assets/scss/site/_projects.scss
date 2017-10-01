@@ -14,6 +14,7 @@
 	@include grid(no) {
 		margin-bottom: $grid-gap;
 	}
+
 	// display: flex;
 	// flex-direction: column;
 	// justify-content: flex-start;
@@ -33,7 +34,7 @@
 
 		@include grid(yes) {
 			grid-row: span 2;
-			grid-column: span 1;
+			grid-column: span 2;
 		}
 
 	}

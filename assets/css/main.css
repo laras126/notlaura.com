@@ -2308,7 +2308,7 @@ code {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  @media (min-width: 1100px) {
+  @media (min-width: 730px) {
     .panel-content {
       max-width: 600px; } }
 
@@ -2497,7 +2497,7 @@ code {
   bottom: 0;
   z-index: 101; }
 
-.middle-viewport {
+.js-active-panel {
   background: skyblue; }
 
 .main-aside {

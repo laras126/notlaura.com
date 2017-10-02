@@ -1246,19 +1246,16 @@ if (document.querySelector('.page-template-page-story_layout')) {
 					div.classList.add('js-typed', 'panel-content');
 					div.setAttribute('aria-hidden', 'true');
 					insertAfter(ref, div);
-
 					var el = document.querySelector("#panel-" + int + ' .js-typed');
 					return el;
 				}(this.id);
 
 				// Options for all panels
 				this.typedOpts = {
-					// strings: document.querySelector('#panel-' + this.id + ' .js-typed-src').innerHTML,
 					strings: [this.typedSrc.innerHTML],
 					typeSpeed: TYPE_SPEED,
 					showCursor: false,
 					onComplete: function onComplete() {
-						// addEventListeners(index, $nextBtn, typedEl, options);
 						showButtons(_this.nextTrigger);
 						_this.complete = true;
 					}
@@ -1289,7 +1286,7 @@ if (document.querySelector('.page-template-page-story_layout')) {
 					}
 
 					// Multiple buttons
-					if (kid.classList.contains('decision-btns')) {
+					if (kid.classList.contains('js-decision')) {
 						for (var _i = 0; _i < kid.children.length; _i++) {
 							kid.children[_i].setAttribute('href', '#panel-' + nextPanelId);
 						}
@@ -1314,19 +1311,24 @@ if (document.querySelector('.page-template-page-story_layout')) {
 	}();
 
 	PANELS.forEach(function (el, index) {
+
+		// Add an id to each panel
 		el.id = 'panel-' + index;
 
+		// Create panel obj for each element
 		var p = new Panel(index);
+
+		// Mark objects created and set up children (buttons)
 		p.created = true;
 		p.setUpChildren();
+
 		panelsArr.push(p);
 	});
 
 	// Type first panel
-	document.querySelector('body').addEventListener('click', function () {
-		var panel = panelsArr[0];
-		typeIt(panel);
-		// console.log(getNextPanel(panel));
+	document.addEventListener("DOMContentLoaded", function (event) {
+		var firstPanel = panelsArr[0];
+		typeIt(firstPanel);
 	});
 }; // end selector check
 
@@ -1335,26 +1337,6 @@ function typeIt(panel) {
 	if (!panel.complete) {
 		var typed = new Typed(panel.typedEl, panel.typedOpts);
 	}
-}
-
-function typeNextPanel(index) {
-	typePanel(index + 1);
-}
-
-function addEventListeners(index, btn, options) {
-	// if (panelClassesContain(index, 'js-decision')) {
-	// 	btn.forEach(function (b) {
-	// 		buildTabbedPanel(b, index);
-	// 	}, this);
-	// } else {
-	btn.addEventListener('click', function (e) {
-		typeNextPanel(index);
-	});
-	// }
-}
-
-function buildTypedPanel(index) {
-	typePanel(index + 1);
 }
 
 function buildTabbedPanel(b, index) {
@@ -1400,6 +1382,8 @@ function goToTabbedSection(btn, index) {
 	});
 }
 
+addScrollListener();
+
 // https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
 function addScrollListener() {
 	var $ = jQuery;
@@ -1413,23 +1397,33 @@ function addScrollListener() {
 			    hitbox_top = $window.scrollTop() + $window.height() * .3,
 			    hitbox_bottom = $window.scrollTop() + $window.height() * .6;
 
-			$(".panel").each(function () {
+			$('.panel').each(function () {
 				var $element = $(this),
 				    element_top = $element.offset().top,
 				    element_bottom = $element.offset().top + $element.height();
 
 				$element.toggleClass("js-active-panel", hitbox_top < element_bottom && hitbox_bottom > element_top);
+			});
 
-				var panel = document.querySelector(".js-active-panel");
-				var index = +panel.dataset.index;
-				var complete = panel.dataset.complete;
+			PANELS.forEach(function (el, index) {
+				if (el.classList.contains('js-active-panel')) {
+					console.log('actuve:' + el.id);
+					var str = el.id;
+					var int = str.replace(/[^\d.]/g, '');
+					var currPanel = panelsArr.find(function (currPanel) {
+						return currPanel.id == int;
+					});
 
-				if (index && complete == "false") {
-					console.log(index);
-					typePanel(index);
-					complete = "true";
+					if (!currPanel.fired) {
+						typeIt(currPanel);
+					}
+					// console.log(currPanel);
 				}
 			});
+			// let currPanel = panelsArr.find((currPanel) => {
+			// 	return currPanel.el == $element;
+			// });
+
 		}, 200);
 	});
 }

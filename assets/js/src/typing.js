@@ -5,8 +5,6 @@ const PANELS = document.querySelectorAll('.panel');
 
 var panelsArr = [];
 
-
-
 if(document.querySelector('.page-template-page-story_layout')) {
 
 	class Panel {
@@ -41,19 +39,16 @@ if(document.querySelector('.page-template-page-story_layout')) {
 							div.classList.add('js-typed', 'panel-content');
 							div.setAttribute('aria-hidden', 'true');
 							insertAfter(ref, div);
-
 					let el = document.querySelector("#panel-" + int + ' .js-typed');
 					return el;
 				})(this.id);
 
 				// Options for all panels
 				this.typedOpts = {
-					// strings: document.querySelector('#panel-' + this.id + ' .js-typed-src').innerHTML,
 					strings: [this.typedSrc.innerHTML],
 					typeSpeed: TYPE_SPEED,
 					showCursor: false,
 					onComplete: () => {
-						// addEventListeners(index, $nextBtn, typedEl, options);
 						showButtons(this.nextTrigger);
 						this.complete = true;
 					}
@@ -78,14 +73,13 @@ if(document.querySelector('.page-template-page-story_layout')) {
 				}
 
 				// Multiple buttons
-				if (kid.classList.contains('decision-btns')) {
+				if (kid.classList.contains('js-decision')) {
 					for (let i = 0; i < kid.children.length; i++) {
 						kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
 					}
 				}
 			}
 		}
-
 
 		getNextPanel() {
 			let currId = this.id;
@@ -102,20 +96,25 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 
 	PANELS.forEach((el, index) => {
+
+		// Add an id to each panel
 		el.id = 'panel-' + index;
 
+		// Create panel obj for each element
 		let p = new Panel(index);
+
+		// Mark objects created and set up children (buttons)
 		p.created = true;
 		p.setUpChildren();
+
 		panelsArr.push(p);
 	});
 
 
 	// Type first panel
-	document.querySelector('body').addEventListener('click', () => {
-		let panel = panelsArr[0];
-		typeIt(panel);
-		// console.log(getNextPanel(panel));
+	document.addEventListener("DOMContentLoaded", function (event) {
+		let firstPanel = panelsArr[0];
+		typeIt(firstPanel);
 	});
 
 }; // end selector check
@@ -129,28 +128,6 @@ function typeIt(panel) {
 
 
 
-
-
-
-function typeNextPanel(index) {
-	typePanel(index + 1);
-}
-
-function addEventListeners(index, btn, options) {
-	// if (panelClassesContain(index, 'js-decision')) {
-	// 	btn.forEach(function (b) {
-	// 		buildTabbedPanel(b, index);
-	// 	}, this);
-	// } else {
-		btn.addEventListener('click', (e) => {
-			typeNextPanel(index);
-		});
-	// }
-}
-
-function buildTypedPanel(index) {
-	typePanel(index + 1);
-}
 
 function buildTabbedPanel(b, index) {
 	prepareTabbedSection(index);
@@ -196,6 +173,7 @@ function goToTabbedSection(btn, index) {
 	});
 }
 
+addScrollListener();
 
 // https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
 function addScrollListener() {
@@ -210,25 +188,39 @@ function addScrollListener() {
 				hitbox_top = $window.scrollTop() + $window.height() * .3,
 				hitbox_bottom = $window.scrollTop() + $window.height() * .6;
 
-			$(".panel").each(function () {
+			$('.panel').each(function () {
 				var $element = $(this),
 					element_top = $element.offset().top,
 					element_bottom = $element.offset().top + $element.height();
 
-				$element.toggleClass("js-active-panel", hitbox_top < element_bottom && hitbox_bottom > element_top);
+					$element.toggleClass("js-active-panel", hitbox_top < element_bottom && hitbox_bottom > element_top);
 
-				let panel = document.querySelector(".js-active-panel");
-				let index = +panel.dataset.index;
-				let complete = panel.dataset.complete;
+				});
 
-				if (index && complete == "false") {
-					console.log(index);
-					typePanel(index);
-					complete = "true";
-				}
+				PANELS.forEach((el, index) => {
+					if( el.classList.contains('js-active-panel') ) {
+						console.log('actuve:' + el.id);
+						let str = el.id;
+						let int = str.replace(/[^\d.]/g, '');
+						let currPanel = panelsArr.find((currPanel) => {
+							return currPanel.id == int;
+						});
 
-			});
-		}, 200);
+						if( !currPanel.fired ) {
+							typeIt(currPanel);
+						}
+						// console.log(currPanel);
+					}
+				});
+				// let currPanel = panelsArr.find((currPanel) => {
+		// 	return currPanel.el == $element;
+		// });
+
+
+
+			}, 200);
+
+
 
 	});
 }

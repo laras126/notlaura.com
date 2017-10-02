@@ -28,7 +28,7 @@
 }
 
 .panel-content {
-	@include bp(large) {
+	@include bp(med) {
 		max-width: 600px;
 	}
 
@@ -264,6 +264,6 @@
 	z-index: 101;
 }
 
-.middle-viewport {
+.js-active-panel {
 	background: skyblue;
 }

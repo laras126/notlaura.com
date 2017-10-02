@@ -1,6 +1,6 @@
 
 
-const TYPE_SPEED = 0;
+const TYPE_SPEED = 1;
 const PANELS = document.querySelectorAll('.panel');
 
 var panelsArr = [];
@@ -48,7 +48,8 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 				// Options for all panels
 				this.typedOpts = {
-					strings: [this.typedEl.innerHTML],
+					// strings: document.querySelector('#panel-' + this.id + ' .js-typed-src').innerHTML,
+					strings: [this.typedSrc.innerHTML],
 					typeSpeed: TYPE_SPEED,
 					showCursor: false,
 					onComplete: () => {
@@ -70,19 +71,12 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 		typeIt() {
 			this.fired = true;
-			// let typed = new Typed(this.typedEl, this.typedOpts);
-		}
-
-		typePanel() {
-			// return typed = new Typed(this.typedEl, this.typedOpts);
+			if( !this.complete ) {
+				let typed = new Typed(this.typedEl, this.typedOpts);
+			}
 		}
 
 	}
-
-
-	// function createPanelsObject() {
-
-
 
 
 	PANELS.forEach((el, index) => {
@@ -96,12 +90,13 @@ if(document.querySelector('.page-template-page-story_layout')) {
 		panelsArr.push(p);
 
 	});
-	// console.log(panelsArr);
 
-	var typed = new Typed(panelsArr[0].typedEl, panelsArr[0].typedOpts);
-
-	// panelsArr[0].typeIt();
-
+	// Type first panel
+	document.querySelector('body').addEventListener('click', () => {
+		let panel = panelsArr[0];
+		panel.typeIt();
+		// let typed = new Typed(panel.typedEl, panel.typedOpts);
+	});
 
 }; // end selector check
 

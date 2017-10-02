@@ -20,7 +20,7 @@ if(document.querySelector('.page-template-page-story_layout')) {
 			this.type = "type" in this.el.dataset ? this.el.dataset.type : "typed";
 			this.fired = false;
 
-			this.nextBtn = ((int) => {
+			this.nextTrigger = ((int) => {
 				trigger = document.querySelectorAll('#panel-' + int + ' .btn-next');
 				return trigger;
 			})(this.id);
@@ -54,26 +54,48 @@ if(document.querySelector('.page-template-page-story_layout')) {
 					showCursor: false,
 					onComplete: () => {
 						// addEventListeners(index, $nextBtn, typedEl, options);
-						showButtons(this.nextBtn);
+						showButtons(this.nextTrigger);
 						this.complete = true;
 					}
 				}
 			}
 		}
 
+		// Setting up Panel Functions
 		setUpChildren() {
 			let kids = this.el.children;
+			let nextPanelId = this.id + 1;
+
 			for (let i = 0; i < kids.length; i++) {
 				let kid = kids[i];
-				addButtonHrefs(kid, this.id);
+
+				// Single button
+				if (kid.classList.contains('btn-next')) {
+					kid.setAttribute('href', '#panel-' + nextPanelId);
+					kid.addEventListener('click', (e) => {
+						typeIt(this.getNextPanel());
+					});
+				}
+
+				// Multiple buttons
+				if (kid.classList.contains('decision-btns')) {
+					for (let i = 0; i < kid.children.length; i++) {
+						kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
+					}
+				}
 			}
 		}
 
-		typeIt() {
-			this.fired = true;
-			if( !this.complete ) {
-				let typed = new Typed(this.typedEl, this.typedOpts);
-			}
+
+		getNextPanel() {
+			let currId = this.id;
+			let nextId = currId + 1;
+
+			let nextPanel = panelsArr.find((panel) => {
+				return panel.id == nextId;
+			});
+
+			return nextPanel;
 		}
 
 	}
@@ -84,112 +106,49 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 		let p = new Panel(index);
 		p.created = true;
-
 		p.setUpChildren();
-		console.log(p);
 		panelsArr.push(p);
-
 	});
+
 
 	// Type first panel
 	document.querySelector('body').addEventListener('click', () => {
 		let panel = panelsArr[0];
-		panel.typeIt();
-		// let typed = new Typed(panel.typedEl, panel.typedOpts);
+		typeIt(panel);
+		// console.log(getNextPanel(panel));
 	});
 
 }; // end selector check
 
-
-
-// Setting up Panel Functions
-
-function addButtonHrefs(kid, index) {
-	if (kid.classList.contains('btn-next')) {
-		kid.setAttribute('href', '#panel-' + (index + 1));
-	}
-	if (kid.classList.contains('decision-btns')) {
-		for (let i = 0; i < kid.children.length; i++) {
-			kid.children[i].setAttribute('href', '#panel-' + (index + 1));
-		}
+function typeIt(panel) {
+	panel.fired = true;
+	if (!panel.complete) {
+		let typed = new Typed(panel.typedEl, panel.typedOpts);
 	}
 }
 
 
 
-// function setUpTyping(kid, index) {
-// 	if (kid.classList.contains('js-typed-src')) {
-
-// 		let typedEl = document.createElement('div');
-// 		typedEl.classList.add('js-typed', 'panel-content');
-// 		typedEl.setAttribute('aria-hidden', 'true');
-// 		// insertAfter(kid, typedEl);
-
-// 		let options = {
-// 			strings: [kid.innerHTML],
-// 			typeSpeed: TYPE_SPEED,
-// 			showCursor: false,
-// 			onComplete: () => {
-// 				let $nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
-// 				addEventListeners(index, $nextBtn, typedEl, options);
-// 				showButtons($nextBtn);
-// 				addScrollListener();
-// 			}
-// 		}
-
-// 		// Type the first panel
-// 		if (index == 0) {
-// 			let typed = new Typed(typedEl, options);
-// 		}
-// 	}
-// }
 
 
-// function typePanel(index) {
-// 	let idStr = '#panel-' + index;
-// 	// let kids = el.children;
-// 	console.log(idStr);
-
-// 	let $typedSrc = document.querySelector(idStr + ' .js-typed-src');
-// 	let $typedEl = document.querySelector(idStr + ' .js-typed');
-
-// 	// let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
-// 	let $nextBtn = determineTrigger(index);
-
-// 	let options = {
-// 		strings: [$typedSrc.innerHTML],
-// 		typeSpeed: TYPE_SPEED,
-// 		showCursor: false,
-// 		onComplete: () => {
-// 			// callbackFunc(index);
-// 			addEventListeners(index, $nextBtn, options);
-// 			showButtons($nextBtn);
-// 			// markPanelComplete(index);
-// 			// removeTypedSrc($typedSrc);
-// 		}
-// 	}
-
-// 	let typed = new Typed($typedEl, options);
-// }
 
 function typeNextPanel(index) {
 	typePanel(index + 1);
 }
 
 function addEventListeners(index, btn, options) {
-	if (panelClassesContain(index, 'js-decision')) {
-		btn.forEach(function (b) {
-			buildTabbedPanel(b, index);
-		}, this);
-	} else {
+	// if (panelClassesContain(index, 'js-decision')) {
+	// 	btn.forEach(function (b) {
+	// 		buildTabbedPanel(b, index);
+	// 	}, this);
+	// } else {
 		btn.addEventListener('click', (e) => {
 			typeNextPanel(index);
 		});
-	}
+	// }
 }
 
 function buildTypedPanel(index) {
-	// markPanelComplete(index);
 	typePanel(index + 1);
 }
 
@@ -198,12 +157,12 @@ function buildTabbedPanel(b, index) {
 	goToTabbedSection(b, index);
 }
 
-function prepareTabbedSection(index) {
-	let nextIndex = index + 1;
-	let nextBtn = determineTrigger(nextIndex);
-	addEventListeners(nextIndex, nextBtn, null);
-	showButtons(nextBtn);
-}
+// function prepareTabbedSection(index) {
+// 	let nextIndex = index + 1;
+// 	let nextBtn = determineTrigger(nextIndex);
+// 	addEventListeners(nextIndex, nextBtn, null);
+// 	showButtons(nextBtn);
+// }
 
 function goToTabbedSection(btn, index) {
 
@@ -283,38 +242,14 @@ function addScrollListener() {
 // Panel Helpers
 // ----
 
-function panelClassesContain(i, c) {
-	let elem = document.querySelector('#panel-' + i);
-	return elem.classList.contains(c);
-}
-
-function markPanelComplete(i) {
-	let elem = document.querySelector('#panel-' + i);
-	elem.dataset.complete = true;
-}
-
-function isPanelComplete(panelId) {
-	let elem = document.querySelector(panelId);
-	return elem.dataset.complete;
-}
-
-function determineTrigger(i) {
-	if (panelClassesContain(i, 'js-decision')) {
-		trigger = document.querySelectorAll('#panel-' + i + ' .btn-next');
-	} else {
-		trigger = document.querySelector('#panel-' + i + ' .btn-next');
-	}
-	return trigger;
-}
-
 
 function showButtons(btn) {
 	let tabbed = btn.length > 1;
-	// if( tabbed ) {
-	// 	reveal(btn, true);
-	// } else {
-	// 	reveal(btn);
-	// }
+	if( tabbed ) {
+		reveal(btn, true);
+	} else {
+		reveal(btn);
+	}
 }
 
 function removeTypedSrc(elem) {

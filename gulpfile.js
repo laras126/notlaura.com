@@ -70,6 +70,7 @@ gulp.task('js', function() {
         }))
     .pipe(addsrc.prepend('./assets/js/src/plugins.js'))
     .pipe(concat('scripts.js'))
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(gulp.dest('assets/js/build'))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))

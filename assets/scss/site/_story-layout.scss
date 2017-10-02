@@ -1,20 +1,22 @@
-@mixin js-reveal {
-	.js & {
-		visibility: hidden;
-		opacity: 0;
+
+.js {
+	.js-typed-src {
+		@include visually-hidden;
 	}
-}
 
-.js .js-typed-src {
-	@include visually-hidden;
-}
+	.js-hidden {
+		opacity: 0;
+		transition: .2s ease all;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
 
-.js .js-hidden {
-	opacity: 0;
-	transition: .2s ease all;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+	.js-reveal { // to be revealed by GSAP
+		opacity: 0;
+		visibility: hidden;
+		@include accelerate(transform);
+	}
 }
 
 .scene {
@@ -244,12 +246,6 @@
 	}
 }
 
-
-.js-reveal {
-	@include js-reveal;
-	@include accelerate(transform);
-}
-
 .decision-btns {
 	margin-top: $grid-gap;
 	margin-bottom: $grid-gap;
@@ -266,4 +262,8 @@
 	right: 0;
 	bottom: 0;
 	z-index: 101;
+}
+
+.middle-viewport {
+	background: skyblue;
 }

@@ -12,7 +12,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="pingback" href="{{site.pingback_url}}" />
   <script src="{{site.theme.link}}/assets/js/build/lazysizes.min.js" async></script>
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async></script>
   <script>
+      WebFontConfig = {
+        typekit: { id: 'pis2fvo' }
+      };
+
     // Credit: http://www.sarasoueidan.com/
     if('querySelector' in document
       && 'localStorage' in window
@@ -21,7 +26,6 @@
       var root = document.getElementsByTagName( 'html' )[0];
       root.classList.add('js');
     }
-
   </script>
 
   {{function('wp_head')}}

@@ -15,7 +15,7 @@
 {# <div class="module-content"> #}
 	<article class="scene">
 
-		<header class="panel" data-typed="true" data-panel-type="intro">
+		<header class="panel js-active-panel">
 			<div class="js-typed-src panel-content">
 				<h1 class="panel-title"><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h1>
 				{# <p>I don't actually like the beach as much as you might think based on that photo.</p> #}
@@ -62,7 +62,8 @@
 			</div>
 		</section>
 
-		<div class="panel">
+		<div class="panel" data-type="decision">
+
 			<section class="js-tab panel-content js-hidden" id="techie">
 				<p class="panel-indicator">Techie</p>
 				<h2 class="panel-title">Greetings, fellow tech person!</h2>
@@ -162,7 +163,7 @@
 
 	</article>
 
-	<button class="js-skipBtn js-reveal skip-typing-btn" aria-hidden="true">Show All <br>Content</button>
+	<button class="js-skipBtn js-reveal skip-typing-btn" aria-hidden="true">Show All <br>Panels</button>
 
 {% endblock %}
 

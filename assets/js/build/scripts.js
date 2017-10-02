@@ -1203,50 +1203,115 @@ if (document.querySelector('.character-1')) {
 // tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});
 'use strict';
 
-// ----
-// Typed.js
-// ----
-var TYPE_SPEED = 0;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// Start the typing elements on pages with the story layout
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TYPE_SPEED = 0;
+var PANELS = document.querySelectorAll('.panel');
+
+var panelsArr = [];
 
 if (document.querySelector('.page-template-page-story_layout')) {
+	var Panel = function () {
+		function Panel(int) {
+			var _this = this;
 
-	// ----
-	// Prepare the panels
-	// ----
+			_classCallCheck(this, Panel);
 
-	var PANELS = document.querySelectorAll('.panel');
+			this.id = int;
+			this.el = document.querySelector("#panel-" + this.id);
+			this.complete = false;
+			this.created = false;
+			this.type = "type" in this.el.dataset ? this.el.dataset.type : "typed";
+			this.fired = false;
 
-	// Add ids to each panel and hrefs to buttons.
-	// Hook up typing.
+			this.nextBtn = function (int) {
+				trigger = document.querySelectorAll('#panel-' + int + ' .btn-next');
+				return trigger;
+			}(this.id);
+
+			// Options for "Typed" panels (most of them)
+			if (this.type == "typed") {
+
+				// Find source for typing
+				this.typedSrc = function (int) {
+					var el = document.querySelector("#panel-" + int + ' .js-typed-src');
+					return el;
+				}(this.id);
+
+				// Create an element to hold typed content
+				this.typedEl = function (int) {
+					var ref = _this.typedSrc;
+					var div = document.createElement('div');
+					div.classList.add('js-typed', 'panel-content');
+					div.setAttribute('aria-hidden', 'true');
+					insertAfter(ref, div);
+
+					var el = document.querySelector("#panel-" + int + ' .js-typed');
+					return el;
+				}(this.id);
+
+				// Options for all panels
+				this.typedOpts = {
+					strings: [this.typedEl.innerHTML],
+					typeSpeed: TYPE_SPEED,
+					showCursor: false,
+					onComplete: function onComplete() {
+						// addEventListeners(index, $nextBtn, typedEl, options);
+						showButtons(_this.nextBtn);
+						_this.complete = true;
+					}
+				};
+			}
+		}
+
+		_createClass(Panel, [{
+			key: 'setUpChildren',
+			value: function setUpChildren() {
+				var kids = this.el.children;
+				for (var i = 0; i < kids.length; i++) {
+					var kid = kids[i];
+					addButtonHrefs(kid, this.id);
+				}
+			}
+		}, {
+			key: 'typeIt',
+			value: function typeIt() {
+				this.fired = true;
+				// let typed = new Typed(this.typedEl, this.typedOpts);
+			}
+		}, {
+			key: 'typePanel',
+			value: function typePanel() {
+				// return typed = new Typed(this.typedEl, this.typedOpts);
+			}
+		}]);
+
+		return Panel;
+	}();
+
+	// function createPanelsObject() {
+
+
 	PANELS.forEach(function (el, index) {
 		el.id = 'panel-' + index;
-		el.setAttribute('data-complete', false);
 
-		var kids = el.children;
+		var p = new Panel(index);
+		p.created = true;
 
-		for (var i = 0; i < kids.length; i++) {
-			var kid = kids[i];
-
-			// addDataAttrs(kid, index);
-			addButtonHrefs(kid, index);
-			setUpTyping(kid, index);
-		}
+		p.setUpChildren();
+		console.log(p);
+		panelsArr.push(p);
 	});
-} // end if
+	// console.log(panelsArr);
 
+	var typed = new Typed(panelsArr[0].typedEl, panelsArr[0].typedOpts);
 
-/**
+	// panelsArr[0].typeIt();
 
-panel {
-	complete: false,
-	decision: false,
-	typed: true,
+}; // end selector check
 
-}
-
- */
 
 // Setting up Panel Functions
 
@@ -1261,74 +1326,91 @@ function addButtonHrefs(kid, index) {
 	}
 }
 
-function setUpTyping(kid, index) {
-	if (kid.classList.contains('js-typed-src')) {
+// function setUpTyping(kid, index) {
+// 	if (kid.classList.contains('js-typed-src')) {
 
-		var typedEl = document.createElement('div');
-		typedEl.classList.add('js-typed', 'panel-content');
-		typedEl.setAttribute('aria-hidden', 'true');
-		insertAfter(kid, typedEl);
+// 		let typedEl = document.createElement('div');
+// 		typedEl.classList.add('js-typed', 'panel-content');
+// 		typedEl.setAttribute('aria-hidden', 'true');
+// 		// insertAfter(kid, typedEl);
 
-		var options = {
-			strings: [kid.innerHTML],
-			typeSpeed: TYPE_SPEED,
-			showCursor: false,
-			onComplete: function onComplete() {
-				var nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
-				addBtnClickEvent(index, nextBtn, typedEl, options);
-				showButtons(nextBtn);
-			}
+// 		let options = {
+// 			strings: [kid.innerHTML],
+// 			typeSpeed: TYPE_SPEED,
+// 			showCursor: false,
+// 			onComplete: () => {
+// 				let $nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
+// 				addEventListeners(index, $nextBtn, typedEl, options);
+// 				showButtons($nextBtn);
+// 				addScrollListener();
+// 			}
+// 		}
 
-			// Type the first panel
-		};if (index == 0) {
-			var typed = new Typed(typedEl, options);
-		}
-	}
+// 		// Type the first panel
+// 		if (index == 0) {
+// 			let typed = new Typed(typedEl, options);
+// 		}
+// 	}
+// }
+
+
+// function typePanel(index) {
+// 	let idStr = '#panel-' + index;
+// 	// let kids = el.children;
+// 	console.log(idStr);
+
+// 	let $typedSrc = document.querySelector(idStr + ' .js-typed-src');
+// 	let $typedEl = document.querySelector(idStr + ' .js-typed');
+
+// 	// let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
+// 	let $nextBtn = determineTrigger(index);
+
+// 	let options = {
+// 		strings: [$typedSrc.innerHTML],
+// 		typeSpeed: TYPE_SPEED,
+// 		showCursor: false,
+// 		onComplete: () => {
+// 			// callbackFunc(index);
+// 			addEventListeners(index, $nextBtn, options);
+// 			showButtons($nextBtn);
+// 			// markPanelComplete(index);
+// 			// removeTypedSrc($typedSrc);
+// 		}
+// 	}
+
+// 	let typed = new Typed($typedEl, options);
+// }
+
+function typeNextPanel(index) {
+	typePanel(index + 1);
 }
 
-function typeNextSection(index) {
-	var typedSrc = document.querySelector('#panel-' + index + ' .js-typed-src');
-	var typedEl = document.querySelector('#panel-' + index + ' .js-typed');
-
-	var callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
-
-	var nextBtn = determineTrigger(index);
-
-	var options = {
-		strings: [typedSrc.innerHTML],
-		typeSpeed: TYPE_SPEED,
-		showCursor: false,
-		onComplete: function onComplete() {
-			callbackFunc(index);
-			addBtnClickEvent(index, nextBtn, options);
-			showButtons(nextBtn);
-			// typedSrc.remove();
-			removeTypedSrc(typedSrc);
-		}
-	};
-
-	var typed = new Typed(typedEl, options);
-}
-
-function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-decision')) {
-		btn.addEventListener('click', function (e) {
-			// hide(btn);
-			markPanelComplete(index);
-			typeNextSection(index + 1);
-		});
-	} else {
+function addEventListeners(index, btn, options) {
+	if (panelClassesContain(index, 'js-decision')) {
 		btn.forEach(function (b) {
-			prepareTabbedSection(index);
-			goToTabbedSection(b, index);
+			buildTabbedPanel(b, index);
 		}, this);
+	} else {
+		btn.addEventListener('click', function (e) {
+			typeNextPanel(index);
+		});
 	}
+}
+
+function buildTypedPanel(index) {
+	// markPanelComplete(index);
+	typePanel(index + 1);
+}
+
+function buildTabbedPanel(b, index) {
+	prepareTabbedSection(index);
+	goToTabbedSection(b, index);
 }
 
 function prepareTabbedSection(index) {
 	var nextIndex = index + 1;
 	var nextBtn = determineTrigger(nextIndex);
-	addBtnClickEvent(nextIndex, nextBtn, null);
+	addEventListeners(nextIndex, nextBtn, null);
 	showButtons(nextBtn);
 }
 
@@ -1344,7 +1426,7 @@ function goToTabbedSection(btn, index) {
 	btn.addEventListener('click', function (e) {
 
 		var index = getIndex();
-		markPanelComplete(index);
+		// markPanelComplete(index);
 
 		btns.forEach(function (b) {
 			b.classList.remove('js-selected');
@@ -1362,6 +1444,87 @@ function goToTabbedSection(btn, index) {
 		});
 	});
 }
+
+// https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
+function addScrollListener() {
+	var $ = jQuery;
+	var timeout;
+	$(window).on("load scroll resize", function () {
+		if (timeout) {
+			clearTimeout(timeout);
+		}
+		timeout = setTimeout(function () {
+			var $window = $(window),
+			    hitbox_top = $window.scrollTop() + $window.height() * .3,
+			    hitbox_bottom = $window.scrollTop() + $window.height() * .6;
+
+			$(".panel").each(function () {
+				var $element = $(this),
+				    element_top = $element.offset().top,
+				    element_bottom = $element.offset().top + $element.height();
+
+				$element.toggleClass("js-active-panel", hitbox_top < element_bottom && hitbox_bottom > element_top);
+
+				var panel = document.querySelector(".js-active-panel");
+				var index = +panel.dataset.index;
+				var complete = panel.dataset.complete;
+
+				if (index && complete == "false") {
+					console.log(index);
+					typePanel(index);
+					complete = "true";
+				}
+			});
+		}, 200);
+	});
+}
+
+// ----
+// Panel Helpers
+// ----
+
+function panelClassesContain(i, c) {
+	var elem = document.querySelector('#panel-' + i);
+	return elem.classList.contains(c);
+}
+
+function markPanelComplete(i) {
+	var elem = document.querySelector('#panel-' + i);
+	elem.dataset.complete = true;
+}
+
+function isPanelComplete(panelId) {
+	var elem = document.querySelector(panelId);
+	return elem.dataset.complete;
+}
+
+function determineTrigger(i) {
+	if (panelClassesContain(i, 'js-decision')) {
+		trigger = document.querySelectorAll('#panel-' + i + ' .btn-next');
+	} else {
+		trigger = document.querySelector('#panel-' + i + ' .btn-next');
+	}
+	return trigger;
+}
+
+function showButtons(btn) {
+	var tabbed = btn.length > 1;
+	// if( tabbed ) {
+	// 	reveal(btn, true);
+	// } else {
+	// 	reveal(btn);
+	// }
+}
+
+function removeTypedSrc(elem) {
+	var srcEl = elem;
+	elem.nextSibling.setAttribute("aria-hidden", "false");
+	elem.parentNode.removeChild(srcEl);
+}
+
+// ----
+// Skip Button
+// ----
 
 var SKIP_BTN = document.querySelector('.js-skipBtn');
 
@@ -1383,44 +1546,6 @@ SKIP_BTN.addEventListener('click', function (e) {
 		el.classList.remove('js-hidden');
 	});
 });
-
-// ----
-// Panel Helpers
-// ----
-
-function panelClassesContain(i, c) {
-	var elem = document.querySelector('#panel-' + i);
-	return elem.classList.contains(c);
-}
-
-function markPanelComplete(i) {
-	var elem = document.querySelector('#panel-' + i);
-	elem.dataset.complete = true;
-}
-
-function determineTrigger(index) {
-	if (panelClassesContain(index, 'js-decision')) {
-		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
-	} else {
-		trigger = document.querySelector('#panel-' + index + ' .btn-next');
-	}
-	return trigger;
-}
-
-function showButtons(btn) {
-	var tabbed = btn.length > 1;
-	if (tabbed) {
-		reveal(btn, true);
-	} else {
-		reveal(btn);
-	}
-}
-
-function removeTypedSrc(elem) {
-	var srcEl = elem;
-	elem.nextSibling.setAttribute("aria-hidden", "false");
-	elem.parentNode.removeChild(srcEl);
-}
 
 // ----
 // Panel Callbacks

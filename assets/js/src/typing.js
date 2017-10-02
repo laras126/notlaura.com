@@ -1,53 +1,109 @@
-// ----
-// Typed.js
-// ----
-const TYPE_SPEED = 0;
 
-// Start the typing elements on pages with the story layout
+
+const TYPE_SPEED = 0;
+const PANELS = document.querySelectorAll('.panel');
+
+var panelsArr = [];
+
+
 
 if(document.querySelector('.page-template-page-story_layout')) {
 
+	class Panel {
 
-	// ----
-	// Prepare the panels
-	// ----
+		constructor(int) {
 
-	const PANELS = document.querySelectorAll('.panel');
+			this.id = int;
+			this.el = document.querySelector("#panel-" + this.id);
+			this.complete = false;
+			this.created = false;
+			this.type = "type" in this.el.dataset ? this.el.dataset.type : "typed";
+			this.fired = false;
 
-	// Add ids to each panel and hrefs to buttons.
-	// Hook up typing.
-	PANELS.forEach((el, index) => {
-		el.id = 'panel-'+index;
-		el.setAttribute('data-complete', false);
+			this.nextBtn = ((int) => {
+				trigger = document.querySelectorAll('#panel-' + int + ' .btn-next');
+				return trigger;
+			})(this.id);
 
-		let kids = el.children;
+			// Options for "Typed" panels (most of them)
+			if( this.type == "typed" ) {
 
-		for (let i = 0; i < kids.length; i++) {
-			let kid = kids[i];
+				// Find source for typing
+				this.typedSrc = ((int) => {
+					let el = document.querySelector("#panel-" + int + ' .js-typed-src');
+					return el;
+				})(this.id);
 
-			// addDataAttrs(kid, index);
-			addButtonHrefs(kid, index);
-			setUpTyping(kid, index);
+				// Create an element to hold typed content
+				this.typedEl = ((int) => {
+					let ref = this.typedSrc;
+					let div = document.createElement('div');
+							div.classList.add('js-typed', 'panel-content');
+							div.setAttribute('aria-hidden', 'true');
+							insertAfter(ref, div);
+
+					let el = document.querySelector("#panel-" + int + ' .js-typed');
+					return el;
+				})(this.id);
+
+				// Options for all panels
+				this.typedOpts = {
+					strings: [this.typedEl.innerHTML],
+					typeSpeed: TYPE_SPEED,
+					showCursor: false,
+					onComplete: () => {
+						// addEventListeners(index, $nextBtn, typedEl, options);
+						showButtons(this.nextBtn);
+						this.complete = true;
+					}
+				}
+			}
 		}
+
+		setUpChildren() {
+			let kids = this.el.children;
+			for (let i = 0; i < kids.length; i++) {
+				let kid = kids[i];
+				addButtonHrefs(kid, this.id);
+			}
+		}
+
+		typeIt() {
+			this.fired = true;
+			// let typed = new Typed(this.typedEl, this.typedOpts);
+		}
+
+		typePanel() {
+			// return typed = new Typed(this.typedEl, this.typedOpts);
+		}
+
+	}
+
+
+	// function createPanelsObject() {
+
+
+
+
+	PANELS.forEach((el, index) => {
+		el.id = 'panel-' + index;
+
+		let p = new Panel(index);
+		p.created = true;
+
+		p.setUpChildren();
+		console.log(p);
+		panelsArr.push(p);
+
 	});
+	// console.log(panelsArr);
 
-} // end if
+	var typed = new Typed(panelsArr[0].typedEl, panelsArr[0].typedOpts);
 
-
-/**
-
-panel {
-	complete: false,
-	decision: false,
-	typed: true,
-
-}
-
- */
+	// panelsArr[0].typeIt();
 
 
-
-
+}; // end selector check
 
 
 
@@ -64,79 +120,93 @@ function addButtonHrefs(kid, index) {
 	}
 }
 
-function setUpTyping(kid, index) {
-	if (kid.classList.contains('js-typed-src')) {
 
-		let typedEl = document.createElement('div');
-		typedEl.classList.add('js-typed', 'panel-content');
-		typedEl.setAttribute('aria-hidden', 'true');
-		insertAfter(kid, typedEl);
 
-		let options = {
-			strings: [kid.innerHTML],
-			typeSpeed: TYPE_SPEED,
-			showCursor: false,
-			onComplete: () => {
-				let nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
-				addBtnClickEvent(index, nextBtn, typedEl, options);
-				showButtons(nextBtn);
-			}
-		}
+// function setUpTyping(kid, index) {
+// 	if (kid.classList.contains('js-typed-src')) {
 
-		// Type the first panel
-		if (index == 0) {
-			let typed = new Typed(typedEl, options);
-		}
-	}
+// 		let typedEl = document.createElement('div');
+// 		typedEl.classList.add('js-typed', 'panel-content');
+// 		typedEl.setAttribute('aria-hidden', 'true');
+// 		// insertAfter(kid, typedEl);
+
+// 		let options = {
+// 			strings: [kid.innerHTML],
+// 			typeSpeed: TYPE_SPEED,
+// 			showCursor: false,
+// 			onComplete: () => {
+// 				let $nextBtn = document.querySelector('#panel-' + index + ' .btn-next');
+// 				addEventListeners(index, $nextBtn, typedEl, options);
+// 				showButtons($nextBtn);
+// 				addScrollListener();
+// 			}
+// 		}
+
+// 		// Type the first panel
+// 		if (index == 0) {
+// 			let typed = new Typed(typedEl, options);
+// 		}
+// 	}
+// }
+
+
+// function typePanel(index) {
+// 	let idStr = '#panel-' + index;
+// 	// let kids = el.children;
+// 	console.log(idStr);
+
+// 	let $typedSrc = document.querySelector(idStr + ' .js-typed-src');
+// 	let $typedEl = document.querySelector(idStr + ' .js-typed');
+
+// 	// let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
+// 	let $nextBtn = determineTrigger(index);
+
+// 	let options = {
+// 		strings: [$typedSrc.innerHTML],
+// 		typeSpeed: TYPE_SPEED,
+// 		showCursor: false,
+// 		onComplete: () => {
+// 			// callbackFunc(index);
+// 			addEventListeners(index, $nextBtn, options);
+// 			showButtons($nextBtn);
+// 			// markPanelComplete(index);
+// 			// removeTypedSrc($typedSrc);
+// 		}
+// 	}
+
+// 	let typed = new Typed($typedEl, options);
+// }
+
+function typeNextPanel(index) {
+	typePanel(index + 1);
 }
 
-
-function typeNextSection(index) {
-	let typedSrc = document.querySelector('#panel-' + index + ' .js-typed-src');
-	let typedEl = document.querySelector('#panel-'+index+' .js-typed');
-
-	let callbackFunc = "callback" in typedSrc.dataset ? window[typedSrc.dataset.callback] : console.log;
-
-	let nextBtn = determineTrigger(index);
-
-	let options = {
-		strings: [typedSrc.innerHTML],
-		typeSpeed: TYPE_SPEED,
-		showCursor: false,
-		onComplete: () => {
-			callbackFunc(index);
-			addBtnClickEvent(index, nextBtn, options);
-			showButtons(nextBtn);
-			// typedSrc.remove();
-			removeTypedSrc(typedSrc);
-		}
-	}
-
-	let typed = new Typed(typedEl, options);
-
-}
-
-function addBtnClickEvent(index, btn, options) {
-	if (!panelClassesContain(index, 'js-decision')) {
-		btn.addEventListener('click', (e) => {
-			// hide(btn);
-			markPanelComplete(index);
-			typeNextSection(index + 1);
-		});
-	} else {
+function addEventListeners(index, btn, options) {
+	if (panelClassesContain(index, 'js-decision')) {
 		btn.forEach(function (b) {
-			prepareTabbedSection(index);
-			goToTabbedSection(b, index);
+			buildTabbedPanel(b, index);
 		}, this);
+	} else {
+		btn.addEventListener('click', (e) => {
+			typeNextPanel(index);
+		});
 	}
 }
 
+function buildTypedPanel(index) {
+	// markPanelComplete(index);
+	typePanel(index + 1);
+}
 
+function buildTabbedPanel(b, index) {
+	prepareTabbedSection(index);
+	goToTabbedSection(b, index);
+}
 
 function prepareTabbedSection(index) {
 	let nextIndex = index + 1;
 	let nextBtn = determineTrigger(nextIndex);
-	addBtnClickEvent(nextIndex, nextBtn, null);
+	addEventListeners(nextIndex, nextBtn, null);
 	showButtons(nextBtn);
 }
 
@@ -152,7 +222,7 @@ function goToTabbedSection(btn, index) {
 	btn.addEventListener('click', (e) => {
 
 		let index = getIndex();
-		markPanelComplete(index);
+		// markPanelComplete(index);
 
 		btns.forEach((b) => {
 			b.classList.remove('js-selected');
@@ -173,6 +243,96 @@ function goToTabbedSection(btn, index) {
 }
 
 
+// https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
+function addScrollListener() {
+	var $ = jQuery;
+	var timeout;
+	$(window).on("load scroll resize", function () {
+		if (timeout) {
+			clearTimeout(timeout);
+		}
+		timeout = setTimeout(function () {
+			var $window = $(window),
+				hitbox_top = $window.scrollTop() + $window.height() * .3,
+				hitbox_bottom = $window.scrollTop() + $window.height() * .6;
+
+			$(".panel").each(function () {
+				var $element = $(this),
+					element_top = $element.offset().top,
+					element_bottom = $element.offset().top + $element.height();
+
+				$element.toggleClass("js-active-panel", hitbox_top < element_bottom && hitbox_bottom > element_top);
+
+				let panel = document.querySelector(".js-active-panel");
+				let index = +panel.dataset.index;
+				let complete = panel.dataset.complete;
+
+				if (index && complete == "false") {
+					console.log(index);
+					typePanel(index);
+					complete = "true";
+				}
+
+			});
+		}, 200);
+
+	});
+}
+
+
+
+
+
+
+// ----
+// Panel Helpers
+// ----
+
+function panelClassesContain(i, c) {
+	let elem = document.querySelector('#panel-' + i);
+	return elem.classList.contains(c);
+}
+
+function markPanelComplete(i) {
+	let elem = document.querySelector('#panel-' + i);
+	elem.dataset.complete = true;
+}
+
+function isPanelComplete(panelId) {
+	let elem = document.querySelector(panelId);
+	return elem.dataset.complete;
+}
+
+function determineTrigger(i) {
+	if (panelClassesContain(i, 'js-decision')) {
+		trigger = document.querySelectorAll('#panel-' + i + ' .btn-next');
+	} else {
+		trigger = document.querySelector('#panel-' + i + ' .btn-next');
+	}
+	return trigger;
+}
+
+
+function showButtons(btn) {
+	let tabbed = btn.length > 1;
+	// if( tabbed ) {
+	// 	reveal(btn, true);
+	// } else {
+	// 	reveal(btn);
+	// }
+}
+
+function removeTypedSrc(elem) {
+	let srcEl = elem;
+	elem.nextSibling.setAttribute("aria-hidden", "false");
+	elem.parentNode.removeChild(srcEl);
+}
+
+
+
+// ----
+// Skip Button
+// ----
 
 const SKIP_BTN = document.querySelector('.js-skipBtn');
 
@@ -198,49 +358,6 @@ SKIP_BTN.addEventListener('click', (e) => {
 
 
 
-// ----
-// Panel Helpers
-// ----
-
-function panelClassesContain(i, c) {
-	let elem = document.querySelector('#panel-' + i);
-	return elem.classList.contains(c);
-}
-
-function markPanelComplete(i) {
-	let elem = document.querySelector('#panel-' + i);
-	elem.dataset.complete = true;
-}
-
-function determineTrigger(index) {
-	if (panelClassesContain(index, 'js-decision')) {
-		trigger = document.querySelectorAll('#panel-' + index + ' .btn-next');
-	} else {
-		trigger = document.querySelector('#panel-' + index + ' .btn-next');
-	}
-	return trigger;
-}
-
-function showButtons(btn) {
-	let tabbed = btn.length > 1;
-	if( tabbed ) {
-		reveal(btn, true);
-	} else {
-		reveal(btn);
-	}
-}
-
-function removeTypedSrc(elem) {
-	let srcEl = elem;
-	elem.nextSibling.setAttribute("aria-hidden", "false");
-	elem.parentNode.removeChild(srcEl);
-}
-
-
-
-
-
-
 
 // ----
 // Panel Callbacks
@@ -258,8 +375,6 @@ function showSkipBtn() {
 	reveal(btn);
 }
 
-
-
 function showLlamaStuff() {
 	const EYE = document.querySelector('#llama .eye'),
 		JAW = document.querySelector('#llama .jaw'),
@@ -269,6 +384,8 @@ function showLlamaStuff() {
 	JAW.classList.add("chewing");
 	TAIL.classList.add("flicking");
 }
+
+
 
 
 // ----
@@ -293,4 +410,5 @@ function reveal(el, stagger = false) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
+
 

@@ -2275,6 +2275,17 @@ code {
   width: 1px;
   overflow: hidden; }
 
+.js .js-reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px; }
+
 @media (min-width: 730px) {
   .scene {
     display: -webkit-flex;
@@ -2470,18 +2481,6 @@ code {
     background: #27A9E0;
     color: #ffffff; }
 
-.js-reveal {
-  will-change: transform;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-          perspective: 1000px; }
-  .js .js-reveal {
-    visibility: hidden;
-    opacity: 0; }
-
 .decision-btns {
   margin-top: 1.43rem;
   margin-bottom: 1.43rem; }
@@ -2497,6 +2496,9 @@ code {
   right: 0;
   bottom: 0;
   z-index: 101; }
+
+.middle-viewport {
+  background: skyblue; }
 
 .main-aside {
   margin-top: 1.43rem;

@@ -161,7 +161,8 @@
 		}
 	}
 
-	&:focus {
+	// &:focus,
+	&.js-active-panel {
 		transition: .2s ease all;
 		outline: none;
 		background-color: $white;
@@ -262,8 +263,4 @@
 	right: 0;
 	bottom: 0;
 	z-index: 101;
-}
-
-.js-active-panel {
-	background: skyblue;
 }

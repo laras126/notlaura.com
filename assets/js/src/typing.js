@@ -60,6 +60,7 @@ if(document.querySelector('.page-template-page-story_layout')) {
 		setUpChildren() {
 			let kids = this.el.children;
 			let nextPanelId = this.id + 1;
+			let nextPanel = this.getNextPanel();
 
 			for (let i = 0; i < kids.length; i++) {
 				let kid = kids[i];
@@ -67,16 +68,39 @@ if(document.querySelector('.page-template-page-story_layout')) {
 				// Single button
 				if (kid.classList.contains('btn-next')) {
 					kid.setAttribute('href', '#panel-' + nextPanelId);
-					kid.addEventListener('click', (e) => {
-						typeIt(this.getNextPanel());
-					});
 				}
 
 				// Multiple buttons
 				if (kid.classList.contains('js-decision')) {
+
+					// Add hrefs to links within buttons within li's!
 					for (let i = 0; i < kid.children.length; i++) {
 						kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
 					}
+
+					kid.addEventListener('click', (e) => {
+						this.complete = true;
+						let nextPanel = this.getNextPanel();
+						showButtons(nextPanel.nextTrigger);
+
+						let btns = document.querySelectorAll('#panel-' + this.id + ' button');
+						btns.forEach((b) => {
+							b.classList.remove('js-selected');
+						});
+
+						// console.log(nextPanel.nextTrigger);
+
+						for (let i = 0; i < kid.children.length; i++) {
+							kid.children[i].classList.remove('js-selected');
+						}
+
+						let el = e.target;
+						if (el && el.tagName == "BUTTON") {
+							let btn = el;
+							console.log('hi');
+							showTab(nextPanel, btn);
+						}
+					});
 				}
 			}
 		}
@@ -115,65 +139,33 @@ if(document.querySelector('.page-template-page-story_layout')) {
 	document.addEventListener("DOMContentLoaded", function (event) {
 		let firstPanel = panelsArr[0];
 		typeIt(firstPanel);
+		addScrollListener();
 	});
 
 }; // end selector check
 
 function typeIt(panel) {
 	panel.fired = true;
-	if (!panel.complete) {
+	if (!panel.complete && panel.type == "typed") {
 		let typed = new Typed(panel.typedEl, panel.typedOpts);
 	}
 }
 
+function showTab(panel, btn) {
+	let tabs = document.querySelectorAll('#panel-' + panel.id + ' .js-tab');
+	let type = btn.dataset.contentRef;
 
+	tabs.forEach((tab) => {
+		tab.classList.add('js-hidden');
 
-
-function buildTabbedPanel(b, index) {
-	prepareTabbedSection(index);
-	goToTabbedSection(b, index);
-}
-
-// function prepareTabbedSection(index) {
-// 	let nextIndex = index + 1;
-// 	let nextBtn = determineTrigger(nextIndex);
-// 	addEventListeners(nextIndex, nextBtn, null);
-// 	showButtons(nextBtn);
-// }
-
-function goToTabbedSection(btn, index) {
-
-	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
-	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
-
-	let getIndex = () => {
-		return index;
-	}
-
-	btn.addEventListener('click', (e) => {
-
-		let index = getIndex();
-		// markPanelComplete(index);
-
-		btns.forEach((b) => {
-			b.classList.remove('js-selected');
-		});
-
-		let type = btn.dataset.contentRef;
-		btn.classList.add('js-selected');
-
-		tabs.forEach(function (tab) {
-			tab.classList.add('js-hidden');
-
-			if (tab.getAttribute('id') == type) {
-				tab.classList.remove('js-hidden');
-			}
-		});
-
+		if (tab.getAttribute('id') == type) {
+			tab.classList.remove('js-hidden');
+		}
 	});
+
+	btn.classList.add('js-selected');
 }
 
-addScrollListener();
 
 // https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
 function addScrollListener() {
@@ -198,25 +190,22 @@ function addScrollListener() {
 				});
 
 				PANELS.forEach((el, index) => {
+
 					if( el.classList.contains('js-active-panel') ) {
-						console.log('actuve:' + el.id);
+
+						// Get panel obj from element if
 						let str = el.id;
 						let int = str.replace(/[^\d.]/g, '');
 						let currPanel = panelsArr.find((currPanel) => {
 							return currPanel.id == int;
 						});
 
+						// Type panel
 						if( !currPanel.fired ) {
 							typeIt(currPanel);
 						}
-						// console.log(currPanel);
 					}
 				});
-				// let currPanel = panelsArr.find((currPanel) => {
-		// 	return currPanel.el == $element;
-		// });
-
-
 
 			}, 200);
 
@@ -334,3 +323,45 @@ function hide(el) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+// function goToTabbedSection(btn, index) {
+
+// 	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
+// 	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
+
+// 	let getIndex = () => {
+// 		return index;
+// 	}
+
+// 	btn.addEventListener('click', (e) => {
+
+// 		let index = getIndex();
+// 		// markPanelComplete(index);
+
+// 		btns.forEach((b) => {
+// 			b.classList.remove('js-selected');
+// 		});
+
+// 		let type = btn.dataset.contentRef;
+// 		btn.classList.add('js-selected');
+
+// 		tabs.forEach(function (tab) {
+// 			tab.classList.add('js-hidden');
+
+// 			if (tab.getAttribute('id') == type) {
+// 				tab.classList.remove('js-hidden');
+// 			}
+// 		});
+
+// 	});
+// }

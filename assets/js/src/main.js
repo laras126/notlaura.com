@@ -106,7 +106,7 @@ jQuery(document).ready(function() {
 							$target.focus(); // Set focus again
 						};
 					});
-	    	return false;
+	    	// return false;
 			}
   	}
  	});

@@ -2402,7 +2402,7 @@ code {
       min-height: 80vh;
       margin-top: 5vh;
       margin-bottom: 5vh; } }
-  .panel:focus {
+  .panel.js-active-panel {
     transition: .2s ease all;
     outline: none;
     background-color: #ffffff;
@@ -2496,9 +2496,6 @@ code {
   right: 0;
   bottom: 0;
   z-index: 101; }
-
-.js-active-panel {
-  background: skyblue; }
 
 .main-aside {
   margin-top: 1.43rem;

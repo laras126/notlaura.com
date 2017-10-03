@@ -1060,7 +1060,7 @@ jQuery(document).ready(function () {
 						$target.focus(); // Set focus again
 					};
 				});
-				return false;
+				// return false;
 			}
 		}
 	});
@@ -1273,24 +1273,52 @@ if (document.querySelector('.page-template-page-story_layout')) {
 
 				var kids = this.el.children;
 				var nextPanelId = this.id + 1;
+				var nextPanel = this.getNextPanel();
 
-				for (var i = 0; i < kids.length; i++) {
+				var _loop = function _loop(i) {
 					var kid = kids[i];
 
 					// Single button
 					if (kid.classList.contains('btn-next')) {
 						kid.setAttribute('href', '#panel-' + nextPanelId);
-						kid.addEventListener('click', function (e) {
-							typeIt(_this2.getNextPanel());
-						});
 					}
 
 					// Multiple buttons
 					if (kid.classList.contains('js-decision')) {
+
+						// Add hrefs to links within buttons within li's!
 						for (var _i = 0; _i < kid.children.length; _i++) {
 							kid.children[_i].setAttribute('href', '#panel-' + nextPanelId);
 						}
+
+						kid.addEventListener('click', function (e) {
+							_this2.complete = true;
+							var nextPanel = _this2.getNextPanel();
+							showButtons(nextPanel.nextTrigger);
+
+							var btns = document.querySelectorAll('#panel-' + _this2.id + ' button');
+							btns.forEach(function (b) {
+								b.classList.remove('js-selected');
+							});
+
+							// console.log(nextPanel.nextTrigger);
+
+							for (var _i2 = 0; _i2 < kid.children.length; _i2++) {
+								kid.children[_i2].classList.remove('js-selected');
+							}
+
+							var el = e.target;
+							if (el && el.tagName == "BUTTON") {
+								var btn = el;
+								console.log('hi');
+								showTab(nextPanel, btn);
+							}
+						});
 					}
+				};
+
+				for (var i = 0; i < kids.length; i++) {
+					_loop(i);
 				}
 			}
 		}, {
@@ -1329,60 +1357,31 @@ if (document.querySelector('.page-template-page-story_layout')) {
 	document.addEventListener("DOMContentLoaded", function (event) {
 		var firstPanel = panelsArr[0];
 		typeIt(firstPanel);
+		addScrollListener();
 	});
 }; // end selector check
 
 function typeIt(panel) {
 	panel.fired = true;
-	if (!panel.complete) {
+	if (!panel.complete && panel.type == "typed") {
 		var typed = new Typed(panel.typedEl, panel.typedOpts);
 	}
 }
 
-function buildTabbedPanel(b, index) {
-	prepareTabbedSection(index);
-	goToTabbedSection(b, index);
-}
+function showTab(panel, btn) {
+	var tabs = document.querySelectorAll('#panel-' + panel.id + ' .js-tab');
+	var type = btn.dataset.contentRef;
 
-// function prepareTabbedSection(index) {
-// 	let nextIndex = index + 1;
-// 	let nextBtn = determineTrigger(nextIndex);
-// 	addEventListeners(nextIndex, nextBtn, null);
-// 	showButtons(nextBtn);
-// }
+	tabs.forEach(function (tab) {
+		tab.classList.add('js-hidden');
 
-function goToTabbedSection(btn, index) {
-
-	var tabs = document.querySelectorAll('#panel-' + (index + 1) + ' .js-tab');
-	var btns = document.querySelectorAll('#panel-' + index + ' .decision-btns > a');
-
-	var getIndex = function getIndex() {
-		return index;
-	};
-
-	btn.addEventListener('click', function (e) {
-
-		var index = getIndex();
-		// markPanelComplete(index);
-
-		btns.forEach(function (b) {
-			b.classList.remove('js-selected');
-		});
-
-		var type = btn.dataset.contentRef;
-		btn.classList.add('js-selected');
-
-		tabs.forEach(function (tab) {
-			tab.classList.add('js-hidden');
-
-			if (tab.getAttribute('id') == type) {
-				tab.classList.remove('js-hidden');
-			}
-		});
+		if (tab.getAttribute('id') == type) {
+			tab.classList.remove('js-hidden');
+		}
 	});
-}
 
-addScrollListener();
+	btn.classList.add('js-selected');
+}
 
 // https://stackoverflow.com/questions/29891587/check-if-element-is-between-30-and-60-of-the-viewport
 function addScrollListener() {
@@ -1406,24 +1405,22 @@ function addScrollListener() {
 			});
 
 			PANELS.forEach(function (el, index) {
+
 				if (el.classList.contains('js-active-panel')) {
-					console.log('actuve:' + el.id);
+
+					// Get panel obj from element if
 					var str = el.id;
 					var int = str.replace(/[^\d.]/g, '');
 					var currPanel = panelsArr.find(function (currPanel) {
 						return currPanel.id == int;
 					});
 
+					// Type panel
 					if (!currPanel.fired) {
 						typeIt(currPanel);
 					}
-					// console.log(currPanel);
 				}
 			});
-			// let currPanel = panelsArr.find((currPanel) => {
-			// 	return currPanel.el == $element;
-			// });
-
 		}, 200);
 	});
 }
@@ -1523,3 +1520,35 @@ function reveal(el) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
+
+// function goToTabbedSection(btn, index) {
+
+// 	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
+// 	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
+
+// 	let getIndex = () => {
+// 		return index;
+// 	}
+
+// 	btn.addEventListener('click', (e) => {
+
+// 		let index = getIndex();
+// 		// markPanelComplete(index);
+
+// 		btns.forEach((b) => {
+// 			b.classList.remove('js-selected');
+// 		});
+
+// 		let type = btn.dataset.contentRef;
+// 		btn.classList.add('js-selected');
+
+// 		tabs.forEach(function (tab) {
+// 			tab.classList.add('js-hidden');
+
+// 			if (tab.getAttribute('id') == type) {
+// 				tab.classList.remove('js-hidden');
+// 			}
+// 		});
+
+// 	});
+// }

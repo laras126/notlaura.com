@@ -1179,7 +1179,10 @@ function runBlinkingAnimation() {
 }
 
 if (document.querySelector('.character-1')) {
+	// let characters = document.querySelectorAll('.character-1');
+	// characters.forEach((c) => {
 	runBlinkingAnimation();
+	// });
 }
 
 // const string = document.querySelector(".panel-title").textContent;

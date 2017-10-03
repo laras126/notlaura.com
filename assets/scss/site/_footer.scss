@@ -7,8 +7,8 @@
 .site-footer {
 	background-color: $accent-vdark;
 	color: $text-light;
-	padding-left: $grid-gap;
-	padding-right: $grid-gap;
+	// padding-left: $grid-gap;
+	// padding-right: $grid-gap;
 	position: relative;
 	margin-top: $grid-gap;
 
@@ -67,6 +67,7 @@
 		svg {
 			fill: $accent-vlight;
 		}
+
 		&:hover svg {
 			fill: $accent-light;
 		}
@@ -92,6 +93,7 @@
 
 	&.-footer {
 		@include unstyle-list();
+		margin-bottom: 0;
 
 		@include bp(med) {
 
@@ -132,6 +134,16 @@
 				// width: calc(100% / 3);
 			}
 		// }
+	}
+
+	&.-svg-sticky {
+		// transform: rotate(180deg);
+		min-height: 200px;
+		position: relative;
+		svg {
+			position: absolute;
+			bottom: 0;
+		}
 	}
 }
 

@@ -236,14 +236,14 @@
 }
 
 .btn-tab {
-	color: $accent-dark;
+	// color: $accent-dark;
 	white-space: nowrap;
 	display: inline-block;
 	&:hover,
 	&:active,
 	&:focus {
-		background: $accent-med;
-		color: $text-light;
+		// background: $accent-med;
+		// color: $text-light;
 	}
 }
 

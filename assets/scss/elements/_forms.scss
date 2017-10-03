@@ -40,16 +40,18 @@ input[type="url"],
 input[type="search"],
 input[type="tel"] {
 	padding: $sml/2 $base/2;
-	background: $accent-vlight;
+	background: $white;
 	color: $body-text-clr;
-	border: 2px solid $accent-light;
+	outline: 5px solid rgba($accent-vlight, 0);
+	border: 1px solid $accent-light;
 	font-family: $body-font;
 	font-weight: 300;
 	border-radius: 2px;
+	transition: 0.2s ease all;
 
 	&:focus {
-		border-color: $accent-med;
-		background-color: $white;
+		// border-color: $accent-med;
+		outline: 5px solid $accent-light;
 	}
 }
 
@@ -67,9 +69,7 @@ input[type="image"],
 input[type="submit"],
 input[type="email"],
 input[type="reset"],
-input[type="button"],
-input[type="radio"],
-input[type="checkbox"] {
+input[type="text"] {
 	width: 100%;
 	max-width: 400px;
 }
@@ -100,152 +100,56 @@ input[type="checkbox"]:focus {
 	outline-offset: -2px;
 }
 
+// Formidable
 
-
-// Gravity forms
-
-.gform_fields {
-	@include unstyle-list;
-}
-
-.gform_wrapper {
-	textarea,
-	input[type=text],
-	input[type=url],
-	input[type=email],
-	input[type=tel],
-	input[type=number],
-	input[type=password] {
-		font-size: $base;
-		padding: $xsml $sml;
-		-webkit-appearance: none;
-	}
-
-	.gfield {
-		margin-top: $h3;
-	}
-
-	.top_label .gfield_label {
-		font-size: $h4;
-		font-family: $heading-font;
-		font-weight: 500;
-		margin-bottom: $xsml;
-	}
-
-	.gfield_checkbox {
-		@include unstyle-list;
-
-		li {
-			line-height: 2;
-		}
-
-		input, label {
-			display: inline-block;
-		}
-
-		label {
-			margin-left: $xsml;
-		}
-	}
-
-	.gfield_checkbox li input[type=checkbox],
-	.gfield_radio li input[type=radio],
-	.gfield_checkbox li input {
-		// Sorry, god.
-		margin-top: 6px !important;
-		margin-left: 2px;
-	}
-
-	ul.gfield_radio li input[type="radio"]:checked+label,
-	ul.gfield_checkbox li input[type="checkbox"]:checked+label {
-		font-weight: 500;
-	}
-
-	.gform_footer input.button,
-	.gform_footer input[type=submit] {
-		@extend .btn-cta;
-		margin-top: $h3;
-	}
-
-	.ginput_complex label,
-	.gfield_time_hour label,
-	.gfield_time_minute label,
-	.gfield_date_month label,
-	.gfield_date_day label,
-	.gfield_date_year label,
-	.instruction {
-		@include meta;
-		margin-bottom: $h3;
-		margin-top: $sml;
-	}
-
-
-	.gform_footer{
-		input[type=submit], input.button {
-			display: block;
-		}
-	}
-
-	.gfield_description {
-		font-family: $body-font;
-		@include meta();
-		margin-bottom: $xsml;
-
-		&.validation_message {
-			color: $alert-danger;
-			padding-top: $xsml/2;
-		}
-	}
-
-}
-
-.gf_left_half,
-.gf_right_half {
-	input {
-		width: 100%;
-	}
-}
-
-.gfield_required {
+.frm_required {
 	color: $alert-danger;
-	font-weight: 300;
 }
 
+.frm_primary_label {
+	font-weight: $font-weight-strong;
+	margin-bottom: $sml / 2;
+	// @include upperspace;
+	margin-top: $grid-gap;
+}
 
-.gform_drop_instructions {
+.frm_description {
 	font-size: $sml;
+	// margin-top: $sml;
+	margin-bottom: $sml;
 }
 
-.gform_drop_area {
-	padding: $h5 $h4 $h4 $h4;
-	background-color: $accent-vlight;
-	border: 2px dashed $accent-light;
-	// text-align: center;
+.frm_form_fields > fieldset {
+	padding: 0;
+	border: 0;
+	display: flex;
+	// flex-direction:
+	// border: 5px solid $accent-med;
+	// background: $white;
 }
 
-.gform_button_select_files {
-	background-color: $accent-med;
-	border: 1px solid lighten($accent-med, 15%);
-	font-size: $sml;
-	color: $text-light;
-	padding: $xsml/2 $xsml;
-	margin-top: $sml;
-	margin-left: $sml;
+.frm_half {
+	width: calc(50% - #{$grid-gap/2});
+	display: inline-block;
+}
 
-	&:hover {
-		background-color: darken($accent-med, 10%);
+.frm_first {
+	margin-right: $grid-gap;
+}
+
+.frm_full {
+	width: 100%;
+}
+
+
+.frm_checkbox > label {
+	display: flex;
+	align-items: center;
+	margin-bottom: $sml / 2;
+	margin-top: $sml / 2;
+	> input {
+		margin-right: $sml;
 	}
-}
-
-.ginput_preview,
-.ginput_preview strong {
-	@include meta;
-}
-
-.gform_delete {
-	opacity: 0.7;
-	padding-top: $xsml/3;
-	cursor: pointer;
 }
 
 

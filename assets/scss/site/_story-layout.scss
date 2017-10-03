@@ -161,7 +161,7 @@
 		}
 	}
 
-	// &:focus,
+	&:focus,
 	&.js-active-panel {
 		transition: .2s ease all;
 		outline: none;

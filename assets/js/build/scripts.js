@@ -1060,7 +1060,12 @@ jQuery(document).ready(function () {
 						$target.focus(); // Set focus again
 					};
 				});
-				// return false;
+
+				if (target.attr("data-type") == "decision") {
+					return true;
+				} else {
+					return false;
+				}
 			}
 		}
 	});

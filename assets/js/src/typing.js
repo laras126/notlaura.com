@@ -1,6 +1,5 @@
 
-
-const TYPE_SPEED = 1;
+const TYPE_SPEED = 0;
 const PANELS = document.querySelectorAll('.panel');
 
 var panelsArr = [];

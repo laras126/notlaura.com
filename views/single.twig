@@ -9,29 +9,18 @@
 		<header class="module-header">
 			<h1 class="single-title">
 				{% if post.format == 'link' %}
-					<a href="{{post.link_url}}">{% include "svgs/link.twig" with { class: 'icon-title' } %}
-				{% endif %}
-				{{post.title}}
-				{{post.format == 'link' ? '</a>'}}</h1>
-			<p class="single-meta">
-				<span class="meta-date">Posted {{post.date}}</span>
-				<span class="meta-cat-title">in</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{%
-				endfor %}
-				{% include 'partials/edit-link.twig' %}
-			</p>
+				<a href="{{post.link_url}}">{% include "svgs/link.twig" with { class: 'icon-title' } %}
+					{% endif %}
+					{{post.title}}
+					{{post.format == 'link' ? '</a>'}}</h1>
+				<p class="single-meta">
+					<span class="meta-date">Posted {{post.date}}</span>
+					<span class="meta-cat-title">in</span> {% for cat in post.categories %}<a class="meta-cat" href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{%
+					endfor %}
+					{% include 'partials/edit-link.twig' %}
+				</p>
+				<hr>
 		</header>
-
-		{% if post.get_terms('post_tag') %}
-			<aside class="module-rail">
-				{# {% include "partials/tease-meta.twig" %} #}
-				<h5 class="list-tags-title">Tagged</h5>
-				<ul class="list-tags">
-					{% for t in post.get_terms('post_tag') %}
-						<li><a href="{{t.link}}">{{t.name}}</a></li>
-					{% endfor %}
-				</ul>
-			</aside>
-		{% endif %}
 
 		<div class="module-content">
 			{% if post.content %}
@@ -49,10 +38,19 @@
 			{# {{ include('partials/comments.twig') }} #}
 
 		</div>
-
+		{% if post.get_terms('post_tag') %}
+			<aside class="module-rail">
+				<h5 class="list-tags-title">Tagged</h5>
+				<ul class="list-tags">
+					{% for t in post.get_terms('post_tag') %}
+						<li><a href="{{t.link}}">{{t.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</aside>
+		{% endif %}
 	</article> <!-- /.module -->
 
-	{# {% include 'partials/prev-next.twig' %} #}
+	{% include 'partials/prev-next.twig' %}
 
 {% endblock %}
 

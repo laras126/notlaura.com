@@ -1,0 +1,6 @@
+{% if post.project_link or post.codebase_link %}
+	<div class="project-links">
+		{% if post.project_link %}<a class="btn project-launch-btn" href="{{post.project_link}}">{{post.project_link_text}} {% include 'partials/svg.twig' with { file: 'new-window', prefix: 'icon-inline'}%}</a>{% endif %}&nbsp;
+		{% if post.codebase_link %}<a class="btn project-launch-btn" href="{{post.codebase_link}}">View Repository{% include 'partials/svg.twig' with { file: 'github', prefix: 'icon-inline'}%}</a>{% endif %}
+	</div>
+{% endif %}

@@ -116,7 +116,7 @@
 	.-footer & {
 		padding-top: $grid-gap;
 		padding-bottom: $grid-gap;
-		max-width: 300px;
+		max-width: 400px;
 
 		@include bp(med) {
 			margin-left: $grid-gap/2;

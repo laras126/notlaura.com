@@ -147,6 +147,9 @@ function typeIt(panel) {
 	panel.fired = true;
 	if (!panel.complete && panel.type == "typed") {
 		let typed = new Typed(panel.typedEl, panel.typedOpts);
+		if( panel.id == 2 ) {
+			runBlinkingAnimation("#panel-2 .character-1");
+		}
 	}
 }
 

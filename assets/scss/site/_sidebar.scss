@@ -2,7 +2,7 @@
 .main-aside {
 	margin-top: $grid-gap;
 	padding-right: $grid-gap;
-	padding-left: $grid-gap;
+	// padding-left: $grid-gap;
 
 	@include bp(med) {
 		padding-right: 0;
@@ -44,6 +44,32 @@
 			}
 		}
 	}
+
+	&.-hello {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@include bp(small) {
+	.hello-character {
+		order: 1;
+		margin-top: $grid-gap;
+	}
+
+	.hello-text {
+		order: 0;
+	}
+}
+
+@include bp(large) {
+	.hello-character {
+		order: 0;
+	}
+
+	.hello-text {
+		order: 1;
+	}
 }
 
 
@@ -55,6 +81,13 @@
 
 	&.-hello {
 		margin-top: $grid-gap;
+		// TODO should use min and max, oh well
+		@include bp(small) {
+			margin-top: 0;
+		}
+		@include bp(large) {
+			margin-top: $grid-gap;
+		}
 	}
 }
 

@@ -45,7 +45,11 @@
 .link-more {
   text-align: center;
   margin-top: $sml;
+}
 
+.link-more {
+	margin-bottom: $sml;
+	display: inline-block;
 }
 
 .link-back-top .icon {

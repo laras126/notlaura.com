@@ -1145,28 +1145,24 @@ function runBubbleAnimation() {
 // Blinking Character 1
 // ----
 
-if (document.querySelector('.character-1')) {
-	runBlinkingAnimation();
-}
-
-function runBlinkingAnimation() {
-	var mainBody = document.querySelectorAll(".c1-main"),
-	    eyes = document.querySelector(".c1-eyes"),
-	    pupils = document.querySelector(".c1-pupils"),
-	    characterTrigger = document.querySelector(".js-character");
+function runBlinkingAnimation(parent) {
+	var mainBody = document.querySelectorAll(parent + " .c1-main"),
+	    eyes = document.querySelector(parent + " .c1-eyes"),
+	    pupils = document.querySelector(parent + " .c1-pupils"),
+	    characterTrigger = document.querySelector(parent + " .js-character");
 
 	var characterVisible = false;
 	var tl = new TimelineLite();
 
 	tl.set(mainBody, { y: 150 });
 
-	characterTrigger.addEventListener("touchstart", function () {
-		showCharacter();
-	});
+	// characterTrigger.addEventListener("touchstart", () => {
+	showCharacter();
+	// });
 
-	characterTrigger.addEventListener("mouseover", function () {
-		showCharacter();
-	});
+	// characterTrigger.addEventListener("mouseover", () => {
+	// 	showCharacter();
+	// });
 
 	if (characterVisible == true) {
 		var moveEye = new TimelineMax({ delay: 2 });
@@ -1376,6 +1372,9 @@ function typeIt(panel) {
 	panel.fired = true;
 	if (!panel.complete && panel.type == "typed") {
 		var typed = new Typed(panel.typedEl, panel.typedOpts);
+		if (panel.id == 2) {
+			runBlinkingAnimation("#panel-2 .character-1");
+		}
 	}
 }
 

@@ -10,8 +10,8 @@
 	position: relative;
 	margin-top: $grid-gap*2;
 
-	a {
-		color: $accent-light;
+	a:not(.btn) {
+		color: $accent-vlight;
 	}
 }
 
@@ -92,18 +92,23 @@
 		margin-bottom: 0;
 
 		@include bp(med) {
-
 			@include grid(yes) {
 				display: grid;
-				grid-template-columns: repeat(3, minmax(200px, 450px));
+				grid-template-columns: repeat(2, minmax(200px, 450px));
 				grid-column-gap: $grid-gap;
 			}
-
 			@include grid(no) {
 				display: flex;
 				flex-wrap: wrap;
-				// justify-content: space-around;
 			}
+		}
+
+		@include bp(large) {
+
+			@include grid(yes) {
+				grid-template-columns: repeat(3, minmax(200px, 450px));
+			}
+
 		}
 	}
 }

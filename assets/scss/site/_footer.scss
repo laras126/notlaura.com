@@ -95,7 +95,6 @@
 
 			@include grid(yes) {
 				display: grid;
-				justify-content: center;
 				grid-template-columns: repeat(3, minmax(200px, 450px));
 				grid-column-gap: $grid-gap;
 			}

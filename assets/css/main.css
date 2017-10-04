@@ -2626,9 +2626,6 @@ code {
       .widgets.-footer {
         display: -ms-grid;
         display: grid;
-        -webkit-justify-content: center;
-            -ms-flex-pack: center;
-                justify-content: center;
         -ms-grid-columns: (minmax(200px, 450px))[3];
             grid-template-columns: repeat(3, minmax(200px, 450px));
         grid-column-gap: 1.43rem; } }

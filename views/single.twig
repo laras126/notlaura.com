@@ -57,37 +57,5 @@
 {% endblock %}
 
 {% block misc %}
-<div class="inner">
-	<aside class="module -article -flipped">
 
-		<div class="module-link">
-			<h4 class="widget-title">Hello!</h4>
-		</div>
-
-		<div class="module-content">
-			<div class="module -aside -flipped">
-				<div class="module-rail">
-					{% include "partials/srcset.twig" with { img: TimberImage(3141) } %}
-				</div>
-				<div class="module-content">
-					{# <p class="caption">Here's a picture if me in real life! Click to see another one.</p> #}
-					<p>I hope you find something interesting to read here on my blog! Find me at these other places on the web:</p>
-					{{ include('partials/social.twig') }}
-				</div>
-			</div>
-		</div>
-
-		<div class="module-rail">
-			<h5 class="widget-title">Site Info</h5>
-			<ul>
-				<li>Font: Adelle Sans</li>
-				<li>Built with WordPress and Timber</li>
-				<li>Animations: GreenSock Animation Platform</li>
-				<li>CSS Grid Layout</li>
-			</ul>
-		</div>
-
-	</aside>
-
-	</div>
 {% endblock %}

@@ -1040,13 +1040,13 @@ jQuery(document).ready(function () {
 		header_ht = $('.site-header').outerHeight() * 1.5;
 	}
 
-	$('a[href*="#"]').not('[href="#"]').not('[href="#menu"]').on('click', function () {
+	$('a.js-scrollTo[href*="#"]').on('click', function () {
 		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top - header_ht / 2.5
+					scrollTop: target.offset().top - header_ht
 				}, 300, function () {
 					var $target = $(target);
 					$target.focus();

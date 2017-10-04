@@ -20,7 +20,8 @@ Modules
 
 @mixin main-module-layout() {
   grid-template-columns: minmax(400px, 650px);
-  grid-template-areas: "header" "link" "content" "rail" "extra";
+  place-content: center;
+  grid-template-areas: "header" "content" "link" "rail" "extra";
 
   .module-header {
     grid-area: header;
@@ -28,7 +29,6 @@ Modules
 
   .module-link {
     grid-area: link;
-    align-self: end;
   }
 
   .module-rail {
@@ -43,8 +43,8 @@ Modules
 @mixin grid-module-layout {
    place-content: start;
    grid-column-gap: $grid-gap;
-   grid-template-columns: 250px 675px auto;
-   grid-template-areas: "link  header   ..." "rail   content  ..."; // place-content: start;
+   grid-template-columns: 200px 675px auto;
+   grid-template-areas: "link header   ..." "rail   content  ..."; // place-content: start;
 
    .module-content-full {
      grid-column: 2 / span 2;
@@ -422,9 +422,9 @@ $rail: minmax(70px, 175px);
 .module-rail {
 
   @include bp(large) {
-    text-align: right;
+    // text-align: right;
     position: relative;
-    margin-top: $h1;
+    // margin-top: $h1;
     padding-right: $grid-gap;
     padding-left: $grid-gap / 2;
   }

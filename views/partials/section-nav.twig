@@ -1,11 +1,11 @@
-<nav class="section-nav">
-	<p class="section-nav-title">Contents</p>
+<nav class="section-nav module-rail">
+	<p class="section-nav-title">Jump To</p>
 	<ul class="section-nav-items">
 		{# TODO: probably get rid of meta-greyed #}
 		{% for item in post.get_field('sections') %}
 			{% if item.menu_item_title %}
 				<li class="section-nav-item">
-					<a href="#{{item.menu_item_title|replace({ (" ") : "_" })|lower}}">{{item.menu_item_title}}</a>
+					<a href="#{{item.menu_item_title|replace({ (" ") : "_" })|lower}}" class="js-scrollTo">{{item.menu_item_title}}</a>
 				</li>
 			{% endif %}
 		{% endfor %}

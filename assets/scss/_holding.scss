@@ -9,13 +9,13 @@
 .single-post .site-main,
 .page:not(.page-id-413, .page-template-page-story_layout) .site-main {
   @include bp(med) {
-    // padding-top: $grid-gap*4;
+    padding-top: $grid-gap*4;
   }
 }
 
 .blog .site-main {
   @include bp(med) {
-    // padding-top: $grid-gap*3;
+    padding-top: $grid-gap*3;
   }
 }
 
@@ -31,13 +31,16 @@
   border-bottom: $accent-border;
 }
 
-.module-header:focus{
+.module-header:focus {
   outline: none;
-   > h2 {
-  outline: 5px solid $accent-light;
-  background: $white;
-  padding: $grid-gap;
-  margin-left: -$grid-gap;
+  > h2 {
+    transition: 0.2s ease all;
+    outline: 5px solid $accent-light;
+    background: $white;
+    padding-left: $grid-gap;
+    padding-top: $sml;
+    padding-bottom: $sml;
+    margin-left: -$grid-gap;
   }
 }
 

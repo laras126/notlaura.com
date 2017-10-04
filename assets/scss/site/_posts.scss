@@ -146,6 +146,13 @@
 // Singles
 // ----
 
+@include bp(large) {
+	.list-tags-title,
+	.list-tags {
+		text-align: right;
+	}
+}
+
 .list-tags-title {
 	margin-bottom: $sml;
 }
@@ -155,6 +162,9 @@
 	font-size: $sml;
 	font-style: italic;
 	color: $text-med;
+	@include bp(large) {
+		text-align: right;
+	}
 }
 
 .single-meta {

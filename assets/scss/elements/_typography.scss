@@ -156,7 +156,7 @@ strong {
 blockquote {
   // margin-top: $h4;
   // margin-right: $h4;
-	margin-left: 0;
+	margin-left: -$grid-gap;
 	margin-right: 0;
 
 	padding-left: $grid-gap;
@@ -168,9 +168,7 @@ blockquote {
 		margin-top: 0;
 	}
 
-	background-image: linear-gradient(to bottom right, $accent-vlight, rgba($body-bkgd, 0));
-
-
+	background-image: linear-gradient(to bottom right, $white, $accent-vlight);
   font-style: italic;
 
 

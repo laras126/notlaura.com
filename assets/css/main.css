@@ -2637,10 +2637,7 @@ code {
         display: flex;
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-        -webkit-justify-content: space-around;
-            -ms-flex-pack: distribute;
-                justify-content: space-around; } } }
+                flex-wrap: wrap; } } }
 
 .widget p, .widget li, .widget a {
   font-size: 0.88rem; }

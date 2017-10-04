@@ -588,6 +588,11 @@ Modules
         -ms-grid-column: 2;
             grid-column: 2 / span 2; } } }
 
+@supports not (grid-area: auto) {
+  .module-content {
+    margin: 0 auto;
+    max-width: 730px; } }
+
 .module-link {
   display: -webkit-flex;
   display: -ms-flexbox;

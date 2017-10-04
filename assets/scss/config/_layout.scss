@@ -411,6 +411,11 @@ $rail: minmax(70px, 175px);
   }
 }
 
+@include grid(no) {
+  .module-content {
+    @include contain($screen-md);
+  }
+}
 .module-link {
   display: flex;
   flex-direction: column;

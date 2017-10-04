@@ -114,21 +114,14 @@
 	}
 
 	.-footer & {
-		// border: $accent-border;
-		// background-color: $accent-vlight;
 		padding-top: $grid-gap;
 		padding-bottom: $grid-gap;
+		max-width: 300px;
 
 		@include bp(med) {
 			margin-left: $grid-gap/2;
 			margin-right: $grid-gap/2;
 		}
-
-		// @include grid(no) {
-			@include bp(med) {
-				// width: calc(100% / 3);
-			}
-		// }
 	}
 
 	&.-svg-sticky {

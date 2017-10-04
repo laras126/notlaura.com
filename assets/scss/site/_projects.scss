@@ -43,7 +43,14 @@
 
 .project-featured {
 	@include bp(med) {
+		min-height: 50vh;
+	}
+
+	@include bp(large) {
 		min-height: 70vh;
+	}
+
+	@include bp(med) {
 
 		@include grid(yes) {
 			grid-row: span 2;
@@ -54,10 +61,14 @@
 		}
 
 		@include grid(no) {
+			width: 100%;
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			> * {
 				width: 48%;
+				&:last-child {
+					margin-left: auto;
+				}
 			}
 		}
 

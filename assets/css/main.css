@@ -2649,7 +2649,8 @@ code {
 
 .-footer .widget {
   padding-top: 1.43rem;
-  padding-bottom: 1.43rem; }
+  padding-bottom: 1.43rem;
+  max-width: 300px; }
   @media (min-width: 730px) {
     .-footer .widget {
       margin-left: 0.715rem;
@@ -2691,7 +2692,7 @@ code {
 .tease-loop {
   margin-top: 1.43rem; }
   @media (min-width: 730px) {
-    .tease-loop {
+    .blog .tease-loop {
       padding-right: 1.43rem; } }
 
 .tease-thumb {
@@ -2825,26 +2826,35 @@ code {
 
 @media (min-width: 730px) {
   .project-featured {
-    min-height: 70vh; }
-    @supports (grid-area: auto) {
-      .project-featured {
-        -ms-grid-row: span 2;
-            grid-row: span 2;
-        grid-column: 1 / -1;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 1fr;
-            grid-template-columns: 1fr 1fr; } }
-    @supports not (grid-area: auto) {
-      .project-featured {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
-        .project-featured > * {
-          width: 48%; } } }
+    min-height: 50vh; } }
+
+@media (min-width: 1100px) {
+  .project-featured {
+    min-height: 70vh; } }
+
+@media (min-width: 730px) {
+  @supports (grid-area: auto) {
+    .project-featured {
+      -ms-grid-row: span 2;
+          grid-row: span 2;
+      grid-column: 1 / -1;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; } }
+  @supports not (grid-area: auto) {
+    .project-featured {
+      width: 100%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around; }
+      .project-featured > * {
+        width: 48%; }
+        .project-featured > *:last-child {
+          margin-left: auto; } } }
 
 .project-thumb {
   -webkit-order: 0;

@@ -34,7 +34,9 @@
 	margin-top: $grid-gap;
 
 	@include bp(med) {
-		padding-right: $grid-gap;
+		.blog & {
+			padding-right: $grid-gap;
+		}
 	}
 }
 

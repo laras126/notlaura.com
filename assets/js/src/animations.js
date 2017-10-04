@@ -109,7 +109,8 @@ function runBlinkingAnimation(parent) {
 		tl.to(mainBody, 0.5, {
 			y: 0,
 			delay: 0.5,
-			ease: Power3.easeOut
+			ease: Power3.easeOut,
+			autoAlpha: 1
 		});
 		characterVisible = true;
 	}

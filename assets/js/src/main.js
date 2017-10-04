@@ -105,11 +105,11 @@ jQuery(document).ready(function() {
 						};
 					});
 
-				if (target.attr("data-type") == "decision" ){
-					return true;
-				} else {
-					return false;
-				}
+				// if (target.attr("data-type") == "decision" ){
+				// 	return true;
+				// } else {
+				// 	return false;
+				// }
 			}
   	}
  	});

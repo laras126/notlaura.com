@@ -899,6 +899,10 @@ svg {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
 
+.c1-main {
+  visibility: hidden;
+  opacity: 0; }
+
 .c1-eyes {
   fill: #fff; }
 

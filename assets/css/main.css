@@ -589,7 +589,7 @@ Modules
             grid-column: 2 / span 2; } } }
 
 @supports not (grid-area: auto) {
-  .module-content {
+  .module {
     margin: 0 auto;
     max-width: 730px; } }
 

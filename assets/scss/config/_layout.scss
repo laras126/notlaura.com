@@ -92,7 +92,7 @@ $rail: minmax(70px, 175px);
   @include contain($screen-xl);
 }
 
-.inner-story {
+.inner-pad-story {
   @include contain($screen-lg);
 }
 
@@ -135,6 +135,11 @@ $rail: minmax(70px, 175px);
 
   &.-text {
     padding-bottom: $grid-gap;
+    // margin-bottom: $grid-gap;
+  }
+
+  &.-svg {
+    // padding-top: $grid-gap*2;
     margin-bottom: $grid-gap;
   }
 }
@@ -187,12 +192,12 @@ $rail: minmax(70px, 175px);
 
 } // .grid-main
 
-.main-content {
-  @include bp(small) {
-    padding-left: $grid-gap;
-    padding-right: $grid-gap;
-  }
-}
+// .main-content {
+//   @include bp(small) {
+//     padding-left: $grid-gap;
+//     padding-right: $grid-gap;
+//   }
+// }
 
 
 
@@ -229,7 +234,7 @@ $rail: minmax(70px, 175px);
 
 // Grid Layout isn't really helping here, but why not.
 .grid-header {
-@include bp(med) {
+@include bp(large) {
 
   @include grid(yes) {
     display: grid;
@@ -298,7 +303,6 @@ $rail: minmax(70px, 175px);
     .grid-tease {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-column-gap: $grid-gap;
     }
 
     .grid-loop {
@@ -391,8 +395,8 @@ $rail: minmax(70px, 175px);
 
   &.-article {
     @include bp(med) {
-      padding-left: $grid-gap;
-      padding-right: $grid-gap;
+      // padding-left: $grid-gap;
+      // padding-right: $grid-gap;
 
       @include grid(yes) {
         @include main-module-layout;

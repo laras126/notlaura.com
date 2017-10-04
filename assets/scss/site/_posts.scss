@@ -4,10 +4,6 @@
 	padding-bottom: $h4;
 }
 
-.blog {
-	// background-color: $accent-dark;
-}
-
 .blog-header {
 	background: linear-gradient(to top, $accent-light, $body-bkgd);
 	margin-bottom: $grid-gap;
@@ -64,10 +60,10 @@
 	border-top: 5px solid $accent-med;
 	padding-right: $grid-gap;
 	padding-left: $grid-gap;
+	margin-bottom: $grid-gap;
 
 	@include bp(med) {
-		// margin-bottom: $grid-gap;
-		// margin-bottom: 0;
+		margin-bottom: 0;
 	}
 
 	> a {

@@ -1081,7 +1081,15 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-// Blog Header Character
+// ----
+// Bubble Character 2
+// ----
+
+if (document.querySelector('.blog-character')) {
+	runBubbleAnimation();
+	console.log("hi");
+}
+
 function runBubbleAnimation() {
 
 	var $main = document.querySelectorAll(".bc-main"),
@@ -1135,8 +1143,12 @@ function runBubbleAnimation() {
 	}
 }
 
-if (document.querySelector('.blog-character' !== null)) {
-	runBubbleAnimation();
+// ----
+// Blinking Character 1
+// ----
+
+if (document.querySelector('.character-1')) {
+	runBlinkingAnimation();
 }
 
 function runBlinkingAnimation() {
@@ -1176,13 +1188,6 @@ function runBlinkingAnimation() {
 		});
 		characterVisible = true;
 	}
-}
-
-if (document.querySelector('.character-1')) {
-	// let characters = document.querySelectorAll('.character-1');
-	// characters.forEach((c) => {
-	runBlinkingAnimation();
-	// });
 }
 
 // const string = document.querySelector(".panel-title").textContent;
@@ -1457,26 +1462,27 @@ function removeTypedSrc(elem) {
 // Skip Button
 // ----
 
-var SKIP_BTN = document.querySelector('.js-skipBtn');
+// const SKIP_BTN = document.querySelector('.js-skipBtn');
 
-SKIP_BTN.addEventListener('click', function (e) {
-	e.preventDefault();
-	var TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
-	var REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
-	var HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
+// SKIP_BTN.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	let TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
+// 	let REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
+// 	let HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
 
-	TYPED_ELS.forEach(function (el) {
-		el.classList.remove('js-typed-src');
-	});
+// 	TYPED_ELS.forEach((el) => {
+// 		el.classList.remove('js-typed-src');
+// 	});
 
-	REVEAL_ELS.forEach(function (el) {
-		el.classList.remove('js-reveal');
-	});
+// 	REVEAL_ELS.forEach((el) => {
+// 		el.classList.remove('js-reveal');
+// 	});
 
-	HIDDEN_ELS.forEach(function (el) {
-		el.classList.remove('js-hidden');
-	});
-});
+// 	HIDDEN_ELS.forEach((el) => {
+// 		el.classList.remove('js-hidden');
+// 	});
+// });
+
 
 // ----
 // Panel Callbacks

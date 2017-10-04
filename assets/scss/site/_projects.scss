@@ -10,9 +10,10 @@
 	border: 1px solid $accent-light;
 	border: 1px solid $accent-light;
 	overflow: hidden;
+	margin-bottom: $grid-gap;
 
-	@include grid(no) {
-		margin-bottom: $grid-gap;
+	@include bp(med) {
+		margin-bottom: 0;
 	}
 
 	// display: flex;
@@ -88,7 +89,7 @@
 	// TODO might be nice to add this in JS as an "animating" class
 	.project:hover &,
 	.project:focus & {
-			animation: scroll-page 15s forwards;
+			animation: scroll-page 20s forwards;
 			animation-delay: 0.5s;
 	}
 }
@@ -137,7 +138,7 @@
 
 .project-header {
 	color: $text-light;
-	margin-bottom: $h2;
+	// margin-bottom: $h2;
 	background: $accent-vdark;
 	padding-top: $h1;
 	padding-bottom: $h1;

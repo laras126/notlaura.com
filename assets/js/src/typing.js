@@ -245,26 +245,26 @@ function removeTypedSrc(elem) {
 // Skip Button
 // ----
 
-const SKIP_BTN = document.querySelector('.js-skipBtn');
+// const SKIP_BTN = document.querySelector('.js-skipBtn');
 
-SKIP_BTN.addEventListener('click', (e) => {
-	e.preventDefault();
-	let TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
-	let REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
-	let HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
+// SKIP_BTN.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	let TYPED_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-typed-src');
+// 	let REVEAL_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-reveal');
+// 	let HIDDEN_ELS = document.querySelectorAll('.panel[data-complete="false"] .js-hidden');
 
-	TYPED_ELS.forEach((el) => {
-		el.classList.remove('js-typed-src');
-	});
+// 	TYPED_ELS.forEach((el) => {
+// 		el.classList.remove('js-typed-src');
+// 	});
 
-	REVEAL_ELS.forEach((el) => {
-		el.classList.remove('js-reveal');
-	});
+// 	REVEAL_ELS.forEach((el) => {
+// 		el.classList.remove('js-reveal');
+// 	});
 
-	HIDDEN_ELS.forEach((el) => {
-		el.classList.remove('js-hidden');
-	});
-});
+// 	HIDDEN_ELS.forEach((el) => {
+// 		el.classList.remove('js-hidden');
+// 	});
+// });
 
 
 

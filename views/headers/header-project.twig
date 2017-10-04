@@ -24,6 +24,9 @@
 					<p class="meta-cite">{{post.testimonial_source}}</p>
 				</blockquote>
 			{% endif %}
+			{% if post.image and not post.testimonial %}
+					{% include "partials/srcset.twig" with {img: post.image} %}
+			{% endif %}
 
 		</div>
 

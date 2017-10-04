@@ -8,11 +8,12 @@
 	}
 
 	@include grid(yes) {
-		display: grid;
-		grid-column-gap: $grid-gap;
-		grid-row-gap: $grid-gap;
-		grid-template-rows: repeat(auto-fill, auto);
-
+		@include bp(small) {
+			display: grid;
+			grid-column-gap: $grid-gap;
+			grid-row-gap: $grid-gap;
+			grid-template-rows: repeat(auto, 1fr);
+	}
 		@include bp(small) {
 			&-columns-2,
 			&-columns-3,
@@ -45,7 +46,7 @@
 }
 
 .gallery-item {
-
+	display: block;
 	img {
 		width: 100%;
 		height: auto;

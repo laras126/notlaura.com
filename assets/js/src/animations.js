@@ -5,7 +5,15 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-// Blog Header Character
+// ----
+// Bubble Character 2
+// ----
+
+if (document.querySelector('.blog-character')) {
+	runBubbleAnimation();
+	console.log("hi");
+}
+
 function runBubbleAnimation() {
 
 	const $main = document.querySelectorAll(".bc-main"),
@@ -61,8 +69,15 @@ function runBubbleAnimation() {
 
 }
 
-if (document.querySelector('.blog-character' !== null)) {
-	runBubbleAnimation();
+
+
+
+// ----
+// Blinking Character 1
+// ----
+
+if (document.querySelector('.character-1')) {
+	runBlinkingAnimation();
 }
 
 function runBlinkingAnimation() {
@@ -103,13 +118,6 @@ function runBlinkingAnimation() {
 		});
 		characterVisible = true;
 	}
-}
-
-if (document.querySelector('.character-1')) {
-	// let characters = document.querySelectorAll('.character-1');
-	// characters.forEach((c) => {
-		runBlinkingAnimation();
-	// });
 }
 
 // const string = document.querySelector(".panel-title").textContent;

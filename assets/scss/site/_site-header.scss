@@ -11,7 +11,7 @@
 
 .site-main {
   @include bp(med) {
-    padding-top: $grid-gap*3;
+    // padding-top: $grid-gap*3;
   }
 }
 

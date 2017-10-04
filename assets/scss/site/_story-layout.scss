@@ -1,4 +1,10 @@
 
+.page-template-page-story_layout .site-main {
+	@include bp(med) {
+		padding-top: $grid-gap*3;
+	}
+}
+
 .js {
 	.js-typed-src {
 		@include visually-hidden;
@@ -141,7 +147,7 @@
 		padding-right: $grid-gap*2;
 		min-height: 80vh;
 		margin-top: 5vh;
-		margin-bottom: 5vh;
+		// margin-bottom: 5vh;
 	}
 
 	&.-tabbed {

@@ -27,7 +27,7 @@
 		'not_found_in_trash'  => __( 'Not found in Trash', 'notlaura' ),
 	);
 	$rewrite = array(
-		'slug'                => 'portfolio',
+		'slug'                => 'projects',
 		'with_front'          => true,
 		'pages'               => true,
 		'feeds'               => true,

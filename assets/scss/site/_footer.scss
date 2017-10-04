@@ -7,10 +7,8 @@
 .site-footer {
 	background-color: $accent-vdark;
 	color: $text-light;
-	// padding-left: $grid-gap;
-	// padding-right: $grid-gap;
 	position: relative;
-	margin-top: $grid-gap;
+	margin-top: $grid-gap*2;
 
 	a {
 		color: $accent-light;
@@ -21,8 +19,6 @@
 	text-align: center;
 	padding-bottom: $base;
 	background-color: $accent-med;
-	margin-left: -$grid-gap;
-	margin-right: -$grid-gap;
 
 	p {
 		margin-top: 0;

@@ -77,4 +77,7 @@
 	@extend .-has-icon;
 	margin-bottom: $grid-gap;
 	margin-top: $grid-gap;
+	&:nth-child(2n) {
+		margin-top: 0;
+	}
 }

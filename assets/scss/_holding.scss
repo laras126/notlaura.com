@@ -1,11 +1,28 @@
 
-
-
-
 // ----
 // Shameful and need-to-be-cleaned-up styles here.
 // ----
 
+// Need to figure out a system for this fixed header/some things need oadding others don't
+// Not on contact page or home page
+.project-header,
+.single-post .site-main,
+.page:not(.page-id-413, .page-template-page-story_layout) .site-main {
+  @include bp(med) {
+    padding-top: $grid-gap*4;
+  }
+}
+
+.blog .site-main {
+  @include bp(med) {
+    padding-top: $grid-gap*3;
+  }
+}
+
+.main-header .module-content {
+  padding-bottom: $grid-gap;
+  border-bottom: $accent-border;
+}
 
 
 // Misc spacing fixes

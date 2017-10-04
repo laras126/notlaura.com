@@ -34,10 +34,9 @@
   @include unstyle-list;
   padding-left: 0;
 
-  @include bp(med) {
+  @include bp(large) {
     display: block;
   }
-
 
   > li {
     padding-right: $sml;

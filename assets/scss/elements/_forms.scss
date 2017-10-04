@@ -102,6 +102,30 @@ input[type="checkbox"]:focus {
 
 // Formidable
 
+.frm_message,
+.frm_error_style {
+	padding: $grid-gap;
+	background: $white;
+	border: 5px solid $l-teal;
+
+	p {
+		margin-top: 0;
+	}
+}
+
+.frm_hidden {
+	@include visually-hidden;
+}
+
+.frm_submit {
+	margin-top: $grid-gap;
+}
+
+.frm_error {
+	font-size: $sml;
+	color: $alert-danger;
+}
+
 .frm_required {
 	color: $alert-danger;
 }

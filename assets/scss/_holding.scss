@@ -31,6 +31,16 @@
   border-bottom: $accent-border;
 }
 
+.module-header:focus{
+  outline: none;
+   > h2 {
+  outline: 5px solid $accent-light;
+  background: $white;
+  padding: $grid-gap;
+  margin-left: -$grid-gap;
+  }
+}
+
 
 // Misc spacing fixes
 

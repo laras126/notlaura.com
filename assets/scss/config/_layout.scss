@@ -20,7 +20,6 @@ Modules
 
 @mixin main-module-layout() {
   grid-template-columns: minmax(400px, 650px);
-  place-content: center;
   grid-template-areas: "header" "link" "content" "rail" "extra";
 
   .module-header {
@@ -29,6 +28,7 @@ Modules
 
   .module-link {
     grid-area: link;
+    align-self: end;
   }
 
   .module-rail {
@@ -254,9 +254,11 @@ $rail: minmax(70px, 175px);
   justify-content: center;
 }
 
-.header-left {
+.header-left,
+.header-testimonial {
   max-width: 650px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -411,10 +413,10 @@ $rail: minmax(70px, 175px);
 }
 
 .module-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  // align-items: flex-end;
 }
 
 .module-rail {

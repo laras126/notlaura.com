@@ -2,15 +2,11 @@
 
 // Section nav on pages
 
-.nav-rail {
-  position: sticky;
-  top: 0;
-}
-
 .section-nav-title {
   font-size: $sml;
   @include upperspace;
   font-weight: $font-weight-strong;
+  margin-top: $h1;
 }
 
 .section-nav {
@@ -24,7 +20,8 @@
 
   @include bp(large) {
     padding-right: $sml;
-    border-right: $accent-border;
+    text-align: right;
+    // border-right: $accent-border;
   }
 }
 

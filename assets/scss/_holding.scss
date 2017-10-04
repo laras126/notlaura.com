@@ -9,13 +9,19 @@
 .single-post .site-main,
 .page:not(.page-id-413, .page-template-page-story_layout) .site-main {
   @include bp(med) {
-    padding-top: $grid-gap*4;
+    // padding-top: $grid-gap*4;
   }
 }
 
 .blog .site-main {
   @include bp(med) {
-    padding-top: $grid-gap*3;
+    // padding-top: $grid-gap*3;
+  }
+}
+
+.page-template-page-story_layout .site-main {
+  @include bp(med) {
+    // padding-top: $grid-gap*3;
   }
 }
 

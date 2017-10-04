@@ -62,7 +62,7 @@
 	padding-left: $grid-gap;
 	margin-bottom: $grid-gap;
 
-	@include bp(med) {
+	@include bp(large) {
 		margin-bottom: 0;
 	}
 

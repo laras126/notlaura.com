@@ -1,7 +1,9 @@
 
-.page-template-page-story_layout .site-main {
+
+.inner-pad-story {
 	@include bp(med) {
-		padding-top: $grid-gap*3;
+		padding-left: $grid-gap;
+		padding-right: $grid-gap;
 	}
 }
 
@@ -146,8 +148,8 @@
 		padding-left: $grid-gap*2;
 		padding-right: $grid-gap*2;
 		min-height: 80vh;
-		margin-top: 5vh;
-		// margin-bottom: 5vh;
+		margin-top: 2vh;
+		margin-bottom: 2vh;
 	}
 
 	&.-tabbed {

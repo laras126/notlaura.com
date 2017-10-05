@@ -1319,7 +1319,10 @@ input[type="checkbox"]:focus {
   border: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .frm_half {
   width: calc(50% - 0.715rem);

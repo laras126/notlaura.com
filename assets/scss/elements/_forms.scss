@@ -92,6 +92,7 @@ input[type="file"] {
 	background-color: $accent-vlight;
 	padding: $xsml $sml;
 }
+
 select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
@@ -134,13 +135,11 @@ input[type="checkbox"]:focus {
 .frm_primary_label {
 	font-weight: $font-weight-strong;
 	margin-bottom: $sml / 2;
-	// @include upperspace;
 	margin-top: $grid-gap;
 }
 
 .frm_description {
 	font-size: $sml;
-	// margin-top: $sml;
 	margin-bottom: $sml;
 }
 
@@ -148,9 +147,7 @@ input[type="checkbox"]:focus {
 	padding: 0;
 	border: 0;
 	display: flex;
-	// flex-direction:
-	// border: 5px solid $accent-med;
-	// background: $white;
+	flex-direction: column;
 }
 
 .frm_half {

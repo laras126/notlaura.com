@@ -7,23 +7,23 @@
 // Not on contact page or home page
 .project-header,
 .single-post .site-main,
-.page:not(.page-id-413, .page-template-page-story_layout) .site-main {
-  @include bp(med) {
-    padding-top: $grid-gap*4;
-  }
+.page:not(.page-template-page-story_layout) .site-main {
+  // @include bp(med) {
+  padding-top: $grid-gap*3;
+  // }
 }
 
 .blog .site-main {
-  @include bp(med) {
+  // @include bp(med) {
     padding-top: $grid-gap*3;
-  }
+  // }
 }
 
 // Accounts for fixed nav on home page
 .page-template-page-story_layout .site-main {
-  @include bp(med) {
-    padding-top: $grid-gap*3;
-  }
+  // @include bp(med) {
+    padding-top: $grid-gap*3.4;
+  // }
 }
 
 .main-header .module-content {
@@ -35,7 +35,6 @@
   outline: none;
   > h2 {
     transition: 0.2s ease all;
-    outline: 5px solid $accent-light;
     background: $white;
     padding-left: $grid-gap;
     padding-top: $sml;

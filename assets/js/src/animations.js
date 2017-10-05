@@ -86,13 +86,13 @@ function runBlinkingAnimation(parent) {
 
 	tl.set(mainBody, { y: 150 });
 
-	// characterTrigger.addEventListener("touchstart", () => {
-		showCharacter();
-	// });
-
-	// characterTrigger.addEventListener("mouseover", () => {
-	// 	showCharacter();
-	// });
+	tl.to(mainBody, 0.5, {
+		y: 0,
+		delay: 0.5,
+		ease: Power3.easeOut,
+		autoAlpha: 1
+	});
+	characterVisible = true;
 
 	if( characterVisible == true ) {
 		var moveEye = new TimelineMax({ delay: 2 });
@@ -104,16 +104,6 @@ function runBlinkingAnimation(parent) {
 	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
 	blink.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
 
-
-	function showCharacter() {
-		tl.to(mainBody, 0.5, {
-			y: 0,
-			delay: 0.5,
-			ease: Power3.easeOut,
-			autoAlpha: 1
-		});
-		characterVisible = true;
-	}
 }
 
 // const string = document.querySelector(".panel-title").textContent;

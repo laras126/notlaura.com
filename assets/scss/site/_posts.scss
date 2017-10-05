@@ -146,6 +146,10 @@
 // Singles
 // ----
 
+.single-title > a {
+	color: $text-dark;
+}
+
 @include bp(large) {
 	.list-tags-title,
 	.list-tags {

@@ -1,13 +1,13 @@
 
 .site-header {
-  @include bp(med) {
+  // @include bp(med) {
     // .home & {
       position: fixed;
       z-index: $ztop;
       width: 100%;
       top: 0;
     // }
-  }
+  // }
   background: $accent-dark;
 }
 

@@ -31,48 +31,6 @@ var $ = jQuery;
 
 jQuery(document).ready(function() {
 
-
-	// ----
-	// Animations (GreenSock)
-	//----
-
-	/**
-	 * on scroll
-	 * if scroll position is same as menus position from top
-	 * scroll pos
-	 * menu pos
-	 *
-	 * fix menu
-	 *
-	 */
-
-	// const RAIL = document.querySelector('.nav-rail'),
-	// 			SECTION_NAV = document.querySelector('.section-nav');
-
-	//  function offset(el) {
-	// 	var rect = el.getBoundingClientRect(),
-	// 		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	// 	return { offset: rect.top + scrollTop, scroll: scrollTop };
-	// }
-
-	// document.addEventListener('scroll', function() {
-	// 	let position = offset(RAIL);
-	// 	let sectionNavPos = position.offset;
-
-	// 	if (position.scroll > sectionNavPos) {
-	// 		SECTION_NAV.classList.add('fixed');
-	// 		RAIL.style.paddingTop = sectionNavPos.toFixed(0) + "px";
-	// 	} else {
-	// 		SECTION_NAV.classList.remove('fixed');
-	// 		RAIL.style.paddingTop = "0";
-	// 	}
-	// 	console.log(position);
-	// });
-	// var scrollPos = window.pageYOffset || document.documentElement.scrollTop,
-			// menuPos =
-
-
-
 	// ----
 	// Smooth scrolling
 	// ----
@@ -81,7 +39,7 @@ jQuery(document).ready(function() {
 	var header_ht;
 
 	if (window.innerWidth <= 690) {
-		header_ht = ($('.site-header').outerHeight())/2;
+		header_ht = ($('.site-header').outerHeight());
 	} else {
 		header_ht = ($('.site-header').outerHeight())*1.5;
 	}

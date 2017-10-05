@@ -2122,13 +2122,11 @@ code {
     background-color: #242F4A; }
 
 .site-header {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  top: 0;
   background: #15598f; }
-  @media (min-width: 730px) {
-    .site-header {
-      position: fixed;
-      z-index: 3;
-      width: 100%;
-      top: 0; } }
 
 .logo-img {
   height: 100px;
@@ -2198,8 +2196,9 @@ code {
     color: #15598f; }
 
 .prevnext-nav {
-  padding-left: 1.43rem;
-  padding-right: 1.43rem;
+  border-top: 1px solid rgba(39, 169, 224, 0.4);
+  padding-top: 1.1rem;
+  margin-top: 1.1rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2210,8 +2209,12 @@ code {
     .prevnext-nav {
       padding-left: 0;
       padding-right: 0; } }
+  .single .prevnext-nav {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
 
-.prev,
+.blog .prev, .blog
 .next {
   background-color: #15598f;
   border-radius: 2px;
@@ -2225,27 +2228,51 @@ code {
   background-repeat: no-repeat;
   padding: 0.66rem;
   margin-top: 0.66rem; }
-  .prev:hover, .prev:focus,
-  .next:hover,
+  .blog .prev:hover, .blog .prev:focus, .blog
+  .next:hover, .blog
   .next:focus {
     background-color: #0e3d63;
     color: #ffffff;
     border-color: #15598f; }
-  .prev:active,
+  .blog .prev:active, .blog
   .next:active {
     background-color: #01060a;
     border-color: #0e3d63; }
-  .prev span,
+  .blog .prev span, .blog
   .next span {
     font-size: 0.66rem;
     text-transform: uppercase;
     letter-spacing: 1px; }
 
+.single .prev, .single
+.next {
+  background-repeat: no-repeat;
+  margin-top: 0.88rem; }
+  .single .prev span, .single
+  .next span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.88rem;
+    color: #999999; }
+  @media (min-width: 730px) {
+    .single .prev, .single
+    .next {
+      width: 48%; } }
+
 .next {
   margin-right: auto; }
+  .single .next {
+    padding-left: 32px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#237fa9" height="25" viewBox="0 0 25 25"><path d="M18.3 7.226c-.67.653-7.204 7.514-7.204 7.514-.357.35-.534.805-.534 1.26s.178.913.534 1.262c0 0 6.534 6.86 7.203 7.512.668.653 1.87.698 2.585 0 .712-.696.768-1.667-.002-2.52L14.888 16l5.995-6.252c.77-.854.714-1.826.002-2.522-.715-.696-1.918-.653-2.586 0z"/></svg>');
+    background-position: left; }
 
 .prev {
   margin-left: auto; }
+  .single .prev {
+    text-align: right;
+    padding-right: 32px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#237fa9" height="25" viewBox="0 0 25 25"><path d="M13.7 7.226c.67.653 7.204 7.514 7.204 7.514.358.35.536.805.536 1.26s-.178.913-.536 1.262c0 0-6.534 6.86-7.203 7.512-.668.653-1.87.698-2.585 0-.714-.696-.77-1.667 0-2.52L17.112 16 11.117 9.75c-.77-.854-.714-1.826 0-2.522.714-.696 1.917-.653 2.584 0z"/></svg>');
+    background-position: right; }
 
 @media (min-width: 730px) {
   .inner-pad-story {
@@ -2368,7 +2395,7 @@ code {
 
 .panel {
   padding: 1.43rem;
-  min-height: calc(100vh - 5.005rem);
+  min-height: calc(100vh - 4.862rem);
   overflow: hidden;
   position: relative;
   background-color: #ffffff;
@@ -2654,6 +2681,9 @@ code {
     margin-top: 0;
     padding-top: 1.1rem;
     font-size: 0.88rem; }
+  .footer-colophon a {
+    color: #999999;
+    border-bottom: 1px solid #15598f; }
 
 .list-social {
   list-style: none;
@@ -2879,6 +2909,9 @@ code {
   color: #15598f;
   border-bottom: 0; }
 
+.single-title > a {
+  color: #242F4A; }
+
 @media (min-width: 1100px) {
   .list-tags-title,
   .list-tags {
@@ -3030,19 +3063,16 @@ code {
   font-size: 4.95rem;
   line-height: 1.3; }
 
-@media (min-width: 730px) {
-  .project-header,
-  .single-post .site-main,
-  .page:not(.page-id-413):not(.page-template-page-story_layout) .site-main {
-    padding-top: 5.72rem; } }
+.project-header,
+.single-post .site-main,
+.page:not(.page-template-page-story_layout) .site-main {
+  padding-top: 4.29rem; }
 
-@media (min-width: 730px) {
-  .blog .site-main {
-    padding-top: 4.29rem; } }
+.blog .site-main {
+  padding-top: 4.29rem; }
 
-@media (min-width: 730px) {
-  .page-template-page-story_layout .site-main {
-    padding-top: 4.29rem; } }
+.page-template-page-story_layout .site-main {
+  padding-top: 4.862rem; }
 
 .main-header .module-content {
   padding-bottom: 1.43rem;
@@ -3052,7 +3082,6 @@ code {
   outline: none; }
   .module-header:focus > h2 {
     transition: 0.2s ease all;
-    outline: 5px solid #E0E6F2;
     background: #ffffff;
     padding-left: 1.43rem;
     padding-top: 0.88rem;

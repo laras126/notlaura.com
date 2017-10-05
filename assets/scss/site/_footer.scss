@@ -25,6 +25,11 @@
 		padding-top: $base;
 		font-size: $sml;
 	}
+
+	a {
+		color: $text-med;
+		border-bottom: 1px solid $accent-dark;
+	}
 }
 
 .list-social {

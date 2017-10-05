@@ -132,7 +132,7 @@
 
 .panel {
 	padding: $grid-gap;
-	min-height: calc(100vh - #{$grid-gap*3.5}); // Minus nav-height/.site-main top padding
+	min-height: calc(100vh - #{$grid-gap*3.4}); // Minus nav-height/.site-main top padding
 	overflow: hidden;
 	position: relative;
 	background-color: $white;

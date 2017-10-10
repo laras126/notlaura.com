@@ -6,7 +6,7 @@
 // Need to figure out a system for this fixed header/some things need oadding others don't
 // Not on contact page or home page
 .project-header,
-.single-post .site-main,
+.single .site-main,
 .page:not(.page-template-page-story_layout) .site-main {
   // @include bp(med) {
   padding-top: $grid-gap*3;

@@ -20,7 +20,7 @@
 				</blockquote>
 			{% endif %}
 			{% if post.image and not post.testimonial %}
-					{% include "partials/srcset.twig" with {img: post.image} %}
+					{% include "partials/srcset.twig" with {img: post.image, class: 'project-header-img'} %}
 			{% endif %}
 
 		</div>

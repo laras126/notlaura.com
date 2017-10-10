@@ -26,6 +26,10 @@
 
 }
 
+.project-header-img {
+	padding-top: $grid-gap;
+}
+
 .project-not-featured {
 	@include bp(med) {
 

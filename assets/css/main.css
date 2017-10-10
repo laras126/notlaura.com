@@ -2951,6 +2951,9 @@ code {
   .project:focus {
     outline: 5px solid #E0E6F2; }
 
+.project-header-img {
+  padding-top: 1.43rem; }
+
 @media (min-width: 730px) {
   @supports not (grid-area: auto) {
     .project-not-featured {

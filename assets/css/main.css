@@ -2047,7 +2047,7 @@ code {
             transform: scale(2);
     font-weight: 400; }
   .menu-btn:focus, .menu-btn:active {
-    background-color: #242F4A; }
+    background-color: #27A9E0; }
   .menu-btn.js-open {
     border-color: #242F4A; }
     .menu-btn.js-open:after {

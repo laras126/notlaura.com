@@ -164,10 +164,6 @@ blockquote {
 	padding-top: $base;
 	padding-bottom: $base;
 
-	> p {
-		margin-top: 0;
-	}
-
 	background-image: linear-gradient(to bottom right, $white, $accent-vlight);
   font-style: italic;
 

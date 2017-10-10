@@ -195,7 +195,6 @@ $MQs: true;
 
 @mixin meta($color: inherit) {
   font-size: $sml;
-  margin: 0;
   line-height: $line-height-sm;
 
   @if $color {

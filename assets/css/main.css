@@ -605,7 +605,6 @@ Modules
 
 .meta-light {
   font-size: 0.88rem;
-  margin: 0;
   line-height: 1.3;
   color: #ffffff; }
 
@@ -624,7 +623,6 @@ Modules
 
 .meta {
   font-size: 0.88rem;
-  margin: 0;
   line-height: 1.3;
   color: inherit; }
 
@@ -2194,7 +2192,6 @@ code {
     padding-right: 0.88rem; }
   .section-nav-items a {
     font-size: 0.88rem;
-    margin: 0;
     line-height: 1.3;
     color: #15598f; }
 
@@ -2651,7 +2648,6 @@ code {
 
 .meta-cite {
   font-size: 0.88rem;
-  margin: 0;
   line-height: 1.3;
   color: #999999;
   text-align: right;
@@ -2892,7 +2888,6 @@ code {
 .tease-meta,
 .single-meta {
   font-size: 0.88rem;
-  margin: 0;
   line-height: 1.3;
   color: #999999;
   padding-top: 0.88rem; }
@@ -3048,7 +3043,6 @@ code {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.88rem;
-  margin: 0;
   line-height: 1.3;
   color: #999999; }
 

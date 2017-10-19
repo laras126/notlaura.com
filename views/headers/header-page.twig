@@ -10,14 +10,13 @@
 
 	{% if post.header_type == 'image' %}
 
-	<div class="header-left">
+		<div class="header-left">
 			<h1 class="page-title">{{post.title}}</h1>
 			{% if post.intro %}
-			<p class="header-lead">{{post.intro}}</p>
+				<p class="header-lead">{{post.intro}}</p>
 			{% endif %}
-
 			{% if post.para_intro %}
-			<div class="header-intro">{{post.para_intro|wpautop}}</div>
+				<div class="header-intro">{{post.para_intro|wpautop}}</div>
 			{% endif %}
 		</div>
 

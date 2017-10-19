@@ -7,23 +7,18 @@
 // Not on contact page or home page
 .project-header,
 .single .site-main,
+.error404 .site-main,
 .page:not(.page-template-page-story_layout) .site-main {
-  // @include bp(med) {
   padding-top: $grid-gap*3;
-  // }
 }
 
 .blog .site-main {
-  // @include bp(med) {
-    padding-top: $grid-gap*3;
-  // }
+  padding-top: $grid-gap*3;
 }
 
 // Accounts for fixed nav on home page
 .page-template-page-story_layout .site-main {
-  // @include bp(med) {
-    padding-top: $grid-gap*3.4;
-  // }
+  padding-top: $grid-gap*3.4;
 }
 
 .main-header .module-content {

@@ -3065,6 +3065,7 @@ code {
 
 .project-header,
 .single .site-main,
+.error404 .site-main,
 .page:not(.page-template-page-story_layout) .site-main {
   padding-top: 4.29rem; }
 

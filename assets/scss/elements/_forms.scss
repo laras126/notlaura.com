@@ -225,75 +225,73 @@ input[type="checkbox"]:focus {
 }
 
 
-
-
 // ----
-// Main Contact :ayout
-// TODO: don't style iDs, make it more modular to allow for other forms.
+// Comments
 // ----
 
-#gform_fields_3 {
-	//grid-template-rows: repeat(5, auto);
-	// grid-template-columns: 1fr;
-	// grid-auto-flow: row dense;
+.comment-box {
 
-	// li {
-	// 	grid-column: 1;
-	// }
+	margin-top: $h3;
 
-	@include bp(small) {
-		display: grid;
-		grid-column-gap: $grid-gap;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(4, auto);
-		grid-template-areas:
-				"question question"
-				"name			email"
-				"msg  		msg"
-				"list 		list";
+	@include bp(med) {
+		background-color: $white;
+		border: 1px solid $accent-light;
+		width: calc(100% + #{$grid-gap});
+		margin-left: -$grid-gap;
+		padding: $grid-gap;
+	}
+
+}
+
+.comments-header {
+	margin-bottom: $grid-gap;
+}
+
+.comments-title {
+	margin-top: 0;
+}
+
+.comments-note {
+	@include meta($text-med);
+}
+
+.comments {
+	@include unstyle-list;
+	> li {
+		padding: $grid-gap;
+		border-left: 5px solid $accent-med;
+		border-top: 1px solid $accent-light;
+		border-right: 1px solid $accent-light;
+		border-bottom: 1px solid $accent-light;
+
+		background-color: $white;
+		margin-bottom: $grid-gap;
 	}
 }
 
-#field_3_10 {
-	grid-area: question;
+.comment-author {
+	margin-top: 0;
 }
 
-#field_3_9 {
-	grid-area: name;
+.form-comment {
+	margin-bottom: $grid-gap;
 }
 
-#field_3_2 {
-	grid-area: email;
+.form-user-info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: $grid-gap;
 }
 
-#field_3_3 {
-	grid-area: msg;
-}
-
-#field_3_11 {
-	grid-area: list;
-}
-
-// Floats Fallback
-@include grid(no) {
-	.gf_left_half {
-		@include bp(med) {
-			input {
-				width: 90%;
-			}
-		}
-
-		float:left;
-		clear:left !important;
-
-		@include bp(med) {
-			margin-bottom: $h2;
-		}
-	}
-
-	.gf_right_half {
-		float:right;
-		clear:right !important;
-		margin-bottom: $h2;
+.btn-reset {
+	font-style: italic;
+	border: 0;
+	background-color: transparent;
+	color: $accent-med;
+	&:hover {
+		background-color: inherit;
+		color: inherit;
 	}
 }
+
+

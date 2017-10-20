@@ -1,18 +1,9 @@
 {% extends "base.twig" %}
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
-{% block header %}
-	{# {% include 'headers/header-front-page.twig' %} #}
-	{# <h1 class="screen-reader js-typed-src">{{post.title}}</h1>
-	<span aria-hidden="true" class="js-typed page-title"></span>
-
-	<p data-speed="40" class="page-tagline js-typed-src visually-hidden">{{post.tagline}}</p>
-	<p class="js-typed page-tagline"></p> #}
-
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
-{# <div class="module-content"> #}
 	<article class="scene">
 
 		<header class="panel js-active-panel" data-type="typed">
@@ -116,33 +107,6 @@
 				</ul>
 			</div>
 		</section>
-{#
-		<div class="panel">
-			<section class="js-tab js-hidden panel-tab -illustrated" id="pittsburgh">
-				<div class="panel-content">
-					<h2 class="panel-title">The Llama Girl</h2>
-					<p class="lead">I grew up on a llama farm outside of Pittsburgh, PA.</p>
-					<p>I showed llamas in 4-H in my childhood and was known as the "Llama Girl" in school. This became a major source of mortification around age 15 when I shifted my energies to art class and ska music.</p>
-					<p>All said, Pittsburgh is 💯 my home city, and I plan to end up there after I've had my fill of 'dem big city vibes.</p>
-					<p>Here's a llama I illustrated <em>and</em> animated, especially for your viewing pleasure!</p>
-				</div>
-			</section>
-			<section class="js-tab panel-content js-hidden" id="nyc">
-				<h2 class="panel-title">New York looked good on me.</h2>
-				<p class="lead">I worked a lot, walked a lot, and ate and drank a lot.</p>
-				<p>I lived in the New York City from late 2013 to late 2016, and I loved it. Professionally, I did really well operating an an independent consultancy, aptly named Lara Schenck LLC, wherein I built custom WordPress websites for lots of different clients and taught web development to lots of different people.</p>
-				<p>At the end of the day though, New York is a city of excess and I don't think I took as many breaks as I ought to have. Therefore, I burnt out and headed back east to Pittsburgh for a few months before taking the winter off in Utah.</p>
-			</section>
-			<section class="js-tab panel-content js-hidden" id="utah">
-				<h2 class="panel-title">Ski bumming is not for me.</h2>
-				<p class="lead">At the end of my stint in NYC, </p>
-				<p>I worked a lot, walked a lot, and ate and drank a lot. New York is a city of excess, and although
-
-					operated an independent consultancy, aptly named Lara Schenck LLC, wherein I built custom WordPress websites for lots of different clients and taught web development to lots of different people.</p>
-			</section>
-			<a class="btn-next js-scrollTo js-reveal">That's nice 🎉</a>
-		</div> #}
-
 	</article>
 
 	<button class="js-skipBtn js-reveal skip-typing-btn" aria-hidden="true">Show All <br>Panels</button>
@@ -150,22 +114,5 @@
 {% endblock %}
 
 
-{% block footer_scripts %}
-	{# <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> #}
-{% endblock %}
+{% block footer_scripts %}{% endblock %}
 
-
-
-		{# {% include 'partials/section-nav.twig'%} #}
-
-		{# <section class="page-section js-typed-src visually-hidden">
-			<h2 >I'm a front-end web and WordPress developer.</h2>
-
-			<p>I've been independent for most of my career, building custom WordPress sites, web-app front-ends, and teaching.</p>
-
-			<p>Now, though, I'm looking for a full-time <span class="special">job</span>.</p>
-		</section>
-		<section class="page-section js-typed"></section>
-	#}
-
-		{# {% include "partials/section-loop.twig" %} #}

@@ -140,14 +140,6 @@
 			wp_enqueue_script('jquery');
 		}
 
-		// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array(), false, true );
-
-			// TODO - just use these, not Max
-			// wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TimelineLite.min.js', array(), false, true );
-			// wp_enqueue_script( 'gsap-js-2', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js', array(), false, true );
-			// wp_enqueue_script( 'gsap-js-css', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSRulePlugin.min.js', array(), false, true );
-
-
 		// Enqueue stylesheet
 		if( WP_ENV != 'development' ) {
 			wp_enqueue_style( 'nl-styles', get_template_directory_uri() . '/assets/css/main.min.css', 1.0);

@@ -1,18 +1,24 @@
 <section class="comment-box">
 
-	<div class="comments">
-			{% if post.comments %}
-		<h3>Comments</h3>
-		{% for cmt in post.comments %}
+	{% if post.comments %}
+		<header class="comments-header">
+			<h3 class="comments-title">Comments</h3>
+			<p>What do you think? Do you any related questions, thoughts, or links to share, or did I make a mistake in my post?</p>
+		</header>
+	{% endif %}
+
+	{% if post.comments %}
+		<ul class="comments">
+			{% for cmt in post.comments %}
 				{% include "partials/comment.twig" with {comment:cmt} %}
-		{% endfor %}
-			{% endif %}
-	</div>
+			{% endfor %}
+		</ul>
+	{% endif %}
 
 	{% if post.comment_status == "closed" %}
-		<p> comments for this post are closed </p>
+		<p>Comments for this post are closed.</p>
 	{% else %}
-			<!-- comment form -->
-			{% include "partials/comment-form.twig" %}
+		{% include "partials/comment-form.twig" %}
 	{% endif %}
+
 </section>

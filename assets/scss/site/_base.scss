@@ -11,27 +11,13 @@
 body {
 
 	overflow-x: hidden;
-	background: linear-gradient(to right, $white, $accent-light);
+	background: $body-bkgd;
 
 	&.home {
 		background: $accent-light;
 	}
 
-	// For testing
-	@include bp(small) {
-  }
-  @include bp(med) {
-		// background: #FFFDEC;
-  }
-  @include bp(large) {
-		// background: $body-bkgd;
-		// background-image: linear-gradient(to top right, $body-bkgd, $accent-vlight);
-  }
-
-	// border-top: $sml/2 solid $accent-dark;
-
 	word-wrap: break-word;
-
 	@include bp(small) {
 		word-wrap: normal;
 	}

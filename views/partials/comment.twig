@@ -3,10 +3,10 @@
 	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
 
 	{% if post.comments %}
-		<div class="comments">
+		<ul class="comments">
 			{% for cmt in comment.children %}
 				{% include "partials/comment.twig" with {comment:cmt} %}
 			{% endfor %}
-		</div>
+		</ul>
 	{% endif %}
 </li>

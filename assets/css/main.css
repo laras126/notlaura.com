@@ -1788,7 +1788,6 @@ figcaption,
 .gallery-caption,
 .wp-caption-text {
   padding-top: 0.44rem;
-  padding-bottom: 0.88rem;
   font-size: 0.88rem;
   color: #777; }
 
@@ -2943,7 +2942,7 @@ code {
   margin-bottom: 2.64rem; }
 
 .single-content ol li, .single-content ul li {
-  margin-bottom: 1.1rem; }
+  margin-bottom: 0.88rem; }
 
 .project {
   background: #ffffff;

@@ -2949,6 +2949,9 @@ code {
 .single-meta {
   margin-bottom: 2.64rem; }
 
+.single-content ol li, .single-content ul li {
+  margin-bottom: 1.1rem; }
+
 .project {
   background: #ffffff;
   border: 1px solid #E0E6F2;

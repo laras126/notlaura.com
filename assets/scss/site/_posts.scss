@@ -1,6 +1,5 @@
 
 .header-single {
-  // @include rotate;
 	padding-bottom: $h4;
 }
 
@@ -102,10 +101,6 @@
 
 .sticky {
 	border-top-color: $pink;
-	// animation-name: sticky;
-	// animation-delay: 2s;
-	// animation-duration: .5s;
-	// animation-timing-function: forwards;
 }
 
 .sticky-thumb-link {
@@ -175,4 +170,10 @@
 	margin-bottom: $h2;
 }
 
-//
+.single-content {
+	ol, ul{
+		li {
+			margin-bottom: $base;
+		}
+	}
+}

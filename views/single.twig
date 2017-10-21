@@ -22,7 +22,7 @@
 				<hr>
 		</header>
 
-		<div class="module-content">
+		<div class="module-content single-content">
 			{% if post.content %}
 				{{post.content}}
 			{% else %}
@@ -38,6 +38,7 @@
 			{{ include('partials/comments.twig') }}
 
 		</div>
+
 		{% if post.get_terms('post_tag') %}
 			<aside class="module-rail">
 				<h5 class="list-tags-title">Tagged</h5>
@@ -48,6 +49,7 @@
 				</ul>
 			</aside>
 		{% endif %}
+
 	</article> <!-- /.module -->
 
 	{% include 'partials/prev-next.twig' %}

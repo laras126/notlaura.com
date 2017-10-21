@@ -230,17 +230,7 @@ input[type="checkbox"]:focus {
 // ----
 
 .comment-box {
-
 	margin-top: $h3;
-
-	@include bp(med) {
-		background-color: $white;
-		border: 1px solid $accent-light;
-		width: calc(100% + #{$grid-gap});
-		margin-left: -$grid-gap;
-		padding: $grid-gap;
-	}
-
 }
 
 .comments-header {
@@ -256,7 +246,10 @@ input[type="checkbox"]:focus {
 }
 
 .comments {
-	@include unstyle-list;
+	list-style-type: none;
+	padding: 0;
+	margin-top: $grid-gap;
+
 	> li {
 		padding: $grid-gap;
 		border-left: 5px solid $accent-med;

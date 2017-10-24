@@ -32,9 +32,9 @@
 .tease-loop {
 	margin-top: $grid-gap;
 
-	@include bp(med) {
+	@include bp(large) {
 		.blog & {
-			padding-right: $grid-gap;
+			// padding-right: $grid-gap;
 		}
 	}
 }

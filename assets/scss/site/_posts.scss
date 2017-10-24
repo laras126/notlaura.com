@@ -31,12 +31,6 @@
 
 .tease-loop {
 	margin-top: $grid-gap;
-
-	@include bp(large) {
-		.blog & {
-			// padding-right: $grid-gap;
-		}
-	}
 }
 
 .tease-thumb {

@@ -605,7 +605,7 @@ Modules
 
 .meta-light {
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #ffffff; }
 
 .bordered {
@@ -623,7 +623,7 @@ Modules
 
 .meta {
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: inherit; }
 
 .special,
@@ -1405,7 +1405,7 @@ input[type="checkbox"]:focus {
 
 .comments-note {
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #777; }
 
 .comments {
@@ -2207,7 +2207,7 @@ code {
     padding-right: 0.88rem; }
   .section-nav-items a {
     font-size: 0.88rem;
-    line-height: 1.3;
+    line-height: 1.5;
     color: #15598f; }
 
 .prevnext-nav {
@@ -2663,7 +2663,7 @@ code {
 
 .meta-cite {
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #777;
   text-align: right;
   margin-top: 1.1rem;
@@ -2900,7 +2900,7 @@ code {
 .tease-meta,
 .single-meta {
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #777;
   padding-top: 0.88rem; }
 
@@ -3058,7 +3058,7 @@ code {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #777; }
 
 .project-header {

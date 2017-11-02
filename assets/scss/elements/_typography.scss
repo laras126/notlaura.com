@@ -169,6 +169,9 @@ blockquote {
 	background-image: linear-gradient(to bottom right, $white, $accent-vlight);
   font-style: italic;
 
+	& > p:first-child {
+		margin-top: 0;
+	}
 
 	.special {
 		color: $accent-med;

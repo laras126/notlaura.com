@@ -1,5 +1,9 @@
+
 <li class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-	<h5 class="comment-author">{{comment.author.name}} says</h5>
+	<div class="comment-author-info">
+		<img class="comment-author-img" src="{{ comment.author.avatar.abs_url }}">
+		<h5 class="comment-author-name">{{comment.author.display_name ? comment.author.display_name : comment.author.name}}</h5>
+	</div>
 	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
 
 	{% if post.comments %}

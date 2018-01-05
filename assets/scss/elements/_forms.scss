@@ -245,7 +245,8 @@ input[type="checkbox"]:focus {
 	margin-top: $grid-gap;
 
 	> li {
-		padding: $grid-gap;
+		padding-left: $grid-gap;
+		padding-right: $grid-gap;
 		border-left: 5px solid $accent-med;
 		border-top: 1px solid $accent-light;
 		border-right: 1px solid $accent-light;
@@ -256,8 +257,29 @@ input[type="checkbox"]:focus {
 	}
 }
 
-.comment-author {
+.comment-author-info {
+	margin-top: $h5;
+	display: flex;
+	align-items: center;
+
+	border-bottom: $accent-border;
+	padding-bottom: $sml;
+}
+
+.comment-author-name,
+.comment-content p {
+	font-size: $sml;
+}
+
+.comment-author-name {
 	margin-top: 0;
+	font-weight: $font-weight-strong;
+}
+
+.comment-author-img {
+	height: $h4;
+	width: auto;
+	padding-right: $xsml;
 }
 
 .form-comment {

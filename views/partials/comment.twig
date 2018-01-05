@@ -1,4 +1,5 @@
-<li class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
+
+<li class="blog-comment{{type ? ' -' ~ type }}" id="blog-comment-{{comment.ID}}">
 	<div class="comment-author-info">
 		<img class="comment-author-img" src="{{ comment.author.avatar.abs_url }}">
 		{% if comment.author.link %}<a href="{{comment.author.link}}">{% endif %}
@@ -6,12 +7,13 @@
 		{% if comment.author.link %}</a>{% endif %}
 	</div>
 	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
-	<a href="#comment-form" class="comment-reply-btn">Reply</a>
+	<button class="comment-reply-btn">Show Reply Form</button>
+	{% include 'partials/comment-form.twig' with { type: 'reply' } %}
 
 	{% if post.comments %}
 		<ul class="comments">
 			{% for cmt in comment.children %}
-				{% include "partials/comment.twig" with {comment:cmt} %}
+				{% include "partials/comment.twig" with {comment:cmt, type: 'reply'} %}
 			{% endfor %}
 		</ul>
 	{% endif %}

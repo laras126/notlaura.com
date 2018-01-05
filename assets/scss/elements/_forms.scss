@@ -248,6 +248,11 @@ input[type="checkbox"]:focus {
 		padding-left: $grid-gap;
 		padding-right: $grid-gap;
 		border-left: 5px solid $accent-med;
+
+		&.-reply {
+			border-left: 5px solid $accent-light;
+		}
+
 		border-top: 1px solid $accent-light;
 		border-right: 1px solid $accent-light;
 		border-bottom: 1px solid $accent-light;
@@ -280,6 +285,23 @@ input[type="checkbox"]:focus {
 	height: $h4;
 	width: auto;
 	padding-right: $xsml;
+}
+
+.comment-reply-btn {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font-size: $sml;
+	margin-top: $sml;
+	display: inline-flex;
+	color: $link-color;
+}
+
+.js .reply-form {
+	height: 0;
+	opacity: 0;
+	transition: 0.2s ease all;
+	overflow: hidden;
 }
 
 .form-comment {

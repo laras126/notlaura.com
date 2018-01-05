@@ -87,8 +87,6 @@ if(document.querySelector('.page-template-page-story_layout')) {
 							b.classList.remove('js-selected');
 						});
 
-						// console.log(nextPanel.nextTrigger);
-
 						for (let i = 0; i < kid.children.length; i++) {
 							kid.children[i].classList.remove('js-selected');
 						}
@@ -211,8 +209,6 @@ function addScrollListener() {
 
 			}, 200);
 
-
-
 	});
 }
 
@@ -244,35 +240,6 @@ function removeTypedSrc(elem) {
 
 
 // ----
-// Panel Callbacks
-// ----
-
-// TODO user closest LATER
-function hideLaraPic() {
-	// console.log('p1 is done');
-	// let toHide = document.querySelector('.js-hide');
-	// hide(toHide);
-}
-
-function showSkipBtn() {
-	let btn = document.querySelector('.js-skipBtn');
-	reveal(btn);
-}
-
-function showLlamaStuff() {
-	const EYE = document.querySelector('#llama .eye'),
-		JAW = document.querySelector('#llama .jaw'),
-		TAIL = document.querySelector('#llama .tail');
-
-	EYE.classList.add("blinking");
-	JAW.classList.add("chewing");
-	TAIL.classList.add("flicking");
-}
-
-
-
-
-// ----
 // General Helpers
 // ----
 
@@ -296,45 +263,3 @@ function hide(el) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-// function goToTabbedSection(btn, index) {
-
-// 	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
-// 	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
-
-// 	let getIndex = () => {
-// 		return index;
-// 	}
-
-// 	btn.addEventListener('click', (e) => {
-
-// 		let index = getIndex();
-// 		// markPanelComplete(index);
-
-// 		btns.forEach((b) => {
-// 			b.classList.remove('js-selected');
-// 		});
-
-// 		let type = btn.dataset.contentRef;
-// 		btn.classList.add('js-selected');
-
-// 		tabs.forEach(function (tab) {
-// 			tab.classList.add('js-hidden');
-
-// 			if (tab.getAttribute('id') == type) {
-// 				tab.classList.remove('js-hidden');
-// 			}
-// 		});
-
-// 	});
-// }

@@ -190,9 +190,6 @@ input[type="checkbox"]:focus {
 	}
 
 	.email {
-		// TODO relayout this
-		// @include make-xs-column($c);
-		// @include make-sm-column($c * 2/3, false, false);
 		padding: $sml $base;
 		margin-bottom: $sml;
 		text-align: center;
@@ -207,9 +204,6 @@ input[type="checkbox"]:focus {
 	}
 
 	.button {
-		// TODO check if messed up
-		// @include make-xs-column($c);
-		// @include make-sm-column($c * 1/3, false, false);
 		@include button($accent-med);
 
 		@include bp(small) {

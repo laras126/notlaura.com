@@ -290,14 +290,25 @@ input[type="checkbox"]:focus {
 .btn-reply {
 	padding: 0;
 	border: 0;
+	font-style: italic;
 	background: transparent;
 	font-size: $sml;
 	margin-top: $sml;
 	display: inline-flex;
 	color: $link-color;
+
+	&:focus,
+	&:hover {
+		background: $accent-med;
+	}
 }
 
 .reply-form {
+	// Hack to get around the focus outline being cut off in the forms
+	padding-left: $xsml;
+	padding-right: $xsml;
+	margin-left: -$xsml;
+
 	font-size: $sml;
 	.js & {
 		height: 0;

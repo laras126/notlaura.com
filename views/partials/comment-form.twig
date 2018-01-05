@@ -2,6 +2,7 @@
 	<h4>Submit a Comment</h4>
 	<form id="form" class="comment-form" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
 		{% if user %}
+			<p>Hey, {{user.first_name ? user.first_name : user.name }}! Write your comment here:</p>
 			<input type="hidden" name="email" value="{{ user.email }}">
 			<input type="hidden" name="author" value="{{ user.name }}">
 			<input type="hidden" name="url" value="{{ user.link }}">
@@ -14,6 +15,10 @@
 				<div class="form-email">
 					<label for="email" class="frm_primary_label">Email <span class="frm_required">*</span></label>
 					<input placeholder="dragons@superb.com" required name="email" type="text" id="email"/>
+				</div>
+				<div class="form-website">
+					<label for="link" class="frm_primary_label">Website</label>
+					<input placeholder="https://notlaura.com" name="link" type="url" id="link"/>
 				</div>
 			</div>
 		{% endif %}

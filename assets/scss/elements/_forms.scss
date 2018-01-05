@@ -288,8 +288,12 @@ input[type="checkbox"]:focus {
 
 .form-user-info {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-column-gap: $grid-gap;
+	grid-template-columns: 1fr;
+
+	@include bp(small) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: $grid-gap/2;
+	}
 }
 
 .btn-reset {

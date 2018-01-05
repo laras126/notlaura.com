@@ -1451,6 +1451,7 @@ input[type="checkbox"]:focus {
 .btn-reply {
   padding: 0;
   border: 0;
+  font-style: italic;
   background: transparent;
   font-size: 0.88rem;
   margin-top: 0.88rem;
@@ -1458,8 +1459,13 @@ input[type="checkbox"]:focus {
   display: -ms-inline-flexbox;
   display: inline-flex;
   color: #1b8ab9; }
+  .btn-reply:focus, .btn-reply:hover {
+    background: #27A9E0; }
 
 .reply-form {
+  padding-left: 0.66rem;
+  padding-right: 0.66rem;
+  margin-left: -0.66rem;
   font-size: 0.88rem; }
   .js .reply-form {
     height: 0;

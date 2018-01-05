@@ -1133,8 +1133,6 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400; }
-  .site-main h5 {
-    color: #777; }
 
 h6 {
   font-size: 1.1rem;
@@ -1415,16 +1413,57 @@ input[type="checkbox"]:focus {
   padding: 0;
   margin-top: 1.43rem; }
   .comments > li {
-    padding: 1.43rem;
+    padding-left: 1.43rem;
+    padding-right: 1.43rem;
     border-left: 5px solid #27A9E0;
     border-top: 1px solid #E0E6F2;
     border-right: 1px solid #E0E6F2;
     border-bottom: 1px solid #E0E6F2;
     background-color: #ffffff;
     margin-bottom: 1.43rem; }
+    .comments > li.-reply {
+      border-left: 5px solid #E0E6F2; }
 
-.comment-author {
-  margin-top: 0; }
+.comment-author-info {
+  margin-top: 0.88rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #E0E6F2;
+  padding-bottom: 0.88rem; }
+
+.comment-author-name,
+.comment-content p {
+  font-size: 0.88rem; }
+
+.comment-author-name {
+  margin-top: 0;
+  font-weight: 700; }
+
+.comment-author-img {
+  height: 1.43rem;
+  width: auto;
+  padding-right: 0.66rem; }
+
+.comment-reply-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.88rem;
+  margin-top: 0.88rem;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #1b8ab9; }
+
+.js .reply-form {
+  height: 0;
+  opacity: 0;
+  transition: 0.2s ease all;
+  overflow: hidden; }
 
 .form-comment {
   margin-bottom: 1.43rem; }
@@ -1432,9 +1471,13 @@ input[type="checkbox"]:focus {
 .form-user-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 1.43rem; }
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr; }
+  @media (min-width: 520px) {
+    .form-user-info {
+      -ms-grid-columns: (1fr)[3];
+          grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 0.715rem; } }
 
 .btn-reset {
   font-style: italic;

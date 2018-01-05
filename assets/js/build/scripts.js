@@ -1018,18 +1018,16 @@ jQuery(document).ready(function () {
 						$target.focus(); // Set focus again
 					};
 				});
-
-				// if (target.attr("data-type") == "decision" ){
-				// 	return true;
-				// } else {
-				// 	return false;
-				// }
 			}
 		}
 	});
 
 	// Fit Vids
 	$(".main-content").fitVids({ customSelector: 'iframe' });
+
+	$('.comment-reply-btn').on('focus', function () {
+		$(this).siblings('.reply-form').css({ 'opacity': 1, height: 'auto' });
+	});
 });
 "use strict";
 
@@ -1259,8 +1257,6 @@ if (document.querySelector('.page-template-page-story_layout')) {
 								b.classList.remove('js-selected');
 							});
 
-							// console.log(nextPanel.nextTrigger);
-
 							for (var _i2 = 0; _i2 < kid.children.length; _i2++) {
 								kid.children[_i2].classList.remove('js-selected');
 							}
@@ -1407,32 +1403,6 @@ function removeTypedSrc(elem) {
 }
 
 // ----
-// Panel Callbacks
-// ----
-
-// TODO user closest LATER
-function hideLaraPic() {
-	// console.log('p1 is done');
-	// let toHide = document.querySelector('.js-hide');
-	// hide(toHide);
-}
-
-function showSkipBtn() {
-	var btn = document.querySelector('.js-skipBtn');
-	reveal(btn);
-}
-
-function showLlamaStuff() {
-	var EYE = document.querySelector('#llama .eye'),
-	    JAW = document.querySelector('#llama .jaw'),
-	    TAIL = document.querySelector('#llama .tail');
-
-	EYE.classList.add("blinking");
-	JAW.classList.add("chewing");
-	TAIL.classList.add("flicking");
-}
-
-// ----
 // General Helpers
 // ----
 
@@ -1456,35 +1426,3 @@ function reveal(el) {
 function hide(el) {
 	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
 }
-
-// function goToTabbedSection(btn, index) {
-
-// 	let tabs = document.querySelectorAll('#panel-'+(index+1)+' .js-tab');
-// 	let btns = document.querySelectorAll('#panel-'+index+' .decision-btns > a');
-
-// 	let getIndex = () => {
-// 		return index;
-// 	}
-
-// 	btn.addEventListener('click', (e) => {
-
-// 		let index = getIndex();
-// 		// markPanelComplete(index);
-
-// 		btns.forEach((b) => {
-// 			b.classList.remove('js-selected');
-// 		});
-
-// 		let type = btn.dataset.contentRef;
-// 		btn.classList.add('js-selected');
-
-// 		tabs.forEach(function (tab) {
-// 			tab.classList.add('js-hidden');
-
-// 			if (tab.getAttribute('id') == type) {
-// 				tab.classList.remove('js-hidden');
-// 			}
-// 		});
-
-// 	});
-// }

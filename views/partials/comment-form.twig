@@ -1,6 +1,6 @@
-<div class="comment-form">
+<div id="comment-form" class="comment-form">
 	<h4>Submit a Comment</h4>
-	<form id="form" class="comment-form" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
+	<form class="comment-form" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
 		{% if user %}
 			<p>Hey, {{user.first_name ? user.first_name : user.name }}! Write your comment here:</p>
 			<input type="hidden" name="email" value="{{ user.email }}">
@@ -32,9 +32,11 @@
 		<input name="comment_parent" id="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
 
 		<div>
-			<button type="submit" name="Submit" class="btn">Submit Comment</button>
+			<button type="submit" id="comment-submit" name="Submit" class="btn">Submit Comment</button>
 			<button class="btn-reset" type="reset">Reset form</button>
 		</div>
-		<p class="comments-note">Pssst...developer note: This is the most basic comment implentation you can possibly imagine, and it's on my list to flesh it out. But...I'm not using Disqus anymore, so that's cool! 👍</p>
+
 	</form>
+
+	<p class="comments-note">Pssst...developer note: This is the most basic comment implentation you can possibly imagine, and it's on my list to flesh it out. But...I'm not using Disqus anymore, so that's cool! 👍</p>
 </div>

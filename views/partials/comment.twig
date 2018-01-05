@@ -1,10 +1,12 @@
-
 <li class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
 	<div class="comment-author-info">
 		<img class="comment-author-img" src="{{ comment.author.avatar.abs_url }}">
+		{% if comment.author.link %}<a href="{{comment.author.link}}">{% endif %}
 		<h5 class="comment-author-name">{{comment.author.display_name ? comment.author.display_name : comment.author.name}}</h5>
+		{% if comment.author.link %}</a>{% endif %}
 	</div>
 	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+	<a href="#comment-form" class="comment-reply-btn">Reply</a>
 
 	{% if post.comments %}
 		<ul class="comments">

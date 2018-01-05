@@ -1025,7 +1025,7 @@ jQuery(document).ready(function () {
 	// Fit Vids
 	$(".main-content").fitVids({ customSelector: 'iframe' });
 
-	$('.comment-reply-btn').on('focus', function () {
+	$('.btn-reply').on('focus', function () {
 		$(this).siblings('.reply-form').css({ 'opacity': 1, height: 'auto' });
 	});
 });

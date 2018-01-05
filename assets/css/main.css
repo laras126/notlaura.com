@@ -1448,7 +1448,7 @@ input[type="checkbox"]:focus {
   width: auto;
   padding-right: 0.66rem; }
 
-.comment-reply-btn {
+.btn-reply {
   padding: 0;
   border: 0;
   background: transparent;
@@ -1459,11 +1459,13 @@ input[type="checkbox"]:focus {
   display: inline-flex;
   color: #1b8ab9; }
 
-.js .reply-form {
-  height: 0;
-  opacity: 0;
-  transition: 0.2s ease all;
-  overflow: hidden; }
+.reply-form {
+  font-size: 0.88rem; }
+  .js .reply-form {
+    height: 0;
+    opacity: 0;
+    transition: 0.2s ease all;
+    overflow: hidden; }
 
 .form-comment {
   margin-bottom: 1.43rem; }

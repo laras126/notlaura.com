@@ -1,5 +1,5 @@
-<div id="comment-form" class="comment-form">
-	<h4>Submit a Comment</h4>
+<div class="{{type}}-form">
+	<h4>{{ type == 'reply' ? 'Compose a Reply' : 'Submit a Comment' }}</h4>
 	<form class="comment-form" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
 		{% if user %}
 			<p>Hey, {{user.first_name ? user.first_name : user.name }}! Write your comment here:</p>
@@ -10,33 +10,32 @@
 			<div class="form-user-info">
 				<div class="form-author">
 					<label for="author" class="frm_primary_label">Name <span class="frm_required">*</span></label>
-					<input placeholder="Juan Snow" required name="author" type="text" id="author"/>
+					<input placeholder="Juan Snow" required name="author" type="text"/>
 				</div>
 				<div class="form-email">
 					<label for="email" class="frm_primary_label">Email <span class="frm_required">*</span></label>
-					<input placeholder="dragons@superb.com" required name="email" type="text" id="email"/>
+					<input placeholder="dragons@superb.com" required name="email" type="text"/>
 				</div>
 				<div class="form-website">
 					<label for="link" class="frm_primary_label">Website</label>
-					<input placeholder="https://notlaura.com" name="link" type="url" id="link"/>
+					<input placeholder="https://notlaura.com" name="link" type="url"/>
 				</div>
 			</div>
 		{% endif %}
 
 		<div class="form-comment">
-			<label for="comment" class="frm_primary_label">Comment <span class="frm_required">*</span></label>
-			<textarea placeholder="Comment text" name="comment" cols="60" rows="3" id="comment"></textarea>
+			<label for="comment" class="frm_primary_label">{{type|capitalize}} <span class="frm_required">*</span></label>
+			<textarea placeholder="Comment text" name="comment" cols="60" rows="3"></textarea>
 		</div>
 
-		<input name="comment_post_ID" value="{{ post.id }}" id="comment_post_ID" type="hidden">
-		<input name="comment_parent" id="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
+		<input name="comment_post_ID" value="{{ post.id }}" type="hidden">
+		<input name="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
 
 		<div>
-			<button type="submit" id="comment-submit" name="Submit" class="btn">Submit Comment</button>
+			<button type="submit" name="Submit" class="btn">Submit {{type|capitalize}}</button>
 			<button class="btn-reset" type="reset">Reset form</button>
 		</div>
 
 	</form>
 
-	<p class="comments-note">Pssst...developer note: This is the most basic comment implentation you can possibly imagine, and it's on my list to flesh it out. But...I'm not using Disqus anymore, so that's cool! 👍</p>
 </div>

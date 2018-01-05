@@ -262,7 +262,7 @@ input[type="checkbox"]:focus {
 	display: flex;
 	align-items: center;
 
-	border-bottom: $accent-border;
+	border-bottom: 1px solid $accent-light;
 	padding-bottom: $sml;
 }
 

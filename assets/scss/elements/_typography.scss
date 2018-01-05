@@ -121,11 +121,6 @@ h5 {
 	font-size: $h5;
 	margin-top: $h3;
 	@include upperspace;
-
-	.site-main & {
-		color: $text-med;
-	}
-
 	font-weight: $font-weight-base;
 }
 

@@ -1,24 +1,22 @@
-<section class="comment-box">
+{% if post.comment_status != "closed" %}
+	<section class="comment-box">
 
-	{% if post.comments %}
-		<header class="comments-header">
-			<h3 class="comments-title">Comments</h3>
-			<p>What do you think? Do you have any questions, thoughts, or related links to share? Did I make a mistake in my post?</p>
-		</header>
-	{% endif %}
+		{% if post.comments %}
+			<header class="comments-header">
+				<h3 class="comments-title">Comments</h3>
+				<p>What do you think? Do you have any questions, thoughts, or related links to share? Did I make a mistake in my post?</p>
+			</header>
+		{% endif %}
 
-	{% if post.comments %}
-		<ul class="comments">
-			{% for cmt in post.comments %}
-				{% include "partials/comment.twig" with {comment:cmt} %}
-			{% endfor %}
-		</ul>
-	{% endif %}
+		{% if post.comments %}
+			<ul class="comments">
+				{% for cmt in post.comments %}
+					{% include "partials/comment.twig" with {comment:cmt} %}
+				{% endfor %}
+			</ul>
+		{% endif %}
 
-	{% if post.comment_status == "closed" %}
-		<p>Comments for this post are closed.</p>
-	{% else %}
 		{% include "partials/comment-form.twig" %}
-	{% endif %}
 
-</section>
+	</section>
+{% endif %}

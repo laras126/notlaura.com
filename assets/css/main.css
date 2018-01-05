@@ -1166,7 +1166,7 @@ blockquote {
   padding-bottom: 1.1rem;
   background-image: linear-gradient(to bottom right, #ffffff, #f4f7f9);
   font-style: italic; }
-  blockquote > p {
+  blockquote > p:first-child {
     margin-top: 0; }
   blockquote .special {
     color: #27A9E0; }

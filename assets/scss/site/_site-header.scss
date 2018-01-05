@@ -25,22 +25,8 @@
 }
 
 .site-header > * {
-
   display: flex;
   align-items: center;
-
-  @include bp(med) {
-  }
-  // grid-template-columns: 50% 50%;
-  // grid-template-rows: minmax(auto, 100px) 1fr;
-
-  // @include bp(med) {
-  //   grid-template-rows: 1fr;
-  //   grid-template-columns: minmax(auto, 100px) 3fr 1fr;
-  //   grid-template-areas:
-  //     "logo nav icon";
-  //  }
-
 }
 
 .site-header svg {

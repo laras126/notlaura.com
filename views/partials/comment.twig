@@ -7,7 +7,7 @@
 		{% if comment.author.link %}</a>{% endif %}
 	</div>
 	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
-	<button class="comment-reply-btn">Show Reply Form</button>
+	<button class="btn-reply">Reply to this Comment</button>
 	{% include 'partials/comment-form.twig' with { type: 'reply' } %}
 
 	{% if post.comments %}

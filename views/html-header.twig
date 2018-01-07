@@ -12,20 +12,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="pingback" href="{{site.pingback_url}}" />
   <script src="{{site.theme.link}}/assets/js/build/lazysizes.min.js" async></script>
-  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async></script>
+  <style>
+      @font-face{font-family:'Inter UI';font-style:normal;font-weight:400;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Regular.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Regular.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:italic;font-weight:400;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Italic.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Italic.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:normal;font-weight:700;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Bold.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Bold.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:italic;font-weight:700;src:url({{site.theme.link}}/assets/font-files/Inter-UI-BoldItalic.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-BoldItalic.woff?v=2.3) format("woff")}
+  </style>
   <script>
-      WebFontConfig = {
-        typekit: { id: 'pis2fvo' }
-      };
-
-    // Credit: http://www.sarasoueidan.com/
-    if('querySelector' in document
-      && 'localStorage' in window
-      && 'addEventListener' in window) {
-
-      var root = document.getElementsByTagName( 'html' )[0];
-      root.classList.add('js');
-    }
+      (function() {
+        // Optimization for Repeat Views
+        if( sessionStorage.fontsLoadedFoutWithClass ) {
+          document.documentElement.className += " fonts-loaded";
+          return;
+        }
+        if( "fonts" in document ) {
+          Promise.all([
+            document.fonts.load("1rem Inter UI"),
+            document.fonts.load("700 1rem Inter UI"),
+            document.fonts.load("italic 1rem Inter UI"),
+            document.fonts.load("italic 700 1rem Inter UI")
+          ]).then(function () {
+            document.documentElement.className += " fonts-loaded";
+            // Optimization for Repeat Views
+            sessionStorage.fontsLoadedFoutWithClass = true;
+          });
+        }
+      })();
   </script>
 
-  {{function('wp_head')}}
+{{fn('wp_head')}}

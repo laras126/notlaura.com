@@ -741,7 +741,7 @@ a.special {
 
 @media (min-width: 1100px) {
   .fancy-hover {
-    will-change: transoform;
+    will-change: transform;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -2907,10 +2907,6 @@ code {
   @media (min-width: 1100px) {
     .post {
       margin-bottom: 0; } }
-  .post > a:hover {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1); }
 
 @-webkit-keyframes sticky {
   0% {

@@ -77,7 +77,7 @@
 	margin-top: 0;
 	margin-bottom: $base;
 	font-size: $base;
-	@include upperspace;
+	text-transform: uppercase;
 
 	&.-hello {
 		margin-top: $grid-gap;

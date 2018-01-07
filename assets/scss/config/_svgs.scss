@@ -20,7 +20,11 @@ svg {
 }
 
 
+// Default thumb
 
+.default-thumb rect {
+	fill: $accent-vlight;
+}
 
 
 // Llama

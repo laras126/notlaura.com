@@ -53,11 +53,15 @@
 			</p>
 		</div>
 
-		{% if post.get_thumbnail and grid %}
+		{% if grid %}
 			<div class="tease-thumb">
 				<a href="{{post.link}}">
-					{% set alt = post.thumbnail._wp_attachment_image_alt %}
-					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
+					{% if	post.get_thumbnail %}
+						{% set alt = post.thumbnail._wp_attachment_image_alt %}
+						<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
+					{% else %}
+						{% include 'svgs/default-thumb.svg' %}
+					{% endif %}
 				</a>
 			</div>
 		{% endif %}

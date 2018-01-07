@@ -68,17 +68,12 @@ jQuery(document).ready(function() {
 	// Fit Vids
 	$(".main-content").fitVids({ customSelector: 'iframe' });
 
-
 	$('.btn-reply').on('click', showReplyForm);
 	$('.btn-reply').on('focus', showReplyForm);
 
 	function showReplyForm() {
 		$(this).siblings('.reply-form').css({'opacity': 1, height: 'auto'});
 	}
-
-	// $('.btn-reply').on('focus', function() {
-	// 	$(this).siblings('.reply-form').css({'opacity': 1, height: 'auto'});
-	// });
 
 });
 

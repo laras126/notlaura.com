@@ -1031,10 +1031,6 @@ jQuery(document).ready(function () {
 	function showReplyForm() {
 		$(this).siblings('.reply-form').css({ 'opacity': 1, height: 'auto' });
 	}
-
-	// $('.btn-reply').on('focus', function() {
-	// 	$(this).siblings('.reply-form').css({'opacity': 1, height: 'auto'});
-	// });
 });
 "use strict";
 

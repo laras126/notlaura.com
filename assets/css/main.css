@@ -1099,14 +1099,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   line-height: 1.3; }
 
-.wf-active h1, .wf-active h2 {
+.fonts-loaded h1, .fonts-loaded h2 {
   font-family: "Inter UI", "system", Arial, sans-serif; }
 
-.wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6 {
+.fonts-loaded h3, .fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 {
   font-family: "Inter UI", "system", Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica", sans-serif;
+  font-family: "system", sans-serif;
   font-weight: 700; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     font-weight: 700; }

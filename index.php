@@ -13,31 +13,19 @@
  * @since 		Timber 0.1
  */
 
-	// TODO remove when plugin is created
-	$all_post_args = array(
-		'post_type' => array('post', 'page', 'project'),
-		'posts_per_page' => -1,
-	);
 
+ if (!class_exists('Timber')){
+	echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
+	return;
+}
 
-	if (!class_exists('Timber')){
-		echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
-		return;
-	}
-	$context = Timber::get_context();
-	$context['post'] = new TimberPost();
-	$context['posts'] = Timber::get_posts();
+$context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
+$context['sidebar'] = Timber::get_sidebar('sidebar.php');
+$context['pagination'] = Timber::get_pagination();
 
-	// TODO remove when plugin is created
-	$context['all_posts'] = Timber::get_posts($all_post_args);
-	$context['sidebar'] = Timber::get_sidebar('sidebar.php');
+$templates = array('index.twig');
 
-	$context['pagination'] = Timber::get_pagination();
-	$templates = array('index.twig');
-
-	if (is_home()){
-		array_unshift($templates, 'home.twig');
-	}
-	Timber::render($templates, $context);
+Timber::render($templates, $context);
 
 

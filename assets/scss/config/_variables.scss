@@ -99,7 +99,7 @@ $h6:  				$base;
 
 $sans-serif: 				'Inter UI', 'system', Arial, sans-serif;
 
-$heading-font-fallback: 'Helvetica', sans-serif;
+$heading-font-fallback: 'system', sans-serif;
 $body-font-fallback:    'system', sans-serif;
 
 $heading-font:  $sans-serif;
@@ -120,7 +120,7 @@ $heading-font-weight: $font-weight-strong;
 // ---- Utilities
 // ----
 
-$accent-border: 		1px solid rgba($accent-med, 0.4);
+$accent-border: 				1px solid rgba($accent-med, 0.4);
 $accent-border-thick: 	5px solid $accent-light;
 
 // Z-Index Scale

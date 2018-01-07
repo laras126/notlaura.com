@@ -315,6 +315,7 @@ $rail: minmax(70px, 175px);
       }
 
       .tease-thumb {
+        place-content: center;
         grid-column: 3 / span 2;
       }
 

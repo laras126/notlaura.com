@@ -12,9 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="pingback" href="{{site.pingback_url}}" />
   <script src="{{site.theme.link}}/assets/js/build/lazysizes.min.js" async></script>
-  <style>
-      @font-face{font-family:'Inter UI';font-style:normal;font-weight:400;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Regular.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Regular.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:italic;font-weight:400;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Italic.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Italic.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:normal;font-weight:700;src:url({{site.theme.link}}/assets/font-files/Inter-UI-Bold.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-Bold.woff?v=2.3) format("woff")}@font-face{font-family:'Inter UI';font-style:italic;font-weight:700;src:url({{site.theme.link}}/assets/font-files/Inter-UI-BoldItalic.woff2?v=2.3) format("woff2"),url({{site.theme.link}}/assets/font-files/Inter-UI-BoldItalic.woff?v=2.3) format("woff")}
-  </style>
+  {% include 'partials/critical.twig' %}
   <script>
       (function() {
         // Optimization for Repeat Views

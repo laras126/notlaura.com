@@ -52,7 +52,7 @@
 
 .fancy-hover {
 	@include bp(large) {
-		@include accelerate(transoform);
+		@include accelerate(transform);
 		transform-origin: 50% 50%;
 		transition: 0.3s transform ease;
 		&:hover {

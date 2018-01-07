@@ -1,5 +1,5 @@
 
-{% if post.thumbnail %}
+{% if loop.index % 3 == 1 %}
 	{% set grid = true %}
 {% endif %}
 
@@ -53,12 +53,11 @@
 			</p>
 		</div>
 
-		{% if post.thumbnail %}
+		{% if post.get_thumbnail and grid %}
 			<div class="tease-thumb">
 				<a href="{{post.link}}">
-					{% if post.get_thumbnail %}
-					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="">
-					{% endif %}
+					{% set alt = post.thumbnail._wp_attachment_image_alt %}
+					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
 				</a>
 			</div>
 		{% endif %}

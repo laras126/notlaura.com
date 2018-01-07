@@ -4,7 +4,6 @@
 // Yes, I may use tables sometime!
 
 table {
-    font-family: $form-font;
     margin-bottom: $base;
     font-size: $sml;
 }
@@ -25,7 +24,6 @@ td {
     }
 
     &:first-child {
-        font-family: $heading-font;
         font-weight: 500;
     }
 }
@@ -35,7 +33,6 @@ th {
     border-right: $accent-border;
     text-align: left;
     padding: $sml $base;
-    font-family: $heading-font;
     font-size: $base;
 
     &:last-child {

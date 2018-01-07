@@ -45,7 +45,11 @@ input[type="tel"] {
 	color: $body-text-clr;
 	outline: 5px solid rgba($accent-vlight, 0);
 	border: 1px solid $accent-light;
-	font-family: $body-font;
+
+	.fonts-loaded & {
+		font-family: $body-font;
+	}
+
 	font-weight: 300;
 	border-radius: 2px;
 	transition: 0.2s ease all;

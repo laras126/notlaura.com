@@ -20,7 +20,10 @@
   border: 2px solid lighten($button-color, 10%);
   padding: $sml $h4;
   display: inline-block;
-  font-family: $form-font;
+
+  .fonts-loaded & {
+    font-family: $form-font;
+  }
 
 	&:hover,
 	&:focus {

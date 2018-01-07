@@ -1,21 +1,12 @@
 {% extends "base.twig" %}
 
-{% block header %}
-	{# {% include 'headers/header-page.twig' %} #}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
 
-	{# TODO: Find in database, remove THIS and put in a plugin #}
-	{# {% for post in all_posts %}
-		{% if '####' in post.content %}
-			<a href="{{post.link}}">{{post.title}}</a> {{post.date}}<br>
-		{% endif %}
-	{% endfor %} #}
-
 	<div class="tease-loop grid-loop">
 		{% for post in posts %}
-			{% include ['teases/tease-'~post.post_type~'.twig', 'teases/tease.twig'] %}
+			{% include 'teases/tease-post.twig' %}
 		{% endfor %}
 	</div>
 

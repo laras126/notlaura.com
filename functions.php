@@ -1,5 +1,13 @@
 <?php
 
+
+	// Force HTTPS for production environment
+	// https://stackoverflow.com/questions/45729313/wordpress-forcing-ssl-with-htaccess-leads-to-redirect-loop-when-using-polylan
+	if($_SERVER["HTTPS"] != "on" && WP_ENV == 'production') {
+		header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+		exit();
+	}
+
 	if (!class_exists('Timber')){
 		add_action( 'admin_notices', function(){
 			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . admin_url('plugins.php#timber') . '">' . admin_url('plugins.php') . '</a></p></div>';

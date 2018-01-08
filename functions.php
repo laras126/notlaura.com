@@ -140,10 +140,7 @@
 			wp_enqueue_script('jquery');
 		}
 
-		// Enqueue stylesheet
-		if( is_home() || is_front_page() || is_page('Contact') ) {
-			wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', null, '1.0.0', true );
-		}
+		wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', null, '1.0.0', true );
 
 		// Load minified scripts except on development environment
 		if( WP_ENV != 'development' ) {

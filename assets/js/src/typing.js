@@ -1,14 +1,13 @@
 /*
  * To Mike, if you're reading this!
  * I recently completed Kyle Simpson's Deep JS Foundations class on
- * Frontend Masters and wanted to refactor this from an ES6 class
- * to the OLOO pattern he describes in the class.
+ * Frontend Masters and wanted to refactor this from an ES6 class to the
+ * OLOO (Objects Linked to Other Objects) pattern he describes in the class.
 
  * @link https://frontendmasters.com/courses/javascript-foundations/
  * @link https://stackoverflow.com/questions/29788181/kyle-simpsons-oloo-pattern-vs-prototype-design-pattern
 
  * This feature is the type-out-a-panel effect on the homepage of https://notlaura.com.
-
 */
 
 

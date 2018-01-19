@@ -1,25 +1,26 @@
 /*
+ * To Mike, if you're reading this!
+ * I recently completed Kyle Simpson's Deep JS Foundations class on
+ * Frontend Masters and wanted to refactor this from an ES6 class architecture
+ * to the OLOO pattern he describes in the class.
 
-To Mike, if you're reading this! I recently completed Kyle Simpson's Deep JS Foundations
-class on Front-end Masters and wanted to refactor this based on my new knowledge.
+ * @link https://frontendmasters.com/courses/javascript-foundations/
+ * @link https://stackoverflow.com/questions/29788181/kyle-simpsons-oloo-pattern-vs-prototype-design-pattern
 
-This feature is the type-out-a-panel effect on the homepage of https://notlaura.com.
-It basically goes like this:
 
-1. Create Panel objects from the DOM elements rendeded by the server
-
+ * This feature is the type-out-a-panel effect on the homepage of https://notlaura.com.
 
 */
 
 
 
 var Helpers = {
-	defaultTypeSpeed: 0,
+	defaultTypingSpeed: 0,
 
-	showButtons(btn) {
-		var tabbed = Boolean(btn.length > 1);
-		if( tabbed ) reveal(btn, true);
-		else reveal(btn);
+	showButtons(btns) {
+		var tabbed = Boolean(btns.length > 1);
+		if(tabbed) reveal(btns, true);
+		else reveal(btns);
 	},
 
 	onTypingComplete(panel) {
@@ -31,14 +32,17 @@ var Helpers = {
 
 var UI = {
 	panelElements: document.querySelectorAll('.panel'),
+
 	getNextTrigger(id) {
 		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
 		return triggers;
 	},
+
 	getStringToType(id) {
 		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
 		return el.innerHTML;
 	},
+
 	createTypedResultEl(content) {
 		var ref = this.typingSrc;
 		var div = document.createElement('div');
@@ -71,7 +75,7 @@ var Panel =  {
 			// Options for Typed plugin
 			this.typedOpts = {
 				strings: [stringToType],
-				typeSpeed: Helpers.defaultTypeSpeed,
+				typeSpeed: Helpers.defaultTypingSpeed,
 				showCursor: false,
 				onComplete: Helpers.onTypingComplete
 			}

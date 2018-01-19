@@ -1,3 +1,10 @@
+/*
+	Homepage panel/typing effect. It goes like this:
+	- Each panel
+*/
+
+
+
 
 const TYPE_SPEED = 0;
 const PANELS = document.querySelectorAll('.panel');
@@ -27,18 +34,18 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 				// Find source for typing
 				this.typedSrc = ((int) => {
-					let el = document.querySelector("#panel-" + int + ' .js-typed-src');
+					var el = document.querySelector("#panel-" + int + ' .js-typed-src');
 					return el;
 				})(this.id);
 
 				// Create an element to hold typed content
 				this.typedEl = ((int) => {
-					let ref = this.typedSrc;
-					let div = document.createElement('div');
+					var ref = this.typedSrc;
+					var div = document.createElement('div');
 							div.classList.add('js-typed', 'panel-content');
 							div.setAttribute('aria-hidden', 'true');
 							insertAfter(ref, div);
-					let el = document.querySelector("#panel-" + int + ' .js-typed');
+					var el = document.querySelector("#panel-" + int + ' .js-typed');
 					return el;
 				})(this.id);
 
@@ -57,12 +64,12 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 		// Setting up Panel Functions
 		setUpChildren() {
-			let kids = this.el.children;
-			let nextPanelId = this.id + 1;
-			let nextPanel = this.getNextPanel();
+			var kids = this.el.children;
+			var nextPanelId = this.id + 1;
+			var nextPanel = this.getNextPanel();
 
 			for (let i = 0; i < kids.length; i++) {
-				let kid = kids[i];
+				var kid = kids[i];
 
 				// Single button
 				if (kid.classList.contains('btn-next')) {
@@ -78,11 +85,13 @@ if(document.querySelector('.page-template-page-story_layout')) {
 					}
 
 					kid.addEventListener('click', (e) => {
+						var nextPanel = this.getNextPanel();
+						var el = e.target;
+						var btns = document.querySelectorAll('#panel-' + this.id + ' button');
+
 						this.complete = true;
-						let nextPanel = this.getNextPanel();
 						showButtons(nextPanel.nextTrigger);
 
-						let btns = document.querySelectorAll('#panel-' + this.id + ' button');
 						btns.forEach((b) => {
 							b.classList.remove('js-selected');
 						});
@@ -91,9 +100,8 @@ if(document.querySelector('.page-template-page-story_layout')) {
 							kid.children[i].classList.remove('js-selected');
 						}
 
-						let el = e.target;
 						if (el && el.tagName == "BUTTON") {
-							let btn = el;
+							var btn = el;
 							console.log('hi');
 							showTab(nextPanel, btn);
 						}
@@ -103,10 +111,10 @@ if(document.querySelector('.page-template-page-story_layout')) {
 		}
 
 		getNextPanel() {
-			let currId = this.id;
-			let nextId = currId + 1;
+			var currId = this.id;
+			var nextId = currId + 1;
 
-			let nextPanel = panelsArr.find((panel) => {
+			var nextPanel = panelsArr.find((panel) => {
 				return panel.id == nextId;
 			});
 
@@ -117,12 +125,11 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 
 	PANELS.forEach((el, index) => {
+		// Create panel obj for each element
+		var p = new Panel(index);
 
 		// Add an id to each panel
 		el.id = 'panel-' + index;
-
-		// Create panel obj for each element
-		let p = new Panel(index);
 
 		// Mark objects created and set up children (buttons)
 		p.created = true;
@@ -134,7 +141,7 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 	// Type first panel
 	document.addEventListener("DOMContentLoaded", function (event) {
-		let firstPanel = panelsArr[0];
+		var firstPanel = panelsArr[0];
 		typeIt(firstPanel);
 		addScrollListener();
 	});
@@ -144,7 +151,7 @@ if(document.querySelector('.page-template-page-story_layout')) {
 function typeIt(panel) {
 	panel.fired = true;
 	if (!panel.complete && panel.type == "typed") {
-		let typed = new Typed(panel.typedEl, panel.typedOpts);
+		var typed = new Typed(panel.typedEl, panel.typedOpts);
 		if( panel.id == 2 ) {
 			runBlinkingAnimation("#panel-2 .character-1");
 		}
@@ -152,8 +159,8 @@ function typeIt(panel) {
 }
 
 function showTab(panel, btn) {
-	let tabs = document.querySelectorAll('#panel-' + panel.id + ' .js-tab');
-	let type = btn.dataset.contentRef;
+	var tabs = document.querySelectorAll('#panel-' + panel.id + ' .js-tab');
+	var type = btn.dataset.contentRef;
 
 	tabs.forEach((tab) => {
 		tab.classList.add('js-hidden');
@@ -194,9 +201,9 @@ function addScrollListener() {
 					if( el.classList.contains('js-active-panel') ) {
 
 						// Get panel obj from element if
-						let str = el.id;
-						let int = str.replace(/[^\d.]/g, '');
-						let currPanel = panelsArr.find((currPanel) => {
+						var str = el.id;
+						var int = str.replace(/[^\d.]/g, '');
+						var currPanel = panelsArr.find((currPanel) => {
 							return currPanel.id == int;
 						});
 
@@ -223,7 +230,7 @@ function addScrollListener() {
 
 
 function showButtons(btn) {
-	let tabbed = btn.length > 1;
+	var tabbed = btn.length > 1;
 	if( tabbed ) {
 		reveal(btn, true);
 	} else {

@@ -1,10 +1,4 @@
 
-function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-}
-
 // ----
 // Bubble Character 2
 // ----
@@ -20,7 +14,6 @@ function runBubbleAnimation() {
 			$text = document.querySelectorAll(".page-title"),
 			$bubbles = document.querySelectorAll(".bc-bubble"),
 			$body = document.querySelectorAll(".bc-body"),
-			// $people = document.querySelectorAll(".people-list li a"),
 			$mouth = document.querySelector(".bc-mouth");
 			$innerMouth = document.querySelector(".bc-inner-mouth"),
 			$eyeball = document.querySelector(".bc-eyeball");
@@ -83,6 +76,7 @@ function runBlinkingAnimation(parent) {
 
 	var characterVisible = false;
 	var tl = new TimelineLite();
+	var blink = new TimelineMax({ delay: 0.5, repeat: 20, repeatDelay: 2 });
 
 	tl.set(mainBody, { y: 150 });
 
@@ -99,33 +93,15 @@ function runBlinkingAnimation(parent) {
 		moveEye.add(TweenMax.to(pupils, 0.2, { x: 1, y: 2, rotation: 2, transformOrigin: "50% 100%" }));
 	}
 
-	var blink = new TimelineMax({ delay: 0.5, repeat: 20, repeatDelay: 2 });
-
 	blink.add(TweenMax.fromTo(eyes, 0.5, { fill: '#1B75BC' }, { fill: 'white' }));
 	blink.add(TweenMax.fromTo(pupils, 0.5, { fill: '#1B75BC' }, { fill: '#000000' }), '-=0.5');
 
 }
 
-// const string = document.querySelector(".panel-title").textContent;
+// Helpers
 
-// const array = string.split("");
-
-// var markup = "";
-
-// array.forEach(function(element) {
-// 	let span = `<span>${element}</span>`;
-// 	markup += span;
-// }, this);
-
-// document.querySelector(".panel-title").innerHTML = markup;
-// const spans = document.querySelectorAll('.panel-title span');
-
-// const panelTitle = document.querySelector('.panel-title');
-
-// var tl = new TimelineLite();
-
-// TweenMax.from(".sig", 1, { autoAlpha: 0, scale: 0, rotation: 360, drawSVG: 0, ease: Power4.easeInOut }, 0.1);
-
-// tl.from('.lara-name path', 1, { drawSVG: 0 } );
-
-// tl.to(panelTitle, 1, { scale: 1.2, x: 0, ease: Elastic.easeInOut, rotation: -40, autoAlpha: 1});
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}

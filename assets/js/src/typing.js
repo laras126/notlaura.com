@@ -20,11 +20,6 @@ var Helpers = {
 		panel.complete = true;
 	},
 
-	// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
-	insertAfter(referenceNode, newNode) {
-		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-	},
-
 	reveal(el, stagger = false) {
 		// Stagger animation if more than one element comes in.
 		if (stagger === true) {
@@ -75,7 +70,7 @@ function setupPanel(id) {
 
 		// Options for Typed plugin
 		panel.typedOpts = {
-			strings: [stringToType],
+			strings: [panel.stringToType],
 			typeSpeed: Helpers.defaultTypingSpeed,
 			showCursor: false,
 			onComplete: Helpers.onTypingComplete
@@ -102,13 +97,18 @@ var Panel = {
 		return el.innerHTML;
 	},
 
+	getTypingSrcElement(id) {
+		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
+		return el;
+	},
+
 	createTypedResultEl(id) {
-		var referenceEl = this.stringToType;
+		var referenceEl = this.getTypingSrcElement(id);
 		var div = document.createElement('div');
 		var resultEl = document.querySelector("#panel-" + id + ' .js-typed');
 				div.classList.add('js-typed', 'panel-content');
 				div.setAttribute('aria-hidden', 'true');
-				this.insertAfter(referenceEl, div);
+				insertAfter(referenceEl, div);
 		return resultEl;
 	}
 
@@ -240,8 +240,10 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 
 
-
-
+// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+function insertAfter(referenceNode, newNode) {
+	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
 
 
 function typeIt(panel) {

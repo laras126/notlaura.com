@@ -49,15 +49,7 @@ var UI = Object.assign( Object.create(Helpers), {
 		else this.reveal(btns);
 	},
 
-	createTypedResultEl(id) {
-		var referenceEl = this.typingSrc;
-		var div = document.createElement('div');
-		var resultEl = document.querySelector("#panel-" + id + ' .js-typed');
-				div.classList.add('js-typed', 'panel-content');
-				div.setAttribute('aria-hidden', 'true');
-				this.insertAfter(referenceEl, div);
-		return resultEl;
-	}
+
 });
 
 
@@ -73,22 +65,22 @@ function setupPanel(id) {
 	panel.complete = false;
 	panel.created = false;
 	panel.fired = false;
-	// panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
-	// panel.nextTrigger = UI.getNextTrigger(panel.id);
+	panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
+	panel.nextTrigger = panel.getNextTrigger(panel.id);
 
-	// // Options for "Typed" panels
-	// if( panel.panelType == "typed" ) {
-	// 	panel.stringToType = UI.getStringToType(panel.id);
-	// 	panel.typedResultEl = UI.createTypedResultEl(panel.id);
+	// Options for Typed panels
+	if( panel.panelType == "typed" ) {
+		panel.stringToType = panel.getStringToType(panel.id);
+		panel.typedResultEl = panel.createTypedResultEl(panel.id);
 
-	// 	// Options for Typed plugin
-	// 	panel.typedOpts = {
-	// 		strings: [stringToType],
-	// 		typeSpeed: Helpers.defaultTypingSpeed,
-	// 		showCursor: false,
-	// 		onComplete: Helpers.onTypingComplete
-	// 	}
-	// }
+		// Options for Typed plugin
+		panel.typedOpts = {
+			strings: [stringToType],
+			typeSpeed: Helpers.defaultTypingSpeed,
+			showCursor: false,
+			onComplete: Helpers.onTypingComplete
+		}
+	}
 
 	return panel;
 }
@@ -108,6 +100,16 @@ var Panel = {
 	getStringToType(id) {
 		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
 		return el.innerHTML;
+	},
+
+	createTypedResultEl(id) {
+		var referenceEl = this.stringToType;
+		var div = document.createElement('div');
+		var resultEl = document.querySelector("#panel-" + id + ' .js-typed');
+				div.classList.add('js-typed', 'panel-content');
+				div.setAttribute('aria-hidden', 'true');
+				this.insertAfter(referenceEl, div);
+		return resultEl;
 	}
 
 };

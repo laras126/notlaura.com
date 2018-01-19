@@ -32,7 +32,7 @@ var Helpers = {
 			tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
 		} else {
 			TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 });
-	}
+		}
 	}
 
 };
@@ -90,13 +90,6 @@ var Application = Object.assign( Object.create(UI), {
 		});
 	},
 
-	return panel;
-}
-
-
-var Panel = {
-
-	// Setting up Panel Functions
 	setUpChildren() {
 		var kids = this.el.children;
 		var nextPanelId = this.id + 1;
@@ -211,21 +204,6 @@ var Panel = {
 
 if(document.querySelector('.page-template-page-story_layout')) {
 
-	UI.panelElements.forEach((el, index) => {
-		// Create panel obj for each element
-		var p = new Panel(index);
-
-		// Add an id to each panel
-		el.id = 'panel-' + index;
-
-		// Mark objects created and set up children (buttons)
-		p.created = true;
-		p.setUpChildren();
-
-		panelsArr.push(p);
-	});
-
-
 	// Type first panel
 	document.addEventListener("DOMContentLoaded", function (event) {
 		var firstPanel = panelsArr[0];
@@ -234,6 +212,19 @@ if(document.querySelector('.page-template-page-story_layout')) {
 	});
 
 }; // end selector check
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function typeIt(panel) {
@@ -312,34 +303,8 @@ function addScrollListener() {
 
 
 
-// ----
-// Panel Helpers
-// ----
-
-
-
 
 // ----
 // General Helpers
 // ----
-
-// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
-function insertAfter(referenceNode, newNode) {
-	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-}
-
-function reveal(el, stagger = false) {
-	// Stagger aimation if more than one element comes in.
-	if (stagger == true) {
-		let tm = new TimelineMax();
-		tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
-	} else {
-		TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 });
-	}
-};
-
-function hide(el) {
-	TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", scale: 0, ease: Power2.easeOut, autoAlpha: 0 });
-}
-
 

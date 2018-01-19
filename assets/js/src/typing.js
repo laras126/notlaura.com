@@ -7,7 +7,6 @@
  * @link https://frontendmasters.com/courses/javascript-foundations/
  * @link https://stackoverflow.com/questions/29788181/kyle-simpsons-oloo-pattern-vs-prototype-design-pattern
 
-
  * This feature is the type-out-a-panel effect on the homepage of https://notlaura.com.
 
 */
@@ -17,11 +16,6 @@
 var Helpers = {
 	defaultTypingSpeed: 0,
 
-	showButtons(btns) {
-		var tabbed = Boolean(btns.length > 1);
-		if(tabbed) reveal(btns, true);
-		else reveal(btns);
-	},
 
 	onTypingComplete(panel) {
 		this.showButtons(panel.nextTrigger);
@@ -32,6 +26,12 @@ var Helpers = {
 
 var UI = Object.assign( Object.create(Helpers), {
 	panelElements: document.querySelectorAll('.panel'),
+
+	showButtons(btns) {
+		var tabbed = Boolean(btns.length > 1);
+		if(tabbed) reveal(btns, true);
+		else reveal(btns);
+	},
 
 	getNextTrigger(id) {
 		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
@@ -58,6 +58,7 @@ var UI = Object.assign( Object.create(Helpers), {
 var App = Object.assign( Object.create(UI), {
 
 });
+
 
 
 

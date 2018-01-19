@@ -38,32 +38,25 @@ var Helpers = {
 };
 
 var UI = Object.assign( Object.create(Helpers), {
-	panelElements: document.querySelectorAll('.panel'),
+
+	init() {
+
+	},
 
 	showButtons(btns) {
 		var tabbed = Boolean(btns.length > 1);
-		if(tabbed) reveal(btns, true);
-		else reveal(btns);
+		if(tabbed) this.reveal(btns, true);
+		else this.reveal(btns);
 	},
 
-	getNextTrigger(id) {
-		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
-		return triggers;
-	},
-
-	getStringToType(id) {
-		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
-		return el.innerHTML;
-	},
-
-	createTypedResultEl(content) {
-		var ref = this.typingSrc;
+	createTypedResultEl(id) {
+		var referenceEl = this.typingSrc;
 		var div = document.createElement('div');
+		var resultEl = document.querySelector("#panel-" + id + ' .js-typed');
 				div.classList.add('js-typed', 'panel-content');
 				div.setAttribute('aria-hidden', 'true');
-				insertAfter(ref, div);
-		var el = document.querySelector("#panel-" + int + ' .js-typed');
-		return el;
+				this.insertAfter(referenceEl, div);
+		return resultEl;
 	}
 });
 

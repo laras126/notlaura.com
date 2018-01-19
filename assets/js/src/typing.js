@@ -19,6 +19,21 @@ var Helpers = {
 	onTypingComplete(panel) {
 		this.showButtons(panel.nextTrigger);
 		panel.complete = true;
+	},
+
+	// https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+	insertAfter(referenceNode, newNode) {
+		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+	},
+
+	reveal(el, stagger = false) {
+		// Stagger animation if more than one element comes in.
+		if (stagger === true) {
+			var tm = new TimelineMax();
+			tm.staggerTo(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 }, 0.1);
+		} else {
+			TweenLite.to(el, .2, { delay: 0.5, transformOrigin: "50% 50%", ease: Power2.easeOut, autoAlpha: 1 });
+	}
 	}
 
 };

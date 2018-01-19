@@ -158,43 +158,42 @@ var Application = Object.assign( Object.create(UI), {
 		return nextPanel;
 	},
 
+	// NOTE: Could/should this be abstracted into a children object?
 	setUpPanelChildren(id) {
 		var panel = this.getPanel(id);
 		var nextPanel = this.getNextPanel(id);
 		var kids = panel.el.children;
 
-		// Analyze all element children – not a terribly efficient way to do this...
-		for (let i = 0; i < kids.length; i++) {
+		// Analyze all element children - perhaps there is a better way to
+		// select the relevant children rather than iterating over all of them...
+		for (var i = 0; i < kids.length; i++) {
 			var kid = kids[i];
 			var isNextButton = Boolean(kid.classList.contains('btn-next'));
 			var isDecisionPanel = Boolean(kid.classList.contains('js-decision'));
 
-			// Single button
 			if (isNextButton) {
-				kid.setAttribute('href', '#panel-' + nextPanelId);
+				kid.setAttribute('href', '#panel-' + nextPanel.id);
 			}
 
-			// Multiple buttons
-			if (kid.classList.contains('js-decision')) {
+			if (isDecisionPanel) {
 
 				// Add hrefs to links within buttons within li's!
-				for (let i = 0; i < kid.children.length; i++) {
-					kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
+				for (var i = 0; i < kid.children.length; i++) {
+					kid.children[i].setAttribute('href', '#panel-' + nextPanel.id);
 				}
 
 				kid.addEventListener('click', (e) => {
-					var nextPanel = this.getNextPanel();
 					var el = e.target;
-					var btns = document.querySelectorAll('#panel-' + this.id + ' button');
+					var btns = document.querySelectorAll('#panel-' + panel.id + ' button');
 
-					this.complete = true;
-					Helpers.showButtons(nextPanel.nextTrigger);
+					panel.complete = true;
+					this.showButtons(nextPanel.nextTrigger);
 
 					btns.forEach((b) => {
 						b.classList.remove('js-selected');
 					});
 
-					for (let i = 0; i < kid.children.length; i++) {
+					for (var i = 0; i < kid.children.length; i++) {
 						kid.children[i].classList.remove('js-selected');
 					}
 
@@ -213,6 +212,7 @@ var App = setupApp();
 App.init();
 
 console.log(App.panels);
+
 
 
 // ********************************

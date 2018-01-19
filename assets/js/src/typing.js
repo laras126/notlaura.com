@@ -1,7 +1,7 @@
 /*
  * To Mike, if you're reading this!
  * I recently completed Kyle Simpson's Deep JS Foundations class on
- * Frontend Masters and wanted to refactor this from an ES6 class architecture
+ * Frontend Masters and wanted to refactor this from an ES6 class
  * to the OLOO pattern he describes in the class.
 
  * @link https://frontendmasters.com/courses/javascript-foundations/
@@ -30,7 +30,7 @@ var Helpers = {
 
 };
 
-var UI = {
+var UI = Object.assign( Object.create(Helpers), {
 	panelElements: document.querySelectorAll('.panel'),
 
 	getNextTrigger(id) {
@@ -52,11 +52,16 @@ var UI = {
 		var el = document.querySelector("#panel-" + int + ' .js-typed');
 		return el;
 	}
-};
+});
 
-var panelsArr = [];
 
-var Panel =  {
+var App = Object.assign( Object.create(UI), {
+
+});
+
+
+
+var Panel =  Object.assign( Object.create(UI), {
 	init(id) {
 		this.id = id;
 		this.complete = false;
@@ -140,8 +145,12 @@ var Panel =  {
 
 		return nextPanel;
 	}
-}
+});
 
+
+var App = Object.assign( Object.create(Panel), {
+
+});
 
 // ********************************
 // ********************************

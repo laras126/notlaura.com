@@ -204,42 +204,6 @@ var Application = Object.assign( Object.create(UI), {
 		}
 	},
 
-};
-
-
-// ******************************************
-// ******************************************
-
-
-function setupApp() {
-	var app = Object.create(Application);
-	app.panels = [];
-
-	return app;
-}
-
-var Application = Object.assign( Object.create(UI), {
-	panelElements: document.querySelectorAll('.panel'),
-
-	init() {
-		this.createPanels();
-	},
-
-	createPanels() {
-		this.panelElements.forEach((DOMelement, index) => {
-			// Connect the element with this panel via this ID - TODO: use a data attr. or rel instead.
-			DOMelement.id = 'panel-' + index;
-
-			// Create panel obj for each element
-			var panel = setupPanel(index);
-			panel.created = true;
-			panel.setUpChildren();
-			this.panels.push(panel);
-
-		});
-	},
-
-
 });
 
 var App = setupApp();

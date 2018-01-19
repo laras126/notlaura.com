@@ -61,33 +61,62 @@ var UI = Object.assign( Object.create(Helpers), {
 });
 
 
+
 // ******************************************
 // ******************************************
 
 
-function setupApp() {
-	var app = Object.create(Application);
-	app.panels = [];
+function setupPanel(id) {
+	var panel = Object.create(Panel);
+	panel.id = id;
+	panel.el = document.querySelector("#panel-" + panel.id);
+	panel.complete = false;
+	panel.created = false;
+	panel.fired = false;
+	// panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
+	// panel.nextTrigger = UI.getNextTrigger(panel.id);
 
-	return app;
+	// // Options for "Typed" panels
+	// if( panel.panelType == "typed" ) {
+	// 	panel.stringToType = UI.getStringToType(panel.id);
+	// 	panel.typedResultEl = UI.createTypedResultEl(panel.id);
+
+	// 	// Options for Typed plugin
+	// 	panel.typedOpts = {
+	// 		strings: [stringToType],
+	// 		typeSpeed: Helpers.defaultTypingSpeed,
+	// 		showCursor: false,
+	// 		onComplete: Helpers.onTypingComplete
+	// 	}
+	// }
+
+	return panel;
 }
 
-var Application = Object.assign( Object.create(UI), {
-	panelElements: document.querySelectorAll('.panel'),
 
-	init() {
-		this.panelElements.forEach((DOMelement, index) => {
-			// Create panel obj for each element
-			var panel = setupPanel(id = index);
+var Panel = {
 
-			// Add an id to each panel
-			DOMelement.id = 'panel-' + index;
+	getId() {
+		return this.id;
+	},
 
-			panel.created = true;
-			panel.setUpChildren();
-			this.panels.push(panel);
+	getNextTrigger(id) {
+		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
+		return triggers;
+	},
 
-		});
+	getStringToType(id) {
+		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
+		return el.innerHTML;
+	},
+
+	getNextPanel(id) {
+		var nextId = id + 1;
+
+		// TODO panelsArr here
+		var nextPanel = panelsArr.find((panel) => panel.id == nextId);
+
+		return nextPanel;
 	},
 
 	setUpChildren() {
@@ -136,66 +165,48 @@ var Application = Object.assign( Object.create(UI), {
 		}
 	},
 
+};
+
+
+// ******************************************
+// ******************************************
+
+
+function setupApp() {
+	var app = Object.create(Application);
+	app.panels = [];
+
+	return app;
+}
+
+var Application = Object.assign( Object.create(UI), {
+	panelElements: document.querySelectorAll('.panel'),
+
+	init() {
+		this.createPanels();
+	},
+
+	createPanels() {
+		this.panelElements.forEach((DOMelement, index) => {
+			// Connect the element with this panel via this ID - TODO: use a data attr. or rel instead.
+			DOMelement.id = 'panel-' + index;
+
+			// Create panel obj for each element
+			var panel = setupPanel(index);
+			panel.created = true;
+			panel.setUpChildren();
+			this.panels.push(panel);
+
+		});
+	},
+
+
 });
 
 var App = setupApp();
 App.init();
 
-
-
-// ******************************************
-// ******************************************
-
-
-function setupPanel(id) {
-	var panel = Object.create(Panel);
-	panel.id = id;
-	panel.el = document.querySelector("#panel-" + panel.id);
-	panel.complete = false;
-	panel.created = false;
-	panel.fired = false;
-	panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
-	panel.nextTrigger = UI.getNextTrigger(panel.id);
-
-	// Options for "Typed" panels
-	if( panel.panelType == "typed" ) {
-		panel.stringToType = UI.getStringToType(panel.id);
-		panel.typedResultEl = UI.createTypedResultEl(panel.id);
-
-		// Options for Typed plugin
-		panel.typedOpts = {
-			strings: [stringToType],
-			typeSpeed: Helpers.defaultTypingSpeed,
-			showCursor: false,
-			onComplete: Helpers.onTypingComplete
-		}
-	}
-
-	return panel;
-}
-
-
-var Panel = {
-
-	getNextTrigger(id) {
-		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
-		return triggers;
-	},
-
-	getStringToType(id) {
-		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
-		return el.innerHTML;
-	},
-
-	getNextPanel(id) {
-		var nextId = id + 1;
-
-		// TODO panelsArr here
-		var nextPanel = panelsArr.find((panel) => panel.id == nextId);
-
-		return nextPanel;
-	}
-};
+console.log(App.panels);
 
 
 // ********************************
@@ -206,9 +217,9 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 	// Type first panel
 	document.addEventListener("DOMContentLoaded", function (event) {
-		var firstPanel = panelsArr[0];
-		typeIt(firstPanel);
-		addScrollListener();
+		// var firstPanel = panelsArr[0];
+		// typeIt(firstPanel);
+		// addScrollListener();
 	});
 
 }; // end selector check

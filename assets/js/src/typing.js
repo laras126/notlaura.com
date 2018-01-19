@@ -16,7 +16,6 @@
 var Helpers = {
 	defaultTypingSpeed: 0,
 
-
 	onTypingComplete(panel) {
 		this.showButtons(panel.nextTrigger);
 		panel.complete = true;
@@ -80,22 +79,25 @@ function setupPanel(id) {
 	panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
 	panel.nextTrigger = UI.getNextTrigger(panel.id);
 
-		// Options for "Typed" panels
+	// Options for "Typed" panels
 	if( panel.panelType == "typed" ) {
 		panel.stringToType = UI.getStringToType(panel.id);
 		panel.typedResultEl = UI.createTypedResultEl(panel.id);
 
-			// Options for Typed plugin
+		// Options for Typed plugin
 		panel.typedOpts = {
-				strings: [stringToType],
-				typeSpeed: Helpers.defaultTypingSpeed,
-				showCursor: false,
-				onComplete: Helpers.onTypingComplete
-			}
+			strings: [stringToType],
+			typeSpeed: Helpers.defaultTypingSpeed,
+			showCursor: false,
+			onComplete: Helpers.onTypingComplete
 		}
+	}
 
 	return panel;
 }
+
+
+var Panel = {
 
 	// Setting up Panel Functions
 	setUpChildren() {
@@ -137,7 +139,6 @@ function setupPanel(id) {
 
 					if (el && el.tagName == "BUTTON") {
 						var btn = el;
-						console.log('hi');
 						showTab(nextPanel, btn);
 					}
 				});
@@ -155,15 +156,12 @@ function setupPanel(id) {
 
 		return nextPanel;
 	}
-});
+};
 
-
-var App = Object.assign( Object.create(Panel), {
-
-});
 
 // ********************************
 // ********************************
+
 
 if(document.querySelector('.page-template-page-story_layout')) {
 
@@ -191,11 +189,12 @@ if(document.querySelector('.page-template-page-story_layout')) {
 
 }; // end selector check
 
+
 function typeIt(panel) {
 	panel.fired = true;
 	if (!panel.complete && panel.panelType == "typed") {
 		var typed = new Typed(panel.typedResultEl, panel.typedOpts);
-		if( panel.id == 2 ) {
+		if(panel.id == 2) { // TODO: Remove hardcoded panel (probably when data is put into CMS)
 			runBlinkingAnimation("#panel-2 .character-1");
 		}
 	}

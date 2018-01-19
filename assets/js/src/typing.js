@@ -165,6 +165,7 @@ var Application = Object.assign( Object.create(UI), {
 		for (let i = 0; i < kids.length; i++) {
 			var kid = kids[i];
 			var isNextButton = Boolean(kid.classList.contains('btn-next'));
+			var isDecisionPanel = Boolean(kid.classList.contains('js-decision'));
 
 			// Single button
 			if (isNextButton) {

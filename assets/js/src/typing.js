@@ -108,27 +108,66 @@ var Panel = {
 	getStringToType(id) {
 		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
 		return el.innerHTML;
+	}
+
+};
+
+
+// ******************************************
+// ******************************************
+
+
+function setupApp() {
+	var app = Object.create(Application);
+	app.panels = [];
+
+	return app;
+}
+
+var Application = Object.assign( Object.create(UI), {
+	panelElements: document.querySelectorAll('.panel'),
+
+	init() {
+		this.createPanels();
+	},
+
+	createPanels() {
+		this.panelElements.forEach((DOMelement, index) => {
+			// Connect the element with this panel via this ID - TODO: use a data attr. or rel instead.
+			DOMelement.id = 'panel-' + index;
+
+			// Create panel obj for each element
+			var panel = setupPanel(index);
+			panel.created = true;
+			this.setUpPanelChildren(index);
+			this.panels.push(panel);
+
+		});
+	},
+
+	getPanel(id) {
+		var panel = this.panels.find((panel) => panel.id == id);
+		return panel;
 	},
 
 	getNextPanel(id) {
-		var nextId = id + 1;
-
-		// TODO panelsArr here
-		var nextPanel = panelsArr.find((panel) => panel.id == nextId);
-
+		var nextPanelId = id + 1;
+		var nextPanel = this.getPanel(nextPanelId);
 		return nextPanel;
 	},
 
-	setUpChildren() {
-		var kids = this.el.children;
-		var nextPanelId = this.id + 1;
-		var nextPanel = this.getNextPanel();
+	setUpPanelChildren(id) {
+		var panel = this.getPanel(id);
+		var nextPanel = this.getNextPanel(id);
+		var kids = panel.el.children;
 
+		// Analyze all element children – not a terribly efficient way to do this...
 		for (let i = 0; i < kids.length; i++) {
 			var kid = kids[i];
+			var isNextButton = Boolean(kid.classList.contains('btn-next'));
 
 			// Single button
-			if (kid.classList.contains('btn-next')) {
+			if (isNextButton) {
 				kid.setAttribute('href', '#panel-' + nextPanelId);
 			}
 

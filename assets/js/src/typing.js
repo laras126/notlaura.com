@@ -17,12 +17,9 @@ var Helpers = {
 	defaultTypeSpeed: 0,
 
 	showButtons(btn) {
-		var tabbed = btn.length > 1;
-		if( tabbed ) {
-			reveal(btn, true);
-		} else {
-			reveal(btn);
-		}
+		var tabbed = Boolean(btn.length > 1);
+		if( tabbed ) reveal(btn, true);
+		else reveal(btn);
 	},
 
 	onTypingComplete(panel) {

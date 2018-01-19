@@ -11,9 +11,7 @@ It basically goes like this:
 
 */
 
-if(document.querySelector('.page-template-page-story_layout')) {
 
-	class Panel {
 
 var Helpers = {
 	defaultTypeSpeed: 0,
@@ -46,12 +44,12 @@ var UI = {
 	},
 	createTypedResultEl(content) {
 		var ref = this.typingSrc;
-					var div = document.createElement('div');
-							div.classList.add('js-typed', 'panel-content');
-							div.setAttribute('aria-hidden', 'true');
-							insertAfter(ref, div);
-					var el = document.querySelector("#panel-" + int + ' .js-typed');
-					return el;
+		var div = document.createElement('div');
+				div.classList.add('js-typed', 'panel-content');
+				div.setAttribute('aria-hidden', 'true');
+				insertAfter(ref, div);
+		var el = document.querySelector("#panel-" + int + ' .js-typed');
+		return el;
 	}
 };
 
@@ -74,78 +72,82 @@ var Panel =  {
 			this.typedResultEl = UI.createTypedResultEl(this.id);
 
 			// Options for Typed plugin
-				this.typedOpts = {
+			this.typedOpts = {
 				strings: [stringToType],
 				typeSpeed: Helpers.defaultTypeSpeed,
-					showCursor: false,
+				showCursor: false,
 				onComplete: Helpers.onTypingComplete
-					}
-				}
-	},
-
-		// Setting up Panel Functions
-		setUpChildren() {
-			var kids = this.el.children;
-			var nextPanelId = this.id + 1;
-			var nextPanel = this.getNextPanel();
-
-			for (let i = 0; i < kids.length; i++) {
-				var kid = kids[i];
-
-				// Single button
-				if (kid.classList.contains('btn-next')) {
-					kid.setAttribute('href', '#panel-' + nextPanelId);
-				}
-
-				// Multiple buttons
-				if (kid.classList.contains('js-decision')) {
-
-					// Add hrefs to links within buttons within li's!
-					for (let i = 0; i < kid.children.length; i++) {
-						kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
-					}
-
-					kid.addEventListener('click', (e) => {
-						var nextPanel = this.getNextPanel();
-						var el = e.target;
-						var btns = document.querySelectorAll('#panel-' + this.id + ' button');
-
-						this.complete = true;
-						showButtons(nextPanel.nextTrigger);
-
-						btns.forEach((b) => {
-							b.classList.remove('js-selected');
-						});
-
-						for (let i = 0; i < kid.children.length; i++) {
-							kid.children[i].classList.remove('js-selected');
-						}
-
-						if (el && el.tagName == "BUTTON") {
-							var btn = el;
-							console.log('hi');
-							showTab(nextPanel, btn);
-						}
-					});
-				}
 			}
 		}
+	},
 
-		getNextPanel() {
-			var currId = this.id;
-			var nextId = currId + 1;
+	// Setting up Panel Functions
+	setUpChildren() {
+		var kids = this.el.children;
+		var nextPanelId = this.id + 1;
+		var nextPanel = this.getNextPanel();
 
-			var nextPanel = panelsArr.find((panel) => {
-				return panel.id == nextId;
-			});
+		for (let i = 0; i < kids.length; i++) {
+			var kid = kids[i];
 
-			return nextPanel;
+			// Single button
+			if (kid.classList.contains('btn-next')) {
+				kid.setAttribute('href', '#panel-' + nextPanelId);
+			}
+
+			// Multiple buttons
+			if (kid.classList.contains('js-decision')) {
+
+				// Add hrefs to links within buttons within li's!
+				for (let i = 0; i < kid.children.length; i++) {
+					kid.children[i].setAttribute('href', '#panel-' + nextPanelId);
+				}
+
+				kid.addEventListener('click', (e) => {
+					var nextPanel = this.getNextPanel();
+					var el = e.target;
+					var btns = document.querySelectorAll('#panel-' + this.id + ' button');
+
+					this.complete = true;
+					Helpers.showButtons(nextPanel.nextTrigger);
+
+					btns.forEach((b) => {
+						b.classList.remove('js-selected');
+					});
+
+					for (let i = 0; i < kid.children.length; i++) {
+						kid.children[i].classList.remove('js-selected');
+					}
+
+					if (el && el.tagName == "BUTTON") {
+						var btn = el;
+						console.log('hi');
+						showTab(nextPanel, btn);
+					}
+				});
+			}
 		}
+	},
 
+	getNextPanel() {
+		var currId = this.id;
+		var nextId = currId + 1;
+
+		var nextPanel = panelsArr.find((panel) => {
+			return panel.id == nextId;
+		});
+
+		return nextPanel;
 	}
+}
 
 
-	PANELS.forEach((el, index) => {
+// ********************************
+// ********************************
+
+if(document.querySelector('.page-template-page-story_layout')) {
+
+	UI.panelElements.forEach((el, index) => {
 		// Create panel obj for each element
 		var p = new Panel(index);
 
@@ -171,8 +173,8 @@ var Panel =  {
 
 function typeIt(panel) {
 	panel.fired = true;
-	if (!panel.complete && panel.type == "typed") {
-		var typed = new Typed(panel.typedEl, panel.typedOpts);
+	if (!panel.complete && panel.panelType == "typed") {
+		var typed = new Typed(panel.typedResultEl, panel.typedOpts);
 		if( panel.id == 2 ) {
 			runBlinkingAnimation("#panel-2 .character-1");
 		}
@@ -249,21 +251,6 @@ function addScrollListener() {
 // Panel Helpers
 // ----
 
-
-function showButtons(btn) {
-	var tabbed = btn.length > 1;
-	if( tabbed ) {
-		reveal(btn, true);
-	} else {
-		reveal(btn);
-	}
-}
-
-function removeTypedSrc(elem) {
-	let srcEl = elem;
-	elem.nextSibling.setAttribute("aria-hidden", "false");
-	elem.parentNode.removeChild(srcEl);
-}
 
 
 

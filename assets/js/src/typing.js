@@ -55,18 +55,33 @@ var UI = {
 	}
 };
 
-				// Options for all panels
+var panelsArr = [];
+
+var Panel =  {
+	init(id) {
+		this.id = id;
+		this.complete = false;
+		this.created = false;
+		this.fired = false;
+
+		this.el = document.querySelector("#panel-" + this.id);
+		this.panelType = "type" in this.el.dataset ? this.el.dataset.type : "typed";
+		this.nextTrigger = UI.getNextTrigger(this.id);
+
+		// Options for "Typed" panels
+		if( this.panelType == "typed" ) {
+			this.stringToType = UI.getStringToType(this.id);
+			this.typedResultEl = UI.createTypedResultEl(this.id);
+
+			// Options for Typed plugin
 				this.typedOpts = {
-					strings: [this.typedSrc.innerHTML],
-					typeSpeed: TYPE_SPEED,
+				strings: [stringToType],
+				typeSpeed: Helpers.defaultTypeSpeed,
 					showCursor: false,
-					onComplete: () => {
-						showButtons(this.nextTrigger);
-						this.complete = true;
+				onComplete: Helpers.onTypingComplete
 					}
 				}
-			}
-		}
+	},
 
 		// Setting up Panel Functions
 		setUpChildren() {

@@ -69,24 +69,32 @@ var Panel =  Object.assign( Object.create(UI), {
 		this.created = false;
 		this.fired = false;
 
-		this.el = document.querySelector("#panel-" + this.id);
-		this.panelType = "type" in this.el.dataset ? this.el.dataset.type : "typed";
-		this.nextTrigger = UI.getNextTrigger(this.id);
+function setupPanel(id) {
+	var panel = Object.create(Panel);
+	panel.id = id;
+	panel.el = document.querySelector("#panel-" + panel.id);
+	panel.complete = false;
+	panel.created = false;
+	panel.fired = false;
+	panel.panelType = "type" in panel.el.dataset ? panel.el.dataset.type : "typed";
+	panel.nextTrigger = UI.getNextTrigger(panel.id);
 
 		// Options for "Typed" panels
-		if( this.panelType == "typed" ) {
-			this.stringToType = UI.getStringToType(this.id);
-			this.typedResultEl = UI.createTypedResultEl(this.id);
+	if( panel.panelType == "typed" ) {
+		panel.stringToType = UI.getStringToType(panel.id);
+		panel.typedResultEl = UI.createTypedResultEl(panel.id);
 
 			// Options for Typed plugin
-			this.typedOpts = {
+		panel.typedOpts = {
 				strings: [stringToType],
 				typeSpeed: Helpers.defaultTypingSpeed,
 				showCursor: false,
 				onComplete: Helpers.onTypingComplete
 			}
 		}
-	},
+
+	return panel;
+}
 
 	// Setting up Panel Functions
 	setUpChildren() {

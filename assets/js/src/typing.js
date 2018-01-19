@@ -55,19 +55,20 @@ var UI = Object.assign( Object.create(Helpers), {
 });
 
 
-var App = Object.assign( Object.create(UI), {
+// ******************************************
+// ******************************************
+
+function setupApp() {
+	var app = Object.create(Application);
+	app.panelsArr = [];
+
+	return app;
+}
+
+var Application = Object.assign( Object.create(UI), {
 
 });
 
-
-
-
-var Panel =  Object.assign( Object.create(UI), {
-	init(id) {
-		this.id = id;
-		this.complete = false;
-		this.created = false;
-		this.fired = false;
 
 function setupPanel(id) {
 	var panel = Object.create(Panel);

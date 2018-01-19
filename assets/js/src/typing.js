@@ -1,36 +1,38 @@
 /*
-	Homepage panel/typing effect. It goes like this:
-	- Each panel
+
+To Mike, if you're reading this! I recently completed Kyle Simpson's Deep JS Foundations
+class on Front-end Masters and wanted to refactor this based on my new knowledge.
+
+This feature is the type-out-a-panel effect on the homepage of https://notlaura.com.
+It basically goes like this:
+
+1. Create Panel objects from the DOM elements rendeded by the server
+
+
 */
-
-
-
-
-const TYPE_SPEED = 0;
-const PANELS = document.querySelectorAll('.panel');
-
-var panelsArr = [];
 
 if(document.querySelector('.page-template-page-story_layout')) {
 
 	class Panel {
 
-		constructor(int) {
+var Helpers = {
+	defaultTypeSpeed: 0,
 
-			this.id = int;
-			this.el = document.querySelector("#panel-" + this.id);
-			this.complete = false;
-			this.created = false;
-			this.type = "type" in this.el.dataset ? this.el.dataset.type : "typed";
-			this.fired = false;
+	showButtons(btn) {
+		var tabbed = btn.length > 1;
+		if( tabbed ) {
+			reveal(btn, true);
+		} else {
+			reveal(btn);
+		}
+	},
 
-			this.nextTrigger = ((int) => {
-				trigger = document.querySelectorAll('#panel-' + int + ' .btn-next');
-				return trigger;
-			})(this.id);
+	onTypingComplete(panel) {
+		this.showButtons(panel.nextTrigger);
+		panel.complete = true;
+	}
 
-			// Options for "Typed" panels (most of them)
-			if( this.type == "typed" ) {
+};
 
 				// Find source for typing
 				this.typedSrc = ((int) => {

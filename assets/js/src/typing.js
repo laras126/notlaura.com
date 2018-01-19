@@ -34,22 +34,26 @@ var Helpers = {
 
 };
 
-				// Find source for typing
-				this.typedSrc = ((int) => {
-					var el = document.querySelector("#panel-" + int + ' .js-typed-src');
-					return el;
-				})(this.id);
-
-				// Create an element to hold typed content
-				this.typedEl = ((int) => {
-					var ref = this.typedSrc;
+var UI = {
+	panelElements: document.querySelectorAll('.panel'),
+	getNextTrigger(id) {
+		var triggers = document.querySelectorAll('#panel-' + id + ' .btn-next');
+		return triggers;
+	},
+	getStringToType(id) {
+		var el = document.querySelector("#panel-" + id + ' .js-typed-src');
+		return el.innerHTML;
+	},
+	createTypedResultEl(content) {
+		var ref = this.typingSrc;
 					var div = document.createElement('div');
 							div.classList.add('js-typed', 'panel-content');
 							div.setAttribute('aria-hidden', 'true');
 							insertAfter(ref, div);
 					var el = document.querySelector("#panel-" + int + ' .js-typed');
 					return el;
-				})(this.id);
+	}
+};
 
 				// Options for all panels
 				this.typedOpts = {

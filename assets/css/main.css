@@ -1165,7 +1165,7 @@ blockquote {
   padding-right: 1.43rem;
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
-  background-image: linear-gradient(to bottom right, #ffffff, #f4f7f9);
+  background-color: #ffffff;
   font-style: italic; }
   blockquote > p:first-child {
     margin-top: 0; }
@@ -2856,7 +2856,7 @@ code {
         -ms-grid-columns: (minmax(200px, 450px))[3];
             grid-template-columns: repeat(3, minmax(200px, 450px)); } } }
 
-.widget p, .widget li, .widget a {
+.widget p, .widget li, .widget a, .widget input {
   font-size: 0.88rem; }
 
 .-footer .widget {

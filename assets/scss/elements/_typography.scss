@@ -159,7 +159,7 @@ blockquote {
 	padding-top: $base;
 	padding-bottom: $base;
 
-	background-image: linear-gradient(to bottom right, $white, $accent-vlight);
+	background-color: $white;
   font-style: italic;
 
 	& > p:first-child {

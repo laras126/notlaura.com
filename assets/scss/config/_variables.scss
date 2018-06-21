@@ -5,7 +5,6 @@
 // ---- Colors
 // ----
 
-
 // $dark-blue: 		#0b5c84;
 $dark-blue: 	#1b75bc;
 $light-blue: 		#27A9E0;
@@ -63,7 +62,6 @@ $rotate-text: 		$text-light;
 $rotate-link: 		$text-light;
 
 $table-rotate: 		lighten($alert-info, 50%);
-
 
 
 
@@ -131,3 +129,12 @@ $zmid: 				$zbase+2;
 $ztop: 				$zbase+3;
 $ztiptop: 		$zbase+4;
 
+
+
+// Expose variables for Gutenberg
+// Hard coding values bc Sass not working in CP for some reason and I don't feel like fixing it now
+:root {
+  --textDark: #242F4A;
+  --accentBorder: 1px solid rgba(39, 169, 224, 0.4);
+  --accentBorderThick: 5px solid #E0E6F2;
+}

@@ -54,9 +54,16 @@ input[type="tel"] {
 	border-radius: 2px;
 	transition: 0.2s ease all;
 
-	&:focus {
-		// border-color: $accent-med;
+	&:focus:not(.email) {
 		outline: 5px solid $accent-light;
+	}
+
+	&.email {
+		border: 2px solid rgba($accent-vlight, 0);
+
+		&:focus {
+			border-color: $accent-med;
+		}
 	}
 }
 

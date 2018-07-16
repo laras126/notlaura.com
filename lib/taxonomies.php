@@ -38,5 +38,33 @@ $args = array(
 );
 register_taxonomy( 'project-type', array( 'project' ), $args );
 
+// Series
+$series_labels = array(
+	'name'                       => _x( 'Series', 'Taxonomy General Name', 'notlaura' ),
+	'singular_name'              => _x( 'Series', 'Taxonomy Singular Name', 'notlaura' ),
+	'menu_name'                  => __( 'Series', 'notlaura' ),
+	'all_items'                  => __( 'All Types', 'notlaura' ),
+	'parent_item'                => __( 'Parent Series', 'notlaura' ),
+	'parent_item_colon'          => __( 'Parent Series:', 'notlaura' ),
+	'new_item_name'              => __( 'New Series', 'notlaura' ),
+	'add_new_item'               => __( 'Add Series', 'notlaura' ),
+	'edit_item'                  => __( 'Edit Type', 'notlaura' ),
+	'update_item'                => __( 'Update Type', 'notlaura' ),
+	'separate_items_with_commas' => __( 'Separate items with commas', 'notlaura' ),
+	'search_items'               => __( 'Search Items', 'notlaura' ),
+	'add_or_remove_items'        => __( 'Add or remove items', 'notlaura' ),
+	'choose_from_most_used'      => __( 'Choose from the most used items', 'notlaura' ),
+	'not_found'                  => __( 'Not Found', 'notlaura' ),
+);
+$series_args = array(
+	'labels'                     => $series_labels,
+	'hierarchical'               => true,
+	'public'                     => true,
+	'show_ui'                    => true,
+	'show_admin_column'          => true,
+	'show_in_nav_menus'          => true,
+	'show_tagcloud'              => true,
+);
+register_taxonomy( 'series', array( 'post' ), $series_args );
 
  ?>

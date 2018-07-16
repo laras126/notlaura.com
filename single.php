@@ -9,12 +9,29 @@
  * @since    Timber 0.1
  */
 
+$series = Timber::get_terms('series');
+$series_args = array(
+	'post_type' => 'post',
+		'numberposts' => -1,
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'series',
+			'field' => 'id',
+			'terms' => $series[0]->term_id
+		)
+	)
+);
 
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 $context['categories'] = Timber::get_terms('category', array('parent' => 0));
 $context['wp_title'] .= ' - ' . $post->title();
+
+if( count($series) > 0 ) {
+	$context['series_title'] = $series[0]->name;
+	$context['series_posts'] = Timber::get_posts($series_args);
+}
 
 if (post_password_required($post->ID)){
 	Timber::render('single-password.twig', $context);

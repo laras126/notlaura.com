@@ -23,6 +23,9 @@
 		</header>
 
 		<div class="module-content single-content">
+			{% if series_posts %}
+				{% include 'partials/series-list.twig' with { current_id: post.id, series_title: series_title} %}
+			{% endif %}
 			{% if post.content %}
 				{{post.content}}
 			{% else %}

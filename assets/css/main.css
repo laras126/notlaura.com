@@ -1100,21 +1100,51 @@ input[type="tel"] {
   input[type="search"], .fonts-loaded
   input[type="tel"] {
     font-family: "Inter UI", "system", Arial, sans-serif; }
-  textarea:focus,
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="date"]:focus,
-  input[type="month"]:focus,
-  input[type="time"]:focus,
-  input[type="week"]:focus,
-  input[type="number"]:focus,
-  input[type="email"]:focus,
-  input[type="url"]:focus,
-  input[type="search"]:focus,
-  input[type="tel"]:focus {
+  textarea:focus:not(.email),
+  input[type="text"]:focus:not(.email),
+  input[type="password"]:focus:not(.email),
+  input[type="datetime"]:focus:not(.email),
+  input[type="datetime-local"]:focus:not(.email),
+  input[type="date"]:focus:not(.email),
+  input[type="month"]:focus:not(.email),
+  input[type="time"]:focus:not(.email),
+  input[type="week"]:focus:not(.email),
+  input[type="number"]:focus:not(.email),
+  input[type="email"]:focus:not(.email),
+  input[type="url"]:focus:not(.email),
+  input[type="search"]:focus:not(.email),
+  input[type="tel"]:focus:not(.email) {
     outline: 5px solid #E0E6F2; }
+  textarea.email,
+  input[type="text"].email,
+  input[type="password"].email,
+  input[type="datetime"].email,
+  input[type="datetime-local"].email,
+  input[type="date"].email,
+  input[type="month"].email,
+  input[type="time"].email,
+  input[type="week"].email,
+  input[type="number"].email,
+  input[type="email"].email,
+  input[type="url"].email,
+  input[type="search"].email,
+  input[type="tel"].email {
+    border: 2px solid rgba(244, 247, 249, 0); }
+    textarea.email:focus,
+    input[type="text"].email:focus,
+    input[type="password"].email:focus,
+    input[type="datetime"].email:focus,
+    input[type="datetime-local"].email:focus,
+    input[type="date"].email:focus,
+    input[type="month"].email:focus,
+    input[type="time"].email:focus,
+    input[type="week"].email:focus,
+    input[type="number"].email:focus,
+    input[type="email"].email:focus,
+    input[type="url"].email:focus,
+    input[type="search"].email:focus,
+    input[type="tel"].email:focus {
+      border-color: #27A9E0; }
 
 input[type="radio"],
 input[type="checkbox"] {

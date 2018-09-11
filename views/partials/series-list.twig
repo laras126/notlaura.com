@@ -1,7 +1,9 @@
-<h3>{{series_title}}</h3>
-<ul>
-  {% for entry in series_posts %}
-    {% set current_post = entry.id == current_id %}
-    <li {{ current_post == true ? : 'class="current"' }}><a href="{{entry.link}}">{{entry.title}}</a></li>
-  {% endfor %}
-</ul>
+<section class="series">
+  <h3 class="series__title">{{series_title}}</h3>
+  <ul class="series__list">
+    {% for entry in series_posts %}
+      {% set current_post = entry.id == current_id %}
+      <li class="series__list-item {{ current_post == true ? : 'current' }}"><a href="{{entry.link}}">{{entry.title}}</a></li>
+    {% endfor %}
+  </ul>
+</section>

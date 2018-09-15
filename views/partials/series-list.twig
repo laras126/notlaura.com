@@ -1,9 +1,20 @@
-<section class="series">
+<nav class="series">
+  <span class="series__label">A series!</span>
   <h3 class="series__title">{{series_title}}</h3>
-  <ul class="series__list">
+  <ol class="series__list">
     {% for entry in series_posts %}
       {% set current_post = entry.id == current_id %}
-      <li class="series__list-item {{ current_post == true ? : 'current' }}"><a href="{{entry.link}}">{{entry.title}}</a></li>
+      <li class="series__list-item {{ current_post == true ? 'current' : '' }}">
+        {% if not current_post %}
+          <a href="{{entry.link}}">
+        {% endif %}
+        {{entry.title|preg_replace("/.+?(: )/", '')}}</a>
+        {% if not current_post %}
+          </a>
+        {% else %}
+          <span class="series__marker">&larr; You Are Here</span>
+        {% endif %}
+      </li>
     {% endfor %}
-  </ul>
-</section>
+  </ol>
+</nav>

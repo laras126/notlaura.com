@@ -1,0 +1,43 @@
+.series {
+    @include card( $border-top: false );
+    position: relative;
+    overflow: hidden;
+}
+
+.series__label {
+    display: block;
+    font-size: $sml;
+    font-weight: $font-weight-strong;
+    @include upperspace;
+    
+    @supports ( --color: blue ) {
+        --offset: #{$sml};
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 220px;
+        transform: translateX(calc(100% / 3)) translateY(calc(50% + var(--offset)))  rotate(45deg);
+        transform-origin: center center;
+        text-align: center;
+        background-color: $accent-med;
+        color: $white;
+    }
+}
+
+.series__title {
+    margin-top: 0;
+    font-size: $h4;
+    display: inline-block;
+}
+
+.series__list-item {
+    &.current {
+        font-weight: $font-weight-strong;        
+    }
+}
+
+.series__marker {
+    font-weight: normal;
+    color: $alert-success;
+}

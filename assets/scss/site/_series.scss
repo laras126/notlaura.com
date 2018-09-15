@@ -2,6 +2,8 @@
     @include card( $border-top: false );
     position: relative;
     overflow: hidden;
+    // margin-left: -$grid-gap;
+    // width: calc( 100% + #{$grid-gap * 2});
 }
 
 .series__label {
@@ -32,6 +34,7 @@
 }
 
 .series__list-item {
+ 
     &.current {
         font-weight: $font-weight-strong;        
     }

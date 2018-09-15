@@ -12,7 +12,9 @@
 $series = Timber::get_terms('series');
 $series_args = array(
 	'post_type' => 'post',
-		'numberposts' => -1,
+	'numberposts' => -1,
+	'orderby'     => 'date',
+	'order'       => 'ASC',
 	'tax_query' => array(
 		array(
 			'taxonomy' => 'series',

@@ -31,7 +31,7 @@ $context['categories'] = Timber::get_terms('category', array('parent' => 0));
 $context['wp_title'] .= ' - ' . $post->title();
 
 if( count($series) > 0 ) {
-	$context['series_title'] = $series[0]->name;
+	$context['series'] = $series[0];
 	$context['series_posts'] = Timber::get_posts($series_args);
 }
 

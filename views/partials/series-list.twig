@@ -1,6 +1,7 @@
 <nav class="series">
   <span class="series__label">A series!</span>
-  <h3 class="series__title">{{series_title}}</h3>
+  <h3 class="series__title">{{series.name}}</h3>
+  <p class="meta">{{ series.description }}</p>
   <ol class="series__list">
     {% for entry in series_posts %}
       {% set current_post = entry.id == current_id %}

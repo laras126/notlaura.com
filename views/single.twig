@@ -38,7 +38,11 @@
 					<a href="{{post.link_url}}" class="btn -has-icon">Visit Link {% include "svgs/link.twig" with { class: 'icon-inline' } %}</a>
 				</p>
 			{% endif %}
-
+			
+			{% if series_posts %}
+				{% include 'partials/series-list.twig' with { current_id: post.id, series_title: series_title} %}
+			{% endif %}
+			
 			{{ include('partials/comments.twig') }}
 
 		</div>

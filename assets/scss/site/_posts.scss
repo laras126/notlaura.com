@@ -48,14 +48,7 @@
 }
 
 .post {
-	padding-top: $grid-gap;
-	padding-bottom: $grid-gap;
-	border: 1px solid $accent-light;
-	background: $white;
-	border-top: 5px solid $accent-med;
-	padding-right: $grid-gap;
-	padding-left: $grid-gap;
-	margin-bottom: $grid-gap;
+	@include card;
 
 	@include bp(large) {
 		margin-bottom: 0;

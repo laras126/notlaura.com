@@ -44,8 +44,6 @@
   border-bottom: none;
 }
 
-
-
 @mixin icon($fill, $hover: $accent-med, $size: $h2, $inline: false) {
 	width: $size;
 	height: $size;
@@ -203,4 +201,19 @@ $MQs: true;
   @if $color {
     color: $color;
   }
+}
+
+// ----
+// Layouts
+// ----
+@mixin card($border-top: 5px solid $accent-med) {
+  border: 1px solid $accent-light;
+  background-color: $white;
+  
+  @if $border-top {
+    border-top: $border-top;
+  }
+  
+  padding: $grid-gap;
+  margin-bottom: $grid-gap;
 }

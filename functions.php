@@ -71,6 +71,11 @@
 			/* this is where you can add your own fuctions to twig */
 			$twig->addExtension(new Twig_Extension_StringLoader());
 			$twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
+			$twig->addFilter('preg_replace', new Twig_Filter_Function(
+				function ($subject, $pattern, $replacement) {
+					return preg_replace($pattern, $replacement, $subject);
+				}
+			));
 			return $twig;
 		}
 

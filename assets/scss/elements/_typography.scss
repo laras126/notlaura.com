@@ -136,7 +136,7 @@ ul, ol {
 p {
 	font-size: $base;
 	margin-top: $base;
-	margin-bottom: 0;
+	margin-bottom: $base;
 }
 
 small {

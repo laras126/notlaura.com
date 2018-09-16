@@ -2,8 +2,11 @@
     @include card( $border-top: false );
     position: relative;
     overflow: hidden;
-    // margin-left: -$grid-gap;
-    // width: calc( 100% + #{$grid-gap * 2});
+
+    @include bp(med) {
+        margin-left: -$grid-gap;
+        width: calc( 100% + #{$grid-gap * 2});
+    }
 }
 
 .series__label {

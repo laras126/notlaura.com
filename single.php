@@ -9,7 +9,8 @@
  * @since    Timber 0.1
  */
 
-$series = Timber::get_terms('series');
+$post = Timber::query_post();
+$series = get_the_terms($post, 'series');
 $series_args = array(
 	'post_type' => 'post',
 	'numberposts' => -1,
@@ -25,7 +26,6 @@ $series_args = array(
 );
 
 $context = Timber::get_context();
-$post = Timber::query_post();
 $context['post'] = $post;
 $context['categories'] = Timber::get_terms('category', array('parent' => 0));
 $context['wp_title'] .= ' - ' . $post->title();

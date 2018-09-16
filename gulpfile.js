@@ -32,22 +32,22 @@ var babelFileList = [
 // var entryPoint = './assets/js/src/main.js';
 
 gulp.task('sass', function() {
-  return gulp.src('assets/scss/main.scss')
+  return gulp.src('assets/scss/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
-      errLogToConsole: false,
+      errLogToConsole: true,
       onError: function(err) {
         return notify().write(err);
-      }
+      },
     }))
-    // TODO enable
+    .pipe(sourcemaps.write())
     .pipe(autoprefix({
         browsers: 'last 5 versions'
     }))
     .pipe(gulp.dest('./assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
-    .pipe(gulp.dest('./assets/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest('./assets/css'));
 });
 
 // https://gist.github.com/dverbovyi/7f71879bec8a16847dee

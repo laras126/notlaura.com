@@ -4,10 +4,10 @@
 	// Force HTTPS for production environment (htaccess causes redirect loop)
 	// https://stackoverflow.com/questions/45729313/wordpress-forcing-ssl-with-htaccess-leads-to-redirect-loop-when-using-polylan
 	
-	// if($_SERVER["HTTPS"] != "on" && WP_ENV == 'production') {
-	// 	header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-	// 	exit();
-	// }
+	if($_SERVER["HTTPS"] != "on" && WP_ENV == 'production') {
+		header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+		exit();
+	}
 
 	if (!class_exists('Timber')){
 		add_action( 'admin_notices', function(){

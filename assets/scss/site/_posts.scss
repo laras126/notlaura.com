@@ -94,7 +94,8 @@
 
 
 .tease-meta,
-.single-meta {
+.single-meta,
+.wp-block-quote cite {
 	@include meta($text-med);
 	padding-top: $sml;
 }

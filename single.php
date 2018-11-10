@@ -15,7 +15,6 @@ $series = get_the_terms($post, 'series');
 $context = Timber::get_context();
 $context['post'] = $post;
 $context['categories'] = Timber::get_terms('category', array('parent' => 0));
-$context['wp_title'] .= ' - ' . $post->title();
 
 if( is_array( $series ) ) {
 	$series_args = array(

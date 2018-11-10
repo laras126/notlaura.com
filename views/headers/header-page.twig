@@ -20,9 +20,12 @@
 			{% endif %}
 		</div>
 
-		<div class="">
-			{% include "partials/srcset.twig" with { img: post.image } %}
-		</div>
+		<figure class="c-header-image">
+			{% include "partials/srcset.twig" with { img: post.image, class: 'u-full-width' } %}
+			{% if TimberImage(post.image).caption %}
+				<figcaption class="meta-greyed">{{TimberImage(post.image).caption}}</figcaption>
+			{% endif %}
+		</figure>
 
 	{% endif %}
 

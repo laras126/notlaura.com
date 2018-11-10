@@ -68,6 +68,15 @@
 	}
 }
 
+
+// Oops, these are now components!!
+
 .o-tease--format-image .c-tease-title {
 	font-size: calc( #{$sml} + 1vw );
+}
+
+.c-header-image {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

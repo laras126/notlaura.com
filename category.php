@@ -14,14 +14,17 @@
  * @since 		Timber 0.2
  */
 
-		$templates = array('archive.twig', 'index.twig');
+$templates = array('archive.twig', 'index.twig');
 
-		$data = Timber::get_context();
+$data = Timber::get_context();
 
-		$cat = new TimberTerm();
-		$data['category'] = $cat;
-		$data['title'] = $cat->name;
-		$data['posts'] = Timber::get_posts();
+$cat = new TimberTerm();
+$data['term'] = $cat;
+$data['pagination'] = Timber::get_pagination();
+$data['posts'] = Timber::get_posts();
 
-		Timber::render(array('category-' . $cat->name . '.twig', 'archive.twig', 'index.twig'), $data);
+if ( $cat->name !== 'Monsters' ) {
+	$data['sidebar'] = Timber::get_sidebar('sidebar.php');
+}
 
+Timber::render(array('category-' . $cat->name . '.twig', 'archive.twig', 'index.twig'), $data);

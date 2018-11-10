@@ -328,7 +328,10 @@ $rail: minmax(70px, 175px);
 
 .grid-tease .tease-content {
   @include bp(small) {
-    padding-right: $grid-gap;
+	padding-right: $grid-gap;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

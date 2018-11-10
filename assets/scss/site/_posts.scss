@@ -34,17 +34,8 @@
 }
 
 .tease-thumb {
-	max-height: 400px;
-	min-height: 100px;
-	overflow: hidden;
-
-	@include bp(med) {
-		max-height: none;
-	}
-
 	display: flex;
 	flex-direction: column;
-
 }
 
 .post {

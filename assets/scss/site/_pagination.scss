@@ -23,17 +23,19 @@
 
 .prev,
 .next {
-	.blog & {
+	.blog &,
+	.archive & {
 		@include button($accent-dark);
-			display: inline-block;
-			font-size: $sml;
-			background-repeat: no-repeat;
-			padding: $xsml;
-			margin-top: $xsml;
-			span {
-				font-size: $xsml;
-				@include upperspace;
-			}
+		display: inline-block;
+		font-size: $sml;
+		background-repeat: no-repeat;
+		padding: $xsml;
+		margin-top: $xsml;
+		
+		span {
+			font-size: $xsml;
+			@include upperspace;
+		}
 	}
 
 	.single & {

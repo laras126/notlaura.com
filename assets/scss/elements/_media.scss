@@ -114,12 +114,13 @@ figcaption,
 img.lazyload,
 img.lazyloading {
 	width: 100%;
-	filter: blur(2px);
-	transition: filter 400ms,
+	opacity: 0.5;
+	transition: opacity 400ms;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 img.lazyloaded {
-	filter: blur(0);
+	opacity: 1;
 }
 
 

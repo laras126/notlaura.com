@@ -1,0 +1,23 @@
+
+.u-sticky-100\@med {
+	@include bp(med) {
+		@supports( position: sticky ) {
+			position: sticky;
+			top: 100px;
+		}
+	}
+}
+
+.u-display-contents {
+	@supports( display: contents ) {
+		display: contents;
+	}
+}
+
+.u-border-bottom-0 {
+	border-bottom: 0;
+}
+
+.u-max-width-text {
+	max-width: 700px;
+}

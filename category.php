@@ -27,4 +27,4 @@ if ( $cat->name !== 'Monsters' ) {
 	$data['sidebar'] = Timber::get_sidebar('sidebar.php');
 }
 
-Timber::render(array('category-' . $cat->name . '.twig', 'archive.twig', 'index.twig'), $data);
+Timber::render(array('category-' . $cat->slug . '.twig', 'archive.twig', 'index.twig'), $data);

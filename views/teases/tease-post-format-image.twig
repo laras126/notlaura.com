@@ -1,0 +1,21 @@
+<li class="o-tease o-tease--format-image | {{"sticky" in post.class ? "sticky"}}" id="tease-{{post.ID}}">		
+	<header class="o-tease-header | tease-header">
+		<span class="u-sticky-100@med">
+			<h3 class="c-tease-title | tease-title">{{post.title}}</h3>
+			<p>{{post.post_excerpt|striptags}}</p>
+			<small class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time>, <a href="{{post.link}}">permalink.</a></small>
+		</span>
+	</header>
+
+	<figure class="o-tease-thumb | tease-thumb">
+		{% if post.get_thumbnail %}
+			{% set alt = post.thumbnail._wp_attachment_image_alt %}
+			{% include "partials/srcset.twig" with { 
+				img: post.thumbnail.id, class: 'lazyload tease-thumb-img', 
+				alt: (alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;') 
+			} %}
+		{% else %}
+			{% include 'svgs/default-thumb.svg' %}
+		{% endif %}
+	</figure>
+</li>

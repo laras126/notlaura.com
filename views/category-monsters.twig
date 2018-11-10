@@ -3,8 +3,7 @@
 {% block header %}
 <header class="o-header">
 	<div class="inner-pad grid-main">
-
-		<div class="main-content">
+		<div class="main-content u-max-width-text">
 			<h1 class="header-title">{{ term ? term.name : title }}</h1>
 			{% if term.description %}
 				<p class="header-lead">{{ term.description }}</p>
@@ -16,10 +15,10 @@
 
 
 {% block content %}
-
-	<ol class="o-tease-loop | tease-loop grid-loop">
+	<ol class="o-tease-loop">
 		{% for post in posts %}
-			{% include 'teases/tease-post.twig' %}
+			{% set extension = post.format != 'standard' ? '-format-' ~ post.format : '' %}
+			{% include 'teases/tease-post' ~ extension ~ '.twig' %}
 		{% endfor %}
 	</ol>
 
@@ -33,4 +32,7 @@
 		{% endif %}
 	</nav> <!-- /.pagination -->
 
+{% endblock %}
+
+{% block sidebar %}
 {% endblock %}

@@ -19,9 +19,13 @@
 	return;
 }
 
+$exclude_monsters = [
+	'category__not_in' => get_cat_ID( 'Monsters' )
+];
+
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
-$context['sidebar'] = Timber::get_sidebar('sidebar.php');
+$context['posts'] = Timber::get_posts( $exclude_monsters );
+$context['sidebar'] = Timber::get_sidebar( 'sidebar.php' );
 $context['pagination'] = Timber::get_pagination();
 
 $templates = array('index.twig');

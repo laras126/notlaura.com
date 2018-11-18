@@ -1,5 +1,5 @@
 
-{% if loop.index % 3 == 1 %}
+{% if post.get_thumbnail %}
 	{% set grid = true %}
 {% endif %}
 
@@ -19,13 +19,13 @@
 <article class="post {{"sticky" in post.class ? "sticky"}}{{grid ? ' grid-tease'}} fancy-hover" id="tease-{{post.ID}}">
 	{% block content %}
 
-		{# {% if "sticky" in post.class and not post.thumbnail %}
-				<div class="tease-thumb">
-					<a href="{{post.link}}" class="sticky-thumb-link">
-						{% include "svgs/character-1.svg" %}
-					</a>
-				</div>
-		{% endif %} #}
+		{% if post.get_thumbnail %}
+		<div class="tease-thumb">
+			<a href="{{post.link}}">
+				<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
+			</a>
+		</div>
+		{% endif %}
 
 		<div class="tease-content">
 
@@ -47,24 +47,26 @@
 			{% else %}
 				{{post.preview.length(50).read_more('').end(' [&hellip;]')}}
 			{% endif %}
-
+			
 			<p>
-				<a class="link-more" href="{{post.link}}" title="{{post.title}}">Read post &rarr;</a>
+				{% set is_monster = false %}
+				{% set monster_link = false %}
+
+				{% for cat in post.categories %}
+					{% if cat.name == 'Monsters' %}
+						{% set is_monster = true %}
+						{% set monster_link = cat.link %}
+					{% endif %}
+				{% endfor %}
+
+				{% if is_monster and monster_link != '' %}
+					<a class="link-more" href="{{monster_link}}">See all monsters &rarr;</a>				
+				{% else %}
+					<a class="link-more" href="{{post.link}}" title="{{post.title}}">Read post &rarr;</a>
+				{% endif %}
 			</p>
 		</div>
 
-		{% if grid %}
-			<div class="tease-thumb">
-				<a href="{{post.link}}">
-					{% if	post.get_thumbnail %}
-						{% set alt = post.thumbnail._wp_attachment_image_alt %}
-						<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
-					{% else %}
-						{% include 'svgs/default-thumb.svg' %}
-					{% endif %}
-				</a>
-			</div>
-		{% endif %}
 
 	{% endblock %}
 </article>

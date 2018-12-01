@@ -44,7 +44,10 @@
 	@include bp(large) {
 		margin-bottom: 0;
 	}
-
+	
+	&--status {
+		border-top-color: $vlight-blue;
+	}
 }
 
 @keyframes sticky {
@@ -101,6 +104,14 @@
 	margin-top: $base;
 	font-size: $h3;
 	margin-bottom: $base;
+
+	.post--status & {
+		font-size: $h4;
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+	}
+
 }
 
 .tease-title-link {

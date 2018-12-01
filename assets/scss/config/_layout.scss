@@ -298,7 +298,7 @@ $rail: minmax(70px, 175px);
 
     .grid-tease {
       display: grid;
-	  grid-template-columns: repeat(4, 1fr);
+	  grid-template-columns: repeat(2, 1fr);
 	  grid-gap: $grid-gap;
     }
 
@@ -318,11 +318,11 @@ $rail: minmax(70px, 175px);
 
       .tease-thumb {
         place-content: center;
-        grid-column: 1 / span 2;
+        // grid-column: 1 / span 2;
       }
 
       .tease-content {
-        grid-column: 3 / span 2;
+        // grid-column: 3 / span 2;
       }
     }
   }

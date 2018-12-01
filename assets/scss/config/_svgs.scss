@@ -22,8 +22,22 @@ svg {
 
 // Default thumb
 
+.default-thumb,
+.code-thumb {
+	background-color: $accent-light;
+	display: block;
+}
+
+.code-thumb {
+	// background-color: $accent-light;
+}
+
+.code-thumb path {
+	fill: $white;
+}
+
 .default-thumb rect {
-	fill: $accent-vlight;
+	fill: $white;
 }
 
 

@@ -3,10 +3,24 @@
 	{% set grid = true %}
 {% endif %}
 
+{% set is_monster = false %}
+{% set is_code = false %}
+{% set monster_link = false %}
+
+{% for cat in post.categories %}
+	{% if cat.name == 'Monsters' %}
+		{% set is_monster = true %}
+		{% set monster_link = cat.link %}
+	{% endif %}
+	{% if cat.name == 'Web Development' %}
+		{% set is_code = true %}
+	{% endif %}
+{% endfor %}
+
 {% if post.format == 'status' %}
 <article class="post post--status {{grid ? ' grid-tease'}}" id="tease-{{post.ID}}">
 	<div class="tease-content">
-		<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}</p>
+		<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}. <a href="{{post.link}}">Shareable link</a>.</p>
 		<h3 class="tease-title">
 			{% include "svgs/status.twig" with { class: 'icon-inline' } %}
 			{{post.title}}
@@ -21,21 +35,29 @@
 	{% endif %}	
 </article>
 {% else %}
-	<article class="post {{"sticky" in post.class ? "sticky"}}{{grid ? ' grid-tease'}}" id="tease-{{post.ID}}">
+	<article class="o-tease o-tease--blog" id="tease-{{post.ID}}">
 		{% block content %}
 
-			{% if post.get_thumbnail %}
-			<div class="tease-thumb">
-				<a href="{{post.link}}">
+		<div class="o-tease-thumb | tease-thumb">
+			<a href="{{post.link}}">
+				{% if post.get_thumbnail %}
 					<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
-				</a>
+				{% else %}
+					{% if is_code %}
+						{% include "svgs/code-thumb.svg" %}					
+					{% elseif post.format == 'status' %}
+						{% include "svgs/status.twig" %}	
+					{% else %}
+						{% include "svgs/default-thumb.svg" %}
+					{% endif %}
+				{% endif %}
+			</a>
 			</div>
-			{% endif %}
 
-			<div class="tease-content">
+			<div class="o-tease-content | tease-content">
 
 				<header class="tease-header">
-					<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{%
+					<p class="meta-grey">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{%
 		endfor %}</p>
 					<h3 class="tease-title"><a href="{{post.link}}" class="tease-title-link">
 						{% if post.format == 'link' %}
@@ -54,25 +76,17 @@
 				{% endif %}
 				
 				<p>
-					{% set is_monster = false %}
-					{% set monster_link = false %}
-
-					{% for cat in post.categories %}
-						{% if cat.name == 'Monsters' %}
-							{% set is_monster = true %}
-							{% set monster_link = cat.link %}
-						{% endif %}
-					{% endfor %}
-
 					{% if is_monster and monster_link != '' %}
-						<a class="link-more" href="{{monster_link}}">See all monsters &rarr;</a>				
+						<a class="link-more" href="{{monster_link}}">See all monsters &rarr;</a>
 					{% else %}
 						<a class="link-more" href="{{post.link}}" title="{{post.title}}">Read post &rarr;</a>
 					{% endif %}
 				</p>
+
+				{% include "partials/edit-link.twig" %}
 			</div>
 
 		{% endblock %}
-		{% include "partials/edit-link.twig" %}
 	</article>
 {% endif %}
+

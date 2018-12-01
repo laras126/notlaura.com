@@ -129,11 +129,9 @@ $rail: minmax(70px, 175px);
 
   &.-text {
     padding-bottom: $grid-gap;
-    // margin-bottom: $grid-gap;
   }
 
   &.-svg {
-    // padding-top: $grid-gap*2;
     margin-bottom: $grid-gap;
   }
 }

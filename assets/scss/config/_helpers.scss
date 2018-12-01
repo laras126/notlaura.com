@@ -25,6 +25,9 @@
 	@include meta($text-light);
 }
 
+.meta-grey {
+	@include meta($text-med);
+}
 
 
 

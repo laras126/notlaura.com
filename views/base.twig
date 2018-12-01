@@ -1,4 +1,6 @@
 {% set is_story = function('is_page_template', 'page-story_layout.php') %}
+{% set is_blog = function('is_home') %}
+{% set is_category = function('is_category') %}
 
 {% block html_head_container %}
     {% include 'html-header.twig' %}
@@ -35,9 +37,8 @@
       </header>
     {% endblock %}
 
-    <div class="inner-pad{{ is_story == true ? '-story' }}{{ sidebar ? ' grid-main' }}">
+    <div class="{{ is_blog or is_category ? 'l-blog | ' }} inner-pad{{ is_story == true ? '-story' }}">
 
-      {# <div class="main-content{{ is_story == true ? ' module -article' }}"> #}
       <div class="main-content">
         {% block content %}
             Sorry, no content

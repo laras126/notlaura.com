@@ -1,10 +1,12 @@
 {% extends "base.twig" %}
 
-{% block header %}{% endblock %}
+{% block header %}
+	{% include "headers/blog-header.twig" %}
+{% endblock %}
 
 {% block content %}
 
-	<div class="tease-loop grid-loop">
+	<div class="">
 		{% for post in posts %}
 			{% include 'teases/tease-post.twig' %}
 		{% endfor %}
@@ -20,4 +22,7 @@
 		{% endif %}
 	</nav> <!-- /.pagination -->
 
+{% endblock %}
+
+{% block sidebar %}
 {% endblock %}

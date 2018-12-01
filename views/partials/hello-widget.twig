@@ -1,8 +1,12 @@
 <div class="hello-character">
 	{% include "svgs/lara-character.svg" %}
-	</div>
+</div>
 <div class="hello-text">
-	<h4 class="widget-title -hello">Hello, and welcome!</h4>
-	<p>I hope you find something interesting to read here on my blog! Find me at these other places on the web:</p>
-	{{ include('partials/social.twig') }}
+	<h3>Hello, and welcome!</h3>
+	<p>My name is Lara Schenck. By day, I'm a Design Operations Engineer at Penske Media Corporation where I work with a bunch of A+ folks on big WordPress websites, building tools and standards that smooth out the design to development process.</p>
+
+	<p>By night and weekend, I love exploring the deeper meaning behind both web technologies and life, in general. I share my findings here on my blog and <abbr title="In Real Life">IRL</abbr> by way of conference talks and meetups.</p>
+	
+	<p>Oh...and I draw <a href="{{ function('get_category_link', 'Monsters') }}">friendly monsters!</a></p>
+
 </div>

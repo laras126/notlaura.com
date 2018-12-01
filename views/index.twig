@@ -1,16 +1,30 @@
 {% extends "base.twig" %}
 
 {% block header %}
-	{% include "headers/blog-header.twig" %}
+	<header class="o-header l-page">
+		<div class="o-tease o-tease--blog">
+			<div class="hello-character">
+				{% include "svgs/lara-character.svg" %}
+			</div>
+			<div class="o-tease-content">
+				<h1 class="header-title">Welcome to my blog!</h1>
+				<p class="header-lead">If we haven't met yet, hi! I'm Lara. Thanks for coming.</p>
+				<p>I love to write about and share my work with web technologies, as well as general life topics and creative undertakings. Hopefully you'll find something of interest, and maybe learn something new!</p>
+				<p>If you'd like to keep abreast of new posts, you can <a href="{{site.link}}/feed">subscribe via RSS</a> or <a href="{{site.link}}/contact">write me a note</a> encouraging me to set up an email list for this purpose (something that's been on my to-do list for, um, a while).</p>
+			</div>
+		</div>	
+	</header>
 {% endblock %}
 
 {% block content %}
 
-	<div class="">
-		{% for post in posts %}
+	{% for post in posts %}
+		{% if post.format == 'status' %}
+			{% include 'teases/tease-post-format-status.twig' %}
+		{% else %}
 			{% include 'teases/tease-post.twig' %}
-		{% endfor %}
-	</div>
+		{% endif %}
+	{% endfor %}
 
 	<nav class="prevnext-nav">
 		{% if pagination.next %}

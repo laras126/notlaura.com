@@ -1,0 +1,22 @@
+{% for cat in post.categories %}
+	{% if cat.name == 'Web Development' %}
+		{% set is_code = true %}
+	{% endif %}
+{% endfor %}
+
+<article class="o-tease o-tease--blog" id="tease-{{post.ID}}">
+	<div class="o-tease-thumb">
+		{% include "teases/tease-thumb.twig" with {
+			is_code: is_code,
+			post: post
+		} %}
+	</div>
+	<div class="o-tease-content o-tease-content--card">
+		<h3 class="tease-title">
+			{{post.title}}
+		</h3>
+		{{post.content}}
+		<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}. <a href="{{post.link}}">Shareable link</a>.</p>
+		{% include "partials/edit-link.twig" %}
+	</div>
+</article>

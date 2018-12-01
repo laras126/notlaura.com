@@ -1,0 +1,13 @@
+{% if post.get_thumbnail %}
+	<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
+{% else %}
+	{% if is_code %}
+		{% include "svgs/code-thumb.svg" %}					
+	{% elseif post.format == 'status' %}
+		{% include "svgs/status-thumb.svg" %}	
+	{% elseif post.format == 'video' %}
+		{% include "svgs/media-thumb.svg" %}	
+	{% else %}
+		{% include "svgs/default-thumb.svg" %}
+	{% endif %}
+{% endif %}

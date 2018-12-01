@@ -23,21 +23,19 @@ svg {
 // Default thumb
 
 .default-thumb,
-.code-thumb {
-	background-color: $accent-light;
+.code-thumb,
+.status-thumb,
+.media-thumb {
+	background-image: linear-gradient(to right, $accent-light, darken($accent-light, 10%));
 	display: block;
 }
 
-.code-thumb {
-	// background-color: $accent-light;
-}
-
-.code-thumb path {
+.code-thumb path,
+.default-thumb rect,
+.status-thumb path,
+.media-thumb {
 	fill: $white;
-}
-
-.default-thumb rect {
-	fill: $white;
+	stroke: darken($accent-light, 10%);
 }
 
 

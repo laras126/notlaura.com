@@ -1,150 +1,128 @@
 
-// .main-aside {
-// 	margin-top: $grid-gap;
-// 	padding-right: $grid-gap;
-// 	// padding-left: $grid-gap;
+.main-aside {
+	margin-top: $grid-gap;
+	padding-right: $grid-gap;
+	// padding-left: $grid-gap;
 
-// 	@include bp(med) {
-// 		padding-right: 0;
-// 	}
-// }
+	@include bp(med) {
+		padding-right: 0;
+	}
+}
 
-// .main-aside > .widgets {
-// 	@include grid(yes) {
-// 		@include bp(small) {
-// 			display: grid;
-// 			grid-auto-flow: column dense;
-// 			grid-column-gap: $grid-gap;
-// 			align-items: start;
-// 		}
-// 	}
+.main-aside > .widgets {
+	@include grid(yes) {
+		@include bp(small) {
+			display: grid;
+			grid-auto-flow: column dense;
+			grid-column-gap: $grid-gap;
+			align-items: start;
+		}
+	}
 
-//   @include bp(large) {
-//     display: block;
-//   }
-// }
-
-
-// .widget {
-
-// 	.-blog & {
-// 		//color: $text-light;
-// 		margin-bottom: $grid-gap;
-// 		padding-bottom: $grid-gap;
-// 		padding-top: $grid-gap;
-
-// 		@include bp(med) {
-// 			padding-right: $grid-gap;
-// 		}
-
-// 		a {
-// 			color: $accent-dark;
-// 			&:hover {
-// 				// color: $accent-light;
-// 			}
-// 		}
-// 	}
-
-// 	&.-hello {
-// 		display: flex;
-// 		flex-direction: column;
-// 	}
-// }
-
-// @include bp(small) {
-// 	.hello-character {
-// 		order: 1;
-// 		margin-top: $grid-gap;
-// 	}
-
-// 	.hello-text {
-// 		order: 0;
-// 	}
-// }
-
-// @include bp(large) {
-// 	.hello-character {
-// 		order: 0;
-// 	}
-
-// 	.hello-text {
-// 		order: 1;
-// 	}
-// }
+  @include bp(large) {
+    display: block;
+  }
+}
 
 
-// .widget-title {
-// 	margin-top: 0;
-// 	margin-bottom: $base;
-// 	font-size: $base;
-// 	text-transform: uppercase;
-// 	letter-spacing: 1px;
+.widget {
 
-// 	&.-hello {
-// 		margin-top: $grid-gap;
-// 		// TODO should use min and max, oh well
-// 		@include bp(small) {
-// 			margin-top: 0;
-// 		}
-// 		@include bp(large) {
-// 			margin-top: $grid-gap;
-// 		}
-// 	}
-// }
+	.-blog & {
+		//color: $text-light;
+		margin-bottom: $grid-gap;
+		padding-bottom: $grid-gap;
+		padding-top: $grid-gap;
 
-// .people-list {
-// 	@include unstyle-list;
-// 	margin-top: $sml;
-// 	display: flex;
-// 	flex-wrap: wrap;
+		@include bp(med) {
+			padding-right: $grid-gap;
+		}
 
-// 	li {
-// 		margin-bottom: $sml/2;
-// 		margin-right: $sml/2;
-// 	}
+		a {
+			color: $accent-dark;
+			&:hover {
+				// color: $accent-light;
+			}
+		}
+	}
 
-// 	a {
-// 		padding: $sml/4 $sml/2;
-// 		display: inline-block;
-// 		background-image: linear-gradient(to right, $accent-med, darken($accent-med, 10%));
-// 		color: $text-light;
-// 		// border-bottom: 0;
+	&.-hello {
+		display: flex;
+		flex-direction: column;
+	}
+}
 
-// 		&:hover {
-// 			@include bp(med) {
-// 				transition: 0.2s ease all;
-// 				transform: scale(1.1);
-// 			}
-// 		}
-// 	}
+.widget-title {
+	margin-top: 0;
+	margin-bottom: $base;
+	font-size: $base;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 
-// }
+	&.-hello {
+		margin-top: $grid-gap;
+		// TODO should use min and max, oh well
+		@include bp(small) {
+			margin-top: 0;
+		}
+		@include bp(large) {
+			margin-top: $grid-gap;
+		}
+	}
+}
 
-// .pocket-list {
-// 	border-top: $base;
-// 	list-style: none;
-// 	padding-left: $sml;
+.people-list {
+	@include unstyle-list;
+	margin-top: $sml;
+	display: flex;
+	flex-wrap: wrap;
 
-// 	li {
-// 		will-change: transform;
-// 		position: relative;
-// 		margin-bottom: $sml/2;
+	li {
+		margin-bottom: $sml/2;
+		margin-right: $sml/2;
+	}
 
-// 		&:before {
-// 			position: absolute;
-// 			left: -$sml;
-// 			content: '\000BB';
-// 			color: $l-teal;
-// 		}
+	a {
+		padding: $sml/4 $sml/2;
+		display: inline-block;
+		background-image: linear-gradient(to right, $accent-med, darken($accent-med, 10%));
+		color: $text-light;
+		// border-bottom: 0;
 
-// 		&:hover {
-// 			@include bp(med) {
-// 				transition: 0.2s ease all;
-// 				transform: translateX(5px);
-// 				&:before {
-// 					color: $accent-dark;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+		&:hover {
+			@include bp(med) {
+				transition: 0.2s ease all;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+}
+
+.pocket-list {
+	border-top: $base;
+	list-style: none;
+	padding-left: $sml;
+
+	li {
+		will-change: transform;
+		position: relative;
+		margin-bottom: $sml/2;
+
+		&:before {
+			position: absolute;
+			left: -$sml;
+			content: '\000BB';
+			color: $l-teal;
+		}
+
+		&:hover {
+			@include bp(med) {
+				transition: 0.2s ease all;
+				transform: translateX(5px);
+				&:before {
+					color: $accent-dark;
+				}
+			}
+		}
+	}
+}

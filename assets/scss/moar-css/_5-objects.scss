@@ -9,9 +9,13 @@
 
 	.lara-character {
 		max-width: 230px;
-		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		display: none;
+		
+		@include bp(med) {
+			display: block;
+		}
 	}
 }
 
@@ -55,14 +59,20 @@
 		grid-template-columns: minmax(300px, 50%) calc( 1fr + #{$grid-gap - (1/16)} );
 	}
 
-	.o-tease-thumb {
+	.o-tease-thumb img,
+	.o-tease-thumb svg {
 		border: 1px solid $accent-light;
 	}
 
 	.tease-title {
 		font-size: $h4;
+
 		a {
-			border-bottom: 1px solid $accent-med;
+			border-bottom: 1px solid $accent-light;
+
+			&:hover {
+				border-color: $accent-med;
+			}
 		}
 	}
 
@@ -79,17 +89,6 @@
 		}
 	}
 
-	.o-tease-content,
-	.o-tease-thumb {
-		transition: 250ms ease border-color;
-	}
-
-	&:hover {
-		.o-tease-content,
-		.o-tease-thumb {
-			border-color: $accent-med;
-		}	
-	}
 }
 
 .o-tease-header {
@@ -115,7 +114,7 @@
 	}
 }
 
-.o-tease-thumb {
+.o-tease-thumb img {
 	@include bp(med) {
 		border-left: 2px solid $accent-med;
 	}

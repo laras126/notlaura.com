@@ -1,6 +1,7 @@
 {% set is_story = function('is_page_template', 'page-story_layout.php') %}
 {% set is_blog = function('is_home') %}
 {% set is_archive = function('is_archive') %}
+{% set is_search = function('is_search') %}
 
 {% block html_head_container %}
     {% include 'html-header.twig' %}
@@ -37,7 +38,7 @@
       </header>
     {% endblock %}
 
-    <div class="{{ is_blog or is_archive ? 'l-page | ' }} inner-pad{{ is_story == true ? '-story' }}">
+    <div class="{{ is_blog or is_archive or is_search ? 'l-page | ' }} inner-pad{{ is_story == true ? '-story' }}">
 
       <div class="main-content">
         {% block content %}

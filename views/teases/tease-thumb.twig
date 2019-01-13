@@ -6,7 +6,9 @@
 	{% elseif post.format == 'status' %}
 		{% include "svgs/status-thumb.svg" %}	
 	{% elseif post.format == 'video' %}
-		{% include "svgs/media-thumb.svg" %}	
+		{% include "svgs/media-thumb.svg" %}
+	{% elseif post.format == 'link' %}
+		{% include "svgs/link-thumb.svg" %}	
 	{% else %}
 		{% include "svgs/default-thumb.svg" %}
 	{% endif %}

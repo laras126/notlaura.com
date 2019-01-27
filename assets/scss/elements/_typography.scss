@@ -131,8 +131,11 @@ h6 {
 
 ul, ol {
 	padding-left: $grid-gap;
+}
 
-	> ul, ol {
+li {
+	> ul, 
+	> ol {
 		margin-top: 0;
 	}
 }

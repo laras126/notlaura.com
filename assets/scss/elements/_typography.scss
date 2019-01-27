@@ -136,7 +136,7 @@ ul, ol {
 li {
 	> ul, 
 	> ol {
-		margin-top: 0;
+		margin-top: $base / 2; 
 	}
 }
 

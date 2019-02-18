@@ -94,6 +94,11 @@
 		grid-template-columns: minmax(300px, 50%) calc( 1fr + #{$grid-gap - (1/16)} );
 	}
 
+	.o-tease-thumb {
+		position: relative;
+		z-index: 2;	
+	}
+
 	.o-tease-thumb img,
 	.o-tease-thumb svg {
 		border: 1px solid $accent-light;
@@ -119,7 +124,7 @@
 		}
 
 		@include bp(med) {	
-			transform: translateX(#{-$grid-gap - (1/16)});
+			transform: translateX( calc( #{-$grid-gap} ) );
 			width: calc( 100% + #{$grid-gap} );
 			grid-column: 2;
 		}

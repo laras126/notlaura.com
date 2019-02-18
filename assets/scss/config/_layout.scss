@@ -141,56 +141,6 @@ $rail: minmax(70px, 175px);
 
 
 
-// Main content grid
-// Comes into play if there is sidebar content
-
-.grid-main {
-
-  @include grid(yes) {
-    display: grid;
-    grid-template-areas: "content" "aside";
-
-    @include bp(large) {
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas: "aside content";
-      grid-column-gap: $grid-gap;
-    }
-
-    .main-aside {
-      grid-area: aside;
-    }
-
-    .main-content {
-      grid-area: content;
-    }
-  }
-
-  @include grid(no) {
-    @include bp(med) {
-      display: flex;
-
-      .main-aside {
-        width: calc(100% / 3);
-        order: 0;
-      }
-
-      .main-content {
-        width: calc(100% * 2/3);
-        order: 1;
-      }
-    }
-  }
-
-} // .grid-main
-
-// .main-content {
-//   @include bp(small) {
-//     padding-left: $grid-gap;
-//     padding-right: $grid-gap;
-//   }
-// }
-
-
 
 // ----
 // Panel

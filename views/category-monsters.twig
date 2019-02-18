@@ -1,14 +1,14 @@
 {% extends 'index.twig' %}
 
 {% block header %}
-<header class="o-header">
-	<div class="inner-pad grid-main">
-		<div class="main-content u-max-width-text">
-			<h1 class="header-title">{{ term ? term.name : title }}</h1>
-			{% if term.description %}
+<header class="o-header l-page">
+	<div class="o-blog-header -fancy">
+		<h1 class="o-blog-header__title">{{ term ? term.name : title }}</h1>
+		{% if term.description %}
+			<div class="o-blog-header__content">
 				<p class="header-lead">{{ term.description }}</p>
-			{% endif %}
-		</div>
+			</div>
+		{% endif %}
 	</div>	
 </header>
 {% endblock %}

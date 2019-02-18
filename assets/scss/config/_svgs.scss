@@ -242,36 +242,36 @@ $breakpoint: 500px;
 // SVG
 // ----
 
-.lara-character {
-	max-height: 450px;
-	@include bp(large) {
-		max-height: none;
-	}
-}
+// .lara-character {
+// 	max-height: 450px;
+// 	@include bp(large) {
+// 		max-height: none;
+// 	}
+// }
 
-@keyframes wave {
-	0% {
-		transform: rotate(-15deg);
-	}
-	100% {
-		transform: rotate(10deg);
-	}
-}
+// @keyframes wave {
+// 	0% {
+// 		transform: rotate(-15deg);
+// 	}
+// 	100% {
+// 		transform: rotate(10deg);
+// 	}
+// }
 
-.ls-hand-left {
-	@include accelerate(transform);
-	transform-box: fill-box; // For Firefox
+// .ls-hand-left {
+// 	@include accelerate(transform);
+// 	transform-box: fill-box; // For Firefox
 
-	animation: wave 0.3s infinite;
-	animation-direction: alternate;
-	animation-timing-function: ease-in-out;
-	transform-origin: 50% 90%;
-}
+// 	animation: wave 0.3s infinite;
+// 	animation-direction: alternate;
+// 	animation-timing-function: ease-in-out;
+// 	transform-origin: 50% 90%;
+// }
 
-.ls-skin {
-	fill: #fbd3c8;
-}
+// .ls-skin {
+// 	fill: #fbd3c8;
+// }
 
-.ls-clothes {
-	fill: $accent-med;
-}
+// .ls-clothes {
+// 	fill: $accent-med;
+// }

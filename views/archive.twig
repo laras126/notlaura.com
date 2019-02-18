@@ -1,16 +1,16 @@
 {% extends 'base.twig' %}
 
 {% block header %}
-<header class="o-header">
-	<div class="inner-pad grid-main">
-
-		<div class="main-content">
-			<h1 class="header-title">{{ term ? term.name : title }}</h1>
+<header class="o-header l-page">
+	<div class="o-blog-header">
+		<div class="o-blog-header__content">
+			<span class="meta-grey u-upperspace u-margin-b-0">Archive</span>
+			<h1 class="u-margin-t-0">{{ term ? term.name : title }}</h1>
 			{% if term.description %}
-				<p class="header-lead">{{ term.description }}</p>
+				<p>{{ term.description }}</p>
 			{% endif %}
 		</div>
-	</div>	
+	</div>
 </header>
 {% endblock %}
 

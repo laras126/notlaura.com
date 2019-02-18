@@ -1,27 +1,62 @@
-.o-header {
+.o-blog-header {
+	border-bottom: 2px solid $accent-med;
 	padding-top: $h2;
 	margin-bottom: $h2;
 	
-	.o-tease-content {
+	@supports( display: grid ) {
+		display: grid;
+
+		&.-fancy {
+			@supports( writing-mode: sideways-lr ) {
+				grid-template-columns: minmax(min-content, max-content) 1fr;
+			}
+			
+			@include bp(med) {
+				grid-template-columns: 1fr 2fr;
+			}
+		}
+	}
+
+}
+
+.o-blog-header__title {
+	margin-top: $base;
+	
+	.-fancy & {
+		@supports( writing-mode: sideways-lr ) {
+			display: flex;
+			text-align: right;
+			padding-right: $grid-gap;
+			writing-mode: sideways-lr;
+			margin-left: auto;
+
+			&::before {
+				content: '';
+				background-color: $accent-med;
+				height: 100%;
+				width: 2px;
+				margin-left: auto;
+				margin-top: auto;
+				margin-right: auto;
+				writing-mode: sideways-lr;
+			}
+		}
+	}
+}
+
+.o-blog-header__content {
+	@include bp(med) {
 		padding-left: $grid-gap;
 		padding-right: $grid-gap;
 	}
 
-	.lara-character {
-		max-width: 230px;
-		margin-left: auto;
-		margin-right: auto;
-		display: none;
-		
-		@include bp(med) {
-			display: block;
-		}
-	}
+	padding-bottom: $h3;
 }
 
 .o-tease-loop {
 	@include unstyle-list;
 
+	margin-left: auto;
 	@include bp(med) {
 		display: flex;
 		justify-content: space-between;
@@ -85,6 +120,7 @@
 
 		@include bp(med) {	
 			transform: translateX(#{-$grid-gap - (1/16)});
+			width: calc( 100% + #{$grid-gap} );
 			grid-column: 2;
 		}
 	}

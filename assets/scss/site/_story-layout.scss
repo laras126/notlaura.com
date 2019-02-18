@@ -272,3 +272,13 @@
 	bottom: 0;
 	z-index: 101;
 }
+
+.panel-story-opener {
+	background-size: auto 70%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+
+	@include bp(med) {
+		background-size: auto 100%;
+	}
+}

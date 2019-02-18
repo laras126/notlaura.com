@@ -6,14 +6,11 @@
 {% block content %}
 	<article class="scene">
 
-		<header class="panel js-active-panel" data-type="typed">
+		<header class="panel js-active-panel panel-story-opener" style="background-image: url( {{ TimberImage(post.image).src|resize(1000) }} );" data-type="typed">
 			<div class="js-typed-src panel-content">
 				<h1 class="panel-title"><span hidden>^100</span>Hey! <span hidden>^100</span><br> My name is <br><span class="rotate-colors">Lara</span> <span class="rotate-colors">Schenck</span>.</h1>
 			</div>
 			<a class="btn-next js-scrollTo js-reveal">Let's Go 👍</a>
-			<div class="panel-decor -image">
-				{% include "partials/srcset.twig" with { img: post.image, class: 'decor-img' } %}
-			</div>
 		</header>
 
 		<section class="panel" data-type="static">

@@ -20,7 +20,7 @@
 {% if post.format == 'status' %}
 <article class="post post--status {{grid ? ' grid-tease'}}" id="{{post.ID}}">
 	<div class="tease-content">
-		<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}. <a href="{{post.link}}#{{post.ID}}">Permalink</a>.</p>
+		<p class="tease-meta">{{post.date}} in {% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}. <a href="{{post.link}}#{{post.ID}}">Permalink</a>.</p>
 		<h3 class="tease-title">
 			{% include "svgs/status.twig" with { class: 'icon-inline' } %}
 			{{post.title}}

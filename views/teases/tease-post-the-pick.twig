@@ -3,7 +3,7 @@
 {% block sticky_tease_header %}
 	<h3 class="c-tease-title | tease-title">{{post.title}}</h3>
 	<p>{{post.post_excerpt|striptags}}</p>
-	<small class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time>, <a href="{{post.link}}">permalink.</a></small>
+	<p class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time> in {% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{% endfor %}. <a href="{{post.link}}#{{post.ID}}">Permalink</a>.</p>
 {% endblock sticky_tease_header %}
 
 {% block sticky_tease_contents %}
@@ -17,31 +17,12 @@
 				} %}
 			{% endif %}
 		</figure>
-		{{ post.content }}
+
+		{% if '<!--more-->' in post.content %}
+			{{ post.get_preview|wpautop }}
+		{% else %}
+			{{ post.content }}
+		{% endif %}
+
 	</div>
 {% endblock sticky_tease_contents %}
-
-{# {% for cat in post.categories %}
-	{% if cat.name == 'Web Development' %}
-		{% set is_code = true %}
-	{% endif %}
-{% endfor %}
-<li class="o-tease o-tease--format-image | {{"sticky" in post.class ? "sticky"}}" id="tease-{{post.ID}}">		
-	<article class="o-tease o-tease--blog" id="tease-{{post.ID}}">
-		<div class="o-tease-thumb u-sticky-100">
-			{% include "teases/tease-thumb.twig" with {
-				is_code: is_code,
-				post: post
-			} %}
-		</div>
-		<div class="o-tease-content o-tease-content--card">
-			<h3 class="tease-title">
-				{{post.title}}
-			</h3>
-			{{post.content}}
-			<p class="tease-meta">{{post.date}} in	{% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? ' ' : ', '}}{% endfor %}. <a href="{{post.link}}">Shareable link</a>.</p>
-			{% include "partials/edit-link.twig" %}
-		</div>
-	</article>
-
-</li> #}

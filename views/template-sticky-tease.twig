@@ -1,18 +1,18 @@
 <li class="{{"sticky" in post.class ? "sticky"}}" id="tease-{{post.ID}}">		
 	<article class="o-tease o-tease--sticky">
 		<header class="o-tease-header {{ tease_header_classes }} | tease-header">
-			<span class="u-sticky-100@med u-width-100p u-card">
+			<span class="u-sticky-100@med u-width-100p u-card {{ tease_header_inner_classes }}">
 				{% block sticky_tease_header %}	
 					<h3 class="c-tease-title | tease-title">{{post.title}}</h3>
 					<p>{{post.post_excerpt|striptags}}</p>
-					<small class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time>, <a href="{{post.link}}">permalink.</a></small>
+					<small class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time>, <a href="{{post.link}}">Permalink.</a></small>
 				{% endblock sticky_tease_header %}
 				{% include "partials/edit-link.twig" %}
 			</span>
 		</header>
 		<div class="o-tease-thumb | tease-thumb">
 			{% block sticky_tease_contents %}
-				<figure>
+				<figure class="u-border-l-2-blue@med">
 					{% if post.get_thumbnail %}
 						{% set alt = post.thumbnail._wp_attachment_image_alt %}
 						{% include "partials/srcset.twig" with { 

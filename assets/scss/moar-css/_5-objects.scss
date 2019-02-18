@@ -153,7 +153,7 @@
 // Oops, these are now components!!
 
 .o-tease--sticky .c-tease-title {
-	font-size: calc( #{$sml} + 1vw );
+	font-size: calc( #{$base} + 0.5vw );
 }
 
 .c-header-image {

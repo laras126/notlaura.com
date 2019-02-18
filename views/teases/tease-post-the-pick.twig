@@ -1,5 +1,7 @@
 {% extends "template-sticky-tease.twig" %}
 
+{% set tease_header_inner_classes = 'u-border-b-0@until-med' %}
+
 {% block sticky_tease_header %}
 	<h3 class="c-tease-title | tease-title">{{post.title}}</h3>
 	<p>{{post.post_excerpt|striptags}}</p>

@@ -49,6 +49,14 @@
 	padding: $grid-gap;
 }
 
+.u-border-b-0\@until-med {
+	border-bottom-width: 0;
+
+	@include bp(med) {
+		border-bottom-width: 1px;
+	}
+}
+
 .u-border-l-2-blue\@med {
 	@include bp(med) {	
 		border-left: 2px solid $accent-light;

@@ -32,8 +32,8 @@
 
 			&::before {
 				content: '';
+				flex: 1;
 				background-color: $accent-med;
-				height: 100%;
 				width: 2px;
 				margin-left: auto;
 				margin-top: auto;
@@ -117,35 +117,23 @@
 	}
 
 	.o-tease-content {
-
-		&--card {
-			@include card( $border-top: false );
-			margin-bottom: 0;
-		}
-
+		
 		@include bp(med) {	
 			transform: translateX( calc( #{-$grid-gap} ) );
 			width: calc( 100% + #{$grid-gap} );
 			grid-column: 2;
 		}
 	}
-
-}
-
-.o-tease-header {
-	@supports( display: grid ) {
-		order: 2;
-		
-		@include bp(med) {	
-			order: initial;
-		}
+	
+	.o-tease-content--card {
+		@include card( $border-top: false );
+		margin-bottom: 0;
 	}
 
 }
 
+
 .o-tease-header > span {
-	padding: 20px;
-	background-color: $white;
 	display: inline-block;
 	flex-direction: column;
 	
@@ -157,14 +145,14 @@
 
 .o-tease-thumb img {
 	@include bp(med) {
-		border-left: 2px solid $accent-med;
+		// border-left: 2px solid $accent-med;
 	}
 }
 
 
 // Oops, these are now components!!
 
-.o-tease--format-image .c-tease-title {
+.o-tease--sticky .c-tease-title {
 	font-size: calc( #{$sml} + 1vw );
 }
 
@@ -176,10 +164,10 @@
 
 .c-more-arrow {
 	color: $accent-med;
-	display: inline-block;
+	display: inline-flex;
 
 	a:hover + & {
-		animation: arrow-pulse 500ms ease-out 1;
+		animation: arrow-pulse 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 1;
 		@at-root {
 			@keyframes arrow-pulse {
 				0% {

@@ -21,7 +21,7 @@
 		</div>
 
 		<figure class="c-header-image">
-			{% include "partials/srcset.twig" with { img: post.image, class: 'u-full-width' } %}
+			{% include "partials/srcset.twig" with { img: post.image, class: 'u-width-100p' } %}
 			{% if TimberImage(post.image).caption %}
 				<figcaption class="meta-greyed">{{TimberImage(post.image).caption}}</figcaption>
 			{% endif %}

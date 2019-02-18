@@ -1,0 +1,40 @@
+{% extends 'index.twig' %}
+
+{% block header %}
+<header class="o-header l-page">
+	<div class="o-blog-header -fancy">
+		<h1 class="o-blog-header__title">{{ term ? term.name : title }}</h1>
+		{% if term.description %}
+			<div class="o-blog-header__content">
+				<p class="header-lead">{{ term.description }}</p>
+			</div>
+		{% endif %}
+	</div>	
+</header>
+{% endblock %}
+
+
+{% block content %}
+	<ol class="o-tease-loop">
+		{% for post in posts %}
+			{% block tease %}	
+				{% set extension = post.format != 'standard' ? '-format-' ~ post.format : '' %}
+				{% include 'teases/tease-post' ~ extension ~ '.twig' %}
+			{% endblock tease %}
+		{% endfor %}
+	</ol>
+
+	<nav class="prevnext-nav">
+		{% if pagination.next %}
+			<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&larr; Older Posts</a>
+		{% endif %}
+
+		{% if pagination.prev %}
+			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Newer Posts &rarr;</a>
+		{% endif %}
+	</nav> <!-- /.pagination -->
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

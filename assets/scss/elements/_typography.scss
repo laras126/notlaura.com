@@ -41,12 +41,6 @@ a {
 
 	&:hover, &:focus {
 		color: $link-hover;
-
-		// .main-content & {
-		// 	&:not(.btn) {
-		// 		background-color: $accent-vlight;
-		// 	}
-		// }
 	}
 
 	&:active {
@@ -167,7 +161,7 @@ blockquote {
 	padding-bottom: $base;
 
 	background-color: $white;
-  font-style: italic;
+	font-style: italic;
 
 	& > p:first-child {
 		margin-top: 0;

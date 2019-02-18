@@ -94,18 +94,19 @@ $h6:  				$base;
 
 
 // Fonts
+$system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-$sans-serif: 				'Inter UI', 'system', Arial, sans-serif;
+$sans-serif: $system;
 
-$heading-font-fallback: 'system', sans-serif;
-$body-font-fallback:    'system', sans-serif;
+$heading-font-fallback: $system;
+$body-font-fallback:    $system;
 
-$heading-font:  $sans-serif;
-$body-font: 		$sans-serif;
-$quote-font: 		$sans-serif;
-$nav-font: 			$sans-serif;
-$form-font: 		$sans-serif;
-$lead-font: 		$sans-serif;
+$heading-font: $sans-serif;
+$body-font:    $sans-serif;
+$quote-font:   $sans-serif;
+$nav-font:     $sans-serif;
+$form-font:    $sans-serif;
+$lead-font:    $sans-serif;
 
 $font-weight-base:    400;
 $font-weight-strong:  700;
@@ -118,8 +119,8 @@ $heading-font-weight: $font-weight-strong;
 // ---- Utilities
 // ----
 
-$accent-border: 				1px solid rgba($accent-med, 0.4);
-$accent-border-thick: 	5px solid $accent-light;
+$accent-border: 1px solid rgba($accent-med, 0.4);
+$accent-border-thick: 5px solid $accent-light;
 
 // Z-Index Scale
 $zbot: 				-1;
@@ -134,7 +135,7 @@ $ztiptop: 		$zbase+4;
 // Expose variables for Gutenberg
 // Hard coding values bc Sass not working in CP for some reason and I don't feel like fixing it now
 :root {
-  --textDark: #242F4A;
-  --accentBorder: 1px solid rgba(39, 169, 224, 0.4);
-  --accentBorderThick: 5px solid #E0E6F2;
+    --textDark: #242F4A;
+    --accentBorder: 1px solid rgba(39, 169, 224, 0.4);
+    --accentBorderThick: 5px solid #E0E6F2;
 }

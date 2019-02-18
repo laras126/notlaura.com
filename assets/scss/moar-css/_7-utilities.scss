@@ -29,6 +29,28 @@
 	max-width: 700px;
 }
 
-.u-full-width {
+.u-width-100p {
 	width: 100%;
+}
+
+.u-order-2\@until-med {
+	@supports( display: grid ) {
+		order: 2;
+		
+		@include bp(med) {	
+			order: initial;
+		}
+	}
+}
+
+.u-card {
+	border: 1px solid $accent-light;
+	background-color: $white;
+	padding: $grid-gap;
+}
+
+.u-border-l-2-blue\@med {
+	@include bp(med) {	
+		border-left: 2px solid $accent-light;
+	}
 }

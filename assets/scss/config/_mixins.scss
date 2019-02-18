@@ -206,7 +206,7 @@ $MQs: true;
 // ----
 // Layouts
 // ----
-@mixin card($border-top: 5px solid $accent-med) {
+@mixin card( $border-top: 5px solid $accent-med ) {
   border: 1px solid $accent-light;
   background-color: $white;
   

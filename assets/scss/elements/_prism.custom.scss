@@ -141,34 +141,31 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
-pre.code-toolbar {
+.code-toolbar {
 	position: relative;
-	padding-top: $h3;
 	margin-top: $grid-gap;
 }
 
-pre.code-toolbar > .toolbar {
+.code-toolbar > pre {
+	padding-top: $h3;
+}
+
+.code-toolbar > .toolbar {
 	background: $accent-med;
 	position: absolute;
 	top: 0;
 	left: 0;
-	// transition: opacity 0.3s ease-in-out;
-	// opacity: 0;
 }
 
-pre.code-toolbar:hover > .toolbar {
-	// opacity: 1;
-}
-
-pre.code-toolbar > .toolbar .toolbar-item {
+.code-toolbar > .toolbar .toolbar-item {
 	display: inline-block;
 }
 
-pre.code-toolbar > .toolbar a {
+.code-toolbar > .toolbar a {
 	cursor: pointer;
 }
 
-pre.code-toolbar > .toolbar button {
+.code-toolbar > .toolbar button {
 	background: none;
 	border: 0;
 	color: inherit;
@@ -181,24 +178,19 @@ pre.code-toolbar > .toolbar button {
 	-ms-user-select: none;
 }
 
-pre.code-toolbar > .toolbar a,
-pre.code-toolbar > .toolbar button,
-pre.code-toolbar > .toolbar span {
+.code-toolbar > .toolbar a,
+.code-toolbar > .toolbar button,
+.code-toolbar > .toolbar span {
 	color: $text-light;
 	font-size: .8em;
 	padding: 0 $sml;
-
-	// background: rgba(224, 224, 224, 0.2);
-	// box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-	// border-radius: .5em;
 }
 
-pre.code-toolbar > .toolbar a:hover,
-pre.code-toolbar > .toolbar a:focus,
-pre.code-toolbar > .toolbar button:hover,
-pre.code-toolbar > .toolbar button:focus,
-pre.code-toolbar > .toolbar span:hover,
-pre.code-toolbar > .toolbar span:focus {
-	color: inherit;
+.code-toolbar > .toolbar a:hover,
+.code-toolbar > .toolbar a:focus,
+.code-toolbar > .toolbar button:hover,
+.code-toolbar > .toolbar button:focus,
+.code-toolbar > .toolbar span:hover,
+.code-toolbar > .toolbar span:focus {
 	text-decoration: none;
 }

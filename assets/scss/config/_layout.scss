@@ -96,28 +96,6 @@ $rail: minmax(70px, 175px);
   padding-right: $grid-gap;
 }
 
-// .single .inner,
-// .site-header .inner {
-
-// }
-
-
-
-
-// Fallback
-
-@include grid(no) {
-	// .site-header,
-	// .site-footer {
-  //   @include contain($screen-lg);
-	// }
-	// .site-main {
-  //   @include contain($screen-md);
-  // }
-}
-
-
-
 
 
 // ----
@@ -138,34 +116,6 @@ $rail: minmax(70px, 175px);
 .header-svg {
   display: block;
 }
-
-
-
-
-// ----
-// Panel
-// ----
-
-// @include grid(yes) {
-//   .panel {
-//     @include bp(med) {
-//       display: grid;
-//       grid-template-columns: repeat(6, 1fr);
-//       grid-column-gap: $grid-gap;
-//       grid-template-rows: 1fr [btn] 100px;
-//     }
-//   }
-
-//   .panel-content {
-//     grid-column: 1 / span 4;
-//   }
-
-//   .panel-decor {
-//     grid-column: 1 / span 2;
-//   }
-// }
-
-
 
 
 
@@ -208,31 +158,6 @@ $rail: minmax(70px, 175px);
   margin-right: auto;
 }
 
-
-
-// ----
-// Panels
-// ----
-@include grid(yes) {
-
-  // .panel {
-  //   display: grid;
-  //   @include bp(med) {
-  //     grid-template-columns: repeat(6, 1fr);
-  //   }
-  // }
-
-  // .panel-content {
-  //   grid-column: 1 / -1;
-  // }
-
-  // .panel-img {
-  //   grid-column: 3 / 6;
-  // }
-
-}
-
-// @include
 
 
 // ----

@@ -3,28 +3,40 @@
 {% set tease_header_inner_classes = 'u-border-b-0@until-med' %}
 
 {% block sticky_tease_header %}
-	<h3 class="c-tease-title | tease-title">{{post.title}}</h3>
+	<h2 class="c-tease-title | tease-title">{{post.title}}</h2>
 	<p>{{post.post_excerpt|striptags}}</p>
 	<p class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time> in {% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{% endfor %}. <a href="{{post.link}}#{{post.ID}}">Permalink</a>.</p>
 {% endblock sticky_tease_header %}
 
 {% block sticky_tease_contents %}
 	<div class="u-card u-border-l-2-blue@med">
-		<figure>
-			{% if post.get_thumbnail %}
-				{% set alt = post.thumbnail._wp_attachment_image_alt %}
-				{% include "partials/srcset.twig" with { 
-					img: post.thumbnail.id, class: 'lazyload', 
-					alt: (alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;') 
-				} %}
-			{% endif %}
-		</figure>
-
-		{% if '<!--more-->' in post.content %}
-			{{ post.get_preview|wpautop }}
-		{% else %}
-			{{ post.content }}
+		
+		{% if post.show_featured_image_in_content %}
+			<figure>
+				{% if post.get_thumbnail %}
+					{% set alt = post.thumbnail._wp_attachment_image_alt %}
+					{% include "partials/srcset.twig" with { 
+						img: post.thumbnail.id, class: 'lazyload', 
+						alt: (alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;') 
+					} %}
+				{% endif %}
+			</figure>
 		{% endif %}
 
+		{% if '<!--more-->' in post.content %}
+			{{ fn( 'nl_split_at_more', post.content ) }}
+			<p class="text-right">
+				<a href="{{post.link}}">Continue reading &rarr;</a>
+			</p>
+		{% else %}
+			{{ post.content }}
+			{% if post.format == 'link' %}
+				<p>
+					<a href="{{post.link_url}}" class="btn -has-icon">Visit Link {% include "svgs/link.twig" with { class: 'icon-inline' } %}</a>
+				</p>
+			{% endif %}
+		{% endif %}
+		
 	</div>
+	
 {% endblock sticky_tease_contents %}

@@ -16,11 +16,7 @@
 {% block content %}
 
 	{% for post in posts %}
-		{% if post.format == 'status' %}
-			{% include 'teases/tease-post-format-status.twig' %}
-		{% else %}
-			{% include 'teases/tease-post.twig' %}
-		{% endif %}
+		{% include 'teases/tease-post.twig' %}
 	{% endfor %}
 
 	<nav class="prevnext-nav">

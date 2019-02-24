@@ -27,6 +27,18 @@
 		</header>
 
 		<div class="module-content single-content">
+			{% if post.show_featured_image_in_content %}
+				<figure>
+					{% if post.get_thumbnail %}
+						{% set alt = post.thumbnail._wp_attachment_image_alt %}
+						{% include "partials/srcset.twig" with { 
+							img: post.thumbnail.id, class: 'lazyload', 
+							alt: (alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;') 
+						} %}
+					{% endif %}
+				</figure>
+			{% endif %}
+
 			{% if series_posts %}
 				{% include 'partials/series-list.twig' with { current_id: post.id, series_title: series_title} %}
 			{% endif %}
@@ -54,7 +66,7 @@
 
 		{% if post.get_terms('post_tag') %}
 			<aside class="module-rail">
-				<h5 class="list-tags-title">Tagged</h5>
+				<h5 class="list-tags-title meta-grey">Tagged</h5>
 				<ul class="list-tags">
 					{% for t in post.get_terms('post_tag') %}
 						<li><a href="{{t.link}}">{{t.name}}</a></li>

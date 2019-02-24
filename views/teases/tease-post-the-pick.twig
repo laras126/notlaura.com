@@ -4,7 +4,9 @@
 
 {% block sticky_tease_header %}
 	<h2 class="c-tease-title | tease-title">{{post.title}}</h2>
-	<p>{{post.post_excerpt|striptags}}</p>
+	{% if post.show_featured_image_in_content %}
+		<p>{{post.post_excerpt|striptags}}</p>
+	{% endif %}
 	<p class="tease-meta"><time datetime="{{post.date|date('Y-m-d')}}">{{post.date}}</time> in {% for cat in post.categories %}<a href="{{cat.link}}">{{cat.name}}</a>{{loop.last ? '' : ', '}}{% endfor %}. <a href="{{post.link}}#{{post.ID}}">Permalink</a>.</p>
 {% endblock sticky_tease_header %}
 

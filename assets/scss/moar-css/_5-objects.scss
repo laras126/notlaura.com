@@ -143,17 +143,22 @@
 	}
 }
 
-.o-tease-thumb img {
-	@include bp(med) {
-		// border-left: 2px solid $accent-med;
-	}
+.o-tease-thumb h2, 
+.o-tease-thumb h3, 
+.o-tease-thumb h4 {
+	font-size: $h4;
+	margin-top: $base;
 }
 
 
 // Oops, these are now components!!
 
 .o-tease--sticky .c-tease-title {
-	font-size: calc( #{$base} + 0.5vw );
+	font-size: calc( #{$h4} + 0.5vw );
+
+	@include bp(large) {
+		font-size: $h4;
+	}
 }
 
 .c-header-image {

@@ -272,10 +272,9 @@
 	}
 
 
-
-add_filter( 'timber_context', 'mytheme_timber_context'  );
-
-function mytheme_timber_context( $context ) {
-    $context['options'] = get_fields('option');
-    return $context;
-}
+	function nl_split_at_more( $content ) {
+		$preview = explode( '<!--more-->', $content, 2 );
+		$content = $preview[0];
+		
+		return $content;
+	}

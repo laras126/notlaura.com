@@ -85,6 +85,10 @@ pre[class*="language-"] {
 	opacity: .7;
 }
 
+.token {
+	white-space: nowrap;
+}
+
 .token.property,
 .token.tag,
 .token.boolean,

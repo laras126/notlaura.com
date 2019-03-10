@@ -7,6 +7,7 @@
  * @author Lea Verou
  */
 
+ 
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
@@ -197,4 +198,12 @@ pre[class*="language-"] {
 .code-toolbar > .toolbar span:hover,
 .code-toolbar > .toolbar span:focus {
 	text-decoration: none;
+}
+
+
+// Gutenberg Block Styles
+
+.wp-block-code,
+.code-toolbar {
+	max-width: 90vw; // Magic number whatever who cares
 }

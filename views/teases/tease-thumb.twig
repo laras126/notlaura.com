@@ -1,5 +1,5 @@
 {% if post.get_thumbnail %}
-	<img class="lazyload tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
+	<img class="lazy-load tease-thumb-img" src="{{post.thumbnail.src|resize(100,100)}}" data-src="{{post.thumbnail.src|resize(500,500)}}" alt="{{alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;'}}">
 {% else %}
 	{% if is_code %}
 		{% include "svgs/code-thumb.svg" %}					

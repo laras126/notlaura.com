@@ -18,7 +18,7 @@
 				{% if post.get_thumbnail %}
 					{% set alt = post.thumbnail._wp_attachment_image_alt %}
 					{% include "partials/srcset.twig" with { 
-						img: post.thumbnail.id, class: 'lazyload', 
+						img: post.thumbnail.id, class: 'lazy-load', 
 						alt: (alt ? alt : 'Thumbnail for &quot;' ~ post.title|striptags ~ '&quot;') 
 					} %}
 				{% endif %}

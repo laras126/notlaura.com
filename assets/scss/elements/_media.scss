@@ -110,20 +110,9 @@ figcaption,
 
 
 // Fade in Lazy Loading
-
-img.lazyload,
-img.lazyloading {
-	width: 100%;
-	opacity: 0.5;
-	transition: opacity 400ms;
-	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-img.lazyloaded {
+img.is-loaded {
 	opacity: 1;
 }
-
-
 
 // Video and Embeds
 

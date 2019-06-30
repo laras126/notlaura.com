@@ -7,7 +7,10 @@
 		display: grid;
 
 		&.-fancy {
+			align-items: start;
+
 			@supports( writing-mode: sideways-lr ) {
+				align-items: unset;
 				grid-template-columns: minmax(min-content, max-content) 1fr;
 			}
 			
@@ -23,7 +26,12 @@
 	margin-top: $base;
 	
 	.-fancy & {
+		transform: rotate(-90deg) translateY(-100%);
+		text-align: right;
+		transform-origin: top right;
+
 		@supports( writing-mode: sideways-lr ) {
+			transform: unset;
 			display: flex;
 			text-align: right;
 			padding-right: $grid-gap;

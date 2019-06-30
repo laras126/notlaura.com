@@ -3,28 +3,39 @@
 {% set menu_link_id = section.menu_item_title|sanitize %}
 
 {% block header %}
-	{% include 'headers/header-page.twig' %}
+	{% if 'Contact' == post.title %}
+		{% include 'headers/header-page.twig' %}
+	{% else %}
+		<header class="o-header l-page">
+			<div class="o-blog-header -fancy">
+				<h1 class="o-blog-header__title">{{ post.title }}</h1>
+				<div class="o-blog-header__content">
+					<figure class="c-header-image">
+						<img class="lazy-load" srcset="{{ post.thumbnail.srcset }}">
+						{% if post.thumbnail.caption %}
+						<figcaption class="meta-greyed">{{post.thumbnail.caption}}</figcaption>
+						{% endif %}
+					</figure>
+					<p class="header-lead">{{ post.post_excerpt }}</p>
+				</div>
+			</div>	
+		</header>
+	{% endif %}
 {% endblock %}
 
 {% block content %}
-	{% if post.get_field('sections') %}
-		{% include 'partials/section-loop.twig'%}
-	{% else %}
-
+	{% if post.title == 'Contact' %}
 		<div class="module -article">
 			<div class="module-content">
-
-				{% if post.get_field('blocks') %}
-					{% include 'partials/flexcontent-logic.twig' with { elem: post.get_field('blocks') } %}
-				{% else %}
-					{{post.content}}
-				{% endif %}
-
-				{{ block('after_content') }}
-
+				{{ post.content }}
+			</div>
+		</div>
+	{% else %}
+		<div class="l-content">
+			<div class="u-max-width-text">
+				{{ post.content }}
 			</div>
 		</div>
 	{% endif %}
-
 {% endblock %}
 

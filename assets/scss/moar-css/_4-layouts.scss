@@ -3,8 +3,14 @@
 
 .l-page {
 	max-width: $screen-lg;
-	margin-left: auto;	
-	margin-right: auto;	
+	margin-left: auto;
+	margin-right: auto;
 	padding-left: $grid-gap;
 	padding-right: $grid-gap;
+}
+
+.l-content {
+	max-width: 900px; // 900px
+	margin-left: auto;
+	margin-right: auto;
 }
